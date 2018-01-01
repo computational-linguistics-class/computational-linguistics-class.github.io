@@ -9,7 +9,7 @@
   type: no_lecture
 -
   date: 2018-01-17
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/2_TextProc.pdf
   title: Regular Expressions, Text Normalization, and Edit Distance
   readings: 
     - 
@@ -19,7 +19,7 @@
       required: true
 -
   date: 2018-01-22
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/LM_4.pdf
   title: Language Modeling with N-Grams
   readings: 
     - 
@@ -29,7 +29,7 @@
       required: true 
 -
   date: 2018-01-24
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/6_Spell.pdf
   title: Spelling Correction and the Noisy Channel
   readings: 
     - 
@@ -39,7 +39,7 @@
       required: true 
 -
   date: 2018-01-29
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/7_Sent.pdf
   title: Naive Bayes Classification and Sentiment
   readings: 
     - 
@@ -134,7 +134,7 @@
       required: true 
 -
   date: 2018-02-28
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/vector1.pdf
   title: Vector Semantics
   readings: 
     - 
@@ -152,7 +152,7 @@
   type: no_lecture
 -
   date: 2018-03-12
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/vector2.pdf
   title: Semantics with Dense Vectors
   readings: 
     - 
@@ -162,7 +162,7 @@
       required: true 
 -
   date: 2018-03-14
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/Chapter18_introandsimilarity.pdf
   title: Computing with Word Senses&colon; WSD and WordNet
   readings: 
     - 
@@ -172,7 +172,7 @@
       required: true 
 -
   date: 2018-03-19
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/21_SentLex.pdf
   title: Lexicons for Sentiment and Affect Extraction
   readings: 
     - 
@@ -206,7 +206,7 @@
   type: no_lecture
 -
   date: 2018-04-02
-  slides: 
+  slides: https://web.stanford.edu/~jurafsky/slp3/slides/22_SRL.pdf
   title: Semantic Role Labeling and Argument Structure
   readings: 
     - 

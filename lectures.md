@@ -14,7 +14,7 @@ The lecture schedule is tentative and subject to change as the term progresses.
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Date</th>
+      <th>Date</th> 
       <th>Topic</th>
       <th>Required Readings</th>
     </tr>
@@ -50,7 +50,7 @@ The lecture schedule is tentative and subject to change as the term progresses.
         {% if lecture.slides %}
           <a href="{{ lecture.slides }}">{{ lecture.title }}</a>
         {% else %}
-          {{ lecture.title }}
+         {{ lecture.title }} 
         {% endif %}
 
 
