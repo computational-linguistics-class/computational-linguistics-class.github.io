@@ -65,8 +65,15 @@ The lecture schedule is tentative and subject to change as the term progresses.
 
       </td>
       <td>
-        {% if lecture.reading %}
-            {{ lecture.reading }} 
+        {% if lecture.readings %} 
+          {% for reading in lecture.readings %}
+          {% if reading.url %}
+             {{ reading.authors }}, <a href="{{ reading.url }}">{{ reading.title }}</a>
+          {% else %}
+             {{ reading.authors }}, {{ reading.title }}
+          {% endif %}
+          {% endfor %}
+          <br />
         {% endif %}
       </td>
     </tr>

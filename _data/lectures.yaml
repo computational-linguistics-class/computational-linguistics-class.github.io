@@ -2,7 +2,7 @@
   date: 2018-01-10
   slides: 
   title: Course Intro
-  reading: 
+  readings: 
 -
   date: 2018-01-15
   title: Martin Luther King, Jr. Day Observed (no classes)
@@ -10,72 +10,138 @@
 -
   date: 2018-01-17
   slides: 
-  title: 
-  reading: 
+  title: Regular Expressions, Text Normalization, and Edit Distance
+  readings: 
+    - 
+      title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
+      required: true
 -
   date: 2018-01-22
   slides: 
-  title: 
-  reading: 
+  title: Language Modeling with N-Grams
+  readings: 
+    - 
+      title: Chapter 4 "Language Modeling with N-Grams"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+      required: true 
 -
   date: 2018-01-24
   slides: 
-  title: 
-  reading: 
+  title: Spelling Correction and the Noisy Channel
+  readings: 
+    - 
+      title: Chapter 5 "Spelling Correction and the Noisy Channel"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/5.pdf
+      required: true 
 -
   date: 2018-01-29
   slides: 
-  title: 
-  reading: 
+  title: Naive Bayes Classification and Sentiment
+  readings: 
+    - 
+      title: Chapter 6 "Naive Bayes Classification and Sentiment"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+      required: true 
 -
   date: 2018-01-31
   slides: 
-  title: 
-  reading: 
+  title: Logistic Regression
+  readings: 
+    - 
+      title: Chapter 7 "Logistic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+      required: true 
 -
   date: 2018-02-05
   slides: 
-  title: 
-  reading: 
+  title: Neural Nets and Neural Language Models
+  readings: 
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+      required: true 
 -
   date: 2018-02-07
   slides: 
-  title: 
-  reading: 
+  title: Hidden Markov Models
+  readings: 
+    - 
+      title: Chapter 9 "Hidden Markov Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
+      required: true 
 -
   date: 2018-02-12
   slides: 
-  title: 
-  reading: 
+  title: Part-of-Speech Tagging
+  readings: 
+    - 
+      title: Chapter 10 "Part-of-Speech Tagging"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+      required: true 
+
 -
   date: 2018-02-14
   slides: 
-  title: 
-  reading: 
+  title: Formal Grammars of English
+  readings: 
+    - 
+      title: Chapter 11 "Formal Grammars of English"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
+      required: true 
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
   type: no_lecture
 -
   date: 2018-02-19
-  slides: 
-  title: 
-  reading: 
+  slides:   
+  title: Syntactic Parsing
+  readings: 
+    - 
+      title: Chapter 12 "Syntactic Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
+      required: true 
 -
   date: 2018-02-21
   slides: 
-  title: 
-  reading: 
+  title: Statistical Parsing
+  readings: 
+    - 
+      title: Chapter 13 "Statistical Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/13.pdf
+      required: true 
 -
   date: 2018-02-26
   slides: 
-  title: 
-  reading: 
+  title: Dependency Parsing
+  readings: 
+    - 
+      title: Chapter 14 "Dependency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
+      required: true 
 -
   date: 2018-02-28
   slides: 
-  title: 
-  reading: 
+  title: Vector Semantics
+  readings: 
+    - 
+      title: Chapter 15 "Vector Semantics"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+      required: true 
 -
   date: 2018-03-05
   title: Spring Term Break (no classes March 3-11)
@@ -87,33 +153,53 @@
 -
   date: 2018-03-12
   slides: 
-  title: 
-  reading: 
+  title: Semantics with Dense Vectors
+  readings: 
+    - 
+      title: Chapter 16 "Semantics with Dense Vectors"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+      required: true 
 -
   date: 2018-03-14
   slides: 
-  title: 
-  reading: 
+  title: Computing with Word Senses&colon; WSD and WordNet
+  readings: 
+    - 
+      title: Chapter 17 "Computing with Word Senses&colon; WSD and WordNet"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
+      required: true 
 -
   date: 2018-03-19
   slides: 
-  title: 
-  reading: 
+  title: Lexicons for Sentiment and Affect Extraction
+  readings: 
+    - 
+      title: Chapter 18 "Lexicons for Sentiment and Affect Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/18.pdf
+      required: true 
 -
   date: 2018-03-21
   slides: 
-  title: 
-  reading: 
+  title: Computational Semantics
+  readings: 
 -
   date: 2018-03-26
   slides: 
-  title: 
-  reading: 
+  title: Computational Semantics
+  readings: 
 -
   date: 2018-03-28
   slides: 
-  title: 
-  reading: 
+  title: Information Extraction
+  readings: 
+    - 
+      title: Chapter 21 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+      required: true  
 -
   date: 2018-03-30
   title: Last day to withdraw from a course is Friday March 30
@@ -121,40 +207,60 @@
 -
   date: 2018-04-02
   slides: 
-  title: 
-  reading: 
+  title: Semantic Role Labeling and Argument Structure
+  readings: 
+    - 
+      title: Chapter 22 "Semantic Role Labeling and Argument Structure"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/22.pdf
+      required: true  
 -
   date: 2018-04-04
   slides: 
-  title: 
-  reading: 
+  title: Machine Translation
+  readings: 
 -
   date: 2018-04-09
   slides: 
-  title: 
-  reading: 
+  title: Machine Translation
+  readings: 
 -
   date: 2018-04-11
   slides: 
-  title: 
-  reading: 
+  title: Question Answering
+  readings: 
+    - 
+      title: Chapter 28 "Question Answering"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/28.pdf
+      required: true   
 -
   date: 2018-04-16
   slides: 
-  title: 
-  reading: 
+  title: Dialog Systems and Chatbots
+  readings: 
+    - 
+      title: Chapter 29 "Dialog Systems and Chatbots"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/29.pdf
+      required: true   
 -
   date: 2018-04-18
   slides: 
-  title: 
-  reading: 
+  title: Advanced Dialog Systems
+  readings: 
+    - 
+      title: Chapter 30 "Advanced Dialog Systems"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/30.pdf
+      required: true   
 -
   date: 2018-04-23
   slides: 
-  title: 
-  reading: 
+  title: Speech Recognition / Speech Synthesis 
+  readings: 
 -
   date: 2018-04-25
   slides: 
   title: Course wrapup
-  reading: 
+  readings: 
