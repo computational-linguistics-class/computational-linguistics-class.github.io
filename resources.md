@@ -6,26 +6,26 @@ title: Resources
 active_tab: resources
 ---
 
-Resources 
+References 
 =============================================================
 
-### Deep Learning resources
+* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) by Dan Jurafsky and Jim Martin. The authors have a public draft of the next edition of their textbook online.
+* [Linguistic Fundamentals for Natural Language ProcessingL 100 Essentials from Morphology and Syntax](http://www.morganclaypool.com/doi/pdf/10.2200/S00493ED1V01Y201303HLT020) by Emily Bender
+* [Neural Network Methods for Natural Language Processing](http://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037) by Yoav Goldberg
+* [Michael Collins' notes on statistical NLP](http://www.cs.columbia.edu/~mcollins/)
+* [Neural Machine Translation](https://arxiv.org/abs/1709.07809) by Philipp Koehn
 
-- [Deep Learning](http://www.deeplearningbook.org) textbook by Ian Goodfellow and Yoshua Bengio and Aaron Courville.  All of the chapters are available for [free online from the book's website](http://www.deeplearningbook.org), or it can [purchased in hardcopy from Amazon for $72](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618/).
-- [TensorFlow tutorials](https://www.tensorflow.org/tutorials/)
-- Videos of Stanford's course on [Natural Language Processing with Deep Learning](https://www.youtube.com/watch?v=OQQ-W_63UgQ&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&app=desktop)
 
-### Dialog systems resources
+Tutorials 
+=============================================================
+* [Practical Deep Learning For Coders, Part 1](http://course.fast.ai)
+* [Cutting Edge Deep Learning For Coders, Part 2](http://course.fast.ai/part2.html)
+* [Word2Vec Tutorial](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
+* [Christopher Olah's blog](http://colah.github.io/)
 
-- [Spoken Dialogue Systems](http://www.morganclaypool.com/doi/pdf/10.2200/S00204ED1V01Y200910HLT005) monograph by Kristiina Jokinen and Michael McTear (2010). Morgan and Claypool Synthesis Lectures on Human Language Technologies (edited by Graeme Hirst).
+NLP courses at other universities
+=============================================================
 
-### Amazon Alexa
-
-- [The Amazon Alexa Prize](https://developer.amazon.com/alexaprize)
-
-### Data sets
-- [Kaggle Datasets](https://www.kaggle.com/datasets)
-- [Data from Yahoo! Labs](https://webscope.sandbox.yahoo.com/catalog.php?datatype=l)
-- [Yelp Dataset Challenge](http://www.yelp.com/dataset_challenge/)
-- [Pete Skomoroch's delicious data sets](https://delicious.com/pskomoroch/dataset)
-
+* [Yoav Artzi's Natural Language Processing class at Cornell](http://yoavartzi.com/cs5740-sp18-temp/)
+* [Jason Eisner's NLP class at Johns Hopkins University](https://www.cs.jhu.edu/~jason/465/)
+* [Chris Manning and Richard Socher's course at Stanford](https://web.stanford.edu/class/cs224n/)
