@@ -22,7 +22,7 @@ active_tab: staff
             <li><b>{{ staff.name }}</b></li>
           {% endif %}
           {% if staff.extra_title %}<li><em>{{ staff.extra_title }}</em></li>{% endif %}
-          <li><b>Email:</b> <code>{{ staff.email }}</code></li>
+          <li><b>Email:</b><code>{{ staff.email }}</code></li>
        	  {% if staff.office_hours %}<li><b>Office Hours:</b> {{ staff.office_hours | inline_markdownify }}</li>{% endif %}
           {% if staff.location %}<li><b>Location:</b> {{ staff.location | inline_markdownify }}</li>{% endif %}
         </ul>
