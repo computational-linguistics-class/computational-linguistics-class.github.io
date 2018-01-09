@@ -164,7 +164,7 @@ No need to submit anything for this question, but you should make sure you are f
 Regular expressions are a powerful way to process text by describing text patterns. If you are new to regular expressions,
 [Chapter 2](https://web.stanford.edu/~jurafsky/slp3/2.pdf) in the course textbook has a good introduction.
 
-In `python_questions.py`, fill in the functions `check_for_foo_or_bar`, `replace_duplicates`, and `convert_markdown_italics`
+In `python_questions.py`, fill in the functions `check_for_foo_or_bar` and  `replace_rgb`
 according to their function docstrings. Use the builtin Python regular expressions library, whose documentation is found
 [here](https://docs.python.org/3.4/library/re.html).
 
@@ -200,9 +200,11 @@ stopwords.txt	wine.txt
 decided to go rogue and give 6 stars. Pft.) The text of the review and the star rating are separated by a single tab character. There is also a file called `stopwords.txt`, which you will use for question 6.
 
 In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
-answer to standard output. Since this is a tutorial, there are no secrets: your script should produce
+answer to standard output, followed by a newline. Since this uestion is meant as a tutorial, there are no secrets: your script should produce
 [this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
-so start early and come ask for help if you get stuck! I highly recommend looking into the functions available in the
+so start early and come ask for help if you get stuck!
+For questions where there are ties, either answer will be accepted as correct.
+I highly recommend looking into the functions available in the
 [python string module](https://docs.python.org/2/library/string.html).
 
 1. What is the distribution over star ratings?
