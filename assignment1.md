@@ -1,6 +1,6 @@
 ---
 layout: default
-img: python
+img: python.jpg
 img_link: http://xkcd.com/353/
 caption: Hello world!
 title: Homework 1 "Python and Bash Skills"
