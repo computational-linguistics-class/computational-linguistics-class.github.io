@@ -3,10 +3,10 @@ layout: default
 img: python
 img_link: http://xkcd.com/353/
 caption: Hello world!
-title: Homework 1 "Python Bootcamp"
+title: Homework 1 "Python and Bash Skills"
 active_tab: homework
 release_date: 2018-01-10
-due_date: 2016-01-1711:00:00EST
+due_date: 2018-01-17 11:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -21,141 +21,103 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 
 
 <div class="alert alert-info">
-This assignment is before {{ page.due_date | date: "%I:%M%p" }}  due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
 </div>
-
-
 
 <div class="alert alert-info" markdown="span">
 Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
 
 
-Python Bootcamp <span class="text-muted">: Assignment 1</span> 
+Python and Bash Skills <span class="text-muted">: Assignment 1</span> 
 =============================================================
-This week we will start writing some code! This assignment is designed to be a crash-course to get you up to speed on the level of Python you will need to know in order to do the remainder of the assignments. For those of you that already know Python, great. You can skip to section 4. For those that do not, its easiest to learn by doing, so please start early so we can help you get on board. You want to spend the semester focusing on the crowdsourcing and machine learning, not the indenting and semicoloning. 
+This week we will start writing some code! We will be using Python for most of this course, and this assignment examines your skills writing regular expressions, control flows, and string processing in Python. Being able to process files from the command line will also be incredibly useful for your life as a computational linguiust, and we ask you to implement several operations in Bash. 
 
 You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
 
+### 1. Bash Skills
+For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are on Windows, please install [PuTTY](http://www.putty.org/) or its more modern, easier-to-use cousin, [MobaXterm](https://mobaxterm.mobatek.net/), and follow the instructions [here](https://www.seas.upenn.edu/cets/answers/remote.html).
 
-### 1. The basics: variables and data structures
+The term `bash` refers to both the program (or shell)--run by the terminal--that you type your commands into, and the programming language you use to write those commands. There exist other shells, such as `zsh` or `fish`, but we will stick to `bash`. When you type commands into the shell, we refer to these as bash commands. When you write a file with a long sequence of these command, we call that a bash program.
 
-Python has the basic variable types you are used to: strings, ints, floats. Unlike Java and many other languages, variables are not type-checked. You simply declare a variable by assigning a value to it. Later, you can reassign a different type to that same variable and Python couldn't care less.
+In order to learn bash, we've picked 3 hopefully useful commands for you to implement. When you've finished getting your solutions working on the command line, open up `bash_questions.py` and copy them into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
 
-Open up the python interpreter and play with variable assignment and reassignment:
+#### 1.1. Creating a Vocabulary
+For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
 
+A vocabulary file contains a list of all of the words in a text document along with a count of the number of occurences of each  word.
 
-{% highlight tcsh %} 
-$ python
-{% endhighlight %}
+Given a text file, output a list of the words present, tab-separated by their frequency. The words should be ordered from most frquent to least frequent. You can assume all words are space-separated.
 
-{% highlight python %} 
-# You can comment with pound sign
-"""
-Or with triple quotes
-"""
->>> x = 2
->>> x
-2
->>> y = "hello world"
->>> y
-'hello world'
->>> x = y # Notice the lack of whining about "incompatible types"...
->>> x
-'hello world'
-{% endhighlight %} 
+For example, the input file:
+```
+Seven lazy researchers like using bash.
+The researchers like, like Python too.
+```
 
-This also means that you can mix variable types within a data structure. There is no need to specify that L is a list of ints or that M is a map from strings to floats.
+Should output
+```
+like		2
+researchers		2
+bash.		1
+lazy		1
+like,		1
+Python		1
+Seven		1
+The		1
+too.		1
+using		1
+```
 
-Lists are declared with square brackets and indexed using square bracket notation. They can also be treated as stacks, if you are into that sort of thing. 
+#### 1.2. Printing Lines with Results
+For this question, you're allowed to use `ls`, if statements, for statements, `grep`, and `echo`.
 
-Create a list of ints. Then, in order to drive those Scala people insane, start appending strings to it. Play with indexing and slicing. In Python, you can use the colon notation to pull out slices of a list. E.g. lst[i:j] will give you a new list which includes the ith through the (j-1)th elements of lst.
+Check for a file named `results.txt` in each directory within a specified directory.
+For each existing `results.txt`, print the directory name and then
+only all lines from the corresponding `results.txt` that contain
+the following substring:
+```
+Accuracy:
+```
 
-{% highlight python %}
->>> l = [1, 2, 3]
->>> for elem in l: #We'll talk about loops more in a bit
-...	print elem 
-... 
+For example, the directory structure
+```
+root_directory/
+    1/
+        results.txt
+    2/
+    3/
+        results.txt
+```
+
+may output:
+
+```
 1
+Accuracy: 54.44
+Accuracy: 52.23
 2
-3
->>> l.append("i am a string. mwahahaha.") 
->>> for elem in l: 
-...	print elem 
-... 
-1
-2
-3
-i am a string. mwahahaha.
->>> l[2]
-3
->>> l[1:3]
-[2, 3]
->>> l += ['here is more stuff', 6, [2,3,4], 5*1367] 
->>> print l
-[1, 2, 3, 'i am a string. mwahahaha.', 'here is more stuff', 6, [2, 3, 4], 6835]
->>> l.pop() 
-6835
-{% endhighlight %}
+Accuracy: 44.34
+Accuracy: 45.34
+```
 
-Dictionaries (or maps or associative arrays) are probably the favorite data structure of Python. They are a simple key/value store, again without any restrictions on which data types are the keys or values. You can declare dictionaries with curly braces and associate or retrieve keys and values using square bracket notation.
+#### 1.3 Extracting Accuracies
+Frequently, when dealing with large sets of experiments, you want
+to summarize a bunch of semi-structured results text files quickly.
+ 
+ In this exercise, you'll use bash to take results of the form found 
+ in `accuracies.txt` and pull out the accuracies as well as the name
+ of the experiment.
 
+For example, the line
+```
+Base accuracy: 0.3267522959523133 time: .4555
+```
 
-{% highlight python %}
->>> d = {"give me an A!" : "B", "give me a P!" : 7, "give me a Q!" : "no."}
->>> d["give me a P!"]
-7
->>> d[14] = 12
->>> d
-{'give me a Q!': 'no.', 'give me an A!': 'B', 14: 12, 'give me a P!': 7} # the new k/v pair was added to d
-{% endhighlight %}
+should be transformed to the line
 
-As you can imagine, the lack of type-checking makes it very easy to write bad Python code. I would advise against doing so. But it is your call, some people like the thrill of nondeterministic runtime errors and such. Don't let me cramp your style.
-
-### 2. Control structures and functions
-
-Python makes it easy to write bad code. But it makes it _very_ hard to write ugly code. So chalk one up for superficiality. Python uses whitespace to denote control structures, like loops and if/else blocks. By convention, you should use four spaces for each level of indentation. (I use tabs because I am lazy and like to save the key strokes. I was told over the summer that this is the mark of a novice, and no one of any merit uses tabs. I just hung my head in shame. So use spaces.)
-
-
-{% highlight python %}
->>> print l
-[1, 2, 3, 'here is more stuff', 6, [2, 3, 4]]
-# Here is a for loop. 
->>> for elem in l:
-...     print elem
-... 
-1
-2
-3
-here is more stuff
-6
-[2, 3, 4]
-# Here is a while loop
->>> i = 0
->>> while i < 5 : 
-...     if i % 2 == 0 : 
-...             print "even"
-...     else : 
-...             print "odd"
-...     i += 1
-... 
-even
-odd
-even
-odd
-even
-"""
-No types are required for parameters, so commenting is SO important. So important.
-Returns the idx element of a list
-
-lst - the list 
-idx - the integer index of the element to return
-"""
->>> def get_list_element(lst, idx) : 
-...     return lst[idx]
-... 
->>> get_list_element(l, 4)
-6
-{% endhighlight %}
+```
+Base 0.3267522959523133
+```
 
 ### 3. File IO
 
