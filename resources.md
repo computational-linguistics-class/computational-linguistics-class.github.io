@@ -10,7 +10,7 @@ References
 =============================================================
 
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) by Dan Jurafsky and Jim Martin. The authors have a public draft of the next edition of their textbook online.
-* [Linguistic Fundamentals for Natural Language ProcessingL 100 Essentials from Morphology and Syntax](http://www.morganclaypool.com/doi/pdf/10.2200/S00493ED1V01Y201303HLT020) by Emily Bender
+* [Linguistic Fundamentals for Natural Language Processing: 100 Essentials from Morphology and Syntax](http://www.morganclaypool.com/doi/pdf/10.2200/S00493ED1V01Y201303HLT020) by Emily Bender
 * [Neural Network Methods for Natural Language Processing](http://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037) by Yoav Goldberg
 * [Michael Collins' notes on statistical NLP](http://www.cs.columbia.edu/~mcollins/)
 * [Neural Machine Translation](https://arxiv.org/abs/1709.07809) by Philipp Koehn
