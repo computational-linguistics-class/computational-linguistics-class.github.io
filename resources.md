@@ -42,3 +42,9 @@ Python resources
 - [Kaggle has some tutorials on sklearn](https://www.kaggle.com/c/data-science-london-scikit-learn/visualization)
 - [NLTK](http://www.nltk.org/) is a great library for doing natural language processing in Python.  It also has an accompanying book called [Intro to NLP in Python](http://www.nltk.org/book/). 
 - [spaCy](https://spacy.io) is another excellent Python NLP library.  It also has a cleverly named visualization tool, [displaCy](https://spacy.io/usage/visualizers).
+
+Bash resources
+==============
+
+- [John](https://seas.upenn.edu/~johnhew/) has a basic introduction to bash for NLP [here](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and a discussion of advanced topics in bash [here](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.md).
+- Kevin Knight of the University of Southern California has a nice unix skills for NLP tutorial [here](http://www.isi.edu/natural-language/mt/unix.txt).
