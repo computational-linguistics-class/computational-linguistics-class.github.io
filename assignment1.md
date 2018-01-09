@@ -45,8 +45,10 @@ The term `bash` refers to both the program (or shell)--run by the terminal--that
 language you use to write those commands. There exist other shells, such as `zsh` or `fish`, but we will stick to `bash`. When you type 
 commands into the shell, we refer to these as bash commands. When you write a file with a long sequence of these command, we call that a bash program.
 
-In order to learn bash, we've picked 3 hopefully useful commands for you to implement. When you've finished getting your solutions
-working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), .
+In order to learn bash, we've picked 3 hopefully useful commands for you to implement. These questions might be tricky; you should take advantage of Piazza and TA office hours for guidance.
+
+When you've finished getting your solutions
+working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), 
 and copy your solutions into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
 
 ### 1.1. Creating a Vocabulary
