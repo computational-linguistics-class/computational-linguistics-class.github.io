@@ -32,7 +32,7 @@ NLP courses at other universities
 
 
 
-### Python resources
+Python resources
 =============================================================
 
 - Python itself has good documentation and a decent getting started page [here](https://docs.python.org/2/tutorial/introduction.html).
