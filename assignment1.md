@@ -3,10 +3,10 @@ layout: default
 img: python
 img_link: http://xkcd.com/353/
 caption: Hello world!
-title: Homework 1 "Python Bootcamp"
+title: Homework 1 "Python and Bash Skills"
 active_tab: homework
 release_date: 2018-01-10
-due_date: 2016-01-1711:00:00EST
+due_date: 2018-01-17 11:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -21,146 +21,124 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 
 
 <div class="alert alert-info">
-This assignment is before {{ page.due_date | date: "%I:%M%p" }}  due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
 </div>
-
-
 
 <div class="alert alert-info" markdown="span">
 Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
 
 
-Python Bootcamp <span class="text-muted">: Assignment 1</span> 
+Python and Bash Skills <span class="text-muted">: Assignment 1</span> 
 =============================================================
-This week we will start writing some code! This assignment is designed to be a crash-course to get you up to speed on the level of Python you will need to know in order to do the remainder of the assignments. For those of you that already know Python, great. You can skip to section 4. For those that do not, its easiest to learn by doing, so please start early so we can help you get on board. You want to spend the semester focusing on the crowdsourcing and machine learning, not the indenting and semicoloning. 
+This week we will start writing some code! We will be using Python for most of this course, and this assignment examines your skills 
+writing regular expressions, control flows, and string processing in Python. Being able to process files from the command line will
+also be incredibly useful for your life as a computational linguiust, and we ask you to implement several operations in Bash. 
 
 You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
 
+## 1. Bash Skills
+For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are 
+on Windows, please install [PuTTY](http://www.putty.org/) or its more modern, easier-to-use cousin, [MobaXterm](https://mobaxterm.mobatek.net/),
+and follow the instructions [here](https://www.seas.upenn.edu/cets/answers/remote.html).
 
-### 1. The basics: variables and data structures
+The term `bash` refers to both the program (or shell)--run by the terminal--that you type your commands into, and the programming 
+language you use to write those commands. There exist other shells, such as `zsh` or `fish`, but we will stick to `bash`. When you type 
+commands into the shell, we refer to these as bash commands. When you write a file with a long sequence of these command, we call that a bash program.
 
-Python has the basic variable types you are used to: strings, ints, floats. Unlike Java and many other languages, variables are not type-checked. You simply declare a variable by assigning a value to it. Later, you can reassign a different type to that same variable and Python couldn't care less.
+In order to learn bash, we've picked 3 hopefully useful commands for you to implement. When you've finished getting your solutions
+working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), .
+and copy your solutions into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
 
-Open up the python interpreter and play with variable assignment and reassignment:
+### 1.1. Creating a Vocabulary
+For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
 
+A vocabulary file contains a list of all of the words in a text document along with a count of the number of occurences of each word.
 
-{% highlight tcsh %} 
-$ python
-{% endhighlight %}
+Given a text file, output a list of the words present, tab-separated by their frequency. The words should be ordered from most
+frquent to least frequent. You can assume all words are space-separated.
 
-{% highlight python %} 
-# You can comment with pound sign
-"""
-Or with triple quotes
-"""
->>> x = 2
->>> x
-2
->>> y = "hello world"
->>> y
-'hello world'
->>> x = y # Notice the lack of whining about "incompatible types"...
->>> x
-'hello world'
-{% endhighlight %} 
+For example, the input file:
+```
+Seven lazy researchers like using bash.
+The researchers like, like Python too.
+```
 
-This also means that you can mix variable types within a data structure. There is no need to specify that L is a list of ints or that M is a map from strings to floats.
+Should output
+```
+like		2
+researchers		2
+bash.		1
+lazy		1
+like,		1
+Python		1
+Seven		1
+The		1
+too.		1
+using		1
+```
 
-Lists are declared with square brackets and indexed using square bracket notation. They can also be treated as stacks, if you are into that sort of thing. 
+### 1.2. Printing Lines with Results
+For this question, you're allowed to use `ls`, if statements, for statements, `grep`, and `echo`.
 
-Create a list of ints. Then, in order to drive those Scala people insane, start appending strings to it. Play with indexing and slicing. In Python, you can use the colon notation to pull out slices of a list. E.g. lst[i:j] will give you a new list which includes the ith through the (j-1)th elements of lst.
+Check for a file named `results.txt` in each directory within a specified directory.
+For each existing `results.txt`, print the directory name and then
+only all lines from the corresponding `results.txt` that contain
+the following substring:
+```
+Accuracy:
+```
 
-{% highlight python %}
->>> l = [1, 2, 3]
->>> for elem in l: #We'll talk about loops more in a bit
-...	print elem 
-... 
+For example, the directory structure
+```
+root_directory/
+    1/
+        results.txt
+    2/
+    3/
+        results.txt
+```
+
+may output:
+
+```
 1
+Accuracy: 54.44
+Accuracy: 52.23
 2
-3
->>> l.append("i am a string. mwahahaha.") 
->>> for elem in l: 
-...	print elem 
-... 
-1
-2
-3
-i am a string. mwahahaha.
->>> l[2]
-3
->>> l[1:3]
-[2, 3]
->>> l += ['here is more stuff', 6, [2,3,4], 5*1367] 
->>> print l
-[1, 2, 3, 'i am a string. mwahahaha.', 'here is more stuff', 6, [2, 3, 4], 6835]
->>> l.pop() 
-6835
-{% endhighlight %}
+Accuracy: 44.34
+Accuracy: 45.34
+```
 
-Dictionaries (or maps or associative arrays) are probably the favorite data structure of Python. They are a simple key/value store, again without any restrictions on which data types are the keys or values. You can declare dictionaries with curly braces and associate or retrieve keys and values using square bracket notation.
+### 1.3 Extracting Accuracies
+Frequently, when dealing with large sets of experiments, you want
+to summarize a bunch of semi-structured results text files quickly.
+ 
+ In this exercise, you'll use bash to take results of the form found 
+ in `accuracies.txt` and pull out the accuracies as well as the name
+ of the experiment.
 
+For example, the line
+```
+Base accuracy: 0.3267522959523133 time: .4555
+```
 
-{% highlight python %}
->>> d = {"give me an A!" : "B", "give me a P!" : 7, "give me a Q!" : "no."}
->>> d["give me a P!"]
-7
->>> d[14] = 12
->>> d
-{'give me a Q!': 'no.', 'give me an A!': 'B', 14: 12, 'give me a P!': 7} # the new k/v pair was added to d
-{% endhighlight %}
+should be transformed to the line
 
-As you can imagine, the lack of type-checking makes it very easy to write bad Python code. I would advise against doing so. But it is your call, some people like the thrill of nondeterministic runtime errors and such. Don't let me cramp your style.
+```
+Base 0.3267522959523133
+```
 
-### 2. Control structures and functions
+## 2. Python Skills
 
-Python makes it easy to write bad code. But it makes it _very_ hard to write ugly code. So chalk one up for superficiality. Python uses whitespace to denote control structures, like loops and if/else blocks. By convention, you should use four spaces for each level of indentation. (I use tabs because I am lazy and like to save the key strokes. I was told over the summer that this is the mark of a novice, and no one of any merit uses tabs. I just hung my head in shame. So use spaces.)
+All your answers should be added to `python_questions.py`, which can be downloaded [here](downloads/hw1/python_questions.py).
+If you'd like to include any import statements other than the ones already provided, post on Piazza for permission first.
 
-
-{% highlight python %}
->>> print l
-[1, 2, 3, 'here is more stuff', 6, [2, 3, 4]]
-# Here is a for loop. 
->>> for elem in l:
-...     print elem
-... 
-1
-2
-3
-here is more stuff
-6
-[2, 3, 4]
-# Here is a while loop
->>> i = 0
->>> while i < 5 : 
-...     if i % 2 == 0 : 
-...             print "even"
-...     else : 
-...             print "odd"
-...     i += 1
-... 
-even
-odd
-even
-odd
-even
-"""
-No types are required for parameters, so commenting is SO important. So important.
-Returns the idx element of a list
-
-lst - the list 
-idx - the integer index of the element to return
-"""
->>> def get_list_element(lst, idx) : 
-...     return lst[idx]
-... 
->>> get_list_element(l, 4)
-6
-{% endhighlight %}
-
-### 3. File IO
-
-You can open, read, and write files using the aptly-named open(), read(), and write() commands. read() returns the entire contents of the file as a string. readlines() will split on the newline character and return the lines as a list, which is generally nicer for allowing you to iterate line-by-line. I won't go through an example here, but I highly recommend playing with the [csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout the semester. 
-
+### 2.1. File I/O
+You can open, read, and write files using the aptly-named open(), read(), and write() commands. read() returns the entire contents of
+the file as a string. readlines() will split on the newline character and return the lines as a list, which is generally nicer for 
+allowing you to iterate line-by-line. I won't go through an example here, but I highly recommend playing with the
+[csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout
+the semester. 
 
 {% highlight python %}
 >>> file = open('test.txt', 'w')
@@ -176,14 +154,36 @@ You can open, read, and write files using the aptly-named open(), read(), and wr
 ['line1\n', 'line2\n', 'line3\n', 'line4\n']
 {% endhighlight %}
 
-### 4. Text processing in Python
+No need to submit anything for this question, but you should make sure you are familiar with Python file I/O.
 
-For this part, you will need to submit your code to answer the following questions. You should download the [iPython notebook](assignments/downloads/python-bootcamp/IPythonBootcamp.ipynb) file, and do all of your work there. You can submit your entire notebook at the end of the assignment.
+### 2.2. Regular Expressions
+Regular expressions are a powerful way to process text by describing text patterns. If you are new to regular expressions,
+[Chapter 2](https://web.stanford.edu/~jurafsky/slp3/2.pdf) in the course textbook has a good introduction.
+
+In `python_questions.py`, fill in the functions `check_for_foo_or_bar`, `replace_duplicates`, and `convert_markdown_italics`
+according to their function docstrings. Use the builtin Python regular expressions library, whose documentation is found
+[here](https://docs.python.org/3.4/library/re.html).
+
+You may want to write yourself test cases to make sure you're covering all edgecases. See the [unittest](https://docs.python.org/3.4/library/unittest.html) documentation.
+
+### 2.3 Edit Distance
+To compute the similarity between two strings of text, linguists often use a metric called edit distance. Edit distance measures how 
+similar two strings are based on the number of insertions, deletions, and substitutions necessary to turn one of the strings into the 
+other.
+
+Use dynamic programming to implement edit distance. [Chapter 2](https://web.stanford.edu/~jurafsky/slp3/2.pdf) in the textbook provides 
+pseudocode that you can follow.
+
+Write your solution in the `edit_distance` function in `python_questions.py`.
+
+### 2.4. Text processing in Python
+
+For this part, you will need to submit your code to answer the following questions. 
  
-We will be playing with a small but oh so wonderful data set of wine reviews! You can download the data [here](assignments/downloads/python-bootcamp/data.tgz). You can unpack it as follows, and should see two files:
-
+We will be playing with a small but oh so wonderful data set of wine reviews! You can download the data [here](downloads/hw1/data.tgz). You can down it and unpack it as follows, and should see two files:
 
 {% highlight tcsh %}
+$ wget http://computational-linguistics-class.org/downloads/hw1/data.tgz
 $ tar -xzvf data.tgz 
 x data/
 x data/stopwords.txt
@@ -192,49 +192,31 @@ $ ls data
 stopwords.txt	wine.txt
 {% endhighlight %}
 
-wine.txt is in the format of one review per line, followed but a star rating between 1 and 5 (except for 3 reviews, where the review decided to go rogue and give 6 stars. Pft.) The text of the review and the star rating are separated by a single tab character. There is also a file called stopwords.txt. You will use this in question 6.
+`wine.txt` is in the format of one review per line, followed but a star rating between 1 and 5 (except for 3 reviews, where the review 
+decided to go rogue and give 6 stars. Pft.) The text of the review and the star rating are separated by a single tab character. There is also a file called `stopwords.txt`, which you will use for question 6.
 
-Write a python script that answers each of the following questions and prints the answer to standard output. Since this is a tutorial, there are no secrets: your script should produce [this output](assignments/downloads/python-bootcamp/bootcamp-key.txt) when you are done. I will compare the output of your script directly to this answer key, so start early and come ask for help if you get stuck! I highly recommend looking into the functions available in the [python string module](https://docs.python.org/2/library/string.html).
+In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
+answer to standard output. Since this is a tutorial, there are no secrets: your script should produce
+[this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
+so start early and come ask for help if you get stuck! I highly recommend looking into the functions available in the
+[python string module](https://docs.python.org/2/library/string.html).
 
 1. What is the distribution over star ratings?
 2. What are the 10 most common words used across all of the reviews, and how many times is each used?
 3. How many times does the word 'a' appear?
 4. How many times does the word 'fruit' appear?
 5. How many times does the word 'mineral' appear?
-6. Common words (like 'a') are not as interesting as uncommon words (like 'mineral'). In natural language processing, we call these common words "stop words" and often remove them before we process text. stopwords.txt gives you a list of some very common words. Remove these stopwords from your reviews. Also, try converting all the words to lower case (since we probably don't want to count 'fruit' and 'Fruit' as two different words). Now what are the 10 most common words across all of the reviews, and how many times is each used?
+6. Common words (like 'a') are not as interesting as uncommon words (like 'mineral'). In natural language processing, we call these 
+common words "stop words" and often remove them before we process text. stopwords.txt gives you a list of some very common words. Remove 
+these stopwords from your reviews. Also, try converting all the words to lower case (since we probably don't want to count 'fruit' and 
+'Fruit' as two different words). Now what are the 10 most common words across all of the reviews, and how many times is each used?
 7. You should continue to use the preprocessed reviews for the following questions (lower-cased, no stopwords).  What are the 10 most used words among the 5 star reviews, and how many times is each used? 
 8. What are the 10 most used words among the 1 star reviews, and how many times is each used? 
 9. Gather two sets of reviews: 1) Those that use the word "red" and 2) those that use the word "white". What are the 10 most frequent words in the "red" reviews which do NOT appear in the "white" reviews?
 10. What are the 10 most frequent words in the "white" reviews which do NOT appear in the "red" reviews?
 
-Thats it! Again, you can compare your answers against [our key](assignments/downloads/python-bootcamp/bootcamp-key.txt) to see if you have done things correctly. 
+Thats it! Again, you can compare your answers against [our key](downloads/hw1/key.txt) to see if you have done things correctly. 
 
-Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit your entire iPython notebook via [turnin](https://alliance.seas.upenn.edu/~cis520/wiki/index.php?n=Resources.HomeworkSubmission) from the eniac machines. 
+Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit only the two Python files using Gradescope.
 
 
-<div class="panel panel-danger">
-<div class="panel-heading" markdown="1">
-#### Grading Rubric
-</div>
-<div class="panel-body" markdown="1">
-
-This assignment is worth 1 point toward your overall grade in the course.  It counts toward the participation component of your grade. The rubric for the assignment is given below.
-
-* 1 point - if you completed the assignment in class and submitted it by the end of the day.
-</div>
-</div>
-
-### Bonus! Bash bootcamp.
-
-Knowing more than one scripting language increases your productivity 1 zillion fold (proven fact). If you breezed through the python bootcamp and are sitting and twiddling your thumbs, try brushing up your bash programming skills by doing the following questions using the same wine.txt file. Many of them are the same or similar to what you just did in python. Think about how these operations are conceptually different when you write in bash compared to python. Check out this [cheat sheet](http://crowdsourcing-class.org/bash-commands.html) of bash commands to get you started.
-
-1. How many lines are there in the file?
-2. What is the distribution over star ratings?
-3. How many reviews contain the word 'a'?
-4. How many reviews contain the word 'fruit'?
-5. How many reviews contain the word 'mineral'?
-6. Make a new file containing the full text of all the reviews, with one word per line. (You don't have to do this in python, but I think that is the easiest way. If you want to try a new command-line tool, check out [sed](http://stackoverflow.com/questions/1853009/replace-all-whitespace-with-a-line-break-paragraph-mark-to-make-a-word-list)). 
-7. How many total words appear in your list?
-8. How many unique words appear in your list?
-9. What are the 10 most common words used across all of the reviews, and how many times is each used?
-10. How many times does the word "red" appear? (Be careful of capitalization!)

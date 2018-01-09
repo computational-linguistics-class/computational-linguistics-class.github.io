@@ -1,0 +1,79 @@
+******	3
+*****	53
+****	177
+***	499
+**	162
+*	43
+
+a	623
+and	587
+the	521
+-	389
+of	366
+but	365
+I	251
+to	237
+with	207
+it	196
+
+623
+
+103
+
+13
+
+-	389
+quite	229
+good	206
+top	195
+bit	153
+touch	125
+wine	115
+bare	107
+fruit	107
+rather	104
+
+-	17
+lovely	13
+lovely.	11
+bare	9
+really	8
+fine	7
+fruit.	6
+nose.	6
+quite	6
+long.	5
+
+-	18
+bit	10
+top	8
+wine	7
+rather	6
+fruit	5
+touch	5
+fruit.	4
+slightly	4
+decent	3
+
+red	11
+bone	2
+bright,	2
+champagne.	2
+fairly	2
+fruits,	2
+fruits.	2
+seems	2
+appears	1
+appetising.	1
+
+white	16
+bottle	3
+bread	3
+drink	3
+flavours.	3
+wines	3
+96	2
+acidity	2
+almond	2
+apples	2
+
