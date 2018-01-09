@@ -144,20 +144,39 @@ allowing you to iterate line-by-line. I won't go through an example here, but I 
 [csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout
 the semester. 
 
+Writing a file:
 {% highlight python %}
 >>> file = open('test.txt', 'w')
 >>> for s in ['line1', 'line2', 'line3', 'line4'] : 
-...     file.write(s+'\n')
-... 
+>>>     file.write(s+'\n')
 >>> file.close()
->>> contents = open('test.txt').read()
+{% endhighlight %}
+
+Reading an entire file (if a file is too large to fit easily into memory, you should avoid this);
+``` python
+>>> with open('test.txt') as f:
+>>>    contents = f.read()
 >>> contents
 'line1\nline2\nline3\nline4\n'
->>> contents = open('test.txt').readlines()
+```
+
+Or alternately:
+{% highlight python %}
+>>> with open('test.txt') as f:
+>>>     contents = readlines()
 >>> contents
 ['line1\n', 'line2\n', 'line3\n', 'line4\n']
 {% endhighlight %}
 
+Reading a file line-by-line without loading it entirely into memory:
+``` python
+>>> contents = ''
+>>> with open('test.txt') as f:
+>>>     for line in f:
+>>>         contents += line
+>>> contents
+'line1\nline2\nline3\nline4\n'
+```
 No need to submit anything for this question, but you should make sure you are familiar with Python file I/O.
 
 ### 2.2. Regular Expressions
