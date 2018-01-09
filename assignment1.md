@@ -34,14 +34,14 @@ This week we will start writing some code! We will be using Python for most of t
 
 You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
 
-### 1. Bash Skills
+## 1. Bash Skills
 For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are on Windows, please install [PuTTY](http://www.putty.org/) or its more modern, easier-to-use cousin, [MobaXterm](https://mobaxterm.mobatek.net/), and follow the instructions [here](https://www.seas.upenn.edu/cets/answers/remote.html).
 
 The term `bash` refers to both the program (or shell)--run by the terminal--that you type your commands into, and the programming language you use to write those commands. There exist other shells, such as `zsh` or `fish`, but we will stick to `bash`. When you type commands into the shell, we refer to these as bash commands. When you write a file with a long sequence of these command, we call that a bash program.
 
 In order to learn bash, we've picked 3 hopefully useful commands for you to implement. When you've finished getting your solutions working on the command line, open up `bash_questions.py` and copy them into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
 
-#### 1.1. Creating a Vocabulary
+### 1.1. Creating a Vocabulary
 For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
 
 A vocabulary file contains a list of all of the words in a text document along with a count of the number of occurences of each  word.
@@ -68,7 +68,7 @@ too.		1
 using		1
 ```
 
-#### 1.2. Printing Lines with Results
+### 1.2. Printing Lines with Results
 For this question, you're allowed to use `ls`, if statements, for statements, `grep`, and `echo`.
 
 Check for a file named `results.txt` in each directory within a specified directory.
@@ -100,7 +100,7 @@ Accuracy: 44.34
 Accuracy: 45.34
 ```
 
-#### 1.3 Extracting Accuracies
+### 1.3 Extracting Accuracies
 Frequently, when dealing with large sets of experiments, you want
 to summarize a bunch of semi-structured results text files quickly.
  
@@ -119,10 +119,12 @@ should be transformed to the line
 Base 0.3267522959523133
 ```
 
-### 3. File IO
+## 3. Python Skills
 
+All your answers should be added to `python_questions.py`. Do not include any important statement other than the ones already there.
+
+### 3.1 File I/O
 You can open, read, and write files using the aptly-named open(), read(), and write() commands. read() returns the entire contents of the file as a string. readlines() will split on the newline character and return the lines as a list, which is generally nicer for allowing you to iterate line-by-line. I won't go through an example here, but I highly recommend playing with the [csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout the semester. 
-
 
 {% highlight python %}
 >>> file = open('test.txt', 'w')
@@ -138,7 +140,9 @@ You can open, read, and write files using the aptly-named open(), read(), and wr
 ['line1\n', 'line2\n', 'line3\n', 'line4\n']
 {% endhighlight %}
 
-### 4. Text processing in Python
+No need to submit anything for this question, but you should make sure you are familiar with Python file I/O.
+
+### 3.2 Text processing in Python
 
 For this part, you will need to submit your code to answer the following questions. You should download the [iPython notebook](assignments/downloads/python-bootcamp/IPythonBootcamp.ipynb) file, and do all of your work there. You can submit your entire notebook at the end of the assignment.
  
