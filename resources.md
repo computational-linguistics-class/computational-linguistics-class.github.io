@@ -29,3 +29,16 @@ NLP courses at other universities
 * [Yoav Artzi's Natural Language Processing class at Cornell](http://yoavartzi.com/cs5740-sp18-temp/)
 * [Jason Eisner's NLP class at Johns Hopkins University](https://www.cs.jhu.edu/~jason/465/)
 * [Chris Manning and Richard Socher's course at Stanford](https://web.stanford.edu/class/cs224n/)
+
+
+
+### Python resources
+=============================================================
+
+- Python itself has good documentation and a decent getting started page [here](https://docs.python.org/2/tutorial/introduction.html).
+- Python gives a list of good tutorials [here](https://wiki.python.org/moin/BeginnersGuide/Programmers). Many are focused on people with no programming background, but two that seem a bit less introductory are the [Python in 10 minutes](http://www.stavros.io/tutorials/python/) tutorial, and [Google's Python class](https://developers.google.com/edu/python/).
+- There is a [Coursera course on Python](https://www.coursera.org/course/interactivepython) running now.
+- [Scikit-learn](http://scikit-learn.org/stable/) is an amazingly easy library for doing machine learning in Python. It is also wonderfully verbosely documented with tons of examples.
+- [Kaggle has some tutorials on sklearn](https://www.kaggle.com/c/data-science-london-scikit-learn/visualization)
+- [NLTK](http://www.nltk.org/) is a great library for doing natural language processing in Python.  It also has an accompanying book called [Intro to NLP in Python](http://www.nltk.org/book/). 
+- [spaCy](https://spacy.io) is another excellent Python NLP library.  It also has a cleverly named visualization tool, [displaCy](https://spacy.io/usage/visualizers).
