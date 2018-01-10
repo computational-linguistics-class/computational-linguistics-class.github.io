@@ -5,8 +5,8 @@ img_link: http://xkcd.com/353/
 caption: Hello world!
 title: Homework 2 "Text Classification"
 active_tab: homework
-release_date: 2018-01-17
-due_date: 2018-01-24 11:00:00EST
+release_date: 2017-01-17
+due_date: 2017-01-24 11:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -33,6 +33,21 @@ Text Classification <span class="text-muted">: Assignment 2</span>
 In our first class, we introduced the concept of text classification. To follow this up, we will be first review several metrics, to make sure you fully understand how text classification problems, among many other natural language processing tasks, are evaluated. From there, we will ask you to consider an example text classification problem: identifying words as simple vs. complex. With our provided dataset, you will try several baseline approaches to this problem, before using sklearn in Python to implement Naive Bayes and Logistic Regression classifiers. Finally, you will create a classifier of your own to this problem, and submit your predicted labels on a provided unlabeled test set. A leaderboard will be set up, so you can see how your final system compares to others in the class.
 
 As with last week, you will submit your assignment via Gradescope.
+
+## 1. Evaluation Metrics
+
+- You need to write functions for accuracy, precision, recall, and f-score (may not use sklearn built-in functions to calculate).
+- We will give a set of true labels, and a set of predicted labels, and you need to calculate the precision, recall, and f-score, and submit them in your README file.
+
+## 2. Complex Word Identification
+
+Automated text simplification is a field in Natural Language Processing, where the goal is to take as input a complex text (e.g. a published journal article), and return a text that is more easily understood by a larger audience. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand (complex), and which words are easy to understand (simple).
+
+For this problem, you will be given a dataset of words and their corresponding sentences, split into training, development, and test sets. 
+
+### 2.1: A simple baseline
+
+- All-Complex baseline
 
 ## 1. Bash Skills
 For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are 
