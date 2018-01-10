@@ -1,7 +1,7 @@
 -
   date: 2018-01-10
-  slides: 
-  title: Course Intro / Text Classification
+  slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
+  title: Course Intro / Text Classification and Sentiment Analysis
   readings:   
     - 
       title: Chapter 6 "Naive Bayes Classification and Sentiment"
