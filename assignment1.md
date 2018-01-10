@@ -51,7 +51,7 @@ Our [basic](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and [advanced]
 
 When you've finished getting your solutions
 working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), 
-and copy your solutions into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
+and copy your solutions into the appropriate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
 
 ### 1.1. Creating a Vocabulary
 For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
