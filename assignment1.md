@@ -32,7 +32,7 @@ Python and Bash Skills <span class="text-muted">: Assignment 1</span>
 =============================================================
 This week we will start writing some code! We will be using Python for most of this course, and this assignment examines your skills 
 writing regular expressions, control flows, and string processing in Python. Being able to process files from the command line will
-also be incredibly useful for your life as a computational linguiust, and we ask you to implement several operations in Bash. 
+also be incredibly useful for your life as a computational linguist, and we ask you to implement several operations in Bash. 
 
 You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
 
@@ -110,7 +110,7 @@ may output:
 1
 Accuracy: 54.44
 Accuracy: 52.23
-2
+3
 Accuracy: 44.34
 Accuracy: 45.34
 ```
@@ -144,7 +144,7 @@ If you'd like to include any import statements other than the ones already provi
 You can open, read, and write files using the aptly-named open(), read(), and write() commands. read() returns the entire contents of
 the file as a string. readlines() will split on the newline character and return the lines as a list, which is generally nicer for 
 allowing you to iterate line-by-line. I won't go through an example here, but I highly recommend playing with the
-[csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout
+[csv module](https://docs.python.org/3/library/csv.html), which is incredibly useful and we will likely use regularly throughout
 the semester. 
 
 Writing a file:
@@ -227,7 +227,7 @@ answer to standard output, followed by a newline. Since this question is meant a
 so start early and come ask for help if you get stuck!
 For questions where there are ties, either answer will be accepted as correct.
 I highly recommend looking into the functions available in the
-[python string module](https://docs.python.org/2/library/string.html).
+[python string module](https://docs.python.org/3/library/string.html).
 
 1. What is the distribution over star ratings?
 2. What are the 10 most common words used across all of the reviews, and how many times is each used?
