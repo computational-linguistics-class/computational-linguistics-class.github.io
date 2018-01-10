@@ -1,11 +1,12 @@
 ---
 layout: default
-img: Alexa.png
-caption: Hello Alexa    
-title: Homework 1 "Say Hello Alexa"
+img: python.jpg
+img_link: http://xkcd.com/353/
+caption: Hello world!
+title: Homework 1 "Python and Bash Skills"
 active_tab: homework
-release_date: 2017-01-12
-due_date: 2017-01-19T14:00:00EST
+release_date: 2018-01-10
+due_date: 2018-01-17 11:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -18,37 +19,229 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 {% endif %}
 <!-- End of check whether the assignment is up to date -->
 
+
 <div class="alert alert-info">
-This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
 </div>
 
+<div class="alert alert-info" markdown="span">
+Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
 
-Create a simple hello response bot using the Alexa SDK <span class="text-muted">: Assignment 1</span> 
+
+Python and Bash Skills <span class="text-muted">: Assignment 1</span> 
 =============================================================
+This week we will start writing some code! We will be using Python for most of this course, and this assignment examines your skills 
+writing regular expressions, control flows, and string processing in Python. Being able to process files from the command line will
+also be incredibly useful for your life as a computational linguiust, and we ask you to implement several operations in Bash. 
 
-The point of the first assignment is to get to acquainted with the Amazon Alexa SDK. In the Alexa Prize we want to design a social bot. The first step is to be able to integrate  with Alexa SDK. This involves creating an AWS account and learning how to start up and integrate with AWS Lambda. This code will be the base for all of the interactions and it makes sense to start with a practical "hello world" or more precisely a response. 
+You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
 
-You should be excited about this assignment! You will be able to chat with your own bot!
+## 1. Bash Skills
+For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are 
+on Windows, please install [PuTTY](http://www.putty.org/) or its more modern, easier-to-use cousin, [MobaXterm](https://mobaxterm.mobatek.net/),
+and follow the instructions [here](https://www.seas.upenn.edu/cets/answers/remote.html).
 
-The idea is to be able to chat with an Alexa enabled device. For example:
+The term `bash` refers to both the program (or shell)--run by the terminal--that you type your commands into, and the programming 
+language you use to write those commands. There exist other shells, such as `zsh` or `fish`, but we will stick to `bash`. When you type 
+commands into the shell, we refer to these as bash commands. When you write a file with a long sequence of these command, we call that a bash program.
+
+In order to learn bash, we've picked 3 commands for you to implement, each of which we've found useful in our research.
+These questions might be tricky; you should take advantage of Piazza and TA office hours for guidance.
+Our [basic](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and [advanced](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.md) bash tutorials may be of particular use.
+
+When you've finished getting your solutions
+working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), 
+and copy your solutions into the appriorate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
+
+### 1.1. Creating a Vocabulary
+For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
+
+A vocabulary file contains a list of all of the words in a text document along with a count of the number of occurences of each word.
+
+Given a text file, output a list of the words present, tab-separated by their frequency. The words should be ordered from most
+frquent to least frequent. You can assume all words are space-separated.
+
+For example, the input file:
+```
+Seven lazy researchers like using bash.
+The researchers like, like Python too.
+```
+
+Should output
+```
+like		2
+researchers		2
+bash.		1
+lazy		1
+like,		1
+Python		1
+Seven		1
+The		1
+too.		1
+using		1
+```
+
+### 1.2. Printing Lines with Results
+For this question, you're allowed to use `ls`, if statements, for statements, `grep`, and `echo`.
+
+Check for a file named `results.txt` in each directory within a specified directory.
+For each existing `results.txt`, print the directory name and then
+only all lines from the corresponding `results.txt` that contain
+the following substring:
+```
+Accuracy:
+```
+
+For example, the directory structure
+```
+root_directory/
+    1/
+        results.txt
+    2/
+    3/
+        results.txt
+```
+
+may output:
+
+```
+1
+Accuracy: 54.44
+Accuracy: 52.23
+2
+Accuracy: 44.34
+Accuracy: 45.34
+```
+
+### 1.3 Extracting Accuracies
+Frequently, when dealing with large sets of experiments, you want
+to summarize a bunch of semi-structured results text files quickly.
  
-To Device:
-“Alexa, open Jowtest.”
-"Hi."
-Device responds:
-"Hello."
+ In this exercise, you'll use bash to take results of the form found 
+ in `accuracies.txt` and pull out the accuracies as well as the name
+ of the experiment.
+
+For example, the line
+```
+Base accuracy: 0.3267522959523133 time: .4555
+```
+
+should be transformed to the line
+
+```
+Base 0.3267522959523133
+```
+
+## 2. Python Skills
+
+All your answers should be added to `python_questions.py`, which can be downloaded [here](downloads/hw1/python_questions.py).
+If you'd like to include any import statements other than the ones already provided, post on Piazza for permission first.
+
+### 2.1. File I/O
+You can open, read, and write files using the aptly-named open(), read(), and write() commands. read() returns the entire contents of
+the file as a string. readlines() will split on the newline character and return the lines as a list, which is generally nicer for 
+allowing you to iterate line-by-line. I won't go through an example here, but I highly recommend playing with the
+[csv module](https://docs.python.org/2/library/csv.html), which is incredibly useful and we will likely use regularly throughout
+the semester. 
+
+Writing a file:
+{% highlight python %}
+>>> file = open('test.txt', 'w')
+>>> for s in ['line1', 'line2', 'line3', 'line4'] : 
+>>>     file.write(s+'\n')
+>>> file.close()
+{% endhighlight %}
+
+Reading an entire file (if a file is too large to fit easily into memory, you should avoid this);
+``` python
+>>> with open('test.txt') as f:
+>>>    contents = f.read()
+>>> contents
+'line1\nline2\nline3\nline4\n'
+```
+
+Or alternately:
+{% highlight python %}
+>>> with open('test.txt') as f:
+>>>     contents = readlines()
+>>> contents
+['line1\n', 'line2\n', 'line3\n', 'line4\n']
+{% endhighlight %}
+
+Reading a file line-by-line without loading it entirely into memory:
+``` python
+>>> contents = ''
+>>> with open('test.txt') as f:
+>>>     for line in f:
+>>>         contents += line
+>>> contents
+'line1\nline2\nline3\nline4\n'
+```
+No need to submit anything for this question, but you should make sure you are familiar with Python file I/O.
+
+### 2.2. Regular Expressions
+Regular expressions are a powerful way to process text by describing text patterns. If you are new to regular expressions,
+[Chapter 2](https://web.stanford.edu/~jurafsky/slp3/2.pdf) in the course textbook has a good introduction.
+
+In `python_questions.py`, fill in the functions `check_for_foo_or_bar` and  `replace_rgb`
+according to their function docstrings. Use the builtin Python regular expressions library, whose documentation is found
+[here](https://docs.python.org/3.4/library/re.html).
+
+You may want to write yourself test cases to make sure you're covering all edgecases. See the [unittest](https://docs.python.org/3.4/library/unittest.html) documentation.
+
+### 2.3 Edit Distance
+To compute the similarity between two strings of text, linguists often use a metric called edit distance. Edit distance measures how 
+similar two strings are based on the number of insertions, deletions, and substitutions necessary to turn one of the strings into the 
+other.
+
+Use dynamic programming to implement edit distance. [Chapter 2](https://web.stanford.edu/~jurafsky/slp3/2.pdf) in the textbook provides 
+pseudocode that you can follow.
+
+Write your solution in the `edit_distance` function in `python_questions.py`.
+
+### 2.4. Text processing in Python
+
+For this part, you will need to submit your code to answer the following questions. 
  
-Be creative and have fun.
- 
+We will be playing with a small but oh so wonderful data set of wine reviews! You can download the data [here](downloads/hw1/data.tgz). You can down it and unpack it as follows, and should see two files:
 
-1. Sign up for [Amazon AWS](https://aws.amazon.com/console/). Note that you should to sign up with your @seas.upenn.edu account, and then sign up for [AWS Educate](https://aws.amazon.com/education/awseducate/apply/).  You will need your [account ID](https://console.aws.amazon.com/billing/home?#/account), which you can find under "my account" from the AWS Admin Panel.  This should give you a $100 credit that you will use for the third assignment when you train your first neural network. You will also get [Free Tier access](https://aws.amazon.com/free/)
-2. Figure out how to start a AWS Lambda session
-3. Follow the instructions from [https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testing-an-alexa-skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/testing-an-alexa-skill)
-4. Setup a minimalist python interface. One example to draw from is [https://github.com/anjishnu/ask-alexa-pykit](https://github.com/anjishnu/ask-alexa-pykit).
-Use the python ASK to respond "Hello". If you want to make something more interesting then maybe something like if utterance is X then say Y else "don't know". 
+{% highlight tcsh %}
+$ wget http://computational-linguistics-class.org/downloads/hw1/data.tgz
+$ tar -xzvf data.tgz 
+x data/
+x data/stopwords.txt
+x data/wine.txt
+$ ls data
+stopwords.txt	wine.txt
+{% endhighlight %}
 
-You should test your skill using Echosim.io.
+`wine.txt` is in the format of one review per line, followed but a star rating between 1 and 5 (except for 3 reviews, where the review 
+decided to go rogue and give 6 stars. Pft.) The text of the review and the star rating are separated by a single tab character. There is also a file called `stopwords.txt`, which you will use for question 6.
 
- 
+In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
+answer to standard output, followed by a newline. Since this uestion is meant as a tutorial, there are no secrets: your script should produce
+[this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
+so start early and come ask for help if you get stuck!
+For questions where there are ties, either answer will be accepted as correct.
+I highly recommend looking into the functions available in the
+[python string module](https://docs.python.org/2/library/string.html).
 
-5. Submit homework [https://goo.gl/forms/Zpo76BTKgjDfXg1P2](https://goo.gl/forms/Zpo76BTKgjDfXg1P2).
+1. What is the distribution over star ratings?
+2. What are the 10 most common words used across all of the reviews, and how many times is each used?
+3. How many times does the word 'a' appear?
+4. How many times does the word 'fruit' appear?
+5. How many times does the word 'mineral' appear?
+6. Common words (like 'a') are not as interesting as uncommon words (like 'mineral'). In natural language processing, we call these 
+common words "stop words" and often remove them before we process text. stopwords.txt gives you a list of some very common words. Remove 
+these stopwords from your reviews. Also, try converting all the words to lower case (since we probably don't want to count 'fruit' and 
+'Fruit' as two different words). Now what are the 10 most common words across all of the reviews, and how many times is each used?
+7. You should continue to use the preprocessed reviews for the following questions (lower-cased, no stopwords).  What are the 10 most used words among the 5 star reviews, and how many times is each used? 
+8. What are the 10 most used words among the 1 star reviews, and how many times is each used? 
+9. Gather two sets of reviews: 1) Those that use the word "red" and 2) those that use the word "white". What are the 10 most frequent words in the "red" reviews which do NOT appear in the "white" reviews?
+10. What are the 10 most frequent words in the "white" reviews which do NOT appear in the "red" reviews?
+
+Thats it! Again, you can compare your answers against [our key](downloads/hw1/key.txt) to see if you have done things correctly. 
+
+Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit only the two Python files using Gradescope.
+
+

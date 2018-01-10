@@ -9,7 +9,7 @@ active_tab: lectures
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 <!-- End create a HTML anchor for the most recent lecture -->
 
-The lecture schedule is tentative and subject to change as the term progresses.
+The lecture schedule will be updated as the term progresses. 
 
 <table class="table table-striped">
   <thead>
