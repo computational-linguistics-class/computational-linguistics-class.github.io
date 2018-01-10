@@ -1,8 +1,8 @@
 ---
 layout: default
 img: python.jpg
-img_link: https://imgs.xkcd.com/comics/cautionary.png
-caption: Talk to your kids about bash, too.
+img_link: https://xkcd.com/353
+caption: Hello world!
 title: John's Bash for NLP tutorial, basics
 active_tab: resources
 release_date: 2018-01-10

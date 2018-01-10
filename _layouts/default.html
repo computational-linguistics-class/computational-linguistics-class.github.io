@@ -65,7 +65,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Homework<span class="caret"></span></a>
               <ol class="dropdown-menu">
                 <li><a href="{{ site.baseurl }}/assignment1.html">Homework 1</a></li>
-                <!-- li><a href="assignment1.html" class="not-active">Text Classification</a></li --!>
+                <!-- li><a href="assignment1.html" class="not-active">Text Classification</a></li -->
               </ol>
 
             <li id="staff"><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
@@ -81,7 +81,7 @@
       <div class="row">
         <div class="col-sm-2 hidden-sm hidden-xs">
           {% if page.img_link %}<a href="{{ page.img_link }}">{% endif %} 
-          <img src="assets/img/{{ page.img }}" class="img-responsive img-rounded" alt="{{ page.picture }}"/>
+          <img src="{{ site.baseurl }}/assets/img/{{ page.img }}" class="img-responsive img-rounded" alt="{{ page.picture }}"/>
           {% if page.img_link %}</a>{% endif %} 
           <span class="text-muted"><i>{{ page.caption }}</i></span>
 
