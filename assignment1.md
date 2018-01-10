@@ -53,6 +53,14 @@ When you've finished getting your solutions
 working on the command line, use the template files `bash_q1.sh`, `bash_q2.sh`, and `bash_q3.sh` which can be downloaded [here](downloads/hw1/bash.zip), 
 and write your solution in the file.
 
+In each bash template, you'll notice the variable `$1`.
+This refers to the index-1 argument in the command used to invoke the bash script.
+For example, to test `bash_q1.sh`, you may run
+
+        ./bash_q1.sh PATH_TO_FILE
+
+Within `bash_q1.sh`, the variable `$1` refers to `PATH_TO_FILE`.
+
 ### 1.1. Creating a Vocabulary
 This question corresponds to `bash_q1.sh`.
 For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
