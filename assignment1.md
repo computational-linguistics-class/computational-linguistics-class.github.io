@@ -50,16 +50,17 @@ These questions might be tricky; you should take advantage of Piazza and TA offi
 Our [basic](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and [advanced](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.md) bash tutorials may be of particular use.
 
 When you've finished getting your solutions
-working on the command line, use the template file `bash_questions.py` which can be downloaded [here](downloads/hw1/bash_questions.py), 
-and copy your solutions into the appropriate places for submission. *You will need to modify your commands slightly to use the Python function arguments.*
+working on the command line, use the template files `bash_q1.sh`, `bash_q2.sh`, and `bash_q3.sh` which can be downloaded [here](downloads/hw1/bash.zip), 
+and write your solution in the file.
 
 ### 1.1. Creating a Vocabulary
+This question corresponds to `bash_q1.sh`.
 For this question, you are allowed to use `sed`, `tr`, `sort`, `uniq`, and `awk`.
 
 A vocabulary file contains a list of all of the words in a text document along with a count of the number of occurences of each word.
 
-Given a text file, output a list of the words present, tab-separated by their frequency. The words should be ordered from most
-frquent to least frequent. You can assume all words are space-separated.
+Given a text file, output a list of the words present, tab-separated by their frequency. The words should be ordered from least
+frquent to most frequent. You can assume all words are space-separated.
 
 For example, the input file:
 ```
@@ -69,19 +70,20 @@ The researchers like, like Python too.
 
 Should output
 ```
-like		2
-researchers		2
-bash.		1
-lazy		1
-like,		1
-Python		1
-Seven		1
-The		1
-too.		1
-using		1
+bash.  1
+lazy 1
+like,  1
+Python 1
+Seven  1
+The  1
+too. 1
+using  1
+like 2
+researchers  2
 ```
 
 ### 1.2. Printing Lines with Results
+This question corresponds to `bash_q2.sh`.
 For this question, you're allowed to use `ls`, if statements, for statements, `grep`, and `echo`.
 
 Check for a file named `results.txt` in each directory within a specified directory.
@@ -114,6 +116,7 @@ Accuracy: 45.34
 ```
 
 ### 1.3 Extracting Accuracies
+This question corresponds to `bash_q3.sh`.
 Frequently, when dealing with large sets of experiments, you want
 to summarize a bunch of semi-structured results text files quickly.
  
@@ -219,7 +222,7 @@ stopwords.txt	wine.txt
 decided to go rogue and give 6 stars. Pft.) The text of the review and the star rating are separated by a single tab character. There is also a file called `stopwords.txt`, which you will use for question 6.
 
 In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
-answer to standard output, followed by a newline. Since this uestion is meant as a tutorial, there are no secrets: your script should produce
+answer to standard output, followed by a newline. Since this question is meant as a tutorial, there are no secrets: your script should produce
 [this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
 so start early and come ask for help if you get stuck!
 For questions where there are ties, either answer will be accepted as correct.
