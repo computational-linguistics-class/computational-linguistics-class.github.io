@@ -1,37 +1,39 @@
 ---
 layout: default
 img: python.jpg
-img_link: http://xkcd.com/353/
+img_link: https://xkcd.com/353
 caption: Hello world!
 title: John's Bash for NLP tutorial, basics
 active_tab: resources
 release_date: 2018-01-10
 ---
 
+Basic bash for NLP tutorial
+===============================
 
 Bash is a language that allows for easy manipulation of Unix-like computing environments. 
 Frequently in NLP research, quick simple tasks like "how many lines are there in this file" or "how can I copy a file to 100 places at the same time" arise, and can best be solved with `bash`, and some easily-usable affiliate programs.
 
 Beyond this, Bash is much more versatile and useful than many give it credit for, and advanced knowledge of bash can make projects involving very large systems and/or multi-step pipelines *truly a joy*. 
 
-## when to use bash; when not to
+## When to use bash; When not to
 
 I love bash dearly. 
 That's not to say it's the answer to every problem in NLP. 
 
-### use bash when
+### Use bash when
  - You need to move, and/or rename one or many files
  - You need to set up folder structures, create symbolic links (more on this later), and generally change the file system.
  - You want basic statistics on one or many files (e.g. "I have 3,000,000 lines of log files, and if the word 'error' appears, something failed. Did it ever appear?")
  - You want to submit multiple jobs to the scheduler with similar parameters
  - You want to set up a "pipeline", which means a set of processing steps that takes input files and produces output files, using multiple independent programs.
 
-### don't use bash when
+### Don't use bash when
  - You need to do a lot of arithmetic computation, especially division/multiplication
  - You need library support (for, say, reading TSVs, or JSON, etc.) 
  - You plan to make copious use of fun data structures like sets, counters,  UnionFind, MyArbitraryClass, or TrieHeapMapBellmanFordImpl
 
-## file system and unix basics
+## File system and unix basics
 
 As we said in **use bash when**, we frequently use bash to manipulate a Unix file system.
 The unix filesystem is a rooted tree-like data structure. Its root is `/`. This forward slash is known as "root". Below is a diagram showing a selection of the root of the `nlpgrid` filesystem(s). 
@@ -116,10 +118,10 @@ If `loc5` is a file (or didn't exist previously), each file will be copied seque
 
 If you don't want to keep the old file locations, use the `mv` (move) command instead of `cp`.
 
-## reading, editing, analyzing files
+## Reading, editing, analyzing files
 Moving files is great, but actually working with files *contents* is great too.
 
-###  an *optional* aside : vim
+###  An *optional* aside : vim
 
 To integrate file editing into your bash workflow, I highly suggest putting in the time to learn `vim`, the world's best text editor. 
 There's a bit of a learning curve, but many things are googleable, and I'll start you off with two things:
@@ -146,7 +148,7 @@ There's a bit of a learning curve, but many things are googleable, and I'll star
         set grepprg=grep\ -nH\ $*
 
 
-## printing and streams
+## Printing and streams
 
 To pring a file's contents, run the `cat` command. (This stands for "concatentate". If you run `cat` on multiple files, it prints them all out, one after the other.)
 
@@ -174,7 +176,7 @@ redirects the `stdout` stream to the file specified after it.
 
         cat file1 file2 file3 | tee fileall
 
-## searching and analysis
+## Searching and analysis
 
 To search for a string `string` within files `file1`, `file2`, `file3`, use the program `grep` as follows:
 
@@ -206,7 +208,7 @@ Similarly, you can run both `wc` and `grep` on output piped from some other proc
  - `grep -r pattern dir` will recursively grep through a given directory `dir`.
  - `wc -w` will just give the word count, similarly `wc -l` will just give the line count.
 
-## shortcuts and efficiency
+## Shortcuts and efficiency
 
 Working with files in bash can be much faster than using a GUI. 
 These shortcuts will help you get up to speed.
@@ -275,7 +277,7 @@ Note that you'll have to get a feel for what a "word" means to bash. For example
  - `!$` runs the last word of the previous command.
 
 
-## epilogue: compression
+## Epilogue: compression
 
 If you find files with the extension `.tgz` `.tar.bz2`, `.tar.gz`, never fear. These are your friends in the unix environment.
 

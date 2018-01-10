@@ -8,6 +8,8 @@ active_tab: resources
 release_date: 2018-01-10
 ---
 
+Advanced bash for NLP tutorial
+===============================
 
 Bash can be used to do complex things faster than you could whip up a Python script to do the same things.
 However, because of tricky syntax and not altogether intuitive semantics, it tends to push people away when it tries to show love.
@@ -150,15 +152,15 @@ but useless syntax error.
 
 ### Path and file manipulation : `sed`, advanced `grep`
 
-### file manipulation: `cut`, `paste`, `column`
+### File manipulation: `cut`, `paste`, `column`
 
-### file mainpulation: `sort`, `uniq`
+### File mainpulation: `sort`, `uniq`
 
-### arithmetic: the dark arts
+### Arithmetic: the dark arts
 
-### case study on `xargs` : when you have too many files.
+### Case study on `xargs` : when you have too many files.
 
-### case study on efficiency in filesystems
+### Case study on efficiency in filesystems
 
 ### Symbolic links
 Symoblic links are great when you want to deal with nice pretty filepaths, but your data is in
