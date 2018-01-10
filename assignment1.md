@@ -21,8 +21,15 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 
 
 <div class="alert alert-info">
-This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }}. 
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}. 
 </div>
+
+
+<div class="alert alert-danger">
+Most homework assignments in this class can be done with a partner, but this one should be done on your own. 
+</div>
+
+
 
 <div class="alert alert-info" markdown="span">
 Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
