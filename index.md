@@ -38,10 +38,10 @@ Instructor
 : [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
 
 Discussion Forum
-: [Piazza](piazza.com/upenn/spring2018/cis530)
+: [Piazza](https://piazza.com/upenn/spring2018/cis530)
 
 Time and place
-: Spring 2018, Mondays and Wednesdays 12-1:30, 
+: Spring 2018, Mondays and Wednesdays 12-1:30, Towne 217
 
 Textbook
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
