@@ -198,7 +198,10 @@ In `python_questions.py`, fill in the functions `check_for_foo_or_bar` and  `rep
 according to their function docstrings. Use the builtin Python regular expressions library, whose documentation is found
 [here](https://docs.python.org/3.4/library/re.html).
 
-You may want to write yourself test cases to make sure you're covering all edgecases. See the [unittest](https://docs.python.org/3.4/library/unittest.html) documentation.
+You may want to write yourself test cases to make sure you're covering all edgecases.
+See the [unittest](https://docs.python.org/3.4/library/unittest.html) documentation.
+
+I also highly recommend testing out your expressions using [this](https://regex101.com/) fancy GUI tool.
 
 ### 2.3 Edit Distance
 To compute the similarity between two strings of text, linguists often use a metric called edit distance. Edit distance measures how 
