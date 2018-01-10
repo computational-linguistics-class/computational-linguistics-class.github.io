@@ -28,13 +28,11 @@ This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
 
 
-Python and Bash Skills <span class="text-muted">: Assignment 1</span> 
+Text Classification <span class="text-muted">: Assignment 2</span> 
 =============================================================
-This week we will start writing some code! We will be using Python for most of this course, and this assignment examines your skills 
-writing regular expressions, control flows, and string processing in Python. Being able to process files from the command line will
-also be incredibly useful for your life as a computational linguist, and we ask you to implement several operations in Bash. 
+In our first class, we introduced the concept of text classification. To follow this up, we will be first review several metrics, to make sure you fully understand how text classification problems, among many other natural language processing tasks, are evaluated. From there, we will ask you to consider an example text classification problem: identifying words as simple vs. complex. With our provided dataset, you will try several baseline approaches to this problem, before using sklearn in Python to implement Naive Bayes and Logistic Regression classifiers. Finally, you will create a classifier of your own to this problem, and submit your predicted labels on a provided unlabeled test set. A leaderboard will be set up, so you can see how your final system compares to others in the class.
 
-You will submit your assignment via Gradescope. We'll post instructions on Piazza. 
+As with last week, you will submit your assignment via Gradescope.
 
 ## 1. Bash Skills
 For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are 
