@@ -43,7 +43,7 @@
   title: Hands-on with Word Embeddings
   readings: 
     - 
-      title: Chapter 15 "Semantics with Dense Vectors"
+      title: Chapter 16 "Semantics with Dense Vectors"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
       required: true 
