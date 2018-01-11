@@ -253,6 +253,6 @@ these stopwords from your reviews. Also, try converting all the words to lower c
 
 Thats it! Again, you can compare your answers against [our key](downloads/hw1/key.txt) to see if you have done things correctly. 
 
-Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit only the two Python files using Gradescope.
+Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit the 3 bash files and the 1 Python file using Gradescope.
 
 
