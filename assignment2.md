@@ -45,9 +45,27 @@ Automated text simplification is a field in Natural Language Processing, where t
 
 For this problem, you will be given a dataset of words and their corresponding sentences, split into training, development, and test sets. 
 
-### 2.1: A simple baseline
+### 2.1: A very simple baseline
 
-- All-Complex baseline
+- Label each word as complex
+- Save precision, recall, and f-score to be graded.
+
+### 2.2: Word length thresholding
+
+- Here, you will calculate the length of each word, and use this to determine word complexity.
+- You need to calculate the precision, recall, and f-score using various length thresholds.
+- Report the highest-performing length threshold you found (using f-score), as well as the precision, recall, and f-score of this threshold.
+
+### 2.3: Word frequency
+
+- You will use word frequencies to determine word complexity.
+- We will provide Google NGram frequencies.
+- You need to find the frequency for each word, and calculate the precision, recall, and f-score using various frequency thresholds.
+- Report the highest-performing frequency threshold you found (using f-score), as well as the precision, recall, and f-score of this threshold.
+
+### 2.4: Naive Bayes
+
+- Next you will use the built-in Naive Bayes model from sklearn, to 
 
 ## 1. Bash Skills
 For this class, we expect you to have access to a Unix command line. If you have a Mac, you can open up the `Terminal` app. If you are 
