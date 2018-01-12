@@ -46,5 +46,5 @@ Python resources
 Bash resources
 ==============
 
-- [John](https://seas.upenn.edu/~johnhew/) has a basic introduction to bash for NLP [here](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and a discussion of advanced topics in bash [here](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.md).
+- [John](https://seas.upenn.edu/~johnhew/) has a basic introduction to bash for NLP [here](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.html), and a discussion of advanced topics in bash [here](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.html).
 - Kevin Knight of the University of Southern California has a nice unix skills for NLP tutorial [here](http://www.isi.edu/natural-language/mt/unix.txt).

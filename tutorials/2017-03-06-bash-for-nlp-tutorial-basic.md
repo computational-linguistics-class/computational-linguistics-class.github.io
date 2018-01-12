@@ -37,7 +37,8 @@ That's not to say it's the answer to every problem in NLP.
 
 As we said in **use bash when**, we frequently use bash to manipulate a Unix file system.
 The unix filesystem is a rooted tree-like data structure. Its root is `/`. This forward slash is known as "root". Below is a diagram showing a selection of the root of the `nlpgrid` filesystem(s). 
-![My helpful screenshot]({{site.url}}/public/unix-filesystem.png)
+<img src="{{site.url}}/assets/img/unix-filesystem.png" alt="My helpful screenshot" style="height: 400px;"/>
+<!--![My helpful screenshot]({{site.url}}/assets/img/unix-filesystem.png)-->
 
 When using bash, you are always "at" one of the nodes in the filesystem tree. 
 Every command you run is run relative to your current node, or "folder", or more commonly, "directory."
