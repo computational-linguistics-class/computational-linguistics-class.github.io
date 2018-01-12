@@ -128,20 +128,24 @@ This question corresponds to `bash_q3.sh`.
 Frequently, when dealing with large sets of experiments, you want
 to summarize a bunch of semi-structured results text files quickly.
  
- In this exercise, you'll use bash to take results of the form found 
- in `accuracies.txt` and pull out the accuracies as well as the name
+ In this exercise, you'll use bash to take results of the form below
+ in the file at path `$1` and pull out the accuracies as well as the name
  of the experiment.
 
-For example, the line
+For example, the lines
 ```
 Base accuracy: 0.3267522959523133 time: .4555
+Augment accuracy: 0.34124123125 time: .785 steps 5
 ```
 
-should be transformed to the line
+should be transformed to the lines
 
 ```
 Base 0.3267522959523133
+Augment 0.34124123125 
 ```
+
+_Note: The bash template you downloaded may ask you to average the lines. Don't do that; follow the example above._
 
 ## 2. Python Skills
 
