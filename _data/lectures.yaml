@@ -7,7 +7,6 @@
       title: Chapter 6 "Naive Bayes Classification and Sentiment"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
-      required: true 
 -
   date: 2018-01-15
   title: Martin Luther King, Jr. Day Observed (no classes)
@@ -21,12 +20,16 @@
       title: Chapter 2 "Regular Expressions, Text Normalization, Edit Distance"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
-      required: true 
     - 
       title: Chapter 6 "Naive Bayes Classification and Sentiment"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
-      required: true 
+    - 
+      title: Does This Vehicle Belong to You? Processing the Language of Policing for Improving Police-Community (video)
+      authors: Dan Jurafsky 
+      url: https://vimeo.com/238231994
+      optional: true 
+      note: This invited talk discusses Dan's work on analyzing police body camera data to see if there is a difference in police interactions with black motorists versus white motorists.  He uses text classification to categorize differnt dimensions of the conversations that happen in traffic stops. 
 -
   date: 2018-01-22
   slides: 
@@ -36,7 +39,6 @@
       title: Chapter 15 "Vector Semantics"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
-      required: true 
 -
   date: 2018-01-24
   slides: 
@@ -46,7 +48,6 @@
       title: Chapter 16 "Semantics with Dense Vectors"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
-      required: true 
 -
   date: 2018-01-29
   slides: 
