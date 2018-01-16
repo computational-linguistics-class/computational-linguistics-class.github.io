@@ -40,9 +40,9 @@ Before we start with this text classification task, we need to first determine h
 
 For this problem, you will fill in the following functions:
 
-- get_precision(y_pred, y_true)
-- get_recall(y_pred, y_true)
-- get_fscore(y_pred, y_true)
+- 'get_precision(y_pred, y_true)'
+- 'get_recall(y_pred, y_true)'
+- 'get_fscore(y_pred, y_true)'
 
 Here, 'y_pred' is an 'nx1' list of predicted labels from a classifier, and 'y_true' is an 'nx1' list of the true labels, where 'n' is the number of datapoints.
 
@@ -50,7 +50,7 @@ You may not use sklearn's built-in functions for this, you must instead calculat
 
 ## 2. Complex Word Identification
 
-Automated text simplification is a field in Natural Language Processing, where the goal is to take as input a complex text (e.g. a published journal article), and return a text that is more easily understood by a larger audience. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand (complex), and which words are easy to understand (simple).
+Automated text simplification is a field in Natural Language Processing, where the goal is to take as input a complex text (e.g. a published journal article), and return a text that is more easily understood by a larger audience. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, i.e. 'complex', and which words are easy to understand, i.e. 'simple'.
 
 For this problem, you will be given a dataset of words and their corresponding sentences, split into training, development, and test sets.
 
@@ -64,11 +64,14 @@ Please report the precision, recall, and f-score using both the training data an
 
 ### 2.2: Word length thresholding
 
-- Here, you will calculate the length of each word, and use this to determine word complexity.
-- You need to calculate the precision, recall, and f-score using various length thresholds.
-- Report the range of thresholds attempted.
-- Report the highest-performing length threshold you found on the training data (using f-score), as well as the precision, recall, and f-score of this threshold.
-- Also report the precision, recall, and f-score of your best threshold on the development set.
+For our next baseline, we will use the length of each word, to determine word complexity. 
+
+Specifically, in this problem, you should try setting various thresholds for word length. For example, you might set the threshold for 9, meaning that any words with length less than 9 will be labeled simple in this system, and any words with length at least 9 will be labeled complex. Once you find the best threshold using the training data, use this same threshold for the development data as well.
+
+You will be filling in the function 'word_length_threshold(training_file, development_file)'. This function takes in both the training and development data files, and prints out the precision, recall, and fscore for your best threshold's performance on both the training and development data.
+
+Please again report the precision, recall, and f-score, along with the range of thresholds you tried, and the best threshold to be graded.
+
 
 ### 2.3: Word frequency thresholding
 
