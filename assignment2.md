@@ -11,8 +11,8 @@ attribution: Reno Kriz and Chris Callison-Burch
 ---
 
 <!-- Check whether the assignment is up to date -->
-{% capture this_year %}{{`now` | date: `%Y`}}{% endcapture %}
-{% capture due_year %}{{page.due_date | date: `%Y`}}{% endcapture %}
+{% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
+{% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
 {% if this_year != due_year %} 
 <div class="alert alert-danger">
 Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
@@ -22,7 +22,7 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 
 
 <div class="alert alert-info">
-This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.  This assignment may be done with a partner. 
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner. 
 </div>
 
 <div class="alert alert-info" markdown="span">
@@ -140,7 +140,7 @@ Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we 
 >>> from sklearn.linear_model import LogisticRegression
 {% endhighlight %}
 
-For this problem, you will be filling in the function `logistic_regression(training_file, development_file, counts). This function will train a `Logistic Regression` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
+For this problem, you will be filling in the function `logistic_regression(training_file, development_file, counts)`. This function will train a `Logistic Regression` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
 
 Again, please report the precision, recall, and f-score on the training and development data.
 
@@ -154,7 +154,7 @@ Finally, the fun part! In this section, you will build your own classifier for t
 
 ### Try different models
 
-You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying 'sVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
+You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
 
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
