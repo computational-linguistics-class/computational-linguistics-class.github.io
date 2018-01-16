@@ -48,6 +48,8 @@ Here, 'y_pred' is an 'nx1' list of predicted labels from a classifier, and 'y_tr
 
 You may not use sklearn's built-in functions for this, you must instead calculate these metrics manually. You will be using these functions to evaluate your classifiers later on in this assignment.
 
+Note: We recommend that you also write a function 'test_predictions(y_pred, y_true)', which prints out the precision, recall, and f-score. This function will be helpful later on!
+
 ## 2. Complex Word Identification
 
 Automated text simplification is a field in Natural Language Processing, where the goal is to take as input a complex text (e.g. a published journal article), and return a text that is more easily understood by a larger audience. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, i.e. 'complex', and which words are easy to understand, i.e. 'simple'.
