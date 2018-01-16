@@ -25,14 +25,11 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner. 
 </div>
 
-<div class="alert alert-info" markdown="span">
-Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
-
 
 Text Classification <span class="text-muted">: Assignment 2</span> 
 =============================================================
 
-For this assignment, we`ll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities. 
+For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities. 
 
 The learning goals of this assignment are:
 * Understand an important class of NLP evaluation methods (precision, recall and F1), and implement them yourself.
@@ -87,7 +84,7 @@ You should start by implementing simple baselines. Your first baseline is a majo
 
 Please report the precision, recall, and f-score using both the training data and the development data individually to be graded.
 
-### Word length baseline
+## Word length baseline
 
 For our next baseline, we will use the length of each word to predict its complexity. 
 
@@ -98,7 +95,7 @@ You will be filling in the function `word_length_threshold(training_file, develo
 In your write-up, please report the precision, recall, and f-score for the training and development data individually, along with the range of thresholds you tried.
 
 
-### Word frequency baseline
+## Word frequency baseline
 
 Our final baseline thresholds on word frequency instead of length. We have provided Google NGram frequencies in the text file `ngram_counts.txt`, along with the helper function `load_ngram_counts(ngram_counts_file)` to load them into Python as a dictionary.
 
@@ -108,7 +105,7 @@ Please again report the precision, recall, and f-score on the training and devel
 
 Note: Due to its size, loading the ngram counts into Python takes around 20 seconds, and finding the correct threshold may take a few minutes to run.
 
-### Naive Bayes classification 
+## Naive Bayes classification 
 
 Now, let's move on to actual machine learning classifiers! For our first classifier, you will use the built-in Naive Bayes model from sklearn, to train a classifier. You should refer to the online sklearn documentation when you are building your classifier. For features, you will start by use word length and word frequency as your two features. To import this model, use the following command:
 
@@ -132,7 +129,7 @@ X_scaled = (X_original - mean)/sd
 
 Be sure to always use the means and standard deviations from the `training data`.
 
-### Logistic Regression
+## Logistic Regression
 
 Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. To import this model, use the following command:
 
@@ -144,7 +141,7 @@ For this problem, you will be filling in the function `logistic_regression(train
 
 Again, please report the precision, recall, and f-score on the training and development data.
 
-### Comparing of Naive Bayes vs. Logistic Regression.
+## Comparing of Naive Bayes vs. Logistic Regression.
 
 After implementing the previous two sections, you will notice that even though the Naive Bayes and Logistic Regression classifiers are given the same data, their performance is not identical. Add a paragraph to your write up that discusses which model performed better on this task, and why you think this was the case.
 
@@ -152,7 +149,7 @@ After implementing the previous two sections, you will notice that even though t
 
 Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
 
-### Try different models
+## Try different models
 
 You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
 
@@ -163,14 +160,14 @@ In your writeup, please include a description of all of the models and features 
 Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is not required, as some of you may not be that familiar with this.
 
 
-### Analyze your model
+## Analyze your model
 
 An important part of text classification tasks is to determine what your model is getting correct, and what your model is getting wrong. For this problem, you must train your best model on the training data, and report the precision, recall, and f-score on the development data.
 
 In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
 
 
-### Comparing your best model to your classmates
+## Comparing your best model to your classmates
 
 Finally, train your best model on both the training and development data. You will use this classifier to predict labels for the test data, and will submit these labels in a text file named `test_labels.txt` (with one label per line) to the leaderboard; be sure NOT to shuffle the order of the test examples. Instructions for how to post to the leaderboard will be posted on Piazza soon.
 
