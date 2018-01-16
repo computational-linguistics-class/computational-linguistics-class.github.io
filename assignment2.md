@@ -15,14 +15,14 @@ attribution: Reno Kriz and Chris Callison-Burch
 {% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
 {% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
 {% if this_year != due_year %} 
-<div class="alert alert-danger">
+<div class="alert alert-danger" markdown="1">
 Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
 </div>
 {% endif %}
 <!-- End of check whether the assignment is up to date -->
 
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner. 
 </div>
 
@@ -40,7 +40,7 @@ The learning goals of this assignment are:
 We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance. 
 
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
 * [Skeleton code]() - this provides some of the functions that you should implement. 
 * [Data sets]() - this is a tarball with the training/dev/test sets.  
@@ -120,7 +120,7 @@ Now, let's move on to actual machine learning classifiers! For our first classif
 >>> from sklearn.naive_bayes import GaussianNB
 {% endhighlight %}
 
-You should fill in the function `naive_bayes(training_file, development_file, counts). This function will train a `Naive Bayes` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
+You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
 
 In your write-up, please report the precision, recall, and f-score on the training and development data for your Naive Bayes classifier that uses word length and word frequency.
 
@@ -183,7 +183,7 @@ The baselines` performances will be included on the leaderboard. In order to rec
 Good luck, and have fun!
 
 
-<div class="alert alert-warning">
+<div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * Your code. This should implement the skeleton files that we provide.  It should be written in Python 3. 
 * Your model's output for the test set using only the provided training data.   
