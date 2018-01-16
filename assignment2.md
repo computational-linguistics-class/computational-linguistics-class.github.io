@@ -7,7 +7,7 @@ title: Homework 2 "Text Classification"
 active_tab: homework
 release_date: 2017-01-17
 due_date: 2017-01-24 11:00:00EST
-attribution: Reno Kriz and Chris Callison-Burch
+attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
 
 ---
 
