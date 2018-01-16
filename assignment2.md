@@ -5,8 +5,8 @@ img_link: https://xkcd.com/thing-explainer/
 caption: Thing Explainer - Complicated Stuff In Simple Words
 title: Homework 2 "Text Classification"
 active_tab: homework
-release_date: 2017-01-17
-due_date: 2017-01-24 11:00:00EST
+release_date: 2018-01-17
+due_date: 2018-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch
 ---
 
@@ -64,7 +64,7 @@ Here is an example of the training data:
 
 After taking a look at the datasets, we recommend that write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
-## Implement The Evaluation Metrics
+## 1. Implement The Evaluation Metrics
 
 Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics are precision, recall, and f-score.
 
@@ -80,8 +80,9 @@ You may not use sklearn's built-in functions for this, you must instead write yo
 
 We recommend that you also write a function `test_predictions(y_pred, y_true)`, which prints out the precision, recall, and f-score. This function will be helpful later on!
 
+## 2. Baselines
 
-## Implement a majority class baseline
+### Implement a majority class baseline
 
 You should start by implementing simple baselines. Your first baseline is a majority class baseline.  You should complete the function `all_complex(data_file)`, which takes in the file name of one of the datasets, labels each word in the dataset as complex, and prints out the precision, recall, and fscore. 
 
@@ -107,6 +108,8 @@ You will be filling in the function `word_frequency_threshold(training_file, dev
 Please again report the precision, recall, and f-score on the training and development data individually, along with the range of thresholds you tried, and the best threshold to be graded.
 
 Note: Due to its size, loading the ngram counts into Python takes around 20 seconds, and finding the correct threshold may take a few minutes to run.
+
+## 3. Classifiers
 
 ### Naive Bayes classification 
 
@@ -148,11 +151,9 @@ Again, please report the precision, recall, and f-score on the training and deve
 
 After implementing the previous two sections, you will notice that even though the Naive Bayes and Logistic Regression classifiers are given the same data, their performance is not identical. Add a paragraph to your write up that discusses which model performed better on this task, and why you think this was the case.
 
-## Build your own model
+## 4. Build your own model
 
 Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
-
-### Try different models
 
 You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
 
@@ -162,13 +163,11 @@ In your writeup, please include a description of all of the models and features 
 
 Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is not required, as some of you may not be that familiar with this.
 
-
 ### Analyze your model
 
 An important part of text classification tasks is to determine what your model is getting correct, and what your model is getting wrong. For this problem, you must train your best model on the training data, and report the precision, recall, and f-score on the development data.
 
 In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
-
 
 ### Comparing your best model to your classmates
 
