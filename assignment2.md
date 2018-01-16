@@ -58,7 +58,7 @@ Here are the materials that you should download for this assignment:
 
 Automated text simplification is an NLP task, where the goal is to take as input a complex text, and return a text that is easier to understand. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, i.e. `complex`, and which words are easy to understand, i.e. 'simple`.
 
-We have prepared a labeled training set for this assignment.  We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets.  The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.  
+We have prepared a labeled training set for this assignment. We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets.  The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.  
 You can [download the datasets here]().
 
 Here is an example of the training data:
@@ -72,8 +72,9 @@ Here is an example of the training data:
 |  fans | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
 |  attire | 1 | The panel also found problematic a uniform exemption for students who wore the attire of national youth organizations like the Boy Scouts or Girl Scouts on meeting days . | 13 |
 
+After taking a look at the datasets, we recommend that you write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
-After taking a look at the datasets, we recommend that write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
+Note: While the context from which each word was found is provided, you do not need it for the majority of the assignment. The only time you may need this is if you choose to implement any context-based features in your own classifier in Section 4.
 
 ## 1. Implement The Evaluation Metrics
 
@@ -168,35 +169,37 @@ Finally, the fun part! In this section, you will build your own classifier for t
 
 You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
 
-Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model. You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
-
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
-In your writeup, please include a description of all of the models and features that you tried.
+In your writeup, please include a description of all of the models and features that you tried. To receive full credit, you MUST try at least 1 type of classifier (not including Naive Bayes and Logistic Regression), and at least two features (not including length and frequency).
 
-Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is not required, as some of you may not be that familiar with this.
-
+Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is NOT required, as some of you may not be that familiar with this.
 
 ### Analyze your model
 
 An important part of text classification tasks is to determine what your model is getting correct, and what your model is getting wrong. For this problem, you must train your best model on the training data, and report the precision, recall, and f-score on the development data.
 
-In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
+In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and identify at least TWO categories of words on which your model is making errors.
 
 
-### Comparing your best model to your classmates
+### Model Leaderboard
 
 Finally, train your best model on both the training and development data. You will use this classifier to predict labels for the test data, and will submit these labels in a text file named `test_labels.txt` (with one label per line) to the leaderboard; be sure NOT to shuffle the order of the test examples. Instructions for how to post to the leaderboard will be posted on Piazza soon.
 
-The baselines` performances will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
+The performances of the baselines will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
+
+### (Optional) Model Leaderboard using outside data
+
+While the training data we have provided is sufficient for completing this assignment, it is not the only data for the task of identifying complex words. As an optional addition to this homework, you may look for and use any additional training data, and submit your predicted labels to a separate leaderboard.
+
+As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use the [Newsela dataset](), a dataset of parallel sentences, where the second sentence is a simpler version of the first.
 
 Good luck, and have fun!
 
-
 <div class="alert alert-warning" markdown="1">
-Here are the deliverables that you will need to submit:
+To recap, here are the deliverables that you will need to submit:
 * Your code. This should implement the skeleton files that we provide.  It should be written in Python 3. 
-* Your model's output for the test set using only the provided training data.   
+* Your model's output for the test set using only the provided training and development data.   
 * (Optional) your model's output for the test set, using any data that you want.
-* Your writeup.  
+* Your writeup in the form of a PDF.
 </div>
