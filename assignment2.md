@@ -61,9 +61,9 @@ Here is an example of the training data:
 | :--- |:-----:| :------  | :------------: |
 |  pizza | 0 | One would require all grain servings to be rich in whole grains -- or more than 50 percent whole-grain -- affecting such items as pastas , bread , rolls and pizza crusts . | 30 |
 |  seasoned | 1 | The 4-year-old from southeast Arlington was searching for fish fossils in Mansfield with his dad , Tim , last fall when the preschooler came back with a bone that has excited even seasoned paleontologists from Southern Methodist University . | 32 |
-|  watching | 0 | In the balconies , `` gamescasters `` in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 28 |
+|  watching | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 28 |
 |  hurling | 1 | The state news agency said about 500 young men hurling stones and Molotov cocktails set ablaze the headquarters of Morsi 's Muslim Brotherhood party in Cairo . | 9 |
-|  fans | 0 | In the balconies , `` gamescasters `` in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
+|  fans | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
 |  attire | 1 | The panel also found problematic a uniform exemption for students who wore the attire of national youth organizations like the Boy Scouts or Girl Scouts on meeting days . | 13 |
 
 
