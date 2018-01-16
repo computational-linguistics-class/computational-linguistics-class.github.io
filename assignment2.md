@@ -5,34 +5,38 @@ img_link: https://xkcd.com/thing-explainer/
 caption: Thing Explainer - Complicated Stuff In Simple Words
 title: Homework 2 "Text Classification"
 active_tab: homework
+<<<<<<< HEAD
 release_date: 2018-01-17
 due_date: 2018-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch
+=======
+release_date: 2017-01-17
+due_date: 2017-01-24 11:00:00EST
+attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
+
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 ---
 
 <!-- Check whether the assignment is up to date -->
 {% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
 {% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
 {% if this_year != due_year %} 
-<div class="alert alert-danger">
+<div class="alert alert-danger" markdown="1">
 Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
 </div>
 {% endif %}
 <!-- End of check whether the assignment is up to date -->
 
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner. 
 </div>
-
-<div class="alert alert-info" markdown="span">
-Links to tutorials and other Python resources are posted on the [resources page](resources.html).</div>
 
 
 Text Classification <span class="text-muted">: Assignment 2</span> 
 =============================================================
 
-For this assignment, we`ll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities. 
+For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities. 
 
 The learning goals of this assignment are:
 * Understand an important class of NLP evaluation methods (precision, recall and F1), and implement them yourself.
@@ -41,7 +45,14 @@ The learning goals of this assignment are:
 
 We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance. 
 
-We have provided [skeleton code]() that you should implement. 
+
+<div class="alert alert-info" markdown="1">
+Here are the materials that you should download for this assignment:
+* [Skeleton code]() - this provides some of the functions that you should implement. 
+* [Data sets]() - this is a tarball with the training/dev/test sets.  
+* [Unigram counts]() from the Google N-gram corpus.   
+</div>
+
 
 ## Identifying Complex Words
 
@@ -56,15 +67,19 @@ Here is an example of the training data:
 | :--- |:-----:| :------  | :------------: |
 |  pizza | 0 | One would require all grain servings to be rich in whole grains -- or more than 50 percent whole-grain -- affecting such items as pastas , bread , rolls and pizza crusts . | 30 |
 |  seasoned | 1 | The 4-year-old from southeast Arlington was searching for fish fossils in Mansfield with his dad , Tim , last fall when the preschooler came back with a bone that has excited even seasoned paleontologists from Southern Methodist University . | 32 |
-|  watching | 0 | In the balconies , `` gamescasters `` in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 28 |
+|  watching | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 28 |
 |  hurling | 1 | The state news agency said about 500 young men hurling stones and Molotov cocktails set ablaze the headquarters of Morsi 's Muslim Brotherhood party in Cairo . | 9 |
-|  fans | 0 | In the balconies , `` gamescasters `` in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
+|  fans | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
 |  attire | 1 | The panel also found problematic a uniform exemption for students who wore the attire of national youth organizations like the Boy Scouts or Girl Scouts on meeting days . | 13 |
 
 
 After taking a look at the datasets, we recommend that write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
+<<<<<<< HEAD
 ## 1. Implement The Evaluation Metrics
+=======
+## Implement the evaluation metrics
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 
 Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics are precision, recall, and f-score.
 
@@ -88,7 +103,7 @@ You should start by implementing simple baselines. Your first baseline is a majo
 
 Please report the precision, recall, and f-score using both the training data and the development data individually to be graded.
 
-### Word length baseline
+## Word length baseline
 
 For our next baseline, we will use the length of each word to predict its complexity. 
 
@@ -99,7 +114,7 @@ You will be filling in the function `word_length_threshold(training_file, develo
 In your write-up, please report the precision, recall, and f-score for the training and development data individually, along with the range of thresholds you tried.
 
 
-### Word frequency baseline
+## Word frequency baseline
 
 Our final baseline thresholds on word frequency instead of length. We have provided Google NGram frequencies in the text file `ngram_counts.txt`, along with the helper function `load_ngram_counts(ngram_counts_file)` to load them into Python as a dictionary.
 
@@ -109,9 +124,13 @@ Please again report the precision, recall, and f-score on the training and devel
 
 Note: Due to its size, loading the ngram counts into Python takes around 20 seconds, and finding the correct threshold may take a few minutes to run.
 
+<<<<<<< HEAD
 ## 3. Classifiers
 
 ### Naive Bayes classification 
+=======
+## Naive Bayes classification 
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 
 Now, let's move on to actual machine learning classifiers! For our first classifier, you will use the built-in Naive Bayes model from sklearn, to train a classifier. You should refer to the online sklearn documentation when you are building your classifier. For features, you will start by use word length and word frequency as your two features. To import this model, use the following command:
 
@@ -119,7 +138,7 @@ Now, let's move on to actual machine learning classifiers! For our first classif
 >>> from sklearn.naive_bayes import GaussianNB
 {% endhighlight %}
 
-You should fill in the function `naive_bayes(training_file, development_file, counts). This function will train a `Naive Bayes` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
+You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
 
 In your write-up, please report the precision, recall, and f-score on the training and development data for your Naive Bayes classifier that uses word length and word frequency.
 
@@ -135,7 +154,7 @@ X_scaled = (X_original - mean)/sd
 
 Be sure to always use the means and standard deviations from the `training data`.
 
-### Logistic Regression
+## Logistic Regression
 
 Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. To import this model, use the following command:
 
@@ -147,15 +166,19 @@ For this problem, you will be filling in the function `logistic_regression(train
 
 Again, please report the precision, recall, and f-score on the training and development data.
 
-### Comparing of Naive Bayes vs. Logistic Regression.
+## Comparing of Naive Bayes vs. Logistic Regression.
 
 After implementing the previous two sections, you will notice that even though the Naive Bayes and Logistic Regression classifiers are given the same data, their performance is not identical. Add a paragraph to your write up that discusses which model performed better on this task, and why you think this was the case.
 
 ## 4. Build your own model
 
+<<<<<<< HEAD
 Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
 
 You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
+=======
+Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model. You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
@@ -163,16 +186,35 @@ In your writeup, please include a description of all of the models and features 
 
 Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is not required, as some of you may not be that familiar with this.
 
+<<<<<<< HEAD
 ### Analyze your model
+=======
+
+## Analyze your model
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 
 An important part of text classification tasks is to determine what your model is getting correct, and what your model is getting wrong. For this problem, you must train your best model on the training data, and report the precision, recall, and f-score on the development data.
 
 In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
 
+<<<<<<< HEAD
 ### Comparing your best model to your classmates
+=======
+
+## Comparing your best model to your classmates
+>>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 
 Finally, train your best model on both the training and development data. You will use this classifier to predict labels for the test data, and will submit these labels in a text file named `test_labels.txt` (with one label per line) to the leaderboard; be sure NOT to shuffle the order of the test examples. Instructions for how to post to the leaderboard will be posted on Piazza soon.
 
 The baselines` performances will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
 
 Good luck, and have fun!
+
+
+<div class="alert alert-warning" markdown="1">
+Here are the deliverables that you will need to submit:
+* Your code. This should implement the skeleton files that we provide.  It should be written in Python 3. 
+* Your model's output for the test set using only the provided training data.   
+* (Optional) your model's output for the test set, using any data that you want.
+* Your writeup.  
+</div>
