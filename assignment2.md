@@ -8,6 +8,7 @@ active_tab: homework
 release_date: 2017-01-17
 due_date: 2017-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch
+
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -38,7 +39,13 @@ The learning goals of this assignment are:
 
 We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance. 
 
-We have provided [skeleton code]() that you should implement. 
+
+<div class="alert alert-info">
+Here are the materials that you should download for this assignment:
+* [Skeleton code]() - this provides some of the functions that you should implement. 
+* [Data sets]() - this is a tarball with the training/dev/test sets.  
+</div>
+
 
 ## Identifying Complex Words
 
@@ -61,7 +68,7 @@ Here is an example of the training data:
 
 After taking a look at the datasets, we recommend that write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
-## Implement The Evaluation Metrics
+## Implement the evaluation metrics
 
 Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics are precision, recall, and f-score.
 
@@ -174,3 +181,12 @@ Finally, train your best model on both the training and development data. You wi
 The baselines` performances will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
 
 Good luck, and have fun!
+
+
+<div class="alert alert-warning">
+Here are the deliverables that you will need to submit:
+* Your code. This should implement the skeleton files that we provide.  It should be written in Python 3. 
+* Your model's output for the test set using only the provided training data.   
+* (Optional) your model's output for the test set, using any data that you want.
+* Your writeup.  
+</div>
