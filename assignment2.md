@@ -44,6 +44,7 @@ We will provide you with training and development data that has been manually la
 Here are the materials that you should download for this assignment:
 * [Skeleton code]() - this provides some of the functions that you should implement. 
 * [Data sets]() - this is a tarball with the training/dev/test sets.  
+* [Unigram counts]() from the Google N-gram corpus.   
 </div>
 
 
@@ -154,11 +155,7 @@ After implementing the previous two sections, you will notice that even though t
 
 ## Build your own model
 
-Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
-
-## Try different models
-
-You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
+Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model. You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use.
 
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
