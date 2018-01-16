@@ -36,8 +36,17 @@ As with last week, you will submit your assignment via Gradescope.
 
 ## 1. Evaluation Metrics
 
-- You need to write functions for accuracy, precision, recall, and f-score (may not use sklearn built-in functions to calculate).
-- You will be using these functions in later parts of the assignments as your evaluation metrics.
+Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics are precision, recall, and f-score.
+
+For this problem, you will fill in the following functions:
+
+- get_precision(y_pred, y_true)
+- get_recall(y_pred, y_true)
+- get_fscore(y_pred, y_true)
+
+Here, 'y_pred' is an 'nx1' list of predicted labels from a classifier, and 'y_true' is an 'nx1' list of the true labels, where 'n' is the number of datapoints.
+
+You may not use sklearn's built-in functions for this, you must instead calculate these metrics manually. You will be using these functions to evaluate your classifiers later on in this assignment.
 
 ## 2. Complex Word Identification
 
@@ -45,10 +54,13 @@ Automated text simplification is a field in Natural Language Processing, where t
 
 For this problem, you will be given a dataset of words and their corresponding sentences, split into training, development, and test sets.
 
+After taking a look at the datasets, we recommend that before you start this question, write a function 'load_file(data_file)', which takes in the file name of one of the datasets 'data_file', and reads in the words and labels from these files.
+
 ### 2.1: A very simple baseline
 
-- Label each word as complex
-- Report the precision, recall, and f-score for the training data and the development data individually to be graded.
+In the first problem, we are implementing a relatively easy baseline, to ensure you understand the process. For this baseline, fill in the function 'all_complex(data_file)'. This function takes in the file name of one of the datasets 'data_file', labels each word in the dataset as complex, and prints out the precision, recall, and fscore. 
+
+Please report the precision, recall, and f-score using both the training data and the development data individually to be graded.
 
 ### 2.2: Word length thresholding
 
