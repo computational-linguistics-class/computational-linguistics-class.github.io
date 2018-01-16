@@ -85,15 +85,15 @@ Note: Due to its size, loading the ngram counts into Python takes around 20 seco
 
 ### 2.4: Naive Bayes
 
-Now, let's move on to actual Machine Learning classifiers! For our first classifier, you will use the built-in 'Naive Bayes' model from 'sklearn', to train a classifier. You may use the online 'sklearn' documentation to build your classifier. For features, you will simply use word length and word frequency as your two features.  To import this model, use the following command:
+Now, let's move on to actual Machine Learning classifiers! For our first classifier, you will use the built-in 'Naive Bayes' model from 'sklearn', to train a classifier. You may use the online 'sklearn' documentation to build your classifier. For features, you will simply use word length and word frequency as your two features. To import this model, use the following command:
 
 {% highlight python %}
 >>> from sklearn.naive_bayes import GaussianNB
 {% endhighlight %}
 
-In this problem, you will be filling in the function 'naive_bayes(training_file, development_file, counts). This function will train a 'Naive Bayes' classifier on the training data, and test your model's precision, recall, and f-score on the training data and the development data individually.
+In this problem, you will be filling in the function 'naive_bayes(training_file, development_file, counts). This function will train a 'Naive Bayes' classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
 
-Please again report the 'precision', 'recall', and 'f-score' on the training and development data individually.
+Please report the 'precision', 'recall', and 'f-score' on the training and development data individually.
 
 Note 1:  There are two important things to point out: sklearn classifiers take in 'numpy' arrays, rather than regular lists. You may use the online 'numpy' documentation. To import 'numpy' into Python, use the following command:
 
@@ -101,7 +101,7 @@ Note 1:  There are two important things to point out: sklearn classifiers take i
 >>> import numpy as np
 {% endhighlight %}
 
-Note 2: Before training and testing a classifier, it is generally good to normalize your features. This means that you need to find the mean and standard deviation (sd) of a feature. Then, for each row, perform the following transformation:
+Note 2: Before training and testing a classifier, it is generally important to normalize your features. This means that you need to find the mean and standard deviation (sd) of a feature. Then, for each row, perform the following transformation:
 
 X_scaled = (X_original - mean)/sd
 
@@ -109,37 +109,46 @@ Be sure to always use the means and standard deviations from the 'training data'
 
 ### 2.5: Logistic Regression
 
-Next, you will use the built-in Logistic Regression model from sklearn, to train a classifier.
-- Use word length and word frequency as your two features.
-- Train your model on your training classifier.
-- Like Section 2.4, use 5-fold cross validation on the training data to calculate the precision, recall, and f-score.
-- Train your model on the full training data, test your model on the development data, again reporting the precision, recall, and f-score.
+Next, you will use the built-in 'Logistic Regression' from 'sklearn' to train a classifier. Again, we will use word length and word frequency as your two features. To import this model, use the following command:
+
+{% highlight python %}
+>>> from sklearn.linear_model import LogisticRegression
+{% endhighlight %}
+
+For this problem, you will be filling in the function 'logistic_regression(training_file, development_file, counts). This function will train a 'Logistic Regression' classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
+
+Like Section 2.4, please report the 'precision', 'recall', and 'f-score' on the training and development data individually.
 
 ### 2.6: Comparison of Naive Bayes vs. Logistic Regression.
 
-- In this section, explain which model performed better on this task, and why you think this is the case.
+After implementing the previous two sections, you will notice that even though the 'Naive Bayes' and 'Logistic Regression' classifiers are given the same data, their performance is not identical. In this section, please discuss which model performed better on this task, and why you think this was the case.
 
 ### 2.7: Your own model
 
-- In this section, you need to come up with your own classifier.
+Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
 
 #### 2.7.1: Model details
 
-- You may use any additional features, as long as you explain why these features are important for identifying complex words.
-- You may also use other types of classifiers (e.g. SVM, Decision Tree, etc.)
-- To test different classifiers, train on the training data, and test on the development data.
-- In your writeup, be sure to include a description of what you tried, as well as an in-depth analysis of your final model.
+Unlike the previous sections, for this problem, you can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond 'Naive Bayes' and 'Logistic Regression', you might consider trying 'SVM', 'Decision Trees', and 'Random Forests', among others. Additional features you may consider include number of syllables, as well as sentence-based complexity features, such as length of the sentence, average word length, etc. For counting the number of syllables, we have provided a python script 'syllables.py' that contains the function 'count_syllables(word)', which you may use.
 
-#### 2.7.2: Error Analysis.
+When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
-- An important part of text classification tasks is determing exactly what your model is getting correct, and what your model is getting wrong.
-- For this section, you will train your best model on the training data, and report the precision, recall, and f-score on the development data.
-- You need to perform a detailed error analysis of your models.
-- Give several examples of words on which your best model performs well, and that the length threshold and frequency threshold baselines do not.
-- Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
+In your writeup, please include a description of all of the models and features that you tried.
+
+Note: You can also tune the parameters of your model, e.g. what type of kernel to use. This is not required, as some of you may not be that familiar with this.
+
+
+#### 2.7.2: Model Analysis
+
+An important part of text classification tasks is determing exactly what your model is getting correct, and what your model is getting wrong. For this problem, you must train your best model on the training data, and report the precision, recall, and f-score on the development data.
+
+In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and try to identify at least two categories of words on which your model is making errors.
+
 
 #### 2.7.3: Testing your best model
 
-- Finally, train your best model on both the training and development data.
-- You will use this classifier to predict labels for the test data, and will submit these labels (one label per line) to the leaderboard; this way you will be able to compare your model to others from the course.
-- The baselines' performances will be included on the leaderboard; your model must be able to outperform all of them.
+Finally, train your best model on both the training and development data. You will use this classifier to predict labels for the test data, and will submit these labels in a text file named 'test_labels.txt' (with one label per line) to the leaderboard; be sure NOT to shuffle the order of the test examples. Instructions for how to post to the leaderboard will be posted on Piazza soon.
+
+The baselines' performances will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
+
+Good luck, and have fun!
