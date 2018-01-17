@@ -38,10 +38,10 @@ def get_fscore(y_pred, y_true):
 #### 2. Complex Word Identification ####
 
 ## Loads in the words and labels of one of the datasets
-def load_file(data_file)
+def load_file(data_file):
     words = []
     labels = []   
-    with gzip.open(filename, 'r', encoding='utf8') as f:
+    with open(data_file, 'rt', encoding="utf8") as f:
         i = 0
         for line in f:
             if i > 0:
@@ -75,7 +75,7 @@ def word_length_threshold(training_file, development_file):
 ## Loads Google NGram counts
 def load_ngram_counts(ngram_counts_file): 
    counts = defaultdict(int) 
-   with open(ngram_counts_file, 'r', encoding='utf8') as f: 
+   with gzip.open(ngram_counts_file, 'rt') as f: 
        for line in f:
            token, count = line.strip().split('\t') 
            if token[0].islower(): 
@@ -120,8 +120,7 @@ if __name__ == "__main__":
     development_file = "data/complex_words_development.txt"
     test_file = "data/complex_words_test_unlabeled.txt"
 
-    ngram_counts_file = "ngram_counts.gzip"
+    train_data = load_file(training_file)
+    
+    ngram_counts_file = "ngram_counts.txt.gz"
     counts = load_ngram_counts(ngram_counts_file)
-    
-    
-    
