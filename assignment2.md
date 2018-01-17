@@ -127,7 +127,7 @@ Here is what the different fields in the file mean:
 * SENTENCE: The sentence that was shown to annotators when they labeled the word as simple or complex
 * SENTENCE_INDEX: The index of the word in the sentence (0 indexed, space delimited).
 
-After taking a look at the datasets, we recommend that you write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
+We have provided the function `load_file(data_file)`, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
 Note: While the context from which each word was found is provided, you do not need it for the majority of the assignment. The only time you may need this is if you choose to implement any context-based features in your own classifier in Section 4.
 
