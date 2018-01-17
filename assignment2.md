@@ -125,25 +125,36 @@ Note: Due to its size, loading the ngram counts into Python takes around 20 seco
 
 ### Naive Bayes classification 
 
-Now, let's move on to actual machine learning classifiers! For our first classifier, you will use the built-in Naive Bayes model from sklearn, to train a classifier. You should refer to the online sklearn documentation when you are building your classifier. For features, you will start by use word length and word frequency as your two features. To import this model, use the following command:
+Now, let's move on to actual machine learning classifiers! For our first classifier, you will use the built-in Naive Bayes model from sklearn, to train a classifier. You should refer to the online [sklearn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) when you are building your classifier. 
 
-{% highlight python %}
->>> from sklearn.naive_bayes import GaussianNB
-{% endhighlight %}
-
-You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
-
-In your write-up, please report the precision, recall, and f-score on the training and development data for your Naive Bayes classifier that uses word length and word frequency.
-
-Note 1:  There are two important things to point out: sklearn classifiers take in `numpy` arrays, rather than regular lists. You may use the online `numpy` documentation. To import `numpy` into Python, use the following command:
+The first thing to note is that sklearn classifiers take in `numpy` arrays, rather than regular lists. You may use the online `numpy` documentation. To create a `numpy` list of length 5, you can use the following Python commands:
 
 {% highlight python %}
 >>> import numpy as np
+>>> X = np.array([1,2,3,4,5])
 {% endhighlight %}
 
-Note 2: Before training and testing a classifier, it is generally important to normalize your features. This means that you need to find the mean and standard deviation (sd) of a feature. Then, for each row, perform the following transformation:
+To train a classifier, you need two `numpy` arrays: `X_train`, an `mxn` array, where `m` is the number of words in the dataset, and `n` is the number of features for each word; and `Y`, an array of length `m` for the labels of each of the words. Once we have these two arrays, we can fit a Naive Bayes classifier using the following commands:
 
-X_scaled = (X_original - mean)/sd
+{% highlight python %}
+>>> from sklearn.naive_bayes import GaussianNB
+>>> clf = GaussianNB()
+>>> clf.fit(X_train, Y)
+{% endhighlight %}
+
+Finally, to use your model to predict the labels for a set of words, you only need one `numpy` array: `X_test`, an `m'xn` array, where `m'` is the number of words in the dataset, and `n` is the number of features for each word. Note that the `n` used here is the same as the `n` in `X_train`. Then, we can use our classifier to predict labels using the following command:
+
+{% highlight python %}
+>>> Y_pred = clf.predict(X_test)
+{% endhighlight %}
+
+You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data using word length and word frequency as features, and print your model's precision, recall, and f-score on the training data and the development data individually.
+
+In your write-up, please report the precision, recall, and f-score on the training and development data for your Naive Bayes classifier that uses word length and word frequency.
+
+NOTE: Before training and testing a classifier, it is generally important to normalize your features. This means that you need to find the mean and standard deviation (sd) of a feature. Then, for each row, perform the following transformation:
+
+`X_scaled = (X_original - mean)/sd`
 
 Be sure to always use the means and standard deviations from the `training data`.
 
