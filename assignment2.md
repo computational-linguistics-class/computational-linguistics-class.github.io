@@ -60,7 +60,7 @@ readings:
   year      = {2013},
   address   = {Sofia, Bulgaria},
   publisher = {Association for Computational Linguistics},
-  pages     = {103--109},
+  pages     = {103--109}
 }
 -
    title:  SemEval 2016 Task 11&colon; Complex Word Identification
@@ -80,7 +80,7 @@ readings:
   year      = {2016},
   address   = {San Diego, California},
   publisher = {Association for Computational Linguistics},
-  pages     = {560--569},
+  pages     = {560--569}
 }
 ---
 
