@@ -41,8 +41,8 @@ We will provide you with training and development data that has been manually la
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton code]() - this provides some of the functions that you should implement.
-* [Data sets]() - this is a tarball with the training/dev/test sets.  
+* [Skeleton code](downloads/hw2/hw2_skeleton.py) - this provides some of the functions that you should implement.
+* [Data sets](downloads/hw2/data/) - this is a folder with the training/dev/test sets. 
 * [Unigram counts]() from the Google N-gram corpus.   
 </div>
 
