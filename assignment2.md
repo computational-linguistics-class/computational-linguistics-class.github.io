@@ -43,7 +43,11 @@ We will provide you with training and development data that has been manually la
 Here are the materials that you should download for this assignment:
 * [Skeleton code](downloads/hw2/hw2_skeleton.py) - this provides some of the functions that you should implement.
 * [Data sets](downloads/hw2/data/) - this is a folder with the training/dev/test sets. 
-* [Unigram counts]() from the Google N-gram corpus.   
+* Unigram counts from the Google N-gram corpus. You can access these by logging into Eniac, and entering the following command:
+
+{% highlight tcsh %}
+$ cp /home1/c/cis530/18sp/data/ngrams_counts.txt.gz YOUR_HW2_FOLDER_PATH_HERE
+{% endhighlight %}
 </div>
 
 
