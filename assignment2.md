@@ -158,7 +158,7 @@ Be sure to always use the means and standard deviations from the `training data`
 
 ### Logistic Regression
 
-Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. To import and use this model, use the following command:
+Next, you will use sklearn's built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. You should refer to the online [sklearn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) when you are building your classifier. To import and use this model, use the following command:
 
 {% highlight python %}
 >>> from sklearn.linear_model import LogisticRegression
