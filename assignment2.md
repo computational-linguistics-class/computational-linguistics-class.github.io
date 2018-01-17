@@ -158,10 +158,11 @@ Be sure to always use the means and standard deviations from the `training data`
 
 ### Logistic Regression
 
-Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. To import this model, use the following command:
+Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we will use word length and word frequency as your two features. To import and use this model, use the following command:
 
 {% highlight python %}
 >>> from sklearn.linear_model import LogisticRegression
+>>> clf = LogisticRegression()
 {% endhighlight %}
 
 For this problem, you will be filling in the function `logistic_regression(training_file, development_file, counts)`. This function will train a `Logistic Regression` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
