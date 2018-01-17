@@ -44,7 +44,7 @@ readings:
          pages = {283--297}
        }
 -
-   title:  Comparison of Techniques to Automatically Identify Complex Words
+   title: Comparison of Techniques to Automatically Identify Complex Words
    authors: Matthew Shardlow
    venue: ACL
    type: journal
@@ -53,7 +53,7 @@ readings:
    page_count: 7
    id: comparison-of-techniques
 -
-   title:  SemEval 2016 Task 11: Complex Word Identification
+   title: SemEval 2016 Task 11&colon; Complex Word Identification
    authors: Gustavo Paetzold and Lucia Specia
    venue: ACL
    type: journal
