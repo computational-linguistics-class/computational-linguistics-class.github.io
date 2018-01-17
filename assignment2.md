@@ -5,22 +5,18 @@ img_link: https://xkcd.com/thing-explainer/
 caption: Thing Explainer - Complicated Stuff In Simple Words
 title: Homework 2 "Text Classification"
 active_tab: homework
-<<<<<<< HEAD
 release_date: 2018-01-17
 due_date: 2018-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch
-=======
 release_date: 2017-01-17
 due_date: 2017-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
-
->>>>>>> 06aa38142ced42f80af681f4839587910b6bdebd
 ---
 
 <!-- Check whether the assignment is up to date -->
 {% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
 {% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
-{% if this_year != due_year %} 
+{% if this_year != due_year %}
 <div class="alert alert-danger" markdown="1">
 Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
 </div>
@@ -29,26 +25,26 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 
 
 <div class="alert alert-info" markdown="1">
-This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner. 
+This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{ page.due_date | date: "%I:%M%p" }}.   This assignment may be done with a partner.
 </div>
 
 
-Text Classification <span class="text-muted">: Assignment 2</span> 
+Text Classification <span class="text-muted">: Assignment 2</span>
 =============================================================
 
-For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities. 
+For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities.
 
 The learning goals of this assignment are:
 * Understand an important class of NLP evaluation methods (precision, recall and F1), and implement them yourself.
 * Employ common experimental design practices in NLP.  Split the annotated data into training/development/test sets, implement simple baselines to determine how difficult the task is, and experiment with a range of features and models.
-* Get an introduction to sklearn, an excellent machine learning Python package. 
+* Get an introduction to sklearn, an excellent machine learning Python package.
 
-We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance. 
+We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance.
 
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton code]() - this provides some of the functions that you should implement. 
+* [Skeleton code]() - this provides some of the functions that you should implement.
 * [Data sets]() - this is a tarball with the training/dev/test sets.  
 * [Unigram counts]() from the Google N-gram corpus.   
 </div>
@@ -78,7 +74,7 @@ Note: While the context from which each word was found is provided, you do not n
 
 ## 1. Implement The Evaluation Metrics
 
-Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics are precision, recall, and f-score.
+Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics for evaluating binary classification (especially in cases of class imbalance) are precision, recall, and f-score.
 
 For this problem, you will fill in the following functions:
 
@@ -88,7 +84,7 @@ For this problem, you will fill in the following functions:
 
 Here, `y_pred` is list of predicted labels from a classifier, and `y_true` is a list of the true labels.
 
-You may not use sklearn's built-in functions for this, you must instead write your own code to calculate these metrics. You will be using these functions to evaluate your classifiers later on in this assignment.
+You may **not** use sklearn's built-in functions for this, you must instead write your own code to calculate these metrics. You will be using these functions to evaluate your classifiers later on in this assignment.
 
 We recommend that you also write a function `test_predictions(y_pred, y_true)`, which prints out the precision, recall, and f-score. This function will be helpful later on!
 
@@ -96,34 +92,36 @@ We recommend that you also write a function `test_predictions(y_pred, y_true)`, 
 
 ### Implement a majority class baseline
 
-You should start by implementing simple baselines. Your first baseline is a majority class baseline.  You should complete the function `all_complex(data_file)`, which takes in the file name of one of the datasets, labels each word in the dataset as complex, and prints out the precision, recall, and fscore. 
+You should start by implementing simple baselines as classifiers. Your first baseline is a majority class baseline which is one of the most simple classifier. You should complete the function `all_complex(data_file)`, which takes in the file name of one of the datasets, labels each word in the dataset as complex, and prints out the precision, recall, and fscore.
 
-Please report the precision, recall, and f-score using both the training data and the development data individually to be graded.
+Please report the precision, recall, and f-score on both the training data and the development data individually to be graded.
 
 ### Word length baseline
 
-For our next baseline, we will use the length of each word to predict its complexity. 
+For our next baseline, we will use a slightly complex baseline, the length of each word to predict its complexity.
 
-For the word length baseline, you should try setting various thresholds for word length. For example, you might set a threshold of 9, meaning that any words with less than 9 characters will be labeled simple, and any words with 9 characters or more will be labeled complex. Once you find the best threshold using the training data, use this same threshold for the development data as well.
+For the word length baseline, you should try setting various thresholds for word length to classify them as simple or otherwise. For example, you might set a threshold of 9, meaning that any words with less than 9 characters will be labeled simple, and any words with 9 characters or more will be labeled complex. Once you find the best threshold using the training data, use this same threshold for the development data as well.
 
 You will be filling in the function `word_length_threshold(training_file, development_file)`. This function takes in both the training and development data files, and prints out the precision, recall, and f-score for your best threshold's performance on both the training and development data.
 
-In your write-up, please report the precision, recall, and f-score for the training and development data individually, along with the range of thresholds you tried.
+Usually, Precision and Recall are inversely related and while building binary-classification systems we try to find a good balance between them (by maximizing f-score, for example). It is often useful to plot the Precision-Recall curve for various settings of the classifier to gauge its performance and compare it to other classifiers. For example, for this baseline, a Precision-Recall curve can be plotted by plotting the Precision (on the y-axis) and Recall (on the X-axis) for different values of word-length threshold.
+
+In your write-up, please report the precision, recall, and f-score for the training and development data individually, along with the range of thresholds you tried. Also plot the Precision-Recall curve for the various thresholds you tried. For plotting, [matplotlib](https://matplotlib.org/) is a useful python library.
 
 ### Word frequency baseline
 
-Our final baseline thresholds on word frequency instead of length. We have provided Google NGram frequencies in the text file `ngram_counts.txt`, along with the helper function `load_ngram_counts(ngram_counts_file)` to load them into Python as a dictionary.
+Our final baseline is a classifier similar to the last one, but thresholds on word frequency instead of length. We have provided Google NGram frequencies in the text file `ngram_counts.txt`, along with the helper function `load_ngram_counts(ngram_counts_file)` to load them into Python as a dictionary.
 
 You will be filling in the function `word_frequency_threshold(training_file, development_file, counts)`, where `counts` is the dictionary of word frequencies. This function again prints out the precision, recall, and fscore for your best threshold's performance on both the training and development data.
 
-Please again report the precision, recall, and f-score on the training and development data individually, along with the range of thresholds you tried, and the best threshold to be graded.
+Please again report the precision, recall, and f-score on the training and development data individually, along with the range of thresholds you tried, and the best threshold to be graded. Similar to the previous baseline, plot the Precision-Recall curve for range of thresholds you tried. Also, make a third plot that contains the P-R curve for both the baseline classifier. Which classifier looks better *on average*?
 
 Note: Due to its size, loading the ngram counts into Python takes around 20 seconds, and finding the correct threshold may take a few minutes to run.
 
 
 ## 3. Classifiers
 
-### Naive Bayes classification 
+### Naive Bayes classification
 
 Now, let's move on to actual machine learning classifiers! For our first classifier, you will use the built-in Naive Bayes model from sklearn, to train a classifier. You should refer to the online [sklearn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html) when you are building your classifier. 
 
@@ -209,7 +207,7 @@ Good luck, and have fun!
 
 <div class="alert alert-warning" markdown="1">
 To recap, here are the deliverables that you will need to submit:
-* Your code. This should implement the skeleton files that we provide.  It should be written in Python 3. 
+* Your code. This should implement the skeleton files that we provide.  It should be written in Python 3.
 * Your model's output for the test set using only the provided training and development data.   
 * (Optional) your model's output for the test set, using any data that you want.
 * Your writeup in the form of a PDF.
