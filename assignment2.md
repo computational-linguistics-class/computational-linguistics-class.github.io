@@ -174,7 +174,7 @@ The first thing to note is that sklearn classifiers take in `numpy` arrays, rath
 >>> X = np.array([1,2,3,4,5])
 {% endhighlight %}
 
-To train a classifier, you need two `numpy` arrays: `X_train`, an `m`x`n` array, where `m` is the number of words in the dataset, and `n` is the number of features for each word; and `Y`, an array of length `m` for the labels of each of the words. Once we have these two arrays, we can fit a Naive Bayes classifier using the following commands:
+To train a classifier, you need two `numpy` arrays: `X_train`, an `m` by `n` array, where `m` is the number of words in the dataset, and `n` is the number of features for each word; and `Y`, an array of length `m` for the labels of each of the words. Once we have these two arrays, we can fit a Naive Bayes classifier using the following commands:
 
 {% highlight python %}
 >>> from sklearn.naive_bayes import GaussianNB
@@ -182,7 +182,7 @@ To train a classifier, you need two `numpy` arrays: `X_train`, an `m`x`n` array,
 >>> clf.fit(X_train, Y)
 {% endhighlight %}
 
-Finally, to use your model to predict the labels for a set of words, you only need one `numpy` array: `X_test`, an `m'`x`n` array, where `m'` is the number of words in the dataset, and `n` is the number of features for each word. Note that the `n` used here is the same as the `n` in `X_train`. Then, we can use our classifier to predict labels using the following command:
+Finally, to use your model to predict the labels for a set of words, you only need one `numpy` array: `X_test`, an `m'` by `n` array, where `m'` is the number of words in the dataset, and `n` is the number of features for each word. Note that the `n` used here is the same as the `n` in `X_train`. Then, we can use our classifier to predict labels using the following command:
 
 {% highlight python %}
 >>> Y_pred = clf.predict(X_test)
