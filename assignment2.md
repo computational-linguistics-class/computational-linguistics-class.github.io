@@ -49,12 +49,12 @@ Here are the materials that you should download for this assignment:
 
 ## Identifying Complex Words
 
-Automated text simplification is an NLP task, where the goal is to take as input a complex text, and return a text that is easier to understand. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, i.e. `complex`, and which words are easy to understand, i.e. 'simple`.
+Automated text simplification is an NLP task, where the goal is to take as input a complex text, and return a text that is easier to understand. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, and which words are easy to understand.
 
 We have prepared a labeled training set for this assignment. We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets. The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.
 You can [download the datasets here]().
 
-This dataset was collected by taking the first 200 tokens in 200 complex texts, and crowdsourcing human judgements. We asked nine human annotators to identify at least 10 complex words in each text. From here, words that were identified as complex by at least 3 annotators were labeled as complex. In addition, words that were identified as complex by zero annotators were labeled as simple. One thing to note is that we kept only nouns, verbs, adjectives, and adverbs, and removed stopwords (i.e. common words like `the` or `and`) and proper nouns. After this filtering, we were left with 5,922 unique words. For this homework, we split these words up into 4,000 for training, 1,000 for development, and the remaining 922 are reserved for testing.
+This dataset was collected by taking the first 200 tokens in 200 complex texts, and crowdsourcing human judgements. We asked nine human annotators to identify at least 10 complex words in each text. From here, words that were identified as complex by at least 3 annotators were labeled as complex. In addition, words that were identified as complex by zero annotators were labeled as simple. One thing to note is that we kept only nouns, verbs, adjectives, and adverbs, and removed stopwords (i.e. common words like `the` or `and`) and proper nouns. After this filtering, we were left with 5,922 unique words. For this homework, we split these words up into 4,000 words for training, 1,000 words for development, and the remaining 922 words are reserved for testing.
 
 Shown below is an example of the training data. Note that the training data and development data files have the same formatting, and the test data does not include the label column:
 
@@ -67,12 +67,18 @@ Shown below is an example of the training data. Note that the training data and 
 |  fans | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
 |  attire | 1 | The panel also found problematic a uniform exemption for students who wore the attire of national youth organizations like the Boy Scouts or Girl Scouts on meeting days . | 13 |
 
+Here is what the different fields in the file mean:
+* WORD: The word to be classified
+* LABEL: 0 for simple words, 1 for complex words
+* SENTENCE: The sentence that was shown to annotators when they labeled the word as simple or complex
+* SENTENCE_INDEX: The index of the word in the sentence (0 indexed, space delimited).
+
 After taking a look at the datasets, we recommend that you write the `load_file(data_file)` function, which takes in the file name (`data_file`) of one of the datasets, and reads in the words and labels from these files.
 
 Note: While the context from which each word was found is provided, you do not need it for the majority of the assignment. The only time you may need this is if you choose to implement any context-based features in your own classifier in Section 4.
 
 
-## 1. Implement The Evaluation Metrics
+## 1. Implement the Evaluation Metrics
 
 Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics for evaluating binary classification (especially in cases of class imbalance) are precision, recall, and f-score.
 
@@ -169,15 +175,15 @@ For this problem, you will be filling in the function `logistic_regression(train
 
 Again, please report the precision, recall, and f-score on the training and development data.
 
-### Comparing of Naive Bayes vs. Logistic Regression.
+### Comparing Naive Bayes and Logistic Regression
 
-After implementing the previous two sections, you will notice that even though the Naive Bayes and Logistic Regression classifiers are given the same data, their performance is not identical. Add a paragraph to your write up that discusses which model performed better on this task, and why you think this was the case.
+After implementing Naive Bayes and Logistic Regression classifiers, you will notice that their performance is not identical, even though they are given the same data. Add a paragraph to your write up that discusses which model performed better on this task.
 
 ## 4. Build your own model
 
 Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
 
-You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional word features you may consider include number of syllables, number of WordNet synonyms, and number of WordNet senses . For counting the number of syllables, we have provided a python script `syllables.py` that contains the function `count_syllables(word)`, which you may use. To use WordNet in Python, refer to this [documentation](http://www.nltk.org/howto/wordnet.html). You could also include  sentence-based complexity features, such as length of the sentence, average word length, and average word frequency. 
+You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional word features that you might consider include number of syllables, number of WordNet synonyms, and number of WordNet senses . For counting the number of syllables, we have provided a python script [syllables.py](downloads/hw2/syllables.py) that contains the function `count_syllables(word)`, which you may use. To use WordNet in Python, refer to this [documentation](http://www.nltk.org/howto/wordnet.html). You could also include  sentence-based complexity features, such as length of the sentence, average word length, and average word frequency. 
 
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 
@@ -192,17 +198,17 @@ An important part of text classification tasks is to determine what your model i
 In addition, need to perform a detailed error analysis of your models. Give several examples of words on which your best model performs well. Also give examples of words which your best model performs poorly on, and identify at least TWO categories of words on which your model is making errors.
 
 
-### Model Leaderboard
+### Leaderboard
 
 Finally, train your best model on both the training and development data. You will use this classifier to predict labels for the test data, and will submit these labels in a text file named `test_labels.txt` (with one label per line) to the leaderboard; be sure NOT to shuffle the order of the test examples. Instructions for how to post to the leaderboard will be posted on Piazza soon.
 
 The performances of the baselines will be included on the leaderboard. In order to receive full credit, your model must be able to outperform all of the baselines. In addition, the top 3 teams will receive 5 bonus points!
 
-### (Optional) Model Leaderboard using outside data
+### (Optional) Leaderboard using outside data
 
 While the training data we have provided is sufficient for completing this assignment, it is not the only data for the task of identifying complex words. As an optional addition to this homework, you may look for and use any additional training data, and submit your predicted labels to a separate leaderboard.
 
-As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use the [Newsela dataset](), a dataset of parallel sentences, where the second sentence is a simpler version of the first.
+As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use data from [Newsela](https://newsela.com). Newsela's editors re-write newspaper articles to be appropriate for students at different grade levels.  The company has generously shared a dataset with us.  The Newsela data *may not* be re-distributed outside of Penn.  You can find the data on eniac at `/home1/c/ccb/data/newsela/newsela_article_corpus_with_scripts_2016-01-29.1.zip`.
 
 Good luck, and have fun!
 
