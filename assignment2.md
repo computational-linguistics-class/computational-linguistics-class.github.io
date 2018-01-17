@@ -95,7 +95,7 @@ We recommend that you also write a function `test_predictions(y_pred, y_true)`, 
 
 ### Implement a majority class baseline
 
-You should start by implementing simple baselines as classifiers. Your first baseline is a majority class baseline which is one of the most simple classifier. You should complete the function `all_complex(data_file)`, which takes in the file name of one of the datasets, labels each word in the dataset as complex, and prints out the precision, recall, and fscore.
+You should start by implementing simple baselines as classifiers. Your first baseline is a majority class baseline which is one of the most simple classifier. You should complete the function `all_complex(data_file)`, which takes in the file name of one of the datasets, labels each word in the dataset as complex, and returns out the precision, recall, and f-score.
 
 Please report the precision, recall, and f-score on both the training data and the development data individually to be graded.
 
@@ -105,7 +105,7 @@ For our next baseline, we will use a slightly complex baseline, the length of ea
 
 For the word length baseline, you should try setting various thresholds for word length to classify them as simple or otherwise. For example, you might set a threshold of 9, meaning that any words with less than 9 characters will be labeled simple, and any words with 9 characters or more will be labeled complex. Once you find the best threshold using the training data, use this same threshold for the development data as well.
 
-You will be filling in the function `word_length_threshold(training_file, development_file)`. This function takes in both the training and development data files, and prints out the precision, recall, and f-score for your best threshold's performance on both the training and development data.
+You will be filling in the function `word_length_threshold(training_file, development_file)`. This function takes in both the training and development data files, and returns out the precision, recall, and f-score for your best threshold's performance on both the training and development data.
 
 Usually, Precision and Recall are inversely related and while building binary-classification systems we try to find a good balance between them (by maximizing f-score, for example). It is often useful to plot the Precision-Recall curve for various settings of the classifier to gauge its performance and compare it to other classifiers. For example, for this baseline, a Precision-Recall curve can be plotted by plotting the Precision (on the y-axis) and Recall (on the X-axis) for different values of word-length threshold.
 
@@ -115,7 +115,7 @@ In your write-up, please report the precision, recall, and f-score for the train
 
 Our final baseline is a classifier similar to the last one, but thresholds on word frequency instead of length. We have provided Google NGram frequencies in the text file `ngram_counts.txt`, along with the helper function `load_ngram_counts(ngram_counts_file)` to load them into Python as a dictionary.
 
-You will be filling in the function `word_frequency_threshold(training_file, development_file, counts)`, where `counts` is the dictionary of word frequencies. This function again prints out the precision, recall, and fscore for your best threshold's performance on both the training and development data.
+You will be filling in the function `word_frequency_threshold(training_file, development_file, counts)`, where `counts` is the dictionary of word frequencies. This function again returns the precision, recall, and fscore for your best threshold's performance on both the training and development data.
 
 Please again report the precision, recall, and f-score on the training and development data individually, along with the range of thresholds you tried, and the best threshold to be graded. Similar to the previous baseline, plot the Precision-Recall curve for range of thresholds you tried. Also, make a third plot that contains the P-R curve for both the baseline classifier. Which classifier looks better *on average*?
 
@@ -149,7 +149,7 @@ Finally, to use your model to predict the labels for a set of words, you only ne
 >>> Y_pred = clf.predict(X_test)
 {% endhighlight %}
 
-You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data using word length and word frequency as features, and print your model's precision, recall, and f-score on the training data and the development data individually.
+You should fill in the function `naive_bayes(training_file, development_file, counts)`. This function will train a `Naive Bayes` classifier on the training data using word length and word frequency as features, and returns your model's precision, recall, and f-score on the training data and the development data individually.
 
 In your write-up, please report the precision, recall, and f-score on the training and development data for your Naive Bayes classifier that uses word length and word frequency.
 
@@ -168,7 +168,7 @@ Next, you will use sklearn;s built-in Logistic Regression classifier. Again, we 
 >>> clf = LogisticRegression()
 {% endhighlight %}
 
-For this problem, you will be filling in the function `logistic_regression(training_file, development_file, counts)`. This function will train a `Logistic Regression` classifier on the training data, and print your model's precision, recall, and f-score on the training data and the development data individually.
+For this problem, you will be filling in the function `logistic_regression(training_file, development_file, counts)`. This function will train a `Logistic Regression` classifier on the training data, and returns your model's precision, recall, and f-score on the training data and the development data individually.
 
 Again, please report the precision, recall, and f-score on the training and development data.
 
