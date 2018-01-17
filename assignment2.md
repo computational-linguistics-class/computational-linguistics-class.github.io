@@ -123,7 +123,7 @@ Shown below is an example of the training data. Note that the training data and 
 Here is what the different fields in the file mean:
 * WORD: The word to be classified
 * LABEL: 0 for simple words, 1 for complex words
-* ANNOTATORS: The number of annotators who labled the word as complex
+* ANNOTATORS: The number of annotators who labeled the word as complex
 * SENTENCE: The sentence that was shown to annotators when they labeled the word as simple or complex
 * SENTENCE_INDEX: The index of the word in the sentence (0 indexed, space delimited).
 
@@ -134,7 +134,7 @@ Note: While the context from which each word was found is provided, you do not n
 
 ## 1. Implement the Evaluation Metrics
 
-Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics for evaluating binary classification (especially in cases of class imbalance) are precision, recall, and f-score.
+Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics for evaluating binary classification (especially in cases of class imbalance) are precision, recall, and f-score. For this assignment, complex words are considered positive examples, and simple words are considered negative examples.
 
 For this problem, you will fill in the following functions:
 
