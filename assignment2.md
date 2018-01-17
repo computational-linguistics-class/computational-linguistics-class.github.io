@@ -8,6 +8,41 @@ active_tab: homework
 release_date: 2018-01-17
 due_date: 2018-01-24 11:00:00EST
 attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
+readings:
+
+-
+   title: Naive Bayes Classification and Sentiment
+   authors: Dan Jurafsky and James H. Martin
+   venue: Speech and Language Processing (3rd edition draft)
+   type: textbook
+   url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+-
+   title: Logistic Regression
+   authors: Dan Jurafsky and James H. Martin
+   venue: Speech and Language Processing (3rd edition draft)
+   type: textbook
+   url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+-
+   title: Problems in Current Text Simplification Research&colon; New Data Can Help
+   authors: Wei Xu, Chris Callison-Burch, and Courtney Napoles
+   venue: TACL
+   type: journal
+   year: 2015
+   url: http://www.cis.upenn.edu/~ccb/publications/new-data-for-text-simplification.pdf
+   page_count: 16
+   id: new-data-for-text-simplification
+   abstract: Simple Wikipedia has dominated simplification research in the past 5 years. In this opinion paper, we argue that focusing on Wikipedia limits simplification research. We back up our arguments with corpus analysis and by highlighting statements that other researchers have made in the simplification literature. We introduce a new simplification dataset that is a significant improvement over Simple Wikipedia, and present a novel quantitative-comparative approach to study the quality of simplification data resources. 
+   bibtex: |
+      @article{Xu-EtAl:2015:TACL,
+         author = {Wei Xu and Chris Callison-Burch and Courtney Napoles},
+         title = {Problems in Current Text Simplification Research: New Data Can
+       Help},
+         journal = {Transactions of the Association for Computational Linguistics},
+         volume = {3},
+         year = {2015},
+         url = {http://www.cis.upenn.edu/~ccb/publications/new-data-for-text-simplification.pdf},
+         pages = {283--297}
+       }
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -43,7 +78,7 @@ We will provide you with training and development data that has been manually la
 Here are the materials that you should download for this assignment:
 * [Skeleton code](downloads/hw2/hw2_skeleton.py) - this provides some of the functions that you should implement.
 * [Data sets](downloads/hw2/data.tar.gz) - this is a tarball with the training/dev/test sets. 
-* [Unigram counts](http://www.cis.upenn.edu/~cis530/18sp/data/ngram_counts.txt.gz) from the Google N-gram corpus.
+* [Unigram counts](http://www.cis.upenn.edu/~cis530/18sp/data/ngram_counts.txt.gz) from the [Google N-gram corpus](https://research.googleblog.com/2006/08/all-our-n-gram-are-belong-to-you.html).
 </div>
 
 
@@ -52,7 +87,6 @@ Here are the materials that you should download for this assignment:
 Automated text simplification is an NLP task, where the goal is to take as input a complex text, and return a text that is easier to understand. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, and which words are easy to understand.
 
 We have prepared a labeled training set for this assignment. We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets. The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.
-You can [download the datasets here]().
 
 This dataset was collected by taking the first 200 tokens in 200 complex texts, and crowdsourcing human judgements. We asked nine human annotators to identify at least 10 complex words in each text. From here, words that were identified as complex by at least 3 annotators were labeled as complex. In addition, words that were identified as complex by zero annotators were labeled as simple. One thing to note is that we kept only nouns, verbs, adjectives, and adverbs, and removed stopwords (i.e. common words like `the` or `and`) and proper nouns. After this filtering, we were left with 5,922 unique words. For this homework, we split these words up into 4,000 words for training, 1,000 words for development, and the remaining 922 words are reserved for testing.
 
@@ -208,14 +242,76 @@ The performances of the baselines will be included on the leaderboard. In order 
 
 While the training data we have provided is sufficient for completing this assignment, it is not the only data for the task of identifying complex words. As an optional addition to this homework, you may look for and use any additional training data, and submit your predicted labels to a separate leaderboard.
 
-As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use data from [Newsela](https://newsela.com). Newsela's editors re-write newspaper articles to be appropriate for students at different grade levels.  The company has generously shared a dataset with us.  The Newsela data *may not* be re-distributed outside of Penn.  You can find the data on eniac at `/home1/c/ccb/data/newsela/newsela_article_corpus_with_scripts_2016-01-29.1.zip`.
+As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use data from [Newsela](https://newsela.com). Newsela's editors re-write newspaper articles to be appropriate for students at different grade levels.  The company has generously shared a dataset with us.  The Newsela data **may not** be re-distributed outside of Penn.  You can find the data on eniac at `/home1/c/ccb/data/newsela/newsela_article_corpus_with_scripts_2016-01-29.1.zip`.
 
 Good luck, and have fun!
 
+
+
+
+## 5. Deliverables 
 <div class="alert alert-warning" markdown="1">
-To recap, here are the deliverables that you will need to submit:
+Here are the deliverables that you will need to submit:
 * Your code. This should implement the skeleton files that we provide.  It should be written in Python 3.
 * Your model's output for the test set using only the provided training and development data.   
 * (Optional) your model's output for the test set, using any data that you want.
 * Your writeup in the form of a PDF.
 </div>
+
+
+## 6. Recommended readings
+
+<table>
+   {% for publication in page.readings %}
+    <tr>
+      <td>
+	{% if publication.url %}
+		<a href="{{ publication.url }}">{{ publication.title }}.</a>
+        {% else %}
+		{{ publication.title }}.
+	{% endif %}
+	{{ publication.authors }}.
+	{{ publication.venue }}  {{ publication.year }}.
+
+	{% if publication.abstract %}
+	<!-- abstract button -->
+	<a data-toggle="modal" href="#{{publication.id}}-abstract" class="label label-success">Abstract</a>
+	<!-- /.abstract button -->
+	<!-- abstract content -->
+	<div id="{{publication.id}}-abstract" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{publication.id}}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="{{publication.id}}">{{publication.title}}</h4>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+        {{publication.abstract}}
+        </div><!-- /.modal-body -->
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.abstract-content -->
+	{% endif %}
+		{% if publication.bibtex %}
+	<!-- bibtex button -->
+	<a data-toggle="modal" href="#{{publication.id}}-bibtex" class="label label-default">BibTex</a>
+	<!-- /.bibtex button -->
+	<!-- bibtex content -->
+	<div id="{{publication.id}}-bibtex" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{publication.id}}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="{{publication.id}}">{{publication.title}}</h4>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+ 	   <pre>{{publication.bibtex}}
+           </pre>
+        </div><!-- /.modal-body -->
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.bibtex-content -->
+	{% endif %}
+</td></tr>
+  {% endfor %}
+</table>
