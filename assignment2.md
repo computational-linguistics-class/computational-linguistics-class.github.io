@@ -39,7 +39,7 @@ The learning goals of this assignment are:
 * Employ common experimental design practices in NLP.  Split the annotated data into training/development/test sets, implement simple baselines to determine how difficult the task is, and experiment with a range of features and models.
 * Get an introduction to sklearn, an excellent machine learning Python package.
 
-We will provide you with training and development data that has been manually labeled.  We will also give you a test set without labels.  You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope.  We will score its predictions and maintain a leaderboard showing whose classifier has the best performance.
+We will provide you with training and development data that has been manually labeled. We will also give you a test set without labels. You will build a classifier to predict the labels on our test set.  You can upload your classifier's predictions to Gradescope. We will score its predictions and maintain a leaderboard showing whose classifier has the best performance.
 
 
 <div class="alert alert-info" markdown="1">
@@ -54,10 +54,12 @@ Here are the materials that you should download for this assignment:
 
 Automated text simplification is an NLP task, where the goal is to take as input a complex text, and return a text that is easier to understand. One of the most logical first steps in text simplification, and example of text classification, is identifying which words in a text are hard to understand, i.e. `complex`, and which words are easy to understand, i.e. 'simple`.
 
-We have prepared a labeled training set for this assignment. We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets.  The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.  
+We have prepared a labeled training set for this assignment. We provide a dataset of words and their corresponding sentences that has been split into training, development, and test sets. The training set is disjoint, so if a word appears in the training set, it will not also appear in the test set or the development set.
 You can [download the datasets here]().
 
-Here is an example of the training data:
+This dataset was collected by taking the first 200 tokens in 200 complex texts, and crowdsourcing human judgements. We asked nine human annotators to identify at least 10 complex words in each text. From here, words that were identified as complex by at least 3 annotators were labeled as complex. In addition, words that were identified as complex by zero annotators were labeled as simple. One thing to note is that we kept only nouns, verbs, adjectives, and adverbs, and removed stopwords (i.e. common words like `the` or `and`) and proper nouns. After this filtering, we were left with 5,922 unique words. For this homework, we split these words up into 4,000 for training, 1,000 for development, and the remaining 922 are reserved for testing.
+
+Shown below is an example of the training data. Note that the training data and development data files have the same formatting, and the test data does not include the label column:
 
 | WORD | LABEL | SENTENCE | SENTENCE_INDEX |
 | :--- |:-----:| :------  | :------------: |
@@ -72,15 +74,16 @@ After taking a look at the datasets, we recommend that you write the `load_file(
 
 Note: While the context from which each word was found is provided, you do not need it for the majority of the assignment. The only time you may need this is if you choose to implement any context-based features in your own classifier in Section 4.
 
+
 ## 1. Implement The Evaluation Metrics
 
 Before we start with this text classification task, we need to first determine how we will evaluate our results. The most common metrics for evaluating binary classification (especially in cases of class imbalance) are precision, recall, and f-score.
 
 For this problem, you will fill in the following functions:
 
-- `get_precision(y_pred, y_true)`
-- `get_recall(y_pred, y_true)`
-- `get_fscore(y_pred, y_true)`
+* `get_precision(y_pred, y_true)`
+* `get_recall(y_pred, y_true)`
+* `get_fscore(y_pred, y_true)`
 
 Here, `y_pred` is list of predicted labels from a classifier, and `y_true` is a list of the true labels.
 
