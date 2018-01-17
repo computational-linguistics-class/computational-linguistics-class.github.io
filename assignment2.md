@@ -92,18 +92,20 @@ This dataset was collected by taking the first 200 tokens in 200 complex texts, 
 
 Shown below is an example of the training data. Note that the training data and development data files have the same formatting, and the test data does not include the label column:
 
-| WORD | LABEL | SENTENCE | SENTENCE_INDEX |
-| :--- |:-----:| :------  | :------------: |
-|  pizza | 0 | One would require all grain servings to be rich in whole grains -- or more than 50 percent whole-grain -- affecting such items as pastas , bread , rolls and pizza crusts . | 30 |
-|  seasoned | 1 | The 4-year-old from southeast Arlington was searching for fish fossils in Mansfield with his dad , Tim , last fall when the preschooler came back with a bone that has excited even seasoned paleontologists from Southern Methodist University . | 32 |
-|  watching | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 28 |
-|  hurling | 1 | The state news agency said about 500 young men hurling stones and Molotov cocktails set ablaze the headquarters of Morsi 's Muslim Brotherhood party in Cairo . | 9 |
-|  fans | 0 | In the balconies , " gamescasters " in dark suits and bright ties are breathlessly narrating and analyzing the plays to tens of thousands of fans who are watching via a live video stream . | 25 |
-|  attire | 1 | The panel also found problematic a uniform exemption for students who wore the attire of national youth organizations like the Boy Scouts or Girl Scouts on meeting days . | 13 |
+| WORD | LABEL |  ANNOTATORS  | SENTENCE | SENTENCE_INDEX |
+| :--- |:-----:| :--------: | :------  | :------------: |
+| jumping | 0 | 0 | `` Coleman with his jumping frog -- bet stranger $ 50 -- stranger had no frog &amp; C got him one -- in the meantime stranger filled C 's frog full of shot &amp; he could n't jump -- the stranger 's frog won . '' | 4 |
+| paths | 0 | 0 | The Cannery project will feature drought-tolerant landscaping along its bike paths , and most of the front yards will be landscaped with low-water plants in place of grass . | 10|
+| banks | 0 | 0 | Extending their protests into the workweek , Hong Kong democracy activists continued occupying major thoroughfares Monday , forcing the closure of some schools , banks and other businesses in the semi-autonomous Chinese territory . | 24 |
+| fair-weather | 1 | 5 | Months ago , many warned him not to invest in a place where fair-weather tourists flee in the fall and the big lake 's waters turn cold and storm-tossed , forcing the 100 or so hardy full-time residents of Cornucopia to hibernate for the winter . | 13 |
+| krill | 1 | 7 | But unlike the other whales , the 25-foot-long young adult stuck near the surface -- and it did n't dive down to feast on the blooms of krill that attract humpbacks to the bay . | 27 |
+| affirmed | 1 | 8 | CHARLESTON , S.C. -- A grand jury affirmed the state of South Carolina 's murder charge on Monday against a white former North Charleston police officer who fatally shot an unarmed black man trying to run from a traffic stop . | 7 |
+
 
 Here is what the different fields in the file mean:
 * WORD: The word to be classified
 * LABEL: 0 for simple words, 1 for complex words
+* ANNOTATORS: The number of annotators who labled the word as complex
 * SENTENCE: The sentence that was shown to annotators when they labeled the word as simple or complex
 * SENTENCE_INDEX: The index of the word in the sentence (0 indexed, space delimited).
 
