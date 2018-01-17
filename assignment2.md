@@ -55,7 +55,7 @@ readings:
    bibtex: |
       @InProceedings{shardlow:2013:SRW,
   author    = {Matthew Shardlow},
-  title     = {{A Comparison of Techniques to Automatically Identify Complex Words}},
+  title     = {A Comparison of Techniques to Automatically Identify Complex Words},
   booktitle = {51st Annual Meeting of the Association for Computational Linguistics Proceedings of the Student Research Workshop},
   year      = {2013},
   address   = {Sofia, Bulgaria},
@@ -75,7 +75,7 @@ readings:
    bibtex: |
       @InProceedings{paetzold-specia:2016,
   author    = {Gustavo Paetzold and Lucia Specia},
-  title     = {{SemEval 2016 Task 11: Complex Word Identification}},
+  title     = {SemEval 2016 Task 11: Complex Word Identification},
   booktitle = {Proceedings of the 10th International Workshop on Semantic Evaluation (SemEval-2016)},
   year      = {2016},
   address   = {San Diego, California},
