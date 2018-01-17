@@ -43,6 +43,24 @@ readings:
          url = {http://www.cis.upenn.edu/~ccb/publications/new-data-for-text-simplification.pdf},
          pages = {283--297}
        }
+-
+   title:  Comparison of Techniques to Automatically Identify Complex Words
+   authors: Matthew Shardlow
+   venue: ACL
+   type: journal
+   year: 2013
+   url: http://aclweb.org/anthology/P/P13/P13-3015.pdf
+   page_count: 7
+   id: comparison-of-techniques
+-
+   title:  SemEval 2016 Task 11: Complex Word Identification
+   authors: Gustavo Paetzold and Lucia Specia
+   venue: ACL
+   type: journal
+   year: 2016
+   url: https://www.researchgate.net/profile/Gustavo_Paetzold/publication/305334627_SemEval_2016_Task_11_Complex_Word_Identification/links/57bab70a08ae14f440bd9722/SemEval-2016-Task-11-Complex-Word-Identification.pdf
+   page_count: 10
+   id: SemEval-2016
 ---
 
 <!-- Check whether the assignment is up to date -->
