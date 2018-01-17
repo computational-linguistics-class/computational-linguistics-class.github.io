@@ -43,25 +43,6 @@ readings:
          url = {http://www.cis.upenn.edu/~ccb/publications/new-data-for-text-simplification.pdf},
          pages = {283--297}
        }
--
-   title:  Comparison of Techniques to Automatically Identify Complex Words
-   authors: Matthew Shardlow
-   venue: ACL
-   type: journal
-   year: 2013
-   url: http://aclweb.org/anthology/P/P13/P13-3015.pdf
-   page_count: 7
-   id: comparison-of-techniques
-   bibtex: |
-      @InProceedings{shardlow:2013:SRW,
-  author    = {Matthew Shardlow},
-  title     = {A Comparison of Techniques to Automatically Identify Complex Words},
-  booktitle = {51st Annual Meeting of the Association for Computational Linguistics Proceedings of the Student Research Workshop},
-  year      = {2013},
-  address   = {Sofia, Bulgaria},
-  publisher = {Association for Computational Linguistics},
-  pages     = {103--109},
-}
 ---
 
 <!-- Check whether the assignment is up to date -->
