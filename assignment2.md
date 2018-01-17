@@ -62,26 +62,6 @@ readings:
   publisher = {Association for Computational Linguistics},
   pages     = {103--109},
 }
--
-   title:  SemEval 2016 Task 11: Complex Word Identification
-   authors: Gustavo Paetzold and Lucia Specia
-   venue: ACL
-   type: journal
-   year: 2016
-   url: https://www.researchgate.net/profile/Gustavo_Paetzold/publication/305334627_SemEval_2016_Task_11_Complex_Word_Identification/links/57bab70a08ae14f440bd9722/SemEval-2016-Task-11-Complex-Word-Identification.pdf
-   page_count: 10
-   id: SemEval-2016
-   abstract: We report the findings of the Complex Word Identification task of SemEval 2016. To create a dataset, we conduct a user study with 400 non-native English speakers, and find that complex words tend to be rarer, less ambiguous and shorter. A total of 42 systems were submitted from 21 distinct teams, and nine baselines were provided. The results highlight the effectiveness of Decision Trees and Ensemble methods for the task, but ultimately reveal that word frequencies remain the most reliable predictor of word complexity.
-   bibtex: |
-      @InProceedings{paetzold-specia:2016,
-  author    = {Gustavo Paetzold and Lucia Specia},
-  title     = {SemEval 2016 Task 11: Complex Word Identification},
-  booktitle = {Proceedings of the 10th International Workshop on Semantic Evaluation (SemEval-2016)},
-  year      = {2016},
-  address   = {San Diego, California},
-  publisher = {Association for Computational Linguistics},
-  pages     = {560--569},
-}
 ---
 
 <!-- Check whether the assignment is up to date -->
