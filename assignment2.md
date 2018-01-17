@@ -182,7 +182,7 @@ To train a classifier, you need two `numpy` arrays: `X_train`, an `m` by `n` arr
 >>> clf.fit(X_train, Y)
 {% endhighlight %}
 
-Finally, to use your model to predict the labels for a set of words, you only need one `numpy` array: `X_test`, an `m'` by `n` array, where `m'` is the number of words in the dataset, and `n` is the number of features for each word. Note that the `n` used here is the same as the `n` in `X_train`. Then, we can use our classifier to predict labels using the following command:
+Finally, to use your model to predict the labels for a set of words, you only need one `numpy` array: `X_test`, an `m'` by `n` array, where `m'` is the number of words in the test set, and `n` is the number of features for each word. Note that the `n` used here is the same as the `n` in `X_train`. Then, we can use our classifier to predict labels using the following command:
 
 {% highlight python %}
 >>> Y_pred = clf.predict(X_test)
