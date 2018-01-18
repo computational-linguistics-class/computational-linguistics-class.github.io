@@ -46,7 +46,7 @@ def load_file(data_file):
         for line in f:
             if i > 0:
                 line_split = line[:-1].split("\t")
-                words.append(line_split[0])
+                words.append(line_split[0].lower())
                 labels.append(int(line_split[1]))
             i += 1
     return words, labels
