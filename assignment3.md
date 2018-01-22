@@ -158,9 +158,10 @@ You have 3 tasks.
 
 Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-For this task, use files:
+We have provided you with skeleton code to get you started. To complete this task, you will need to make updates to the following files:
 * `makecooccurrences.py`: to calculate cooccurrence statistics and write vectors to file (this could take a long time (>1 hour) to make plans accordingly)
 * `question1.py`: to load cooccurrences vectors and cluster.
+
 
 We have provided a corpus for feature extraction at `/home1/a/acocos/data/reuters.rcv1.tokenized.gz`, and also code to read it. 
 
@@ -212,7 +213,10 @@ As before, achieving the baseline score will get you a B, but you might try to s
 - Train your own word vectors, either on the provided corpus or something you find online. Try experimenting with the dimensionality.
 - [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
 
-As in question 1, turn in the predicted clusters that your dense vector representation generates. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the training set.
+As in question 1, turn in the predicted clusters that your dense vector representation generates. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the training set. 
+
+In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
+
 
 The output file should be called: `test_clusters_dense.txt`
 
