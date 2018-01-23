@@ -52,6 +52,15 @@ All of the following are function stubs in the python code. You just need to fil
 * fill out `rank_words`
 
 
+(Optional) Fun
+=======================
+So you've built some machinery that can measure similarity between words and documents. We gave you a Shakespeare corpus, but you can use any body of text you like. For example, check out [Project Gutenberg](https://www.gutenberg.org/) for public domain texts. The sky's the limit on what you can do, but here are some ideas:
+
+* *Novel recommender system*. Maybe you enjoyed reading _Sense and Sensibility_ and _War and Peace_. Can you suggest some similar novels? Or maybe you need some variety in your consumption. Find novels that are really different.
+* *Other languages*. Do these techniques work in other languages? Project Gutenberg has texts in a variety of languages. Maybe you could use this to measure language similarity?
+
+Extra credit for playing around?
+
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
