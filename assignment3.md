@@ -56,8 +56,13 @@ Do some ranking:
 * fill out `rank_plays`
 * fill out `rank_words`
 
+Report
+======================
 In the ranking tasks, play with different vector representations, and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
 
+Some patterns you could look into:
+* Shakespeares plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
+* Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from male ones [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
 
 (Optional) Fun
 =======================
