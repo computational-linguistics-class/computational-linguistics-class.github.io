@@ -113,6 +113,8 @@ The cosine value ranges from 1 for vectors pointing in the same direction, throu
 
 Please implement `compute_cosine_similarity`, and for each play in the corpus, score how similar each other play is to it.  Which plays are the closet to each other in vector space (ignoring self similarity)?  Which plays are the most distant from each other? 
 
+## Measuring word similarity 
+
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
