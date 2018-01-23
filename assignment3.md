@@ -41,15 +41,22 @@ Your Tasks
 ======================
 All of the following are function stubs in the python code. You just need to fill them out.
 
+Create matrices:
 * fill out `create_term_document_matrix`
 * fill out `create_term_context_matrix`
 * fill out `create_PPMI_matrix`
 * fill out `compute_tf_idf_matrix`
+
+Compute similarities:
 * fill out `compute_cosine_similarity`
 * fill out `compute_jaccard_similarity`
 * fill out `compute_dice_similarity`
+
+Do some ranking:
 * fill out `rank_plays`
 * fill out `rank_words`
+
+In the ranking tasks, play with different vector representations, and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
 
 
 (Optional) Fun
