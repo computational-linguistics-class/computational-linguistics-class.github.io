@@ -52,16 +52,37 @@ Your Tasks
 ======================
 All of the following are function stubs in the python code. You just need to fill them out.
 
+Create matrices:
 * fill out `create_term_document_matrix`
 * fill out `create_term_context_matrix`
 * fill out `create_PPMI_matrix`
 * fill out `compute_tf_idf_matrix`
+
+Compute similarities:
 * fill out `compute_cosine_similarity`
 * fill out `compute_jaccard_similarity`
 * fill out `compute_dice_similarity`
+
+Do some ranking:
 * fill out `rank_plays`
 * fill out `rank_words`
 
+Report
+======================
+In the ranking tasks, play with different vector representations, and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
+
+Some patterns you could look into:
+* Shakespeare's plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
+* Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from male ones [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
+
+(Optional) Fun
+=======================
+So you've built some machinery that can measure similarity between words and documents. We gave you a Shakespeare corpus, but you can use any body of text you like. For example, check out [Project Gutenberg](https://www.gutenberg.org/) for public domain texts. The sky's the limit on what you can do, but here are some ideas:
+
+* *Novel recommender system*. Maybe you enjoyed reading _Sense and Sensibility_ and _War and Peace_. Can you suggest some similar novels? Or maybe you need some variety in your consumption. Find novels that are really different.
+* *Other languages*. Do these techniques work in other languages? Project Gutenberg has texts in a variety of languages. Maybe you could use this to measure language similarity?
+
+Extra credit for playing around?
 
 # Term-Document Matrix
 
