@@ -27,6 +27,9 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Vector Semantics <span class="text-muted">: Assignment 3</span>
 =============================================================
 
+In this assignment you will implement many of the things you learned in chapter [15](https://web.stanford.edu/~jurafsky/slp3/15.pdf) of the textbook. If you haven't read it yet, now would be a good time to do that.
+
+We will provide a small corpus of Shakespeare plays, which you will use to create a term-document matrix, a term-frequency matrix, and all of the derivations described in the textbook. Ultimately, your goal is to use the resulting vectors to measure play similarity and word similarity. All (or almost all) of the code you write will be direct implementations of concepts and equations described in chapter [15](https://web.stanford.edu/~jurafsky/slp3/15.pdf).
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
@@ -34,10 +37,10 @@ Here are the materials that you should download for this assignment:
 * Data
 </div>
 
-We expect that you have read Jurafsky and Martin, chapters [15](https://web.stanford.edu/~jurafsky/slp3/15.pdf)
+Your Tasks
+======================
+All of the following are function stubs in the python code. You just need to fill them out.
 
-
-Things you have to do:
 * fill out `create_term_document_matrix`
 * fill out `create_term_context_matrix`
 * fill out `create_PPMI_matrix`
@@ -47,6 +50,7 @@ Things you have to do:
 * fill out `compute_dice_similarity`
 * fill out `rank_plays`
 * fill out `rank_words`
+
 
 
 ## Deliverables 
