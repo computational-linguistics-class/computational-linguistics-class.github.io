@@ -39,8 +39,7 @@ In this assignment you will implement many of the things you learned in [Chapter
 
 We will provide a corpus of Shakespeare plays, which you will use to create a term-document matrix and a term-context matrix. You'll implement a selection of the weighting methods and similarity metrics defined in the textbook. Ultimately, your goal is to use the resulting vectors to measure how similar Shakespeare plays are to each other, and to find words that are used in a similar fashion. All (or almost all) of the code you write will be direct implementations of concepts and equations described in [Chapter 15](https://web.stanford.edu/~jurafsky/slp3/15.pdf).
 
-Lo, here upon thy cheek the stain doth sit Of an old tear that is not washed off yet.
-There’s still a stain on your cheek from an old tear that hasn’t been washed off yet.
+*All difficulties are easy when they are known.*
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
@@ -64,7 +63,7 @@ You will write code to compile a term-document matrix for Shakespeare's plays, f
 
 The dimensions of your term-document matrix will be the number of documents $D$ (in this case, the number of Shakespeare's plays that we give you in the corpus by the number of unique word types $\|V\|$ in that collection.   The columns represent the documents, and the rows represent the words, and each cell represents the frequency of that word in that document. 
 
-In your code you will write a function to `create_term_document_matrix`.  This will let you be the hit of your next dinner party by being able to answer triva questions like *how many words did Shakespeare use?*, which may give us a hint to the answer to *[How many words did Shakespeare know?]*  The table will also tell you how many words Shakespeare used only once.  did you know that there's a technical term for that?  In corpus linguistics they are called [*hapax legomena*](https://en.wikipedia.org/wiki/Hapax_legomenon), but I prefer the term *singleton*, because I don't like snooty Greek or Latin terms. 
+In your code you will write a function to `create_term_document_matrix`.  This will let you be the hit of your next dinner party by being able to answer trivia questions like *how many words did Shakespeare use?*, which may give us a hint to the answer to *[How many words did Shakespeare know?]*  The table will also tell you how many words Shakespeare used only once.  did you know that there's a technical term for that?  In corpus linguistics they are called [*hapax legomena*](https://en.wikipedia.org/wiki/Hapax_legomenon), but I prefer the term *singleton*, because I don't like snooty Greek or Latin terms. 
 
 ## Comparing plays
 
@@ -72,17 +71,17 @@ The term-document matrix will also let us do cool things like figure out which p
 
 Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 15.3 of the textbook.
 
-> The cosine—like most measures for vector similarity used in NLP—is based on the dot product operator from linear algebra, also called the inner product:
+> The cosine, like most measures for vector similarity used in NLP, is based on the dot product operator from linear algebra, also called the inner product:
 
 > dot-product($\vec{v}, \vec{w}) = \vec{v} \cdot \vec{w} = \sum_{i=1}^{N}{v_iw_i} = v_1w_1 +v_2w_2 +...+v_Nw_N$
 
-> The dot product acts as a similarity metric because it will tend to be high just when the two vectors have large values in the same dimensions. Alternatively, vectors that have zeros in different dimensions—orthogonal vectors—will have a dot product of 0, representing their strong dissimilarity. 
+> The dot product acts as a similarity metric because it will tend to be high just when the two vectors have large values in the same dimensions. Alternatively, vectors that have zeros in different dimensions (orthogonal vectors) will have a dot product of 0, representing their strong dissimilarity. 
 
 > This raw dot-product, however, has a problem as a similarity metric: it favors long vectors. The vector length is defined as
 
 > $\|\vec{v}\| = \sqrt{\sum_{i=1}^{N}{v_i^2}}$
 
-> The dot product is higher if a vector is longer, with higher values in each dimension. More frequent words have longer vectors, since they tend to co-occur with more words and have higher co-occurrence values with each of them. The raw dot product thus will be higher for frequent words. But this is a problem; we’d like a similarity metric that tells us how similar two words are regardless of their frequency.
+> The dot product is higher if a vector is longer, with higher values in each dimension. More frequent words have longer vectors, since they tend to co-occur with more words and have higher co-occurrence values with each of them. The raw dot product thus will be higher for frequent words. But this is a problem; we would like a similarity metric that tells us how similar two words are regardless of their frequency.
 
 > The simplest way to modify the dot product to normalize for the vector length is to divide the dot product by the lengths of each of the two vectors. This normalized dot product turns out to be the same as the cosine of the angle between the two vectors, following from the definition of the dot product between two vectors $\vec{v}$ and $\vec{w}$ as:
 
@@ -94,13 +93,13 @@ Let's begin by considering the column representing each play.  Each column is a 
 
 > $cosine(\vec{v}, \vec{w}) = \frac{\vec{v} \cdot \vec{w}}{\|\vec{v}\| \|\vec{w}\|} = \frac{\sum_{i=1}^{N}{v_iw_i}}{\sqrt{\sum_{i=1}^{N}{v_i^2}} \sqrt{\sum_{i=1}^{N}{w_i^2}}} $
 
-The cosine value ranges from 1 for vectors pointing in the same direction, through 0 for vectors that are orthogonal, to -1 for vectors pointing in opposite directions. Since our term-document matrix contains raw frequency counts, it is non-negative, so the cosine for its vectors will range from 0–1.  1 means that the vectors are identical, 0 means that they are totally dissimilar.  
+The cosine value ranges from 1 for vectors pointing in the same direction, through 0 for vectors that are orthogonal, to -1 for vectors pointing in opposite directions. Since our term-document matrix contains raw frequency counts, it is non-negative, so the cosine for its vectors will range from 0 to 1.  1 means that the vectors are identical, 0 means that they are totally dissimilar.  
 
 Please implement `compute_cosine_similarity`, and for each play in the corpus, score how similar each other play is to it.  Which plays are the closet to each other in vector space (ignoring self similarity)?  Which plays are the most distant from each other? 
 
 ## How do I know if my rankings are good?
 
-First, read all of the plays.  Then perform at least three of them.  Now that you are a true thespian, you should have a good intuition for the central themes in the plays.   Alternately, take a look at [this grouping of Shakespeare’s plays into Tragedies, Comedies and Histories](https://en.wikipedia.org/wiki/Shakespeare%27s_plays#Canonical_plays). Do plays that are thematically similar to the one that you're ranking appear among its most similar plays, according to cosine similarity? Another clue that you're doing the right thing is if a play has a cosine of 1 with itself.  If that's not the case, then you've messed something up. Another good hint, is that there are a ton of pays about Henry.  They'll probably be similar to each other.
+First, read all of the plays. Then perform at least three of them. Now that you are a true thespian, you should have a good intuition for the central themes in the plays.   Alternately, take a look at [this grouping of Shakespeare’s plays into Tragedies, Comedies and Histories](https://en.wikipedia.org/wiki/Shakespeare%27s_plays#Canonical_plays). Do plays that are thematically similar to the one that you're ranking appear among its most similar plays, according to cosine similarity? Another clue that you're doing the right thing is if a play has a cosine of 1 with itself.  If that's not the case, then you've messed something up. Another good hint, is that there are a ton of pays about Henry.  They'll probably be similar to each other.
 
 # Measuring word similarity 
 
@@ -133,8 +132,8 @@ These are defined in Section 15.2 of the textbook.
 There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 15.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
 
  
-Your Tasks
-======================
+# Your Tasks
+
 All of the following are function stubs in the python code. You just need to fill them out.
 
 Create matrices:
@@ -152,8 +151,8 @@ Do some ranking:
 * fill out `rank_plays`
 * fill out `rank_words`
 
-Report
-======================
+# Report
+
 In the ranking tasks, play with different vector representations, and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
 
 Some patterns you could look into:
@@ -166,6 +165,7 @@ So you've built some machinery that can measure similarity between words and doc
 
 * *Novel recommender system*. Maybe you enjoyed reading _Sense and Sensibility_ and _War and Peace_. Can you suggest some similar novels? Or maybe you need some variety in your consumption. Find novels that are really different.
 * *Other languages*. Do these techniques work in other languages? Project Gutenberg has texts in a variety of languages. Maybe you could use this to measure language similarity?
+* *Modernizing Shakespeare*.  When I read Shakespeare in high school, I had the dickens of a time trying to understand all the weird words in the play.  Some people have re-written Shakespeare's plays into contemporary English.  An [awesome NLP researcher](https://cocoxu.github.io) has [compiled that data](https://github.com/cocoxu/Shakespeare).  User her data and your vector space models to find contemporary words that mean similar things to the Shakespearean English.  
 
 
 ## Deliverables 
@@ -179,10 +179,6 @@ Here are the deliverables that you will need to submit:
 
 
 ## Recommended readings
-* Jurafsky and Martin, chapter [15](https://web.stanford.edu/~jurafsky/slp3/15.pdf)
-
-* (A cool data set)[https://github.com/cocoxu/Shakespeare]
-
 
 <table>
    {% for publication in page.readings %}
