@@ -13,7 +13,7 @@
   type: no_lecture
 -
   date: 2018-01-17
-  slides: 
+  slides: assignment2.html
   title: Hands-on with Text Classification
   readings: 
     - 
@@ -32,7 +32,7 @@
       note: This invited talk discusses Dan's work on analyzing police body camera data to see if there is a difference in police interactions with black motorists versus white motorists.  He uses text classification to categorize differnt dimensions of the conversations that happen in traffic stops. 
 -
   date: 2018-01-22
-  slides: 
+  slides: slides/02-vector-semantics.pdf
   title: Vector Semantics
   readings: 
     - 
@@ -41,7 +41,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
 -
   date: 2018-01-24
-  slides: 
+  slides: assignment3.html
   title: Hands-on with Vector Space Models
   readings: 
     - 
@@ -51,6 +51,24 @@
 -
   date: 2018-01-29
   slides: 
+  title: What can we do with semantic vectors?
+  readings: 
+    - 
+      title: Composition in Distributional Models of Semantics
+      authors: Jeff Mitchell and Mirella Lapata
+      url: http://onlinelibrary.wiley.com/doi/10.1111/j.1551-6709.2010.01106.x/epdf
+-
+  date: 2018-01-31
+  slides: 
+  title: Hands-on with Dense Vectors
+  readings: 
+    - 
+      title: ACL 2014 Tutorial on New Directions in Vector Space Models of Meaning (3 hour video)
+      authors: Edward Grefenstette, Karl Moritz Hermann, Georgiana Dinu, and Phil Blunsom
+      url: https://www.youtube.com/watch?v=_ASOqXiWBVo
+-
+  date: 2018-02-05
+  slides: 
   title: Language Modeling with N-Grams
   readings: 
     - 
@@ -58,7 +76,7 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
-  date: 2018-01-31
+  date: 2018-02-07
   slides: 
   title: Hands-on with Language Models
   readings: 
@@ -67,16 +85,15 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
-  date: 2018-02-05
+  date: 2018-02-12
   slides: 
   title: Hidden Markov Models
   readings: 
     - 
       title: Chapter 9 "Hidden Markov Models"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
 -
-  date: 2018-02-07
+  date: 2018-02-14
   slides: 
   title: Hands-on with Taggers
   readings: 
@@ -84,16 +101,6 @@
       title: Chapter 10 "Part-of-Speech Tagging"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
--
-  date: 2018-02-12
-  slides: 
-  title: 
-  readings: 
--
-  date: 2018-02-14
-  slides: 
-  title: 
-  readings: 
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
