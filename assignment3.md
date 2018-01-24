@@ -141,11 +141,11 @@ You will write code to compile a term-document matrix for Shakespeare's plays, f
 
 The dimensions of your term-document matrix will be the number of documents $D$ (in this case, the number of Shakespeare's plays that we give you in the corpus by the number of unique word types $\|V\|$ in that collection.   The columns represent the documents, and the rows represent the words, and each cell represents the frequency of that word in that document. 
 
-In your code you will write a function to `create_term_document_matrix`.  This will let you be the hit of your next dinner party by being able to answer trivia questions like *how many words did Shakespeare use?*, which may give us a hint to the answer to *[How many words did Shakespeare know?]*  The table will also tell you how many words Shakespeare used only once.  did you know that there's a technical term for that?  In corpus linguistics they are called [*hapax legomena*](https://en.wikipedia.org/wiki/Hapax_legomenon), but I prefer the term *singleton*, because I don't like snooty Greek or Latin terms. 
+In your code you will write a function to `create_term_document_matrix`.  This will let you be the hit of your next dinner party by being able to answer trivia questions like *how many words did Shakespeare use?*, which may give us a hint to the answer to *[How many words did Shakespeare know?]*  The table will also tell you how many words Shakespeare used only once.  Did you know that there's a technical term for that?  In corpus linguistics they are called [*hapax legomena*](https://en.wikipedia.org/wiki/Hapax_legomenon), but I prefer the term *singleton*, because I don't like snooty Greek or Latin terms. 
 
 ## Comparing plays
 
-The term-document matrix will also let us do cool things like figure out which plays are most similar to each other, by comparing the column vectors.  We could even look for outliers to see if some plays are so dissimilar from the rest of the cannon that [maybe they weren't authored by Shakespeare afterall](https://en.wikipedia.org/wiki/Shakespeare_authorship_question).  
+The term-document matrix will also let us do cool things like figure out which plays are most similar to each other, by comparing the column vectors.  We could even look for outliers to see if some plays are so dissimilar from the rest of the canon that [maybe they weren't authored by Shakespeare after all](https://en.wikipedia.org/wiki/Shakespeare_authorship_question).  
 
 Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 15.3 of the textbook.
 
@@ -177,7 +177,7 @@ Please implement `compute_cosine_similarity`, and for each play in the corpus, s
 
 ## How do I know if my rankings are good?
 
-First, read all of the plays. Then perform at least three of them. Now that you are a true thespian, you should have a good intuition for the central themes in the plays.   Alternately, take a look at [this grouping of Shakespeare’s plays into Tragedies, Comedies and Histories](https://en.wikipedia.org/wiki/Shakespeare%27s_plays#Canonical_plays). Do plays that are thematically similar to the one that you're ranking appear among its most similar plays, according to cosine similarity? Another clue that you're doing the right thing is if a play has a cosine of 1 with itself.  If that's not the case, then you've messed something up. Another good hint, is that there are a ton of pays about Henry.  They'll probably be similar to each other.
+First, read all of the plays. Then perform at least three of them. Now that you are a true thespian, you should have a good intuition for the central themes in the plays.   Alternately, take a look at [this grouping of Shakespeare’s plays into Tragedies, Comedies and Histories](https://en.wikipedia.org/wiki/Shakespeare%27s_plays#Canonical_plays). Do plays that are thematically similar to the one that you're ranking appear among its most similar plays, according to cosine similarity? Another clue that you're doing the right thing is if a play has a cosine of 1 with itself.  If that's not the case, then you've messed something up. Another good hint, is that there are a ton of plays about Henry.  They'll probably be similar to each other.
 
 # Measuring word similarity 
 
@@ -202,7 +202,7 @@ Your term-context matrix contains the raw frequency of the co-occurrence of two 
 
 These are defined in Section 15.2 of the textbook.
 
-*Warning, calculating PPMI for your whole $\|V\|$-by-$\|V\|$ matrix might be slow. Our intrepid TA's implementation for PPMI takes about 10 minutes to compute all values.  She always writes perfectly optmized code on her first try.*
+*Warning, calculating PPMI for your whole $\|V\|$-by-$\|V\|$ matrix might be slow. Our intrepid TA's implementation for PPMI takes about 10 minutes to compute all values. She always writes perfectly optimized code on her first try. You may improve performance by using matrix operations a la MATLAB.*
 
 
 # Weighting terms  
@@ -237,13 +237,13 @@ In the ranking tasks, play with different vector representations and different s
 Some patterns you could touch upon:
 * The fourth column of `will_play_text.csv` contains the name of the character who spoke each line. Using the methods described above, which characters are most similar? Least similar? 
 * Shakespeare's plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
-* Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from male ones [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
+* Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
 
 # Extra credit
 
 Quantifying the goodness of one vector space representation over another can be very difficult to do.  It might ultimately require testing how the different vector representations change the performance when used in a downstream task like question answering. A common way of quantifying the goodness of word vectors is to use them to compare the similarity of words with human similarity judgments, and then calculate the correlation of the two rankings.
 
-If you would like extra credit on this assignment, you can quantify the goodness of each of the different vector space models that you produced (for instance by varying the size of the context window, picking PPMI or tf-idf, and selecting among cosine, Jaccard and Dice).  You can calculate their scores on the [SimLex999 data set](https://www.cl.cam.ac.uk/~fh295/simlex.html), and compute their correlation with human judgments using [Kendall's Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient).
+If you would like extra credit on this assignment, you can quantify the goodness of each of the different vector space models that you produced (for instance by varying the size of the context window, picking PPMI or tf-idf, and selecting among cosine, Jaccard, and Dice).  You can calculate their scores on the [SimLex999 data set](https://www.cl.cam.ac.uk/~fh295/simlex.html), and compute their correlation with human judgments using [Kendall's Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient).
 
 Add a section to your writeup explaining what experiments you ran, and which setting had the highest correlation with human judgments. 
 
@@ -251,10 +251,10 @@ Add a section to your writeup explaining what experiments you ran, and which set
 
 So you've built some machinery that can measure similarity between words and documents. We gave you a Shakespeare corpus, but you can use any body of text you like. For example, check out [Project Gutenberg](https://www.gutenberg.org/) for public domain texts. The sky's the limit on what you can do, but here are some ideas:
 
-* *Term-Character Matrix*.  Our data set 
+* *Term-Character Matrix*.  Our data set. 
 * *Novel recommender system*. Maybe you enjoyed reading _Sense and Sensibility_ and _War and Peace_. Can you suggest some similar novels? Or maybe you need some variety in your consumption. Find novels that are really different.
 * *Other languages*. Do these techniques work in other languages? Project Gutenberg has texts in a variety of languages. Maybe you could use this to measure language similarity?
-* *Modernizing Shakespeare*.  When I read Shakespeare in high school, I had the dickens of a time trying to understand all the weird words in the play.  Some people have re-written Shakespeare's plays into contemporary English.  An [awesome NLP researcher](https://cocoxu.github.io) has [compiled that data](https://github.com/cocoxu/Shakespeare).  User her data and your vector space models to find contemporary words that mean similar things to the Shakespearean English.  
+* *Modernizing Shakespeare*.  When I read Shakespeare in high school, I had the dickens of a time trying to understand all the weird words in the play.  Some people have re-written Shakespeare's plays into contemporary English.  An [awesome NLP researcher](https://cocoxu.github.io) has [compiled that data](https://github.com/cocoxu/Shakespeare).  Use her data and your vector space models to find contemporary words that mean similar things to the Shakespearean English.  
 
 
 ## Deliverables 

@@ -260,7 +260,7 @@ The performances of the baselines will be included on the leaderboard. In order 
 
 ### (Optional) Leaderboard using outside data
 
-While the training data we have provided is sufficient for completing this assignment, it is not the only data for the task of identifying complex words. As an optional addition to this homework, you may look for and use any additional training data, and submit your predicted labels in a text file named `test_labels_external.txt` to a separate leaderboard.
+While the training data we have provided is sufficient for completing this assignment, it is not the only data for the task of identifying complex words. As an optional addition to this homework, you may look for and use any additional training data, and submit your predicted labels in a text file named `test_labels.txt` to a separate leaderboard.
 
 As a start, we recommend looking at the [SemEval 2016 dataset](http://alt.qcri.org/semeval2016/task11/), a dataset that was used in a complex words identification competition. In addition, you can try to use data from [Newsela](https://newsela.com). Newsela's editors re-write newspaper articles to be appropriate for students at different grade levels.  The company has generously shared a dataset with us.  The Newsela data **may not** be re-distributed outside of Penn.  You can find the data on eniac at `/home1/c/ccb/data/newsela/newsela_article_corpus_with_scripts_2016-01-29.1.zip`.
 
