@@ -42,7 +42,7 @@
 -
   date: 2018-01-24
   slides: 
-  title: Hands-on with Word Embeddings
+  title: Hands-on with Vector Space Models
   readings: 
     - 
       title: Chapter 16 "Semantics with Dense Vectors"
@@ -51,23 +51,39 @@
 -
   date: 2018-01-29
   slides: 
-  title: 
+  title: Language Modeling with N-Grams
   readings: 
+    - 
+      title: Chapter 4 "Language Modeling with N-Grams"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
   date: 2018-01-31
   slides: 
-  title: 
+  title: Hands-on with Language Models
   readings: 
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2018-02-05
   slides: 
-  title: 
+  title: Hidden Markov Models
   readings: 
+    - 
+      title: Chapter 9 "Hidden Markov Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
 -
   date: 2018-02-07
   slides: 
-  title: 
+  title: Hands-on with Taggers
   readings: 
+    - 
+      title: Chapter 10 "Part-of-Speech Tagging"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
   date: 2018-02-12
   slides: 
