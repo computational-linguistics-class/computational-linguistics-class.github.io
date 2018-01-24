@@ -55,17 +55,18 @@ def create_term_document_matrix(line_tuples, document_names, vocab):
     document_names: A list of the document names
     vocab: A list of the tokens in the vocabulary
 
-  Let n = len(document_names) and m = len(vocab).
+  # NOTE: THIS DOCSTRING WAS UPDATED ON JAN 24, 12:39 PM.
+
+  Let m = len(vocab) and n = len(document_names).
 
   Returns:
-    td_matrix: A mxn numpy array where the number of rows is the number of documents
-        and each column corresponds to a token in the corpus. A_ij contains the
+    td_matrix: A mxn numpy array where the number of rows is the number of words
+        and each column corresponds to a document. A_ij contains the
         frequency with which word i occurs in document j.
-    vocab: A list containing the tokens being represented by each column.
   '''
 
   vocab_to_id = dict(zip(vocab, range(0, len(vocab))))
-  docname_to_id = dict(zip(document_names, range(0, len(vocab))))
+  docname_to_id = dict(zip(document_names, range(0, len(document_names))))
 
   # YOUR CODE HERE
   return None
@@ -78,13 +79,14 @@ def create_term_context_matrix(line_tuples, vocab, context_window_size=1):
     a tokenized line from that document.
     vocab: A list of the tokens in the vocabulary
 
+  # NOTE: THIS DOCSTRING WAS UPDATED ON JAN 24, 12:39 PM.
+
   Let n = len(vocab).
 
   Returns:
     tc_matrix: A nxn numpy array where A_ij contains the frequency with which
         word j was found within context_window_size to the left or right of
         word i in any sentence in the tuples.
-    vocab: A list containing the tokens being represented by each column.
   '''
 
   vocab_to_id = dict(zip(vocab, range(0, len(vocab))))
