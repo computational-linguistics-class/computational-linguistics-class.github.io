@@ -120,10 +120,11 @@ We will provide a corpus of Shakespeare plays, which you will use to create a te
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* Skeleton python code
-* Data - the complete works of Shakespeare
+* [Skeleton python code](downloads/hw3/main.txt)
+* [Data - csv of the complete works of Shakespeare](downloads/will_play_text.csv)
+* [Data - vocab the complete works of Shakespeare](downloads/vocab.txt)
+* [Data - list of all plays in dataset](downloads/play_names.txt)
 </div>
-
 
 # Term-Document Matrix
 
@@ -231,9 +232,10 @@ Do some ranking:
 
 # Report
 
-In the ranking tasks, play with different vector representations, and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
+In the ranking tasks, play with different vector representations and different similarity functions. Does one combination appear to work better than another? Do any interesting patterns emerge? Include this discussion in your writeup.
 
-Some patterns you could look into:
+Some patterns you could touch upon:
+* The fourth column of `will_play_text.csv` contains the name of the character who spoke each line. Using the methods described above, which characters are most similar? Least similar? 
 * Shakespeare's plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
 * Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from male ones [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
 
@@ -246,7 +248,6 @@ If you would like extra credit on this assignment, you can quantify the goodness
 Add a section to your writeup explaining what experiments you ran, and which setting had the highest correlation with human judgments. 
 
 # More Optional Fun Extra Credit options
-
 
 So you've built some machinery that can measure similarity between words and documents. We gave you a Shakespeare corpus, but you can use any body of text you like. For example, check out [Project Gutenberg](https://www.gutenberg.org/) for public domain texts. The sky's the limit on what you can do, but here are some ideas:
 
