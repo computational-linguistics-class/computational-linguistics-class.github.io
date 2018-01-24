@@ -31,9 +31,6 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 <!-- End alert for upcoming homework assignments -->
 
 
-<div class="alert alert-success">
-Interested in taking the class but you aren't currently enrolled? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeN-kvq39m-5X7SGFGOuPM_SwNGCRpya-1ILeVmDdjXY8Dt-g/viewform">Please sign up for the waitlist</a>, and start working on the homework assignments.
-</div>
 
 Course number
 : CIS 530 - Computational Linguistics 
