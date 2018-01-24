@@ -221,7 +221,7 @@ if __name__ == '__main__':
   td_matrix = create_term_document_matrix(tuples, document_names, vocab)
 
   print('Computing tf-idf matrix...')
-  tf_idf_matrix = compute_tf_idf_matrix(td_matrix)
+  tf_idf_matrix = create_tf_idf_matrix(td_matrix)
 
   print('Computing term context matrix...')
   tc_matrix = create_term_context_matrix(tuples, vocab, context_window_size=2)
