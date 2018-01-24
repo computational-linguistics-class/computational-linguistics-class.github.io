@@ -177,10 +177,9 @@ def compute_dice_similarity(vector1, vector2):
 def rank_plays(target_play_index, term_document_matrix, similarity_fn):
   ''' Ranks the similarity of all of the plays to the target play.
 
+  # NOTE: THIS DOCSTRING WAS UPDATED ON JAN 24, 12:51 PM.
+
   Inputs:
-    document_names: List of document names, corresponding to  
-      term_document_matrix columns (i.e. name of document corresponding to 
-      term_document_matrix[:,i] is given by document_names[i])
     target_play_index: The integer index of the play we want to compare all others against.
     term_document_matrix: The term-document matrix as a mxn numpy array.
     similarity_fn: Function that should be used to compared vectors for two
@@ -188,7 +187,7 @@ def rank_plays(target_play_index, term_document_matrix, similarity_fn):
       compute_cosine_similarity.
 
   Returns:
-    A length-n list of strings corresponding to play names,
+    A length-n list of integer indices corresponding to play names,
     ordered by decreasing similarity to the play indexed by target_play_index
   '''
   
@@ -198,9 +197,9 @@ def rank_plays(target_play_index, term_document_matrix, similarity_fn):
 def rank_words(target_word_index, matrix, similarity_fn):
   ''' Ranks the similarity of all of the words to the target word.
 
+  # NOTE: THIS DOCSTRING WAS UPDATED ON JAN 24, 12:51 PM.
+
   Inputs:
-    vocab: List of terms, corresponding to target_word_index rows (i.e. word corresponding
-      to target_word_index[i,:] is given by vocab[i])
     target_word_index: The index of the word we want to compare all others against.
     matrix: Numpy matrix where the ith row represents a vector embedding of the ith word.
     similarity_fn: Function that should be used to compared vectors for two word
@@ -208,7 +207,7 @@ def rank_words(target_word_index, matrix, similarity_fn):
       compute_cosine_similarity.
 
   Returns:
-    A length-n list of words, ordered by decreasing similarity to the 
+    A length-n list of integer word indices, ordered by decreasing similarity to the 
     target word indexed by word_index
   '''
 
