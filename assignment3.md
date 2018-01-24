@@ -78,7 +78,7 @@ readings:
    year: 2014
    type: conference
    url: http://www.aclweb.org/anthology/P14-5004
-   id: wordvectors.org
+   id: wordvectors
    abstract: Vector space word representations are useful for many natural language processing applications. The diversity of techniques for computing vector representations and the large number of evaluation benchmarks makes reliable comparison a tedious task both for researchers developing new vector space models and for those wishing to use them. We present a website and suite of offline tools that that facilitate evaluation of word vectors on standard lexical semantics benchmarks and permit exchange and archival by users who wish to find good vectors for their applications. The system is accessible at www.wordvectors.org.
    bibtex: |
       @InProceedings{faruqui-dyer:2014:P14-5,
