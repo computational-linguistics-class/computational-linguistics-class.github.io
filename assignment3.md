@@ -120,10 +120,10 @@ We will provide a corpus of Shakespeare plays, which you will use to create a te
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton python code](downloads/hw3/main.txt)
-* [Data - csv of the complete works of Shakespeare](downloads/will_play_text.csv)
-* [Data - vocab the complete works of Shakespeare](downloads/vocab.txt)
-* [Data - list of all plays in dataset](downloads/play_names.txt)
+* [Skeleton python code](downloads/hw3/main.py)
+* [Data - csv of the complete works of Shakespeare](downloads/hw3/will_play_text.csv)
+* [Data - vocab the complete works of Shakespeare](downloads/hw3/vocab.txt)
+* [Data - list of all plays in dataset](downloads/hw3/play_names.txt)
 </div>
 
 # Term-Document Matrix
