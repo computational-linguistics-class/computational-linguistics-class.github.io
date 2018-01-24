@@ -50,7 +50,48 @@ readings:
         pages={2899--2914},
         year={2012}
       }
-
+- 
+   title: Evaluation methods for unsupervised word embeddings
+   authors: Tobias Schnabel, Igor Labutov, David Mimno, Thorsten Joachims
+   venue: EMNLP
+   year: 2015
+   type: conference
+   url: http://www.aclweb.org/anthology/D15-1036
+   id: evaluation-methods-for-word-embeddings
+   abstract: We present a comprehensive study of evaluation methods for unsupervised embedding techniques that obtain meaningful representations of words from text. Different evaluations result in different orderings of embedding methods, calling into question the common assumption that there is one single optimal vector representation. We present new evaluation techniques that directly compare embeddings with respect to specific queries. These methods reduce bias, provide greater insight, and allow us to solicit data-driven relevance judgments rapidly and accurately through crowdsourcing.
+   bibtex: |
+      @InProceedings{schnabel-EtAl:2015:EMNLP,
+        author    = {Schnabel, Tobias  and  Labutov, Igor  and  Mimno, David  and  Joachims, Thorsten},
+        title     = {Evaluation methods for unsupervised word embeddings},
+        booktitle = {Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing},
+        month     = {September},
+        year      = {2015},
+        address   = {Lisbon, Portugal},
+        publisher = {Association for Computational Linguistics},
+        pages     = {298--307},
+        url       = {http://aclweb.org/anthology/D15-1036}
+      }
+- 
+   title: Community Evaluation and Exchange of Word Vectors at wordvectors.org
+   authors: Manaal Faruqui and Chris Dyer
+   venue: ACL demos
+   year: 2014
+   type: conference
+   url: http://www.aclweb.org/anthology/P14-5004
+   id: wordvectors.org
+   abstract: Vector space word representations are useful for many natural language processing applications. The diversity of techniques for computing vector representations and the large number of evaluation benchmarks makes reliable comparison a tedious task both for researchers developing new vector space models and for those wishing to use them. We present a website and suite of offline tools that that facilitate evaluation of word vectors on standard lexical semantics benchmarks and permit exchange and archival by users who wish to find good vectors for their applications. The system is accessible at www.wordvectors.org.
+   bibtex: |
+      @InProceedings{faruqui-dyer:2014:P14-5,
+        author    = {Faruqui, Manaal  and  Dyer, Chris},
+        title     = {Community Evaluation and Exchange of Word Vectors at wordvectors.org},
+        booktitle = {Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations},
+        month     = {June},
+        year      = {2014},
+        address   = {Baltimore, Maryland},
+        publisher = {Association for Computational Linguistics},
+        pages     = {19--24},
+        url       = {http://www.aclweb.org/anthology/P14-5004}
+      }
 ---
 
 
