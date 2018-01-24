@@ -47,6 +47,10 @@ Discussion Forum
 Time and place
 : Spring 2018, Mondays and Wednesdays 12-1:30, Towne 217
 
+Office hours
+: Mondays 3-5pm (3401 Walnut room 401B)
+: Tuesdays 3-6pm (3401 Walnut room 401B)
+
 Textbook
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
 : The course will have [weekly required readings](lectures.html).  
