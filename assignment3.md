@@ -15,6 +15,42 @@ readings:
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
    url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+-
+   title: From Frequency to Meaning&colon; Vector Space Models of Semantics
+   authors: Peter D. Turney and Patrick Pantel
+   venue: Journal of Artificial Intelligence Research
+   year: 2010
+   type: journal
+   url: https://www.jair.org/media/2934/live-2934-4846-jair.pdf
+   id: from-frequency-to-meaning
+   abstract: Computers understand very little of the meaning of human language. This profoundly limits our ability to give instructions to computers, the ability of computers to explain their actions to us, and the ability of computers to analyse and process text. Vector space models (VSMs) of semantics are beginning to address these limits. This paper surveys the use of VSMs for semantic processing of text. We organize the literature on VSMs according to the structure of the matrix in a VSM. There are currently three broad classes of VSMs, based on term–document, word–context, and pair–pattern matrices, yielding three classes of applications. We survey a broad range of applications in these three categories and we take a detailed look at a specific open source project in each category. Our goal in this survey is to show the breadth of applications of VSMs for semantics, to provide a new perspective on VSMs for those who are already familiar with the area, and to provide pointers into the literature for those who are less familiar with the field.
+   bibtex: |
+      @article{turney2010frequency,
+        title={From Frequency to Meaning: Vector Space Models of Semantics},
+        author={Turney, Peter D and Pantel, Patrick},
+        journal={Journal of Artificial Intelligence Research},
+        volume={37},
+        pages={141--188},
+        year={2010}
+      }
+- 
+   title: Paraphrasing for Style
+   authors: Wei Xu, Alan Ritter, Bill Dolan, Ralph Grisman, and Colin Cherry 
+   venue: Coling
+   year: 2012
+   type: conference
+   url: http://www.aclweb.org/anthology/C12-1177
+   id: paraphrasing-for-style
+   abstract: We present initial investigation into the task of paraphrasing language while targeting a particular writing style. The plays of William Shakespeare and their modern translations are used as a testbed for evaluating paraphrase systems targeting a specific style of writing. We show that even with a relatively small amount of parallel training data, it is possible to learn paraphrase models which capture stylistic phenomena, and these models outperform baselines based on dictionaries and out-of-domain parallel text. In addition we present an initial investigation into automatic evaluation metrics for paraphrasing writing style. To the best of our knowledge this is the first work to investigate the task of paraphrasing text with the goal of targeting a specific style of writing.
+   bibtex: |
+      @inproceedings{xu2012paraphrasing,
+        title={Paraphrasing for Style},
+        author={Xu, Wei and Ritter, Alan and Dolan, Bill and Grishman, Ralph and Cherry, Colin},
+        booktitle={COLING},
+        pages={2899--2914},
+        year={2012}
+      }
+
 ---
 
 
@@ -173,6 +209,7 @@ Add a section to your writeup explaining what experiments you ran, and which set
 
 So you've built some machinery that can measure similarity between words and documents. We gave you a Shakespeare corpus, but you can use any body of text you like. For example, check out [Project Gutenberg](https://www.gutenberg.org/) for public domain texts. The sky's the limit on what you can do, but here are some ideas:
 
+* *Term-Character Matrix*.  Our data set 
 * *Novel recommender system*. Maybe you enjoyed reading _Sense and Sensibility_ and _War and Peace_. Can you suggest some similar novels? Or maybe you need some variety in your consumption. Find novels that are really different.
 * *Other languages*. Do these techniques work in other languages? Project Gutenberg has texts in a variety of languages. Maybe you could use this to measure language similarity?
 * *Modernizing Shakespeare*.  When I read Shakespeare in high school, I had the dickens of a time trying to understand all the weird words in the play.  Some people have re-written Shakespeare's plays into contemporary English.  An [awesome NLP researcher](https://cocoxu.github.io) has [compiled that data](https://github.com/cocoxu/Shakespeare).  User her data and your vector space models to find contemporary words that mean similar things to the Shakespearean English.  
