@@ -66,6 +66,7 @@
       title: ACL 2014 Tutorial on New Directions in Vector Space Models of Meaning (3 hour video)
       authors: Edward Grefenstette, Karl Moritz Hermann, Georgiana Dinu, and Phil Blunsom
       url: https://www.youtube.com/watch?v=_ASOqXiWBVo
+      optional: true
 -
   date: 2018-02-05
   slides: 
