@@ -24,11 +24,12 @@
       title: Chapter 6 "Naive Bayes Classification and Sentiment"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+  videos:
     - 
-      title: Does This Vehicle Belong to You? Processing the Language of Policing for Improving Police-Community (video)
+      title: Does This Vehicle Belong to You? Processing the Language of Policing for Improving Police-Community
       authors: Dan Jurafsky 
       url: https://vimeo.com/238231994
-      optional: true 
+      length: 10 minutes
       note: This invited talk discusses Dan's work on analyzing police body camera data to see if there is a difference in police interactions with black motorists versus white motorists.  He uses text classification to categorize differnt dimensions of the conversations that happen in traffic stops. 
 -
   date: 2018-01-22
@@ -39,6 +40,22 @@
       title: Chapter 15 "Vector Semantics"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+  videos:
+    - 
+      title: Overview of distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=gtuhPq0Xyno&index=1&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Vector comparison for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=LYH93YnhuyQ&t=304s&index=2&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Matrix reweighting for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 16 minutes
 -
   date: 2018-01-24
   slides: assignment3.html
@@ -48,6 +65,12 @@
       title: Chapter 16 "Semantics with Dense Vectors"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+  videos:
+    - 
+      title: Dimensionality reduction for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=qSA9v7ZkC7Q&index=4&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
 -
   date: 2018-01-29
   slides: 
@@ -62,11 +85,12 @@
   slides: 
   title: Hands-on with Dense Vectors
   readings: 
+  videos:
     - 
-      title: ACL 2014 Tutorial on New Directions in Vector Space Models of Meaning (3 hour video)
-      authors: Edward Grefenstette, Karl Moritz Hermann, Georgiana Dinu, and Phil Blunsom
-      url: https://www.youtube.com/watch?v=_ASOqXiWBVo
-      optional: true
+      title: Word-sense disambiuation for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=DEMn10hzXX4&index=5&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 7 minutes
 -
   date: 2018-02-05
   slides: 
