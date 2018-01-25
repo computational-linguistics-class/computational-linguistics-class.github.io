@@ -67,32 +67,26 @@ The lecture schedule will be updated as the term progresses.
       </td>
       <td>
         {% if lecture.readings %} 
-        <ul>
           {% for reading in lecture.readings %}
           {% if reading.url %}
-            <li> 
               {% if reading.optional %}<b>Optional:</b> {% endif %}
               {{ reading.authors }}, <a href="{{ reading.url }}">{{ reading.title }}</a> 
-            </li>
+            <br />
           {% else %}
-            <li>
               {% if reading.optional %}<b>Optional</b> {% endif %}
              {{ reading.authors }}, {{ reading.title }} 
-            </li>
+            <br />
           {% endif %}
           {% endfor %}
-         </ul>
         {% endif %}
       </td>
        <td>
         {% if lecture.videos %} 
-        <ul>
           {% for video in lecture.videos %}
-          <li>{{ video.authors }}, <a href="{{ video.url }}">{{ video.title }}</a> 
+          {{ video.authors }}, <a href="{{ video.url }}">{{ video.title }}</a> 
           {% if video.length %} ({{ video.length }}) {% endif %}
-          </li>
+            <br />
           {% endfor %}
-         </ul>
         {% endif %}
       </td>
     </tr>
