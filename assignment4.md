@@ -4,7 +4,7 @@ img: bug_clusters.jpg
 caption: Word sense clusters    
 title: Homework 4 - Making Sense of Word Vectors 
 active_tab: homework
-release_date: 2018-01-24
+release_date: 2018-01-31
 due_date: 2018-02-07T11:00:00EST
 attribution: Stephen Mayhew and Anne Cocos developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 ---
