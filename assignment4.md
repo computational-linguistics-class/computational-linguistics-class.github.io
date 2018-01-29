@@ -1,7 +1,8 @@
 ---
 layout: default
-img: bug_clusters.jpg
-caption: Word sense clusters    
+img: clusters.png
+caption: Did you know that matplotlib has an xkcd() function?
+img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
 title: Homework 4 - Making Sense of Word Vectors 
 active_tab: homework
 release_date: 2018-01-31
