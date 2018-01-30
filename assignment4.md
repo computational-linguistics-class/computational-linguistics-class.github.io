@@ -129,6 +129,7 @@ You have 3 tasks.
 The first part of this homework will lead you through loading a dense vector model (trained using `word2vec`), and playing around with the `gensim` library to manipulate and analyze the vectors. The questions are designed to familiarize you with the `gensim` Word2Vec package, and get you thinking about what type of semantic information word embeddings can encode.
 
 Load the word vectors using the following Python commands:
+
 '''
 from gensim.models import KeyedVectors
 vecfile = 'GoogleNews-vectors-negative300.filter'
