@@ -43,8 +43,52 @@ Python resources
 - [NLTK](http://www.nltk.org/) is a great library for doing natural language processing in Python.  It also has an accompanying book called [Intro to NLP in Python](http://www.nltk.org/book/). 
 - [spaCy](https://spacy.io) is another excellent Python NLP library.  It also has a cleverly named visualization tool, [displaCy](https://spacy.io/usage/visualizers).
 
+Using python 3.5+ on biglab
+====================================
+Biglab has python3.4 installed, which is a little out of date, so if you want to use a more modern python, follow these steps. First, to get to biglab:
+
+{% highlight bash %}
+$ ssh USERNAME@biglab.seas.upenn.edu
+{% endhighlight %}
+
+(where USERNAME is your Penn username)
+
+You can either use an existing miniconda installation, or you can download your own.
+
+### 1. Use existing miniconda installation
+
+For this, open up `~/.bashrc` and add this line to the end:
+
+{% highlight bash %}
+export PATH="/home1/m/mayhew/miniconda3/bin:$PATH"
+{% endhighlight %}
+
+Restart your terminal (exit and ssh in again), and python should be version 3.6 from anaconda.
+
+### 2. Install miniconda in your home directory
+
+This is more involved, but may give you more freedom. Anaconda is a collection of scientific packages for python, and also a virtual environment manager. I suggest miniconda, which is a stripped down version. To install go here: [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Alternatively, run this:
+
+{% highlight bash %}
+$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ chmod +x Miniconda3-latest-Linux-x86_64.sh
+$ . Miniconda3-latest-Linux-x86_64.sh
+{% endhighlight %}
+
+Then restart your terminal (exit and ssh in again), and run this:
+
+{% highlight bash %}
+$ conda install gensim
+{% endhighlight %}
+
 Bash resources
 ==============
 
 - [John](https://seas.upenn.edu/~johnhew/) has a basic introduction to bash for NLP [here](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.html), and a discussion of advanced topics in bash [here](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.html).
 - Kevin Knight of the University of Southern California has a nice unix skills for NLP tutorial [here](http://www.isi.edu/natural-language/mt/unix.txt).
+
+
+Screen / byobu / tmux
+========================
+
+Since you will be running code remotely, we strongly recommend that you use some sort of session manager. I (Stephen) use [screen](https://kb.iu.edu/d/acuy), but other options are [byobu](https://help.ubuntu.com/community/Byobu), or [tmux](https://github.com/tmux/tmux/wiki). These allow you to ssh to a remote machine, start a terminal session, disconnect from it, and reconnect at a later time. This is especially useful when you want to run long jobs. Here's a [sample screenrc file](https://github.com/mayhewsw/dotfiles/blob/master/screenrc).

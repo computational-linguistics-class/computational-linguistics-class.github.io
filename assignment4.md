@@ -120,7 +120,7 @@ python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 
 ## Baselines
 
-on the dev data, a random baseline gets about 10%, the word cooccurrence matrix gets about XX%, and the fasttext vectors get about 16%.  
+on the dev data, a random baseline gets about 10%, the word cooccurrence matrix gets about 17%, and the word2vec vectors get about 15%.  
 
 
 
@@ -153,7 +153,7 @@ We have provided a file called `question1.txt` for you to submit answers to the 
 
 Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-Since it can take a long time to build cooccurrence vectors, we have pre-built a set. You will find them here: `/fill/this/out`. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
+Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
 
 The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` (in case you want to access it directly to generate additional vector space models)
 
@@ -166,7 +166,6 @@ from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=k).fit(X)
 print(kmeans.labels_)
 {% endhighlight %}
-
 
 <!--- Baseline description is a placeholder --->
 The baseline system for this section represents words using a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. Using this representation, the baseline system clusters each paraphrase set using K-means.  
@@ -207,6 +206,7 @@ In order to stir up some friendly competition, we would also like you to submit 
 We made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` isn't obvious.
 To really challenge yourself, see if you can come up with a way to automatically choose `k`. We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. (Don't look at the number of WordNet synsets for this, as that would ruin all the fun.) The baseline system for this portion always chooses `k=5`.
 You can submit your output to this part in a file called `test_nok_output_leaderboard.txt`. Be sure to describe your method in `writeup.pdf`.
+
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
