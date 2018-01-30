@@ -88,7 +88,7 @@ target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
 
 You can use *k* as input to your clustering algorithm.
 
-The clusters file `dev_clusters.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
+The clusters file `dev_output.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
 
 ```
 target.pos :: 1 :: paraphrase2 paraphrase6
@@ -99,7 +99,7 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 ### Test data
 
-For testing, you will receive only a vocab file containing the test target words and their paraphrase sets. Your job is to create an output file, `test_clusters.txt`, formatted in the same way as `dev_clusters.txt`, containing the clusters produced by your system.
+For testing, you will receive only a vocab file containing the test target words and their paraphrase sets. Your job is to create an output file, `test_output.txt`, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system.
 
 ## Evaluation
 
@@ -115,7 +115,7 @@ python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 
 ## Baselines
 
-on the dev data, our code gets about XX% on a random baseline, the word cooccurrence matrix gets about XX%, and the word2vec vectors get about XX%.  
+on the dev data, a random baseline gets about 10%, the word cooccurrence matrix gets about 17%, and the word2vec vectors get about 15%.  
 
 
 
@@ -125,7 +125,7 @@ You have 3 tasks.
 
 ### 1. Exploration
 
-We have provided a file called `question2.txt` that lists a few initial questions to get you started working with embeddings. We've also copied the initial questions below. Write your answers to each question on the specified line of `question1.txt` to turn in.
+We have provided a file called `question1.txt` that lists a few initial questions to get you started working with embeddings. We've also copied the initial questions below. Write your answers to each question on the specified line of `question1.txt` to turn in.
 
 - What is the dimensionality of these vectors?
 - What are the 5 most similar words to `picnic`?
@@ -135,13 +135,9 @@ We have provided a file called `question2.txt` that lists a few initial question
 
 ### 2. Sparse Representations 
 
-Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
+Your first task is to use `vectorcluster.py` to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-Since it can take a long time to build cooccurrence vectors, we have pre-built a set. You will find them here: `/fill/this/out`. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
-
-The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
-
-Your task is to modify: `vectorcluster.py`
+Since it can take a long time to build cooccurrence vectors, we have pre-built a set, and filtered them to include only the words you need. The file is in the data zip, and is called: `coocvec-500mostfreq-window-3.vec.filter`. As the name suggests, it is dimension 500 with window size 3 for context, using raw counts. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters. The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
 
 Here is an example of the K-means code:
 
@@ -166,7 +162,7 @@ The only feature types that are off-limits are WordNet features.
 
 Turn in the predicted clusters that your VSM generates. Also provide a brief description of your method in a file called `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the training set.
 
-The output file should be called: `test_clusters_features.txt`
+The output file should be called: `test_output_features.txt`
 
 ### 3. Dense Representations
 Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
