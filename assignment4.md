@@ -25,7 +25,7 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Making Sense of Word Vectors <span class="text-muted">: Assignment 3</span>
+Making Sense of Word Vectors <span class="text-muted">: Assignment 4</span>
 =============================================================
 In this assignment we will play with different vector space representations of words to solve a synonym clustering problem. The problem is illustrated in the following image.
 
@@ -103,6 +103,11 @@ $ pip install gensim
 
 Since you will be running code remotely, we strongly recommend that you use some sort of session manager. I (Stephen) use [screen](https://kb.iu.edu/d/acuy), but other options are [byobu](https://help.ubuntu.com/community/Byobu), or [tmux](https://github.com/tmux/tmux/wiki). These allow you to ssh to a remote machine, start a terminal session, disconnect from it, and reconnect at a later time. This is especially useful when you want to run long jobs. Here's a [sample screenrc file](https://github.com/mayhewsw/dotfiles/blob/master/screenrc).
 
+## Gensim
+
+We will use the [gensim library](https://radimrehurek.com/gensim/index.html) to read and interact with word vectors. In particular, familiarize yourself with the [KeyedVectors documentation](https://radimrehurek.com/gensim/models/keyedvectors.html).
+
+
 ## The Data
 
 
@@ -162,12 +167,12 @@ You have 3 tasks.
 
 Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-We have provided you with skeleton code to get you started. To complete this task, you will need to make updates to the following files:
-* `makecooccurrences.py`: to calculate cooccurrence statistics and write vectors to file (this could take a long time (>1 hour) to make plans accordingly)
-* `question1.py`: to load cooccurrences vectors and cluster.
+Since it can take a long time to build cooccurrence vectors, we have pre-built a set. You will find them here: `/fill/this/out`. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
 
 
-We have provided a corpus for feature extraction at `/home1/a/acocos/data/reuters.rcv1.tokenized.gz`, and also code to read it. 
+The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
+
+Your task is to fill out: `question1.py`
 
 Here is an example of the K-means code:
 
