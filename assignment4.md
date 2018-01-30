@@ -57,51 +57,11 @@ With this framework, we can see how to solve our synonym clustering problem. Ima
 ![kmeans](/assets/img/kmeans.svg)
 (Image taken from [Wikipedia](https://en.wikipedia.org/wiki/K-means_clustering))
 
-Before we jump in...
-=====================
-
-## Installation 
-
-
-You will need to do this assignment on biglab. As a refresher, you can ssh to biglab like so:
-
-{% highlight bash %}
-$ ssh USERNAME@biglab.seas.upenn.edu
-{% endhighlight %}
-
-(where USERNAME is your Penn username)
-
-Biglab has python3.4 installed, which is a little out of date, so we have to setup the right python. There are two ways to do this:
-
-### 1. Use existing miniconda installation
-
-For this, open up `~/.bashrc` and add this line to the end:
-
-{% highlight bash %}
-export PATH="/home1/m/mayhew/miniconda3/bin:$PATH"
-{% endhighlight %}
-
-Restart your terminal (exit and ssh in again), and python should be version 3.6 from anaconda.
-
-### 2. Install miniconda in your home directory
-
-This is more involved, but may give you more freedom. Anaconda is a collection of scientific packages for python, and also a virtual environment manager. I suggest miniconda, which is a stripped down version. To install go here: [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Alternatively, run this:
-
-{% highlight bash %}
-$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ chmod +x Miniconda3-latest-Linux-x86_64.sh
-$ . Miniconda3-latest-Linux-x86_64.sh
-{% endhighlight %}
-
-Then restart your terminal (exit and ssh in again), and run this:
-
-{% highlight bash %}
-$ pip install gensim
-{% endhighlight %}
-
-## Screen / byobu / tmux
-
-Since you will be running code remotely, we strongly recommend that you use some sort of session manager. I (Stephen) use [screen](https://kb.iu.edu/d/acuy), but other options are [byobu](https://help.ubuntu.com/community/Byobu), or [tmux](https://github.com/tmux/tmux/wiki). These allow you to ssh to a remote machine, start a terminal session, disconnect from it, and reconnect at a later time. This is especially useful when you want to run long jobs. Here's a [sample screenrc file](https://github.com/mayhewsw/dotfiles/blob/master/screenrc).
+## Deliverables 
+<div class="alert alert-warning" markdown="1">
+Here are the materials that you should download for this assignment:
+* [`hw4.zip`](/fill/this/out) Contains all the data and skeleton code for this assignment.
+</div>
 
 ## Gensim
 
@@ -109,7 +69,6 @@ We will use the [gensim library](https://radimrehurek.com/gensim/index.html) to 
 
 
 ## The Data
-
 
 The data to be used for this assignment consists of sets of paraphrases corresponding to one of 57 polysemous target words, e.g.
 
@@ -124,9 +83,9 @@ Your objective is to automatically cluster each paraphrase set such that each cl
 
 For evaluation, we take the set of ground truth senses from [WordNet](http://wordnet.princeton.edu).
 
-### Training data
+### Development data
 
-The training data consists of two files -- a vocab file (the input), and a clusters file (to evaluate your output). The vocab file `train_vocab.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
+The development data consists of two files -- a words file (the input), and a clusters file (to evaluate your output). The vocab file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
 
 ```
 target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
@@ -134,7 +93,7 @@ target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
 
 You can use *k* as input to your clustering algorithm.
 
-The clusters file `train_clusters.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
+The clusters file `dev_output.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
 
 ```
 target.pos :: 1 :: paraphrase2 paraphrase6
@@ -145,7 +104,7 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 ### Test data
 
-For testing, you will receive only a vocab file containing the test target words and their paraphrase sets. Your job is to create an output file, `test_clusters.txt`, formatted in the same way as `train_clusters.txt`, containing the clusters produced by your system.
+For testing, you will receive only words file `test_input.txt` containing the test target words and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system.
 
 ## Evaluation
 
@@ -159,20 +118,46 @@ We have provided an evaluation script that you can use when developing your own 
 python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 ```
 
+## Baselines
+
+on the dev data, a random baseline gets about 10%, the word cooccurrence matrix gets about XX%, and the fasttext vectors get about 16%.  
+
+
+
 Your Tasks
 ======================
 You have 3 tasks. 
 
-### 1. Sparse Representations 
+### 1. Exploration
+
+The first part of this homework will lead you through loading a dense vector model (trained using `word2vec`), and playing around with the `gensim` library to manipulate and analyze the vectors. The questions are designed to familiarize you with the `gensim` Word2Vec package, and get you thinking about what type of semantic information word embeddings can encode.
+
+Load the word vectors using the following Python commands:
+'''
+from gensim.models import KeyedVectors
+vecfile = '/home1/m/mayhew/data/GoogleNews-vectors-negative300.bin'
+vecs = KeyedVectors.load_word2vec_format(vecfile, binary=True)
+'''
+
+* What is the dimensionality of these word embeddings? Provide an integer answer.
+* What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `gensim.models.KeyedVectors.wv.most_similar`)
+* According to the word embeddings, which of these words is not like the others?
+`['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
+(Use the function `gensim.models.KeyedVectors.wv.doesnt_match`)
+* Solve the following analogy: "leg" is to "jump" as X is to "throw".
+(Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.)
+
+We have provided a file called `question1.txt` for you to submit answers to the questions above.
+
+### 2. Sparse Representations 
 
 Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
 Since it can take a long time to build cooccurrence vectors, we have pre-built a set. You will find them here: `/fill/this/out`. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
 
+The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` (in case you want to access it directly to generate additional vector space models)
 
-The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
-
-Your task is to fill out: `question1.py`
+Your task is to modify: `vectorcluster.py`
 
 Here is an example of the K-means code:
 
@@ -189,24 +174,13 @@ The baseline system for this section represents words using a term-context matri
 Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
 - What if you reduce or increase `D` in the baseline implementation?
 - Does it help to change the window `W` used to extract contexts?
-- Play around with the feature weighting -- instead of raw counts, would it help to use PMI or TF-IDF?
+- Play around with the feature weighting -- instead of raw counts, would it help to use PPMI or TF-IDF?
 - Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
 - What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
 
 The only feature types that are off-limits are WordNet features.
 
-Turn in the predicted clusters that your VSM generates. Also provide a brief description of your method in a file called `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the training set.
-
-The output file should be called: `test_clusters_features.txt`
-
-### 2. Questions
-
-Now that you have seen what a feature-based model can do, let's start working with dense word embeddings. We have provided a file called `question2.txt` that lists a few initial questions to get you started working with embeddings. We've also copied the initial questions below. Write your answers to each question on the specified line of `question2.txt` to turn in.
-
-- What is the dimensionality of these vectors?
-- What are the 5 most similar words to `picnic`?
-- Which of these words is not like the others: "
-- Solve the following analogy: "leg" is to "jump" as X is to "throw"
+Turn in the predicted clusters that your VSM generates in the file `test_output_features.txt`. Also provide a brief description of your method in `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the training set. We have provided a LaTeX file shell, `writeup.tex`, which you can use to guide your writeup.
 
 ### 3. Dense Representations
 Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
@@ -214,7 +188,7 @@ Finally, we'd like to see if dense word embeddings are better for clustering the
 For this task, use files:
 * `/home1/m/mayhew/data/wiki-news-300d-1M.vec.bin`: fasttext word vectors (binary format, 300 dimensions)
 * `/home1/m/mayhew/data/GoogleNews-vectors-negative300.bin`: Google word2vec vectors (binary format, 300 dimensions)
-* `question3.py`: to load dense vectors and cluster. (this will be similar to `question1.py`)
+* Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
 
@@ -222,21 +196,28 @@ As before, achieving the baseline score will get you a B, but you might try to s
 - Train your own word vectors, either on the provided corpus or something you find online. Try experimenting with the dimensionality.
 - [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
 
-As in question 1, turn in the predicted clusters that your dense vector representation generates. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the training set. 
+As in question 2, turn in the predicted clusters that your dense vector representation generates in the file `test_output_dense.txt`. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the training set. 
 
 In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
 
+### 4. The Leaderboard
+In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
 
-The output file should be called: `test_clusters_dense.txt`
+### Extra Credit
+We made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` isn't obvious.
+To really challenge yourself, see if you can come up with a way to automatically choose `k`. We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. (Don't look at the number of WordNet synsets for this, as that would ruin all the fun.) The baseline system for this portion always chooses `k=5`.
+You can submit your output to this part in a file called `test_nok_output_leaderboard.txt`. Be sure to describe your method in `writeup.pdf`.
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* question2.txt file with answers to questions from part 2
-* simple VSM clustering output `test_clusters_features.txt`
-* dense model clustering output `test_clusters_dense.txt`
-* writeup.pdf
-* code (.zip). It should be written in Python 3.
+* `question1.txt` file with answers to questions from Exploration
+* simple VSM clustering output `test_output_features.txt`
+* dense model clustering output `test_output_dense.txt`
+* your favorite clustering output for the leaderboard, `test_output_leaderboard.txt` (this will probably be a copy of either `test_output_features.txt` or `test_output_dense.txt`)
+* `writeup.pdf` (compiled from `writeup.tex`)
+* your code (.zip). It should be written in Python 3.
+* (optional) the output of your model that automatically chooses the number of clusters, `test_nok_output_leaderboard.txt`
 </div>
 
 ## Recommended readings
