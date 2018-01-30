@@ -131,8 +131,8 @@ The first part of this homework will lead you through loading a dense vector mod
 Load the word vectors using the following Python commands:
 '''
 from gensim.models import KeyedVectors
-vecfile = '/home1/m/mayhew/data/GoogleNews-vectors-negative300.bin'
-vecs = KeyedVectors.load_word2vec_format(vecfile, binary=True)
+vecfile = 'GoogleNews-vectors-negative300.filter'
+vecs = KeyedVectors.load_word2vec_format(vecfile)
 '''
 
 * What is the dimensionality of these word embeddings? Provide an integer answer.
@@ -147,7 +147,7 @@ We have provided a file called `question1.txt` for you to submit answers to the 
 
 ### 2. Sparse Representations 
 
-Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
+Your first task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
 Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
 
@@ -181,8 +181,7 @@ Turn in the predicted clusters that your VSM generates in the file `test_output_
 Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
 
 For this task, use files:
-* `/home1/m/mayhew/data/wiki-news-300d-1M.vec.bin`: fasttext word vectors (binary format, 300 dimensions)
-* `/home1/m/mayhew/data/GoogleNews-vectors-negative300.bin`: Google word2vec vectors (binary format, 300 dimensions)
+* `GoogleNews-vectors-negative300.filter`: Google word2vec vectors (300 dimensions, filtered to contain only the words in the dev/test splits)
 * Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
