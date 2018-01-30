@@ -60,10 +60,10 @@ With this framework, we can see how to solve our synonym clustering problem. Ima
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the materials that you should download for this assignment:
-* [`data.zip`](https://github.com/computational-linguistics-class/computational-linguistics-class.github.io/blob/master/downloads/hw4/data.zip) Contains all the data
-* [`vectorcluster.py`](https://github.com/computational-linguistics-class/computational-linguistics-class.github.io/blob/master/downloads/hw4/vectorcluster.py) Main code stub
-* [`evaluate.py`](https://github.com/computational-linguistics-class/computational-linguistics-class.github.io/blob/master/downloads/hw4/evaluate.py) Evaluation script
-* [`makecooccurrences.py`](https://github.com/computational-linguistics-class/computational-linguistics-class.github.io/blob/master/downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
+* [`data.zip`](https://raw.githubusercontent.com/computational-linguistics-class/computational-linguistics-class.github.io/master/downloads/hw4/data.zip) Contains all the data
+* [`vectorcluster.py`](https://raw.githubusercontent.com/computational-linguistics-class/computational-linguistics-class.github.io/master/downloads/hw4/vectorcluster.py) Main code stub
+* [`evaluate.py`](https://raw.githubusercontent.com/computational-linguistics-class/computational-linguistics-class.github.io/master/downloads/hw4/evaluate.py) Evaluation script
+* [`makecooccurrences.py`](https://raw.githubusercontent.com/computational-linguistics-class/computational-linguistics-class.github.io/master/downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
 </div>
 
 ## Gensim
