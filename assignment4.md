@@ -37,8 +37,10 @@ You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publ
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* Some python code
-* Data
+* [`data.zip`](downloads/hw4/data.zip) Contains all the data
+* [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
+* [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
+* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
 </div>
 
 
@@ -56,15 +58,6 @@ With this framework, we can see how to solve our synonym clustering problem. Ima
 
 ![kmeans](/assets/img/kmeans.svg)
 (Image taken from [Wikipedia](https://en.wikipedia.org/wiki/K-means_clustering))
-
-## Deliverables 
-<div class="alert alert-warning" markdown="1">
-Here are the materials that you should download for this assignment:
-* [`data.zip`](downloads/hw4/data.zip) Contains all the data
-* [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
-* [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
-* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
-</div>
 
 ## Gensim
 
