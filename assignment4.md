@@ -130,11 +130,11 @@ The first part of this homework will lead you through loading a dense vector mod
 
 Load the word vectors using the following Python commands:
 
-'''
+```
 from gensim.models import KeyedVectors
 vecfile = 'GoogleNews-vectors-negative300.filter'
 vecs = KeyedVectors.load_word2vec_format(vecfile)
-'''
+```
 
 * What is the dimensionality of these word embeddings? Provide an integer answer.
 * What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `gensim.models.KeyedVectors.wv.most_similar`)
