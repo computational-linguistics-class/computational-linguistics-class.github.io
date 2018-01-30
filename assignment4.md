@@ -113,6 +113,12 @@ We have provided an evaluation script that you can use when developing your own 
 python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 ```
 
+## Baselines
+
+on the dev data, our code gets about XX% on a random baseline, the word cooccurrence matrix gets about XX%, and the word2vec vectors get about XX%.  
+
+
+
 Your Tasks
 ======================
 You have 3 tasks. 
@@ -135,7 +141,7 @@ Since it can take a long time to build cooccurrence vectors, we have pre-built a
 
 The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
 
-Your task is to fill out: `question1.py`
+Your task is to modify: `vectorcluster.py`
 
 Here is an example of the K-means code:
 
@@ -152,7 +158,7 @@ The baseline system for this section represents words using a term-context matri
 Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
 - What if you reduce or increase `D` in the baseline implementation?
 - Does it help to change the window `W` used to extract contexts?
-- Play around with the feature weighting -- instead of raw counts, would it help to use PMI or TF-IDF?
+- Play around with the feature weighting -- instead of raw counts, would it help to use PPMI or TF-IDF?
 - Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
 - What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
 
@@ -168,7 +174,7 @@ Finally, we'd like to see if dense word embeddings are better for clustering the
 For this task, use files:
 * `/home1/m/mayhew/data/wiki-news-300d-1M.vec.bin`: fasttext word vectors (binary format, 300 dimensions)
 * `/home1/m/mayhew/data/GoogleNews-vectors-negative300.bin`: Google word2vec vectors (binary format, 300 dimensions)
-* `question3.py`: to load dense vectors and cluster. (this will be similar to `question1.py`)
+* Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
 
