@@ -57,51 +57,6 @@ With this framework, we can see how to solve our synonym clustering problem. Ima
 ![kmeans](/assets/img/kmeans.svg)
 (Image taken from [Wikipedia](https://en.wikipedia.org/wiki/K-means_clustering))
 
-Before we jump in...
-=====================
-
-## Installation 
-
-
-You will need to do this assignment on biglab. As a refresher, you can ssh to biglab like so:
-
-{% highlight bash %}
-$ ssh USERNAME@biglab.seas.upenn.edu
-{% endhighlight %}
-
-(where USERNAME is your Penn username)
-
-Biglab has python3.4 installed, which is a little out of date, so we have to setup the right python. There are two ways to do this:
-
-### 1. Use existing miniconda installation
-
-For this, open up `~/.bashrc` and add this line to the end:
-
-{% highlight bash %}
-export PATH="/home1/m/mayhew/miniconda3/bin:$PATH"
-{% endhighlight %}
-
-Restart your terminal (exit and ssh in again), and python should be version 3.6 from anaconda.
-
-### 2. Install miniconda in your home directory
-
-This is more involved, but may give you more freedom. Anaconda is a collection of scientific packages for python, and also a virtual environment manager. I suggest miniconda, which is a stripped down version. To install go here: [https://conda.io/miniconda.html](https://conda.io/miniconda.html). Alternatively, run this:
-
-{% highlight bash %}
-$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ chmod +x Miniconda3-latest-Linux-x86_64.sh
-$ . Miniconda3-latest-Linux-x86_64.sh
-{% endhighlight %}
-
-Then restart your terminal (exit and ssh in again), and run this:
-
-{% highlight bash %}
-$ pip install gensim
-{% endhighlight %}
-
-## Screen / byobu / tmux
-
-Since you will be running code remotely, we strongly recommend that you use some sort of session manager. I (Stephen) use [screen](https://kb.iu.edu/d/acuy), but other options are [byobu](https://help.ubuntu.com/community/Byobu), or [tmux](https://github.com/tmux/tmux/wiki). These allow you to ssh to a remote machine, start a terminal session, disconnect from it, and reconnect at a later time. This is especially useful when you want to run long jobs. Here's a [sample screenrc file](https://github.com/mayhewsw/dotfiles/blob/master/screenrc).
 
 ## Gensim
 
@@ -109,7 +64,6 @@ We will use the [gensim library](https://radimrehurek.com/gensim/index.html) to 
 
 
 ## The Data
-
 
 The data to be used for this assignment consists of sets of paraphrases corresponding to one of 57 polysemous target words, e.g.
 
@@ -124,9 +78,9 @@ Your objective is to automatically cluster each paraphrase set such that each cl
 
 For evaluation, we take the set of ground truth senses from [WordNet](http://wordnet.princeton.edu).
 
-### Training data
+### Development data
 
-The training data consists of two files -- a vocab file (the input), and a clusters file (to evaluate your output). The vocab file `train_vocab.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
+The development data consists of two files -- a words file (the input), and a clusters file (to evaluate your output). The vocab file `dev_words.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
 
 ```
 target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
@@ -134,7 +88,7 @@ target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
 
 You can use *k* as input to your clustering algorithm.
 
-The clusters file `train_clusters.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
+The clusters file `dev_clusters.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
 
 ```
 target.pos :: 1 :: paraphrase2 paraphrase6
@@ -145,7 +99,7 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 ### Test data
 
-For testing, you will receive only a vocab file containing the test target words and their paraphrase sets. Your job is to create an output file, `test_clusters.txt`, formatted in the same way as `train_clusters.txt`, containing the clusters produced by your system.
+For testing, you will receive only a vocab file containing the test target words and their paraphrase sets. Your job is to create an output file, `test_clusters.txt`, formatted in the same way as `dev_clusters.txt`, containing the clusters produced by your system.
 
 ## Evaluation
 
@@ -163,12 +117,21 @@ Your Tasks
 ======================
 You have 3 tasks. 
 
-### 1. Sparse Representations 
+### 1. Exploration
+
+We have provided a file called `question2.txt` that lists a few initial questions to get you started working with embeddings. We've also copied the initial questions below. Write your answers to each question on the specified line of `question1.txt` to turn in.
+
+- What is the dimensionality of these vectors?
+- What are the 5 most similar words to `picnic`?
+- Which of these words is not like the others: "
+- Solve the following analogy: "leg" is to "jump" as X is to "throw"
+
+
+### 2. Sparse Representations 
 
 Your first task is to generate clusters for the target words in `test_vocab.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
 Since it can take a long time to build cooccurrence vectors, we have pre-built a set. You will find them here: `/fill/this/out`. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
-
 
 The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` 
 
@@ -199,15 +162,6 @@ Turn in the predicted clusters that your VSM generates. Also provide a brief des
 
 The output file should be called: `test_clusters_features.txt`
 
-### 2. Questions
-
-Now that you have seen what a feature-based model can do, let's start working with dense word embeddings. We have provided a file called `question2.txt` that lists a few initial questions to get you started working with embeddings. We've also copied the initial questions below. Write your answers to each question on the specified line of `question2.txt` to turn in.
-
-- What is the dimensionality of these vectors?
-- What are the 5 most similar words to `picnic`?
-- Which of these words is not like the others: "
-- Solve the following analogy: "leg" is to "jump" as X is to "throw"
-
 ### 3. Dense Representations
 Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
 
@@ -229,10 +183,11 @@ In addition, do an analysis of different errors made by each system -- i.e. look
 
 The output file should be called: `test_clusters_dense.txt`
 
+
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* question2.txt file with answers to questions from part 2
+* question1.txt file with answers to questions from part 2
 * simple VSM clustering output `test_clusters_features.txt`
 * dense model clustering output `test_clusters_dense.txt`
 * writeup.pdf
