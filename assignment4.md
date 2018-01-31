@@ -37,6 +37,7 @@ You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publ
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
+* [`question1.txt`](downloads/hw4/question1.txt) A template for answering question 1.
 * [`data.zip`](downloads/hw4/data.zip) Contains all the data
 * [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
@@ -150,13 +151,9 @@ We have provided a file called `question1.txt` for you to submit answers to the 
 
 Your first task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. The code is also available in `makecooccurrences.py` if you want to rerun on different data or different parameters.
+Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. (The code we used is: `makecooccurrences.py`, and the data is: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` in case you want to generate your own vector space models)
 
-The corpus we used is here: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` (in case you want to access it directly to generate additional vector space models)
-
-Your task is to modify: `vectorcluster.py`
-
-Here is an example of the K-means code:
+You will add K-means clustering to `vectorcluster.py`. Here is an example of the K-means code:
 
 {% highlight python %}
 from sklearn.cluster import KMeans
