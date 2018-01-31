@@ -25,7 +25,7 @@ Provide a single string as the answer.
 
 YOUR ANSWER HERE: <ANSWER>
 
-4. Solve the following analogy: "leg" is to "jump" as X is to "throw".
+4. Solve the following analogy: "submarine" is to "plane" as X is to "bugle".
 Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.
 Provide a single string as the answer.
 
