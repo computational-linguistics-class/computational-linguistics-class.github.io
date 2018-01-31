@@ -133,7 +133,7 @@ python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 
 ## Baselines
 
-On the dev data, a random baseline gets about 10%, the word cooccurrence matrix gets about 17%, and the word2vec vectors get about 15%.  
+On the dev data, a random baseline gets about 20%, the word cooccurrence matrix gets about 36%, and the word2vec vectors get about 30%.  
 
 
 
