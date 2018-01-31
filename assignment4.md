@@ -70,11 +70,6 @@ We will use the [gensim library](https://radimrehurek.com/gensim/index.html) to 
 
 The data to be used for this assignment consists of sets of paraphrases corresponding to one of 56 polysemous target words, e.g.
 
-| Target | Paraphrase set |
-| ----------- | --------- |
-| note.v | comment mark tell observe state notice say remark mention |
-| hot.a | raging spicy blistering red-hot live |
-
 <table class="table">
   <thead>
     <tr>
@@ -103,7 +98,7 @@ For evaluation, we take the set of ground truth senses from [WordNet](http://wor
 
 ### Development data
 
-The development data consists of two files -- a words file (the input), and a clusters file (to evaluate your output). The vocab file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
+The development data consists of two files -- a words file (the input), and a clusters file (to evaluate your output). The words file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
 
 ```
 target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
@@ -122,7 +117,7 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 ### Test data
 
-For testing, you will receive only words file `test_input.txt` containing the test target words and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system.
+For testing, you will receive only words file `test_input.txt` containing the test target words and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system. Neither order of senses, nor order of words in a cluster matter.
 
 ## Evaluation
 
@@ -163,7 +158,7 @@ vecs = KeyedVectors.load_word2vec_format(vecfile)
 * According to the word embeddings, which of these words is not like the others?
 `['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
 (Use the function `gensim.models.KeyedVectors.wv.doesnt_match`)
-* Solve the following analogy: "leg" is to "jump" as X is to "throw".
+* Solve the following analogy: "submarine" is to "plane" as X is to "bugle".
 (Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.)
 
 We have provided a file called `question1.txt` for you to submit answers to the questions above.
