@@ -31,7 +31,7 @@ In this assignment we will play with different vector space representations of w
 
 <img src="/assets/img/bug_clusters.jpg" alt="Bug Clusters" style="width: 50%;"/>
 
-In this image, we have a target word "bug", and a list of all synonyms (taken from WordNet). The 4 circles are the 4 senses of "bug." The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
+In this image, we have a target word "bug", and a list of some synonyms. The 4 circles are the 4 senses of "bug." The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
 
 You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf) [papers](https://cs.uwaterloo.ca/~cdimarco/pdf/cs886/Pantel+Lin02.pdf). 
 
@@ -67,7 +67,7 @@ We will use the [gensim library](https://radimrehurek.com/gensim/index.html) to 
 
 ## The Data
 
-The data to be used for this assignment consists of sets of paraphrases corresponding to one of 57 polysemous target words, e.g.
+The data to be used for this assignment consists of sets of paraphrases corresponding to one of 56 polysemous target words, e.g.
 
 | Target | Paraphrase set |
 | ----------- | --------- |
@@ -127,7 +127,7 @@ You have 3 tasks.
 
 ### 1. Exploration
 
-The first part of this homework will lead you through loading a dense vector model (trained using `word2vec`), and playing around with the `gensim` library to manipulate and analyze the vectors. The questions are designed to familiarize you with the `gensim` Word2Vec package, and get you thinking about what type of semantic information word embeddings can encode.
+The first part of this homework will lead you through loading a dense vector model (trained using `word2vec`), and playing around with the `gensim` library to manipulate and analyze the vectors. The questions are designed to familiarize you with the `gensim.models.KeyedVectors` package, and get you thinking about what type of semantic information word embeddings can encode.
 
 Load the word vectors using the following Python commands:
 
@@ -149,7 +149,7 @@ We have provided a file called `question1.txt` for you to submit answers to the 
 
 ### 2. Sparse Representations 
 
-Your first task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
+Your next task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
 Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. (The code we used is: `makecooccurrences.py`, and the data is: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` in case you want to generate your own vector space models)
 
@@ -165,39 +165,43 @@ print(kmeans.labels_)
 The baseline system for this section represents words using a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. Using this representation, the baseline system clusters each paraphrase set using K-means.  
 
 Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
-- What if you reduce or increase `D` in the baseline implementation?
-- Does it help to change the window `W` used to extract contexts?
-- Play around with the feature weighting -- instead of raw counts, would it help to use PPMI or TF-IDF?
-- Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
-- What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
+
+* What if you reduce or increase `D` in the baseline implementation?
+* Does it help to change the window `W` used to extract contexts?
+* Play around with the feature weighting -- instead of raw counts, would it help to use PPMI?
+* Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
+* What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
 
 The only feature types that are off-limits are WordNet features.
 
-Turn in the predicted clusters that your VSM generates in the file `test_output_features.txt`. Also provide a brief description of your method in `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the training set. We have provided a LaTeX file shell, `writeup.tex`, which you can use to guide your writeup.
+Turn in the predicted clusters that your VSM generates in the file `test_output_features.txt`. Also provide a brief description of your method in `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the dev set. We have provided a LaTeX file shell, `writeup.tex`, which you can use to guide your writeup.
 
 ### 3. Dense Representations
 Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
 
 For this task, use files:
+
 * `GoogleNews-vectors-negative300.filter`: Google word2vec vectors (300 dimensions, filtered to contain only the words in the dev/test splits)
 * Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
 
 As before, achieving the baseline score will get you a B, but you might try to see if you can do better. Here are some ideas:
-- Train your own word vectors, either on the provided corpus or something you find online. Try experimenting with the dimensionality.
-- [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
 
-As in question 2, turn in the predicted clusters that your dense vector representation generates in the file `test_output_dense.txt`. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the training set. 
+* Try downloading a different dense vector space model from the web, like [Paragram](http://www.cs.cmu.edu/~jwieting/) or [fastText](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md).
+* Train your own word vectors, either on the provided corpus or something you find online. You can use the `gensim.models.Word2Vec` package for the skip-gram or CBOW models, or [GLOVE](https://nlp.stanford.edu/projects/glove/). Try experimenting with the dimensionality.
+* [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
+
+As in question 2, turn in the predicted clusters that your dense vector representation generates in the file `test_output_dense.txt`. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the dev set. 
 
 In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
 
 ### 4. The Leaderboard
-In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
+In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to  leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
 
 ### Extra Credit
 We made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` isn't obvious.
-To really challenge yourself, see if you can come up with a way to automatically choose `k`. We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. (Don't look at the number of WordNet synsets for this, as that would ruin all the fun.) The baseline system for this portion always chooses `k=5`.
+To take this assignment one step further, see if you can come up with a way to automatically choose `k`. We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. (Don't look at the number of WordNet synsets for this, as that would ruin all the fun.) The baseline system for this portion always chooses `k=5`.
 You can submit your output to this part in a file called `test_nok_output_leaderboard.txt`. Be sure to describe your method in `writeup.pdf`.
 
 

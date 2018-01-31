@@ -29,11 +29,11 @@ def eval_clustering(gc, pc):
     gold_pairs = set()
     for gclus in gc:
         for pair in itertools.combinations(gclus, 2):
-            gold_pairs.add(pair)
+            gold_pairs.add(sorted(pair))
     pred_pairs = set()
     for pclus in pc:
         for pair in itertools.combinations(pclus, 2):
-            pred_pairs.add(pair)
+            pred_pairs.add(sorted(pair))
     ovlp = gold_pairs & pred_pairs
     
     try:
