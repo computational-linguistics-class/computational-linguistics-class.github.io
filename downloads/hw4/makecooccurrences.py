@@ -3,7 +3,7 @@ from collections import defaultdict
 import numpy as np
 
 # Location of corpus
-corpus = "/home1/a/acocos/data/reuters.rcv1.tokenized.gz"
+corpus = "reuters.rcv1.tokenized.gz"
 
 # Word frequencies
 freq = defaultdict(int)
