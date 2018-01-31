@@ -53,4 +53,15 @@ Textbook
 : The course will have [weekly required readings](lectures.html).  
 
 Grading
-: TBD
+: The grading for the course will consist of:
+
+    * 60% for weekly homework assignments 
+    * 20% for in-class quizzes about the readings
+    * 20% for the final project
+
+
+Late Day Policy
+: Each student has five free "late days".  Homeworks can be submitted at most two days late.  If you are out of late days, then you will not be able to submit your homework. One "day" is defined as anytime between 1 second and 24 hours after the homework deadline. The intent of the late day policy it to allow you to take extra time due to unforseen circumstances like illnesses or family emergencies, and for forseeable interruptions like on campus interviewing and religious holidays.  You do not need to ask permission to use your late days.  No additional late days are granted. 
+
+Missing classes on quiz days 
+: To allow for absences on the days that we give an in-class quiz, all students may drop their 3 lowest scoring quizzes. 
