@@ -180,7 +180,9 @@ print(kmeans.labels_)
 <!--- Baseline description is a placeholder --->
 The baseline system for this section represents words using a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. Using this representation, the baseline system clusters each paraphrase set using K-means.  
 
-Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
+While experimenting, write out clusters for the dev input to `dev_output_features.txt` and use the `evaluate.py` script to compare against the provided `dev_output.txt`.
+
+Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example (the first two will require rebuilding the cooccurrence matrix, but you are experts at that by now):
 
 * What if you reduce or increase `D` in the baseline implementation?
 * Does it help to change the window `W` used to extract contexts?
