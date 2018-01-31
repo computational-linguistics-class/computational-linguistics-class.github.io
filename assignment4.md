@@ -126,7 +126,7 @@ Here are the materials that you should download for this assignment:
 * [`data.zip`](downloads/hw4/data.zip) Contains all the data
 * [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
-* [`writeup.tex`](downloads/hw4/writeup.txt) Report template.
+* [`writeup.tex`](downloads/hw4/writeup.tex) Report template.
 * [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
 * [Tokenized Reuters RCV1 Corpus](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz)
 * [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
