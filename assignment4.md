@@ -156,8 +156,8 @@ Load the word vectors using the following Python commands:
 
 {% highlight python %}
 from gensim.models import KeyedVectors
-vecfile = 'GoogleNews-vectors-negative300.filter'
-vecs = KeyedVectors.load_word2vec_format(vecfile)
+vecfile = 'GoogleNews-vectors-negative300.bin'
+vecs = KeyedVectors.load_word2vec_format(vecfile, binary=True)
 {% endhighlight %}
 
 * What is the dimensionality of these word embeddings? Provide an integer answer.
