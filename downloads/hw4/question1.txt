@@ -1,0 +1,32 @@
+'''
+question1.txt
+'''
+
+This file provides space to answer the questions for part 1 of Homework 4.
+
+Answer each question following `YOUR ANSWER HERE`, by replacing the <ANSWER>
+tag with your own answer. Make sure your answer goes **on the same line**
+as "YOUR ANSWER HERE:".
+
+---
+1. What is the dimensionality of these word embeddings? Provide an integer answer.
+
+YOUR ANSWER HERE: <ANSWER>
+
+2. What are the top-5 most similar words to `picnic` (not including `picnic` itself)?
+Write your answer space-separated strings, i.e. "word1 word2 word3 word4 word5".
+
+YOUR ANSWER HERE: <ANSWER>
+
+3. According to the word embeddings, which of these words is not like the others?
+['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']
+Use the function `gensim.models.KeyedVectors.wv.doesnt_match`
+Provide a single string as the answer.
+
+YOUR ANSWER HERE: <ANSWER>
+
+4. Solve the following analogy: "leg" is to "jump" as X is to "throw".
+Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.
+Provide a single string as the answer.
+
+YOUR ANSWER HERE: <ANSWER>
