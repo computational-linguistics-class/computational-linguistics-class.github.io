@@ -306,7 +306,7 @@ The baseline system for this section represents words using a term-context matri
 
 While experimenting, write out clusters for the dev input to `dev_output_features.txt` and use the `evaluate.py` script to compare against the provided `dev_output.txt`.
 
-Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example (the first two will require rebuilding the cooccurrence matrix, but you are experts at that by now):
+Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
 
 * What if you reduce or increase `D` in the baseline implementation?
 * Does it help to change the window `W` used to extract contexts?
@@ -324,7 +324,7 @@ Finally, we'd like to see if dense word embeddings are better for clustering the
 For this task, use files:
 
 * [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
-* The Google file is very large, so we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter`, which is filtered to contain only the words in the dev/test splits.
+* The Google file is very large (~3.4GB), so we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter`, which is filtered to contain only the words in the dev/test splits.
 * Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
