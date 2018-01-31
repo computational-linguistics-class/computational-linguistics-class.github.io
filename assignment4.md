@@ -128,6 +128,8 @@ Here are the materials that you should download for this assignment:
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
 * [`writeup.tex`](downloads/hw4/writeup.txt) Report template.
 * [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
+* [Tokenized Reuters RCV1 Corpus](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz)
+* [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
 </div>
 
 
@@ -136,7 +138,7 @@ Here are the materials that you should download for this assignment:
 
 Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the notworthy things about the method is that it can be used to solve word analogy problems like
   man is to king as woman is to [blank]
-The way that it works is to perform vector math.  They take the vecotrs representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer. 
+The way that it works is to perform vector math.  They take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer. 
 $king−man+woman \approx queen$
 So We can find the nearest a vector in the vocabulary by looking for $argmax \ cos(x, king-man+woman)$.  Omar Levy has a nice explnation of the method in [this Quora post](https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function), and in his paper [Linguistic Regularities in Sparse and Explicit Word Representations](http://www.aclweb.org/anthology/W14-1618).
 
@@ -289,7 +291,9 @@ On the dev data, a random baseline gets about 20%, the word cooccurrence matrix 
 
 Your next task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
-Since it can take a long time to build cooccurrence vectors, we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files. (The code we used is: `makecooccurrences.py`, and the data is: `/home1/a/acocos/data/reuters.rcv1.tokenized.gz` in case you want to generate your own vector space models)
+You will calculate cooccurrence vectors on the Reuters RCV1 corpus. Download a [tokenized and cleaned version here](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz). The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). Use the provided script, `makecooccurrences.py`, to build these vectors. Be sure to set D and W to what you want. 
+
+It can take a long time to build cooccurrence vectors, so we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files.
 
 You will add K-means clustering to `vectorcluster.py`. Here is an example of the K-means code:
 
@@ -304,7 +308,7 @@ The baseline system for this section represents words using a term-context matri
 
 While experimenting, write out clusters for the dev input to `dev_output_features.txt` and use the `evaluate.py` script to compare against the provided `dev_output.txt`.
 
-Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example (the first two will require rebuilding the cooccurrence matrix, but you are experts at that by now):
+Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
 
 * What if you reduce or increase `D` in the baseline implementation?
 * Does it help to change the window `W` used to extract contexts?
@@ -321,7 +325,8 @@ Finally, we'd like to see if dense word embeddings are better for clustering the
 
 For this task, use files:
 
-* `GoogleNews-vectors-negative300.filter`: Google word2vec vectors (300 dimensions, filtered to contain only the words in the dev/test splits)
+* [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
+* The Google file is very large (~3.4GB), so we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter`, which is filtered to contain only the words in the dev/test splits.
 * Modify `vectorcluster.py` to load dense vectors.
 
 The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
