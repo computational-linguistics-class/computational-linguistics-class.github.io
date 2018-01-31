@@ -91,6 +91,11 @@
       authors: Chris Potts
       url: https://www.youtube.com/watch?v=DEMn10hzXX4&index=5&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 7 minutes
+    - 
+      title: Visualizing Data Using t-SNE
+      authors: Laurens van der Maaten
+      url: https://www.youtube.com/watch?v=RJVL80Gg3lA
+      length: 1 hour
 -
   date: 2018-02-05
   slides: 
