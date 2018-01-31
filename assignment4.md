@@ -110,8 +110,6 @@ Advanced Vector Space Models <span class="text-muted">: Assignment 4</span>
 In this assignment, we will examine some advanced uses of vector representations of words. We are going to look at two different problems: 
 1. Solving word relation problems like analogies using word embeddings. 
 2. Discovering the different senses of a "polysemous" word by clustering together its synonyms. 
-
-<<<<<<< HEAD
 You will use an open source Python package for creating and manipulating word vectors called *gensim.*  Gensim lets you easily train word embedding models like word2vec.
 
 
@@ -121,19 +119,11 @@ In order to use the gensim package, you'll have to be using Python version 3.6 o
 * `pip3 install gensim`
 * Then when I ran python, I used the command `python3` instead of just `python`
 </div>
-=======
-In this image, we have a target word "bug", and a list of some synonyms. The 4 circles are the 4 senses of "bug." The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
->>>>>>> 3b88d85701ebc352d3662241899e3003700f9ac3
-
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-<<<<<<< HEAD
-* [`data.zip`](downloads/hw4/data.zip) Contains the data for this assignment
-=======
 * [`question1.txt`](downloads/hw4/question1.txt) A template for answering question 1.
 * [`data.zip`](downloads/hw4/data.zip) Contains all the data
->>>>>>> 3b88d85701ebc352d3662241899e3003700f9ac3
 * [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
 * [`writeup.tex`](downloads/hw4/writeup.txt) Report template.
@@ -295,38 +285,7 @@ On the dev data, a random baseline gets about 20%, the word cooccurrence matrix 
 
 
 
-<<<<<<< HEAD
-
 ### 1. Sparse Representations 
-=======
-Your Tasks
-======================
-You have 3 tasks. 
-
-### 1. Exploration
-
-The first part of this homework will lead you through loading a dense vector model (trained using `word2vec`), and playing around with the `gensim` library to manipulate and analyze the vectors. The questions are designed to familiarize you with the `gensim.models.KeyedVectors` package, and get you thinking about what type of semantic information word embeddings can encode.
-
-Load the word vectors using the following Python commands:
-
-{% highlight python %}
-from gensim.models import KeyedVectors
-vecfile = 'GoogleNews-vectors-negative300.filter'
-vecs = KeyedVectors.load_word2vec_format(vecfile)
-{% endhighlight %}
-
-* What is the dimensionality of these word embeddings? Provide an integer answer.
-* What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `gensim.models.KeyedVectors.wv.most_similar`)
-* According to the word embeddings, which of these words is not like the others?
-`['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
-(Use the function `gensim.models.KeyedVectors.wv.doesnt_match`)
-* Solve the following analogy: "submarine" is to "plane" as X is to "bugle".
-(Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.)
-
-We have provided a file called `question1.txt` for you to submit answers to the questions above.
-
-### 2. Sparse Representations 
->>>>>>> 3b88d85701ebc352d3662241899e3003700f9ac3
 
 Your next task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
 
@@ -377,13 +336,8 @@ As in question 2, turn in the predicted clusters that your dense vector represen
 
 In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
 
-<<<<<<< HEAD
 ### 3. The Leaderboard
 In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
-=======
-### 4. The Leaderboard
-In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to  leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
->>>>>>> 3b88d85701ebc352d3662241899e3003700f9ac3
 
 ### Extra Credit
 We made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` isn't obvious.
