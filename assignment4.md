@@ -136,7 +136,7 @@ Here are the materials that you should download for this assignment:
 
 # Part 1: Exploring Analogies and Other Word Pair Relationships
 
-Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the notworthy things about the method is that it can be used to solve word analogy problems like
+Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the noteworthy things about the method is that it can be used to solve word analogy problems like
   man is to king as woman is to [blank]
 The way that it works is to perform vector math.  They take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer. 
 $king−man+woman \approx queen$
