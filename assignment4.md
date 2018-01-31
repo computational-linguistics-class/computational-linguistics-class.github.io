@@ -41,6 +41,7 @@ Here are the materials that you should download for this assignment:
 * [`data.zip`](downloads/hw4/data.zip) Contains all the data
 * [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
+* [`writeup.tex`](downloads/hw4/writeup.txt) Report template.
 * [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
 </div>
 
@@ -73,6 +74,26 @@ The data to be used for this assignment consists of sets of paraphrases correspo
 | ----------- | --------- |
 | note.v | comment mark tell observe state notice say remark mention |
 | hot.a | raging spicy blistering red-hot live |
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Target</th>
+      <th scope="col">Paraphrase set</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>      
+      <td>note.v</td>
+      <td>comment mark tell observe state notice say remark mention</td>
+    </tr>
+    <tr>
+      <td>hot.a</td>
+      <td>raging spicy blistering red-hot live</td>
+    </tr>
+  </tbody>
+</table>
+
 
 (Here the `.v` following the target `note` indicates the part of speech.)
 
