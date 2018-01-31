@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Your Project Title}
+
+\begin{document}
+
+CIS530 Spring 2018\hfill Assignment 4\\
+Firstname Lastname (MM/DD)
+
+\hrulefill
+
+\section{Sparse Vector Representations}
+
+We tried X variations of a sparse vector representation. The variations we tried were:
+
+\begin{itemize}
+\item ...
+\end{itemize}
+
+We used XYZ as the clustering algorithm. 
+% If you experimented with multiple clustering algorithms, include that here.
+
+We compare the impact of our model and clustering choices by evaluating their performance over the dev set (Table \ref{tab:sparseresults}):
+
+% Your table may have a different number of rows/columns based on the experiments you ran
+\begin{table}[]
+\centering
+\begin{tabular}{lll}
+Vector Space Model  & KMeans & My Clustering Method 2 \\
+Baseline (provided) &        &                        \\
+My Model 1          &        &                        \\
+My Model 2          &        &                       
+\end{tabular}
+\caption{Paired F-Score on the dev set by different vector space models and clustering algorithms.}
+\label{tab:sparseresults}
+\end{table}
+
+\section{Dense Vector Representations}
+
+We tried X variations of the dense vector representation. The variations we tried were:
+
+\begin{itemize}
+\item ...
+\end{itemize}
+
+We used XYZ as the clustering algorithm. 
+% If you experimented with multiple clustering algorithms, include that here.
+
+We compare the impact of our model and clustering choices by evaluating their performance over the dev set (Table \ref{tab:denseresults}):
+
+% Your table may have a different number of rows/columns based on the experiments you ran
+\begin{table}[]
+\centering
+\begin{tabular}{lll}
+Dense Model  & KMeans & My Clustering Method 2 \\
+Word2Vec (provided) &        &                        \\
+My Model 1          &        &                        \\
+My Model 2          &        &                       
+\end{tabular}
+\caption{Paired F-Score on the dev set by different dense vector space models and clustering algorithms.}
+\label{tab:denseresults}
+\end{table}
+
+\section{Comparison}
+
+% This is just an example of what a comparison might look like -- feel free to do additional analyses 
+Overall, our XYZ model, a (sparse/dense) model, performs best. 
+
+In general, we can compare dense and sparse models by looking at instances where one does well and the other fails.
+
+Examples of target words where the dense model scores high and the sparse model scores low are... (describe what they have in common, hypothesize why this might be the case)
+
+Examples of target words where the sparse model scores high and the dense model scores low are... (describe what they have in common, hypothesize why this might be the case)
+
+
+
+\section{(Optional) Choosing K}
+
+We designed a model that chose the best K as follows...
+
+Our results on the \texttt{test_nok_input.txt} data are given in (table below)...
+
+\end{document}
