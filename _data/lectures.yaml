@@ -73,8 +73,8 @@
       length: 10 minutes
 -
   date: 2018-01-29
-  slides: 
-  title: What can we do with semantic vectors?
+  slides: slides/03-vector-semantics-chalk-talk.pdf
+  title: Vector semantics chalk talk
   readings: 
     - 
       title: Composition in Distributional Models of Semantics
