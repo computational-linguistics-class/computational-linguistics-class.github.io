@@ -359,7 +359,7 @@ Here are the deliverables that you will need to submit:
 * your favorite clustering output for the leaderboard, `test_output_leaderboard.txt` (this will probably be a copy of either `test_output_features.txt` or `test_output_dense.txt`)
 * `writeup.pdf` (compiled from `writeup.tex`)
 * your code (.zip). It should be written in Python 3.
-* (optional) the output of your model that automatically chooses the number of clusters, `test_nok_output_leaderboard.txt`
+* (optional) the output of your model that automatically chooses the number of clusters, `test_nok_output_leaderboard.txt` (submit this to the Gradescope assignment 'Homework 4 EXTRA CREDIT')
 </div>
 
 
