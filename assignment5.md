@@ -9,7 +9,7 @@ release_date: 2018-02-07
 due_date: 2018-02-14T11:00:00EST
 attribution: Daphne Ippolito, John Hewitt, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
-
+---
 
 In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the more computationally-lightweight problem of predicting the next character in a sequence given the previous characters. You'll also solve a text classification problem like in Homework 2, except you'll use a recurrent neural net rather than handcrafted features. 
 
@@ -21,24 +21,17 @@ You will be using Pytorch for this assignment, and much of the first part involv
 
 Pytorch is not installed on biglab. To install it, you will first need to create a [Python virtual environment](https://docs.python.org/3/library/venv.html). A virtual environment allows you to install Python packages locally without having root access. (If you are running locally or you've already done this, you can skip this step.) Run the following two commands:
 
-```
-
+``` bash
 python3 -m venv ~/py3env
-
 source ~/py3env/bin/activate
-
 ```
 
 Now to install Pytorch, follow the instructions on [http://pytorch.org/](http://pytorch.org/), specifying the options appropriately. On biglab, you will want to use 
 
 ```
-
 Package Manager: pip
-
 Python: 3.5
-
 CUDA: None
-
 ```
 
 Success!
@@ -56,11 +49,8 @@ Karpathy shows results for several fun domains:
 Shakespeare plays
 
 * Paul Graham essays
-
 * LaTeX documents
-
 * Linux source code
-
 * Baby names
 
 In this assignment you will follow the Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set. 
@@ -78,9 +68,7 @@ A note on the assignment. The tutorial code defines epoch differently than in th
 Download the city names dataset.
 
 * training set
-
 * validation set
-
 * test set
 
 Modify the tutorial code to instead read from city names dataset. In the tutorial, you used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard. All training should be done on the train set and all validation on the validation set. 
@@ -96,11 +84,8 @@ Attribution: the city names dataset is derived from [Maxmind](http://download.ma
 Complete the following analysis on the city names dataset, and include your finding in the report.
 
 1. Write code to output accuracy on the validation set. Include your best accuracy in the report. (For a benchmark, the TAs were able to get accuracy above 50%) Discuss where your model is making mistakes. Use a confusion matrix plot to support your answer.
-
 2. Modify the training loop to periodically compute the loss on the validation set, and create a plot with the training and validation loss as training progresses. Is your model overfitting? Include the plot in your report. TODO: Phrase better?
-
 3. Experiment with the learning rate. You can try a few different learning rates and observe how this affects the loss. Another common practice is to drop the learning rate when the loss has plateaued. Use plots to explain your experiments and their effects on the loss.
-
 4. Experiment with the size of the hidden layer or the model architecture How does this affect validation accuracy?
 
 **Leaderboard**
@@ -108,9 +93,7 @@ Complete the following analysis on the city names dataset, and include your find
 Write code to make predictions on the provided test set. The test set hs one unlabeled city name per line. You code should output a .txt file with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Some suggestions for improving your leaderboard performance:
 
 * Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
-
 * Test out label smoothing
-
 * Try a more complicated architecture, for example, swapping out the RNN for LSTM or GRU units.
 
 # Text generation using char-rnn
@@ -122,11 +105,8 @@ In this section, you will be following more Pytorch tutorial code in order to re
 Be creative! Pick some dataset that interests you. Here are some ideas:
 
 * [ABC music format](https://raw.githubusercontent.com/rdeese/tunearch-corpus/master/all-abcs.txt)
-
 * [Donald Trump speeches](https://github.com/ryanmcdermott/trump-speeches)
-
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt) 
-
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
 
 
