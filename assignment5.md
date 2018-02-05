@@ -64,7 +64,7 @@ In this assignment you will follow the Pytorch tutorial code to implement your o
 
 ## Follow the tutorial code
 
-Follow the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) to build a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you might find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification). Make sure you can reproduce the tutorial's results on the provided baby-name dataset before moving on.
+Follow the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) to build a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification). Make sure you can reproduce the tutorial's results on the provided baby-name dataset before moving on.
 
 A note on the assignment. The tutorial code defines epoch differently than in the textbook. TODO: finish writing
 
@@ -107,7 +107,12 @@ In your report, describe your final model and training parameters.
 
 # Text generation using char-rnn
 
-In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Follow the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html).
+In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html), and then download [this ipython notebook](https://github.com/spro/practical-pytorch/tree/master/char-rnn-generation) to base your own code on.
+
+TODO: Things we could ask the students to do
+1. Implement perplexity and show a plot of training time vs. perplexity
+2. Play with the architecture
+3. Add a <start token> to the vocabular.
 
 ## Experimenting with your own dataset
 
