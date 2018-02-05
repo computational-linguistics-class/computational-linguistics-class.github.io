@@ -11,9 +11,9 @@ attribution: Daphne Ippolito, John Hewitt, and Chris Callison-Burch developed th
 readings:
 ---
 
-In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the more computationally-lightweight problem of predicting the next character in a sequence given the previous characters. You'll also solve a text classification problem like in Homework 2, except you'll use a recurrent neural net rather than handcrafted features. 
+In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the more computationally-lightweight problem of predicting the next character in a sequence given the previous characters. You'll also solve a text classification problem like in Homework 2, except you'll do so with a recurrent neural net rather than handcrafted features. 
 
-You will be using Pytorch for this assignment, and much of the first part involves going through some of the Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
+You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
 
 # Setup
 
@@ -65,11 +65,12 @@ A note on the assignment. The tutorial code defines epoch differently than in th
 
 ## Using the city names dataset
 
+<div class="alert alert-info" markdown="1">
 Download the city names dataset.
-
-* training set
-* validation set
-* test set
+* [training set](downloads/hw5/train.zip)
+* [validation set](downloads/hw5/val.zip)
+* [test file for leaderboard](downloads/hw5/test.txt)
+</div>
 
 Modify the tutorial code to instead read from city names dataset. In the tutorial, you used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard. All training should be done on the train set and all validation on the validation set. 
 
@@ -90,7 +91,7 @@ Complete the following analysis on the city names dataset, and include your find
 
 **Leaderboard**
 
-Write code to make predictions on the provided test set. The test set hs one unlabeled city name per line. You code should output a .txt file with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Some suggestions for improving your leaderboard performance:
+Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. You code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
 
 * Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
 * Test out label smoothing
@@ -109,6 +110,15 @@ Be creative! Pick some dataset that interests you. Here are some ideas:
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt) 
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
 
+## Analyze your results
+
+# Deliverables
+<div class="alert alert-warning" markdown="1">
+Here are the deliverables that you will need to submit:
+* writeup.pdf
+* code (.zip). It should be written in Python 3 and include a README.txt briefly explaining how to run it.
+* `labels.txt` predictions for leaderboard.
+</div>
 
 ## Recommended readings
 
