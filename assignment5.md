@@ -17,7 +17,7 @@ You will be using Pytorch for this assignment, and instead of providing you sour
 
 # Setup
 
-## Installing Pytorch
+## Install Pytorch
 
 Pytorch is not installed on biglab. To install it, you will first need to create a [Python virtual environment](https://docs.python.org/3/library/venv.html). A virtual environment allows you to install Python packages locally without having root access. (If you are running locally or you've already done this, you can skip this step.) Run the following two commands:
 
@@ -37,6 +37,11 @@ CUDA: None
 Success!
 
 ## How to use IPython notebook
+For this homework, you have the option of using [ipython notebook](https://jupyter.org/), which lets you interactively edit your code within the web browser. Ipython reads files in the `.ipynb` format. To launch from biglab, do the following.
+
+1. On biglab, navigate to the directory with your files and type `ipython3 notebook --port 8888 --no-browser`.
+2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
+3. In your local web browser, navigate to `localhost:8888`.
 
 # What's a char-rnn?
 
@@ -57,13 +62,13 @@ In this assignment you will follow the Pytorch tutorial code to implement your o
 
 # Classification using char-rnn
 
-## Following the tutorial code
+## Follow the tutorial code
 
 Follow the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) to build a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you might find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification). Make sure you can reproduce the tutorial's results on the provided baby-name dataset before moving on.
 
 A note on the assignment. The tutorial code defines epoch differently than in the textbook. TODO: finish writing
 
-## Using the city names dataset
+## Switch to city names dataset
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
@@ -80,7 +85,7 @@ Warning: you'll want to lower the learning rating to 0.02 or less or you might g
 
 Attribution: the city names dataset is derived from [Maxmind](http://download.maxmind.com/download/geoip/database/LICENSE_WC.txt)'s dataset.
 
-**Analysing your results**
+**Experimentation and Analysis**
 
 Complete the following analysis on the city names dataset, and include your finding in the report.
 
@@ -96,6 +101,9 @@ Write code to make predictions on the provided test set. The test set has one un
 * Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
 * Test out label smoothing
 * Try a more complicated architecture, for example, swapping out the RNN for LSTM or GRU units.
+* Use a different initalization for the weights, for example, small random values instead of 0s
+
+In your report, describe your final model and training parameters.
 
 # Text generation using char-rnn
 
@@ -110,7 +118,7 @@ Be creative! Pick some dataset that interests you. Here are some ideas:
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt) 
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
 
-## Analyze your results
+## Analysis
 
 # Deliverables
 <div class="alert alert-warning" markdown="1">
