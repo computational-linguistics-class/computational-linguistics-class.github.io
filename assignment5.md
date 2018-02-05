@@ -64,9 +64,7 @@ In this assignment you will follow the Pytorch tutorial code to implement your o
 
 ## Follow the tutorial code
 
-Follow the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) to build a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification). Make sure you can reproduce the tutorial's results on the provided baby-name dataset before moving on.
-
-A note on the assignment. The tutorial code defines epoch differently than in the textbook. TODO: finish writing
+Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) that builds a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification/char-rnn-classification.ipynb). Make sure you can reproduce the tutorial's results on the tutorial's provided baby-name dataset before moving on.
 
 ## Switch to city names dataset
 
@@ -77,9 +75,9 @@ Download the city names dataset.
 * [test file for leaderboard](downloads/hw5/test.txt)
 </div>
 
-Modify the tutorial code to instead read from city names dataset. In the tutorial, you used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard. All training should be done on the train set and all validation on the validation set. 
+Modify the tutorial code to instead read from city names dataset. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard. 
 
-You may need to change parts of [data.py](https://github.com/spro/practical-pytorch/blob/master/char-rnn-classification/data.py) to get this working. Specifically, to handle unicode, you might need to replace calls to `open` with calls to `codecs.open(filename, "r",encoding='utf-8', errors='ignore')`. 
+All training should be done on the train set and all evaluation (including confusion matrices and accuracy reports) on the validation set. You will need to change the data processing code to get this working. Specifically, you'll need to modify the code in the 3rd code block to create two variables `category_lines_train` and `category_lines_val`. In addition, to handle unicode, you might need to replace calls to `open` with calls to `codecs.open(filename, "r",encoding='utf-8', errors='ignore')`. 
 
 Warning: you'll want to lower the learning rating to 0.02 or less or you might get NaNs when training. 
 
