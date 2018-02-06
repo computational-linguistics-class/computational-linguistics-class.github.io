@@ -102,7 +102,7 @@
     <footer class="text-center text-muted">
       <hr>
       {% if page.attribution %}
-      {{page.attribution}}<br>
+      {{page.attribution | markdownify}}<br>
       {% else %}
       Last updated {{ site.time | date: "%B %d, %Y %T" }}.<br>
       The source code is on <a href="https://github.com/computational-linguistics-class/computational-linguistics-class.github.io">GitHub</a>.
