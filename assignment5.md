@@ -1,13 +1,13 @@
 ---
 layout: default
-img: clusters.png
-caption: Did you know that matplotlib has an xkcd() function?
-img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
-title: Homework 5 - Language Modelling with Neural Nets
+img: ios_keyboard.png
+caption: Movie quotes according to autocomplete
+img_link: https://www.explainxkcd.com/wiki/index.php/1427:_iOS_Keyboard
+title: Homework 5 - Character-based Language Models
 active_tab: homework
 release_date: 2018-02-07
 due_date: 2018-02-14T11:00:00EST
-attribution: Daphne Ippolito, John Hewitt, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
+attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg and [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018.  
 readings:
 ---
 
