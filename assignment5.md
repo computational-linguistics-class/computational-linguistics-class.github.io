@@ -189,9 +189,9 @@ def generate_text(lm, order, nletters=500):
     history = "~" * order
     out = []
     for i in range(nletters):
-      c = generate_letter(lm, history, order)
-      history = history[-order:] + c
-      out.append(c)
+        c = generate_letter(lm, history, order)
+        history = history[-order:] + c
+        out.append(c)
     return "".join(out)
 {% endhighlight %}
 
