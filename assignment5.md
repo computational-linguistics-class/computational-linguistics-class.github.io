@@ -432,7 +432,9 @@ $$ = arg max_{c \in C} P(D|c)$$
 
 Here $$P(D \mid c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$.  This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
 
-Try it!  We'll set up a leaderboard for a text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. 
+Try it!  We'll set up a leaderboard for a text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded.
+
+Later in this assignment, you will use a recurrent neural network on the same dataset in order to compare performance. 
 
 
 ## Part 4: Character-Level Recurrent Neural Networks
