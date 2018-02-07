@@ -43,6 +43,7 @@ The learning goals of this assignment are to:
 
 We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Here's Yoav's code for training a language model:
 
+### Train a language model
 
 {% highlight python %}
 from collections import *
@@ -65,7 +66,114 @@ def train_char_lm(fname, order=4):
 `fname` is a file to read the characters from. `order` is the history size to consult. Note that we pad the data with leading `~` so that we also learn how to start.
 
 
-Now you can train a language model, like on our [corpus of Shakespeare from HW3](downloads/hw3/will_play_text.csv).
+Now you can train a language model.  First grab some text like this corpus of Shakespeare:
+
+`wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
+
+Now train the model:
+{% highlight python %}
+lm = train_char_lm("shakespeare_input.txt", order=4)
+{% endhighlight %}
+
+### Find the probability given some history 
+
+Ok. Now let's do some queries:
+
+{% highlight python %}
+>>> lm['hell']
+[('!', 0.06912442396313365), (' ', 0.22119815668202766), ("'", 0.018433179723502304), ('i', 0.03225806451612903), ('\n', 0.018433179723502304), ('-', 0.059907834101382486), (',', 0.20276497695852536), ('o', 0.15668202764976957), ('.', 0.1336405529953917), ('s', 0.009216589861751152), (';', 0.027649769585253458), (':', 0.018433179723502304), ('?', 0.03225806451612903)]
+{% endhighlight %}
+
+Actually, let's pretty print the output, and sort the letters based on their probabilities.
+
+{% highlight python %}
+import pprint
+import operator
+
+def print_probs(lm, history):
+    probs = sorted(lm[history],key=lambda x:(-x[1],x[0]))
+    pp = pprint.PrettyPrinter()
+    pp.pprint(probs)
+{% endhighlight %}
+
+OK, print again:
+
+{% highlight python %}
+>>> print_probs(lm, "hell")
+[(' ', 0.22119815668202766),
+ (',', 0.20276497695852536),
+ ('o', 0.15668202764976957),
+ ('.', 0.1336405529953917),
+ ('!', 0.06912442396313365),
+ ('-', 0.059907834101382486),
+ ('?', 0.03225806451612903),
+ ('i', 0.03225806451612903),
+ (';', 0.027649769585253458),
+ ('\n', 0.018433179723502304),
+ ("'", 0.018433179723502304),
+ (':', 0.018433179723502304),
+ ('s', 0.009216589861751152)]
+{% endhighlight %}
+
+This means that `hell` can be followed by any of these letters: 
+
+` .o.!-?i;\n':s` 
+
+and that the probability of `o` given `hell` is 15.7%, $$p(o \mid hell)=0.157$$.
+
+### Let's generate some text!
+
+Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
+
+{% highlight python %}
+from random import random
+
+def generate_letter(lm, history, order):
+        history = history[-order:]
+        dist = lm[history]
+        x = random()
+        for c,v in dist:
+            x = x - v
+            if x <= 0: return c
+{% endhighlight %}
+
+To generate a passage of text, we just seed it with the initial history and run letter generation in a loop, updating the history at each turn.  We'll stop generating after a specified number of letters.
+
+{% highlight python %}
+def generate_text(lm, order, nletters=500):
+    history = "~" * order
+    out = []
+    for i in xrange(nletters):
+        c = generate_letter(lm, history, order)
+        history = history[-order:] + c
+        out.append(c)
+    return "".join(out)
+{% endhighlight %}
+
+Now, try generating some Shakespeare with different order n-gram models.  You should try running the following commands.  
+
+{% highlight python %}
+>>> lm = train_char_lm("shakespeare_input.txt", order=2)
+>>> print generate_text(lm, 2)
+
+
+>>> lm = train_char_lm("shakespeare_input.txt", order=3)
+>>> print generate_text(lm, 3)
+
+
+>>> lm = train_char_lm("shakespeare_input.txt", order=4)
+>>> print generate_text(lm, 4)
+
+
+>>> lm = train_char_lm("shakespeare_input.txt", order=7)
+>>> print generate_text(lm, 7)
+{% endhighlight %}
+
+What do you think?  Pretty cool, huh?
+
+### What the F?
+
+Try generating a ton of short passages.  Do you notice anything?  They all start with F!  What the F?!?!  Why is that?  You tell me!
 
 
 ## Part 3: Character-Level Recurrent Neural Networks
