@@ -186,13 +186,23 @@ To generate a passage of text, we just seed it with the initial history and run 
 
 {% highlight python %}
 def generate_text(lm, order, nletters=500):
-    history = "~" * order
-    out = []
-    for i in range(nletters):
-        c = generate_letter(lm, history, order)
-        history = history[-order:] + c
-        out.append(c)
-    return "".join(out)
+  '''Generates a bunch of random text based on the language model.
+  
+  Inputs:
+  lm: The output from calling train_char_lm.
+  history: A sequence of previous text.
+  order: The length of the n-grams in the language model.
+  
+  Returns: 
+    A letter  
+  '''
+  history = "~" * order
+  out = []
+  for i in range(nletters):
+    c = generate_letter(lm, history, order)
+    history = history[-order:] + c
+    out.append(c)
+  return "".join(out)
 {% endhighlight %}
 
 Now, try generating some Shakespeare with different order n-gram models.  You should try running the following commands.  
@@ -298,11 +308,19 @@ $$ = \sqrt[N]{\prod_{i=1}^{N}{\frac{1}{P(w_i \mid w_1 ... w_{i-1})}}}$$
 OK - let's implement it. Here's a possible function signature for perplexity.  (We might update it during class on Wednesday).  Give it a go. 
 
 {% highlight python %}
-def perplexity(test_filename, lm, order=4)
-    test = open(test_filename).read()
-    pad = "~" * order
-	test = pad + data
-    # Your code here...
+def perplexity(test_filename, lm, order=4):
+  '''Computes the perplexity of a text file given the language model.
+  
+  Inputs:
+    test_filename: path to text file
+    lm: The output from calling train_char_lm.
+    order: The length of the n-grams in the language model.
+  '''
+  test = open(test_filename).read()
+  pad = "~" * order
+  test = pad + data
+  
+  # TODO: YOUR CODE HERE
 {% endhighlight %}
 
 
@@ -312,7 +330,8 @@ A couple of things to keep in mind:
 2. Numeric underflow is going to be a problem, so consider using logs.
 
 
-
+#### In your report:
+Discuss the perplexity for text that is similar and different from Shakespeare's plays. We provide you [two dev text files](downloads/hw5/test_data.zip), a New York Times article and several of Shakespeare's sonnets, but feel free to experiment with your own text.
 
 ### Laplace Smoothing and Add-k Smoothing 
 
@@ -339,16 +358,41 @@ where $\lambda_1 + \lambda_2 + \lambda_3 = 1$.
 Now, write a back-off function:
 
 {% highlight python %}
-def calculate_prob_with_backoff(char, history, lms, lambdas, max_order=4)
-    # Your code here...
+def calculate_prob_with_backoff(char, history, lms, lambdas):
+  '''Uses interpolation to compute the probability of char given a series of 
+     language models trained with different length n-grams.
+
+   Inputs:
+     char: Character to compute the probability of.
+     history: A sequence of previous text.
+     lms: A list of language models, outputted by calling train_char_lm.
+     lambdas: A list of weights for each lambda model. These should sum to 1.
+    
+  Returns:
+    Probability of char appearing next in the sequence.
+  ''' 
+  # TODO: YOUR CODE HERE
+  pass
 {% endhighlight %}
 
 You should also write a helper function to set the lambdas.  Here's a function definition that gives you access to a development set.  You can also experiment with setting them manually. 
 
 {% highlight python %}
 # returns a list of lambda values that weight the contribution of n-gram model
-def set_lambdas(dev_filename, lms, max_order=4)
-    # Your code here...
+def set_lambdas(lms, dev_filename):
+  '''Returns a list of lambda values that weight the contribution of each n-gram model
+
+  This can either be done heuristically or by using a development set.
+
+  Inputs:
+    lms: A list of language models, outputted by calling train_char_lm.
+    dev_filename: Path to a development text file to optionally use for tuning the lmabdas. 
+
+  Returns:
+    Probability of char appearing next in the sequence.
+  '''
+  # TODO: YOUR CODE HERE
+  pass
 {% endhighlight %}
 
 ## Part 3: Text Classification using LMs
