@@ -495,8 +495,9 @@ Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
-* [training/validation sets](downloads/hw5/cities.zip)
-* [test file for leaderboard](downloads/hw5/test_data.zip)
+* [training sets](downloads/hw5/cities_train.zip)
+* [validation set](downloads/hw5/cities_val.zip)
+* [test file for leaderboard](downloads/hw5/cities_test.txt)
 </div>
 
 Modify the tutorial code to instead read from city names dataset. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
@@ -541,8 +542,6 @@ Be creative! Pick some dataset that interests you. Here are some ideas:
 * [Donald Trump speeches](https://github.com/ryanmcdermott/trump-speeches)
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt)
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
-
-#### Analysis
 
 ## Deliverables
 <div class="alert alert-warning" markdown="1">
