@@ -418,9 +418,9 @@ Try it!  We'll set up a leaderboard for a text classification task.  Your job is
 
 You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
 
-# Setup
+### Setup
 
-## Using miniconda
+#### Using miniconda
 Miniconda is a package, dependency and environment management for python (amongst other languages). It lets you install different versions of python, different versions of various packages in different environments which makes working on multiple projects (with different dependencies) easy.
 
 There are two ways to use miniconda,
@@ -443,7 +443,7 @@ $ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 After successful installation, running the command ```$ which conda``` should output ```/home1/m/$USERNAME/miniconda3/bin/conda```.
 
-## Installing Pytorch and Jupyter
+#### Installing Pytorch and Jupyter
 
 For this assignment, you'll be using [Pytorch](http://pytorch.org/) and [Jupyter](http://jupyter.org/).
 
@@ -461,14 +461,14 @@ conda install jupyter
 ```
 Running the command ```jupyter --version``` should yield the version installed.
 
-## How to use Jupyter notebook
+#### How to use Jupyter notebook
 For this homework, you have the option of using [jupyter notebook](https://jupyter.org/), which lets you interactively edit your code within the web browser. Jupyter reads files in the `.ipynb` format. To launch from biglab, do the following.
 
 1. On ```biglab```, navigate to the directory with your code files and type `jupyter notebook --port 8888 --no-browser`.
 2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
 3. In your local web browser, navigate to `localhost:8888`.
 
-# What's a char-rnn?
+### What's a char-rnn?
 
 Good question! Andrej Karpathy, a researcher at OpenAI, has written an excellent blog post which you should read before beginning this assignment.
 
@@ -485,13 +485,13 @@ Shakespeare plays
 
 In this assignment you will follow the Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set.
 
-# Classification using char-rnn
+### Classification using char-rnn
 
-## Follow the tutorial code
+#### Follow the tutorial code
 
 Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) that builds a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification/char-rnn-classification.ipynb). Make sure you can reproduce the tutorial's results on the tutorial's provided baby-name dataset before moving on.
 
-## Switch to city names dataset
+#### Switch to city names dataset
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
@@ -527,18 +527,13 @@ Write code to make predictions on the provided test set. The test set has one un
 
 In your report, describe your final model and training parameters.
 
-# Text generation using char-rnn
+### Text generation using char-rnn
 
 In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html), and then download [this ipython notebook](https://github.com/spro/practical-pytorch/tree/master/char-rnn-generation) to base your own code on.
 
 You will notice that the code is quite similar to that of the classification problem. The biggest difference is in the loss function. For classification, we run the entire sequence through the RNN and then impose a loss only on the final class prediction. For the text generation task, we impose a loss at each step of the RNN on the predicted character. The classes in this second task are the possible characters to predict.
 
-TODO: Things we could ask the students to do
-1. Implement perplexity and show a plot of training time vs. perplexity
-2. Play with the architecture
-3. Add a <start token> to the vocabular.
-
-## Experimenting with your own dataset
+#### Experimenting with your own dataset
 
 Be creative! Pick some dataset that interests you. Here are some ideas:
 
@@ -547,9 +542,9 @@ Be creative! Pick some dataset that interests you. Here are some ideas:
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt)
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
 
-## Analysis
+#### Analysis
 
-# Deliverables
+## Deliverables
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * writeup.pdf
