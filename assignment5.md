@@ -11,7 +11,64 @@ attribution: This assignment is based on [The Unreasonable Effectiveness of Char
 readings:
 ---
 
-In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the more computationally-lightweight problem of predicting the next character in a sequence given the previous characters. You'll also solve a text classification problem like in Homework 2, except you'll do so with a recurrent neural net rather than handcrafted features. 
+<!-- Check whether the assignment is up to date -->
+{% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
+{% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
+{% if this_year != due_year %} 
+<div class="alert alert-danger">
+Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
+</div>
+{% endif %}
+<!-- End of check whether the assignment is up to date -->
+
+<div class="alert alert-info">
+This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
+</div>
+
+
+Character-based Language Models <span class="text-muted">: Assignment 5</span>
+=============================================================
+
+In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the related problem of predicting the next *character* in a sequence given the previous characters. 
+
+The learning goals of this assignment are to: 
+* Understand how to compute language model probabilities using maximum likelihood estimation
+* Implement basic smoothing, back-off and interpolation.
+* Have fun using a language model to probabilistically generate texts.
+* Use a set of language models to perform text classification. 
+* Try out a more advanced form of language modeling using a Recurrent Neural Network. 
+
+
+## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
+
+We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Here's Yoav's code for training a language model:
+
+
+{% highlight python %}
+from collections import *
+
+def train_char_lm(fname, order=4):
+    data = file(fname).read()
+    lm = defaultdict(Counter)
+    pad = "~" * order
+    data = pad + data
+    for i in xrange(len(data)-order):
+        history, char = data[i:i+order], data[i+order]
+        lm[history][char]+=1
+    def normalize(counter):
+        s = float(sum(counter.values()))
+        return [(c,cnt/s) for c,cnt in counter.iteritems()]
+    outlm = {hist:normalize(chars) for hist, chars in lm.iteritems()}
+    return outlm
+{% endhighlight %}
+
+`fname` is a file to read the characters from. `order` is the history size to consult. Note that we pad the data with leading `~` so that we also learn how to start.
+
+
+Now you can train a language model, like on our [corpus of Shakespeare from HW3](downloads/hw3/will_play_text.csv).
+
+
+## Part 3: Character-Level Recurrent Neural Networks
 
 You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
 
