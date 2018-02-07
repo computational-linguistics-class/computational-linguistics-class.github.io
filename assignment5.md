@@ -75,7 +75,12 @@ Here are the materials that you should download for this assignment:
 
 ## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
 
-We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Here's Yoav's code for training a language model:
+We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Below is Yoav's code for training a language model.
+
+<div class="alert alert-warning" markdown="1">
+Note: all of this code is included in the provided code stub called `language_model.py`. No need to copy and paste.
+</div>
+
 
 ### Train a language model
 
