@@ -39,8 +39,9 @@ The learning goals of this assignment are to:
 * Try out a more advanced form of language modeling using a Recurrent Neural Network. 
 
 
-CCB - todo - give the students a training/dev/test split.
-
+* todo - give the students a training/dev/test split.
+* todo - skeleton python code.
+* todo - training/dev data for text classification task.
 
 ## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
 
@@ -257,7 +258,22 @@ You should also think about how to set the lambdas.
 
 ## Part 3: Text Classification using LMs
 
-CCB - todo 
+Language models can be applied to text classification. If we want to classify a text $$D$$ into a category $$c \in C={c_1, ..., c_N}$$. We can pick the category $$c$$ that has the largest posterior probability given the text. That is,
+
+$$ c^* = arg max_{c \in C} P(c|D) $$
+
+Using Bayes rule, this can be rewritten as:
+
+$$ c^* = arg max_{c \in C} P(D|c) P(c)$$
+
+If we assume that all classes are equally likely, then we can just drop the $$P(c)$$ term:
+
+$$ = arg max_{c \in C} P(D|c)$$
+
+Here $$P(D|c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$.  This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
+
+Try it!  We'll set up a leaderboard for a text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. 
+
 
 ## Part 4: Character-Level Recurrent Neural Networks
 
