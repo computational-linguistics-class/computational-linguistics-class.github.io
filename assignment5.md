@@ -109,9 +109,9 @@ Now train the model:
 lm = train_char_lm("shakespeare_input.txt", order=4)
 {% endhighlight %}
 
-### Find the probability given some history 
+### P(hello world) 
 
-Ok. Now let's do some queries:
+Ok. Now we can look-up the probability of the next letter given some history.  Here are some example queries:
 
 {% highlight python %}
 >>> lm['hell']
@@ -260,7 +260,7 @@ Forromfor intre You to lor c
 
 {% endhighlight %}
 
-Do you notice anything?  *They all start with F!*  In fact, after we hit a certain order, the first word is always *First*?  Why is that?  Is the model trying to be clever?  Tell me why in your writeup!
+Do you notice anything?  *They all start with F!*  In fact, after we hit a certain order, the first word is always *First*?  Why is that?  Is the model trying to be clever?  First, generate the word *First*. Explain what is going on in your writeup.
 
 
 ## Part 2: Perplexity, smoothing, back-off and interpolation  
