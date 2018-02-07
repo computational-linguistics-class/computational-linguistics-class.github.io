@@ -39,6 +39,9 @@ The learning goals of this assignment are to:
 * Try out a more advanced form of language modeling using a Recurrent Neural Network. 
 
 
+CCB - todo - give the students a training/dev/test split.
+
+
 ## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
 
 We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Here's Yoav's code for training a language model:
@@ -121,7 +124,7 @@ This means that `hell` can be followed by any of these letters:
 
 and that the probability of `o` given `hell` is 15.7%, $$p(o \mid hell)=0.157$$.
 
-### Let's generate some text!
+### Let's write some Shakespearean English!
 
 Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
 
@@ -173,10 +176,91 @@ What do you think?  Pretty cool, huh?
 
 ### What the F?
 
-Try generating a ton of short passages.  Do you notice anything?  They all start with F!  What the F?!?!  Why is that?  You tell me!
+Try generating a bunch of short passages.  Do you notice anything?  *They all start with F!* Why is that?  Tell me why in your writeup!
 
 
-## Part 3: Character-Level Recurrent Neural Networks
+## Part 2: Perplexity, smoothing, back-off and interpolation  
+
+In this part of the assignment, you'll adapt Yoav's code in order to implement several of the  techniques described in [Section 4.2 of the Jurafsky and Martin textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf).  
+
+### Perplexity 
+
+How do we know whether a LM is good? Here's what the textbook says:
+
+> For an intrinsic evaluation of a language model we need a test set. As with many of the statistical models in our field, the probabilities of an N-gram model come from the corpus it is trained on, the training set or training corpus. We can then measure the quality of an N-gram model by its performance on some unseen data called the test set or test corpus. We will also sometimes call test sets and other datasets that are not in our training sets held out corpora because we hold them out from the training data.
+
+> So if we are given a corpus of text and want to compare two different N-gram models, we divide the data into training and test sets, train the parameters of both models on the training set, and then compare how well the two trained models fit the test set.
+
+> But what does it mean to "fit the test set"? The answer is simple: whichever model assigns a higher probability to the test set is a better model.
+
+We'll implement the most common method for intrinsic metric of language models: *perplexity*.  The perplexity of a language model on a test set is the inverse probability of the test set, normalized by the number of words. For a test set $$W = w_1 w_2 ... w_N$$:
+
+
+$$Perplexity(W) = P(w_1 w_2 ... w_N)^{\frac{1}{N}}$$
+
+
+$$ = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}}$$
+
+
+$$ = \sqrt[N]{\prod_{i=1}^{N}{\frac{1}{P(w_i \mid w_1 ... w_{i-1})}}}$$
+
+
+OK - let's implement it. Here's a possible function signature for perplexity.  (We might update it during class on Wednesday).  Give it a go. 
+
+{% highlight python %}
+def perplexity(test_filename, lm, order=4)
+    test = file(test_filename).read()
+    pad = "~" * order
+	test = pad + data
+    # Your code here...
+{% endhighlight %}
+
+
+A couple of things to keep in mind:
+
+1. Remember to pad the front of the file
+2. Numeric underflow is going to be a problem, so consider using logs.
+
+
+
+
+### Laplace Smoothing and Add-k Smoothing 
+
+Laplace Smoothing is described in section 4.4.1.  Laplace smoothing  adds one to each count (hence its alternate name *add-one smoothing*).   Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
+
+$$P_{Laplace}(w_i) = \frac{count_i + 1}{N+V}$$
+
+A variant of Laplace smoothing is called *Add-k smoothing* or *Add-epsilon smoothing*.  This is described in section Add-k 4.4.2.  Let's change the function definition of `train_char_lm` so that it takes a new argument, `add_k`, which specifies how much to add.  By default, we'll set it to one, so that it acts like Laplace smoothing:
+
+{% highlight python %}
+def train_char_lm(fname, order=4, add_k=1):
+    # Your code here...
+{% endhighlight %}
+
+### Interpolation
+
+Next, let's implement interpolation.  The idea here is to calculate the higher order n-gram probabilities also combining the probabilities for lower-order n-gram models.  Like smoothing, this helps us avoid the problem of zeros if we haven't observed the longer sequence in our training data.  Here's the math:
+
+$$P_{backoff}(w_i|w_{i−2} w_{i−1}) = \lambda_1 P(w_i|w_{i−2} w_{i−1}) + \lambda_2 P(w_i|w_{i−1}) + \lambda_3 P(w_i)$$
+
+where $\lambda_1 + \lambda_2 + \lambda_3 = 1$.
+
+
+Now, write a back-off function:
+
+{% highlight python %}
+def calculate_prob_with_backoff(char, history, lms, lambdas, max_order=4)
+    # Your code here...
+{% endhighlight %}
+
+You should also think about how to set the lambdas.  
+
+## Part 3: Text Classification using LMs
+
+CCB - todo 
+
+## Part 4: Character-Level Recurrent Neural Networks
+
 
 You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
 
