@@ -117,20 +117,21 @@
 -
   date: 2018-02-12
   slides: 
-  title: Hidden Markov Models
+  title: Information Extraction 
   readings: 
     - 
-      title: Chapter 9 "Hidden Markov Models"
+      title: Chapter 21 "Information Extraction"
       authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-14
   slides: 
   title: Hands-on with Taggers
   readings: 
     - 
-      title: Chapter 10 "Part-of-Speech Tagging"
+      title: Chapter 21 "Information Extraction"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
@@ -138,12 +139,15 @@
 -
   date: 2018-02-19
   slides: 
-  title: 
+  title: Hidden Markov Models
   readings: 
+    - 
+      title: Chapter 9 "Hidden Markov Models"
+      authors: Jurafsky and Martin
 -
   date: 2018-02-21
   slides: 
-  title: 
+  title: Hands-on with Taggers
   readings: 
 -
   date: 2018-02-26
