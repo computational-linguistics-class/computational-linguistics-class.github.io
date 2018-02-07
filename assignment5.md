@@ -164,7 +164,7 @@ The distribution of letters that occur after `worl` is different than the distri
 
 What does that mean?  It means that in our corpus, the only possible continuation that we observed for `worl` was the letter `d`, and we assign 100% of probability mass to it, $$p(d \mid worl)=1.0$$.
 
-### Let's generate some Shakespeare!
+### Let's write some Shakespeare!
 
 Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
 
@@ -216,7 +216,51 @@ What do you think?  Is it as good as [1000 monkeys working at 1000 typewriters](
 
 ### What the F?
 
-Try generating a bunch of short passages.  Do you notice anything?  *They all start with F!* Why is that?  Tell me why in your writeup!
+Try generating a bunch of short passages:
+
+
+{% highlight python %}
+>>> print generate_text(lm, 5, 40)
+First, and quence!
+Shall we gave it. Now
+>>> print generate_text(lm, 5, 40)
+First die.'
+
+KING OF FRANCE:
+I prithee, 
+>>> print generate_text(lm, 5, 40)
+First marriage,
+And scarce it: wretches 
+>>> print generate_text(lm, 5, 40)
+First, the midsummer;
+We make us allia s
+>>> print generate_text(lm, 5, 40)
+First choose
+Which now,
+Where like thee.
+
+>>> lm = train_char_lm("shakespeare_input.txt", order=4)
+>>> print generate_text(lm, 4, 40)             
+First blood
+assurance
+To grace and leade
+>>> print generate_text(lm, 4, 40)
+First, are almightly,
+Am I to bedew the 
+>>> print generate_text(lm, 4, 40)
+First Senato, come unexamination hast br
+
+>>> lm = train_char_lm("shakespeare_input.txt", order=2)
+>>> print generate_text(lm, 2, 40)             
+Firm
+Histed mor ituffe bonguis hon tract
+>>> print generate_text(lm, 2, 40)
+Fir my fat,
+Forromfor intre You to lor c
+
+{% endhighlight %}
+
+Do you notice anything?  *They all start with F!*  In fact, after we hit a certain order, the first word is always *First*?  Why is that?  Is the model trying to be clever?  Tell me why in your writeup!
 
 
 ## Part 2: Perplexity, smoothing, back-off and interpolation  
