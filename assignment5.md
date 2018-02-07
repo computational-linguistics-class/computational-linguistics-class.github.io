@@ -79,22 +79,36 @@ We're going to be starting with some [nice, compact code for character-level lan
 
 ### Train a language model
 
-{% highlight python %}
-from collections import *
+Note: we provide you this code in the Python [stub file](downloads/hw5/language_model.py).
 
-def train_char_lm(fname, order=4):
-    data = open(fname).read()
-    lm = defaultdict(Counter)
-    pad = "~" * order
-    data = pad + data
-    for i in range(len(data)-order):
-      history, char = data[i:i+order], data[i+order]
-      lm[history][char]+=1
-    def normalize(counter):
-      s = float(sum(counter.values()))
-      return [(c,cnt/s) for c,cnt in counter.items()]
-    outlm = {hist:normalize(chars) for hist, chars in lm.items()}
-    return outlm
+{% highlight python %}
+def train_char_lm(fname, order=4, add_k=1):
+  ''' Trains a language model.
+  This code was borrowed from 
+  http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
+  Inputs:
+    fname: Path to a text corpus.
+    order: The length of the n-grams.
+    add_k: k value for add-k smoothing. NOT YET IMPLMENTED
+  Returns:
+    A dictionary mapping from n-grams of length n to a list of tuples.
+    Each tuple consists of a possible net character and its probability.
+  '''
+
+  # TODO: Add your implementation of add-k smoothing.
+
+  data = open(fname).read()
+  lm = defaultdict(Counter)
+  pad = "~" * order
+  data = pad + data
+  for i in range(len(data)-order):
+    history, char = data[i:i+order], data[i+order]
+    lm[history][char]+=1
+  def normalize(counter):
+    s = float(sum(counter.values()))
+    return [(c,cnt/s) for c,cnt in counter.items()]
+  outlm = {hist:normalize(chars) for hist, chars in lm.items()}
+  return outlm
 {% endhighlight %}
 
 `fname` is a file to read the characters from. `order` is the history size to consult. Note that we pad the data with leading `~` so that we also learn how to start.
@@ -529,7 +543,7 @@ Write code to make predictions on the provided test set. The test set has one un
 
 In your report, describe your final model and training parameters.
 
-### Text generation using char-rnn
+## Part 5: Text generation using char-rnn
 
 In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html), and then download [this ipython notebook](https://github.com/spro/practical-pytorch/tree/master/char-rnn-generation) to base your own code on.
 
