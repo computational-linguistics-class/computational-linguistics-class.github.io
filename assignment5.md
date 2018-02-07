@@ -67,6 +67,7 @@ The learning goals of this assignment are to:
 
 
 <div class="alert alert-info" markdown="1">
+Here are the materials that you should download for this assignment:
 * [Skeleton python code](downloads/hw5/language_model.py).
 * [training/dev data for text classification task](downloads/hw5/cities.zip).
 </div>
