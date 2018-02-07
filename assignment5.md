@@ -83,17 +83,17 @@ We're going to be starting with some [nice, compact code for character-level lan
 from collections import *
 
 def train_char_lm(fname, order=4):
-    data = file(fname).read()
+    data = open(fname).read()
     lm = defaultdict(Counter)
     pad = "~" * order
     data = pad + data
-    for i in xrange(len(data)-order):
-        history, char = data[i:i+order], data[i+order]
-        lm[history][char]+=1
+    for i in range(len(data)-order):
+      history, char = data[i:i+order], data[i+order]
+      lm[history][char]+=1
     def normalize(counter):
-        s = float(sum(counter.values()))
-        return [(c,cnt/s) for c,cnt in counter.iteritems()]
-    outlm = {hist:normalize(chars) for hist, chars in lm.iteritems()}
+      s = float(sum(counter.values()))
+      return [(c,cnt/s) for c,cnt in counter.items()]
+    outlm = {hist:normalize(chars) for hist, chars in lm.items()}
     return outlm
 {% endhighlight %}
 
@@ -102,7 +102,9 @@ def train_char_lm(fname, order=4):
 
 Now you can train a language model.  First grab some text like this corpus of Shakespeare:
 
-`wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
+``` bash
+$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
+```
 
 Now train the model:
 {% highlight python %}
@@ -172,12 +174,12 @@ Generating text with the model is simple. To generate a letter, we will look up 
 from random import random
 
 def generate_letter(lm, history, order):
-        history = history[-order:]
-        dist = lm[history]
-        x = random()
-        for c,v in dist:
-            x = x - v
-            if x <= 0: return c
+    history = history[-order:]
+    dist = lm[history]
+    x = random()
+    for c,v in dist:
+        x = x - v
+        if x <= 0: return c
 {% endhighlight %}
 
 To generate a passage of text, we just seed it with the initial history and run letter generation in a loop, updating the history at each turn.  We'll stop generating after a specified number of letters.
@@ -186,10 +188,10 @@ To generate a passage of text, we just seed it with the initial history and run 
 def generate_text(lm, order, nletters=500):
     history = "~" * order
     out = []
-    for i in xrange(nletters):
-        c = generate_letter(lm, history, order)
-        history = history[-order:] + c
-        out.append(c)
+    for i in range(nletters):
+      c = generate_letter(lm, history, order)
+      history = history[-order:] + c
+      out.append(c)
     return "".join(out)
 {% endhighlight %}
 
@@ -197,19 +199,19 @@ Now, try generating some Shakespeare with different order n-gram models.  You sh
 
 {% highlight python %}
 >>> lm = train_char_lm("shakespeare_input.txt", order=2)
->>> print generate_text(lm, 2)
+>>> print(generate_text(lm, 2))
 
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=3)
->>> print generate_text(lm, 3)
+>>> print(generate_text(lm, 3))
 
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=4)
->>> print generate_text(lm, 4)
+>>> print(generate_text(lm, 4))
 
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=7)
->>> print generate_text(lm, 7)
+>>> print(generate_text(lm, 7))
 {% endhighlight %}
 
 What do you think?  Is it as good as [1000 monkeys working at 1000 typewriters](https://www.youtube.com/watch?v=no_elVGGgW8)?
@@ -220,41 +222,41 @@ Try generating a bunch of short passages:
 
 
 {% highlight python %}
->>> print generate_text(lm, 5, 40)
-First, and quence!
+>>> print(generate_text(lm, 5, 40))
+First, and quence
 Shall we gave it. Now
->>> print generate_text(lm, 5, 40)
-First die.'
+>>> print(generate_text(lm, 5, 40))
+First die.
 
 KING OF FRANCE:
 I prithee, 
->>> print generate_text(lm, 5, 40)
+>>> print(generate_text(lm, 5, 40))
 First marriage,
 And scarce it: wretches 
->>> print generate_text(lm, 5, 40)
+>>> print(generate_text(lm, 5, 40))
 First, the midsummer;
 We make us allia s
->>> print generate_text(lm, 5, 40)
+>>> print(generate_text(lm, 5, 40))
 First choose
 Which now,
 Where like thee.
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=4)
->>> print generate_text(lm, 4, 40)             
+>>> print(generate_text(lm, 4, 40))
 First blood
 assurance
 To grace and leade
->>> print generate_text(lm, 4, 40)
+>>> print(generate_text(lm, 4, 40))
 First, are almightly,
 Am I to bedew the 
->>> print generate_text(lm, 4, 40)
+>>> print(generate_text(lm, 4, 40))
 First Senato, come unexamination hast br
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=2)
->>> print generate_text(lm, 2, 40)             
+>>> print(generate_text(lm, 2, 40))
 Firm
 Histed mor ituffe bonguis hon tract
->>> print generate_text(lm, 2, 40)
+>>> print(generate_text(lm, 2, 40))
 Fir my fat,
 Forromfor intre You to lor c
 
@@ -297,7 +299,7 @@ OK - let's implement it. Here's a possible function signature for perplexity.  (
 
 {% highlight python %}
 def perplexity(test_filename, lm, order=4)
-    test = file(test_filename).read()
+    test = open(test_filename).read()
     pad = "~" * order
 	test = pad + data
     # Your code here...
