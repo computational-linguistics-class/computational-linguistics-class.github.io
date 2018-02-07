@@ -9,6 +9,31 @@ release_date: 2018-02-07
 due_date: 2018-02-14T11:00:00EST
 attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg and [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018.  
 readings:
+-
+   title: Language Modeling with N-grams
+   authors: Dan Jurafsky and James H. Martin
+   venue: Speech and Language Processing (3rd edition draft)
+   type: textbook
+   url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+-
+   title: The Unreasonable Effectiveness of Character-level Language Models
+   authors: Yoav Goldberg
+   type: blog
+   year: 2015	
+   url: http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
+-
+   title: The Unreasonable Effectiveness of Recurrent Neural Networks
+   authors: Andrej Karpathy 
+   type: blog
+   year: 2015
+   url: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+-
+   title: Language Independent Authorship Attribution using Character Level Language Models
+   authors: Fuchun Pen, Dale Schuurmans, Vlado Keselj, Shaojun Wan
+   type: conference
+   year: 2003
+   venue: EACL
+   url: http://www.aclweb.org/anthology/E/E03/E03-1053.pdf
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -39,9 +64,12 @@ The learning goals of this assignment are to:
 * Try out a more advanced form of language modeling using a Recurrent Neural Network. 
 
 
+<div class="alert alert-info" markdown="1">
 * todo - give the students a training/dev/test split.
 * todo - skeleton python code.
 * todo - training/dev data for text classification task.
+</div>
+
 
 ## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
 
