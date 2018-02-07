@@ -452,9 +452,8 @@ Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
-* [training set](downloads/hw5/train.zip)
-* [validation set](downloads/hw5/val.zip)
-* [test file for leaderboard](downloads/hw5/test.txt)
+* [training/validation sets](downloads/hw5/cities.zip)
+* [test file for leaderboard](downloads/hw5/test_data.zip)
 </div>
 
 Modify the tutorial code to instead read from city names dataset. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
