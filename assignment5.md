@@ -67,9 +67,8 @@ The learning goals of this assignment are to:
 
 
 <div class="alert alert-info" markdown="1">
-* todo - give the students a training/dev/test split.
-* todo - skeleton python code.
-* todo - training/dev data for text classification task.
+* [Skeleton python code](downloads/hw5/language_model.py).
+* [training/dev data for text classification task](downloads/hw5/cities.zip).
 </div>
 
 
