@@ -269,7 +269,11 @@ In this part of the assignment, you'll adapt Yoav's code in order to implement s
 
 ### Perplexity 
 
-How do we know whether a LM is good? Here's what the textbook says:
+How do we know whether a LM is good? There are two basic approaches:
+1. Task-based evaluation (also known as extrinsic evaluation), where we use the LM as part of some other task, like automatic speech recognition, or spelling correcktion, or an OCR system that tries to covert a professor's messy handwriting into text. 
+2. Intrinsic evaluation.  Intrinsic evaluation tries to directly evalute the goodness of the language model by seeing how well the probability distributions that it estimates are able to explain some previously unseen test set. 
+
+Here's what the textbook says:
 
 > For an intrinsic evaluation of a language model we need a test set. As with many of the statistical models in our field, the probabilities of an N-gram model come from the corpus it is trained on, the training set or training corpus. We can then measure the quality of an N-gram model by its performance on some unseen data called the test set or test corpus. We will also sometimes call test sets and other datasets that are not in our training sets held out corpora because we hold them out from the training data.
 
@@ -337,7 +341,13 @@ def calculate_prob_with_backoff(char, history, lms, lambdas, max_order=4)
     # Your code here...
 {% endhighlight %}
 
-You should also think about how to set the lambdas.  
+You should also write a helper function to set the lambdas.  Here's a function definition that gives you access to a development set.  You can also experiment with setting them manually. 
+
+{% highlight python %}
+# returns a list of lambda values that weight the contribution of n-gram model
+def set_lambdas(dev_filename, lms, max_order=4)
+    # Your code here...
+{% endhighlight %}
 
 ## Part 3: Text Classification using LMs
 
