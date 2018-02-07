@@ -16,17 +16,19 @@ readings:
    type: textbook
    url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
-   title: The Unreasonable Effectiveness of Character-level Language Models
-   authors: Yoav Goldberg
-   type: blog
-   year: 2015	
-   url: http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
--
    title: The Unreasonable Effectiveness of Recurrent Neural Networks
    authors: Andrej Karpathy 
+   venue: Blog post.
    type: blog
    year: 2015
    url: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+-
+   title: The Unreasonable Effectiveness of Character-level Language Models
+   authors: Yoav Goldberg
+   venue: Response to Andrej Karpathy's blog post.
+   type: blog
+   year: 2015	
+   url: http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
 -
    title: Language Independent Authorship Attribution using Character Level Language Models
    authors: Fuchun Pen, Dale Schuurmans, Vlado Keselj, Shaojun Wan
