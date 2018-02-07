@@ -149,13 +149,22 @@ OK, print again:
  ('s', 0.009216589861751152)]
 {% endhighlight %}
 
-This means that `hell` can be followed by any of these letters: 
+This means that `hell` can be followed by any of these dozen characters: 
 
-` .o.!-?i;\n':s` 
+` ,o.!-?i;\n':s` 
 
-and that the probability of `o` given `hell` is 15.7%, $$p(o \mid hell)=0.157$$.
+and that the probability of `o` given `hell` is 15.7%, $$p(o \mid hell)=0.157$$.  The most probable character to see after `hell` is a space, $$p(o \mid hell)=0.221$$.
 
-### Let's write some Shakespearean English!
+The distribution of letters that occur after `worl` is different than the distribution of letters that occur after `hell`.  Here is that distribution: 
+
+{% highlight python %}
+>>> print_probs(lm, "worl")
+[('d', 1.0)]
+{% endhighlight %}
+
+What does that mean?  It means that in our corpus, the only possible continuation that we observed for `worl` was the letter `d`, and we assign 100% of probability mass to it, $$p(d \mid worl)=1.0$$.
+
+### Let's generate some Shakespeare!
 
 Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
 
@@ -203,7 +212,7 @@ Now, try generating some Shakespeare with different order n-gram models.  You sh
 >>> print generate_text(lm, 7)
 {% endhighlight %}
 
-What do you think?  Pretty cool, huh?
+What do you think?  Is it as good as [1000 monkeys working at 1000 typewriters](https://www.youtube.com/watch?v=no_elVGGgW8)?
 
 ### What the F?
 
