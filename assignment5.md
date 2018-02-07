@@ -416,6 +416,9 @@ def set_lambdas(lms, dev_filename):
   pass
 {% endhighlight %}
 
+#### In your report:
+Experiment with a couple different lambdas and values of k, and discuss their effects.
+
 ## Part 3: Text Classification using LMs
 
 Language models can be applied to text classification. If we want to classify a text $$D$$ into a category $$c \in C={c_1, ..., c_N}$$. We can pick the category $$c$$ that has the largest posterior probability given the text. That is,
@@ -432,7 +435,20 @@ $$ = arg max_{c \in C} P(D|c)$$
 
 Here $$P(D \mid c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$.  This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
 
-Try it!  We'll set up a leaderboard for a text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded.
+Try it!  We have provided you training and validation datsets consisting of the names of cities. The task is to predict the country a city is in. The following countries are including in the dataset.
+```
+af	Afghanistan
+cn	China
+de	Germany
+fi	Finland
+fr	France
+in	India
+ir	Iran
+pk	Pakistan
+za	South Africa
+```
+
+We'll set up a leaderboard for the text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
 
 Later in this assignment, you will use a recurrent neural network on the same dataset in order to compare performance. 
 
@@ -543,7 +559,7 @@ Complete the following analysis on the city names dataset, and include your find
 
 **Leaderboard**
 
-Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. You code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
+Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
 
 * Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
 * Test out label smoothing
