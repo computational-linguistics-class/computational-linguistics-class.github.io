@@ -192,15 +192,24 @@ What does that mean?  It means that in our corpus, the only possible continuatio
 Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
 
 {% highlight python %}
-from random import random
-
 def generate_letter(lm, history, order):
-    history = history[-order:]
-    dist = lm[history]
-    x = random()
-    for c,v in dist:
-        x = x - v
-        if x <= 0: return c
+  ''' Randomly chooses the next letter using the language model.
+  
+  Inputs:
+    lm: The output from calling train_char_lm.
+    history: A sequence of text at least 'order' long.
+    order: The length of the n-grams in the language model.
+    
+  Returns: 
+    A letter
+  '''
+  
+  history = history[-order:]
+  dist = lm[history]
+  x = random()
+  for c,v in dist:
+    x = x - v
+    if x <= 0: return c
 {% endhighlight %}
 
 To generate a passage of text, we just seed it with the initial history and run letter generation in a loop, updating the history at each turn.  We'll stop generating after a specified number of letters.
@@ -211,8 +220,8 @@ def generate_text(lm, order, nletters=500):
   
   Inputs:
   lm: The output from calling train_char_lm.
-  history: A sequence of previous text.
   order: The length of the n-grams in the language model.
+  nletters: the number of characters worth of text to generate
   
   Returns: 
     A letter  
