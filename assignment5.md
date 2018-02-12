@@ -363,6 +363,8 @@ A couple of things to keep in mind:
 #### In your report:
 Discuss the perplexity for text that is similar and different from Shakespeare's plays. We provide you [two dev text files](downloads/hw5/test_data.zip), a New York Times article and several of Shakespeare's sonnets, but feel free to experiment with your own text.
 
+Note: you may want to create a smoothed language model before calculating perplexity, otherwise you will get a perplexity of 0.
+
 ### Laplace Smoothing and Add-k Smoothing 
 
 Laplace Smoothing is described in section 4.4.1.  Laplace smoothing  adds one to each count (hence its alternate name *add-one smoothing*).   Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
