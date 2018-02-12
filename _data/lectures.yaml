@@ -120,9 +120,14 @@
   title: Language Modeling with Neural Networks
   readings: 
     - 
-      title: A Neural Probabilistic Language Model
+      title: A Neural Probabilistic Language Model 
       authors: Bengio, Ducharme, Vincent
       url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+    - 
+      title: A Neural Probabilistic Language Model (longer JMLR version)
+      authors: Bengio, Ducharme, Vincent
+      url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
+      optional: true
 -
   date: 2018-02-14
   slides: 
