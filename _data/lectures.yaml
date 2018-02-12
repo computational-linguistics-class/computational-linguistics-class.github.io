@@ -98,7 +98,7 @@
       length: 1 hour
 -
   date: 2018-02-05
-  slides: 
+  slides: slides/04-n-gram-language-models-chalk-talk.pdf
   title: Language Modeling with N-Grams
   readings: 
     - 
@@ -107,7 +107,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
   date: 2018-02-07
-  slides: 
+  slides: http://computational-linguistics-class.org/assignment5.html
   title: Hands-on with Language Models
   readings: 
     - 
@@ -116,7 +116,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2018-02-12
-  slides: 
+  slides: slides/05-neural-network-language-models-chalk-talk.pdf
   title: Language Modeling with Neural Networks
   readings: 
     - 
