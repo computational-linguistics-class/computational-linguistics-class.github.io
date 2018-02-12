@@ -64,9 +64,30 @@ $ python -m nltk.downloader conll2002
 
 ## Evaluation
 
-The evaluation included in the code is a token-based score, while usually the score reported is a phrase-based.
+There are two common ways of evaluating NER systems: phrase-based, and token-based. In phrase-based, the more common of the two, a system must predict the entire span correctly for each name. For example, say we have text containing "James Earle Jones", adn our system predicts "[PER James Earle] Jones". Phrase-based gives no credit for this because it missed "Jones", whereas token-based would give partial credit for correctly identifying "James" and "Earle" as B-PER and I-PER respectively. We will se phrase-based to report scores.
 
-TODO: this really needs to be phrase-based so we can compare with the literature.
+The output of your code must be `word gold pred`, as in:
+```
+La B-LOC B-LOC
+Coruña I-LOC I-LOC
+, O O
+23 O O
+may O O
+( O O
+EFECOM B-ORG B-ORG
+) O O
+. O O
+```
+
+Here's how to get scores:
+
+```
+# Phrase-based score
+$ ./conlleval.pl < results
+# Token-based score
+$ ./conlleval.pl -r < results
+```
+
 
 ## Other resources
 
