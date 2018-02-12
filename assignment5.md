@@ -67,34 +67,55 @@ The learning goals of this assignment are to:
 
 
 <div class="alert alert-info" markdown="1">
-* todo - give the students a training/dev/test split.
-* todo - skeleton python code.
-* todo - training/dev data for text classification task.
+Here are the materials that you should download for this assignment:
+* [Skeleton python code](downloads/hw5/language_model.py).
+* [training data for text classification task](downloads/hw5/cities_train.zip).
+* [dev data for text classification task](downloads/hw5/cities_val.zip).
+* [test file for leaderboard](downloads/hw5/cities_test.txt)
 </div>
 
 
 ## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
 
-We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Here's Yoav's code for training a language model:
+We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Below is Yoav's code for training a language model.
+
+<div class="alert alert-warning" markdown="1">
+Note: all of this code is included in the provided code stub called `language_model.py`. No need to copy and paste.
+</div>
+
 
 ### Train a language model
 
-{% highlight python %}
-from collections import *
+Note: we provide you this code in the Python [stub file](downloads/hw5/language_model.py).
 
-def train_char_lm(fname, order=4):
-    data = open(fname).read()
-    lm = defaultdict(Counter)
-    pad = "~" * order
-    data = pad + data
-    for i in range(len(data)-order):
-      history, char = data[i:i+order], data[i+order]
-      lm[history][char]+=1
-    def normalize(counter):
-      s = float(sum(counter.values()))
-      return [(c,cnt/s) for c,cnt in counter.items()]
-    outlm = {hist:normalize(chars) for hist, chars in lm.items()}
-    return outlm
+{% highlight python %}
+def train_char_lm(fname, order=4, add_k=1):
+  ''' Trains a language model.
+  This code was borrowed from 
+  http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
+  Inputs:
+    fname: Path to a text corpus.
+    order: The length of the n-grams.
+    add_k: k value for add-k smoothing. NOT YET IMPLMENTED
+  Returns:
+    A dictionary mapping from n-grams of length n to a list of tuples.
+    Each tuple consists of a possible net character and its probability.
+  '''
+
+  # TODO: Add your implementation of add-k smoothing.
+
+  data = open(fname).read()
+  lm = defaultdict(Counter)
+  pad = "~" * order
+  data = pad + data
+  for i in range(len(data)-order):
+    history, char = data[i:i+order], data[i+order]
+    lm[history][char]+=1
+  def normalize(counter):
+    s = float(sum(counter.values()))
+    return [(c,cnt/s) for c,cnt in counter.items()]
+  outlm = {hist:normalize(chars) for hist, chars in lm.items()}
+  return outlm
 {% endhighlight %}
 
 `fname` is a file to read the characters from. `order` is the history size to consult. Note that we pad the data with leading `~` so that we also learn how to start.
@@ -171,15 +192,24 @@ What does that mean?  It means that in our corpus, the only possible continuatio
 Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
 
 {% highlight python %}
-from random import random
-
 def generate_letter(lm, history, order):
-    history = history[-order:]
-    dist = lm[history]
-    x = random()
-    for c,v in dist:
-        x = x - v
-        if x <= 0: return c
+  ''' Randomly chooses the next letter using the language model.
+  
+  Inputs:
+    lm: The output from calling train_char_lm.
+    history: A sequence of text at least 'order' long.
+    order: The length of the n-grams in the language model.
+    
+  Returns: 
+    A letter
+  '''
+  
+  history = history[-order:]
+  dist = lm[history]
+  x = random()
+  for c,v in dist:
+    x = x - v
+    if x <= 0: return c
 {% endhighlight %}
 
 To generate a passage of text, we just seed it with the initial history and run letter generation in a loop, updating the history at each turn.  We'll stop generating after a specified number of letters.
@@ -190,8 +220,8 @@ def generate_text(lm, order, nletters=500):
   
   Inputs:
   lm: The output from calling train_char_lm.
-  history: A sequence of previous text.
   order: The length of the n-grams in the language model.
+  nletters: the number of characters worth of text to generate
   
   Returns: 
     A letter  
@@ -395,6 +425,9 @@ def set_lambdas(lms, dev_filename):
   pass
 {% endhighlight %}
 
+#### In your report:
+Experiment with a couple different lambdas and values of k, and discuss their effects.
+
 ## Part 3: Text Classification using LMs
 
 Language models can be applied to text classification. If we want to classify a text $$D$$ into a category $$c \in C={c_1, ..., c_N}$$. We can pick the category $$c$$ that has the largest posterior probability given the text. That is,
@@ -411,7 +444,22 @@ $$ = arg max_{c \in C} P(D|c)$$
 
 Here $$P(D \mid c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$.  This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
 
-Try it!  We'll set up a leaderboard for a text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. 
+Try it!  We have provided you training and validation datsets consisting of the names of cities. The task is to predict the country a city is in. The following countries are including in the dataset.
+```
+af	Afghanistan
+cn	China
+de	Germany
+fi	Finland
+fr	France
+in	India
+ir	Iran
+pk	Pakistan
+za	South Africa
+```
+
+We'll set up a leaderboard for the text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
+
+Later in this assignment, you will use a recurrent neural network on the same dataset in order to compare performance. 
 
 
 ## Part 4: Character-Level Recurrent Neural Networks
@@ -419,9 +467,9 @@ Try it!  We'll set up a leaderboard for a text classification task.  Your job is
 
 You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
 
-# Setup
+### Setup
 
-## Using miniconda
+#### Using miniconda
 Miniconda is a package, dependency and environment management for python (amongst other languages). It lets you install different versions of python, different versions of various packages in different environments which makes working on multiple projects (with different dependencies) easy.
 
 There are two ways to use miniconda,
@@ -444,7 +492,7 @@ $ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 After successful installation, running the command ```$ which conda``` should output ```/home1/m/$USERNAME/miniconda3/bin/conda```.
 
-## Installing Pytorch and Jupyter
+#### Installing Pytorch and Jupyter
 
 For this assignment, you'll be using [Pytorch](http://pytorch.org/) and [Jupyter](http://jupyter.org/).
 
@@ -462,14 +510,14 @@ conda install jupyter
 ```
 Running the command ```jupyter --version``` should yield the version installed.
 
-## How to use Jupyter notebook
+#### How to use Jupyter notebook
 For this homework, you have the option of using [jupyter notebook](https://jupyter.org/), which lets you interactively edit your code within the web browser. Jupyter reads files in the `.ipynb` format. To launch from biglab, do the following.
 
 1. On ```biglab```, navigate to the directory with your code files and type `jupyter notebook --port 8888 --no-browser`.
 2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
 3. In your local web browser, navigate to `localhost:8888`.
 
-# What's a char-rnn?
+### What's a char-rnn?
 
 Good question! Andrej Karpathy, a researcher at OpenAI, has written an excellent blog post which you should read before beginning this assignment.
 
@@ -486,18 +534,19 @@ Shakespeare plays
 
 In this assignment you will follow the Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set.
 
-# Classification using char-rnn
+### Classification using char-rnn
 
-## Follow the tutorial code
+#### Follow the tutorial code
 
 Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) that builds a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification/char-rnn-classification.ipynb). Make sure you can reproduce the tutorial's results on the tutorial's provided baby-name dataset before moving on.
 
-## Switch to city names dataset
+#### Switch to city names dataset
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
-* [training/validation sets](downloads/hw5/cities.zip)
-* [test file for leaderboard](downloads/hw5/test_data.zip)
+* [training sets](downloads/hw5/cities_train.zip)
+* [validation set](downloads/hw5/cities_val.zip)
+* [test file for leaderboard](downloads/hw5/cities_test.txt)
 </div>
 
 Modify the tutorial code to instead read from city names dataset. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
@@ -519,7 +568,7 @@ Complete the following analysis on the city names dataset, and include your find
 
 **Leaderboard**
 
-Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. You code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
+Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
 
 * Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
 * Test out label smoothing
@@ -528,18 +577,13 @@ Write code to make predictions on the provided test set. The test set has one un
 
 In your report, describe your final model and training parameters.
 
-# Text generation using char-rnn
+## Part 5: Text generation using char-rnn
 
 In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html), and then download [this ipython notebook](https://github.com/spro/practical-pytorch/tree/master/char-rnn-generation) to base your own code on.
 
 You will notice that the code is quite similar to that of the classification problem. The biggest difference is in the loss function. For classification, we run the entire sequence through the RNN and then impose a loss only on the final class prediction. For the text generation task, we impose a loss at each step of the RNN on the predicted character. The classes in this second task are the possible characters to predict.
 
-TODO: Things we could ask the students to do
-1. Implement perplexity and show a plot of training time vs. perplexity
-2. Play with the architecture
-3. Add a <start token> to the vocabular.
-
-## Experimenting with your own dataset
+#### Experimenting with your own dataset
 
 Be creative! Pick some dataset that interests you. Here are some ideas:
 
@@ -548,9 +592,7 @@ Be creative! Pick some dataset that interests you. Here are some ideas:
 * [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt)
 * [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
 
-## Analysis
-
-# Deliverables
+## Deliverables
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * writeup.pdf
