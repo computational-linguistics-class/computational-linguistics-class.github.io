@@ -117,21 +117,22 @@
 -
   date: 2018-02-12
   slides: 
-  title: Information Extraction 
+  title: Language Modeling with Neural Networks
   readings: 
     - 
-      title: Chapter 21 "Information Extraction"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+      title: A Neural Probabilistic Language Model
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+
 -
   date: 2018-02-14
   slides: 
-  title: Hands-on with Taggers
+  title: Hands-on with Neural Network Language Models
   readings: 
     - 
-      title: Chapter 21 "Information Extraction"
+      title: Chapter 7 "Logisitic Regression"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
@@ -148,12 +149,19 @@
   date: 2018-02-21
   slides: 
   title: Hands-on with Taggers
-  readings: 
+    - 
+      title: Chapter 21 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-26
   slides: 
-  title: 
+  title: Information Extraction 
   readings: 
+    - 
+      title: Chapter 21 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-28
   slides: 
