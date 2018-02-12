@@ -1,15 +1,14 @@
 ---
 layout: default
-img: 
-caption: 
-img_link:   
-title: Homework 4 - Named Entity Recognition
+img: bobbytables.png
+caption: If word contains '); label as PER
+img_link: https://xkcd.com/327/   
+title: Homework 6 - Named Entity Recognition
 active_tab: homework
-release_date: 
-due_date: 
+release_date: 2018-02-14
+due_date: 2018-02-21
 attribution: Stephen Mayhew developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 ---
-
 
 <!-- Check whether the assignment is up to date -->
 {% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
@@ -25,11 +24,11 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Named Entity Recognition <span class="text-muted">: Assignment XXX</span>
+Named Entity Recognition <span class="text-muted">: Assignment 6</span>
 =============================================================
 
 <div class="alert alert-warning">
-This assignment is inspired by a similar assignment from the [NLP class](https://www.cs.bgu.ac.il/~elhadad/nlp17.html) from Michael Elhadad at Ben-Gurion University of the Negev.
+This assignment is inspired by a similar assignment from Michael Elhadad's <a href="https://www.cs.bgu.ac.il/~elhadad/nlp17.html">NLP class</a> at Ben-Gurion University of the Negev.
 </div>
 
 Since you have read Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
@@ -43,7 +42,7 @@ Get a headstart on common NER features by looking at Figure 21.5 in the textbook
 
 ## The Data
 
-The data we use comes from the Conference on Natural Language Learning (CoNLL) 2002 shared task of named entity recognition for Spanish and Dutch. The [introductory paper to the shared task](http://www.aclweb.org/anthology/W02-2024) will be of immense help to you, and you should definitely read it. We will use the Spanish (although you are welcome to try out Dutch too).  
+The data we use comes from the Conference on Natural Language Learning (CoNLL) 2002 shared task of named entity recognition for Spanish and Dutch. The [introductory paper to the shared task](http://www.aclweb.org/anthology/W02-2024) will be of immense help to you, and you should definitely read it. You may also find the [original shared task page](https://www.clips.uantwerpen.be/conll2002/ner/) helpful. We will use the Spanish corpus (although you are welcome to try out Dutch too).  
 
 The tagset is:
 * *PER*: for Person
@@ -55,17 +54,19 @@ We strongly recommend that you study the training and dev data (no one's going t
 
 The data is packaged nicely from [NLTK](http://www.nltk.org/). Get installation instructions here: [installing NLTK](http://www.nltk.org/install.html).
 
-Once that is installed, one way to get the conll2002 data is:
+You will be glad to hear that the data is a mercifully small download. See the [NLTK data](http://www.nltk.org/data) page for for download options, but one way to get the conll2002 data is:
 
 ```
 $ python -m nltk.downloader conll2002
 ```
 
-You will be glad to hear that it is a mercifully small download. See the [NLTK data](http://www.nltk.org/data) page for for download options. (Check out the other data available also. There are some cool corpora in there.)
+
 
 ## Evaluation
 
 The evaluation included in the code is a token-based score, while usually the score reported is a phrase-based.
+
+TODO: this really needs to be phrase-based so we can compare with the literature.
 
 ## Other resources
 
@@ -77,7 +78,6 @@ Here are some other NER frameworks which you are welcome to run in the unconstra
 * [Brown clustering software](https://github.com/percyliang/brown-cluster). You might find it useful.
 * [Spanish text and vectors](http://crscardellino.me/SBWCE/)
 * [Europarl corpora](http://www.statmt.org/europarl/), look for the English-Spanish parallel text
-* 
 
 Note: you are not allowed to use pre-trained NER models even in the unconstrained version. Please train your own. You are allowed to use pre-trained embeddings.
 
