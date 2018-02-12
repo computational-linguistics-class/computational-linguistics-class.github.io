@@ -123,7 +123,6 @@
       title: A Neural Probabilistic Language Model
       authors: Bengio, Ducharme, Vincent
       url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
-
 -
   date: 2018-02-14
   slides: 
@@ -149,6 +148,7 @@
   date: 2018-02-21
   slides: 
   title: Hands-on with Taggers
+  readings:
     - 
       title: Chapter 21 "Information Extraction"
       authors: Jurafsky and Martin
