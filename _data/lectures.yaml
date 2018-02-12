@@ -133,6 +133,10 @@
       title: Chapter 7 "Logisitic Regression"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
