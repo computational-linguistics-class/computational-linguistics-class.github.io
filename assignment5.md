@@ -358,6 +358,8 @@ A couple of things to keep in mind:
 
 1. Remember to pad the front of the file
 2. Numeric underflow is going to be a problem, so consider using logs.
+3. Perplexity is undefined if LM assigns any zero probabilities to the test set. In that case your code should return positive infinity - `float("inf")`.
+4. On your unsmoothed models, you'll definitely get some zero probabilities for the test set.  To test you code, you should try computing perplexity on the trianing set, and you should compute perplexity for your LMs that use smoothing and interpolation.
 
 
 #### In your report:
