@@ -465,6 +465,8 @@ We'll set up a leaderboard for the text classification task.  Your job is to con
 
 Later in this assignment, you will use a recurrent neural network on the same dataset in order to compare performance. 
 
+#### In your report:
+Describe the parameters of your final leaderboard model and any experimentation you did before settling on it.
 
 ## Part 4: Character-Level Recurrent Neural Networks
 
