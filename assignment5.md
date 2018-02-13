@@ -326,7 +326,7 @@ Here's what the textbook says:
 We'll implement the most common method for intrinsic metric of language models: *perplexity*.  The perplexity of a language model on a test set is the inverse probability of the test set, normalized by the number of words. For a test set $$W = w_1 w_2 ... w_N$$:
 
 
-$$Perplexity(W) = P(w_1 w_2 ... w_N)^{\frac{1}{N}}$$
+$$Perplexity(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}}$$
 
 
 $$ = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}}$$
