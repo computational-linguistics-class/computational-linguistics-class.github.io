@@ -32,6 +32,19 @@
       length: 10 minutes
       note: This invited talk discusses Dan's work on analyzing police body camera data to see if there is a difference in police interactions with black motorists versus white motorists.  He uses text classification to categorize differnt dimensions of the conversations that happen in traffic stops. 
 -
+  date: 2018-01-17
+  type: exam
+  title: Quiz 1
+  readings: 
+    - 
+      title: Chapter 2 "Regular Expressions, Text Normalization, Edit Distance"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
+    - 
+      title: Chapter 6 "Naive Bayes Classification and Sentiment"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+-
   date: 2018-01-22
   slides: slides/02-vector-semantics.pdf
   title: Vector Semantics
@@ -72,6 +85,19 @@
       url: https://www.youtube.com/watch?v=qSA9v7ZkC7Q&index=4&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 10 minutes
 -
+  date: 2018-01-17
+  type: exam
+  title: Quiz 2
+  readings: 
+    - 
+      title: Chapter 15 "Vector Semantics"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+    - 
+      title: Chapter 16 "Semantics with Dense Vectors"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+-
   date: 2018-01-29
   slides: slides/03-vector-semantics-chalk-talk.pdf
   title: Vector semantics chalk talk
@@ -97,6 +123,15 @@
       url: https://www.youtube.com/watch?v=RJVL80Gg3lA
       length: 1 hour
 -
+  date: 2018-01-17
+  type: exam
+  title: Quiz 3
+  readings: 
+    - 
+      title: Composition in Distributional Models of Semantics
+      authors: Jeff Mitchell and Mirella Lapata
+      url: http://onlinelibrary.wiley.com/doi/10.1111/j.1551-6709.2010.01106.x/epdf
+-
   date: 2018-02-05
   slides: slides/04-n-gram-language-models-chalk-talk.pdf
   title: Language Modeling with N-Grams
@@ -110,6 +145,19 @@
   slides: http://computational-linguistics-class.org/assignment5.html
   title: Hands-on with Language Models
   readings: 
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+-
+  date: 2018-01-17
+  type: exam
+  title: Quiz 4
+  readings: 
+    - 
+      title: Chapter 4 "Language Modeling with N-Grams"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
     - 
       title: Chapter 8 "Neural Nets and Neural Language Models"
       authors: Jurafsky and Martin
@@ -133,6 +181,23 @@
   slides: 
   title: Hands-on with Neural Network Language Models
   readings: 
+    - 
+      title: Chapter 7 "Logisitic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+-
+  date: 2018-01-17
+  type: exam
+  title: Quiz 5
+  readings: 
+    - 
+      title: A Neural Probabilistic Language Model 
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
     - 
       title: Chapter 7 "Logisitic Regression"
       authors: Jurafsky and Martin
