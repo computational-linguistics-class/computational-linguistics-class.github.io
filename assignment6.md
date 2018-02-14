@@ -121,7 +121,7 @@ Running the command ```jupyter --version``` should yield the version installed.
 #### How to use Jupyter notebook
 For this homework, you have the option of using [jupyter notebook](https://jupyter.org/), which lets you interactively edit your code within the web browser. Jupyter reads files in the `.ipynb` format. To launch from biglab, do the following.
 
-1. On ```biglab```, navigate to the directory with your code files and type `jupyter notebook --port 8888 --no-browser`.
+1. On ```biglab```, navigate to the directory with your code files and type `jupyter notebook --port 8888 --no-browser`. If you are having token issues, you may need to also add the argument `--NotebookApp.token=''`.
 2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
 3. In your local web browser, navigate to `localhost:8888`.
 
@@ -145,7 +145,7 @@ Modify the tutorial code to instead read from the city names dataset that we use
 
 All training should be done on the train set and all evaluation (including confusion matrices and accuracy reports) on the validation set. You will need to change the data processing code to get this working. Specifically, you'll need to modify the code in the 3rd code block to create two variables `category_lines_train` and `category_lines_val`. In addition, to handle unicode, you might need to replace calls to `open` with calls to `codecs.open(filename, "r",encoding='utf-8', errors='ignore')`.
 
-Warning: you'll want to lower the learning rating to 0.02 or less or you might get NaNs when training.
+Warning: you'll want to lower the learning rating to 0.002 or less or you might get NaNs when training.
 
 Attribution: the city names dataset is derived from [Maxmind](http://download.maxmind.com/download/geoip/database/LICENSE_WC.txt)'s dataset.
 
