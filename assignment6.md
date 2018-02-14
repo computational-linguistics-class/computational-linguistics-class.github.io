@@ -1,8 +1,8 @@
 ---
 layout: default
-img: ios_keyboard.png
-caption: Movie quotes according to autocomplete
-img_link: https://www.explainxkcd.com/wiki/index.php/1427:_iOS_Keyboard
+img: machine_learning.png
+caption: Big Pile of Linear Algebra
+img_link: https://xkcd.com/1838/
 title: Homework 6 - Neural Language Models
 active_tab: homework
 release_date: 2018-02-14
@@ -10,11 +10,11 @@ due_date: 2018-02-21T11:00:00EST
 attribution: This assignment is based on [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018.  
 readings:
 -
-   title: Language Modeling with N-grams
+   title: Neural Nets and Neural Language Models
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
    title: The Unreasonable Effectiveness of Recurrent Neural Networks
    authors: Andrej Karpathy 
@@ -49,22 +49,31 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Neural Language Models <span class="text-muted">: Assignment 6</span>
 =============================================================
 
-This assignment is a continuation of last week's assignment.  We'll turn from traditional n-gram based language models to a more advanced form of language modeling using a Recurrent Neural Network. 
+This assignment is a continuation of last week's assignment.  We'll turn from traditional n-gram based language models to a more advanced form of language modeling using a Recurrent Neural Network. Specifically, we'll be setting up a character-level recurrent neural network (char-rnn) for short.
 
+Andrej Karpathy, a researcher at OpenAI, has written an excellent blog post about using RNNs for language models, which you should read before beginning this assignment.  The title of his blog post is [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+
+Karpathy shows how char-rnns can be used to generate texts for several fun domains:
+* Shakespeare plays
+* Essays about economics
+* LaTeX documents
+* Linux source code
+* Baby names
+
+In this assignment you will follow a Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set.
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton python code](downloads/hw5/language_model.py).
 * [training data for text classification task](downloads/hw5/cities_train.zip).
 * [dev data for text classification task](downloads/hw5/cities_val.zip).
 * [test file for leaderboard](downloads/hw5/cities_test.txt)
 </div>
 
 
-## Part 1: Character-Level Recurrent Neural Networks
+## Part 1: Set up Pytorch 
 
-
-You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
+Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
+You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. 
 
 ### Setup
 
@@ -116,24 +125,8 @@ For this homework, you have the option of using [jupyter notebook](https://jupyt
 2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
 3. In your local web browser, navigate to `localhost:8888`.
 
-### What's a char-rnn?
 
-Good question! Andrej Karpathy, a researcher at OpenAI, has written an excellent blog post which you should read before beginning this assignment.
-
-[http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
-
-Karpathy shows results for several fun domains:
-
-Shakespeare plays
-
-* Paul Graham essays
-* LaTeX documents
-* Linux source code
-* Baby names
-
-In this assignment you will follow the Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set.
-
-### Classification using char-rnn
+## Part 2:  Classification Using Character-Level Recurrent Neural Networks 
 
 #### Follow the tutorial code
 
@@ -176,7 +169,7 @@ Write code to make predictions on the provided test set. The test set has one un
 
 In your report, describe your final model and training parameters.
 
-## Part 5: Text generation using char-rnn
+## Part 3: Text generation using char-rnn
 
 In this section, you will be following more Pytorch tutorial code in order to reproduce Karpathy's text generation results. Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html), and then download [this ipython notebook](https://github.com/spro/practical-pytorch/tree/master/char-rnn-generation) to base your own code on.
 
