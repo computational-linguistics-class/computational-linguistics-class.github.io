@@ -3,11 +3,11 @@ layout: default
 img: bobbytables.png
 caption: If word contains '); label as PER
 img_link: https://xkcd.com/327/   
-title: Homework 6 - Named Entity Recognition
+title: Homework 7 - Named Entity Recognition
 active_tab: homework
-release_date: 2018-02-14
-due_date: 2018-02-21
-attribution: Stephen Mayhew developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
+release_date: 2018-02-21
+due_date: 2018-02-28T11:00:00EST
+attribution: This assignment is inspired by a similar assignment from Michael Elhadad's [NLP class](https://www.cs.bgu.ac.il/~elhadad/nlp17.html) at Ben-Gurion University of the Negev. Stephen Mayhew developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -24,12 +24,9 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Named Entity Recognition <span class="text-muted">: Assignment 6</span>
+Named Entity Recognition <span class="text-muted">: Assignment 7</span>
 =============================================================
 
-<div class="alert alert-warning">
-This assignment is inspired by a similar assignment from Michael Elhadad's <a href="https://www.cs.bgu.ac.il/~elhadad/nlp17.html">NLP class</a> at Ben-Gurion University of the Negev.
-</div>
 
 Since you have read Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
 
