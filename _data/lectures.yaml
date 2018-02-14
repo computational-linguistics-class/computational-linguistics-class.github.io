@@ -173,7 +173,7 @@
       url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
     - 
       title: A Neural Probabilistic Language Model (longer JMLR version)
-      authors: Bengio, Ducharme, Vincent
+      authors: Bengio, Ducharme, Vincent and Jauvin
       url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
       optional: true
 -
