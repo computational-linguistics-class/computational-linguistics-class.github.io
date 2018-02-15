@@ -324,12 +324,14 @@ Here are the deliverables that you will need to submit:
   {% endfor %}
 </table>
 
-## Grading
 
-The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py). 
+<div class="panel panel-danger">
+<div class="panel-heading" markdown="1">
+## Grading Rubric
+</div>
+<div class="panel-body" markdown="1">
 
-### Rubric
-60 points total (30 code, 30 writeup)
+This assignment was worth 60 points total (30 code, 30 writeup).   The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py). 
 
 #### Code (30 points total)
 
@@ -394,3 +396,6 @@ The rubic used for grading this homework is below. The code we used to test your
 - +2 Includes analysis of character similarity based on term-character matrix
 - +5 Includes comparison of vector similarity with human judgements
 - +5 Other additional substantive analysis
+
+</div>
+</div>
