@@ -331,7 +331,7 @@ Here are the deliverables that you will need to submit:
 </div>
 <div class="panel-body" markdown="1">
 
-This assignment was worth 60 points total (30 code, 30 writeup).   The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py). 
+This assignment was worth 60 points total (30 code, 30 writeup).   The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py), and the solution code is [here](downloads/hw3/main_solutions.py). 
 
 #### Code (30 points total)
 
