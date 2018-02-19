@@ -219,7 +219,7 @@
   type: no_lecture
 -
   date: 2018-02-19
-  slides: 
+  slides: slides/06-HMM-lecture.pdf
   title: Hidden Markov Models
   speaker: Nitish Gupta
   readings: 
@@ -292,7 +292,7 @@
 -
   date: 2018-03-12
   slides: 
-  title:  
+  title: (tenative) Parsing
   readings: 
 -
   date: 2018-03-14
@@ -302,7 +302,7 @@
 -
   date: 2018-03-19
   slides: 
-  title: 
+  title: (tenative) WordNet / lexical semantics
   readings: 
 -
   date: 2018-03-21
@@ -312,7 +312,7 @@
 -
   date: 2018-03-26
   slides: 
-  title: 
+  title:  (tenative) question answering 
   readings: 
 -
   date: 2018-03-28
@@ -326,7 +326,7 @@
 -
   date: 2018-04-02
   slides: 
-  title: 
+  title: (tenative) machine translation   
   readings: 
 -
   date: 2018-04-04
@@ -336,7 +336,7 @@
 -
   date: 2018-04-09
   slides: 
-  title: 
+  title:  (tenative) NLG 
   readings: 
 -
   date: 2018-04-11
@@ -346,7 +346,7 @@
 -
   date: 2018-04-16
   slides: 
-  title: 
+  title: (tenative) dialogue systems / language and vision ?
   readings: 
 -
   date: 2018-04-18
@@ -356,7 +356,7 @@
 -
   date: 2018-04-23
   slides: 
-  title: 
+  title: (tenative) final projects
   readings: 
 -
   date: 2018-04-25
