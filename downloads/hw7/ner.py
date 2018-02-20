@@ -3,7 +3,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.linear_model import Perceptron
 from sklearn.metrics import precision_recall_fscore_support
 
-# Assignment 6: NER
+# Assignment 7: NER
 # This is just to help you get going. Feel free to
 # add to or modify any part of it.
 
@@ -11,7 +11,7 @@ from sklearn.metrics import precision_recall_fscore_support
 def getfeats(word, o):
     """ This takes the word in question and
     the offset with respect to the instance
-    word (usually between [-2,2]) """
+    word """
     o = str(o)
     features = [
         (o + 'word', word)
@@ -26,7 +26,7 @@ def word2features(sent, i):
     sentence."""
     features = []
     # the window around the token
-    for o in [-2,0,2]:
+    for o in [-1,0,1]:
         if i+o >= 0 and i+o < len(sent):
             word = sent[i+o][0]
             featlist = getfeats(word, o)
@@ -58,8 +58,9 @@ if __name__ == "__main__":
 
     test_feats = []
     test_labels = []
-    
-    for sent in test_sents:
+
+    # switch to test_sents for your final results
+    for sent in dev_sents:
         for i in range(len(sent)):
             feats = word2features(sent,i)
             test_feats.append(feats)
@@ -72,7 +73,7 @@ if __name__ == "__main__":
     print("Writing to results.txt")
     # format is: word gold pred
     with open("results.txt", "w") as out:
-        for sent in test_sents: 
+        for sent in dev_sents: 
             for i in range(len(sent)):
                 word = sent[i][0]
                 gold = sent[i][-1]
