@@ -80,10 +80,10 @@ Here's how to get scores:
 
 ```
 # Phrase-based score
-$ ./conlleval.pl < results
-# Token-based score
-$ ./conlleval.pl -r < results
+$ ./conlleval.py results
 ```
+
+(The python version of conlleval doesn't calculate the token-based score, but if you really want it, you can use the [original perl version](https://www.clips.uantwerpen.be/conll2000/chunking/output.html). You would use the `-r` flag.)
 
 
 ## Other resources
