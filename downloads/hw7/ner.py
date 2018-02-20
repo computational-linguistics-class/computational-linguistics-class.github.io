@@ -81,22 +81,8 @@ if __name__ == "__main__":
                 j += 1
                 out.write("{}\t{}\t{}\n".format(word,gold,pred))
         out.write("\n")
-    
 
-
-    # We don't care about score on the O label. It's always very high.
-    #labels = set(test_labels)
-    #labels.remove("O")
-    #labels = sorted(list(labels))
-
-    #p,r,f1,support = precision_recall_fscore_support(test_labels, y_pred, labels=labels)
-
-    #print("Scores\tPrecision\tRecall\tF1")
-    #for tt in zip(labels,p,r,f1):
-    #    print("{}\t{}\t{}\t{}".format(tt[0], tt[1], tt[2], tt[3]))
-    #print("-------------------")
-    #p,r,f1,support = precision_recall_fscore_support(test_labels, y_pred, labels=list(labels), average="micro")
-    #print("Overall\t{}\t{}\t{}".format(p,r,f1)) 
+    print("Now run: python conlleval.py results.txt")
 
 
 
