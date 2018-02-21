@@ -36,6 +36,12 @@ As with nearly all NLP tasks, you will find that the two big points of variabili
 
 Get a headstart on common NER features by looking at Figure 21.5 in the textbook. 
 
+<div class="alert alert-info" markdown="1">
+Here are the materials that you should download for this assignment:
+* [Code stub](downloads/hw7/ner.py).
+* [conlleval.py](downloads/hw7/conlleval.py): eval script
+</div>
+
 
 ## The Data
 
@@ -76,14 +82,14 @@ EFECOM B-ORG B-ORG
 . O O
 ```
 
-Here's how to get scores:
+Here's how to get scores (assuming the above format is in a file called `results.txt`):
 
 ```
 # Phrase-based score
-$ ./conlleval.pl < results
-# Token-based score
-$ ./conlleval.pl -r < results
+$ python conlleval.py results.txt
 ```
+
+(The python version of conlleval doesn't calculate the token-based score, but if you really want it, you can use the [original perl version](https://www.clips.uantwerpen.be/conll2000/chunking/output.html). You would use the `-r` flag.)
 
 
 ## Other resources
@@ -101,18 +107,18 @@ Note: you are not allowed to use pre-trained NER models even in the unconstraine
 
 ## Baselines
 
-We have implemented a bog-standard NER system in scikit learn using CERTAIN FEATURES and a CERTAIN MODEL. This is a very generous baseline that any thoughtful model should be able to beat. 
+The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 85%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
 
-As always, beating the baseline alone with earn you a B on the project. In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required. 
+As always, beating the baseline alone with earn you a B on the project. In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required. Extra credit for the top of the leaderboard etc.
 
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* Code
-* Constrained results (to the leaderboard)
-* Optional unconstrained results
-* PDF Report
+* Code, as always in Python 3.
+* Constrained results (in a file called `constrained_results.txt`)
+* Optional unconstrained results (in a file called `unconstrained_results.txt`)
+* PDF Report (called writeup.pdf)
 </div>
 
 ## Recommended readings
