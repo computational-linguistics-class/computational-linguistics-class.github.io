@@ -36,6 +36,12 @@ As with nearly all NLP tasks, you will find that the two big points of variabili
 
 Get a headstart on common NER features by looking at Figure 21.5 in the textbook. 
 
+<div class="alert alert-info" markdown="1">
+Here are the materials that you should download for this assignment:
+* [Code stub](downloads/hw7/ner.py).
+* [conlleval.py](downloads/hw7/conlleval.py): eval script
+</div>
+
 
 ## The Data
 
