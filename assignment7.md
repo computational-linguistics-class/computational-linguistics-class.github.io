@@ -53,6 +53,8 @@ The tagset is:
 * *ORG*: for Organization
 * *MISC*: for miscellaneous named entities
 
+The data uses BIO encoding (called IOB in the textbook), which means that each named entity tag is prefixed with a `B-`, which means beginning, or an `I-`, which means inside. So, for a multiword entity, like "James Earle Jones", the first token "James" would be tagged with "B-PER", and each subsequent token is "I-PER". The O tag is for non-entities.
+
 We strongly recommend that you study the training and dev data (no one's going to stop you from examining the test data, but for the integrity of your model, it's best to not look at it). Are there idiosyncracies in the data? Are there patterns you can exploit with cool features? Are there obvious signals that identify names? For example, in some Turkish writing, there is a tradition of putting an apostrophe between a named entity and the morphology attached to it. A feature of `isApostrophePresent()` goes a long way. Of course, in English and several other languages, capitalization is a hugely important feature. In some African languages, there are certain words that always precede city names. 
 
 The data is packaged nicely from [NLTK](http://www.nltk.org/). Get installation instructions here: [installing NLTK](http://www.nltk.org/install.html).
