@@ -30,7 +30,11 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
-
+<!-- Display message for survey -->
+<div class="alert alert-success" markdown="1">
+We would like your feedback on how CIS 530 is going so far.  We'd love your feedback on what is working for you, and what changes you'd like to see us make.  Please fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfSOUZi1Ffnp0Zvek9DvB8KP4rVLiXooNJ4pH7426FqQCcr_A/viewform?usp=sf_link).
+</div>
+<!-- End message for survey -->
 
 Course number
 : CIS 530 - Computational Linguistics 
