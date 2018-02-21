@@ -30,11 +30,20 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
-<!-- Display message for survey -->
+
+<!-- Display annoucement -->
 <div class="alert alert-success" markdown="1">
 We would like your feedback on how CIS 530 is going so far.  We'd love your feedback on what is working for you, and what changes you'd like to see us make.  Please fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSfSOUZi1Ffnp0Zvek9DvB8KP4rVLiXooNJ4pH7426FqQCcr_A/viewform?usp=sf_link).
 </div>
-<!-- End message for survey -->
+<!-- End annoucement -->
+
+
+<!-- Display annoucement -->
+<div class="alert alert-info" markdown="1">
+Today at 3pm there will be a [memorial service for Aravid Joshi](http://www.seas.upenn.edu/media/in-memoriam-joshi.php), who founded Penn's CIS department and who was a luminary in computational linguistcs.   There will be a [live stream of the memorial](https://www.youtube.com/watch?v=85qthqUmCp8) if you'd like to listen in to hear how he impacted so many people's careers and research.
+</div>
+<!-- End annoucement -->
+
 
 Course number
 : CIS 530 - Computational Linguistics 
