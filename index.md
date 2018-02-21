@@ -40,7 +40,7 @@ We would like your feedback on how CIS 530 is going so far.  We'd like to know w
 
 <!-- Display annoucement -->
 <div class="alert alert-info" markdown="1">
-Today at 3pm there will be a [memorial service for Aravid Joshi](http://www.seas.upenn.edu/media/in-memoriam-joshi.php), who founded Penn's CIS department and who was a luminary in computational linguistcs.   There will be a [live stream of the memorial](https://www.youtube.com/watch?v=85qthqUmCp8) if you'd like to listen in to hear how he impacted so many people's careers and research.
+Today at 3pm there will be a [memorial service for Aravind Joshi](http://www.seas.upenn.edu/media/in-memoriam-joshi.php), who founded Penn's CIS department and who was a luminary in computational linguistcs.   There will be a [live stream of the memorial](https://www.youtube.com/watch?v=85qthqUmCp8) if you'd like to listen in to hear how he impacted so many people's careers and research.
 </div>
 <!-- End annoucement -->
 
