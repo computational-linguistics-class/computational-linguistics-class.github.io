@@ -258,6 +258,12 @@
       title: Chapter 10 "Part of Speech Tagging"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+
+    - 
+      title: Linguistic Relativity (Does Langauge Shape Thought?)
+      authors: Lera Boroditsky 
+      url: http://lera.ucsd.edu/papers/linguistic-relativity.pdf
+      optional: true
   videos:
     - 
       title: Parts of Speech
