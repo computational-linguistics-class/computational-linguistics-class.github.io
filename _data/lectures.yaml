@@ -251,14 +251,19 @@
       url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-26
-  slides: 
-  title: Syntax
-  speaker: Mitch Marcus
+  slides: slides/07-part-of-speech-chalk-talk.pdf
+  title: Part of Speech Tagging
   readings:  
     - 
       title: Chapter 10 "Part of Speech Tagging"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+  videos:
+    - 
+      title: Parts of Speech
+      authors: Schoolhouse Rock
+      url: https://www.youtube.com/watch?v=Qk4N5kkifGQ&list=PL2Th9LBsWQq7SWCgd4aMjSIIJkYwgGIZ-
+      length: 3 minutes each 
 -
   date: 2018-02-28
   slides: 
