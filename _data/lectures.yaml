@@ -288,6 +288,11 @@
       authors: Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and Noah A. Smith 
       url: http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf
       optional: true
+    - 
+      title: A Universal Part-of-Speech Tagset 
+      authors: Slav Petrov, Dipanjan Das, Ryan McDonald
+      url: https://arxiv.org/abs/1104.2086
+      optional: true
 -
   date: 2018-02-28
   type: exam
