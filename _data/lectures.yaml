@@ -276,13 +276,9 @@
       length: 3 minutes each 
 -
   date: 2018-02-28
-  slides: 
-  title: Part of Speech Tagging continued, and Context Free Grammars 
+  slides: slides/08-part-of-speech-chalk-talk-part2.pdf
+  title: Part of Speech Tagging continued
   readings: 
-    - 
-      title: Chapter 11 "Formal Grammars of English"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf]
     - 
       title: Part-of-Speech Tagging for Twitter&colon; Annotation, Features, and Experiments
       authors: Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and Noah A. Smith 
@@ -293,6 +289,15 @@
       authors: Slav Petrov, Dipanjan Das, Ryan McDonald
       url: https://arxiv.org/abs/1104.2086
       optional: true
+-
+  date: 2018-02-28
+  slides: slides/09-context-free-grammars-chalk-talk.pdf
+  title: Context Free Grammars 
+  readings: 
+    - 
+      title: Chapter 11 "Formal Grammars of English"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf]
 -
   date: 2018-02-28
   type: exam
