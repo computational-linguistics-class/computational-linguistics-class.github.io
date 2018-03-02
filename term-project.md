@@ -103,7 +103,7 @@ You are welcome to choose a share task topic or to develop your own topic, provi
 
 ### CoNLL Shared Tasks
 
-The Conference on Computational Natural Language Learning (CoNLL) hosts [a shared task every year](http://www.conll.org/previous-tasks).
+The Conference on Computational Natural Language Learning (CoNLL) hosts a shared task every year.  Here are the past [CoNLL shared tasks](http://www.conll.org/previous-tasks): 
 
 
 1. Multilingual Parsing from Raw Text to Universal Dependencies
@@ -233,7 +233,7 @@ The International Workshop on Semantic Evaluation (SemEval) hosts a range of sha
 
 ## Kaggle 
 
-Kaggle is a subsidary of Google.  It is platform for machine learning competitions where people compete to produce the best models for a huge range of different datasets. Companies often offer a reward for their competitions.  There's tons of cool data and competitions that you can base your final project on.  
+Kaggle is a platform for machine learning competitions where people compete to produce the best models for a huge range of different datasets. Companies often offer a reward for their competitions.  There's tons of cool data and competitions that you can base your final project on.  
 
 Here are a few relevant competitions:
 * [Sentiment Analysis on Movie Reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews)
