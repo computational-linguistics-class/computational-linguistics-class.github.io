@@ -25,7 +25,7 @@ deliverables:
       description: Vote on your favorite projects from the class
       due_date: 2018-04-18T12:00:00EST
     -
-      description: Milestone 5 - Finish all your extensions to the public baseline.
+      description: Milestone 5 - Finish all your extensions to the public baseline
       due_date: 2018-04-25T12:00:00EST
     -
       description: Optional extra credt - Do one or more of the your classmates' projects
@@ -87,8 +87,8 @@ Here are the milestones for the term project:
 For Milestone 1, you'll need to form a team and come up with 3 project ideas.  For each idea you should describe:
 1. A problem definition (1 to 2 paragraphs, plus an illustrative example)
 1. A pointer to or more more papers or sections textbook that describes the problem
-1. What evaluation metrics you are considering 
-1. What type of data you will need to evaluate
+1. What evaluation metrics could use to score system outputs 
+1. What type of data you will need to evaluate, and how much data is available 
 
 
 ## Project Ideas
@@ -96,7 +96,7 @@ For Milestone 1, you'll need to form a team and come up with 3 project ideas.  F
 You should identify what topic you would like to work on.  Pretty much any topic in natural language processing is fair game.  The first milestone for the term project is to pick 3 topic ideas that your team might be interested in exploring.  The course staff will help assess the feasibility of your ideas and will make a recommendation of which of your 3 initial ideas is the best fit for the scope of the term project.  
 
 
-The NLP community has a great tradition of "shared tasks".  Many of these are perfect for a term-project for this class, since they give you a great starting point for a problem definition, training and test data, a standard evaluation metric, and lots of published baselines.  Here are some pointers to shared tasks that were featured at CoNLL, SemEval, WMT, and Kaggel. 
+The NLP community has a great tradition of "shared tasks".  Many of these are perfect for a term-project for this class, since they give you a great starting point for a problem definition, training and test data, a standard evaluation metric, and lots of published baselines.  Here are some pointers to shared tasks that were featured at CoNLL, SemEval, WMT, and Kaggle. 
 
 You are welcome to choose a share task topic or to develop your own topic, provided that it is related to NLP.
 
