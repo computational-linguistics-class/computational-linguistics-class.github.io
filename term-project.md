@@ -275,10 +275,21 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
   * [Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics](https://www.jair.org/media/3994/live-3994-7274-jair.pdf)
   * [Show and Tell: Lessons learned from the 2015 MSCOCO Image Captioning Challenge](https://arxiv.org/abs/1609.06647)
   * [From Captions to Visual Concepts and Back](http://www.m-mitchell.com/papers/CVPR15_0866.pdf)
-There are even several tutorials on how to get started with caption generation: 
-  * [A Gentle Introduction to Deep Learning Caption Generation Models](https://machinelearningmastery.com/deep-learning-caption-generation-models/)
+  * There are several tutorials on how to get started with caption generation:  [A Gentle Introduction to Deep Learning Caption Generation Models](https://machinelearningmastery.com/deep-learning-caption-generation-models/)
   * [How to Develop a Deep Learning Photo Caption Generator from Scratch](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
   * [Caption this, with TensorFlow. How to build and train an image caption generator using a TensorFlow notebook.](https://www.oreilly.com/learning/caption-this-with-tensorflow)
+
+* __What can we learn about people on social media through self-identification?__ Google BigQuery has a set of [all Reddit comments since 2005](https://bigquery.cloud.google.com/dataset/fh-bigquery:reddit_comments). Past NLP work on mental health examined social media users who self-identified as having clinical depression or PTSD by looking for public comments like "I was diagnosed with depression".  Can we use self-indentificaiton to learn the patterns of language use of different demographics?  Here's a search through a subset of the Reddit comments for the phrase "I'm a [blank]":
+{% highlight sql %}
+  SELECT author, body FROM [fh-bigquery:reddit_comments.2015_05] WHERE LENGTH(body) < 255 AND LENGTH(body) > 30 AND 
+  (body LIKE 'i\'m a %'
+  or body LIKE 'I\'m a %'
+  or body LIKE 'a\'m a %'
+  or body LIKE 'i\'m an %'
+  or body LIKE 'I\'m an %'
+  or body LIKE 'a\'m an %') LIMIT 10000;
+{% endhighlight %}
+And you get back a set of usernames and how they self identified.  Can you develop self-indentification queries for different demographic info, retreieve all of the comments from those users and then analyze the language differentences for different groups like [men v. women](http://www.aclweb.org/anthology/P13-1070) or straight people v. gays and lesbians? 
 
 # What do you need to turn in?
 
