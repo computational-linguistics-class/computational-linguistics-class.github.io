@@ -271,6 +271,14 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
    * One of the EMNLP 2017 best paper awards went to [Depression and Self-Harm Risk Assessment in Online Forums](http://aclweb.org/anthology/D17-1322)
    * Vanessa Callison-Burch was involved in [Facebook's suicide prevention efforts](https://www.nytimes.com/2016/06/15/technology/facebook-offers-tools-for-those-who-fear-a-friend-may-be-suicidal.html)
 
+* __Generation text description of images__.  There's been a lot of cool work that combines computer vision and natural language processing.  One thread of that research tries to generate captions for images.  A good overview is provided in these papers:
+  * [Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics](https://www.jair.org/media/3994/live-3994-7274-jair.pdf)
+  * [Show and Tell: Lessons learned from the 2015 MSCOCO Image Captioning Challenge](https://arxiv.org/abs/1609.06647)
+  * [From Captions to Visual Concepts and Back](http://www.m-mitchell.com/papers/CVPR15_0866.pdf)
+There are even several tutorials on how to get started with caption generation: 
+  * [A Gentle Introduction to Deep Learning Caption Generation Models](https://machinelearningmastery.com/deep-learning-caption-generation-models/)
+  * [How to Develop a Deep Learning Photo Caption Generator from Scratch](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
+  * [Caption this, with TensorFlow. How to build and train an image caption generator using a TensorFlow notebook.](https://www.oreilly.com/learning/caption-this-with-tensorflow)
 
 # What do you need to turn in?
 
