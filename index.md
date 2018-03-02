@@ -20,7 +20,7 @@ active_tab: main_page
 The assignment has multiple deliverables.
 <ul>
 {% for deliverable in page.deliverables %}
-<li>{{deliverable.description}} is due before {{ deliverable.due_date | date: "%I:%M%p" }} on {{ deliverable.due_date | date: "%A, %B %-d, %Y" }}.</li>
+<li>{{ deliverable.due_date | date: "%b %-d, %Y" }} - {{deliverable.description}}.</li>
 {% endfor %}
 </ul>
 {% else %}

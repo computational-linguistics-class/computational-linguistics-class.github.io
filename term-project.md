@@ -10,22 +10,22 @@ due_date: 2018-03-03T12:00:00EST
 attribution: This assignment was developed by the CIS 530 course staff.
 deliverables:
     -
-      description: Milestone 1 - 3 project ideas
+      description: Milestone 1 - Form a team and submit three project ideas
       due_date: 2018-03-14T11:00:00EST
     -
-      description: Milestone 2 - Data collected and submitted, objective function, simple baseline
+      description: Milestone 2 - Collect your data, and write an evalation script and a simple baseline
       due_date: 2018-03-28T11:00:00EST
     -
       description: Milestone 3 - Implement a published baseline
       due_date: 2018-04-11T11:00:00EST
     -
-      description: Milestone 4 - Project Writeup - Writeup and project video due, plus one extension to the public baseline (no late days allowed)
+      description: Milestone 4 - Submit your project writeup and a pitch video.  Finish one of your extensions the public baseline (no late days allowed)
       due_date: 2018-04-18T11:00:00EST
     -
       description: Vote on your favorite projects from the class
       due_date: 2018-04-18T12:00:00EST
     -
-      description: Milestone 5 - All extensions due
+      description: Milestone 5 - Finish all your extensions to the public baseline.
       due_date: 2018-04-25T12:00:00EST
     -
       description: Optional extra credt - Do one or more of the your classmates' projects
@@ -234,11 +234,12 @@ The International Workshop on Semantic Evaluation (SemEval) hosts a range of sha
 
 Kaggle is a subsidary of Google.  It is platform for machine learning competitions where people compete to produce the best models for a huge range of different datasets. Companies often offer a reward for their competitions.  There's tons of cool data and competitions that you can base your final project on.  
 
-Here are a few competitions:
+Here are a few relevant competitions:
 * [Sentiment Analysis on Movie Reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews)
 * [Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 * [Convert English text from written expressions into spoken forms](https://www.kaggle.com/c/text-normalization-challenge-english-language)
 * [Quora Question Pairs - Can you identify question pairs that have the same intent?](https://www.kaggle.com/c/quora-question-pairs)
+* [The Allen AI Science Challenge - Is your model smarter than an 8th grader?](https://www.kaggle.com/c/the-allen-ai-science-challenge)
 * [DonorsChoose.org Application Screening - Predict whether teachers' project proposals are accepted](https://www.kaggle.com/c/donorschoose-application-screening#evaluation)
 * [TensorFlow Speech Recognition Challenge - Can you build an algorithm that understands simple speech commands?](https://www.kaggle.com/c/tensorflow-speech-recognition-challenge)
 * [Spooky Author Identification - Identify horror authors from their writings](https://www.kaggle.com/c/spooky-author-identification)
