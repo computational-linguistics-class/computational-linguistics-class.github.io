@@ -254,7 +254,7 @@ You can also check out the [Linguistics tag](https://www.kaggle.com/tags/linguis
 Here are a list of potential project ideas that were brainstormed by the course staff:
 * __Rank scalar adjectives__. Adjectives like good, tasty, yummy, delicious, scrumptious all describe some property of a noun (how good something tastes), but they vary in intensity.  Can you write an algorithm to put them in the correct order by intensity?  For instance, *good < tasty < yummy < delicious < scrumptious*.  Here are some good papers about the ranking scalar adjectives:
   * [Was it good? it was provocative. learning the meaning of scalar adjectives.](https://aclanthology.info/pdf/P/P10/P10-1018.pdf)
-  * [Good, great, excellent: Global in- ference of semantic intensities.](https://www.cs.unc.edu/~mbansal/papers/tacl_acl13_semanticIntensity.pdf)
+  * [Good, great, excellent: Global inference of semantic intensities.](https://www.cs.unc.edu/~mbansal/papers/tacl_acl13_semanticIntensity.pdf)
   * [Deriving adjectival scales from continuous space word representations](http://aclweb.org/anthology//D/D13/D13-1169.pdf)
   * [Large, huge or gigantic? identifying and encoding intensity relations among adjectives in wordnet.](https://link.springer.com/content/pdf/10.1007%2Fs10579-012-9212-1.pdf)
   * [Adjscales: Differentiating between similar adjectives for language learners.](http://zzz.cl.cs.titech.ac.jp/_media/publication/639.pdf)
@@ -264,12 +264,12 @@ Here are a list of potential project ideas that were brainstormed by the course 
 You could collect all of the pre-nominal modifiers from a large parsed corpus like the [WaCKy corpora](http://wacky.sslmit.unibo.it/doku.php?id=corpora) or the [Annotated Gigaword](https://catalog.ldc.upenn.edu/ldc2012t21), and then train a model to predict their order.   Here's a rule from a grammar book about what order adjectives are supposed to come in.  Is it true?
  <blockquote align="center" class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Things native English speakers know, but don&#39;t know we know: <a href="https://t.co/Ex0Ui9oBSL">pic.twitter.com/Ex0Ui9oBSL</a></p>&mdash; Matthew Anderson (@MattAndersonNYT) <a href="https://twitter.com/MattAndersonNYT/status/772002757222002688?ref_src=twsrc%5Etfw">September 3, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
- * __Predict the star rating of Amazon reviews__.  Amazon released a collection of  [130 million customer reviews](https://s3.amazonaws.com/amazon-reviews-pds/readme.html) from 1995 until 2015.  How well you predict the star rating based on the text of the reviews? There are tons of papers on NLP and sentiment analysis.  Check out [Chapter 6](https://s3.amazonaws.com/amazon-reviews-pds/readme.html) and [Chapter 18](https://web.stanford.edu/~jurafsky/slp3/18.pdf) of the textbook as a good place to start. 
+ * __Predict the star rating of Amazon reviews__.  Amazon released a collection of  [130 million customer reviews](https://s3.amazonaws.com/amazon-reviews-pds/readme.html) from 1995 until 2015.  How well you predict the star rating based on the text of the reviews? There are tons of papers on NLP and sentiment analysis.  [Chapter 6](https://s3.amazonaws.com/amazon-reviews-pds/readme.html) and [Chapter 18](https://web.stanford.edu/~jurafsky/slp3/18.pdf) of the textbook as a good place to start. 
 
  * __Help assess depression and risks of self-harm in social media__.  One way that NLP might be used for social good is to try to identify people who are at risk of suicide based on their social media posts. There's a ton of good academic work on this.
    * The annual workshop on [Computational Linguistics and Clinical Psychology](http://clpsych.org) is a good place to start looking.  It has a lot of relevant publications in its past proceedings, and has featured many shared tasks.
    * One of the EMNLP 2017 best paper awards went to [Depression and Self-Harm Risk Assessment in Online Forums](http://aclweb.org/anthology/D17-1322)
-   * My sister was involved in [Facebook's suicide prevention efforts](https://www.nytimes.com/2016/06/15/technology/facebook-offers-tools-for-those-who-fear-a-friend-may-be-suicidal.html)
+   * Vanessa Callison-Burch was involved in [Facebook's suicide prevention efforts](https://www.nytimes.com/2016/06/15/technology/facebook-offers-tools-for-those-who-fear-a-friend-may-be-suicidal.html)
 
 
 # What do you need to turn in?
