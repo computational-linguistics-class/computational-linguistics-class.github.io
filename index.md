@@ -18,9 +18,11 @@ active_tab: main_page
 <a href="{{page.url}}">{{ page.title }}</a> has been released.  
 {% if page.deliverables %}
 The assignment has multiple deliverables.
+<ul>
 {% for deliverable in page.deliverables %}
-The {{deliverable.description}} is due before {{ deliverable.due_date | date: "%I:%M%p" }} on {{ deliverable.due_date | date: "%A, %B %-d, %Y" }}.  
+<li>{{deliverable.description}} is due before {{ deliverable.due_date | date: "%I:%M%p" }} on {{ deliverable.due_date | date: "%A, %B %-d, %Y" }}.</li>
 {% endfor %}
+</ul>
 {% else %}
 It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 {% endif %}
