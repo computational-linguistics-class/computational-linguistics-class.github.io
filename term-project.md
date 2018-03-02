@@ -268,8 +268,8 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
 
  * __Help assess depression and risks of self-harm in social media__.  One way that NLP might be used for social good is to try to identify people who are at risk of suicide based on their social media posts. There's a ton of good academic work on this.
    * The annual workshop on [Computational Linguistics and Clinical Psychology](http://clpsych.org) is a good place to start looking.  It has a lot of relevant publications in its past proceedings, and has featured many shared tasks.
-  * One of the EMNLP 2017 best paper awards went to [Depression and Self-Harm Risk Assessment in Online Forums](http://aclweb.org/anthology/D17-1322)
-  * My sister was involved in [Facebook's suicide prevention efforts](https://www.nytimes.com/2016/06/15/technology/facebook-offers-tools-for-those-who-fear-a-friend-may-be-suicidal.html)
+   * One of the EMNLP 2017 best paper awards went to [Depression and Self-Harm Risk Assessment in Online Forums](http://aclweb.org/anthology/D17-1322)
+   * My sister was involved in [Facebook's suicide prevention efforts](https://www.nytimes.com/2016/06/15/technology/facebook-offers-tools-for-those-who-fear-a-friend-may-be-suicidal.html)
 
 
 # What do you need to turn in?
