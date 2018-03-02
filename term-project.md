@@ -46,24 +46,22 @@ Term Project <span class="text-muted">: Overview</span>
 ============
 
 
-The term project is a team exercise.  The minimum team size is 4, and the max team size is 6.  If you need help finding a team, you can post on [this Piazza thread](https://piazza.com/class/jbse3zxepja7bz?cid=366).
-
 Your term project is to design a project similar to the homework assigments you have completed
 in this class. Your final project will consist of the following components:
 
 1. A description of the problem, in the style and format of the homework assignment descriptions.
 1. Training and evaluation data.
-1. A commented implementation of the simplest possible solution to the problem.  For instance, this could be a majority class baseline or a random baseline. We will call this the `default` system.
+1. A commented implementation of the simplest possible solution to the problem.  For instance, this could be a majority class baseline or a random baseline. 
 1. A commented implementation of a baseline published in the literature, along with
    skeleton code obtained by removing the parts that students should implement.
-   Name these files `baseline-solution` and `baseline`, respectively.
 1. One extension per team member that attempts to improve on the baseline, along
    with a brief (one- to three-paragraph) accompanying write-up for each extension
-   describing the general approach and whether it worked. Name these `extension-1`,
-   `extension-2`, etc.
-1. A scoring script implementing an objective function that can be used to score
-   submissions on the class leaderboard. Naturally, the output of all model
-   implementations should be gradeable with this program. Name this file `grade`.
+   describing the general approach and whether it worked.
+1. A evaluation script that can be used to score
+   submissions like on the class leaderboard. The output of any model
+   implementations should be gradeable with this program.
+
+We'll vote on the best projects, and the best ones will be available for ther students to complete as an optional final homework assignment.
 
 We're going to split up the work on the term project into several deliverables, each with their own due dates.  You don't have to wait to start working on each part of the project.  We encourage you to begin work early, so that you have a polished final product.
 
@@ -89,6 +87,9 @@ For Milestone 1, you'll need to form a team and come up with 3 project ideas.  F
 1. A pointer to or more more papers or sections textbook that describes the problem
 1. What evaluation metrics could use to score system outputs 
 1. What type of data you will need to evaluate, and how much data is available 
+
+
+The term project is a team exercise.  The minimum team size is 4, and the max team size is 6.  If you need help finding a team, you can post on [this Piazza thread](https://piazza.com/class/jbse3zxepja7bz?cid=366).
 
 
 ## Project Ideas
