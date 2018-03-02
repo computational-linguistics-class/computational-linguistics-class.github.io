@@ -3,27 +3,33 @@ layout: default
 img: estimating_time.png
 caption: Don't Panic
 img_link: https://xkcd.com/1658/   
-title: The CIS 530 Term Project
+title: Term Project - Milestone 1
 active_tab: homework
 release_date: 2018-03-01
 due_date: 2018-03-03T12:00:00EST
 attribution: This assignment was developed by the CIS 530 course staff.
 deliverables:
     -
-      description: Milestone 1
+      description: Milestone 1 - 3 project ideas
       due_date: 2018-03-14T11:00:00EST
     -
-      description: Milestone 2 
+      description: Milestone 2 - Data collected and submitted, objective function, simple baseline
       due_date: 2018-03-28T11:00:00EST
     -
-      description: Milestone 3 
+      description: Milestone 3 - Implement a published baseline
       due_date: 2018-04-11T11:00:00EST
     -
-      description: The Full Project and Writeup
+      description: Milestone 4 - Project Writeup - Writeup and project video due, plus one extension to the public baseline (no late days allowed)
       due_date: 2018-04-18T11:00:00EST
     -
-      description: The Project Presentation 
+      description: Vote on your favorite projects from the class
       due_date: 2018-04-18T12:00:00EST
+    -
+      description: Milestone 5 - All extensions due
+      due_date: 2018-04-25T12:00:00EST
+    -
+      description: Optional extra credt - Do one or more of the your classmates' projects
+      due_date: 2018-04-25T12:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -36,15 +42,235 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 {% endif %}
 <!-- End of check whether the assignment is up to date -->
 
+Term Project <span class="text-muted">: Overview</span>
+============
+
+
+The term project is a team exercise.  The minimum team size is 4, and the max team size is 6.  If you need help finding a team, you can post on [this Piazza thread](https://piazza.com/class/jbse3zxepja7bz?cid=366).
+
+Your term project is to design a project similar to the homework assigments you have completed
+in this class. Your final project will consist of the following components:
+
+1. A description of the problem, in the style and format of the homework assignment descriptions.
+1. Training and evaluation data.
+1. A commented implementation of the simplest possible solution to the problem.  For instance, this could be a majority class baseline or a random baseline. We will call this the `default` system.
+1. A commented implementation of a baseline published in the literature, along with
+   skeleton code obtained by removing the parts that students should implement.
+   Name these files `baseline-solution` and `baseline`, respectively.
+1. One extension per team member that attempts to improve on the baseline, along
+   with a brief (one- to three-paragraph) accompanying write-up for each extension
+   describing the general approach and whether it worked. Name these `extension-1`,
+   `extension-2`, etc.
+1. A scoring script implementing an objective function that can be used to score
+   submissions on the class leaderboard. Naturally, the output of all model
+   implementations should be gradeable with this program. Name this file `grade`.
+
+We're going to split up the work on the term project into several deliverables, each with their own due dates.  You don't have to wait to start working on each part of the project.  We encourage you to begin work early, so that you have a polished final product.
+
+
+## Milestones and Due Dates
+
 <div class="alert alert-info">
+Here are the milestones for the term project:
 {% if page.deliverables %}
-The assignment has multiple deliverables.
 <ul>
 {% for deliverable in page.deliverables %}
-<li>{{deliverable.description}} is due before {{ deliverable.due_date | date: "%I:%M%p" }} on {{ deliverable.due_date | date: "%A, %B %-d, %Y" }}.</li>
+<li> {{ deliverable.due_date | date: "%b %-d, %Y" }} - {{deliverable.description}}.</li>
 {% endfor %}
 </ul>
-{% else %}
-This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 {% endif %}
 </div>
+
+
+# Milestone 1
+
+For Milestone 1, you'll need to form a team and come up with 3 project ideas.  For each idea you should describe:
+1. A problem definition (1 to 2 paragraphs, plus an illustrative example)
+1. A pointer to or more more papers or sections textbook that describes the problem
+1. What evaluation metrics you are considering 
+1. What type of data you will need to evaluate
+
+
+## Project Ideas
+
+You should identify what topic you would like to work on.  Pretty much any topic in natural language processing is fair game.  The first milestone for the term project is to pick 3 topic ideas that your team might be interested in exploring.  The course staff will help assess the feasibility of your ideas and will make a recommendation of which of your 3 initial ideas is the best fit for the scope of the term project.  
+
+
+The NLP community has a great tradition of "shared tasks".  Many of these are perfect for a term-project for this class, since they give you a great starting point for a problem definition, training and test data, a standard evaluation metric, and lots of published baselines.  Here are some pointers to shared tasks that were featured at CoNLL, SemEval, WMT, and Kaggel. 
+
+You are welcome to choose a share task topic or to develop your own topic, provided that it is related to NLP.
+
+### CoNLL Shared Tasks
+
+The Conference on Computational Natural Language Learning (CoNLL) hosts [a shared task every year](http://www.conll.org/previous-tasks).
+
+
+1. Multilingual Parsing from Raw Text to Universal Dependencies
+1. Universal Morphological Reinflection
+1. Multilingual Shallow Discourse Parsing
+1. Shallow Discourse Parsing
+1. Grammatical Error Correction	English	Proceedings
+1. Modelling Multilingual Unrestricted Coreference in OntoNotes
+1. Modelling Unrestricted Coreference in OntoNotes	English
+1. Hedge Detection	English	Proceedings
+1. Syntactic and Semantic Dependencies in Multiple Languages
+1. Joint Parsing of Syntactic and Semantic Dependencies
+1. Dependency Parsing: Multilingual & Domain Adaptation
+1. Multi-Lingual Dependency Parsing
+1. Semantic Role Labeling	English	 
+1. Language-Independent Named Entity Recognition
+1. Clause Identification
+1. Chunking
+1. NP Bracketing
+
+
+### SemEval
+
+The International Workshop on Semantic Evaluation (SemEval) hosts a range of shared tasks every year.  Here are links to the SemEval tasks:
+
+[SemEval-2017](http://alt.qcri.org/semeval2017/index.php?id=tasks)
+
+
+1. Semantic Textual Similarity
+2. Multi­lingual and Cross­-lingual Semantic Word Similarity
+3. Community Question Answering
+4. Sentiment Analysis in Twitter
+5. Fine-Grained Sentiment Analysis on Financial Microblogs and News
+6. #HashtagWars. Learning a Sense of Humor
+7. Detection and Interpretation of English Puns
+8. RumourEval. Determining rumour veracity and support for rumours
+9. Abstract Meaning Representation Parsing and Generation
+10. Extracting Keyphrases and Relations from Scientific Publications
+11. End-User Development using Natural Language
+12. Clinical TempEval
+
+
+[SemEval-2016](http://alt.qcri.org/semeval2016/index.php?id=tasks)
+
+
+1. Semantic Textual Similarity. A Unified Framework for Semantic Processing and Evaluation
+2. Interpretable Semantic Textual Similarity
+3. Community Question Answering
+4. Sentiment Analysis in Twitter
+5. Aspect-Based Sentiment Analysis
+6. Detecting Stance in Tweets
+7. Determining Sentiment Intensity of English and Arabic Phrases
+8. Meaning Representation Parsing
+9. Chinese Semantic Dependency Parsing
+10. Detecting Minimal Semantic Units and their Meanings
+11. Complex Word Identification
+12. Clinical TempEval
+13. TExEval-2 -- Taxonomy Extraction
+14. Semantic Taxonomy Enrichment
+
+
+[SemEval-2015](http://alt.qcri.org/semeval2015/index.php?id=tasks)
+
+1. Paraphrase and Semantic Similarity in Twitter
+2. Semantic Textual Similarity
+3. Answer Selection in Community Question Answering
+4. TimeLine. Cross-Document Event Ordering
+5. QA TempEval
+6. Clinical TempEval
+7. Diachronic Text Evaluation
+8. SpaceEval
+9. CLIPEval Implicit Polarity of Events
+10. Sentiment Analysis in Twitter
+11. Sentiment Analysis of Figurative Language in Twitter
+12. Aspect Based Sentiment Analysis
+13. Multilingual All-Words Sense Disambiguation and Entity Linking
+14. Analysis of Clinical Text
+15. A CPA dictionary-entry-building task
+17. Taxonomy Extraction Evaluation
+18. Semantic Dependency Parsing
+
+
+[SemEval-2014](http://alt.qcri.org/semeval2014/index.php?id=tasks)
+
+1. Evaluation of Compositional Distributional Semantic Models on Full Sentences through  Semantic Relatedness and Entailment
+1. Grammar Induction for Spoken Dialogue Systems
+1. Cross-Level Semantic Similarity
+1. Aspect Based Sentiment Analysis
+1. L2 Writing Assistant
+1. Supervised Semantic Parsing of Spatial Robot Commands
+1. Analysis of Clinical Text
+1. Broad-Coverage Semantic Dependency Parsing
+1. Sentiment Analysis in Twitter
+1. Multilingual Semantic Textual Similarity
+
+
+[SemEval-2013](https://www.cs.york.ac.uk/semeval-2013/index.php%3Fid=tasks.html)
+
+1. TempEval-3 Temporal Annotation
+1. Sentiment Analysis in Twitter
+1. Spatial Role Labeling
+1. Free Paraphrases of Noun Compounds
+1. Evaluating Phrasal Semantics
+1. Semantic Textual Similarity (becomes *Sem Shared Task)
+1. The Joint Student Response Analysis and 8th Recognizing Textual Entailment Challenge
+1. Cross-lingual Textual Entailment for Content Synchronization
+1. Extraction of Drug-Drug Interactions from BioMedical Texts
+1. Cross-lingual Word Sense Disambiguation
+1. Evaluating Word Sense Induction & Disambiguation within An End-User Application
+1. Multilingual Word Sense Disambiguation
+1. Word Sense Induction for Graded and Non-Graded Senses
+1. The Coarse-Grained and Fine-Grained Chinese Lexical Sample and All-Words Task
+
+[SemEval-2012](https://www.cs.york.ac.uk/semeval-2013/index.php%3Fid=tasks.html)
+
+1. English Lexical Simplification
+1. Measuring Degrees of Relational Similarity
+1. Spatial Role Labeling
+1. Evaluating Chinese Word Similarity
+1. Chinese Semantic Dependency Parsing
+1. Semantic Textual Similarity
+1. COPA. Choice Of Plausible Alternatives An evaluation of commonsense causal reasoning
+1. Cross-lingual Textual Entailment for Content Synchronization
+
+[Previous years](https://en.wikipedia.org/wiki/SemEval#External_links)
+
+
+## Kaggle 
+
+Kaggle is a subsidary of Google.  It is platform for machine learning competitions where people compete to produce the best models for a huge range of different datasets. Companies often offer a reward for their competitions.  There's tons of cool data and competitions that you can base your final project on.  
+
+Here are a few competitions:
+* [Sentiment Analysis on Movie Reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews)
+* [Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+* [Convert English text from written expressions into spoken forms](https://www.kaggle.com/c/text-normalization-challenge-english-language)
+* [Quora Question Pairs - Can you identify question pairs that have the same intent?](https://www.kaggle.com/c/quora-question-pairs)
+* [DonorsChoose.org Application Screening - Predict whether teachers' project proposals are accepted](https://www.kaggle.com/c/donorschoose-application-screening#evaluation)
+* [TensorFlow Speech Recognition Challenge - Can you build an algorithm that understands simple speech commands?](https://www.kaggle.com/c/tensorflow-speech-recognition-challenge)
+* [Spooky Author Identification - Identify horror authors from their writings](https://www.kaggle.com/c/spooky-author-identification)
+
+
+You can also check out the [Linguistics tag](https://www.kaggle.com/tags/linguistics) and  the [Langauges tag](https://www.kaggle.com/tags/languages) for lots of other ideas.  Want [130,000 wine reviews](https://www.kaggle.com/zynicide/wine-reviews) with their ratings, or [55,000 song lyrics](https://www.kaggle.com/mousehead/songlyrics)?  Find them on Kaggle. 
+
+
+## Course staff ideas
+
+Here are a list of potential project ideas that were brainstormed by the course staff:
+* Ranking scalar adjectives
+* Order pre
+
+# What do you need to turn in?
+
+For Milestone 1, you'll need to turn in writeups for your 3 project ideas.  
+
+For the whole project, here's a provisional list of the deliverables that you'll need to submit:
+
+1. `report.md`: The final version of your write-up, incorporating any additional changes to your revised draft (if any).
+1. `readme.md`: A brief description of your task and the included code.
+1. `data-train/`: A directory containing the training data.
+1. `data-dev/`: A directory containing the development data for local evaluation.
+1. `data-test/`: A directory containing the test data for leaderboard evaluation.
+1. `default`: A full implementation of the default system.
+1. `baseline`: A skeleton of the baseline system to be provided to students.
+1. `baseline-solution`: A full implementation of the baseline system.
+1. `extension-1`, `extension-2`, ...: Full implementations of the extensions, one per group member.
+1. `extensions.md`: A brief write-up describing your extensions and their performance.
+1. `grade-dev`: A grading script for local evaluation. This may be a wrapper around a generic grading script `grade`.
+1. `grade-test`: A grading script for leaderboard evaluation. This may be a wrapper around a generic grading script `grade`.
+
+
+
