@@ -254,7 +254,7 @@ You can also check out the [Linguistics tag](https://www.kaggle.com/tags/linguis
 Here are a list of potential project ideas that were brainstormed by the course staff:
 * Rank scalar adjectives.
 * Order prenominal modifiers. In English, prenominal modifiers must come in a certain order.   It sounds fluent to say *the big beautiful white wooden house*, but not *the white wooden beautiful big house*.  Here's a NLP good paper describing a [class-based approach to ordering prenominal modifiers](http://www.aclweb.org/old_anthology/W/W09/W09-0608.pdf).
-You could collect all of the pre-nominal modifiers from a large parsed corpus like the [WaCKy corpora](http://wacky.sslmit.unibo.it/doku.php?id=corpora) or the [Annotated Gigaword](https://catalog.ldc.upenn.edu/ldc2012t21), and then train to predict their order.   Here's a rule about what order adjectives are supposed to come in:
+You could collect all of the pre-nominal modifiers from a large parsed corpus like the [WaCKy corpora](http://wacky.sslmit.unibo.it/doku.php?id=corpora) or the [Annotated Gigaword](https://catalog.ldc.upenn.edu/ldc2012t21), and then train a model to predict their order.   Here's a rule from a grammar book about what order adjectives are supposed to come in.  Is it true?
  <blockquote align="center" class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Things native English speakers know, but don&#39;t know we know: <a href="https://t.co/Ex0Ui9oBSL">pic.twitter.com/Ex0Ui9oBSL</a></p>&mdash; Matthew Anderson (@MattAndersonNYT) <a href="https://twitter.com/MattAndersonNYT/status/772002757222002688?ref_src=twsrc%5Etfw">September 3, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 
