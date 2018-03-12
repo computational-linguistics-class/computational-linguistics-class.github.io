@@ -126,8 +126,6 @@ source ~/.bashrc
 ```
 If you run the command ```$ which conda```, the output should be ```/home1/m/mayhew/miniconda3/bin/conda```.
 
-<<<<<<< HEAD
-2. **Installing Miniconda from scratch**: On ```biglab```, run the following commands. Press Enter/Agree to all prompts during installation.
 ```
 $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ chmod +x Miniconda3-latest-Linux-x86_64.sh
