@@ -84,7 +84,7 @@ Here are the milestones for the term project:
 
 For Milestone 1, you'll need to form a team and come up with 3 project ideas.  For each idea you should describe:
 1. A problem definition (1 to 2 paragraphs, plus an illustrative example)
-1. A pointer to or more more papers or sections textbook that describes the problem
+1. A pointer to two or more more papers or sections textbook that describes the problem
 1. What evaluation metrics could use to score system outputs 
 1. What type of data you will need to evaluate, and how much data is available 
 
