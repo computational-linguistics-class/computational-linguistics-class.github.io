@@ -1,8 +1,8 @@
 ---
 layout: default
-img: clusters.png
-caption: Did you know that matplotlib has an xkcd() function?
-img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
+img: hypernyms.png
+caption: Birds are Aves
+img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
 release_date: 2018-03-14
@@ -10,14 +10,21 @@ due_date: 2018-03-21T11:00:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
-   title: Efficient Estimation of Word Representations in Vector Space
-   authors:  Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean
-   venue: ArXiV
+   title: Learning syntactic patterns for automatic hypernym discovery
+   authors:  Rion Snow, Daniel Jurafsky, Andrew Y. Ng
+   venue: NIPS
    type: conference
-   year: 2013
-   url: https://arxiv.org/pdf/1301.3781.pdf?
-   id: efficient-estimation-of-word-representations
-   abstract: We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities.
+   year: 2003
+   url: http://papers.nips.cc/paper/2659-learning-syntactic-patterns-for-automatic-hypernym-discovery.pdf
+   id: snow-patterns
+-
+   title: Automatic acquisition of hyponyms from large text corpora
+   authors:  Marti Hearst
+   venue: ACL
+   type: conference
+   year: 1992
+   url: http://www.aclweb.org/anthology/C92-2082
+   id: hearst-patterns
 ---
 
 
@@ -38,7 +45,7 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Learning Hypernyms <span class="text-muted">: Assignment 8</span>
 =============================================================
 
-In linguistics, *Hypernymy* is an important lexical-semantic relationship that captures the *type-of* relation. In this relation, a **hyponym** is a word or phrase whose semantic field is included within that of another word, its **hypernym**. For example, *rock*, *blues* and *jazz* are all hyponyms of *genre* (hypernym).
+In linguistics, *Hypernymy* is an important lexical-semantic relationship that captures the *type-of* relation. In this relation, a **hyponym** is a word or phrase whose semantic field is included within that of another word, its **hypernym**. For example, *rock*, *blues* and *jazz* are all hyponyms of *music genre* (hypernym).
 
 In this assignment, we will examine unsupervised and supervised techniques to automatically extract a list of word pairs that satisfy the hypernymy relation using a large corpus. Specifically, we will use
 1. A rule-based technique, specifically lexico-syntactic patterns, to extract hyponym-hypernym word pairs.
