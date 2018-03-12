@@ -116,48 +116,9 @@ def train_char_lm(fname, order=4, add_k=1):
 Now you can train a language model.  First grab some text like this corpus of Shakespeare:
 
 ``` bash
-$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt
+$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
 ```
-export PATH="/home1/m/mayhew/miniconda3/bin:$PATH"
-```
-Then run the following command
-```
-source ~/.bashrc
-```
-If you run the command ```$ which conda```, the output should be ```/home1/m/mayhew/miniconda3/bin/conda```.
 
-```
-$ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ chmod +x Miniconda3-latest-Linux-x86_64.sh
-$ bash Miniconda3-latest-Linux-x86_64.sh
-```
-After successful installation, running the command ```$ which conda``` should output ```/home1/m/$USERNAME/miniconda3/bin/conda```.
-
-## Installing Pytorch and Jupyter
-
-For this assignment, you'll be using [Pytorch](http://pytorch.org/) and [Jupyter](http://jupyter.org/).
-
-1. If you followed our recommendation and used the existing miniconda installation from 1. above, you're good to go. Stop wasting time and start working on the assignment!
-
-2. Intrepid students who installed their own miniconda version from 2. above, need to install their own copy of Pytorch and Jupyter.
-To install Pytorch, run the command
-```
-conda install pytorch-cpu torchvision -c pytorch
-```
-To check, run python and ```import torch```. This should run without giving errors.
-To install jupyter, run the command (it might take a while)
-```
-conda install jupyter
-```
-Running the command ```jupyter --version``` should yield the version installed.
-
-## How to use Jupyter notebook
-For this homework, you have the option of using [jupyter notebook](https://jupyter.org/), which lets you interactively edit your code within the web browser. Jupyter reads files in the `.ipynb` format. To launch from biglab, do the following.
-
-1. On ```biglab```, navigate to the directory with your code files and type `jupyter notebook --port 8888 --no-browser`.
-2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
-3. In your local web browser, navigate to `localhost:8888`.
-=======
 Now train the model:
 {% highlight python %}
 lm = train_char_lm("shakespeare_input.txt", order=4)
@@ -275,7 +236,6 @@ Now, try generating some Shakespeare with different order n-gram models.  You sh
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=3)
 >>> print(generate_text(lm, 3))
->>>>>>> 46d5b79b843848db2e9e85c1522ce1cd85839c15
 
 
 >>> lm = train_char_lm("shakespeare_input.txt", order=4)
@@ -290,11 +250,7 @@ What do you think?  Is it as good as [1000 monkeys working at 1000 typewriters](
 
 ### What the F?
 
-<<<<<<< HEAD
-In this assignment you will follow the Pytorch tutorial code to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard, where we will measure your model's complexity on our test set.
-=======
 Try generating a bunch of short passages:
->>>>>>> 46d5b79b843848db2e9e85c1522ce1cd85839c15
 
 
 {% highlight python %}
@@ -336,18 +292,10 @@ Histed mor ituffe bonguis hon tract
 Fir my fat,
 Forromfor intre You to lor c
 
-<<<<<<< HEAD
-Modify the tutorial code to instead read from city names dataset. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
-
-All training should be done on the train set and all evaluation (including confusion matrices and accuracy reports) on the validation set. You will need to change the data processing code to get this working. Specifically, you'll need to modify the code in the 3rd code block to create two variables `category_lines_train` and `category_lines_val`. In addition, to handle unicode, you might need to replace calls to `open` with calls to `codecs.open(filename, "r",encoding='utf-8', errors='ignore')`.
-
-Warning: you'll want to lower the learning rating to 0.02 or less or you might get NaNs when training.
-=======
 {% endhighlight %}
 
 Do you notice anything?  *They all start with F!*  In fact, after we hit a certain order, the first word is always *First*?  Why is that?  Is the model trying to be clever?  First, generate the word *First*. Explain what is going on in your writeup.
 
->>>>>>> 46d5b79b843848db2e9e85c1522ce1cd85839c15
 
 ## Part 2: Perplexity, smoothing, back-off and interpolation  
 
@@ -411,14 +359,7 @@ Discuss the perplexity for text that is similar and different from Shakespeare's
 
 Note: you may want to create a smoothed language model before calculating perplexity, otherwise you will get a perplexity of 0.
 
-<<<<<<< HEAD
-* [ABC music format](https://raw.githubusercontent.com/rdeese/tunearch-corpus/master/all-abcs.txt)
-* [Donald Trump speeches](https://github.com/ryanmcdermott/trump-speeches)
-* [Webster dictionary](http://www.gutenberg.org/cache/epub/29765/pg29765.txt)
-* [Jane Austen novels](http://www.gutenberg.org/files/31100/31100.txt)
-=======
 ### Laplace Smoothing and Add-k Smoothing 
->>>>>>> 46d5b79b843848db2e9e85c1522ce1cd85839c15
 
 Laplace Smoothing is described in section 4.4.1.  Laplace smoothing  adds one to each count (hence its alternate name *add-one smoothing*).   Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
 
