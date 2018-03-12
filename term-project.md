@@ -28,7 +28,7 @@ deliverables:
       description: Milestone 5 - Finish all your extensions to the public baseline
       due_date: 2018-04-25T12:00:00EST
     -
-      description: Optional extra credt - Do one or more of the your classmates' projects
+      description: Do one or more of the your classmates' projects
       due_date: 2018-04-25T12:00:00EST
 ---
 
