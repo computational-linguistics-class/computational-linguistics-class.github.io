@@ -335,3 +335,70 @@ Here are the deliverables that you will need to submit:
 </td></tr>
   {% endfor %}
 </table>
+
+<div class="panel panel-danger">
+<div class="panel-heading" markdown="1">
+## Grading Rubric
+</div>
+<div class="panel-body" markdown="1">
+
+This assignment was worth 60 points total. The rubic used for grading this homework is below.
+
+#### Implement the Evaluation Metrics (5 points total)
+
+1.1 (5) Functions `get_precision`, `get_recall`, and `get_fscore` correct.
+
+#### Baselines (15 points total)
+
+2.1 (5) Function `all_complex` correct
+
+  - -5 No results reported in writeup
+
+2.2 (5) Word length threshold correct
+
+  - -1 Wrong threshold identified
+  - -1 Reported performance much higher than expected
+  - -1 No mention of threshold chosen in writeup
+
+2.3 (5) Word Frequency threshold correct
+
+  - -2 Did not try a large enough range of thresholds
+  - -1 Large enough range tried, but best threshold reported is off by a lot
+  - -1 No mention of threshold chosen in writeup
+
+#### Classifiers (15 points total)
+
+3.1  (5) Naive Bayes classifier correct
+
+  - -2 Very low performance on development data
+  - -1 Did not report performance on training data
+
+3.2 (5) Logistic Regression classifier correct
+
+  - -1 Did not report performance on training data
+
+3.3 (5) Logistic Regression vs. Naive Bayes analysis correct
+
+  - -5 Missing
+  - -3 No analysis of why performances differ (Very common mistake!)
+
+#### Build your own model (25 points total)
+
+4.1 (10) Beat baselines (Everyone got this!)
+
+4.2 (10) Complete model analysis
+
+  - -5 No description at all about features/model
+  - -2 No description of why features/model were chosen
+  - -2 Overfit model to training data
+  - -1 Stated that overfitting was ok in this task
+
+4.3 (5) Error analysis correct
+
+  - -5 Missing
+  - -2 Examples given, but no categories of mistakes identified
+
+#### Extra Credit (5 points max)
+
+- +3 Top 10 on the mandatory leaderboard
+- +5 Top 3 on either leaderboard

@@ -18,9 +18,11 @@ active_tab: main_page
 <a href="{{page.url}}">{{ page.title }}</a> has been released.  
 {% if page.deliverables %}
 The assignment has multiple deliverables.
+<ul>
 {% for deliverable in page.deliverables %}
-The {{deliverable.description}} is due before {{ deliverable.due_date | date: "%I:%M%p" }} on {{ deliverable.due_date | date: "%A, %B %-d, %Y" }}.  
+<li>{{ deliverable.due_date | date: "%b %-d, %Y" }} - {{deliverable.description}}.</li>
 {% endfor %}
+</ul>
 {% else %}
 It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 {% endif %}
@@ -29,7 +31,6 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endif %}
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
-
 
 
 Course number
@@ -59,6 +60,9 @@ Grading
     * 20% for in-class quizzes about the readings
     * 20% for the final project
 
+
+Collaboration Policy
+: Unless otherwise noted, you are allowed to work in pairs on the homework assignment.  Both partners will receive the same grade.  The final projects will have larger groups. 
 
 Late Day Policy
 : Each student has five free "late days".  Homeworks can be submitted at most two days late.  If you are out of late days, then you will not be able to submit your homework. One "day" is defined as anytime between 1 second and 24 hours after the homework deadline. The intent of the late day policy it to allow you to take extra time due to unforseen circumstances like illnesses or family emergencies, and for forseeable interruptions like on campus interviewing and religious holidays.  You do not need to ask permission to use your late days.  No additional late days are granted. 

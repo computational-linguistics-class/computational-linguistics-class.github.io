@@ -32,9 +32,23 @@
       length: 10 minutes
       note: This invited talk discusses Dan's work on analyzing police body camera data to see if there is a difference in police interactions with black motorists versus white motorists.  He uses text classification to categorize differnt dimensions of the conversations that happen in traffic stops. 
 -
+  date: 2018-01-17
+  type: exam
+  title: Quiz 1
+  readings: 
+    - 
+      title: Chapter 2 "Regular Expressions, Text Normalization, Edit Distance"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
+    - 
+      title: Chapter 6 "Naive Bayes Classification and Sentiment"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+-
   date: 2018-01-22
   slides: slides/02-vector-semantics.pdf
   title: Vector Semantics
+  speaker: Anne Cocos
   readings: 
     - 
       title: Chapter 15 "Vector Semantics"
@@ -72,6 +86,19 @@
       url: https://www.youtube.com/watch?v=qSA9v7ZkC7Q&index=4&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 10 minutes
 -
+  date: 2018-01-24
+  type: exam
+  title: Quiz 2
+  readings: 
+    - 
+      title: Chapter 15 "Vector Semantics"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+    - 
+      title: Chapter 16 "Semantics with Dense Vectors"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+-
   date: 2018-01-29
   slides: slides/03-vector-semantics-chalk-talk.pdf
   title: Vector semantics chalk talk
@@ -97,8 +124,17 @@
       url: https://www.youtube.com/watch?v=RJVL80Gg3lA
       length: 1 hour
 -
+  date: 2018-01-31
+  type: exam
+  title: Quiz 3
+  readings: 
+    - 
+      title: Composition in Distributional Models of Semantics
+      authors: Jeff Mitchell and Mirella Lapata
+      url: http://onlinelibrary.wiley.com/doi/10.1111/j.1551-6709.2010.01106.x/epdf
+-
   date: 2018-02-05
-  slides: 
+  slides: slides/04-n-gram-language-models-chalk-talk.pdf
   title: Language Modeling with N-Grams
   readings: 
     - 
@@ -107,7 +143,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
   date: 2018-02-07
-  slides: 
+  slides: http://computational-linguistics-class.org/assignment5.html
   title: Hands-on with Language Models
   readings: 
     - 
@@ -115,45 +151,157 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
-  date: 2018-02-12
-  slides: 
-  title: Hidden Markov Models
+  date: 2018-02-07
+  type: exam
+  title: Quiz 4
   readings: 
     - 
-      title: Chapter 9 "Hidden Markov Models"
+      title: Chapter 4 "Language Modeling with N-Grams"
       authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+-
+  date: 2018-02-12
+  slides: slides/05-neural-network-language-models-chalk-talk.pdf
+  title: Language Modeling with Neural Networks
+  readings: 
+    - 
+      title: A Neural Probabilistic Language Model 
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+    - 
+      title: A Neural Probabilistic Language Model (longer JMLR version)
+      authors: Bengio, Ducharme, Vincent and Jauvin
+      url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
+      optional: true
 -
   date: 2018-02-14
   slides: 
-  title: Hands-on with Taggers
+  title: Hands-on with Neural Network Language Models
   readings: 
     - 
-      title: Chapter 10 "Part-of-Speech Tagging"
+      title: Chapter 7 "Logisitic Regression"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+  videos:
+    - 
+      title: Vizualizing and Understanding Recurrent Neural Networks
+      authors: Andrej Karpathy
+      url: https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks
+      length: 40 minutes
+-
+  date: 2018-02-14
+  type: exam
+  title: Quiz 5
+  readings: 
+    - 
+      title: A Neural Probabilistic Language Model 
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+    - 
+      title: Chapter 7 "Logisitic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+    - 
+      title: Chapter 8 "Neural Nets and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2018-02-16
   title: Drop period ends on Friday February 16
   type: no_lecture
 -
   date: 2018-02-19
-  slides: 
-  title: 
+  slides: slides/06-HMM-lecture.pdf
+  title: Hidden Markov Models
+  speaker: Nitish Gupta
   readings: 
+    - 
+      title: Chapter 9 "Hidden Markov Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
 -
   date: 2018-02-21
   slides: 
-  title: 
+  title: Hands-on with Taggers
+  readings:
+    - 
+      title: Chapter 21 "Information Extraction" (Intro and Section 21.1)
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+-
+  date: 2018-02-21
+  type: exam
+  title: Quiz 6
   readings: 
+    - 
+      title: Chapter 9 "Hidden Markov Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
+    - 
+      title: Chapter 21 "Information Extraction" (Intro and Section 21.1)
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
 -
   date: 2018-02-26
-  slides: 
-  title: 
-  readings: 
+  slides: slides/07-part-of-speech-chalk-talk.pdf
+  title: Part of Speech Tagging
+  readings:  
+    - 
+      title: Chapter 10 "Part of Speech Tagging"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+    - 
+      title: Linguistic Relativity (Does Langauge Shape Thought?)
+      authors: Lera Boroditsky 
+      url: http://lera.ucsd.edu/papers/linguistic-relativity.pdf
+      optional: true
+    - 
+      title: Sex, Syntax and Semantics
+      authors: Lera Boroditsky, Lauren Schmidt, Webb Phillips
+      url: http://lera.ucsd.edu/papers/gender.pdf
+      optional: true
+  videos:
+    - 
+      title: Parts of Speech
+      authors: Schoolhouse Rock
+      url: https://www.youtube.com/watch?v=Qk4N5kkifGQ&list=PL2Th9LBsWQq7SWCgd4aMjSIIJkYwgGIZ-
+      length: 3 minutes each 
 -
   date: 2018-02-28
-  slides: 
-  title: 
+  slides: slides/08-part-of-speech-chalk-talk-part2.pdf
+  title: Part of Speech Tagging continued
+  readings: 
+    - 
+      title: Part-of-Speech Tagging for Twitter&colon; Annotation, Features, and Experiments
+      authors: Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and Noah A. Smith 
+      url: http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf
+      optional: true
+    - 
+      title: A Universal Part-of-Speech Tagset 
+      authors: Slav Petrov, Dipanjan Das, Ryan McDonald
+      url: https://arxiv.org/abs/1104.2086
+      optional: true
+-
+  date: 2018-02-28
+  slides: slides/09-context-free-grammars-chalk-talk.pdf
+  title: Context Free Grammars 
+  readings: 
+    - 
+      title: Chapter 11 "Formal Grammars of English"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf]
+-
+  date: 2018-02-28
+  type: exam
+  title: No Quiz (good luck with your midterms!)
   readings: 
 -
   date: 2018-03-05
@@ -166,7 +314,7 @@
 -
   date: 2018-03-12
   slides: 
-  title: 
+  title: (tenative) Parsing
   readings: 
 -
   date: 2018-03-14
@@ -176,7 +324,8 @@
 -
   date: 2018-03-19
   slides: 
-  title: 
+  title: (tenative) WordNet / lexical semantics
+  speaker: Marianna Apidianaki
   readings: 
 -
   date: 2018-03-21
@@ -186,7 +335,8 @@
 -
   date: 2018-03-26
   slides: 
-  title: 
+  title:  (tenative) question answering 
+  speaker: Anne Cocos
   readings: 
 -
   date: 2018-03-28
@@ -200,7 +350,7 @@
 -
   date: 2018-04-02
   slides: 
-  title: 
+  title: (tenative) machine translation   
   readings: 
 -
   date: 2018-04-04
@@ -210,7 +360,7 @@
 -
   date: 2018-04-09
   slides: 
-  title: 
+  title:  (tenative) NLG 
   readings: 
 -
   date: 2018-04-11
@@ -220,7 +370,7 @@
 -
   date: 2018-04-16
   slides: 
-  title: 
+  title: (tenative) dialogue systems / language and vision ?
   readings: 
 -
   date: 2018-04-18
@@ -230,7 +380,7 @@
 -
   date: 2018-04-23
   slides: 
-  title: 
+  title: (tenative) final projects
   readings: 
 -
   date: 2018-04-25
