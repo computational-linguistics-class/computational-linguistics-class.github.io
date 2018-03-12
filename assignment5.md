@@ -94,14 +94,6 @@ def train_char_lm(fname, order=4, add_k=1):
     Each tuple consists of a possible net character and its probability.
   '''
 
-<<<<<<< HEAD
-## Using miniconda
-Miniconda is a package, dependency and environment management for python (amongst other languages). It lets you install different versions of python, different versions of various packages in different environments which makes working on multiple projects (with different dependencies) easy.
-
-There are two ways to use miniconda,
-
-1. **Use an existing installation from another user (highly recommended)**: On ```biglab```, add the following line at the end of your ```~/.bashrc``` file.
-=======
   # TODO: Add your implementation of add-k smoothing.
 
   data = open(fname).read()
@@ -124,8 +116,7 @@ There are two ways to use miniconda,
 Now you can train a language model.  First grab some text like this corpus of Shakespeare:
 
 ``` bash
-$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
->>>>>>> 46d5b79b843848db2e9e85c1522ce1cd85839c15
+$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt
 ```
 export PATH="/home1/m/mayhew/miniconda3/bin:$PATH"
 ```
