@@ -181,7 +181,7 @@ In the example above, in addition to the shortest-path, the paths we extract wil
 * **Distributive Edges**: The shortest path from *vegetables* from *peas* contains *spinach/NOUN* node connected via the *conj* edge. The presence of specific words in the path that do not inform of the hypernymy relation (*spinach* in this case) can be deterimental to our performance, and also increase the path length significantly.
 Snow et al. proposed to add additional edges bypassing *conj* edges to mitigate this issue. Therefore, we can add edges of type *pobj* from *vegetables* to *peas* and *kale*.
 
-**Good News**: You do need to extract such paths, as they have already been extracted for you. To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.
+**Good News**: You don't need to extract such paths.  We've extracted them for you.  You're welcome! To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.
 Similar to Snow et al., we only keep dependency paths of length 4 or shorter.
 The file contain three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
 An example path extraction is:
