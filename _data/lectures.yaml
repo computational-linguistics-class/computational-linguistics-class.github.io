@@ -319,8 +319,17 @@
 -
   date: 2018-03-14
   slides: 
-  title: Parsing
+  title: Dependency Parsing
   readings: 
+    - 
+      title: Chapter 17 "Dependency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
+    - 
+      title: Generating Typed Dependency Parses from Phrase Structure Parses
+      authors: Marie-Catherine de Marneffe, Bill MacCartney, and Chris Manning
+      url: https://nlp.stanford.edu/~wcmac/papers/td-lrec06.pdf
+      optional: true
 -
   date: 2018-03-19
   slides: http://computational-linguistics-class.org/assignment8.html
