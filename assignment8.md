@@ -25,6 +25,22 @@ readings:
    year: 1992
    url: http://www.aclweb.org/anthology/C92-2082
    id: hearst-patterns
+-
+    title: Do Supervised Distributional Methods Really Learn Lexical Inference Relations?
+    authors:  Omer Levy, Steffen Remus, Chris Beimann, Ido Dagan
+    venue: NAACL
+    type: conference
+    year: 2015
+    url: http://www.aclweb.org/anthology/N15-1098
+    id: levy
+-
+    title: Improving Hypernymy Detection with an Integrated Path-based and Distributional Method
+    authors:  Vered Shwartz, Yoav Goldberg and Ido Dagan
+    venue: ACL
+    type: conference
+    year: 2016
+    url: http://arxiv.org/abs/1603.06076
+    id: vered
 ---
 
 
@@ -47,7 +63,7 @@ Learning Hypernyms <span class="text-muted">: Assignment 8</span>
 
 CCB todo: Add paragraph describing the usefulness of hypernym relations for tasks like Question Answering and RTE/NLI.
 
-CCB: todo: Add Anne's example of "Birds that live in cities, such as pigeons." 
+CCB: todo: Add Anne's example of "Birds that live in cities, such as pigeons."
 
 In linguistics, *Hypernymy* is an important lexical-semantic relationship that captures the *type-of* relation. In this relation, a **hyponym** is a word or phrase whose semantic field is included within that of another word, its **hypernym**. For example, *rock*, *blues* and *jazz* are all hyponyms of *music genre* (hypernym).
 
@@ -73,17 +89,28 @@ In order to use the gensim package, you'll have to be using Python version 3.6 o
 * Then when I ran python, I used the command `python3` instead of just `python`
 </div> -->
 
-<div class="alert alert-info" markdown="1">
+<!-- <div class="alert alert-info" markdown="1">
 Here is the required code you should download for this assignment [form here](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing):
 * `lexicalinference/` Contains all the relevant code. The description for individual files is given below
-</div>
+</div> -->
 
 
 <div class="alert alert-info" markdown="1">
-Here are the materials that you should download for this assignment [form here](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing):
-* `bless2011/` Contains the train, validation and test (without labels) data
-* `wikipedia_sentences.txt` Contains tokenized relevant wikipedia sentences. A lemmatized version also exists.
-* `wikipedia_deppaths.txt` Contains word pairs and the shortest dependency path between them as extracted using spaCy
+Here are the materials that you should download for this assignment:
+<!-- [form here](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing): -->
+* [`lexicalinference.zip`](downloads/hw8/lexicalinference.zip)
+Contains all the relevant code.
+* [`bless2011/`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
+Contains the train, validation and test data
+* [`wikipedia_sentences.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
+Contains tokenized relevant wikipedia sentences. A lemmatized version also exists.
+* [`wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
+Contains word pairs and the shortest dependency path between them as extracted using spaCy
+
+Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
+```
+scp -r /home1/n/nitishg/hw8resources ./
+```
 </div>
 
 # Part 1: Hearst Patterns for Hypernym Learning
@@ -107,116 +134,154 @@ where *NP_0* is the hypernym of *NP_1*, *NP_2*, ..., *NP_n*.
 Here, *NP_x* refers to a [noun phrase or noun chunk](https://en.wikipedia.org/wiki/Noun_phrase).
 
 
-Hearst identified many such patterns, hence forth referred to as Hearst Patterns. Since these patterns are already constructed manually, we can use these patterns on a large corpus for hyponym acquisition.
+As you can see in her paper, Hearst identified many such patterns, hence forth referred to as Hearst Patterns.
+Since these patterns are already manually constructed, we can use these patterns on a large corpus of unlabeled text for hyponym acquisition. For example, if our corpus only contained the sentences above, we could extract hypo-hypernym pairs such as
+```
+(blues, musical genres), (rock, musical genres), (jazz, musical genres), (spinach, green vegetables), (peas, green vegetables), (kale, green vegetables)
+```
+
 In this section of the assignment, we will use these patterns to extract hyper-hyponym word pairs from Wikipedia.
 
-## Dataset
+### Evaluation Dataset
 
-To evaluate the quality of our extraction, we will use a post-processed version of [BLESS2011 dataset](http://www.aclweb.org/anthology/W11-2501).
-[Levy et al. '15](http://www.aclweb.org/anthology/N15-1098) post-processed to clean the dataset for reasons mentioned in the paper. We provide you with the dataset. The files contain tab-separated text where the first (second) column contains the possible hyponym (hypernym) and the third column contains True/False indicating whether the relationship holds.
+To evaluate the quality of our extraction, we will use a post-processed version of the [BLESS2011 dataset](http://www.aclweb.org/anthology/W11-2501).
+[Levy et al. '15](http://www.aclweb.org/anthology/N15-1098) post-processed to clean the dataset for reasons mentioned in the paper.
+Based on our extractions from a large corpus, we can label the test instances as a True hypo-hypernym extraction if it exists in the extracted list or as a False pair if it doesn't. The data files are tab-separated with one-pair-per-line.
+```
+hyponym \t hypernym \t label
+```
 
-## Wikipedia Corpus
+### Unlabeled Wikipedia Corpus
 
-As our large corpus to extract hyper-hyponyms, we will use Wikipedia text. Since Wikipedia is too large for efficient processing, we provide you with a pruned version. This only contains sentences that contain a word pair from train/val/test set.
-Each line in the file contains 2 tab-separated columns. The first column contains the tokenized text, and the second contains the lemmatized version of the same sentence.
+As our large corpus to extract hyponyms, we will use Wikipedia text. Since Wikipedia is too large for efficient processing, we provide you with a pruned version. This only contains sentences that contain a word pair from train/val/test set.
+Each line in the file contains 2 tab-separated columns. The first column contains the tokenized sentence, and the second contains the lemmatized version of the same tokenized sentence.
+
 
 ## How to Get Started
 
-As you must have noticed, implementing Hearst Patterns requires noun-phrase chunking and then regex pattern matching where these patterns are relevant Hearst pattern.
+As you must have noticed, implementing Hearst Patterns requires noun-phrase chunking and then regex pattern matching where these patterns are relevant Hearst patterns.
 
-In the file ```hearst/hearstPatterns.py``` we use NLTK to implement a nltk-regex based [noun-phrase chunker](http://www.nltk.org/book/ch07.html) and Hearst pattern matching.
-The list ```self.__hearst_patterns``` already contains one pattern implemented. Your job is to implement more Hearst Patterns as described in the original paper, or come up with your own patterns.
+In the code file ```hearst/hearstPatterns.py``` we use NLTK to implement a [nltk-regex based noun-phrase chunker](http://www.nltk.org/book/ch07.html) and Hearst pattern matching.
+1. This code first finds the all the noun-chunks and converts the sentence into the following format,
+```
+I like to listen to NP_music from NP_musical_genres such as NP_blues , NP_rock and NP_jazz .
+```
+2. It then uses nltk-regex to find patterns defined in the list `self.__hearst_patterns`. We have already implemented one pattern (NP_0 such as NP1, ...) for you as:
+```
+"(NP_\w+ (, )?such as (NP_\w+ ? (, )?(and |or )?)+)", "first"
+```
+which will lead to extractions such as
+```
+('blues', 'musical genres'), ('rock', 'musical genres'), and ('jazz', 'musical genres')
+```
 
-Carefully read through the code to figure out how it is implemented. On a high-level, the code first finds noun phrases and represents them as
+Your job is to implement other Hearst Patterns and add them to the `self.__hearst_patterns` list.
+
+<!-- Carefully read through the code to figure out how it is implemented. On a high-level, the code first finds noun phrases and represents them as
 ```
 I like to listen to NP_music from NP_musical_genres such as NP_blues , NP_rock and NP_jazz .
 ```
 then applies the regex Heart Pattern matcher to extract hyper-hyponym pairs. For this particular example, it extracts
-`('blues', 'musical genres')`, `('rock', 'musical genres')`, and `('jazz', 'musical genres')`
-
+`('blues', 'musical genres')`, `('rock', 'musical genres')`, and `('jazz', 'musical genres')` -->
 
 To use the method above to perform large-scale extraction on Wikipedia, and evaluation against the provided dataset, we provide the following functions:
-* `hearst/extractHearstHyponyms.py` - Implements a method to apply the Hearst Patterns from all Wikipedia sentences and place them in a file.
+* `hearst/extractHearstHyponyms.py` - Implements a method to apply the Hearst Patterns to all Wikipedia sentences, collect the extractions and write them to a file
 
-* `extractDatasetPredictions.py` - Labels the train/val/test pairs as True/False based on their existence in the extracted hyper-hyponym pairs.
+* `extractDatasetPredictions.py` - Labels the train/val/test word-pairs as True (False) if they exist (don't exist) in the extracted hypo-hypernym pairs
 
 * `computePRF.py` - Takes the gold-truth and prediction file to compute the Precision, Recall and F1 score.
 
 
 You should implement different Hearst Patterns, and/or come up with your own patterns by eyeballing Wikipedia data. Use the train and validation data to estimate the performance of different pattern combinations and submit the predictions from the best model on the test data to the leaderboard as the file `hearst.txt`. The format of this file will the same as the train and validation data.
 ```
-hyponym \t hypernym \t True/False
+hyponym \t hypernym \t True(False)
 ```
+Don't panic if your validation performance is too low (~30%-36%). Using the single pattern already implemented you should get a validation score of 30%.
+
+In a `writeup.pdf` explain which patterns helped the most, and patterns that you came up with yourself.
 
 ## Hint for post-processing extractions
 
-As you might notice in the dataset, the (hypernym, hyponym) pair contains single, usually lemmatized, tokens. On the other hand, the extractions from our code extracts a lot of multi-word noun phrases. This could negatively affect our performance on the provided dataset. Our performance should drastically improve if we post-process our extractions to output only single token extractions.
+As you might notice in the dataset, the (hypernym, hyponym) pair contains single, usually lemmatized, tokens. On the other hand, the extractions from our code extracts a lot of multi-word noun phrases. This could negatively affect our performance on the provided dataset. Our performance could drastically improve if we post-process our extractions to output only single token extractions.
 
-You should be able to use your knowledge about noun-phrases and lemmatization to figure out a post-processing methodology that might improve your performance. In the final report, make clear distinction between change in performance when the extractions were post-processed, compared to when they were not.
+You should be able to use your knowledge about noun-phrases (that the head of the noun-phrase usually is the last token) and lemmatization to figure out a post-processing methodology that might improve your performance. In the final report, explain your post-processing methodology, and make clear distinction between change in performance when the extractions were post-processed.
 
 
 # Part 2: Dependency Paths for Hypernym Learning
 
-Consider the sentence snippet, *... such green vegetables as spinach, peas and kale.* and its dependency-parse using [spaCy](https://spacy.io/)
+Consider the sentence snippet, *... such green vegetables as spinach, peas and kale.* and its dependency-parse using [spaCy](https://spacy.io/).
+Their visualization tool is called displaCy and can be accessed here: [demos.explosion.ai/displacy](https://demos.explosion.ai/displacy/)
 
 <img src="/assets/img/deppath.png" alt="Example dependency path using spaCy" style="width: 100%;"/>
 
-We (again) observe that there are dependency paths between *vegetables* and *spinach*, *peas*, and *kale* that can be typical in expressing hyper-hyponymy relation between words. This observation was made in [Snow et al.'s](https://web.stanford.edu/~jurafsky/paper887.pdf) seminal paper.
+We (again) observe that there are dependency paths between *vegetables* and *spinach*, *peas*, and *kale* that can be typical in expressing hyper-hyponymy relation between words.
 
-We can use the shortest dependency path between noun (noun-chunk) pairs to predict hypernymy relation. For example, in the example above the shortest dependency path between *vegetables* and *spinach* is
+This observation was made in Snow et al.'s NIPS 2005 [Learning syntactic patterns for automatic hypernym discovery](https://papers.nips.cc/paper/2659-learning-syntactic-patterns-for-automatic-hypernym-discovery.pdf) paper.
+In this paper, the authors use the shortest dependency paths between noun-phrases to extract features and learn a classifier to predict whether a word-pair satisfies the hypo-hypernymy relation.
+
+On the contrast, in this part, we will use the shortest dependency paths between noun (noun-chunk) pairs to predict hypernymy relation in an unsupervised manner. For example, in the example above the shortest dependency path between *vegetables* and *spinach* is
 ```
 vegetables/NOUN -> Prep -> as/ADP -> pobj -> spinach/NOUN
 ```
 
-For generalization, we will anonymize the start and end-points of the paths, as
+For generalization, we can anonymize the start and end-points of the paths, as
 ```
 X/NOUN -> Prep -> as/ADP -> pobj -> Y/NOUN
 ```
-and can now predict that when a (X,Y) pair has such a dependency-path between them, it usually means that X is the hypernym of Y.
+and can now predict that when a (X,Y) pair occurs in such a dependency-path, it usually means that X is the hypernym of Y.
 
 
 Simply using the shortest dependency paths as two major issues that can be tackled in the following manner:
 * **Better lexico-syntactic paths**: Two words containing *as* in between is not a good indicator of the hypernymy relation being expressed and the word *such* outside the shortest path plays an important role.
-Snow et al. hence proposed *Satellite edges*, i.e. single edges to the left (right) of the leftmost (rightmost) token.
+Snow et al. hence proposed *Satellite edges*, i.e. adding single edges to the left (right) of the leftmost (rightmost) token to the shortest-dependency path.
 In the example above, in addition to the shortest-path, the paths we extract will also contain satellite edges from *vegetable -> green*, *vegetable -> such*, and *spinach -> peas*.
 
-* **Distributive Edges**: The shortest path from *vegetables* from *peas* contains *spinach/NOUN* node connected via the *conj* edge. The presence of specific words in the path that do not inform of the hypernymy relation (*spinach* in this case) can be deterimental to our performance, and also increase the path length significantly.
+* **Distributive Edges**: The shortest path from *vegetables* from *peas* contains *spinach/NOUN* node connected via the *conj* edge. The presence of such specific words (*spinach*) in the path that do not inform of the hypernymy relation and negatively affect our extraction recall. The word *spinach* could be replaced with some other word, but the relation between peas and vegetables would still hold.
 Snow et al. proposed to add additional edges bypassing *conj* edges to mitigate this issue. Therefore, we can add edges of type *pobj* from *vegetables* to *peas* and *kale*.
 
-**Good News**: You don't need to extract such paths.  We've extracted them for you.  You're welcome! To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.
-Similar to Snow et al., we only keep dependency paths of length 4 or shorter.
-The file contain three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
+**Good News**: You don't need to extract such paths!  We've extracted them for you for our Wikipedia corpus.  You're welcome! To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.  
+Similar to Snow et al., we **only keep dependency paths of length 4 or shorter**    .
+Each line of the file `wikipedia_deppaths.txt` contains three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
 An example path extraction is:
 ```
 mammal  fox     such/ADJ/amod<_X/NOUN/dobj_<as/ADP/prep_<Y/NOUN/pobj
 ```
-The path edges are delimited by the underscore ( *_* ). Hence the edges in the path are:
+The path edges are delimited by the underscore ( *_* ). Each edge contains `word/POS_TAG/EdgeLabel`. Hence the edges in the path are:
 1. `such/ADJ/amod<`:  An edge of type *amod* from the right side (*X*) to the word *such*
-2. `X/NOUN/dobj`: An edge of type *dobj* from outside the shortest path span (since no direction marker ('<' or '>')) to the token *X*
+2. `X/NOUN/dobj`: An edge of type *dobj* from outside the shortest path span (since no direction marker ('<' or '>') exists) to the token *X*
 3. `<as/ADP/prep`: An edge of type *prep* from *as* to the left of it (*X*).
 4. `<Y/NOUN/pobj`: An edge of type *pobj* from *Y* to the left of it (*as*)
 
 ### How to proceed
-Since it is difficult to come up with your own dependency path patterns, we suggest you use the the training data to come up with a list of dependency-paths that are positive examples of paths between actual hyper-hyponym pairs.
+Similar to how we used the Hearst Patterns to extract hypo-hypernym pairs, we will now use dependency-path patterns to do the same.
+Since it is difficult to come up with your own dependency path patterns, we suggest you use the the labeled training data to come up with a list of dependency-paths that are positive examples of paths between actual hyper-hyponym pairs.
+* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `wikipedia_deppaths.txt` using the training data and store them to a file
+Note that, these paths can be of different categories. For eg. Forward paths: Classify X/Y as Hyponym/Hypernym, Reverse paths: Classify X/Y as Hypernym/Hyponym, Negative paths: Classify X/Y as a negative pair etc.
 
-* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract positive dependency paths from `wikipedia_deppaths.txt` using the training and the validation data and store them to a file
-* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate hyper-hyponym extractions for the wikipedia corpus (`wikipedia_deppaths.txt`) (similar to Hearst Patterns)
-* `extractDatasetPredictions.py`: Use this function (similar to Hearst Patterns) to label the train/val/test pairs as True/False based on their existence in the extracted hyper-hyponym pairs.
+* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`wikipedia_deppaths.txt`) (similar to Hearst Patterns)
+
+* `extractDatasetPredictions.py`: Similar to Hearst patterns, use this to label the train/val/test word-pairs as True (False) if they exist (don't exist) in the extracted hypo-hypernym pairs.
+
 * `computePRF.py`: Similar to Hearst Patterns, use this script to evaluate the performance on the given dataset
 
 For the best performing dependency paths, submit the test predictions on the relevant leaderboard with the filename `deppath.txt`.
+In the `writeup.pdf` explain few most occurring dependency paths and explain if they bear any correspondence to the Hearst patterns.
 
 # Part 3: DIY
 
 *<center>Cause I'm as free as a bird now, And this bird you can not change. - Lynyrd Skynyrd</center>*
 
 
-In the previous two sections we saw how we can use manually specified rule-based techniques to extract word-pairs satisfying hypernymy relations.
-In this section, you have to implement **at least two** additional methods to extract such word pairs. A few example ideas are:
-* Combine the extractions from Hearst patterns and Dependency-path patterns
-* Use the dependency paths to extract features and learn a supervised classifier
-* Combine the above two ...
+In the previous two sections we saw how we can use manually extracted rule-based techniques to extract word-pairs satisfying hypernymy relations.
+In this section, you have to implement **at least two additional methods** to extract such word pairs.
 
+A few of example ideas for additional techniques are:
+* Combine the extractions from Hearst patterns and Dependency-path patterns for better extractions
+* Learn a supervised classifier (similar to Snow et al) using the provided training data and features extracted from the dependency paths
+* Use pre-trained word embeddings to learn a hypernymy prediction classifier, or combine word-embeddings are features to your dependency--path based classifier.
+
+For this part, the test data predictions from the best performing technique should be uploaded to the relevant leaderboard as `diy.txt`.
+In the `writeup.pdf` explain in detail the two methodologies implemented with performance analysis.
 
 ### 3. The Leaderboard
 We will have three leaderboards for this assignment, namely
@@ -226,20 +291,20 @@ We will have three leaderboards for this assignment, namely
 
 ### Extra Credit
 * Extra credit to the top-5 teams on each leaderboard.
-* Extra credit to teams that perform significantly better on Part 3 then Part 1/2.
+* Extra credit to teams that improve their best performing model from Part 1/2 by 5% in their DIY model.
 
 
 ## Deliverables
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit. The writeup needs to be submit as `writeup.pdf`:
-* The three prediction files
-* Written analysis on which Hearst Patterns worked the best
-* Written analysis commenting on the Precision/Recall values when using Hearst Patterns
-* Written analysis on few Dependency Paths that worked the best
-* Written analysis commenting on the Precision/Recall values when using Dependency Paths
-* Implementation details of the DIY model
-* `writeup.pdf` (compiled from `writeup.tex`)
-* your code (.zip). It should be written in Python 3.
+* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt`
+* A `writeup.pdf` containing
+  * Written analysis on additional Hearst Patterns implemented and which one worked the best/worst
+  * Written analysis commenting on the Precision/Recall values when using Hearst Patterns
+  * Written analysis on most frequent Dependency Paths that worked the best
+  * Written analysis commenting on the Precision/Recall values when using Dependency Paths
+  * Implementation details of the DIY models and performance analysis
+* Your code (.zip) with a `README` to run. It should be written in Python 3.
 </div>
 
 
@@ -250,9 +315,9 @@ Here are the deliverables that you will need to submit. The writeup needs to be 
     <tr>
       <td>
 	{% if publication.url %}
-		<a href="{{ publication.url }}">{{ publication.title }}.</a>
+		<a href="{{ publication.url }}">{{ publication.title }}</a>
         {% else %}
-		{{ publication.title }}.
+		{{ publication.title }}
 	{% endif %}
 	{{ publication.authors }}.
 	{{ publication.venue }}  {{ publication.year }}.
