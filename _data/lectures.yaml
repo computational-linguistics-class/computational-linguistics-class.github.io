@@ -179,7 +179,7 @@
       optional: true
 -
   date: 2018-02-14
-  slides: 
+  slides: http://computational-linguistics-class.org/assignment6.html
   title: Hands-on with Neural Network Language Models
   readings: 
     - 
@@ -229,7 +229,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
 -
   date: 2018-02-21
-  slides: 
+  slides: http://computational-linguistics-class.org/assignment7.html 
   title: Hands-on with Taggers
   readings:
     - 
@@ -323,7 +323,7 @@
   readings: 
 -
   date: 2018-03-19
-  slides: 
+  slides: http://computational-linguistics-class.org/assignment8.html
   title: Hands-on with Hypernym Discovery
   readings: 
 -
@@ -345,7 +345,7 @@
 -
   date: 2018-03-28
   slides: 
-  title: (tentative) machine translation  
+  title: Machine Translation  
   readings: 
 -
   date: 2018-03-30
@@ -359,35 +359,37 @@
 -
   date: 2018-04-04
   slides: 
-  title: 
+  title:  Sequence-to-sequence models  
+  speaker: Reno Kriz and John Hewitt 
   readings: 
 -
   date: 2018-04-09
   slides: 
-  title:  (tentative) NLG 
+  title:  Dialogue Systems 
+  speaker: Daphne Ippolito
   readings: 
 -
   date: 2018-04-11
   slides: 
-  title: 
+  title: (tentative) Low resource techniques 
   readings: 
 -
   date: 2018-04-16
   slides: 
-  title: (tentative) dialogue systems / language and vision ?
+  title: (tentative) language and vision 
   readings: 
 -
   date: 2018-04-18
   slides: 
-  title: 
+  title: final project videos
   readings: 
 -
   date: 2018-04-23
   slides: 
-  title: (tentative) final projects
+  title: final project videos
   readings: 
 -
   date: 2018-04-25
   slides: 
-  title: 
+  title: Course wrapup 
   readings: 
