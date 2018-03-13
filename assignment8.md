@@ -82,13 +82,13 @@ Here are the materials that you should download for this assignment [form here](
 * `wikipedia_deppaths.txt` Contains word pairs and the shortest dependency path between them as extracted using spaCy
 </div>
 
-# Part 1: Lexico-Syntactic Patterns aka Hearst Patterns for Hypernym Learning
+# Part 1: Hearst Patterns for Hypernym Learning
 
-Marti Hearst, in her famous [paper](http://www.aclweb.org/anthology/C92-2082) described lexico-syntactic patterns that can be used for Hyponym acquisition.
+Marti Hearst, in her classic [1992 ACL paper](http://www.aclweb.org/anthology/C92-2082) described how lexico-syntactic patterns can be used for hyponym acquisition.
 
 Consider the sentence,
 ```
-I like to listen to music from musical genres such as blues, rock and jazz.
+How do I distinguish among different musical genres such as blues, rock, and jazz, etc., and is there a good listeners’ trick to discern such extinctions?
 ```
 Upon reading, we can easily infer that *blues*, *rock* and *jazz* are types of *musical genres*.
 Consider another sentence that contains a similar lexico-syntactic construction and expresses a hypernymy relation between *green vegetables* and *spinach*, *peas*, and *kale*.
