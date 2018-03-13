@@ -206,11 +206,11 @@ For the best performing dependency paths, submit the test predictions on the rel
 
 # Part 3: DIY
 
-*<center>Cause I'm as free as a bird now, And this bird you can not change - Lynyrd Skynyrd</center>*
+*<center>Cause I'm as free as a bird now, And this bird you can not change. - Lynyrd Skynyrd</center>*
 
 
-In the previous two sections we saw how we can use manually specified rule-based techniques to extract word-pairs satisfying hypernymy relation.
-In this section, you have to implement **at least two** addition methods to extract such word pairs. A few example ideas are:
+In the previous two sections we saw how we can use manually specified rule-based techniques to extract word-pairs satisfying hypernymy relations.
+In this section, you have to implement **at least two** additional methods to extract such word pairs. A few example ideas are:
 * Combine the extractions from Hearst patterns and Dependency-path patterns
 * Use the dependency paths to extract features and learn a supervised classifier
 * Combine the above two ...
