@@ -86,7 +86,7 @@ Here are the materials that you should download for this assignment [form here](
 
 # Part 1: Hearst Patterns for Hypernym Learning
 
-Marti Hearst, in her classic 1992 COLING paper [Automatic Aquisition of Hyponyms from Large Text Cororpa]](http://www.aclweb.org/anthology/C92-2082), described how lexico-syntactic patterns can be used for hyponym acquisition.
+Marti Hearst, in her classic 1992 COLING paper [Automatic Aquisition of Hyponyms from Large Text Cororpa](http://www.aclweb.org/anthology/C92-2082), described how lexico-syntactic patterns can be used for hyponym acquisition.
 
 Consider the sentence,
 ```
