@@ -84,7 +84,7 @@ Here are the materials that you should download for this assignment [form here](
 
 # Part 1: Lexico-Syntactic Patterns aka Hearst Patterns for Hypernym Learning
 
-Marti Hearst, in his famous [paper](http://www.aclweb.org/anthology/C92-2082) described lexico-syntactic patterns that can be used for Hyponym acquisition.
+Marti Hearst, in her famous [paper](http://www.aclweb.org/anthology/C92-2082) described lexico-syntactic patterns that can be used for Hyponym acquisition.
 
 Consider the sentence,
 ```
