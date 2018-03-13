@@ -20,7 +20,7 @@ readings:
 -
    title: Automatic acquisition of hyponyms from large text corpora
    authors:  Marti Hearst
-   venue: ACL
+   venue: COLING
    type: conference
    year: 1992
    url: http://www.aclweb.org/anthology/C92-2082
@@ -45,10 +45,12 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Learning Hypernyms <span class="text-muted">: Assignment 8</span>
 =============================================================
 
+CCB todo: Add paragraph describing the usefulness of hypernym relations for tasks like Question Answering and RTE/NLI.
+
 In linguistics, *Hypernymy* is an important lexical-semantic relationship that captures the *type-of* relation. In this relation, a **hyponym** is a word or phrase whose semantic field is included within that of another word, its **hypernym**. For example, *rock*, *blues* and *jazz* are all hyponyms of *music genre* (hypernym).
 
 In this assignment, we will examine unsupervised techniques to automatically extract a list of word pairs that satisfy the hypernymy relation using a large corpus. Specifically, we will use
-1. A rule-based technique, specifically lexico-syntactic patterns, to extract hyponym-hypernym word pairs.
+1. A rule-based technique using lexico-syntactic patterns to extract hyponym-hypernym word pairs.
 2. Another rule-based technique but using dependency-paths
 3. A DIY approach where you can use any supervised/unsupervised technique extract hypernym-hyponym word pairs.
 
@@ -84,7 +86,7 @@ Here are the materials that you should download for this assignment [form here](
 
 # Part 1: Hearst Patterns for Hypernym Learning
 
-Marti Hearst, in her classic [1992 ACL paper](http://www.aclweb.org/anthology/C92-2082) described how lexico-syntactic patterns can be used for hyponym acquisition.
+Marti Hearst, in her classic 1992 COLING paper [Automatic Aquisition of Hyponyms from Large Text Cororpa]](http://www.aclweb.org/anthology/C92-2082), described how lexico-syntactic patterns can be used for hyponym acquisition.
 
 Consider the sentence,
 ```
@@ -106,13 +108,18 @@ Here, *NP_x* refers to a [noun phrase or noun chunk](https://en.wikipedia.org/wi
 Hearst identified many such patterns, hence forth referred to as Hearst Patterns. Since these patterns are already constructed manually, we can use these patterns on a large corpus for hyponym acquisition.
 In this section of the assignment, we will use these patterns to extract hyper-hyponym word pairs from Wikipedia.
 
-**Dataset**: To evaluate the quality of our extraction, we will use a post-processed version of [BLESS2011 dataset](https://pdfs.semanticscholar.org/fc56/bb5958f1b7c1ba86d9869ab9e54810a12e72.pdf).
+## Dataset
+
+To evaluate the quality of our extraction, we will use a post-processed version of [BLESS2011 dataset](http://www.aclweb.org/anthology/W11-2501).
 [Levy et al. '15](http://www.aclweb.org/anthology/N15-1098) post-processed to clean the dataset for reasons mentioned in the paper. We provide you with the dataset. The files contain tab-separated text where the first (second) column contains the possible hyponym (hypernym) and the third column contains True/False indicating whether the relationship holds.
 
-**Wikipedia Corpus**: As our large corpus to extract hyper-hyponyms, we will use Wikipedia text. Since Wikipedia is too large for efficient processing, we provide you with a pruned version. This only contains sentences that contain a word pair from train/val/test set.
+## Wikipedia Corpus
+
+As our large corpus to extract hyper-hyponyms, we will use Wikipedia text. Since Wikipedia is too large for efficient processing, we provide you with a pruned version. This only contains sentences that contain a word pair from train/val/test set.
 Each line in the file contains 2 tab-separated columns. The first column contains the tokenized text, and the second contains the lemmatized version of the same sentence.
 
-### How to proceed
+## How to Get Started
+
 As you must have noticed, implementing Hearst Patterns requires noun-phrase chunking and then regex pattern matching where these patterns are relevant Hearst pattern.
 
 In the file ```hearst/hearstPatterns.py``` we use NLTK to implement a nltk-regex based [noun-phrase chunker](http://www.nltk.org/book/ch07.html) and Hearst pattern matching.
@@ -122,7 +129,7 @@ Carefully read through the code to figure out how it is implemented. On a high-l
 ```
 I like to listen to NP_music from NP_musical_genres such as NP_blues , NP_rock and NP_jazz .
 ```
-then applies the regex Heart Pattern matcher to extract hyper-hyponym pairs. For this particular example, it extracts,
+then applies the regex Heart Pattern matcher to extract hyper-hyponym pairs. For this particular example, it extracts
 `('blues', 'musical genres')`, `('rock', 'musical genres')`, and `('jazz', 'musical genres')`
 
 
@@ -134,12 +141,13 @@ To use the method above to perform large-scale extraction on Wikipedia, and eval
 * `computePRF.py` - Takes the gold-truth and prediction file to compute the Precision, Recall and F1 score.
 
 
-You should implement different Hearst Patterns, and/or come up with your own patterns by eyeballing Wikipedia data. Use the train/val data to estimate the performance of different pattern combinations and submit the predictions from the best model on the test data to the leaderboard as the file `hearst.txt`. The format of this file will the same as the train and validation data.
+You should implement different Hearst Patterns, and/or come up with your own patterns by eyeballing Wikipedia data. Use the train and validation data to estimate the performance of different pattern combinations and submit the predictions from the best model on the test data to the leaderboard as the file `hearst.txt`. The format of this file will the same as the train and validation data.
 ```
 hyponym \t hypernym \t True/False
 ```
 
-### Hint for post-processing extractions
+## Hint for post-processing extractions
+
 As you might notice in the dataset, the (hypernym, hyponym) pair contains single, usually lemmatized, tokens. On the other hand, the extractions from our code extracts a lot of multi-word noun phrases. This could negatively affect our performance on the provided dataset. Our performance should drastically improve if we post-process our extractions to output only single token extractions.
 
 You should be able to use your knowledge about noun-phrases and lemmatization to figure out a post-processing methodology that might improve your performance. In the final report, make clear distinction between change in performance when the extractions were post-processed, compared to when they were not.
