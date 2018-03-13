@@ -47,6 +47,8 @@ Learning Hypernyms <span class="text-muted">: Assignment 8</span>
 
 CCB todo: Add paragraph describing the usefulness of hypernym relations for tasks like Question Answering and RTE/NLI.
 
+CCB: todo: Add Anne's example of "Birds that live in cities, such as pigeons." 
+
 In linguistics, *Hypernymy* is an important lexical-semantic relationship that captures the *type-of* relation. In this relation, a **hyponym** is a word or phrase whose semantic field is included within that of another word, its **hypernym**. For example, *rock*, *blues* and *jazz* are all hyponyms of *music genre* (hypernym).
 
 In this assignment, we will examine unsupervised techniques to automatically extract a list of word pairs that satisfy the hypernymy relation using a large corpus. Specifically, we will use
