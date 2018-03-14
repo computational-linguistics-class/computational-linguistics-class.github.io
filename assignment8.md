@@ -123,7 +123,7 @@ Marti Hearst, in her classic 1992 COLING paper [Automatic Aquisition of Hyponyms
 
 Consider the sentence,
 ```
-How do I distinguish among different musical genres such as blues, rock, and jazz, etc., and is there a good listeners’ trick to discern such extinctions?
+How do I distinguish among different musical genres such as blues, rock, and jazz, etc., and is there a good listeners’ trick to discern such distinctions?
 ```
 Upon reading, we can easily infer that *blues*, *rock* and *jazz* are types of *musical genres*.
 Consider another sentence that contains a similar lexico-syntactic construction and expresses a hypernymy relation between *green vegetables* and *spinach*, *peas*, and *kale*.
