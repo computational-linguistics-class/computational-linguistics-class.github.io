@@ -331,6 +331,19 @@
       url: https://www.cis.upenn.edu/~ccb/publications/gun-violence-database.pdf
 -
   date: 2018-03-19
+  type: exam
+  title: Quiz 7
+  readings: 
+    - 
+      title: Chapter 21 "Information Extraction" (Section 21.2)
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+    - 
+      title: Chapter 21 "Information Extraction" (Section 21.2)
+      authors: Marti Hearst
+      url: http://www.aclweb.org/anthology/C92-2082
+-
+  date: 2018-03-19
   slides: http://computational-linguistics-class.org/assignment8.html
   title: Hands-on with Hypernym Discovery
   readings: 
