@@ -313,14 +313,22 @@
   type: no_lecture
 -
   date: 2018-03-12
-  slides: 
-  title: Midterm project planning
+  slides: http://computational-linguistics-class.org/term-project.html 
+  title: Term project planning
   readings: 
 -
   date: 2018-03-14
   slides: 
-  title: 
+  title: Information Extraction
   readings: 
+    - 
+      title: Chapter 21 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+    - 
+      title: The Gun Violence Database&colon; A new task and data set for NLP
+      authors: Ellie Pavlick, Heng Ji, Xiaoman Pan, and Chris Callison-Burch 
+      url: https://www.cis.upenn.edu/~ccb/publications/gun-violence-database.pdf
 -
   date: 2018-03-19
   slides: http://computational-linguistics-class.org/assignment8.html
