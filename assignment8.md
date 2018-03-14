@@ -10,6 +10,12 @@ due_date: 2018-03-21T11:00:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
+   title: Relation Extraction (Section 21.2)
+   authors: Dan Jurafsky and James H. Martin
+   venue: Speech and Language Processing (3rd edition draft)
+   type: textbook
+   url: https://web.stanford.edu/~jurafsky/slp3/21.pdf
+-
    title: Learning syntactic patterns for automatic hypernym discovery
    authors:  Rion Snow, Daniel Jurafsky, Andrew Y. Ng
    venue: NIPS
