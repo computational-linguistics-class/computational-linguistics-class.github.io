@@ -32,6 +32,9 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
+<div class="alert alert-info" markdown="1">
+There will be an [in-class quiz on Monday](quizzes.html).
+</div>
 
 Course number
 : CIS 530 - Computational Linguistics 
