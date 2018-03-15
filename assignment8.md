@@ -200,7 +200,7 @@ You should implement different Hearst Patterns, and/or come up with your own pat
 ```
 hyponym \t hypernym \t True(False)
 ```
-Don't panic if your validation performance is too low (~30%-36%). Using the single pattern already implemented you should get a validation score of 30%.
+Don't panic if your validation performance is too low (~30%-36% for lemmatized corpus). Using the single pattern already implemented, you should get a validation score of 30% (lemmatized corpus).
 
 In a `writeup.pdf` explain which patterns helped the most, and patterns that you came up with yourself.
 
