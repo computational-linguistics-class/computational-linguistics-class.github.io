@@ -357,17 +357,35 @@
       title: Chapter 17 "Computing with Word Senses"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
+    - 
+      title: Word Sense Clustering and Clusterability
+      authors: Diana McCarthy, Marianna Apidianaki, Katrin Erk
+      url: https://www.mitpressjournals.org/doi/pdfplus/10.1162/COLI_a_00247
+      optional: true
 -
   date: 2018-03-26
   slides: 
   title:  Question Answering 
   speaker: Anne Cocos
   readings: 
+    - 
+      title: Chapter 28 "Question Answering"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/28.pdf
 -
   date: 2018-03-28
   slides: 
   title: Machine Translation  
   readings: 
+    - 
+      title: Statistical Machine Translation
+      authors: Adam Lopez
+      url: http://alopez.github.io/papers/survey.pdf
+    - 
+      title: Neural Machine Translation
+      authors: Philipp Koehn
+      url: http://mt-class.org/jhu/assets/nmt-book.pdf
+      optional: true
 -
   date: 2018-03-30
   title: Last day to withdraw from a course is Friday March 30
@@ -382,13 +400,22 @@
   slides: 
   title:  Sequence-to-sequence models  
   speaker: Reno Kriz and John Hewitt 
-  readings: 
+  readings:
+    - 
+      title: Neural Machine Translation (seq2seq) Tutorial
+      authors: Thang Luong, Eugene Brevdo, Rui Zhao 
+      url: https://www.tensorflow.org/tutorials/seq2seq
+      optional: true
 -
   date: 2018-04-09
   slides: 
   title:  Dialogue Systems 
   speaker: Daphne Ippolito
   readings: 
+    - 
+      title: Chapter 29 "Dialog Systems and Chatbots"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/29.pdf
 -
   date: 2018-04-11
   slides: 
