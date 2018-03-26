@@ -3,7 +3,7 @@ layout: default
 img: estimating_time.png
 caption: Don't Panic
 img_link: https://xkcd.com/1658/   
-title: Term Project - Milestone 1
+title: Term Project
 active_tab: homework
 release_date: 2018-03-01
 due_date: 2018-04-25T12:00:00EST
@@ -291,7 +291,7 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
 {% endhighlight %}
 And you get back a set of usernames and how they self identified.  Can you develop self-indentification queries for different demographic info, retrieve all of the comments from those users and then analyze the language differentiates for different groups like [men v. women](http://www.aclweb.org/anthology/P13-1070) or straight people v. gays and lesbians? 
 
-# What do you need to turn in?
+## What do you need to turn in?
 
 For Milestone 1, you'll need to turn in writeups for your 3 project ideas.  
 
@@ -351,7 +351,7 @@ As the final part of M2, you should write a simple baseline.  This should be the
 You should write a python program that will generate the output for the baseline, and you should submit that as simple-baseline.py.  You should also include a markdown file named simple-baseline.md that describes your simple baseline, gives sample output, and reports the score of the baseline when you run it on the test set, and evaluate it with your scoring script. 
 
 
-# What do you need to turn in?
+## What do you need to turn in?
 
 * You should create a directory containing your training/dev/test data (please create a gzipped tar archive of the data).  If your data is too large to upload to gradescope, the you can submit a sample of the training data, plus your compute dev and test sets.
 * Please upload a markdown file that describes your data (name it data.md).  It should give an example of the data, describe the file format of the data, give a link to the full data set (if you're uploading a sample), and give a description of where you collected the data from.
