@@ -3,7 +3,7 @@ layout: default
 img: estimating_time.png
 caption: Don't Panic
 img_link: https://xkcd.com/1658/   
-title: Term Project
+title: The Term Project
 active_tab: homework
 release_date: 2018-03-01
 due_date: 2018-04-25T12:00:00EST
