@@ -6,7 +6,7 @@ img_link: https://xkcd.com/1658/
 title: Term Project - Milestone 1
 active_tab: homework
 release_date: 2018-03-01
-due_date: 2018-03-03T12:00:00EST
+due_date: 2018-04-25T12:00:00EST
 attribution: This assignment was developed by the CIS 530 course staff.
 deliverables:
     -
@@ -279,7 +279,7 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
   * [How to Develop a Deep Learning Photo Caption Generator from Scratch](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
   * [Caption this, with TensorFlow. How to build and train an image caption generator using a TensorFlow notebook.](https://www.oreilly.com/learning/caption-this-with-tensorflow)
 
-* __What can we learn about people on social media through self-identification?__ Google BigQuery has a set of [all Reddit comments since 2005](https://bigquery.cloud.google.com/dataset/fh-bigquery:reddit_comments). Past NLP work on mental health examined social media users who self-identified as having clinical depression or PTSD by looking for public comments like "I was diagnosed with depression".  Can we use self-indentificaiton to learn the patterns of language use of different demographics?  Here's a search through a subset of the Reddit comments for the phrase "I'm a [blank]":
+* __What can we learn about people on social media through self-identification?__ Google BigQuery has a set of [all Reddit comments since 2005](https://bigquery.cloud.google.com/dataset/fh-bigquery:reddit_comments). Past NLP work on mental health examined social media users who self-identified as having clinical depression or PTSD by looking for public comments like "I was diagnosed with depression".  Can we use self-identification to learn the patterns of language use of different demographics?  Here's a search through a subset of the Reddit comments for the phrase "I'm a [blank]":
 {% highlight sql %}
   SELECT author, body FROM [fh-bigquery:reddit_comments.2015_05] WHERE LENGTH(body) < 255 AND LENGTH(body) > 30 AND 
   (body LIKE 'i\'m a %'
@@ -289,7 +289,7 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
   or body LIKE 'I\'m an %'
   or body LIKE 'a\'m an %') LIMIT 10000;
 {% endhighlight %}
-And you get back a set of usernames and how they self identified.  Can you develop self-indentification queries for different demographic info, retreieve all of the comments from those users and then analyze the language differentences for different groups like [men v. women](http://www.aclweb.org/anthology/P13-1070) or straight people v. gays and lesbians? 
+And you get back a set of usernames and how they self identified.  Can you develop self-indentification queries for different demographic info, retrieve all of the comments from those users and then analyze the language differentiates for different groups like [men v. women](http://www.aclweb.org/anthology/P13-1070) or straight people v. gays and lesbians? 
 
 # What do you need to turn in?
 
@@ -312,3 +312,49 @@ For the whole project, here's a provisional list of the deliverables that you'll
 
 
 
+<a name="milestone-2"></a>
+# Milestone 2
+
+The course staff will review the 3 ideas that you submitted for Milestone 1, and make a recommendation on which of your ideas you ought to pursue.  For Milestone 2, your job is to get started on that idea with three steps:
+1. Collect your data
+2. Write an evaluation script
+3. Write a simple baseline (for instance, a majority class baseline)
+
+We have also assigned a course staff member to be your mentor.  Feel free to reach out to your mentor with any questions.
+
+## Collect your data
+
+Since most of the projects that we do in this course are data-driven, it's very important to have your data ready to go at the outset of a project.  You should collect all of the data that you'll need for your term project and split the data into three pieces:
+
+* Training data
+* Development data
+* Test data
+
+The training data will be used to train the model, the dev data can be used to optimize your system parameters and/or to evaluate different approaches to the problem, the test data is a "blind" test set that will be used in the final evaluation.
+
+If you are basing your term project on a shared task, then usually the data will be collected already, and usually it will be divided into a standard training/dev/test split.  If it's already assembled and split - great!  You're ahead of the game.  If you're not doing a shared task, then you may need to assemble your own data.  A good way of creating your own training/dev/test split is to divide the data into chunks that are sized around 80%/10%/10%, where you want to use most of the data for training.  It's important to ensure that the same items don't appear in more than one of the splits.
+
+For your M2 deliverables, we'll ask you to submit your data, plus a markdown file named data.md that describes the format of the data.  If your data is very large, then you can submit a sample of the data and give a link to a Google Drive that contains the full data set.   You data.md should describe the number of items in each of your training/dev/test splits.
+
+## Write an evaluation script
+
+For the next part of M2, you'll need to determine a suitable evaluation metric for your task, and implement it.  If you're basing your term project on a shared task, then there is likely an established evaluation metric for the task.  You should re-use it. If you're doing a new task, then you may have to do a literature review in order to determine what metrics are best suited for your task.
+
+You should write an evaluation script that takes two things as input: a system's output and a corresponding set of gold standard answers.  Your script should output a number that quantifies how good the system's answers are.    
+
+For your deliverables, you should include your script, plus an example of how to run it from the command line.  You should give a formal definition of the evaluation metric that explains how it is calculated in a markdown file called scoring.md - this file should  cite any relevant papers that introduce the metric.    You can also cite Wikipedia articles that describe your evaluation metric, and/or link to an overview paper describing the shared task that you're basing your project on if it defines the metric.
+
+## Write a simple baseline
+
+As the final part of M2, you should write a simple baseline.  This should be the simplest way of producing output for your task.  For example, it could be a majority class baseline (like the one that we used in HW1) that determines the majority class from the training data and guesses that class for each item in the test set.
+
+You should write a python program that will generate the output for the baseline, and you should submit that as simple-baseline.py.  You should also include a markdown file named simple-baseline.md that describes your simple baseline, gives sample output, and reports the score of the baseline when you run it on the test set, and evaluate it with your scoring script. 
+
+
+# What do you need to turn in?
+
+* You should create a directory containing your training/dev/test data (please create a gzipped tar archive of the data).  If your data is too large to upload to gradescope, the you can submit a sample of the training data, plus your compute dev and test sets.
+* Please upload a markdown file that describes your data (name it data.md).  It should give an example of the data, describe the file format of the data, give a link to the full data set (if you're uploading a sample), and give a description of where you collected the data from.
+* You should describe your evaluation metric in a markdown file called scoring.md.  This should give a formal definition of your metric, and relevant citations to where it was introduced.  Your scoring.md file should also show how to run your evaluation script on the command line (with example arguments, and example output).  The scoring.md file should say whether higher scores are better, or lower scores are better.
+* You should include your evaluation script (you can call then score.py if you're writing it in python).
+* You should upload simple-baseline.py and describe it in simple-baseline.md.  Your simple-baseline.md should say what score your evaluation metric gives to the simple baseline for your test set.
