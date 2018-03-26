@@ -373,7 +373,7 @@
   readings: 
 -
   date: 2018-03-26
-  slides: 
+  slides: slides/11-qa.pdf
   title:  Question Answering 
   speaker: Anne Cocos
   readings: 
@@ -381,6 +381,11 @@
       title: Chapter 28 "Question Answering"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/28.pdf
+    - 
+      title: Building Watson: An Overview of the DeepQA Project
+      authors: David Ferrucci et al.
+      url: http://www.aaai.org/ojs/index.php/aimagazine/article/download/2303/2165
+      optional: true
 -
   date: 2018-03-28
   slides: 
