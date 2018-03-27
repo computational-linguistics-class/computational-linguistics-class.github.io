@@ -352,21 +352,6 @@
   title: Show Day (classes canceled because of the Nor'easter)
   type: no_lecture
 -
-  date: 2018-03-21
-  slides: 
-  title: WordNet and lexical semantics (rescheduled for the following week)
-  speaker: Marianna Apidianaki
-  readings: 
-    - 
-      title: Chapter 17 "Computing with Word Senses"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
-    - 
-      title: Word Sense Clustering and Clusterability
-      authors: Diana McCarthy, Marianna Apidianaki, Katrin Erk
-      url: https://www.mitpressjournals.org/doi/pdfplus/10.1162/COLI_a_00247
-      optional: true
--
   date: 2018-03-26
   type: exam
   title: No quiz today (enjoy the snow)
@@ -389,6 +374,25 @@
 -
   date: 2018-03-28
   slides: 
+  title: WordNet and lexical semantics (rescheduled for the following week)
+  speaker: Marianna Apidianaki
+  readings: 
+    - 
+      title: Chapter 17 "Computing with Word Senses"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
+    - 
+      title: Word Sense Clustering and Clusterability
+      authors: Diana McCarthy, Marianna Apidianaki, Katrin Erk
+      url: https://www.mitpressjournals.org/doi/pdfplus/10.1162/COLI_a_00247
+      optional: true
+-
+  date: 2018-03-30
+  title: Last day to withdraw from a course is Friday March 30
+  type: no_lecture
+-
+  date: 2018-04-02
+  slides: 
   title: Machine Translation  
   readings: 
     - 
@@ -400,15 +404,6 @@
       authors: Philipp Koehn
       url: http://mt-class.org/jhu/assets/nmt-book.pdf
       optional: true
--
-  date: 2018-03-30
-  title: Last day to withdraw from a course is Friday March 30
-  type: no_lecture
--
-  date: 2018-04-02
-  slides: 
-  title:  Hands-on with word alignments
-  readings: 
 -
   date: 2018-04-04
   slides: 
