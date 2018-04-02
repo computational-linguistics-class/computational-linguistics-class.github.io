@@ -404,6 +404,11 @@
       authors: Philipp Koehn
       url: http://mt-class.org/jhu/assets/nmt-book.pdf
       optional: true
+    - 
+      title: A history of machine translation from the Cold War to deep learning
+      authors: Ilya Pestov
+      url: https://medium.freecodecamp.org/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5
+      optional: true
 -
   date: 2018-04-04
   slides: 
