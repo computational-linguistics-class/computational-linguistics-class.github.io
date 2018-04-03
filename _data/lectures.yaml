@@ -416,9 +416,9 @@
   speaker: Reno Kriz and John Hewitt 
   readings:
     - 
-      title: Neural Machine Translation (seq2seq) Tutorial
-      authors: Thang Luong, Eugene Brevdo, Rui Zhao 
-      url: https://www.tensorflow.org/tutorials/seq2seq
+      title: Neural Machine Translation and Sequence-to-sequence Models&colon; A Tutorial
+      authors: Graham Neubig 
+      url: https://arxiv.org/abs/1703.01619
       optional: true
 -
   date: 2018-04-09
