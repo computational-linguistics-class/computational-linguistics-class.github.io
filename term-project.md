@@ -19,7 +19,7 @@ deliverables:
       description: Milestone 3 - Implement a published baseline
       due_date: 2018-04-11T11:00:00EST
     -
-      description: Milestone 4 - Submit your project writeup and a pitch video.  Finish one of your extensions the public baseline (no late days allowed)
+      description: Milestone 4 - Submit your project writeup and prepare a final project presentation.  Finish one of your extensions the public baseline (no late days allowed)
       due_date: 2018-04-18T11:00:00EST
     -
       description: Vote on your favorite projects from the class
