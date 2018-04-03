@@ -358,3 +358,25 @@ You should write a python program that will generate the output for the baseline
 * You should describe your evaluation metric in a markdown file called scoring.md.  This should give a formal definition of your metric, and relevant citations to where it was introduced.  Your scoring.md file should also show how to run your evaluation script on the command line (with example arguments, and example output).  The scoring.md file should say whether higher scores are better, or lower scores are better.
 * You should include your evaluation script (you can call then score.py if you're writing it in python).
 * You should upload simple-baseline.py and describe it in simple-baseline.md.  Your simple-baseline.md should say what score your evaluation metric gives to the simple baseline for your test set.
+
+
+
+<a name="milestone-3"></a>
+# Milestone 3
+
+The goals of Milestone 3 is to do a literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
+
+For your literature review, you should read 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  You should also include an addition 1-2 paragraphs saying which of the approaches that you selected as the published baseline that you are re-implementing.  You should submit your literature review in a markdown formatted file called lit-review.md.
+
+You should re-implement the published baseline that you selected.  It's fine to use machine learning packages like sklearn, or NLP software like Spacy or NLTK, but you should implement the main algorithms yourself.  You should not turn in existing code that implements the baseline.
+
+You should include a baseline.md markdown file that includes step-by-step instructions on how to run your baseline code.   Your baseline.md should also report the score for your system for your test and development data, and compare that to your random baseline.
+
+For Milestone 5, you'll need to implement several extensions beyond this published baseline.  These should be different experiments that you run to try to improve its performance.  The number of extension that you'll implement depends on number of members of your group.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
+
+
+
+## What do you need to turn in?
+
+* You should submit a literature review in a markdown file called lit-review.md.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
+* You should submit your code for the baseline system.  This should be in a python file called a baseline.py.  You should also submit a baseline.md file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
