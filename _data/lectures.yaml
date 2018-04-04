@@ -406,7 +406,7 @@
       optional: true
 -
   date: 2018-04-04
-  slides: 
+  slides: slides/14-seq2seq.pdf
   title:  Sequence-to-sequence models  
   speaker: Reno Kriz and John Hewitt 
   readings:
