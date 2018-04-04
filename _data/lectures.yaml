@@ -400,11 +400,6 @@
       authors: Adam Lopez
       url: http://alopez.github.io/papers/survey.pdf
     - 
-      title: Neural Machine Translation
-      authors: Philipp Koehn
-      url: http://mt-class.org/jhu/assets/nmt-book.pdf
-      optional: true
-    - 
       title: A history of machine translation from the Cold War to deep learning
       authors: Ilya Pestov
       url: https://medium.freecodecamp.org/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5
@@ -419,6 +414,11 @@
       title: Neural Machine Translation and Sequence-to-sequence Models&colon; A Tutorial
       authors: Graham Neubig 
       url: https://arxiv.org/abs/1703.01619
+      optional: true
+    - 
+      title: Neural Machine Translation
+      authors: Philipp Koehn
+      url: https://arxiv.org/abs/1709.07809
       optional: true
 -
   date: 2018-04-09
