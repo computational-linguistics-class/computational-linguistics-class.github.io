@@ -19,13 +19,13 @@ deliverables:
       description: Milestone 3 - Implement a published baseline
       due_date: 2018-04-11T11:00:00EST
     -
-      description: Milestone 4 - Submit your project writeup and prepare a final project presentation.  Finish one of your extensions the public baseline (no late days allowed)
+      description: Milestone 4 -  Prepare a final project presentation, and create a write-up in the style of a homework assignment.  Finish one of your extensions the public baseline (no late days allowed for this Milestone).
       due_date: 2018-04-18T11:00:00EST
     -
       description: Vote on your favorite projects from the class
       due_date: 2018-04-18T12:00:00EST
     -
-      description: Milestone 5 - Finish all your extensions to the public baseline
+      description: Milestone 5 - Finish all your extensions to the public baseline, and submit your final project writeup.
       due_date: 2018-04-25T12:00:00EST
     -
       description: Do one or more of the your classmates' projects
@@ -364,7 +364,7 @@ You should write a python program that will generate the output for the baseline
 <a name="milestone-3"></a>
 # Milestone 3
 
-The goals of Milestone 3 is to do a literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
+The goals of Milestone 3 are to do a literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
 
 For your literature review, you should read 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  You should also include an addition 1-2 paragraphs saying which of the approaches that you selected as the published baseline that you are re-implementing.  You should submit your literature review in a markdown formatted file called lit-review.md.
 
@@ -380,3 +380,33 @@ For Milestone 5, you'll need to implement several extensions beyond this publish
 
 * You should submit a literature review in a markdown file called lit-review.md.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
 * You should submit your code for the baseline system.  This should be in a python file called a baseline.py.  You should also submit a baseline.md file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
+
+
+
+
+<a name="milestone-4"></a>
+# Milestone 4
+
+For Milestone 4, you will do an in-class presentation for your project, write-up your project as if it were a homework assignment, and turn in a draft of your final report with one of your extensions completed. 
+
+Your in-class presentation should be 12 minutes long.  You should create a slidedeck with [Google Slides](https://www.google.com/slides/about/).  Your presentation should convey  these main ideas:
+* What is the topic of your term project?  You should clearly explain to your classmates the problem that you selected to work on.  Give an illustrative example of the problem first, and then give a more formal definition of the problem.
+* What is exciting about your term project?  Why did you want to work on this topic?  
+* How does the topic relate to the class? What new things did you learn? 
+
+You may also want to cover topics like this:
+* What kind of data is available for this problem?  How do you evaluate whether a solution is good or not?  If the evaluation metric is not already familiar to the class, then walk through an explanation of how it works.
+* What is the baseline performance for the simple baseline like a majority class baseline?
+* What approaches have people taken in the past?  How successful have they been?
+* What did you implement for your published baseline?
+
+In addition to your in-class presentation, you'll need to create a write-up your project as if it were a homework assignment.  Based on the presentations, we'll have a vote to pick a few of your term projects that will be options for what the rest of the students in the class do as their final HW assignment.
+
+Finally, by the Milestone 4 deadline, you need to have completed one of the extensions to your published baseline.
+
+## What do you need to turn in?
+
+
+* The slides for your presentation.
+* A markdown file called homework.md that contains the write-up your project as if it were a homework assignment. 
+* A markdown file called extensions.md that desribes the extension(s) to the published baseline that you implemented for Milestone 4.  It should explain what you tried, and whether it improved performance over the baseline (it's OK if it didn't).  You should include tables of results using your scoring function and test data.
