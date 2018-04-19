@@ -33,6 +33,19 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 <!-- End alert for upcoming homework assignments -->
 
 
+<!-- Display an alert about upcoming homework assignments -->
+<div class="alert alert-info">
+Here are the homework assignments derived from your term projects:
+{% for page in site.pages %}
+{% if page.term_project %}
+<li><a href="{{page.url}}">{{ page.title }}</a></li>
+{% endif %}
+{% endfor %}
+</div>
+
+<!-- End alert for upcoming homework assignments -->
+
+
 Course number
 : CIS 530 - Computational Linguistics 
 

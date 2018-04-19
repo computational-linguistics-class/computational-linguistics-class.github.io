@@ -1,4 +1,5 @@
 exclude: ['README.md']
+include: ['term-projects/2018']
 timezone: US/Eastern
 markdown: kramdown
 highlighter: rouge
