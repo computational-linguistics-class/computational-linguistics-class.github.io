@@ -410,3 +410,47 @@ Finally, by the Milestone 4 deadline, you need to have completed one of the exte
 * The slides for your presentation.
 * A markdown file called homework.md that contains the write-up your project as if it were a homework assignment. 
 * A markdown file called extensions.md that desribes the extension(s) to the published baseline that you implemented for Milestone 4.  It should explain what you tried, and whether it improved performance over the baseline (it's OK if it didn't).  You should include tables of results using your scoring function and test data.
+
+
+
+<a name="milestone-5"></a>
+# Milestone 5
+
+For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. You already produced one of those extensions for Milestone 4.
+
+Your final report should be written in the style of a scientific paper.  It should contain the following sections:
+
+* Title.  A descrpitive title for your term project
+* Authors.  A list of team members
+* Abstract.  Your abstract should give an overview of your project and your results (~100 words).
+* Introduction.  Your introduction should contain the following information. (~300-500 words, plus one illustrative example).
+** An informal description of the task, and how it relates to NLP/Computational Linguistics (1-2  paragraphs)
+** A figure that illustrates the task, or an illustrative example of the type of problem you're trying to solve.  This can be a picture, or an example of an input and output.  You should include a caption or a short paragraph that describes what's happening in your illustration.
+** A formal definition of the problem.
+** A paragraph describing why you picked this task for your term project. 
+* Literature Review. You can adapt your literature review from Milestone 3 for this part of your writeup.  (~300-500 words, with 3 or more ciations).
+** If you adapted a shared task for your term project, then you should describe the share task in your literature review, and cite the overview paper and give a URL to shared task homepage (if applicable).
+** For your literature review, you should also cute and summarize 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  Be sure to include a full citation of these papers in your Bibliography. 
+* Experimental Design.  Your Experimental Design section should include a description of your training data, your evaluation metric, and your simple baseline model along with its performance on the test set.  You can adapt your Milestone 2 submission for this part. (~300-500 words, plus 2 figures/tables, plus 1 or more equations).
+** Data.  This subsection should describe your training/development/test data.  You should give an figure or table with examples from your data (including inputs and output labels).  You should include a table that describes the size of your data sets.  For example, it should give number of sentences or words, etc for each of the splits.  You should also characterize the data.  For instance, if there's a skewed distribtuion over the labels, you should reoprt it here.  If your training data comes from a published paper, then cite that paper and explain how they collected the data.  If you constructed your data set, then explain in detail how you collected it, and include example code in an appendix.
+** Evaluation Metric.  This subsection should describe your evaluation metric.  You should include an English description of the metric, an equation for how your metric is computed, and a citation for this metric, and some citation(s) that shows what past publication(s) used this metric for the task that you're working on. For your equation, you can use [MathJax](https://www.mathjax.org) markup.
+** Simple baseline.  You should compute the majority class baseline (or other simple baseline) for your data, and report it in this section.  This is a way of characterizing the data and showing the diffiulty of the task.  
+* Experimental Results.  In this section, you should describe your implementation of a published baseline, and all of the extensions that you experimented with for your term project, and an error analysis of your system's output. (~300-500 words).
+** Published baseline.  In this subsection you should write a detailed description of the published baseline that you implemented and cite the paper that it was published in. (You can update your Milestone 4 submission for this).  You should report how well the model performs on your test set using the evaluation metric that you defined in your experimental design section.  Does your implementation of the published baseline reach the same level of accuracy as the original paper?  If not, why not?  Are your results directly comparable -- are they on the same test set?  If not, why not?
+** Extensions.  In this subsection, you should describe each of the extensions that you tried.  You should include a ~1-2 paragraph of each extension that explains what you tried, why you tried it, and how it performed compared to your baseline.  You should include a table of results, where the rows are the performance of the baseline or one of your extensions, and the columns are  the performance on the test set (and on the dev set if you measured it).  If you did any experiments where you searched over a set of different parameters, then you should include a result on how varying the parameter changed the performance on the dev or test set.  Your tables and figures should include a detailed caption that explain how to read them.
+** Error analysis.  In this subsection, you should perform an error anlaysis for your best performing system.  Show examples of the errors that it makes.  Can you cateorize the types of errors that it makes, and give an esimate of how prevelant each error type is?  If you extensions performed better than the published baseline, then show examples of the errors that the published baseline makes that your extensions get correct (and vice versa if your extension introduces some new errors).  
+* Conclusions. You should write a brief summary of what you accomplished in your term project.  Did any of your implementations reach state-of-the-art performance on the task?  If not, how close did you come?  If not very close, then why not?  (~100-300 words). 
+* Acknowledgements.  If you used someone else's code or you benefited from discussions with one of the TAs, then you should thank them here.  Give credit generously!   (Optional)
+* Appendicies. This can include short snippets of code that were relevant to your project, along with a description of what it's doing.  It could also include more examples of your training data or your system's output. (Optional)
+
+You've reached the end.  Great job!
+
+## What do you need to turn in?
+
+You should turn  the following items:
+* final-report.md - a markdown formatted file
+* images/ - a subdirectory containing any image files that you use in the figures for your report
+* data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a file named download.md that explains how to download your data.
+* code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
+* output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
+
