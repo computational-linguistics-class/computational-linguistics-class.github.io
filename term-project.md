@@ -27,9 +27,6 @@ deliverables:
     -
       description: Milestone 5 - Finish all your extensions to the public baseline, and submit your final project writeup.
       due_date: 2018-04-25T12:00:00EST
-    -
-      description: Do one or more of the your classmates' projects
-      due_date: 2018-04-25T12:00:00EST
 ---
 
 <!-- Check whether the assignment is up to date -->
