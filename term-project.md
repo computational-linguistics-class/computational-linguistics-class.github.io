@@ -443,7 +443,8 @@ Your final report should be written in the style of a scientific paper.  It shou
 * Acknowledgements.  If you used someone else's code or you benefited from discussions with one of the TAs, then you should thank them here.  Give credit generously!   (Optional)
 * Appendicies. This can include short snippets of code that were relevant to your project, along with a description of what it's doing.  It could also include more examples of your training data or your system's output. (Optional)
 
-You've reached the end.  Great job!
+I really like examples and good illustrations.  If you created some nice visuals for your final presentation slides, then I encourage you to include them in your writeup too.  You can submit your images in a images/ subfolder.
+
 
 ## What do you need to turn in?
 
@@ -454,3 +455,5 @@ You should turn  the following items:
 * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
 * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
 
+
+You've reached the end.  Great job!
