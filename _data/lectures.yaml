@@ -422,7 +422,7 @@
       optional: true
 -
   date: 2018-04-09
-  slides: 
+  slides: slides/15-dialog-systems.pdf
   title:  Dialogue Systems 
   speaker: Daphne Ippolito
   readings: 
