@@ -29,7 +29,7 @@ NLP courses at other universities
 * [Yoav Artzi's Natural Language Processing class at Cornell](http://yoavartzi.com/cs5740-sp18-temp/)
 * [Jason Eisner's NLP class at Johns Hopkins University](https://www.cs.jhu.edu/~jason/465/)
 * [Chris Manning and Richard Socher's course at Stanford](https://web.stanford.edu/class/cs224n/)
-
+* [Graham Neubig's Machine Translation and Sequence to Sequence Models at CMU](http://www.phontron.com/class/mtandseq2seq2017/)
 
 
 Python resources

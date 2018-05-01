@@ -352,21 +352,6 @@
   title: Show Day (classes canceled because of the Nor'easter)
   type: no_lecture
 -
-  date: 2018-03-21
-  slides: 
-  title: WordNet and lexical semantics (rescheduled for the following week)
-  speaker: Marianna Apidianaki
-  readings: 
-    - 
-      title: Chapter 17 "Computing with Word Senses"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
-    - 
-      title: Word Sense Clustering and Clusterability
-      authors: Diana McCarthy, Marianna Apidianaki, Katrin Erk
-      url: https://www.mitpressjournals.org/doi/pdfplus/10.1162/COLI_a_00247
-      optional: true
--
   date: 2018-03-26
   type: exam
   title: No quiz today (enjoy the snow)
@@ -388,17 +373,18 @@
       optional: true
 -
   date: 2018-03-28
-  slides: 
-  title: Machine Translation  
+  slides: slides/12-word-senses.pdf
+  title: WordNet and lexical semantics
+  speaker: Marianna Apidianaki
   readings: 
     - 
-      title: Statistical Machine Translation
-      authors: Adam Lopez
-      url: http://alopez.github.io/papers/survey.pdf
+      title: Chapter 17 "Computing with Word Senses"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
     - 
-      title: Neural Machine Translation
-      authors: Philipp Koehn
-      url: http://mt-class.org/jhu/assets/nmt-book.pdf
+      title: Word Sense Clustering and Clusterability
+      authors: Diana McCarthy, Marianna Apidianaki, Katrin Erk
+      url: https://www.mitpressjournals.org/doi/pdfplus/10.1162/COLI_a_00247
       optional: true
 -
   date: 2018-03-30
@@ -406,23 +392,37 @@
   type: no_lecture
 -
   date: 2018-04-02
-  slides: 
-  title:  Hands-on with word alignments
+  slides: slides/13-machine-translation.pdf
+  title: Machine Translation  
   readings: 
+    - 
+      title: Statistical Machine Translation
+      authors: Adam Lopez
+      url: http://alopez.github.io/papers/survey.pdf
+    - 
+      title: A history of machine translation from the Cold War to deep learning
+      authors: Ilya Pestov
+      url: https://medium.freecodecamp.org/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5
+      optional: true
 -
   date: 2018-04-04
-  slides: 
+  slides: slides/14-seq2seq.pdf
   title:  Sequence-to-sequence models  
   speaker: Reno Kriz and John Hewitt 
   readings:
     - 
-      title: Neural Machine Translation (seq2seq) Tutorial
-      authors: Thang Luong, Eugene Brevdo, Rui Zhao 
-      url: https://www.tensorflow.org/tutorials/seq2seq
+      title: Neural Machine Translation and Sequence-to-sequence Models&colon; A Tutorial
+      authors: Graham Neubig 
+      url: https://arxiv.org/abs/1703.01619
+      optional: true
+    - 
+      title: Neural Machine Translation
+      authors: Philipp Koehn
+      url: https://arxiv.org/abs/1709.07809
       optional: true
 -
   date: 2018-04-09
-  slides: 
+  slides: slides/15-dialog-systems.pdf
   title:  Dialogue Systems 
   speaker: Daphne Ippolito
   readings: 
@@ -433,25 +433,26 @@
 -
   date: 2018-04-11
   slides: 
-  title: (tentative) Low resource techniques 
+  title:  Low resource techniques 
+  speaker: Stephen Mayhew
   readings: 
 -
   date: 2018-04-16
-  slides: 
-  title: (tentative) language and vision 
+  slides: slides/17-paraphrasing.pdf
+  title: Data-driven Paraphrasing
   readings: 
 -
   date: 2018-04-18
   slides: 
-  title: final project videos
+  title: final project presentations 
   readings: 
 -
   date: 2018-04-23
   slides: 
-  title: final project videos
+  title: final project presentations 
   readings: 
 -
   date: 2018-04-25
   slides: 
-  title: Course wrapup 
+  title: final project presentations 
   readings: 
