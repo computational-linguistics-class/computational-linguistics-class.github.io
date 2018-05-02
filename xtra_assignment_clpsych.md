@@ -142,9 +142,9 @@ Use this script to create outputs for the dev and test sets for the following ex
 
 Without extensions, the baseline average precision you should be able to achieve with the dev data is: 
 
-* Depression v Control: XXX
-* PTSD v Control: XXX
-* Depression v PTSD: XXX
+* Depression v Control: 0.581
+* PTSD v Control: 0.569
+* Depression v PTSD: 0.767
 
 ## Implement Extensions 
 
