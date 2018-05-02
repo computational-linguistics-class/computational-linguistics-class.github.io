@@ -7,7 +7,7 @@ title: Homework 9 (Optional) - Semantic Textual Similarity
 active_tab: homework
 term_project: true
 release_date: 2018-05-02
-due_date: 2018-05-12T11:00:00EST
+due_date: 2018-05-14T11:00:00EST
 attribution: This assignment was designed by students in Penn's CIS 530 in the Spring of 2018 with help from Nikesh Garera.  It is based on [SemEval-2017 Task 1 "Semantic Textual Similarity Multilingual and Cross-lingual Focused Evaluation"](http://www.aclweb.org/anthology/S17-2001) by Dan Cer, Mona Diab, Eneko Agirre, Iñigo Loez-Gazpio and Lucia Specia.
 ---
 
