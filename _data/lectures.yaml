@@ -436,30 +436,30 @@
   title:  Low resource techniques 
   speaker: Stephen Mayhew
   readings:
-  -
-    title: Improving Vector Space Word Representations Using Multilingual Correlation
-    authors: Manaal Faruqui and Chris Dyer
-    url: http://anthology.aclweb.org/E/E14/E14-1049.pdf
-  -
-    title: Cross-Lingual Named Entity Recognition via Wikification
-    authors: Chen-Tse Tsai, Stephen Mayhew, Dan Roth
-    url: https://pdfs.semanticscholar.org/c8a3/a1391845667702d4d5df10be0c5761202cbe.pdf?_ga=2.237954176.1628615371.1523298388-1583032595.1512487737
-  -
-    title: Multi-Source Transfer of Delexicalized Dependency Parsers
-    authors: Ryan McDonald, Slav Petrov, Keith Hall
-    url: https://pdfs.semanticscholar.org/ad9d/a0213d0bfa1fabb537e333f8c33f0fe21f54.pdf?_ga=2.258778250.1628615371.1523298388-1583032595.1512487737
-  -
-    title: Inducing Multilingual Text Analysis Tools via Robust Projection across Aligned Corpora
-    authors: David Yarowsky, Grace Ngai, Richard Wicentowski
-    url: https://pdfs.semanticscholar.org/9bc2/7b55735d118b8732a6ea89a4b9fd7b87e1e7.pdf?_ga=2.237993984.1628615371.1523298388-1583032595.1512487737
-  -
-   title: Cross-lingual Word Clusters for Direct Transfer of Linguistic Structure
-   authors: Oscar Tackstrom, Ryan McDonald, Jacob Uszkoreit
-   url: https://pdfs.semanticscholar.org/89ec/29aea244e5f81f7316c5f8d565bd61429374.pdf?_ga=2.237273472.1628615371.1523298388-1583032595.1512487737
- -
-   title: Cheap Translation for Cross-lingual Named Entity Recognition
-   authors: Stephen Mayhew, Chen-Tse Tsai, Dan Roth
-   url: https://pdfs.semanticscholar.org/deba/326df75bd6b0d1702e3ca5249d1bec941490.pdf?_ga=2.233735454.1628615371.1523298388-1583032595.1512487737
+    -
+      title: Improving Vector Space Word Representations Using Multilingual Correlation
+      authors: Manaal Faruqui and Chris Dyer
+      url: http://anthology.aclweb.org/E/E14/E14-1049.pdf
+    -
+      title: Cross-Lingual Named Entity Recognition via Wikification
+      authors: Chen-Tse Tsai, Stephen Mayhew, Dan Roth
+      url: https://pdfs.semanticscholar.org/c8a3/a1391845667702d4d5df10be0c5761202cbe.pdf?_ga=2.237954176.1628615371.1523298388-1583032595.1512487737
+    -
+      title: Multi-Source Transfer of Delexicalized Dependency Parsers
+      authors: Ryan McDonald, Slav Petrov, Keith Hall
+      url: https://pdfs.semanticscholar.org/ad9d/a0213d0bfa1fabb537e333f8c33f0fe21f54.pdf?_ga=2.258778250.1628615371.1523298388-1583032595.1512487737
+    -
+      title: Inducing Multilingual Text Analysis Tools via Robust Projection across Aligned Corpora
+      authors: David Yarowsky, Grace Ngai, Richard Wicentowski
+      url: https://pdfs.semanticscholar.org/9bc2/7b55735d118b8732a6ea89a4b9fd7b87e1e7.pdf?_ga=2.237993984.1628615371.1523298388-1583032595.1512487737
+    -
+     title: Cross-lingual Word Clusters for Direct Transfer of Linguistic Structure
+     authors: Oscar Tackstrom, Ryan McDonald, Jacob Uszkoreit
+     url: https://pdfs.semanticscholar.org/89ec/29aea244e5f81f7316c5f8d565bd61429374.pdf?_ga=2.237273472.1628615371.1523298388-1583032595.1512487737
+    -
+     title: Cheap Translation for Cross-lingual Named Entity Recognition
+     authors: Stephen Mayhew, Chen-Tse Tsai, Dan Roth
+     url: https://pdfs.semanticscholar.org/deba/326df75bd6b0d1702e3ca5249d1bec941490.pdf?_ga=2.233735454.1628615371.1523298388-1583032595.1512487737
 -
   date: 2018-04-16
   slides: slides/17-paraphrasing.pdf
