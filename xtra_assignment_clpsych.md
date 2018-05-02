@@ -9,7 +9,7 @@ Language plays an important role in diagnosing many mental and neurological heal
 
 Here are the materials that you should download for this assignment:
 
- - [Skeleton code and directory structure](http://computational-linguistics-class.org/downloads/xtra-mentalhealth/hw.zip)
+ - [Skeleton code and directory structure](http://computational-linguistics-class.org/downloads/clpsych/clpsych.zip)
 
 <span style="color:red">**Important Note about Data**</span> This homework assignment involves sensitive mental health data. Therefore in order to obtain the dataset, you will need to complete CITI Human Subjects Training (~30 mins) and sign a release form. See `data/README.md` for details.
 
