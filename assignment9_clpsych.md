@@ -1,3 +1,56 @@
+---
+layout: default
+img: depression.png
+caption: Positive Attitdue 
+img_link: https://xkcd.com/828/
+title: Homework 9 (Optional) - Classification of Depression
+active_tab: homework
+release_date: 2018-05-02
+due_date: 2018-05-12T11:00:00EST
+attribution: Anne Cocos and Reno Kriz developed this homework assignment for UPenn's CIS 530 class in Spring 2018.  It is based on the [CLPsych shared task from 2015](https://www.cs.jhu.edu/~mdredze/publications/clpsych15_shared_task.pdf), and an excellent student term project.
+readings:
+-
+   title: Proceedings of the Fourth Workshop on Computaitonal Linguistics and Clinical Psychology (CLPsych) -- From Linguistic Signal to Clinical Reality
+   venue: CLPsych
+   type: workshop
+   year: 2015
+   url: http://www.aclweb.org/anthology/W/W17/W17-31.pdf
+   id: clpsych-proceedings
+-
+   title: CLPsych 2015 Shared Task&colon; Depression and PTSD on Twitter
+   authors:  Glen Coppersmith, Mark Dredze, Craig Harman, Kristy Hollingshead, Margaret Mitchell
+   venue: CLPsych
+   type: workshop
+   year: 2015
+   url: http://www.aclweb.org/anthology/W/W15/W15-1204.pdf
+   id: clspych-shared-task
+-
+   title: From ADHD to SAD&colon; Analyzing the Language of Mental Health on Twitter through Self-Reported Diagnoses
+   authors:  Glen Coppersmith, Mark Dredze, Craig Harman, Kristy Hollingshead
+   venue: CLPsych
+   type: workshop
+   year: 2015
+   url: http://www.aclweb.org/anthology/W/W15/W15-1201.pdf
+   id: adhd-to-sad
+-
+   title: Quantifying Mental Health Signals in Twitter
+   authors: Glen Coppersmith, Mark Dredze, Craig Harman
+   venue: CLPsych
+   type: workshop
+   year: 2014
+   url: https://www.cs.jhu.edu/~mdredze/publications/2014_acl_mental_health.pdf
+   id: quantifying-mental-health-on-twitter
+-
+   title: Measuring Post Traumatic Stress Disorder in Twitter
+   authors: Glen Coppersmith, Craig Harman, Mark Dredze
+   venue: ICWSM
+   type: workshop
+   year: 2014
+   url: https://www.cs.jhu.edu/~mdredze/publications/2014_icwsm_ptsd.pdf
+   id: measuring-ptsd-on-twitter
+---
+
+
 # Classification of PTSD and Depression From Tweets
 
 The costs of mental and neurological health problems in the United States are staggering, estimated at over $760 billion per year. One in five people in the U.S. experience a mental health problem in a given year, and mental health and substance abuse disorders are some of the leasing causes of disability worldwide [1]. 
@@ -5,14 +58,16 @@ The costs of mental and neurological health problems in the United States are st
 Language plays an important role in diagnosing many mental and neurological health problems. This is where we come in. Our aim is to find out whether we can reliably identify people with mental health issues (clinical depression and Post-Traumantic Stress Disorder (PTSD)) based on their Twitter activity. If so, this technology could lead to inexpensive screening measures to be employed by healthcare professionals.
 
 
-<div class="alert alert-info">
-
+<div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
 
- - [Skeleton code and directory structure](http://computational-linguistics-class.org/downloads/xtra-mentalhealth/hw.zip)
+ - [Skeleton code and directory structure](http://computational-linguistics-class.org/downloads/clpsych/clpsych.zip)
+</div>
 
-<span style="color:red">**Important Note about Data**</span> This homework assignment involves sensitive mental health data. Therefore in order to obtain the dataset, you will need to complete CITI Human Subjects Training (~30 mins) and sign a release form. See `data/README.md` for details.
+<div class="alert alert-danger" markdown="1">
+**Important Note about Data** 
 
+This homework assignment involves sensitive mental health data. Therefore in order to obtain the dataset, you will need to complete CITI Human Subjects Training (~30 mins) and sign a release form. See `data/README.md` for details.
 </div>
 
 ## The Task
@@ -31,9 +86,9 @@ Each model takes as input a pair of conditions to distinguish between (we'll ref
 
 The evaluation metric we will use is called *average precision*:
 
-$AP = \frac{1}{|R|} \cdot \sum_{i=1}^n \text{prec}(i) \cdot \text{relevance}(i)$
+$$AP = \frac{1}{|R|} \cdot \sum_{i=1}^n prec(i) \cdot relevance(i)$$
 
-where $R$ is the set of relevant people (i.e. people belonging to `conditionPOS`), $n$ is the total number of people being ranked, $\text{prec}(i)$ gives the precision at the $i$-th person, and $\text{relevance}(i)$ is an indicator variable denoting whether the person ranked at position $i$ belongs to `conditionPOS`. For example, imagine there are 5 ranked people with conditions as follows:
+where $$R$$ is the set of relevant people (i.e. people belonging to `conditionPOS`), $$n$$ is the total number of people being ranked, $$prec(i)$$ gives the precision at the $$i$$-th person, and $$relevance(i)$$ is an indicator variable denoting whether the person ranked at position $$i$$ belongs to `conditionPOS`. For example, imagine there are 5 ranked people with conditions as follows:
 
 ```
 conditionPOS
@@ -44,7 +99,7 @@ conditionPOS
 ```
 i.e. the `conditionPOS` people have been ranked at positions 1, 3, and 5. The average precision, then, would be:
 
-$(1/3) \cdot ((1 \cdot 1) + (\frac{1}{2} \cdot 0) + (\frac{2}{3} \cdot 1) + (\frac{2}{4} \cdot 0) + (\frac{3}{5} \cdot 1)) = 0.756$
+$$(1/3) \cdot ((1 \cdot 1) + (\frac{1}{2} \cdot 0) + (\frac{2}{3} \cdot 1) + (\frac{2}{4} \cdot 0) + (\frac{3}{5} \cdot 1)) = 0.756$$
 
 
 ## The Data 
@@ -55,29 +110,29 @@ The tweets themselves are contained in the train and test directories. Each dire
 
 We have provided a simple interface for you to access the data in `util.py`:
 
-```
+{% highlight python %}
 >>> import util
 >>> traindata = util.load_data('train')
 >>> devdata = util.load_data('dev')
 >>> testdata = util.load_data('test')
-```
+{% endhighlight %}
 
 The above function returns a list with a tuple pertaining to each user, consisting of the user's anonymized handle, metadata, and bytestring of tweets in JSON format. Here's an example for a user with just a single tweet:
 
-```
+{% highlight python %}
 >>> print(traindata[26])
 ('b2WSKSO_G', 
  {'age': '23.25827563', 'num_tweets': '1', 'gender': 'F', 'condition': 'depression'}, 
   b'{"truncated": false, "text": "RT @nk3emnE_v: http://t.co/MAPN5ZWNUO #AustinMahoneTour #TheSecret http://t.co/VDOnovhEVw", "in_reply_to_status_id": null, "id": 5274362989788256320, "favorite_count": 0, "retweeted": false, "entities": {"symbols": [], "user_mentions": [{"indices": [3, 13], "screen_name": "nk3emnE_v", "id": 1826430017237194737, "name": "", "id_str": "1826430017237194737"}], "hashtags": [{"indices": [38, 55], "text": "AustinMahoneTour"}, {"indices": [56, 66], "text": "TheSecret"}], "urls": [{"url": "http://t.co/MAPN5ZWNUO", "indices": [15, 37], "expanded_url": "http://austinmahone.com/cUrp4uO6ffZn2X1QcKYoK78W2hl", "display_url": "austinmahone.com/cUrp4uO6ffZn2X1QcKYoK78W2hl"}, {"url": "http://t.co/VDOnovhEVw", "indices": [67, 89], "expanded_url": "http://sot.ag/v:Xal", "display_url": "sot.ag/v:Xal"}]}, "in_reply_to_screen_name": null, "id_str": "5274362989788256320", "retweet_count": 2046, "in_reply_to_user_id": null, "retweeted_status": {"truncated": false, "text": "http://t.co/MAPN5ZWNUO #AustinMahoneTour #TheSecret http://t.co/VDOnovhEVw", "in_reply_to_status_id": null, "id": 7633155867008109733, "favorite_count": 7, "retweeted": false, "entities": {"symbols": [], "user_mentions": [], "hashtags": [{"indices": [23, 40], "text": "AustinMahoneTour"}, {"indices": [41, 51], "text": "TheSecret"}], "urls": [{"url": "http://t.co/MAPN5ZWNUO", "indices": [0, 22], "expanded_url": "http://austinmahone.com/cUrp4uO6ffZn2X1QcKYoK78W2hl", "display_url": "austinmahone.com/cUrp4uO6ffZn2X1QcKYoK78W2hl"}, {"url": "http://t.co/VDOnovhEVw", "indices": [52, 74], "expanded_url": "http://sot.ag/v:Xal", "display_url": "sot.ag/v:Xal"}]}, "in_reply_to_screen_name": null, "id_str": "7633155867008109733", "retweet_count": 2046, "in_reply_to_user_id": null, "user": {"verified": false, "geo_enabled": false, "followers_count": 33417, "lang": "en", "utc_offset": 3600, "statuses_count": 93608, "friends_count": 17658, "screen_name": "nk3emnE_v", "favourites_count": 12840, "url": null, "created_at": "Fri Jul 06 13:04:22 +0000 2012", "time_zone": "Sarajevo", "listed_count": 209}, "geo": null, "in_reply_to_user_id_str": null, "possibly_sensitive": true, "lang": "und", "created_at": "Sun Apr 13 08:54:28 +0000 2014", "in_reply_to_status_id_str": null, "place": null}, "screen_name_statistics": {"has_underscore": false, "contains_swear": false, "has_digits": false, "contains_mental_health_condition": false, "has_chars": true}, "user": {"verified": false, "geo_enabled": false, "followers_count": 0, "lang": "fr", "utc_offset": null, "statuses_count": 1, "friends_count": 19, "screen_name": "b2WSKSO_G", "favourites_count": 0, "url": null, "created_at": "Sun Mar 30 21:53:58 +0000 2014", "time_zone": null, "listed_count": 0}, "geo": null, "in_reply_to_user_id_str": null, "possibly_sensitive": false, "lang": "und", "created_at": "Sun Apr 13 09:20:14 +0000 2014", "in_reply_to_status_id_str": null, "place": null}\n'
 )
-```
+{% endhighlight %}
 You can access a particular element of tweets for a given user using the helper function `util.get_tweets_element`. For example, to extract the text of each tweet from the same user, run:
 
-```
+{% highlight python %}
 >>> tweettext = util.get_tweets_element(train[26][-1], elem='text')
 >>> print(tweettext[0])
 RT @nk3emnE_v: http://t.co/MAPN5ZWNUO #AustinMahoneTour #TheSecret http://t.co/VDOnovhEVw
-```
+{% endhighlight %}
 
 ## Part 0: Evaluation Script
 
@@ -120,9 +175,9 @@ Your task is to use the language model script `train_lm.py` to generate language
 
 Given language models for `conditionPOS` and `conditionNEG`, along with a set of a person's tweets, our goal is now to score that person based on how much more their tweet text aligns with the LM for `conditionPOS` as opposed to the LM for `conditionNEG`. To do this we will use a method proposed from [Coppersmith et al.](http://www.aclweb.org/anthology/W/W15/W15-1204.pdf):
 
-$\frac{\sum_C \text{log}p(c_{POS}) - \text{log}p(c_{NEG})}{|C|}$
+$$\frac{\sum_C \text{log}p(c_{POS}) - \text{log}p(c_{NEG})}{|C|}$$
 
-where $C$ is the list of characters in a tweet, and $\text{log}p(c_{X})$ gives the log probability of the tweet under language model $X$.
+where $$C$$ is the list of characters in a tweet, and $$\text{log}p(c_{X})$$ gives the log probability of the tweet under language model $$X$$.
 
 NOTE: to speed up the runtime, our baseline implementation calculates each user's score based on every 10th tweet and takes the median. 
 
@@ -142,9 +197,9 @@ Use this script to create outputs for the dev and test sets for the following ex
 
 Without extensions, the baseline average precision you should be able to achieve with the dev data is: 
 
-* Depression v Control: XXX
-* PTSD v Control: XXX
-* Depression v PTSD: XXX
+* Depression v Control: 0.581
+* PTSD v Control: 0.569
+* Depression v PTSD: 0.767
 
 ## Implement Extensions 
 
@@ -170,12 +225,61 @@ Here are the deliverables that you will need to submit:
   * Your extended model's scores on the dev and test sets
   * Any other experiments you tried
 
-## Helpful Background Readings
-
-* [1] [Proceedings of the Fourth Workshop on Computaitonal Linguistics and Clinical Psychology (CLPsych) -- From Linguistic Signal to Clinical Reality](http://www.aclweb.org/anthology/W/W17/W17-30.pdf)
-* [2] [CLPsych 2015 Shared Task: Depression and PTSD on Twitter](http://www.aclweb.org/anthology/W/W15/W15-1204.pdf)
-* [3] [From ADHD to SAD: Analyzing the Language of Mental Health on Twitter through Self-Reported Diagnoses](http://www.aclweb.org/anthology/W/W15/W15-1201.pdf)
-* [4] [Quantifying Mental Health Signals in Twitter](https://www.cs.jhu.edu/~mdredze/publications/2014_acl_mental_health.pdf) 
-* [5] [Measuring Post Traumatic Stress Disorder in Twitter](https://www.cs.jhu.edu/~mdredze/publications/2014_icwsm_ptsd.pdf)
 
 
+## Recommended readings
+
+<table>
+   {% for publication in page.readings %}
+    <tr>
+      <td>
+	{% if publication.url %}
+		<a href="{{ publication.url }}">{{ publication.title }}</a>
+        {% else %}
+		{{ publication.title }}
+	{% endif %}
+	{{ publication.authors }}.
+	{{ publication.venue }}  {{ publication.year }}.
+
+	{% if publication.abstract %}
+	<!-- abstract button -->
+	<a data-toggle="modal" href="#{{publication.id}}-abstract" class="label label-success">Abstract</a>
+	<!-- /.abstract button -->
+	<!-- abstract content -->
+	<div id="{{publication.id}}-abstract" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{publication.id}}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="{{publication.id}}">{{publication.title}}</h4>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+        {{publication.abstract}}
+        </div><!-- /.modal-body -->
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.abstract-content -->
+	{% endif %}
+		{% if publication.bibtex %}
+	<!-- bibtex button -->
+	<a data-toggle="modal" href="#{{publication.id}}-bibtex" class="label label-default">BibTex</a>
+	<!-- /.bibtex button -->
+	<!-- bibtex content -->
+	<div id="{{publication.id}}-bibtex" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{publication.id}}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="{{publication.id}}">{{publication.title}}</h4>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+ 	   <pre>{{publication.bibtex}}
+           </pre>
+        </div><!-- /.modal-body -->
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.bibtex-content -->
+	{% endif %}
+</td></tr>
+  {% endfor %}
+</table>
