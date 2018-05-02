@@ -1,18 +1,21 @@
 ---
 layout: default
-img: python.jpg
+img: similarities.png
 img_link: http://xkcd.com/353/
-caption: Hello world!
-title: Semantic Textual Similarity
+caption: Similarities
+title: Homework 9 (Optional) - Semantic Textual Similarity
 active_tab: homework
 term_project: true
+release_date: 2018-05-02
+due_date: 2018-05-12T11:00:00EST
+attribution: This assignment was designed by students in Penn's CIS 530 in the Spring of 2018 with help from Nikesh Garera.  It is based on [SemEval-2017 Task 1 "Semantic Textual Similarity Multilingual and Cross-lingual Focused Evaluation"](http://www.aclweb.org/anthology/S17-2001) by Dan Cer, Mona Diab, Eneko Agirre, Iñigo Loez-Gazpio and Lucia Specia.
 ---
 
 # Semantic Textual Similarity
 
 The ability to automatically infer the semantic similarity between two pieces of text is of utmost importance in natural language processing. While the semantic similarity at a lexical level, i.e. between words has been widely studied (Eg. word-net, word-vectors), inferring semantic similarity for longer pieces of text is still fairly under-researched.  
 
-In this assignment, we will try to learn a machine learning model for measuring semantic similarity between two given sentences in English. Along with understanding lexical level similarity, this would also require modeling how syntactic composition affects the semantics of a sentence, even though at the lexical level the sentences might be very similar. Consider the following examples,
+In this assignment, we will try to design a machine learning model for measuring semantic similarity between two given sentences in English. Along with understanding lexical-level similarity, this also requires modeling how syntactic composition affects the semantics of a sentence, even though at the lexical level the sentences might be very similar. Consider the following examples,
 
 <!-- Semantic Textual Similarity (STS) measures the degree of equivalence in the underlying semantics of paired
 snippets of text. While making such an assessment is trivial for humans, constructing algorithms and
