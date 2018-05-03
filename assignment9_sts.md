@@ -3,7 +3,7 @@ layout: default
 img: similarities.png
 img_link: http://xkcd.com/353/
 caption: Similarities
-title: Homework 9 (Optional) - Semantic Textual Similarity
+title: Homework 10 (Optional) - Semantic Textual Similarity
 active_tab: homework
 term_project: true
 release_date: 2018-05-02
