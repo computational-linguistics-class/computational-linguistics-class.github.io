@@ -59,12 +59,12 @@ In addition to the provided data, you are free to use any supervised or unsuperv
 
 ## A simple unsupervised baseline
 
-Suggested by [models submitted to shared task - STS 2017](http://www.aclweb.org/anthology/S17-2001), a simple unsupervised baseline can be the cosine similarity between the bag-of-words representation  sentence. You need to implement this simple baseline as a sanity check. This should reach a Pearson correlation of about 0.35 on the test set.
+Suggested by [models submitted to shared task - STS 2017](http://www.aclweb.org/anthology/S17-2001), a simple unsupervised baseline can be the cosine similarity between the bag-of-words representation  sentence. You need to implement this simple baseline as a sanity check. This should reach a Pearson correlation of about 0.63 on the test set.
 
 
 ## Improving performance
 
-For the next part of the assignment, you need to develop two models for predicting STS. The team that did this as a course project implemented the [model from DT_Team](http://www.aclweb.org/anthology/S17-2014) and report a Pearson correlation score of ~0.65.
+For the next part of the assignment, you need to develop two models for predicting STS. The team that did this as a course project implemented the [model from DT_Team](http://www.aclweb.org/anthology/S17-2014) and report a Pearson correlation score of ~0.69. Their best model yielded a score of 0.81.
 
 You can implement the same model, or come up with new ideas to improve the performance.
 
