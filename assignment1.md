@@ -7,6 +7,7 @@ title: Homework 1 "Python and Bash Skills"
 active_tab: homework
 release_date: 2018-01-10
 due_date: 2018-01-17 11:00:00EST
+attribution: This assignment was developed by the CIS 521 staff at the University of Pennsylvania 
 ---
 
 <!-- Check whether the assignment is up to date -->
