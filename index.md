@@ -44,11 +44,10 @@ Discussion Forum
 : [Piazza](https://piazza.com/upenn/spring2018/cis530)
 
 Time and place
-: Spring 2018, Mondays and Wednesdays 12-1:30, Towne 217
+: Spring 2019, Mondays and Wednesdays 1:30-3pm (location TBA)
 
 Office hours
-: Mondays 3-5pm (3401 Walnut room 401B)
-: Tuesdays 3-6pm (3401 Walnut room 401B)
+: TBD
 
 Textbook
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
