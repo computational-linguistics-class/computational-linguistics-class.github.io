@@ -10,7 +10,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info">
-CIS 530 will be offered in Spring 2019!  The lecutres will be Mondays and Wednesdays 1:30-3pm.  To request permission to the enroll in the course, please sign up for <a href="https://forms.cis.upenn.edu/waitlist/index.php">the waitlist</a>.
+CIS 530 will be offered in Spring 2019!  The lectures will be Mondays and Wednesdays 1:30-3pm.  To request permission to the enroll in the course, please sign up for <a href="https://forms.cis.upenn.edu/waitlist/index.php">the waitlist</a>.
 </div>
 
 
