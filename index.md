@@ -1,16 +1,16 @@
 ---
 title: CIS 530 - Computational Linguistics - University of Pennsylvania
 layout: default
-img: HAL.png
-img_link: https://en.wikipedia.org/wiki/HAL_9000
-caption: I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do. 
+img: head.png
+img_link: http://emnxw.com/heads/
+caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
 
 
 <div class="alert alert-info">
-CIS 530 will be offered in Spring 2019!  The lectures will be Mondays and Wednesdays 1:30-3pm.  To request permission to the enroll in the course, please sign up for <a href="https://forms.cis.upenn.edu/waitlist/index.php">the waitlist</a>.
+CIS 530 will be offered in Spring 2019!  The lectures will be Mondays and Wednesdays 1:30-3pm.  To request permission to the enroll in the course, please sign up for <a href="https://forms.cis.upenn.edu/waitlist/index.php">the waitlist</a>. The waitlist system will become available once the advance registration period begins (Monday Oct 29).
 </div>
 
 
