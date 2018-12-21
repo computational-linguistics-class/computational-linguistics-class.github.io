@@ -9,11 +9,6 @@ active_tab: main_page
 
 
 
-<div class="alert alert-info">
-CIS 530 will be offered in Spring 2019!  The lectures will be Mondays and Wednesdays 1:30-3pm.  To request permission to the enroll in the course, you can sign up for <a href="https://forms.cis.upenn.edu/waitlist/index.php">the waitlist</a>, starting on Monday Oct 29.
-</div>
-
-
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 {% for page in site.pages %}
@@ -48,10 +43,10 @@ Instructor
 : [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
 
 Discussion Forum
-: [Piazza](https://piazza.com/upenn/spring2018/cis530)
+: [Piazza](https://piazza.com/upenn/spring2019/cis530)
 
 Time and place
-: Spring 2019, Mondays and Wednesdays 1:30-3pm (location TBA)
+: Spring 2019, Mondays and Wednesdays 1:30-3pm (3401 Walnut room 401B)
 
 Office hours
 : TBD
