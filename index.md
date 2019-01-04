@@ -42,6 +42,9 @@ Course number
 Instructor
 : [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
 
+Website 
+: [computational-linguistics-class.org](http://computational-linguistics-class.org/)
+
 Discussion Forum
 : [Piazza](https://piazza.com/upenn/spring2019/cis530)
 
@@ -70,7 +73,4 @@ Collaboration Policy
 : Unless otherwise noted, you are allowed to work in pairs on the homework assignment.  Both partners will receive the same grade.  The final projects will have larger groups. 
 
 Late Day Policy
-: Each student has five free "late days".  Homeworks can be submitted at most two days late.  If you are out of late days, then you will not be able to submit your homework. One "day" is defined as anytime between 1 second and 24 hours after the homework deadline. The intent of the late day policy it to allow you to take extra time due to unforseen circumstances like illnesses or family emergencies, and for forseeable interruptions like on campus interviewing and religious holidays.  You do not need to ask permission to use your late days.  No additional late days are granted. 
-
-Missing classes on quiz days 
-: To allow for absences on the days that we give an in-class quiz, all students may drop their lowest scoring quiz. 
+: Each student has five free "late days". Homeworks can be submitted at most two days late. If you are out of late days, then you will not be able to get credit for subsequent late assignments. One “day” is defined as anytime between 1 second and 24 hours after the homework deadline. The intent of the late day policy it to allow you to take extra time due to unforseen circumstances like illnesses or family emergencies, and for forseeable interruptions like on campus interviewing and religious holidays. You do not need to ask permission to use your late days. No additional late days are granted.
