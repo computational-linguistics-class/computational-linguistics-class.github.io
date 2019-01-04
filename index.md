@@ -56,12 +56,15 @@ Textbook
 : The course will have [weekly required readings](lectures.html).  
 
 Grading
-: The grading for the course will consist of:
+: TBD
+
+<!-- Previous distribution 
+The grading for the course will consist of:
 
     * 60% for weekly homework assignments 
     * 20% for in-class quizzes about the readings
     * 20% for the final project
-
+-->
 
 Collaboration Policy
 : Unless otherwise noted, you are allowed to work in pairs on the homework assignment.  Both partners will receive the same grade.  The final projects will have larger groups. 
