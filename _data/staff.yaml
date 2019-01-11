@@ -6,6 +6,13 @@
   office_hours: TBD
   location: 3401 Walnut room 463C
 
+- name: Deniz Beser
+  pic: deniz_beser.png
+  email: dbeser@seas
+  url: 
+  office_hours: TBD
+  location: TBD
+
 - name: Diana Marsala
   pic: kermit.png
   email: marsalad@sas
@@ -13,7 +20,7 @@
   office_hours: TBD
   location: TBD
 
-- name: Jasmine Sun Jae Lee
+- name: Jasmine Lee
   pic: jasmine_sun_jae_lee.jpg
   email: leesunj@sas
   url: 
@@ -47,3 +54,11 @@
   url: 
   office_hours: TBD
   location: TBD
+ 
+- name: Shashank Garg
+  pic: kermit.png
+  email: sgarg15@seas
+  url: 
+  office_hours: TBD
+  location: TBD
+
