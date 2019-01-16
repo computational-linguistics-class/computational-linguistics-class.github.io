@@ -7,6 +7,11 @@
       title: Chapter 4 "Naive Bayes Classification and Sentiment"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+
+    - 
+      title: Thumbs up? Sentiment Classification using Machine Learning Techniques
+      authors: Bo Pang, Lillian Lee and Shivakumar Vaithyanathan
+      url: http://www.aclweb.org/anthology/W02-1011.pdf
 -
   date: 2019-01-21
   title: Martin Luther King, Jr. Day Observed (no classes)
