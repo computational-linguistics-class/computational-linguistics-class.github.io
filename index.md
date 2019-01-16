@@ -45,6 +45,9 @@ Instructor
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
 
+Homework Submission
+: [Gradescope](https://www.gradescope.com/courses/35473)
+
 Discussion Forum
 : [Piazza](https://piazza.com/upenn/spring2019/cis530)
 
