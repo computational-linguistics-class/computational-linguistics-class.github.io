@@ -9,7 +9,10 @@ active_tab: quizzes
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 <!-- End create a HTML anchor for the most recent lecture -->
 
-Every Wednesday we will have short in-class quiz to test your understanding of the readings.  Below is a schedule of quizzes, and what readings will be covered in them.
+Every week we will have short take-home quizzes to test your understanding of the readings.  
+<!-- 
+Below is a schedule of quizzes, and what readings will be covered in them.
+-->
 
 <table class="table table-striped">
   <thead>
