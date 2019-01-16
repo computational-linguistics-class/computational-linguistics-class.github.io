@@ -12,6 +12,10 @@
       title: Thumbs up? Sentiment Classification using Machine Learning Techniques
       authors: Bo Pang, Lillian Lee and Shivakumar Vaithyanathan
       url: http://www.aclweb.org/anthology/W02-1011.pdf
+    - 
+      title: Movie Review Data
+      authors: Bo Pang and Lillian Lee
+      url: http://www.cs.cornell.edu/people/pabo/movie-review-data/
 -
   date: 2019-01-21
   title: Martin Luther King, Jr. Day Observed (no classes)
