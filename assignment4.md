@@ -110,14 +110,11 @@ Advanced Vector Space Models <span class="text-muted">: Assignment 4</span>
 In this assignment, we will examine some advanced uses of vector representations of words. We are going to look at two different problems: 
 1. Solving word relation problems like analogies using word embeddings. 
 2. Discovering the different senses of a "polysemous" word by clustering together its synonyms. 
-You will use an open source Python package for creating and manipulating word vectors called *gensim.*  Gensim lets you easily train word embedding models like word2vec.
+You will use an open source Python package for creating and manipulating word vectors called Magnitude. Magnitude lets you easily train word embedding models like word2vec.
 
 
 <div class="alert alert-warning" markdown="1">
-In order to use the gensim package, you'll have to be using Python version 3.6 or higher.  On my Mac, I did the following:
-* `brew install python3`
-* `pip3 install gensim`
-* Then when I ran python, I used the command `python3` instead of just `python`
+In order to use the Magnitude package, please follow the [installation guidelines](https://github.com/plasticityai/magnitude#installation) 
 </div>
 
 <div class="alert alert-info" markdown="1">
@@ -136,45 +133,45 @@ Here are the materials that you should download for this assignment:
 
 # Part 1: Exploring Analogies and Other Word Pair Relationships
 
-Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the noteworthy things about the method is that it can be used to solve word analogy problems like
-  man is to king as woman is to [blank]
-The way that it works is to perform vector math.  They take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer. 
-$king−man+woman \approx queen$
-So We can find the nearest a vector in the vocabulary by looking for $argmax \ cos(x, king-man+woman)$.  Omar Levy has a nice explnation of the method in [this Quora post](https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function), and in his paper [Linguistic Regularities in Sparse and Explicit Word Representations](http://www.aclweb.org/anthology/W14-1618).
+Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the noteworthy things about the method is that it can be used to solve word analogy problems like: man is to king as woman is to [blank]. The way that it they take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer: $king−man+woman \approx queen$. 
+We can find the nearest vector in the vocabulary by looking for $argmax \ cos(x, king-man+woman)$.  Omar Levy has a nice explanation of the method in [this Quora post](https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function) and in his paper [Linguistic Regularities in Sparse and Explicit Word Representations](http://www.aclweb.org/anthology/W14-1618).
 
 In addition to solving this sort of analogy problem, the same sort of vector arithmetic was used with word2vec embeddings to find relationships between pairs of words like the following: 
 
+ <p align="center">
 <img src="/assets/img/word2vec_word_pair_relationships.jpg" alt="Examples of five types of semantic and nine types of syntactic questions in the Semantic- Syntactic Word Relationship test set" style="width: 50%;"/>
+</p>
 
+In the first part of this homework, you will play around with the [Magnitude](https://github.com/plasticityai/magnitude)  library.  You will use Magnitude to load a dense vector model trained using word2vec, and use it to manipulate and analyze the vectors.  We recommend reading [Using the Library](https://github.com/plasticityai/magnitude#using-the-library) section to answer the homework questions. The questions below are designed to familiarize you with the Magnitude word2vec package, and get you thinking about what type of semantic information word embeddings can encode.  You'll submit your answers to these questions when you submit your other homework materials. 
 
-In the first part of this homework, you will play around with the [gensim library](https://radimrehurek.com/gensim/index.html)  library.  You will use `gensim`  load a dense vector model trained using `word2vec`, and use it to manipulate and analyze the vectors.  
- You can start by experimenting on your own, or reading through  [this tutorial on using word2vec with gensim](https://rare-technologies.com/word2vec-tutorial/). You should familiarize yourself with the [KeyedVectors documentation](https://radimrehurek.com/gensim/models/keyedvectors.html).
+First, download the Medium Google-word2vec embedding model available using the following [link](http://magnitude.plasticity.ai/word2vec/light/GoogleNews-vectors-negative300.magnitude).  The file to be downloaded is called `GoogleNews-vectors-negative300.magnitude` and is a Medium Pre-converted Magnitude Formats of word2vec. (Note that it can take a while to download) Once the file is downloaded use the following Python commands:
 
-The questions below are designed to familiarize you with the `gensim` Word2Vec package, and get you thinking about what type of semantic information word embeddings can encode.  You'll submit your answers to these questions when you submit your other homework materials. 
+ ```python
+>>> from pymagnitude import *
+>>> file_path = "GoogleNews-vectors-negative300.magnitude"
+>>> vectors = Magnitude(file_path)
+```
 
-Load the word vectors using the following Python commands:
+Now you can use `vectors` to perform queries. For instance, you can query the distance of `cat` and `dog` in the following way: 
+ ```python
+>>> vectors.distance("cat", "dog")
+0.69145405
+```
 
-{% highlight python %}
-from gensim.models import KeyedVectors
-vecfile = 'GoogleNews-vectors-negative300.bin'
-vecs = KeyedVectors.load_word2vec_format(vecfile, binary=True)
-{% endhighlight %}
-
-* What is the dimensionality of these word embeddings? Provide an integer answer.
-* What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `gensim.models.KeyedVectors.wv.most_similar`)
-* According to the word embeddings, which of these words is not like the others?
+1. What is the dimensionality of these word embeddings? Provide an integer answer.
+2. What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `most_similar_to_given`)
+3. According to the word embeddings, which of these words is not like the others?
 `['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
-(Use the function `gensim.models.KeyedVectors.wv.doesnt_match`)
-* Solve the following analogy: "leg" is to "jump" as X is to "throw".
-(Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.)
+(Use the function `doesnt_match`)
+4. Solve the following analogy: `leg` is to `jump` as *X* is to `throw`.
+(Use the function `most_similar` with `positive` and `negative` arguments)
 
 We have provided a file called `question1.txt` for you to submit answers to the questions above.
-
 
 # Part 2: Creating Word Sense Clusters
 
 
-Many natural language processing (NLP) tasks require knowing the sense of polysemous words, which are words with multiple meanings. For example, the word *bug* can mean 
+Many natural language processing (NLP) tasks require knowing the sense of polysemous words, which are words with multiple meanings. For example, the word *bug* can mean:
 1. a creepy crawly thing
 2. an error in your computer code
 3. a virus or bacteria that makes you sick
@@ -182,19 +179,22 @@ Many natural language processing (NLP) tasks require knowing the sense of polyse
 
 In past research my PhD students and I have looked into automatically deriving the different meaning of polysemous words like bug by clustering their paraphrases.  We have developed a resource called [the paraphrase database (PPDB)](http://paraphrase.org/) that contains of paraphrases for  tens of millions words and phrases.  For the target word *bug*, we have an unordered list of paraphrases including: *insect, glitch, beetle, error, microbe, wire, cockroach, malfunction, microphone, mosquito, virus, tracker, pest, informer, snitch, parasite, bacterium, fault, mistake, failure* and many others.  We used automatic clustering group those into sets like:
 
+ <p align="center">
 <img src="/assets/img/bug_clusters.jpg" alt="Bug Clusters" style="width: 50%;"/>
-
+</p>
 
 These clusters approximate the different word senses of *bug*.  You will explore the main idea underlying our word sense clustering method: which measure the similarity between each pair of paraphrases for a target word and then group together the paraphrases that are most similar to each other.   This affinity matrix gives an example of one of the methods for measuring similarity that we tried in [our paper](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf):
 
+ <p align="center">
 <img src="/assets/img/affinity_matrix.jpg" alt="Similarity of paraphrses" style="width: 50%;"/>
+</p>
 
 Here the darkness values give an indication of how similar paraprhases are to each other.  For instance *sim(insect, pest) > sim(insect, error)*.  
 
 In this assignment, we will use vector representations in order to measure their similarities of pairs of paraprhases.  You will play with different vector space representations of words to create clusters of word senses.
 
 
-In this image, we have a target word "bug", and a list of all synonyms (taken from WordNet). The 4 circles are the 4 senses of "bug." The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
+In this image, we have a target word *bug*, and a list of all synonyms (taken from WordNet). The 4 circles are the 4 senses of *bug*. The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
 
 You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf) [papers](https://cs.uwaterloo.ca/~cdimarco/pdf/cs886/Pantel+Lin02.pdf). 
 
@@ -211,7 +211,7 @@ This is how we will use word vectors in this assignment: as points in some high-
 
 With this framework, we can see how to solve our synonym clustering problem. Imagine in the image below that each point is a (2-dimensional) word vector. Using the distance between points, we can separate them into 3 clusters. This is our task. 
 
-
+ 
 ![kmeans](/assets/img/kmeans.svg)
 (Image taken from [Wikipedia](https://en.wikipedia.org/wiki/K-means_clustering))
 

@@ -20,13 +20,11 @@ YOUR ANSWER HERE: <ANSWER>
 
 3. According to the word embeddings, which of these words is not like the others?
 ['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']
-Use the function `gensim.models.KeyedVectors.wv.doesnt_match`
 Provide a single string as the answer.
 
 YOUR ANSWER HERE: <ANSWER>
 
-4. Solve the following analogy: "leg" is to "jump" as X is to "throw".
-Use the function `gensim.models.KeyedVectors.wv.most_similar` with `positive` and `negative` arguments.
+4. Solve the following analogy: `leg` is to `jump` as X is to `throw`.
 Provide a single string as the answer.
 
 YOUR ANSWER HERE: <ANSWER>

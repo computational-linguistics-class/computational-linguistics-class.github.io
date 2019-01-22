@@ -1,31 +1,37 @@
-from gensim.models import KeyedVectors
-import numpy as np
-from sklearn.cluster import KMeans
+from pymagnitude import *
 
-# This maps from word  -> list of candidates
-word2cands = {}
 
-# This maps from word  -> number of clusters
-word2num = {}
+def load_file(file_path):
+    word2cands = {}  # maps from word  -> list of candidates
+    word2num = {}  # maps from word  -> number of clusters
 
-# Read the words file.
-with open("data/dev_input.txt") as f:
-    for line in f:
-        word, numclus, cands = line.split(" :: ")
-        cands = cands.split()
-        word2num[word] = int(numclus)
-        word2cands[word] = cands
+    with open(file_path) as fin:
+        for line in fin:
+            word, num_clusters, candidates = line.split(" :: ")
+            word2num[word] = int(num_clusters)
+            word2cands[word] = candidates.split()
 
-# Load cooccurrence vectors (question 2)
-vec = KeyedVectors.load_word2vec_format("data/coocvec-500mostfreq-window-3.vec.filter")
-# Load dense vectors (uncomment for question 3)
-# vec = KeyedVectors.load_word2vec_format("data/GoogleNews-vectors-negative300.filter")
-        
-for word in word2cands:
-    cands = word2cands[word]
-    numclusters = word2num[word]
+    return word2cands, word2num
 
-    # TODO: get word vectors from vec
-    # Cluster them with k-means
-    # Write the clusters to file.
 
+def main():
+    word2cands, word2num = load_file('data/dev_input.txt')
+
+    # Load cooccurrence vectors (question 2)
+    vectors = Magnitude("data/coocvec-500mostfreq-window-3.filter.magnitude")
+
+    # Load dense vectors (uncomment for question 3)
+    # vectors = Magnitude("data/GoogleNews-vectors-negative300.filter.magnitude")
+
+    for word in word2cands:
+        candidates = word2cands[word]
+        num_clusters = word2num[word]
+
+        # TODO:
+        # 1. Get word vectors from vectors
+        # 2. Cluster them with k-means
+        # 3. Write the clusters to file.
+
+
+if __name__ == '__main__':
+    main()
