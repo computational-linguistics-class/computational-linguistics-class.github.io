@@ -23,9 +23,22 @@
   type: no_lecture
 -
   date: 2019-01-23
-  slides:
-  title: 
+  slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
+  title: Text Classification Wrapup / Text Processing
+  video: 
   readings:   
+    - 
+      title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
+
+    - 
+      title: Depression and Self-Harm Risk Assessment in Online Forums
+      authors: Andrew Yates, Arman Cohan, Nazli Goharian
+      url: https://aclweb.org/anthology/D17-1322.pdf
+    - 
+      title: Publicly available Reddit comments
+      url: https://files.pushshift.io/reddit/comments/
 -
   date: 2019-01-28
   slides:
