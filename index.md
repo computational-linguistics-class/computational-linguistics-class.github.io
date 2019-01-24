@@ -34,6 +34,9 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
+<div class="alert alert-info">
+Are you a student who didn't get a permit, but you're still interested in enrolling the course? If so, <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4QjYYRYhs7O9cpraSvjUCRH7y9bhD05aHvtCruU7ux_zHtw/viewform?usp=sf_link">please fill out this form</a>.
+</div>
 
 
 Course number
