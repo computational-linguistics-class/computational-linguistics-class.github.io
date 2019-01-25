@@ -24,7 +24,7 @@
   type: no_lecture
 -
   date: 2019-01-23
-  slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
+  slides: slides/02-text-processing.pdf
   title: Text Classification Wrapup / Text Processing
   slides_credit: Jurafsky and Martin
   video: 
@@ -33,7 +33,6 @@
       title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/2.pdf
-
     - 
       title: Depression and Self-Harm Risk Assessment in Online Forums
       authors: Andrew Yates, Arman Cohan, Nazli Goharian
