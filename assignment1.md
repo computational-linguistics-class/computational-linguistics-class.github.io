@@ -248,7 +248,7 @@ In the `wine_text_processing` function in `python_questions.py`, write code that
 answer to standard output, followed by a newline. Since this question is meant as a tutorial, there are no secrets: your script should produce
 [this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
 so start early and come ask for help if you get stuck!
-For questions where there are ties, either answer will be accepted as correct.
+For questions where there are ties, please break the tie alphabetically (e.g. apple would come before banana).
 I highly recommend looking into the functions available in the
 [python string module](https://docs.python.org/3/library/string.html).
 
