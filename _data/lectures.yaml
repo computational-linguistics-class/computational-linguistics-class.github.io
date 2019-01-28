@@ -42,15 +42,29 @@
       url: https://files.pushshift.io/reddit/comments/
 -
   date: 2019-01-28
-  slides: slides/03-text-processing-wrapup+n-gram-language-models.pdf
-  title: Text Processing Wrapup / N-gram Language Models
+  slides: slides/03-text-processing-wrapup.pdf
+  title: Text Processing Wrapup 
   slides_credit: Jurafsky and Martin
   readings:   
     - 
-      title: Automatic Acquisition of Hyponymsom Large Text Corpora
+      title: Automatic Acquisition of Hyponyms from Large Text Corpora
       authors: Marti A. Hearst
       url: http://www.aclweb.org/anthology/C92-2082.pdf
+    - 
+      title: Hearst Patterns Revisited&colon; Automatic Hypernym Detection from Large Text Corpora
+      authors: Stephen Roller, Douwe Kiela, and Maximilian Nickel
+      url: http://aclweb.org/anthology/P18-2057.pdf
+-
+  date: 2019-01-30
+  slides: slides/04-n-gram-language-models.pdf
+  title: N-gram Language Models
+  slides_credit: Jurafsky and Martin
+  readings:
     - 
       title: Chapter 3 "N-gram Language Models"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/3.pdf
+    - 
+      title: Large Language Models in Machine Translation
+      authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
+      url: http://www.aclweb.org/anthology/D07-1090.pdf
