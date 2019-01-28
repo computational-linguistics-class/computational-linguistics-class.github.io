@@ -3,7 +3,7 @@
   slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
   slides_credit: Jurafsky and Martin
   title: Course Intro / Text Classification and Sentiment Analysis
-  video: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1077ba40-ce16-4311-b175-a9d6000a48ea
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1077ba40-ce16-4311-b175-a9d6000a48ea
   readings:   
     - 
       title: Chapter 4 "Naive Bayes Classification and Sentiment"
@@ -27,7 +27,7 @@
   slides: slides/02-text-processing.pdf
   title: Text Classification Wrapup / Text Processing
   slides_credit: Jurafsky and Martin
-  video: 
+  recording: 
   readings:   
     - 
       title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
@@ -42,6 +42,15 @@
       url: https://files.pushshift.io/reddit/comments/
 -
   date: 2019-01-28
-  slides:
-  title: 
+  slides: slides/03-text-processing-wrapup+n-gram-language-models.pdf
+  title: Text Processing Wrapup / N-gram Language Models
+  slides_credit: Jurafsky and Martin
   readings:   
+    - 
+      title: Automatic Acquisition of Hyponymsom Large Text Corpora
+      authors: Marti A. Hearst
+      url: http://www.aclweb.org/anthology/C92-2082.pdf
+    - 
+      title: Chapter 3 "N-gram Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/3.pdf
