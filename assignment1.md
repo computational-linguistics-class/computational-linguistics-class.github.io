@@ -186,7 +186,7 @@ Reading an entire file (if a file is too large to fit easily into memory, you sh
 Or alternately:
 {% highlight python %}
 >>> with open('test.txt') as f:
->>>     contents = readlines()
+>>>     contents = f.readlines()
 >>> contents
 ['line1\n', 'line2\n', 'line3\n', 'line4\n']
 {% endhighlight %}
