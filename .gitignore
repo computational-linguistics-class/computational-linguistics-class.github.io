@@ -1,6 +1,4 @@
 _site/*
 .jekyll-metadata
 *~
-slides/~$03-text-processing-wrapup.pptx
-slides/~$02-text-processing.pptx
-slides/~$03-text-processing-wrapup+n-gram-language-models.pptx
+slides/~*
