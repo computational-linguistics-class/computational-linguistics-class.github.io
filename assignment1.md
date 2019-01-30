@@ -246,9 +246,9 @@ decided to go rogue and give 6 stars. Pft.) The text of the review and the star 
 
 In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
 answer to standard output, followed by a newline. Since this question is meant as a tutorial, there are no secrets: your script should produce
-[this output](downloads/hw1/key.txt) when you are done. I will compare the output of your script directly to this answer key,
+[this output](downloads/hw1/key.txt) when you are done. If you get this output it's very likely your code works correctly, but we will ultimately be running your code on a different input file,
 so start early and come ask for help if you get stuck!
-For questions where there are ties, either answer will be accepted as correct.
+For questions where there are ties, please break the tie alphabetically (e.g. apple would come before banana).
 I highly recommend looking into the functions available in the
 [python string module](https://docs.python.org/3/library/string.html).
 
