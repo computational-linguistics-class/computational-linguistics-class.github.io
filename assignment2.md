@@ -6,7 +6,7 @@ caption: Thing Explainer - Complicated Stuff In Simple Words
 title: Homework 2 "Text Classification"
 active_tab: homework
 release_date: 2019-01-29
-due_date: 2019-02-05 11:00:00EST
+due_date: 2019-02-05 23:59:00EST
 attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
 readings:
 
