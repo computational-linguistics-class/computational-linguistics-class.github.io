@@ -6,7 +6,7 @@ caption: Understanding Shakespeare with Math
 title: Homework 3 "Vector Space Models"
 active_tab: homework
 release_date: 2019-02-05
-due_date: 2018-02-12T23:59:00EST
+due_date: 2019-02-12T23:59:00EST
 attribution: Daphne Ippolito, Anne Cocos, Stephen Mayhew, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
