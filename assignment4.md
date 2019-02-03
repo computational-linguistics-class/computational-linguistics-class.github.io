@@ -419,36 +419,3 @@ Here are the deliverables that you will need to submit:
 </td></tr>
   {% endfor %}
 </table>
-
-### HW4 Rubric
-60 points total. Example baseline implementations are available [here](downloads/hw4/hw4_solutions.py).
-
-## Questions (10 pts)
-1. (1 pts)
-2. (3 pts)
-3. (3 pts)
-4. (3 pts)
-
-## Leaderboard entry (30 pts)
-+ 5 top-3
-+ 3 top-10
-- 5 miss lower baseline
-- 10 submitted results for dev set
-
-## Writeup (20 pts)
-1. Sparse vectors (8 pts)
-  - -4 does not describe VSM, or description unclear
-  - -3 does not describe clustering algorithm, or unclear
-  - -4 does not include preliminary experimental results
-
-2. Dense vectors (8 pts)
-  - -4 does not describe VSM, or description unclear
-  - -3 does not describe clustering algorithm, or unclear
-  - -4 does not include preliminary experimental results
-
-3. Error analysis (4 pts)
-  - -2 reports comparison of methods, without analysis
-
-## Extra Credit
-+ 5 Submitted solution to test_nok_input.txt and description in writeup
-+ 3 top-3
