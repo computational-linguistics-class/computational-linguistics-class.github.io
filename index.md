@@ -43,7 +43,7 @@ Course number
 : CIS 530 - Computational Linguistics 
 
 Instructor
-: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
+: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) - [office hours by appointment](ccb-office-hours.youcanbook.me)
 
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
