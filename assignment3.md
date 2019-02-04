@@ -5,8 +5,8 @@ img_link: https://xkcd.com/771/
 caption: Understanding Shakespeare with Math    
 title: Homework 3 "Vector Space Models"
 active_tab: homework
-release_date: 2018-01-24
-due_date: 2018-01-31T11:00:00EST
+release_date: 2019-02-05
+due_date: 2019-02-12T23:59:00EST
 attribution: Daphne Ippolito, Anne Cocos, Stephen Mayhew, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -327,75 +327,4 @@ Here are the deliverables that you will need to submit:
 
 <div class="panel panel-danger">
 <div class="panel-heading" markdown="1">
-## Grading Rubric
-</div>
-<div class="panel-body" markdown="1">
 
-This assignment was worth 60 points total (30 code, 30 writeup).   The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py), and the solution code is [here](downloads/hw3/main_solutions.py). 
-
-#### Code (30 points total)
-
-1.1  (3) Function `create_term_document_matrix` correct
-
-  - -2 incorrect counts in matrix 
-  - -1 dimensions flipped 
-
-1.2  (3) Function `create_term_context_matrix` correct
-
-  - -2 incorrect counts in matrix 
-
-1.3  (3) Function `create_tf_idf_matrix` correct
-
-  - -2 TF-IDF for frequent word 'run', play 'Julius Caesar' is greater than TF-IDF for rare word 'dagger', play 'Julius Caesar'; should be less.
-
-1.4  (3) Function `create_PPMI_matrix` correct
-
-  - -2 PPMI for frequent context 'the', word 'sword' is greater than PPMI for rare context 'bloody', word 'sword'; should be less. 
-
-1.5  (4) Function `compute_cosine_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors 
-
-1.6  (4) Function `compute_jaccard_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors 
-
-1.7  (4) Function `compute_dice_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors
-
-1.8  (3) Function `rank_plays` correct
-
-  - -2 Incorrect ranking returned for standardized matrix and similarity function input 
-  - -1 Function re-reads Shakespeare data from disk 
-
-1.9  (3) Function `rank_words` correct
-
-  - -2 Incorrect ranking returned for standardized matrix and similarity function input
-  - -1 Function re-reads Shakespeare data from disk 
-
-#### Writeup (30 points total)
-
-2.1  (15) Analysis of similarity between play vectors
-
- - -5 does not include comparison of nearest plays in terms of thematic similarity, or other general assessment of vector quality 
- - -5 does not analyze different similarity metrics
- - -5 does not analyze different matrix weighting schemes 
- - -10 No analysis of similarity between play vectors, or results reported without any analysis 
-
-2.2  (15) Analysis of similarity between word vectors
-
-- -5 does not analyze different matrix weighting schemes 
-- -5 does not analyze different similarity metrics 
-- -5 No analysis of similarity between word vectors 
-- -10 No analysis of similarity between word vectors, or results reported without any analysis 
-
-
-#### Extra Credit (10 points max)
-
-- +2 Includes analysis of character similarity based on term-character matrix
-- +5 Includes comparison of vector similarity with human judgements
-- +5 Other additional substantive analysis
-
-</div>
-</div>
