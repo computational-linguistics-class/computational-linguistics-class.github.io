@@ -70,8 +70,8 @@ Textbook
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
 : The course will have [weekly required readings](lectures.html).  
 
-Grading:
-The grading for the course will consist of:
+Grading
+: The grading for the course will consist of:
     * 60% for weekly homework assignments 
     * 15% for quizzes about the readings
     * 25% for the final project
