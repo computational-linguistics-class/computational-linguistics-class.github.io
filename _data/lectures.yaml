@@ -68,7 +68,7 @@
       title: Large Language Models in Machine Translation
       authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
       url: http://www.aclweb.org/anthology/D07-1090.pdf
-  -
+-
   date: 2019-02-04
   slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models Wrapup
