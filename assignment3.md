@@ -112,9 +112,9 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Vector Space Models <span class="text-muted">: Assignment 3</span>
 =============================================================
 
-In this assignment you will implement many of the things you learned in [Chapter 15 of the textbook](https://web.stanford.edu/~jurafsky/slp3/15.pdf). If you haven't read it yet, now would be a good time to do that.  We'll wait.  Done?  Great, let's move on. 
+In this assignment you will implement many of the things you learned in [Chapter 6 of the textbook](https://web.stanford.edu/~jurafsky/slp3/6.pdf). If you haven't read it yet, now would be a good time to do that.  We'll wait.  Done?  Great, let's move on. 
 
-We will provide a corpus of Shakespeare plays, which you will use to create a term-document matrix and a term-context matrix. You'll implement a selection of the weighting methods and similarity metrics defined in the textbook. Ultimately, your goal is to use the resulting vectors to measure how similar Shakespeare plays are to each other, and to find words that are used in a similar fashion. All (or almost all) of the code you write will be direct implementations of concepts and equations described in [Chapter 15](https://web.stanford.edu/~jurafsky/slp3/15.pdf).
+We will provide a corpus of Shakespeare plays, which you will use to create a term-document matrix and a term-context matrix. You'll implement a selection of the weighting methods and similarity metrics defined in the textbook. Ultimately, your goal is to use the resulting vectors to measure how similar Shakespeare plays are to each other, and to find words that are used in a similar fashion. All (or almost all) of the code you write will be direct implementations of concepts and equations described in [Chapter 6](https://web.stanford.edu/~jurafsky/slp3/6.pdf).
 
 *All difficulties are easy when they are known.*
 
@@ -128,7 +128,7 @@ Here are the materials that you should download for this assignment:
 
 # Term-Document Matrix
 
-You will write code to compile a term-document matrix for Shakespeare's plays, following the description in section 15.1.1 in textbook.
+You will write code to compile a term-document matrix for Shakespeare's plays, following the description in the textbook.
 
 > In a *term-document matrix*, each row represents a word in the vocabulary and each column represents a document from some collection. The figure below shows a small selection from a term-document matrix showing the occurrence of four words in four plays by Shakespeare. Each cell in this matrix represents the number of times a particular word (defined by the row) occurs in a particular document (defined by the column). Thus *clown* appeared 117 times in *Twelfth Night
 
