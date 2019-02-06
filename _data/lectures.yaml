@@ -82,3 +82,32 @@
       title: Large Language Models in Machine Translation
       authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
       url: http://www.aclweb.org/anthology/D07-1090.pdf
+-
+  date: 2019-02-04
+  slides: slides/05-vector-semantics.pdf
+  title: Vector Semantics
+  readings: 
+    - 
+      title: Chapter 6 "Vector Semantics"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+    - 
+      title: From Frequency to Meaning&colon; Vector space models of semantics
+      authors: Peter Turney and Patrick Pantel
+      url: http://www.aaai.org/Papers/JAIR/Vol37/JAIR-3705.pdf
+  videos:
+    - 
+      title: Overview of distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=gtuhPq0Xyno&index=1&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Vector comparison for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=LYH93YnhuyQ&t=304s&index=2&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Matrix reweighting for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 16 minutes
