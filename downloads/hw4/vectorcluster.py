@@ -7,8 +7,8 @@ def load_file(file_path):
 
     with open(file_path) as fin:
         for line in fin:
-            word, num_clusters, candidates = line.split(" :: ")
-            word2num[word] = int(num_clusters)
+            word, k, candidates = line.split(" :: ")
+            word2num[word] = int(k)
             word2cands[word] = candidates.split()
 
     return word2cands, word2num
