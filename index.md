@@ -34,13 +34,16 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
+<div class="alert alert-info">
+The class is now at capacity.  No more permits are available.
+</div>
 
 
 Course number
 : CIS 530 - Computational Linguistics 
 
 Instructor
-: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/)
+: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) - [office hours by appointment](ccb-office-hours.youcanbook.me)
 
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
@@ -55,22 +58,23 @@ Time and place
 : Spring 2019, Mondays and Wednesdays 1:30-3pm (3401 Walnut room 401B)
 
 Office hours
-: TBD
+: Mondays 10am-noon in the Levine 5th Floor Bump Space
+: Mondays 4:30pm-6:30pm in the Levine 5th Floor Bump Space
+: Tuesdays 2:30pm-4:30pm in the Levine 5th Floor Bump Space
+: Tuesdays 5:30pm-7:30pm in 3401 Walnut room 401B
+: Thursdays 10am-11am in the GRW 5th Floor Bump Space
+: Fridays 10am-noon in the Harrison Mezz
+
 
 Textbook
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
 : The course will have [weekly required readings](lectures.html).  
 
 Grading
-: TBD
-
-<!-- Previous distribution 
-The grading for the course will consist of:
-
+: The grading for the course will consist of:
     * 60% for weekly homework assignments 
-    * 20% for in-class quizzes about the readings
-    * 20% for the final project
--->
+    * 15% for quizzes about the readings
+    * 25% for the final project
 
 Collaboration Policy
 : Unless otherwise noted, you are allowed to work in pairs on the homework assignment.  Both partners will receive the same grade.  The final projects will have larger groups. 

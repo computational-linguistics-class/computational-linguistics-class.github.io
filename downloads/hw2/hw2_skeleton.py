@@ -1,7 +1,7 @@
 #############################################################
 ## ASSIGNMENT 2 CODE SKELETON
-## RELEASED: 1/17/2018
-## DUE: 1/24/2018
+## RELEASED: 1/29/2019
+## DUE: 2/5/2019
 ## DESCRIPTION: In this assignment, you will explore the
 ## text classification problem of identifying complex words.
 ## We have provided the following skeleton for your code,
@@ -53,6 +53,9 @@ def load_file(data_file):
 
 ### 2.1: A very simple baseline
 
+## Makes feature matrix for all complex
+def all_complex_feature(words):
+
 ## Labels every word complex
 def all_complex(data_file):
     ## YOUR CODE HERE...
@@ -61,6 +64,9 @@ def all_complex(data_file):
 
 
 ### 2.2: Word length thresholding
+
+## Makes feature matrix for word_length_threshold
+def length_threshold_feature(words, threshold):
 
 ## Finds the best length threshold by f-score, and uses this threshold to
 ## classify the training and development set
@@ -84,6 +90,10 @@ def load_ngram_counts(ngram_counts_file):
 
 # Finds the best frequency threshold by f-score, and uses this threshold to
 ## classify the training and development set
+
+## Make feature matrix for word_frequency_threshold
+def frequency_threshold_feature(words, threshold, counts):
+
 def word_frequency_threshold(training_file, development_file, counts):
     ## YOUR CODE HERE
     training_performance = [tprecision, trecall, tfscore]
@@ -95,18 +105,18 @@ def word_frequency_threshold(training_file, development_file, counts):
 ## Trains a Naive Bayes classifier using length and frequency features
 def naive_bayes(training_file, development_file, counts):
     ## YOUR CODE HERE
-    training_performance = [tprecision, trecall, tfscore]
-    development_performance = [dprecision, drecall, dfscore]
-    return training_performance, development_performance
+    training_performance = (tprecision, trecall, tfscore)
+    development_performance = (dprecision, drecall, dfscore)
+    return development_performance
 
 ### 2.5: Logistic Regression
 
 ## Trains a Naive Bayes classifier using length and frequency features
 def logistic_regression(training_file, development_file, counts):
     ## YOUR CODE HERE    
-    training_performance = [tprecision, trecall, tfscore]
-    development_performance = [dprecision, drecall, dfscore]
-    return training_performance, development_performance
+    training_performance = (tprecision, trecall, tfscore)
+    development_performance = (dprecision, drecall, dfscore)
+    return development_performance
 
 ### 2.7: Build your own classifier
 

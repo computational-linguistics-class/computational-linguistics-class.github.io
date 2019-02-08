@@ -55,6 +55,10 @@ The lecture schedule will be updated as the term progresses.
         {% endif %}
 
 
+        {% if lecture.lecture_notes %}
+          <a href="{{ lecture.lecture_notes }}">[lecture notes]</a>
+        {% endif %}
+
 
 	    {% if lecture.speaker %}
           {% if lecture.speaker_url %}
