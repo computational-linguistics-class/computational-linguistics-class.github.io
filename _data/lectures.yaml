@@ -114,3 +114,21 @@
       authors: Chris Potts
       url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 16 minutes
+-
+  date: 2019-02-11
+  slides: slides/06-vector-semantics-part-2.pdf
+  title: Vector Semantics - part 2
+  slides_credit: Dan Jurafsky 
+  readings: 
+    - 
+      title: Distributed Representations of Words and Phrases and their Compositionality
+      authors: Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado and Jeffrey Dean 
+      url: https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
+    - 
+      title: Linguistic Regularities in Continuous Space Word Representations
+      authors: Tomas Mikolov, Scott Wen-tau Yih, and Geoffrey Zweig
+      url: https://www.aclweb.org/anthology/N13-1090.pdf
+    - 
+      title: word2vec Explained&colon; Deriving Mikolov et al.’s Negative-Sampling Word-Embedding Method
+      authors: Yoav Goldberg and Omer Levy
+      url: https://arxiv.org/pdf/1402.3722.pdf
