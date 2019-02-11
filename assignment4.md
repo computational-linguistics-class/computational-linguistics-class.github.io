@@ -5,8 +5,8 @@ caption: Did you know that matplotlib has an xkcd() function?
 img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
 title: Homework 4 - Advanced Vector Space Models
 active_tab: homework
-release_date: 2018-01-31
-due_date: 2018-02-07T11:00:00EST
+release_date: 2019-02-12
+due_date: 2019-02-19T23:59:00EST
 attribution: Stephen Mayhew, Anne Cocos and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -14,13 +14,7 @@ readings:
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
--
-   title: Semantics with Dense Vectors
-   authors: Dan Jurafsky and James H. Martin
-   venue: Speech and Language Processing (3rd edition draft)
-   type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
 -
    title: Efficient Estimation of Word Representations in Vector Space
    authors:  Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean
@@ -68,6 +62,15 @@ readings:
         year={2002}
       }
 -
+   title: Linguistic Regularities in Sparse and Explicit Word Representations
+   authors: Patrick Pangel and Dekang Ling
+   venue: CoNLL
+   type: conference
+   year: 2014
+   url: http://aclweb.org/anthology/W14-1618
+   id: linguistic_regularities
+   abstract: Recent work has shown that neural- embedded word representations capture many relational similarities, which can be recovered by means of vector arithmetic in the embedded space. We show that Mikolov et al.’s method of first adding and subtracting word vectors, and then searching for a word similar to the result, is equivalent to searching for a word that maximizes a linear combination of three pairwise word similarities. Based on this observation, we suggest an improved method of recovering relational similarities, improving the state-of-the-art results on two recent word-analogy datasets. Moreover, we demonstrate that analogy recovery is not restricted to neural word embeddings, and that a similar amount of relational similarities can be recovered from traditional distributional word representations.
+-
    title: Clustering Paraphrases by Word Sense
    authors: Anne Cocos and Chris Callison-Burch
    venue: NAACL
@@ -90,15 +93,10 @@ readings:
 ---
 
 
-<!-- Check whether the assignment is up to date -->
-{% capture this_year %}{{'now' | date: '%Y'}}{% endcapture %}
-{% capture due_year %}{{page.due_date | date: '%Y'}}{% endcapture %}
-{% if this_year != due_year %} 
 <div class="alert alert-danger">
-Warning: this assignment is out of date.  It may still need to be updated for this year's class.  Check with your instructor before you start working on this assignment.
+Warning: This assignment is getting updated. Check with your instructor before you start working on this assignment.
 </div>
-{% endif %}
-<!-- End of check whether the assignment is up to date -->
+
 
 <div class="alert alert-info">
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
@@ -109,42 +107,50 @@ Advanced Vector Space Models <span class="text-muted">: Assignment 4</span>
 
 In this assignment, we will examine some advanced uses of vector representations of words. We are going to look at two different problems: 
 1. Solving word relation problems like analogies using word embeddings. 
-2. Discovering the different senses of a "polysemous" word by clustering together its synonyms. 
-You will use an open source Python package for creating and manipulating word vectors called Magnitude. Magnitude lets you easily train word embedding models like word2vec.
+2. Discovering the different senses of a 'polysemous' word by clustering together its paraphrases. 
 
-
-<div class="alert alert-warning" markdown="1">
-In order to use the Magnitude package, please follow the [installation guidelines](https://github.com/plasticityai/magnitude#installation) 
-</div>
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [`question1.txt`](downloads/hw4/question1.txt) A template for answering question 1.
-* [`data.zip`](downloads/hw4/data.zip) Contains all the data
+* [`data.zip`](downloads/hw4/data.zip) Contains data data required to complete this assignment
+* [`part1.txt`](downloads/hw4/part1.txt) A template for answering Part 1.
 * [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
 * [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
 * [`writeup.tex`](downloads/hw4/writeup.tex) Report template.
 * [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
 * [Tokenized Reuters RCV1 Corpus](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz)
 * [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
+* [Medium Pre-converted Magnitude Format of Google word2vec](http://magnitude.plasticity.ai/word2vec/medium/GoogleNews-vectors-negative300.magnitude)
 </div>
 
 
 
-# Part 1: Exploring Analogies and Other Word Pair Relationships
+## Part 1: Exploring Analogies and Other Word Pair Relationships (10 points)
 
-Word2vec is a very cool word embedding method that was developed by Thomas Mikolov and his collaborators.  One of the noteworthy things about the method is that it can be used to solve word analogy problems like: man is to king as woman is to [blank]. The way that it they take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer: $king−man+woman \approx queen$. 
-We can find the nearest vector in the vocabulary by looking for $argmax \ cos(x, king-man+woman)$.  Omar Levy has a nice explanation of the method in [this Quora post](https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function) and in his paper [Linguistic Regularities in Sparse and Explicit Word Representations](http://www.aclweb.org/anthology/W14-1618).
+#### Background 
+
+
+Word2vec is a very cool word embedding method that was developed by [Thomas Mikolov et al](https://www.aclweb.org/anthology/N13-1090).  One of the noteworthy things about the method is that it can be used to solve word analogy problems like: 
+
+ <p align="center">
+man is to king as woman is to [blank]
+ </p>
+ The way that it they take the vectors representing *king*, *man* and *woman* and perform some vector arithmetic to produce a vector that is close to the expected answer:
+  <p align="center">
+ $king−man+woman \approx queen$. 
+ </p>
+We can find the nearest vector in the vocabulary by looking for $argmax \ cos(x, king-man+woman)$.  Omar Levy has an explanation of the method in [this Quora post](https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function) and in the [paper](http://www.aclweb.org/anthology/W14-1618).
 
 In addition to solving this sort of analogy problem, the same sort of vector arithmetic was used with word2vec embeddings to find relationships between pairs of words like the following: 
 
- <p align="center">
+<p align="center">
 <img src="/assets/img/word2vec_word_pair_relationships.jpg" alt="Examples of five types of semantic and nine types of syntactic questions in the Semantic- Syntactic Word Relationship test set" style="width: 50%;"/>
 </p>
 
-In the first part of this homework, you will play around with the [Magnitude](https://github.com/plasticityai/magnitude)  library.  You will use Magnitude to load a dense vector model trained using word2vec, and use it to manipulate and analyze the vectors.  We recommend reading [Using the Library](https://github.com/plasticityai/magnitude#using-the-library) section to answer the homework questions. The questions below are designed to familiarize you with the Magnitude word2vec package, and get you thinking about what type of semantic information word embeddings can encode.  You'll submit your answers to these questions when you submit your other homework materials. 
+#### Getting Started with Magnitude and Downloading data
 
-First, download the Medium Google-word2vec embedding model available using the following [link](http://magnitude.plasticity.ai/word2vec/light/GoogleNews-vectors-negative300.magnitude).  The file to be downloaded is called `GoogleNews-vectors-negative300.magnitude` and is a Medium Pre-converted Magnitude Formats of word2vec. (Note that it can take a while to download) Once the file is downloaded use the following Python commands:
+In the first part of the assigment, you will play around with the [Magnitude](https://github.com/plasticityai/magnitude)  library.  You will use Magnitude to load a vector model trained using word2vec, and use it to manipulate and analyze the vectors. Please refer [here](https://github.com/plasticityai/magnitude#installation) for the installation guidelines. 
+In order to proceed further, you need to download the Medium Google-word2vec embedding model trained on Google News using the following [link](http://magnitude.plasticity.ai/word2vec/medium/GoogleNews-vectors-negative300.magnitude). The same link is provided at the top of the assignment under the name of 'Medium Pre-converted Magnitude Format of Google word2vec'. Note that it can take a while to download due to the size (5.3 GB). The downloaded file is called `GoogleNews-vectors-negative300.magnitude`. Once the file is downloaded use the following Python commands:
 
  ```python
 >>> from pymagnitude import *
@@ -158,67 +164,54 @@ Now you can use `vectors` to perform queries. For instance, you can query the di
 0.69145405
 ```
 
-1. What is the dimensionality of these word embeddings? Provide an integer answer.
-2. What are the top-5 most similar words to `picnic` (not including `picnic` itself)? (Use the function `most_similar_to_given`)
-3. According to the word embeddings, which of these words is not like the others?
+
+#### Assignment Questions
+
+The questions below are designed to familiarize you with the Magnitude word2vec package and get you thinking about what type of semantic information word embeddings can encode. We recommend reading [using the library section](https://github.com/plasticityai/magnitude#using-the-library) to reply to the following set of questions:  
+
+1. (1 point) What is the dimensionality of these word embeddings? Provide an integer answer.
+2. (3 points) What are the top-5 most similar words to `picnic` (not including `picnic` itself)? 
+3. (3 points) According to the word embeddings, which of these words is not like the others?
 `['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
-(Use the function `doesnt_match`)
-4. Solve the following analogy: `leg` is to `jump` as *X* is to `throw`.
-(Use the function `most_similar` with `positive` and `negative` arguments)
+4. (3 points) Solve the following analogy: `leg` is to `jump` as *X* is to `throw`.
 
-We have provided a file called `question1.txt` for you to submit answers to the questions above.
+We have provided a file called `part1.txt` for you to submit answers to the questions above.
 
-# Part 2: Creating Word Sense Clusters
+##  Part 2: Creating Word Sense Clusters (50 points)
 
-
-Many natural language processing (NLP) tasks require knowing the sense of polysemous words, which are words with multiple meanings. For example, the word *bug* can mean:
-1. a creepy crawly thing
-2. an error in your computer code
-3. a virus or bacteria that makes you sick
-4. a listening device planted by the FBI
+#### Background 
+Many Natural Language Processing (NLP) tasks require knowing the sense of polysemous words, which are words with multiple meanings. For example, the word *bug* can mean:
+1. A creepy crawly thing
+2. An error in your computer code
+3. A virus or bacteria that makes you sick
+4. A listening device planted by the FBI
 
 In past research my PhD students and I have looked into automatically deriving the different meaning of polysemous words like bug by clustering their paraphrases.  We have developed a resource called [the paraphrase database (PPDB)](http://paraphrase.org/) that contains of paraphrases for  tens of millions words and phrases.  For the target word *bug*, we have an unordered list of paraphrases including: *insect, glitch, beetle, error, microbe, wire, cockroach, malfunction, microphone, mosquito, virus, tracker, pest, informer, snitch, parasite, bacterium, fault, mistake, failure* and many others.  We used automatic clustering group those into sets like:
 
- <p align="center">
+<p align="center">
 <img src="/assets/img/bug_clusters.jpg" alt="Bug Clusters" style="width: 50%;"/>
 </p>
 
-These clusters approximate the different word senses of *bug*.  You will explore the main idea underlying our word sense clustering method: which measure the similarity between each pair of paraphrases for a target word and then group together the paraphrases that are most similar to each other.   This affinity matrix gives an example of one of the methods for measuring similarity that we tried in [our paper](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf):
+The clusters in the image above approximate the different word senses of *bug*, where the 4 circles are the 4 senses of *bug*.  The input to this problem is all the paraphrases in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers are not that smart. You will explore the main idea underlying our word sense clustering method: which measure the similarity between each pair of paraphrases for a target word and then group together the paraphrases that are most similar to each other.   This affinity matrix gives an example of one of the methods for measuring similarity that we tried in [our paper](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf):
 
  <p align="center">
 <img src="/assets/img/affinity_matrix.jpg" alt="Similarity of paraphrses" style="width: 50%;"/>
 </p>
 
-Here the darkness values give an indication of how similar paraprhases are to each other.  For instance *sim(insect, pest) > sim(insect, error)*.  
-
-In this assignment, we will use vector representations in order to measure their similarities of pairs of paraprhases.  You will play with different vector space representations of words to create clusters of word senses.
+Here the darkness values give an indication of how similar paraphrases are to each other. For instance in this example similarity between *insect* and *pest* is greater than the similarity between *insect* and *error*.  You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf) [papers](https://cs.uwaterloo.ca/~cdimarco/pdf/cs886/Pantel+Lin02.pdf). 
 
 
-In this image, we have a target word *bug*, and a list of all synonyms (taken from WordNet). The 4 circles are the 4 senses of *bug*. The input to the problem is all the synonyms in a single list, and the task is to separate them correctly. As humans, this is pretty intuitive, but computers aren't that smart. We will use this task to explore different types of word representations.
+In this assignment, we will use vector representations in order to measure their similarities of pairs of paraphrases.  You will play with different vector space representations of words to create clusters of word senses. We expect that you have read Jurafsky and Martin Chapter [6](https://web.stanford.edu/~jurafsky/slp3/6.pdf). Word vectors, also known as word embeddings, can be thought of simply as points in some high-dimensional space. Remember in geometry class when you learned about the Euclidean plane, and 2-dimensional points in that plane? It's not hard to understand distance between those points -- you can even measure it with a ruler. Then you learned about 3-dimensional points, and how to calculate the distance between these. These 3-dimensional points can be thought of as positions in physical space. 
 
-You can read more about this task in [these](https://www.cis.upenn.edu/~ccb/publications/clustering-paraphrases-by-word-sense.pdf) [papers](https://cs.uwaterloo.ca/~cdimarco/pdf/cs886/Pantel+Lin02.pdf). 
-
-
-
-Clustering with Word Vectors
-=================================
-
-We expect that you have read Jurafsky and Martin, chapters [15](https://web.stanford.edu/~jurafsky/slp3/15.pdf) and [16](https://web.stanford.edu/~jurafsky/slp3/16.pdf). Word vectors, also known as word embeddings, can be thought of simply as points in some high-dimensional space. Remember in geometry class when you learned about the Euclidean plane, and 2-dimensional points in that plane? It's not hard to understand distance between those points -- you can even measure it with a ruler. Then you learned about 3-dimensional points, and how to calculate the distance between these. These 3-dimensional points can be thought of as positions in physical space. 
-
-Now, do your best to stop thinking about physical space, and generalize this idea in your mind: you can calculate a distance between 2-dimensional and 3-dimensional points, now imagine a point with 300 dimensions. The dimensions don't necessarily have meaning in the same way as the X,Y, and Z dimensions in physical space, but we can calculate distances all the same. 
+Now, do your best to stop thinking about physical space, and generalize this idea in your mind: you can calculate a distance between 2-dimensional and 3-dimensional points, now imagine a point with `N` dimensions. The dimensions don't necessarily have meaning in the same way as the X,Y, and Z dimensions in physical space, but we can calculate distances all the same. 
 
 This is how we will use word vectors in this assignment: as points in some high-dimensional space, where distances between points are meaningful. The interpretation of distance between word vectors depends entirely on how they were made, but for our purposes, we will consider distance to measure semantic similarity. Word vectors that are close together should have meanings that are similar. 
 
-With this framework, we can see how to solve our synonym clustering problem. Imagine in the image below that each point is a (2-dimensional) word vector. Using the distance between points, we can separate them into 3 clusters. This is our task. 
+With this framework, we can see how to solve our paraphrase clustering problem. 
 
- 
-![kmeans](/assets/img/kmeans.svg)
-(Image taken from [Wikipedia](https://en.wikipedia.org/wiki/K-means_clustering))
+#### The Data
 
-
-## The Data
-
-The data to be used for this assignment consists of sets of paraphrases corresponding to one of 56 polysemous target words, e.g.
+The input data to be used for this assignment consists of sets of paraphrases corresponding to one of 56 polysemous target words, e.g.
 
 <table class="table">
   <thead>
@@ -239,22 +232,24 @@ The data to be used for this assignment consists of sets of paraphrases correspo
   </tbody>
 </table>
 
-
-(Here the `.v` following the target `note` indicates the part of speech.)
+(Here the `.v` following the target `note` indicates the part of speech)
 
 Your objective is to automatically cluster each paraphrase set such that each cluster contains words pertaining to a single *sense*, or meaning, of the target word. Note that a single word from the paraphrase set might belong to one or more clusters.
 
-For evaluation, we take the set of ground truth senses from [WordNet](http://wordnet.princeton.edu).
 
-### Development data
+#### Development Data
 
-The development data consists of two files -- a words file (the input), and a clusters file (to evaluate your output). The words file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters *k*, separated by a `::` symbol:
+The development data consists of two files:
+1. words file (the input)
+2. clusters file (to evaluate your output). 
+
+The words file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters `k`, separated by a `::` symbol. You can use `k` as input to your clustering algorithm.
 
 ```
 target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
 ```
 
-You can use *k* as input to your clustering algorithm.
+
 
 The clusters file `dev_output.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
 
@@ -265,11 +260,12 @@ target.pos :: 2 :: paraphrase3 paraphrase4 paraphrase5
 target.pos :: k :: paraphrase1 paraphrase9
 ```
 
-### Test data
+#### Test data
 
-For testing, you will receive only words file `test_input.txt` containing the test target words and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system. Neither order of senses, nor order of words in a cluster matter.
+For testing, you will receive only words file `test_input.txt` containing the test target words, number of ground truth clusters and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system. Neither order of senses, nor order of words in a cluster matter. 
 
-## Evaluation
+
+#### Evaluation
 
 There are many possible ways to evaluate clustering solutions. For this homework we will rely on the paired F-score, which you can read more about in [this paper](https://www.cs.york.ac.uk/semeval2010_WSI/paper/semevaltask14.pdf).
 
@@ -277,90 +273,12 @@ The general idea behind paired F-score is to treat clustering prediction like a 
 
 We have provided an evaluation script that you can use when developing your own system. You can run it as follows:
 
+ ```
+$ python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
 ```
-python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
-```
-
-## Baselines
-
-On the dev data, a random baseline gets about 20%, the word cooccurrence matrix gets about 36%, and the word2vec vectors get about 30%.  
 
 
 
-### 1. Sparse Representations 
-
-Your next task is to generate clusters for the target words in `test_input.txt` based on a feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 15.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/15.pdf)). 
-
-You will calculate cooccurrence vectors on the Reuters RCV1 corpus. Download a [tokenized and cleaned version here](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz). The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). Use the provided script, `makecooccurrences.py`, to build these vectors. Be sure to set D and W to what you want. 
-
-It can take a long time to build cooccurrence vectors, so we have pre-built a set, included in the data.zip, called `coocvec-500mostfreq-window-3.vec.filter`. To save on space, these include only the words used in the given files.
-
-You will add K-means clustering to `vectorcluster.py`. Here is an example of the K-means code:
-
-{% highlight python %}
-from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=k).fit(X)
-print(kmeans.labels_)
-{% endhighlight %}
-
-<!--- Baseline description is a placeholder --->
-The baseline system for this section represents words using a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. Using this representation, the baseline system clusters each paraphrase set using K-means.  
-
-While experimenting, write out clusters for the dev input to `dev_output_features.txt` and use the `evaluate.py` script to compare against the provided `dev_output.txt`.
-
-Implementing the baseline will score you a B, but why not try and see if you can do better? You might try experimenting with different features, for example:
-
-* What if you reduce or increase `D` in the baseline implementation?
-* Does it help to change the window `W` used to extract contexts?
-* Play around with the feature weighting -- instead of raw counts, would it help to use PPMI?
-* Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
-* What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
-
-The only feature types that are off-limits are WordNet features.
-
-Turn in the predicted clusters that your VSM generates in the file `test_output_features.txt`. Also provide a brief description of your method in `writeup.pdf`, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the dev set. We have provided a LaTeX file shell, `writeup.tex`, which you can use to guide your writeup.
-
-### 2. Dense Representations
-Finally, we'd like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
-
-For this task, use files:
-
-* [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
-* The Google file is very large (~3.4GB), so we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter`, which is filtered to contain only the words in the dev/test splits.
-* Modify `vectorcluster.py` to load dense vectors.
-
-The baseline system for this section uses the provided word vectors to represent words, and K-means for clustering. 
-
-As before, achieving the baseline score will get you a B, but you might try to see if you can do better. Here are some ideas:
-
-* Try downloading a different dense vector space model from the web, like [Paragram](http://www.cs.cmu.edu/~jwieting/) or [fastText](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md).
-* Train your own word vectors, either on the provided corpus or something you find online. You can use the `gensim.models.Word2Vec` package for the skip-gram or CBOW models, or [GLOVE](https://nlp.stanford.edu/projects/glove/). Try experimenting with the dimensionality.
-* [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
-
-As in question 2, turn in the predicted clusters that your dense vector representation generates in the file `test_output_dense.txt`. Also provide a brief description of your method in `writeup.pdf` that includes the vectors you used, and any experimental results you have from running your model on the dev set. 
-
-In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
-
-### 3. The Leaderboard
-In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_output_leaderboard.txt`, and include it with your submission.
-
-### Extra Credit
-We made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` isn't obvious.
-To take this assignment one step further, see if you can come up with a way to automatically choose `k`. We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. (Don't look at the number of WordNet synsets for this, as that would ruin all the fun.) The baseline system for this portion always chooses `k=5`.
-You can submit your output to this part in a file called `test_nok_output_leaderboard.txt`. Be sure to describe your method in `writeup.pdf`.
-
-
-## Deliverables 
-<div class="alert alert-warning" markdown="1">
-Here are the deliverables that you will need to submit:
-* `question1.txt` file with answers to questions from Exploration
-* simple VSM clustering output `test_output_features.txt`
-* dense model clustering output `test_output_dense.txt`
-* your favorite clustering output for the leaderboard, `test_output_leaderboard.txt` (this will probably be a copy of either `test_output_features.txt` or `test_output_dense.txt`)
-* `writeup.pdf` (compiled from `writeup.tex`)
-* your code (.zip). It should be written in Python 3.
-* (optional) the output of your model that automatically chooses the number of clusters, `test_nok_output_leaderboard.txt` (submit this to the Gradescope assignment 'Homework 4 EXTRA CREDIT')
-</div>
 
 
 ## Recommended readings
@@ -419,3 +337,5 @@ Here are the deliverables that you will need to submit:
 </td></tr>
   {% endfor %}
 </table>
+
+

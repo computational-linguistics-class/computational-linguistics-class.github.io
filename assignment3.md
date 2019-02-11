@@ -14,7 +14,7 @@ readings:
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
 -
    title: From Frequency to Meaning&colon; Vector Space Models of Semantics
    authors: Peter D. Turney and Patrick Pantel
@@ -147,7 +147,7 @@ In your code you will write a function to `create_term_document_matrix`.  This w
 
 The term-document matrix will also let us do cool things like figure out which plays are most similar to each other, by comparing the column vectors.  We could even look for outliers to see if some plays are so dissimilar from the rest of the canon that [maybe they weren't authored by Shakespeare after all](https://en.wikipedia.org/wiki/Shakespeare_authorship_question).  
 
-Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 15.3 of the textbook.
+Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 6.3 of the textbook.
 
 > The cosine, like most measures for vector similarity used in NLP, is based on the dot product operator from linear algebra, also called the inner product:
 
@@ -200,14 +200,14 @@ Your term-context matrix contains the raw frequency of the co-occurrence of two 
 * Positive pointwise mutual information (PPMI)
 * Term frequency inverse document frequency (tf-idf)
 
-These are defined in Section 15.2 of the textbook.
+These are defined in Section 6.2 of the textbook.
 
 *Warning, calculating PPMI for your whole $\|V\|$-by-$\|V\|$ matrix might be slow. Our intrepid TA's implementation for PPMI takes about 10 minutes to compute all values. She always writes perfectly optimized code on her first try. You may improve performance by using matrix operations a la MATLAB.*
 
 
 # Weighting terms  
 
-There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 15.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
+There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 6.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
 
 
  
@@ -238,6 +238,10 @@ Some patterns you could touch upon:
 * The fourth column of `will_play_text.csv` contains the name of the character who spoke each line. Using the methods described above, which characters are most similar? Least similar? 
 * Shakespeare's plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
 * Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
+
+
+Here is [one of the sample reports](downloads/hw3/writeup_2.pdf) that illustrates what we are looking for. Here is [another one](downloads/hw3/writeup_1.pdf).
+
 
 # Extra credit
 
@@ -325,6 +329,5 @@ Here are the deliverables that you will need to submit:
 </table>
 
 
-<div class="panel panel-danger">
-<div class="panel-heading" markdown="1">
+
 

@@ -1,5 +1,5 @@
 '''
-question1.txt
+part1.txt
 '''
 
 This file provides space to answer the questions for part 1 of Homework 4.
