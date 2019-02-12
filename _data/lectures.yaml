@@ -123,12 +123,18 @@
     - 
       title: Distributed Representations of Words and Phrases and their Compositionality
       authors: Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado and Jeffrey Dean 
-      url: https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
-    - 
-      title: Linguistic Regularities in Continuous Space Word Representations
-      authors: Tomas Mikolov, Scott Wen-tau Yih, and Geoffrey Zweig
-      url: https://www.aclweb.org/anthology/N13-1090.pdf
+      url: https://papers.nips.cc/paper/5021-distributed-representations-of-words-and
     - 
       title: word2vec Explained&colon; Deriving Mikolov et al.’s Negative-Sampling Word-Embedding Method
       authors: Yoav Goldberg and Omer Levy
       url: https://arxiv.org/pdf/1402.3722.pdf
+-
+  date: 2019-02-13
+  slides: 
+  title: What can we do with word vectors?
+  slides_credit: Dan Jurafsky -phrases-and-their-compositionality.pdf
+  readings: 
+    - 
+      title: Linguistic Regularities in Continuous Space Word Representations
+      authors: Tomas Mikolov, Scott Wen-tau Yih, and Geoffrey Zweig
+      url: https://www.aclweb.org/anthology/N13-1090.pdf
