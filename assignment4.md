@@ -93,11 +93,6 @@ readings:
 ---
 
 
-<div class="alert alert-danger">
-Warning: This assignment is getting updated. Check with your instructor before you start working on this assignment.
-</div>
-
-
 <div class="alert alert-info">
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
@@ -113,14 +108,11 @@ In this assignment, we will examine some advanced uses of vector representations
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
 * [`data.zip`](downloads/hw4/data.zip) Contains data data required to complete this assignment
-* [`part1.txt`](downloads/hw4/part1.txt) A template for answering Part 1.
-* [`vectorcluster.py`](downloads/hw4/vectorcluster.py) Main code stub
-* [`evaluate.py`](downloads/hw4/evaluate.py) Evaluation script
-* [`writeup.tex`](downloads/hw4/writeup.tex) Report template.
-* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use) 
-* [Tokenized Reuters RCV1 Corpus](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz)
-* [Google's pretrained word2vec vectors](https://code.google.com/archive/p/word2vec/), under the heading "Pretrained word and phrase vectors"
+* [`part1.txt`](downloads/hw4/part1.txt) A template for answering Part 1. 
 * [Medium Pre-converted Magnitude Format of Google word2vec](http://magnitude.plasticity.ai/word2vec/medium/GoogleNews-vectors-negative300.magnitude)
+* [`part2.py`](downloads/hw4/part2.py) Main code stub for part 2
+* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) Script to make cooccurrences (optional use)
+* [Tokenized Reuters RCV1 Corpus](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz) (optional use)
 </div>
 
 
@@ -169,15 +161,15 @@ Now you can use `vectors` to perform queries. For instance, you can query the di
 
 The questions below are designed to familiarize you with the Magnitude word2vec package and get you thinking about what type of semantic information word embeddings can encode. We recommend reading [using the library section](https://github.com/plasticityai/magnitude#using-the-library) to reply to the following set of questions:  
 
-1. (1 point) What is the dimensionality of these word embeddings? Provide an integer answer.
-2. (3 points) What are the top-5 most similar words to `picnic` (not including `picnic` itself)? 
-3. (3 points) According to the word embeddings, which of these words is not like the others?
+1. What is the dimensionality of these word embeddings? Provide an integer answer.
+2. What are the top-5 most similar words to `picnic` (not including `picnic` itself)? 
+3. According to the word embeddings, which of these words is not like the others?
 `['tissue', 'papyrus', 'manila', 'newsprint', 'parchment', 'gazette']`
-4. (3 points) Solve the following analogy: `leg` is to `jump` as *X* is to `throw`.
+4. Solve the following analogy: `leg` is to `jump` as *X* is to `throw`.
 
 We have provided a file called `part1.txt` for you to submit answers to the questions above.
 
-##  Part 2: Creating Word Sense Clusters (50 points)
+##  Part 2: Creating Word Sense Clusters (70 points)
 
 #### Background 
 Many Natural Language Processing (NLP) tasks require knowing the sense of polysemous words, which are words with multiple meanings. For example, the word *bug* can mean:
@@ -262,7 +254,7 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 #### Test data
 
-For testing, you will receive only words file `test_input.txt` containing the test target words, number of ground truth clusters and their paraphrase sets. Your job is to create an output file, formatted in the same way as `dev_output.txt`, containing the clusters produced by your system. Neither order of senses, nor order of words in a cluster matter. 
+For testing, you will receive only words file `test_input.txt` containing the test target words, number of ground truth clusters and their paraphrase sets. Neither order of senses, nor order of words in a cluster matter. 
 
 
 #### Evaluation
@@ -271,14 +263,208 @@ There are many possible ways to evaluate clustering solutions. For this homework
 
 The general idea behind paired F-score is to treat clustering prediction like a classification problem; given a target word and its paraphrase set, we call a *positive instance* any pair of paraphrases that appear together in a ground-truth cluster. Once we predict a clustering solution for the paraphrase set, we similarly generate the set of word pairs such that both words in the pair appear in the same predicted cluster. We can then evaluate our set of predicted pairs against the ground truth pairs using precision, recall, and F-score.
 
-We have provided an evaluation script that you can use when developing your own system. You can run it as follows:
 
- ```
-$ python evaluate.py <GROUND-TRUTH-FILE> <PREDICTED-CLUSTERS-FILE>
+
+## Tasks
+
+Your task is to fill in 4 functions in `part2.py`: `cluster_random`, `cluster_with_sparse_representation`, `cluster_with_dense_representation`, `cluster_with_no_k`.  
+
+We provided 5 utility functions:
+1. `load_input_file(file_path)` that converts the input data (the words file) into 2 dictionaries. The first dictionary is a mapping between a target word and a list of paraphrases. The second dictionary is a mapping between a target word and a number of clusters for a given target word.
+2. `load_output_file(file_path)` that converts the output data (the clusters file) into a dictionary, where a key is a target word and a value is it's list of list of paraphrases. Each list of paraphrases is a cluster. Remember that Neither order of senses, nor order of words in a cluster matter. 
+3. `get_paired_f_score(gold_clustering, predicted_clustering)` that calculates paired F-score given a gold and predicted clustering for a target word. 
+4. `evaluate_clusterings(gold_clusterings, predicted_clusterings)` that calculates paired F-score for all target words present in the data and prints the final F-Score weighted by the number of senses that a target word has. 
+
+These utility functions are for you to use during the development process. 
+
+In order to get full points for the tasks in Part 2 you need to achieve paired F-score threshold on development and test datasets on the Gradescope. 
+Note that `part2.py` Task 2 onwards relies on particular vector representations, so be sure to include those as well in the same directory as `part2.py` when submitting to GradeScope. The autograder will load the vector representations you used.
+
+### Task 1. Cluster Randomly
+
+Write a function `cluster_random(word_to_paraphrases_dict, word_to_k_dict)` that accepts 2 dictionaries:
+1. word_to_paraphrases_dict = a mapping between a target word and a list of paraphrases
+2. word_to_k_dict = a mapping between a target word and a number of clusters for a given target
+The function  outputs a dictionary, where the key is a target word and a value is a list of list of paraphrases, where a list of paraphrases represents a distinct sense of a target word. 
+
+For this task put paraphrases into distinct senses at random. We recommend using `random` packages. Please use `123` as a random seed. Your output should look similar to this: 
+
+```python
+word_to_paraphrases_dict, word_to_k_dict = load_input_file('data/dev_input.txt')
+gold_clusterings = load_output_file('data/dev_output.txt')
+predicted_clusterings = cluster_random(word_to_paraphrases_dict, word_to_k_dict)
+evaluate_clusterings(gold_clusterings, predicted_clusterings)
++--------------+---+----------------+
+|    Target    | k | Paired F-Score |
++--------------+---+----------------+
+|    sort.n    | 4 |     0.3178     |
+|  audience.n  | 4 |     0.3721     |
+|    disc.n    | 4 |     0.3563     |
+|  argument.n  | 7 |     0.1994     |
+|   remain.v   | 4 |     0.2857     |
+|  activate.v  | 5 |     0.2778     |
+| encounter.v  | 5 |     0.2308     |
+|    lose.v    | 8 |     0.2000     |
+|    add.v     | 6 |     0.2946     |
+|    ask.v     | 7 |     0.2222     |
+|    arm.n     | 6 |     0.4135     |
+|   solid.a    | 6 |     0.1333     |
+|   appear.v   | 6 |     0.2390     |
+|    hot.a     | 5 |     1.0000     |
+|   decide.v   | 4 |     0.3826     |
+| difficulty.n | 4 |     0.3845     |
+| important.a  | 3 |     1.0000     |
++--------------+---+----------------+
+=> Average Paired F-Score:  0.3406
 ```
 
 
+### Task 2. Cluster with Sparse Representations
 
+Write a function `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`. The input and output remains the same as in Task 1, however the clustering of paraphrases will no longer be random and is based on sparse vector representation.
+
+We will feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 6.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/6.pdf)). 
+You will calculate cooccurrence vectors on the Reuters RCV1 corpus. It can take a long time to build cooccurrence vectors, so we have pre-built a set, included in the `data.zip`, called `coocvec-500mostfreq-window-3.vec.filter.magnitude`. To save on space, these include only the words used in the given files.
+This representation of words uses a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. 
+
+If you are interested in building your own cooccurrence vectors, you can download [tokenized and cleaned version here](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz). The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). We used the provided script, `makecooccurrences.py`, to build these vectors. If you want to used it, be sure to set D and W to what you want. Don't forget to convert your new version to Magnitude. 
+
+Use one of the clustering algorithms, for instance K-means clustering in `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`.  Here is an example of the K-means clustering code:
+
+{% highlight python %}
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=k).fit(X)
+print(kmeans.labels_)
+{% endhighlight %}
+
+
+
+Why not try and see if your performance can be improved? You might try experimenting with different features, for example:
+
+* What if you reduce or increase `D` in the baseline implementation?
+* Does it help to change the window `W` used to extract contexts?
+* Play around with the feature weighting -- instead of raw counts, would it help to use PPMI?
+* Try a different clustering algorithm that's included with the [scikit-learn clustering package](http://scikit-learn.org/stable/modules/clustering.html), or implement your own.
+* What if you include additional types of features, like paraphrases in the [Paraphrase Database](http://www.paraphrase.org) or the part-of-speech of context words?
+
+The only feature types that are off-limits are WordNet features.
+
+Provide a brief description of your method in the Report, making sure to describe the vector space model you chose, the clustering algorithm you used, and the results of any preliminary experiments you might have run on the dev set. 
+
+### Task 3. Cluster with Dense Representations
+
+Write a function `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`. The input and output remains the same as in Task 1 and 2, however the clustering of paraphrases is based on dense vector representation.
+
+We would like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
+
+For this task, we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter.magnitude`, which is filtered to contain only the words in the dev/test splits.
+
+As before, use the provided word vectors to represent words and perform one of the clusterings. Here are some ideas to improve the performance of your model:
+
+* Try downloading a different dense vector space model from the web, like [Paragram](http://www.cs.cmu.edu/~jwieting/) or [fastText](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md).
+* Train your own word vectors, either on the provided corpus or something you find online. You can try the skip-gram, CBOW models, or [GLOVE](https://nlp.stanford.edu/projects/glove/). Try experimenting with the dimensionality.
+* [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
+
+Provide a brief description of your method in the Report that includes the vectors you used, and any experimental results you have from running your model on the dev set. 
+
+In addition, do an analysis of different errors made by each system -- i.e. look at instances that the word-context matrix representation gets wrong and dense gets right, and vice versa, and see if there are any interesting patterns. There is no right answer for this.
+
+
+### Task 4. Cluster without K
+
+So far wee made the clustering problem deliberately easier by providing you with `k`, the number of clusters, as an input. But in most clustering situations the best `k` is not given.
+To take this assignment one step further, see if you can come up with a way to automatically choose `k`.
+ 
+Write a function `cluster_with_no_k(word_to_paraphrases_dict)` that accepts only the first dictionary as an input and produces clusterings for given target words. 
+
+We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. 
+Be sure to describe your method in the Report.
+
+
+#### The Leaderboard 
+In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_nok_output_leaderboard.txt` and include it with your submission following the format of the clusters file. 
+The first 3 places in a leaderboard gets 5 extra points. 
+
+
+
+
+##  Part 3: SimLex-999 Dataset Revisited (20 points)
+
+
+Let us revisit [SimLex-999](https://fh295.github.io/simlex.html) dataset from Extra Credit in Assignment 3. We included in `data.zip` the dataset labelled as `SimLex-999.txt`. 
+ 
+Below is a snippet of code that takes `word1`, `word2`, and `SimLex` columns from the dataset, computes the cosine similarity between word1 and word2 using `GoogleNews-vectors-negative300.magnitude` from Part 1 and
+displays correlation for human judgments of similarity to the cosine similarities using [Kendall's Tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient).
+
+
+```python
+>>> import pandas as pd
+>>> import scipy.stats as stats
+>>> from pymagnitude import *
+>>> from scipy import spatial
+>>> vectors = Magnitude('data/GoogleNews-vectors-negative300.magnitude')
+>>> df = pd.read_csv('data/SimLex-999.txt', sep='\t')[['word1', 'word2', 'SimLex999']]
+>>> human_scores = []
+>>> vector_scores = []
+>>> for word1, word2, score in df.values.tolist():
+        human_scores.append(score)
+        similarity_score = 1 - spatial.distance.cosine(vectors.query(word1), vectors.query(word2))
+        vector_scores.append(similarity_score)
+        print(f'{word1},{word2},{score},{similarity_score:.4f}')
+old,new,1.58,0.2228
+smart,intelligent,9.2,0.6495
+hard,difficult,8.77,0.6026
+happy,cheerful,9.55,0.3838
+hard,easy,0.95,0.4710
+fast,rapid,8.75,0.4767
+happy,glad,9.17,0.7409
+short,long,1.23,0.5768
+stupid,dumb,9.58,0.8173
+weird,strange,8.93,0.8165
+wide,narrow,1.03,0.4576
+bad,awful,8.42,0.5527
+easy,difficult,0.58,0.5891
+bad,terrible,7.78,0.6829
+hard,simple,1.38,0.2591
+smart,dumb,0.55,0.5793
+insane,crazy,9.57,0.7339
+happy,mad,0.95,0.3920
+    .
+    .
+    .
+enter,owe,0.68,0.0004
+portray,notify,0.78,0.1455
+remind,sell,0.4,0.1480
+absorb,possess,5.0,0.2386
+join,acquire,2.85,0.2623
+send,attend,1.67,0.3135
+gather,attend,4.8,0.3329
+absorb,withdraw,2.97,0.2169
+attend,arrive,6.08,0.3654
+>>> correlation, p_value = stats.kendalltau(human_scores, vector_scores)
+>>> print(f'Correlation = {correlation}, P Value = {p_value}')
+Correlation = 0.30913428432001067, P Value = 2.6592796177777357e-48
+```
+
+In this part of the assignment we would like for you to explore how the Kendall's Tau correlation changes based on the similarity. 
+Does that number change for word2vec versus [GloVe](https://nlp.stanford.edu/projects/glove/)?  For 50 dimensions vs 300 dimensions? (Magnitude has
+a pre-converted Magnitude format for GloVe). Add a section to your writeup explaining what experiments you ran, include your code as `part3.py`. Points will be awarded for creativity! 
+
+
+## Deliverables 
+<div class="alert alert-warning" markdown="1">
+Here are the deliverables that you will need to submit:
+* `part1.txt` file with answers to questions from Part 1 (in HW4: Code)
+* `part2.py` Main code stub for Part 2 (in HW4: Code)
+* `makecooccurrences.py` (in HW4: Code)
+* `part3.py` code used for Part 3 (in HW4: Code)
+* `test_nok_output_leaderboard.txt` in (HW4: Leaderboard)
+* `Report.pdf` in (HW4: Write Up)
+
+
+Note: `part2.py` relies on particular vector representations, for instance, `coocvec-500mostfreq-window-3.filter.magnitudez` or `GoogleNews-vectors-negative300.filter.magnitude`. 
+so be sure to include those as well in the same directory as `part2.py`. 
+</div>
 
 
 ## Recommended readings

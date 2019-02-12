@@ -2,7 +2,7 @@
 part1.txt
 '''
 
-This file provides space to answer the questions for part 1 of Homework 4.
+This file provides space to answer the questions for Part 1 of Assignment 4.
 
 Answer each question following `YOUR ANSWER HERE`, by replacing the <ANSWER>
 tag with your own answer. Make sure your answer goes **on the same line**
