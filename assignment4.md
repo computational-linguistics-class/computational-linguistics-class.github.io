@@ -5,7 +5,7 @@ caption: Did you know that matplotlib has an xkcd() function?
 img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
 title: Homework 4 - Advanced Vector Space Models
 active_tab: homework
-release_date: 2019-02-12
+release_date: 2019-02-12T23:59:00EST
 due_date: 2019-02-19T23:59:00EST
 attribution: Stephen Mayhew, Anne Cocos and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
