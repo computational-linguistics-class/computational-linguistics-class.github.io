@@ -92,33 +92,46 @@ readings:
        } 
 ---
 
-
 <div class="alert alert-info">
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-
-<div class="alert alert-warning">
-We are in the process of moving pre-converted magnitude files of word2vec and GloVe Models for some parts of this assignment onto eniac or biglab. 
-In the meantime please download directly from the links we provide. 
-We should have it before Wednesday, February 13, 2019. 
-</div>
 
 Advanced Vector Space Models <span class="text-muted">: Assignment 4</span>
 =============================================================
 
 In this assignment, we will examine some advanced uses of vector representations of words. We are going to look at two different problems: 
 1. Solving word relation problems like analogies using word embeddings. 
-2. Discovering the different senses of a 'polysemous' word by clustering together its paraphrases. 
+2. Comparing correlation for human judgments of similarity to the vector similarities
+3. Discovering the different senses of a 'polysemous' word by clustering together its paraphrases. 
 
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [`data.zip`](downloads/hw4/data.zip) = most data required to complete this assignment 
 * [`part1.txt`](downloads/hw4/part1.txt) = a template for answering Part 1
 * [`part2.py`](downloads/hw4/part2.py) = main code stub for Part 2
-* [`part3.py`](downloads/hw4/part3.py) = main code stub for Part 3
-* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) = script to make cooccurrences (optional use)
+* [`part3.py`](downloads/hw4/part3.py) = main code stub for Part 3 All Tasks
+* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) = script to make cooccurrences (optional use in Part 3 Task 3.2)
+* [`report.tex`](downloads/hw4/report.tex) = template for the Report (optional use)
+
+<br>
+Go to the `/home1/c/cis530/hw4_2019` on `biglab` or `eniac` to download:
+* data/
+    * SimLex-999.txt  = Part 2
+    * dev_input.txt  = Part 3 All Tasks
+    * dev_output.txt  = Part 3 All Tasks
+    * test_input.txt = Part 3 All Tasks
+    * test_nok_input.txt Part 3 Task 3.4
+* vectors/
+    * GoogleNews-vectors-negative300.magnitude = Part 1 and 2
+    * glove.6B.100d.magnitude = Part 2
+    * glove.6B.200d.magnitude = Part 2
+    * glove.6B.300d.magnitude = Part 2
+    * glove.6B.50d.magnitude = Part 2
+    * love.840B.300d.magnitude = Part 2 (not yet uploaded but you can dowload using the following [link](http://magnitude.plasticity.ai/glove/medium/glove.840B.300d.magnitude))
+    * coocvec-500mostfreq-window-3.filter.magnitude = Part 3 Task 3.2
+    * reuters.rcv1.tokenized = Part 3 Task 3.2 (optional use)
+    * GoogleNews-vectors-negative300.filter.magnitude = Part 3 Task 3.3
 </div>
 
 
@@ -147,7 +160,7 @@ In addition to solving this sort of analogy problem, the same sort of vector ari
 #### Getting Started with Magnitude and Downloading data
 
 In the first part of the assigment, you will play around with the [Magnitude](https://github.com/plasticityai/magnitude)  library.  You will use Magnitude to load a vector model trained using word2vec, and use it to manipulate and analyze the vectors. Please refer [here](https://github.com/plasticityai/magnitude#installation) for the installation guidelines. 
-In order to proceed further, you need to download the Medium Google-word2vec embedding model trained on Google News either by using the following [link](http://magnitude.plasticity.ai/word2vec/medium/GoogleNews-vectors-negative300.magnitude) (or on eniac). Note that it can take a while to download due to the size (5.3 GB). The downloaded file is called `GoogleNews-vectors-negative300.magnitude`. Once the file is downloaded use the following Python commands:
+In order to proceed further, you need to use the Medium Google-word2vec embedding model trained on Google News by using file `GoogleNews-vectors-negative300.magnitude` on eniac in `/home1/c/cis530/hw4_2019/vectors/`. Once the file is downloaded use the following Python commands:
 
  ```python
 >>> from pymagnitude import *
@@ -180,7 +193,7 @@ We have provided a file called `part1.txt` for you to submit answers to the ques
 ##  Part 2: SimLex-999 Dataset Revisited (15 points)
 
 
-Let us revisit [SimLex-999](https://fh295.github.io/simlex.html) dataset from Extra Credit in Assignment 3. We included in `data.zip` the dataset labelled as `SimLex-999.txt`. 
+Let us revisit [SimLex-999](https://fh295.github.io/simlex.html) dataset from Extra Credit in Assignment 3. We will use `SimLex-999.txt` located on eniac in `/home1/c/cis530/hw4_2019/data/`.
  
 We provided you a script called `part2.py` that:
  
@@ -233,15 +246,18 @@ Please respond to the following questions in the `Report.pdf` and include your `
 
 1. What is the least similar 2 pairs of words based on human judgement scores and vector similarity? Do the pairs match? 
 2. What is the most similar 2 pairs of words based on human judgement scores and vector similarity? Do the pairs match? 
-3. Provide correlation scores and p values for:
-    * [Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 50D](http://magnitude.plasticity.ai/glove/medium/glove.6B.50d.magnitude)
-    * [Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 100D](http://magnitude.plasticity.ai/glove/medium/glove.6B.100d.magnitude)
-    * [Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 200D](http://magnitude.plasticity.ai/glove/medium/glove.6B.200d.magnitude)
-    * [Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 300D](http://magnitude.plasticity.ai/glove/medium/glove.6B.300d.magnitude)
-    * [Stanford - GloVe Common Crawl Medium 300D](http://magnitude.plasticity.ai/glove/medium/glove.840B.300d.magnitude)
-   How do those value compare to each other? 
+3. Provide correlation scores and p values for the following models on eniac in `/home1/c/cis530/hw4_2019/vectors/`:
+    * (Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 50D) `glove.6B.50d.magnitude`
+    * (Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 100D)`glove.6B.100d.magnitude`
+    * (Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 200D) `glove.6B.200d.magnitude`
+    * (Stanford - GloVe Wikipedia 2014 + Gigaword 5 6B Medium 300D) `glove.6B.300d.magnitude`
+    * (Stanford - GloVe Common Crawl Medium 300D) `love.840B.300d.magnitude` 
 
-Extra points will be awarded for creativity and more thorough qualitative analysis. 
+    How do those value compare to each other? 
+   
+   
+
+Extra points will be awarded for creativity and a more thorough qualitative analysis. 
 
 ##  Part 3: Creating Word Sense Clusters (75 points)
 
@@ -309,7 +325,7 @@ The development data consists of two files:
 1. words file (input)
 2. clusters file (output). 
 
-The words file `dev_input.txt` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters `k`, separated by a `::` symbol. You can use `k` as input to your clustering algorithm.
+The words file `dev_input.txt` located on eniac in `/home1/c/cis530/hw4_2019/data/` is formatted such that each line contains one target, its paraphrase set, and the number of ground truth clusters `k`, separated by a `::` symbol. You can use `k` as input to your clustering algorithm.
 
 ```
 target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
@@ -317,7 +333,7 @@ target.pos :: k :: paraphrase1 paraphrase2 paraphrase3 ...
 
 
 
-The clusters file `dev_output.txt` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
+The clusters file `dev_output.txt` located on eniac in `/home1/c/cis530/hw4_2019/data/` contains the ground truth clusters for each target word's paraphrase set, split over *k* lines:
 
 ```
 target.pos :: 1 :: paraphrase2 paraphrase6
@@ -330,8 +346,8 @@ target.pos :: k :: paraphrase1 paraphrase9
 
 #### Test data
 
-For testing Tasks 1 -- 3, you will receive only words file `test_input.txt` containing the test target words, number of ground truth clusters and their paraphrase sets. 
-For testing Task 4, you will receive only words file `test_nok_input.txt` containing the test target words and their paraphrases sets. Neither order of senses, nor order of words in a cluster matter. 
+For testing Tasks 3.1 -- 3.3, you will receive only words file `test_input.txt`   located on eniac in `/home1/c/cis530/hw4_2019/data/`  containing the test target words, number of ground truth clusters and their paraphrase sets. 
+For testing Task 3.4, you will receive only words file `test_nok_input.txt`  located on eniac in `/home1/c/cis530/hw4_2019/data/`  containing the test target words and their paraphrases sets. Neither order of senses, nor order of words in a cluster matter. 
 
 
 #### Evaluation
@@ -340,7 +356,7 @@ There are many possible ways to evaluate clustering solutions. For this homework
 
 The general idea behind paired F-score is to treat clustering prediction like a classification problem; given a target word and its paraphrase set, we call a *positive instance* any pair of paraphrases that appear together in a ground-truth cluster. Once we predict a clustering solution for the paraphrase set, we similarly generate the set of word pairs such that both words in the pair appear in the same predicted cluster. We can then evaluate our set of predicted pairs against the ground truth pairs using precision, recall, and F-score.
 
-
+V-Measure is another metric that is used to evaluate clustering solutions, however we will not be using it in this Assignment. 
 
 ## Tasks
 
@@ -407,10 +423,10 @@ write_to_output_file('test_output_random.txt', predicted_clusterings)
 Write a function `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`. The input and output remains the same as in Task 1, however the clustering of paraphrases will no longer be random and is based on sparse vector representation.
 
 We will feature-based (not dense) vector space representation. In this type of VSM, each dimension of the vector space corresponds to a specific feature, such as a context word (see, for example, the term-context matrix described in [Chapter 6.1.2 of Jurafsky & Martin](https://web.stanford.edu/~jurafsky/slp3/6.pdf)). 
-You will calculate cooccurrence vectors on the Reuters RCV1 corpus. It can take a long time to build cooccurrence vectors, so we have pre-built a set, included in the `data.zip`, called `coocvec-500mostfreq-window-3.vec.filter.magnitude`. To save on space, these include only the words used in the given files.
+You will calculate cooccurrence vectors on the Reuters RCV1 corpus. It can take a long time to build cooccurrence vectors, so we have pre-built set called  `coocvec-500mostfreq-window-3.vec.filter.magnitude` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`. To save on space, these include only the words used in the given files.
 This representation of words uses a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. 
 
-If you are interested in building your own cooccurrence vectors, you can download [tokenized and cleaned version here](http://www.cis.upenn.edu/~cis530/18sp/data/reuters.rcv1.tokenized.gz). The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). We used the provided script, `makecooccurrences.py`, to build these vectors. If you want to used it, be sure to set D and W to what you want. Don't forget to convert your new vector representation to Magnitude by constructing a [Magnitude object](https://github.com/plasticityai/magnitude#constructing-a-magnitude-object).
+If you are interested in building your own cooccurrence vectors, you can use tokenized and cleaned version here called `reuters.rcv1.tokenized.gz` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`. The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). We used the provided script, `makecooccurrences.py`, to build these vectors. If you want to use it, be sure to set D and W to what you want. Don't forget to convert your new vector representation to Magnitude by constructing a [Magnitude object](https://github.com/plasticityai/magnitude#constructing-a-magnitude-object).
 
 Use one of the clustering algorithms, for instance K-means clustering in `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`.  Here is an example of the K-means clustering code:
 
@@ -447,7 +463,7 @@ Write a function `cluster_with_dense_representation(word_to_paraphrases_dict, wo
 
 We would like to see if dense word embeddings are better for clustering the words in our test set. Run the word clustering task again, but this time use a dense word representation. 
 
-For this task, we have also included in the data.zip a file called `GoogleNews-vectors-negative300.filter.magnitude`, which is filtered to contain only the words in the dev/test splits.
+For this task, we have also included a file called `GoogleNews-vectors-negative300.filter.magnitude` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`, which is filtered to contain only the words in the dev/test splits.
 
 As before, use the provided word vectors to represent words and perform one of the clusterings. Here are some suggestions to improve the performance of your model:
 
@@ -477,7 +493,7 @@ To take this assignment one step further, see if you can come up with a way to a
  
 Write a function `cluster_with_no_k(word_to_paraphrases_dict)` that accepts only the first dictionary as an input and produces clusterings for given target words. 
 
-We have provided an additional test set, `test_nok_input.txt`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. 
+We have provided an additional test set `test_nok_input.txt` located on eniac in `/home1/c/cis530/hw4_2019/data/`, where the `k` field has been zeroed out. See if you can come up with a method that clusters words by sense, and chooses the best `k` on its own. 
 You can start by assigning `k=5` for all target words as a baseline model. 
 
 You might want to try and use the development data to analyze how got is your model in determining `k`. 
@@ -495,14 +511,19 @@ write_to_output_file('test_output_nok.txt', predicted_clusterings)
 ```
 
 
-#### The Leaderboard
-In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. Copy the output file from your best model to a file called `test_nok_output_leaderboard.txt` and include it with your submission following the format of the clusters file. 
-The first 10 places in a leaderboard get extra points (to be determined).
+## Leaderboards
+In order to stir up some friendly competition, we would also like you to submit the clustering from your best model to a leaderboard. 
 
+From Task 3.4, copy the output file from your best model to a file called `test_nok_output_leaderboard.txt` and include it with your submission in 'HW4: Leaderboard Without K' following the format of the clusters file. 
+
+From Task 3.2 or 3.3, copy the output file from your best model to a file called `test_output_leaderboard.txt` and include it with your submission in 'HW4: Leaderboard With K' following the format of the clusters file. 
+
+The first 10 places in either of the two leaderboards get extra points (The exact number of points will be determined).
 
 ## Report
 
 We are looking for the following sections in your report:
+
 * Part 2 question responses and analysis of correlations
 * Task 3.2 description of your model:
     * Description of the model 
@@ -518,6 +539,8 @@ We are looking for the following sections in your report:
     * Description of the model 
     * Clustering algorithm
     * Results of any preliminary experiments you might have run on the dev set
+
+If you wish to write your report in latex, here is a [template](downloads/hw4/report.tex) for you to get started. 
 
 
 ## Deliverables 
@@ -540,9 +563,9 @@ In HW4: Write Up:
 In HW4: Leaderboard Without K
 * `test_nok_output_leaderboard.txt` = Task 3.4 output file
 
-<!--
-Note: `part2.py` relies on particular vector representations, for instance, `coocvec-500mostfreq-window-3.filter.magnitudez` or `GoogleNews-vectors-negative300.filter.magnitude`. 
-so be sure to include those as well in the same directory as `part2.py`. -->
+In HW4: Leaderboard With K
+* `test_output_leaderboard.txt` = Task 3.2 or 3.3 output file
+
 </div>
 
 
