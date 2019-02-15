@@ -64,16 +64,17 @@ In this assignment you will follow a Pytorch tutorial code to implement your own
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [training data for text classification task](downloads/hw5/cities_train.zip).
-* [dev data for text classification task](downloads/hw5/cities_val.zip).
-* [test file for leaderboard](downloads/hw5/cities_test.txt)
+* [training data for text classification task](downloads/hw6/cities_train.zip).
+* [dev data for text classification task](downloads/hw6/cities_val.zip).
+* [test file for leaderboard](downloads/hw6/cities_test.txt)
+* [skeleton files](downloads/hw6/skeleton.zip)
 </div>
 
 
 ## Part 1: Set up Pytorch 
 
 Pytorch is one of the most popular deep learning frameworks in both industry and academia, and learning its use will be invaluable should you choose a career in deep learning. 
-You will be using Pytorch for this assignment, and instead of providing you source code, we ask you to build off a couple Pytorch tutorials. 
+You will be using Pytorch for this assignment, we ask you to build off a couple Pytorch tutorials. 
 
 ### Setup
 
@@ -125,20 +126,22 @@ For this homework, you have the option of using [jupyter notebook](https://jupyt
 2. In your local terminal, set up port forward by typing `ssh -N -f -L localhost:8888:localhost:8888 yourname@biglab.seas.upenn.edu`.
 3. In your local web browser, navigate to `localhost:8888`.
 
+### Note
+Please look at the [FAQ](#faqs) section before you start working.
 
 ## Part 2:  Classification Using Character-Level Recurrent Neural Networks 
 
 #### Follow the tutorial code
 
-Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) that builds a char-rnn that is used to classify baby names by their country of origin. While we strongly recommend you carefully read through the tutorial, you will find it useful to build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification/char-rnn-classification.ipynb). Make sure you can reproduce the tutorial's results on the tutorial's provided baby-name dataset before moving on.
+Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) that builds a char-rnn that is used to classify baby names by their country of origin. You can also build off the released code [here](https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification/char-rnn-classification.ipynb). It is recommended that you can reproduce the tutorial's results on the provided baby-name dataset before moving on.
 
 #### Switch to city names dataset
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset.
-* [training sets](downloads/hw5/cities_train.zip)
-* [validation set](downloads/hw5/cities_val.zip)
-* [test file for leaderboard](downloads/hw5/cities_test.txt)
+* [training sets](downloads/hw6/cities_train.zip)
+* [validation set](downloads/hw6/cities_val.zip)
+* [test file for leaderboard](downloads/hw6/cities_test.txt)
 </div>
 
 Modify the tutorial code to instead read from the city names dataset that we used in the previous assignment. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
@@ -153,18 +156,19 @@ Attribution: the city names dataset is derived from [Maxmind](http://download.ma
 
 Complete the following analysis on the city names dataset, and include your finding in the report.
 
-1. Write code to output accuracy on the validation set. Include your best accuracy in the report. (For a benchmark, the TAs were able to get accuracy above 50%) Discuss where your model is making mistakes. Use a confusion matrix plot to support your answer.
-2. Modify the training loop to periodically compute the loss on the validation set, and create a plot with the training and validation loss as training progresses. Is your model overfitting? Include the plot in your report.
+1. Write code to output accuracy on the validation set. Include your best accuracy in the report. (For a benchmark, the TAs were able to get accuracy above 50% without any hyperparameter optimization) Discuss where your model is making mistakes. Use a confusion matrix plot to support your answer.
+2. Periodically compute the loss on the validation set, and create a plot with the training and validation loss as training progresses. Is your model overfitting? Include the plot in your report.
 3. Experiment with the learning rate. You can try a few different learning rates and observe how this affects the loss. Another common practice is to drop the learning rate when the loss has plateaued. Use plots to explain your experiments and their effects on the loss.
 4. Experiment with the size of the hidden layer or the model architecture How does this affect validation accuracy?
 
 **Leaderboard**
 
-Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top leaderboard submissions. Here are some ideas for improving your leaderboard performance:
+Write code to make predictions on the provided test set. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line. Extra credit will be given to the top 3 leaderboard submissions. Here are some ideas for improving your leaderboard performance:
 
-* Play around with the vocabulary (the `all_letters` variable), for example modifying it to only include lowercase letters, apostrophe, and the hyphen symbol.
+* Try dropout if your model is overfitting
+* Experiment with different loss functions, optimizers
 * Test out label smoothing
-* Try a more complicated architecture, for example, swapping out the RNN for LSTM or GRU units.
+* Compare the different types of RNNs - RNN, LSTM, GRU units.
 * Use a different initalization for the weights, for example, small random values instead of 0s
 
 In your report, describe your final model and training parameters.
@@ -191,12 +195,47 @@ Include a sample of the text generated by your model, and give a qualitative dis
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * writeup.pdf
-* code (.zip). It should be written in Python 3 and include a README.txt briefly explaining how to run it.
+* model_classification - Your trained PyTorch model for classification. Please put it in the same path as your code.
+* code[main_classify.py, main_generate.py, models.py, model_classify, model_generate, README.txt] - It should be written in Python 3. README should include instructions to generate sentences.
 * `labels.txt` predictions for leaderboard.
 </div>
 
-## Recommended readings
+## FAQs
 
+#### How do I save a PyTorch model?
+Use the command below. Please ensure that your model is **trainable** and you are saving all parameters.
+
+```python
+torch.save(model, PATH)
+```
+
+#### How do I load a PyTorch model?
+Use the command below.
+
+```python
+model = torch.load(PATH)
+model.eval() #To predict or
+model.train() #To train
+```
+
+#### I'm unfamiliar with PyTorch. How do I get started?
+If you are new to the paradigm of computational graphs and functional programming, please have a look at this [tutorial](https://hackernoon.com/linear-regression-in-x-minutes-using-pytorch-8eec49f6a0e2) before getting started.
+
+#### How do I convert a Jupyter notebook to a python script?
+
+```bash
+jupyter nbconvert --to script notebook.ipynb
+```
+
+#### How do I beat the threshold for the test cases?
+The TA's model, which passed all the testcases, had the following configuration:
+* Optimizer: `torch.optim.SGD(model.parameters(), lr=0.005)`
+* Criterion: `nn.NLLLoss()`
+* Epochs: 170k
+* RNN layers: 1 LSTM cell followed by softmax
+
+
+## Recommended readings
 <table>
    {% for publication in page.readings %}
     <tr>
