@@ -59,6 +59,7 @@
   slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models
   slides_credit: Jurafsky and Martin
+  lecture_notes: slides/04-n-gram-language-models-lecture-notes.pdf
   readings:
     - 
       title: Chapter 3 "N-gram Language Models"
@@ -68,3 +69,122 @@
       title: Large Language Models in Machine Translation
       authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
       url: http://www.aclweb.org/anthology/D07-1090.pdf
+-
+  date: 2019-02-04
+  slides: slides/04-n-gram-language-models.pdf
+  title: N-gram Language Models Wrapup
+  slides_credit: Jurafsky and Martin
+  readings:
+    - 
+      title: Chapter 3 "N-gram Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/3.pdf
+    - 
+      title: Large Language Models in Machine Translation
+      authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
+      url: http://www.aclweb.org/anthology/D07-1090.pdf
+-
+  date: 2019-02-04
+  slides: slides/05-vector-semantics.pdf
+  title: Vector Semantics
+  slides_credit: Dan Jurafsky 
+  lecture_notes: slides/05-vector-semantics-lecture-notes.pdf
+  readings: 
+    - 
+      title: Chapter 6 "Vector Semantics"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+    - 
+      title: From Frequency to Meaning&colon; Vector space models of semantics
+      authors: Peter Turney and Patrick Pantel
+      url: http://www.aaai.org/Papers/JAIR/Vol37/JAIR-3705.pdf
+  videos:
+    - 
+      title: Overview of distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=gtuhPq0Xyno&index=1&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Vector comparison for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=LYH93YnhuyQ&t=304s&index=2&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 10 minutes
+    - 
+      title: Matrix reweighting for distributed word representations
+      authors: Chris Potts
+      url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
+      length: 16 minutes
+-
+  date: 2019-02-11
+  slides: slides/06-vector-semantics-part-2.pdf
+  title: Vector Semantics - part 2
+  slides_credit: Dan Jurafsky 
+  readings: 
+    - 
+      title: Distributed Representations of Words and Phrases and their Compositionality
+      authors: Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado and Jeffrey Dean 
+      url: https://papers.nips.cc/paper/5021-distributed-representations-of-words-and
+    - 
+      title: word2vec Explained&colon; Deriving Mikolov et al.’s Negative-Sampling Word-Embedding Method
+      authors: Yoav Goldberg and Omer Levy
+      url: https://arxiv.org/pdf/1402.3722.pdf
+-
+  date: 2019-02-13
+  slides: slides/06-vector-semantics-part-3.pdf
+  title: Vector Semantics - part 3
+  slides_credit: Dan Jurafsky
+  readings: 
+    - 
+      title: Linguistic regularities in sparse and explicit word representations
+      authors:  Omer Levy and Yoav Goldberg
+      url: http://www.aclweb.org/anthology/W14-1618.pdf
+      optional: false
+    - 
+      title: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
+      authors: Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama1, Adam Kalai
+      url: https://papers.nips.cc/paper/6228-man-is-to-computer-programmer-as-woman-is-to-homemaker-debiasing-word-embeddings.pdf
+      optional: false
+    - 
+      title: Semantics derived automatically from language corpora contain human-like biases
+      authors: Aylin Caliskan, Joanna Bryson, Arvind Narayanan
+      url: http://science.sciencemag.org/content/356/6334/183
+      optional: true
+    - 
+      title: How does Mikolov's word analogy for word embedding work? How can I code such a function?
+      authors:  Omer Levy 
+      url: https://www.quora.com/How-does-Mikolovs-word-analogy-for-word-embedding-work-How-can-I-code-such-a-function
+      optional: true
+    - 
+      title: Linguistic Regularities in Continuous Space Word Representations
+      authors: Tomas Mikolov, Scott Wen-tau Yih, and Geoffrey Zweig
+      url: https://www.aclweb.org/anthology/N13-1090.pdf
+      optional: true
+    - 
+      title: Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change
+      authors:  William L. Hamilton, Jure Leskovec, Dan Jurafsky
+      url: http://www.aclweb.org/anthology/P16-1141.pdf
+      optional: true
+    - 
+      title: Word embeddings quantify 100 years of gender and ethnic stereotypes
+      authors:  Nikhil Garg, Londa Schiebinger, Dan Jurafsky, and James Zou
+      url: https://www.pnas.org/content/115/16/E3635.short
+      optional: true
+-
+  date: 2019-02-18
+  slides: 
+  title: Neural Net Language Models
+  slides_credit: 
+  readings: 
+    - 
+      title: Neural Network Methods for Natural Language (Chapters 2-4).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
+    - 
+      title: A Neural Probabilistic Language Model 
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+    - 
+      title: A Neural Probabilistic Language Model (longer JMLR version)
+      authors: Bengio, Ducharme, Vincent and Jauvin
+      url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
+      optional: true

@@ -5,8 +5,8 @@ img_link: https://xkcd.com/thing-explainer/
 caption: Thing Explainer - Complicated Stuff In Simple Words
 title: Homework 2 "Text Classification"
 active_tab: homework
-release_date: 2018-01-17
-due_date: 2018-01-24 11:00:00EST
+release_date: 2019-01-29
+due_date: 2019-02-05 23:59:00EST
 attribution: Reno Kriz and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Fall 2018.
 readings:
 
@@ -98,6 +98,16 @@ Here are the materials that you should download for this assignment:
 * [Data sets](downloads/hw2/data.tar.gz) - this is a tarball with the training/dev/test sets. 
 * [Unigram counts](http://www.cis.upenn.edu/~cis530/18sp/data/ngram_counts.txt.gz) from the [Google N-gram corpus](https://research.googleblog.com/2006/08/all-our-n-gram-are-belong-to-you.html).
 </div>
+
+
+<div class="alert alert-success" markdown="1">
+This assignment has several deliverables:
+* Your implementations for the functions in the skeleton code.
+* Your model's output for the test set (your model will be ranked on a leaderboard against the other students' outputs)
+* Your writeup about the homework.  [Here is an example writeup](downloads/hw2/hw2_example_writeup.pdf) that illustartes what we are looking for.
+</div>
+
+
 
 
 ## Identifying Complex Words

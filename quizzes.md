@@ -4,10 +4,10 @@ title: Quizzes
 active_tab: quizzes
 ---
 
-<!-- Create a HTML anchor for the most recent lecture -->
+<!-- Create a HTML anchor for the most recent quiz -->
 {% assign anchor_created = false %}
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
-<!-- End create a HTML anchor for the most recent lecture -->
+<!-- End create a HTML anchor for the most recent quiz -->
 
 Every week we will have short take-home quizzes to test your understanding of the readings.  
 <!-- 
@@ -18,22 +18,21 @@ Below is a schedule of quizzes, and what readings will be covered in them.
   <thead>
     <tr>
       <th>Quiz</th>
-      <th>Date</th> 
+      <th>Due Date</th> 
       <th>Readings Covered By the Quiz</th>
     </tr>
   </thead>
   <tbody>
-    {% for lecture in site.data.lectures %}
+    {% for quiz in site.data.quizzes %}
 
-    {% if lecture.type and lecture.type == 'exam' %}
     <tr class="info" >
-      <td>{{ lecture.title }} </td>
+      <td>{{ quiz.title }} </td>
 
-      <td>{{ lecture.date | date: '%a, %b %-d, %Y' }}</td>
+      <td>{{ quiz.due_date | date: '%a, %b %-d, %Y' }}</td>
 
       <td>
-        {% if lecture.readings %} 
-          {% for reading in lecture.readings %}
+        {% if quiz.readings %} 
+          {% for reading in quiz.readings %}
           {% if reading.url %}
               {% if reading.optional %}<b>Optional:</b> {% endif %}
               {{ reading.authors }}, <a href="{{ reading.url }}">{{ reading.title }}</a> 
@@ -47,7 +46,6 @@ Below is a schedule of quizzes, and what readings will be covered in them.
         {% endif %}
       </td>
     </tr>
-    {% endif %}
     {% endfor %}
     
   </tbody>

@@ -5,8 +5,8 @@ img_link: https://xkcd.com/771/
 caption: Understanding Shakespeare with Math    
 title: Homework 3 "Vector Space Models"
 active_tab: homework
-release_date: 2018-01-24
-due_date: 2018-01-31T11:00:00EST
+release_date: 2019-02-05
+due_date: 2019-02-12T23:59:00EST
 attribution: Daphne Ippolito, Anne Cocos, Stephen Mayhew, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -14,7 +14,7 @@ readings:
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
 -
    title: From Frequency to Meaning&colon; Vector Space Models of Semantics
    authors: Peter D. Turney and Patrick Pantel
@@ -112,9 +112,9 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Vector Space Models <span class="text-muted">: Assignment 3</span>
 =============================================================
 
-In this assignment you will implement many of the things you learned in [Chapter 15 of the textbook](https://web.stanford.edu/~jurafsky/slp3/15.pdf). If you haven't read it yet, now would be a good time to do that.  We'll wait.  Done?  Great, let's move on. 
+In this assignment you will implement many of the things you learned in [Chapter 6 of the textbook](https://web.stanford.edu/~jurafsky/slp3/6.pdf). If you haven't read it yet, now would be a good time to do that.  We'll wait.  Done?  Great, let's move on. 
 
-We will provide a corpus of Shakespeare plays, which you will use to create a term-document matrix and a term-context matrix. You'll implement a selection of the weighting methods and similarity metrics defined in the textbook. Ultimately, your goal is to use the resulting vectors to measure how similar Shakespeare plays are to each other, and to find words that are used in a similar fashion. All (or almost all) of the code you write will be direct implementations of concepts and equations described in [Chapter 15](https://web.stanford.edu/~jurafsky/slp3/15.pdf).
+We will provide a corpus of Shakespeare plays, which you will use to create a term-document matrix and a term-context matrix. You'll implement a selection of the weighting methods and similarity metrics defined in the textbook. Ultimately, your goal is to use the resulting vectors to measure how similar Shakespeare plays are to each other, and to find words that are used in a similar fashion. All (or almost all) of the code you write will be direct implementations of concepts and equations described in [Chapter 6, sections 6.3-6.7](https://web.stanford.edu/~jurafsky/slp3/6.pdf).
 
 *All difficulties are easy when they are known.*
 
@@ -128,7 +128,7 @@ Here are the materials that you should download for this assignment:
 
 # Term-Document Matrix
 
-You will write code to compile a term-document matrix for Shakespeare's plays, following the description in section 15.1.1 in textbook.
+You will write code to compile a term-document matrix for Shakespeare's plays, following the description in the textbook.
 
 > In a *term-document matrix*, each row represents a word in the vocabulary and each column represents a document from some collection. The figure below shows a small selection from a term-document matrix showing the occurrence of four words in four plays by Shakespeare. Each cell in this matrix represents the number of times a particular word (defined by the row) occurs in a particular document (defined by the column). Thus *clown* appeared 117 times in *Twelfth Night
 
@@ -147,7 +147,7 @@ In your code you will write a function to `create_term_document_matrix`.  This w
 
 The term-document matrix will also let us do cool things like figure out which plays are most similar to each other, by comparing the column vectors.  We could even look for outliers to see if some plays are so dissimilar from the rest of the canon that [maybe they weren't authored by Shakespeare after all](https://en.wikipedia.org/wiki/Shakespeare_authorship_question).  
 
-Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 15.3 of the textbook.
+Let's begin by considering the column representing each play.  Each column is a $\|V\|$-dimensional vector.  Let's use some math to define the similarity of these vectors.   By far the most common similarity metric is the cosine of the angle between the vectors.  The cosine similarity metric is defined in Section 6.3 of the textbook.
 
 > The cosine, like most measures for vector similarity used in NLP, is based on the dot product operator from linear algebra, also called the inner product:
 
@@ -200,14 +200,14 @@ Your term-context matrix contains the raw frequency of the co-occurrence of two 
 * Positive pointwise mutual information (PPMI)
 * Term frequency inverse document frequency (tf-idf)
 
-These are defined in Section 15.2 of the textbook.
+These are defined in Section 6.2 of the textbook.
 
 *Warning, calculating PPMI for your whole $\|V\|$-by-$\|V\|$ matrix might be slow. Our intrepid TA's implementation for PPMI takes about 10 minutes to compute all values. She always writes perfectly optimized code on her first try. You may improve performance by using matrix operations a la MATLAB.*
 
 
 # Weighting terms  
 
-There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 15.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
+There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 6.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
 
 
  
@@ -238,6 +238,10 @@ Some patterns you could touch upon:
 * The fourth column of `will_play_text.csv` contains the name of the character who spoke each line. Using the methods described above, which characters are most similar? Least similar? 
 * Shakespeare's plays are traditionally classified into [comedies, histories, and tragedies](https://en.wikipedia.org/wiki/Shakespeare%27s_plays). Can you use these vector representations to cluster the plays?
 * Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
+
+
+Here is [one of the sample reports](downloads/hw3/writeup_2.pdf) that illustrates what we are looking for. Here is [another one](downloads/hw3/writeup_1.pdf).
+
 
 # Extra credit
 
@@ -325,77 +329,5 @@ Here are the deliverables that you will need to submit:
 </table>
 
 
-<div class="panel panel-danger">
-<div class="panel-heading" markdown="1">
-## Grading Rubric
-</div>
-<div class="panel-body" markdown="1">
-
-This assignment was worth 60 points total (30 code, 30 writeup).   The rubic used for grading this homework is below. The code we used to test your `main.py` scripts locally is available [here](downloads/hw3/hw3-localtest.py), and the solution code is [here](downloads/hw3/main_solutions.py). 
-
-#### Code (30 points total)
-
-1.1  (3) Function `create_term_document_matrix` correct
-
-  - -2 incorrect counts in matrix 
-  - -1 dimensions flipped 
-
-1.2  (3) Function `create_term_context_matrix` correct
-
-  - -2 incorrect counts in matrix 
-
-1.3  (3) Function `create_tf_idf_matrix` correct
-
-  - -2 TF-IDF for frequent word 'run', play 'Julius Caesar' is greater than TF-IDF for rare word 'dagger', play 'Julius Caesar'; should be less.
-
-1.4  (3) Function `create_PPMI_matrix` correct
-
-  - -2 PPMI for frequent context 'the', word 'sword' is greater than PPMI for rare context 'bloody', word 'sword'; should be less. 
-
-1.5  (4) Function `compute_cosine_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors 
-
-1.6  (4) Function `compute_jaccard_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors 
-
-1.7  (4) Function `compute_dice_similarity` correct
-
-  - -2 Incorrect value returned for random test vectors
-
-1.8  (3) Function `rank_plays` correct
-
-  - -2 Incorrect ranking returned for standardized matrix and similarity function input 
-  - -1 Function re-reads Shakespeare data from disk 
-
-1.9  (3) Function `rank_words` correct
-
-  - -2 Incorrect ranking returned for standardized matrix and similarity function input
-  - -1 Function re-reads Shakespeare data from disk 
-
-#### Writeup (30 points total)
-
-2.1  (15) Analysis of similarity between play vectors
-
- - -5 does not include comparison of nearest plays in terms of thematic similarity, or other general assessment of vector quality 
- - -5 does not analyze different similarity metrics
- - -5 does not analyze different matrix weighting schemes 
- - -10 No analysis of similarity between play vectors, or results reported without any analysis 
-
-2.2  (15) Analysis of similarity between word vectors
-
-- -5 does not analyze different matrix weighting schemes 
-- -5 does not analyze different similarity metrics 
-- -5 No analysis of similarity between word vectors 
-- -10 No analysis of similarity between word vectors, or results reported without any analysis 
 
 
-#### Extra Credit (10 points max)
-
-- +2 Includes analysis of character similarity based on term-character matrix
-- +5 Includes comparison of vector similarity with human judgements
-- +5 Other additional substantive analysis
-
-</div>
-</div>
