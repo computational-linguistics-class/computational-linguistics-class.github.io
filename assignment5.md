@@ -6,7 +6,7 @@ img_link: https://www.explainxkcd.com/wiki/index.php/1427:_iOS_Keyboard
 title: Homework 5 - N-Gram Language Models
 active_tab: homework
 release_date: 2019-02-20
-due_date: 2019-02-27T11:59:00EST
+due_date: 2019-02-26T23:59:00EST
 attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg. Diana Marsala, Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018/2019.  
 readings:
 -
@@ -68,7 +68,7 @@ Here are the materials that you should download for this assignment:
 
 ## Part 0: Generating N-Grams
 
-Write a function `ngrams(n, text)` that produces a list of all n-grams of the specified size from the input text. Each n-gram should consist of a 2-element tuple `(context, char)`, where the context is itself an n-element tuple comprised of the $n$ characters preceding the current character. The sentence should be padded with $n$ `~` characters at the beginning (we've provided you with `start_pad(n)` for this purpose). If $n=0$, all contexts should be empty tuples. You may assume that $n\ge1$.
+Write a function `ngrams(n, text)` that produces a list of all n-grams of the specified size from the input text. Each n-gram should consist of a 2-element tuple `(context, char)`, where the context is itself an n-element tuple comprised of the $n$ characters preceding the current character. The sentence should be padded with $n$ ~ characters at the beginning (we've provided you with `start_pad(n)` for this purpose). If $n=0$, all contexts should be empty tuples. You may assume that $n\ge1$.
 
 ```python
 >>> ngrams(1, 'abc')
@@ -88,23 +88,23 @@ In this section, you will build a simple n-gram language model that can be used 
 
 1. In the `NgramModel` class, write an initialization method `__init__(self, n, k)` which stores the order $n$ of the model and initializes any necessary internal variables. Then write a method `get_vocab(self)` that returns the vocab  (this is the set of all characters utilized by this n-gram).
 
-2. Write a method `update(self, text)` which computes the n-grams for the input sentence and updates the internal counts. Also write a method `prob(self, context, char)` which accepts an n-length string representing a context and a character, and returns the probability of that character occuring, given the preceding context. If you encounter a novel `context`, the probability of any given `char` should be $1/len(vocab)$.
+2. Write a method `update(self, text)` which computes the n-grams for the input sentence and updates the internal counts. Also write a method `prob(self, context, char)` which accepts an n-length string representing a context and a character, and returns the probability of that character occuring, given the preceding context. If you encounter a novel `context`, the probability of any given `char` should be $1/V$ where $V$ is the size of the vocab.
 
-  ```python
-  >>> m = NgramModel(1, 0)
-  >>> m.update('abab')
-  >>> m.get_vocab()
-  {'b', 'a'}
-  >>> m.update('abcd')
-  >>> m.get_vocab()
-  {'b', 'a', 'c', 'd'}
-  >>> m.prob('a', 'b')
-  1.0
-  >>> m.prob('~', 'c')
-  0.0
-  >>> m.prob('b', 'c')
-  0.5
-  ```
+    ```python
+    >>> m = NgramModel(1, 0)
+    >>> m.update('abab')
+    >>> m.get_vocab()
+    {'b', 'a'}
+    >>> m.update('abcd')
+    >>> m.get_vocab()
+    {'b', 'a', 'c', 'd'}
+    >>> m.prob('a', 'b')
+    1.0
+    >>> m.prob('~', 'c')
+    0.0
+    >>> m.prob('b', 'c')
+    0.5
+    ```
 
 3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $T=\langle t_1,t_2, \cdots, t_n \rangle$ be the set of tokens which can occur in the given context, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the token $t_i$ such that
 
@@ -112,25 +112,25 @@ In this section, you will build a simple n-gram language model that can be used 
 
   You should use a single call to the `random.random()` function to generate $r$.
 
-  ```python
-  >>> m = NgramModel(0, 0)
-  >>> m.update('abab')
-  >>> m.update('abcd')
-  >>> random.seed(1)
-  >>> [m.random_char('') for i in range(25)]
-  ['a', 'c', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'a', 'c', 'b', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'a', 'b', 'd', 'b', 'a']
-  ```
+    ```python
+    >>> m = NgramModel(0, 0)
+    >>> m.update('abab')
+    >>> m.update('abcd')
+    >>> random.seed(1)
+    >>> [m.random_char('') for i in range(25)]
+    ['a', 'c', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'a', 'c', 'b', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'a', 'b', 'd', 'b', 'a']
+    ```
 
 4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ `~` characters, and the context should be updated as tokens are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
 
-  ```python
-  >>> m = NgramModel(1, 0)
-  >>> m.update('abab')
-  >>> m.update('abcd')
-  >>> random.seed(1)
-  >>> m.random_text(25)
-  abcdbabcdabababcdddabcdba
-  ```
+    ```python
+    >>> m = NgramModel(1, 0)
+    >>> m.update('abab')
+    >>> m.update('abcd')
+    >>> random.seed(1)
+    >>> m.random_text(25)
+    abcdbabcdabababcdddabcdba
+    ```
 
 ### Writing Shakespeare 
 
