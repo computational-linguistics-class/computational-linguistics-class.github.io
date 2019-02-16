@@ -73,9 +73,7 @@ Write a function `ngrams(n, text)` that produces a list of all n-grams of the sp
 ```python
 >>> ngrams(1, 'abc')
 [('~', 'a'), ('a', 'b'), ('b', 'c')]
-```
 
-```python
 >>> ngrams(2, 'abc')
 [('~~', 'a'), ('~a', 'b'), ('ab', 'c')]
 ```
@@ -121,7 +119,7 @@ In this section, you will build a simple n-gram language model that can be used 
     ['a', 'c', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'a', 'c', 'b', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'a', 'b', 'd', 'b', 'a']
     ```
 
-4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ `~` characters, and the context should be updated as tokens are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
+4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ ~ characters, and the context should be updated as tokens are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
 
     ```python
     >>> m = NgramModel(1, 0)
@@ -193,7 +191,19 @@ Now implement the `perplexity(self, text)` function in `NgramModel`. A couple of
 
 In your report, discuss the perplexity for text that is similar and different from Shakespeare's plays. We provide you [two dev text files](downloads/hw5/test_data.zip), a New York Times article and several of Shakespeare's sonnets, but feel free to experiment with your own text.
 
-Note: you may want to create a smoothed language model before calculating perplexity.
+```python
+>>> m = NgramModel(1, 0)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.perplexity('abcd')
+1.189207115002721
+>>> m.perplexity('abca')
+inf
+>>> m.perplexity('abcda')
+1.515716566510398
+```
+
+Note: you may want to create a smoothed language model before calculating perplexity on real data.
 
 ### Smoothing 
 
@@ -202,6 +212,20 @@ Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to e
 $$P_{Laplace}(w_i) = \frac{count_i + 1}{N+V}$$
 
 A variant of Laplace smoothing is called *Add-k smoothing* or *Add-epsilon smoothing*. This is described in section Add-k 4.4.2. Update your `NgramModel` code from Part 1 to implement add-k smoothing.
+
+```python
+>>> m = NgramModel(1, 1)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.prob('a', 'a')
+0.14285714285714285
+>>> m.prob('a', 'b')
+0.5714285714285714
+>>> m.prob('c', 'd')
+0.4
+>>> m.prob('d', 'a')
+0.25
+```
 
 ### Interpolation
 
@@ -213,7 +237,30 @@ where $\lambda_1 + \lambda_2 + \lambda_3 = 1$.
 
 We've provided you with another class definition `NgramModelWithInterpolation` that extends `NgramModel` for you to implement interpolation. If you've written your code robustly, you should only need to override the `get_vocab(self)`, `update(self, text)`, and `prob(self, context, char)` methods, along with the initializer.
 
-You should also write a helper function to set the lambdas. This can either be done heuristically or by using a development set.
+The value of $n$ passed into `__init__(self, n, k)` is the highest order n-gram to be considered by the model (e.g. $n=2$ will consider 3 different length n-grams). Add-k smoothing should take place only when calculating the individual order n-gram probabilities such as $P(w_i|w_{i-1})$, not when calculating the overall probability $P_{interpolation}$.
+
+You should also write a helper function to set the lambdas. This can either be done heuristically or by using a development set, but in the example code below, we've set all the lambdas to be equal weights.
+
+```python
+>>> m = NgramModelWithInterpolation(1, 0)
+>>> m.update('abab')
+>>> m.prob('a', 'a')
+0.25
+>>> m.prob('a', 'b')
+0.75
+
+>>> m = NgramModelWithInterpolation(2, 1)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.prob('~a', 'b')
+0.4682539682539682
+>>> m.prob('ba', 'b')
+0.4349206349206349
+>>> m.prob('~c', 'd')
+0.27222222222222225
+>>> m.prob('bc', 'd')
+0.3222222222222222
+```
 
 In your report, experiment with a few different lambdas and values of k and discuss their effects.
 
@@ -248,6 +295,8 @@ za	South Africa
 ```
 
 We'll set up a leaderboard for the text classification task. Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
+
+Feel free to extend the `NgramModel` or `NgramModelWithInterpolation` when creating your language model. Possible ideas to consider and experiment with when creating your model are utilizing a special end-of-text character, trying a new method for determining the vocab, and improving how your model handles novel characters.
 
 In your report, describe the parameters of your final leaderboard model and any experimentation you did before settling on it.
 
