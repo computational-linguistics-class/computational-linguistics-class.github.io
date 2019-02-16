@@ -237,7 +237,7 @@ where $\lambda_1 + \lambda_2 + \lambda_3 = 1$.
 
 We've provided you with another class definition `NgramModelWithInterpolation` that extends `NgramModel` for you to implement interpolation. If you've written your code robustly, you should only need to override the `get_vocab(self)`, `update(self, text)`, and `prob(self, context, char)` methods, along with the initializer.
 
-The value of $n$ passed into `__init__(self, n, k)` is the highest order n-gram to be considered by the model (e.g. $n=2$ will consider 3 different length n-grams). Add-k smoothing should take place only when calculating the individual order n-gram probabilities such as $$P(w_i|w_{i−2} w_{i−1}$$, not when calculating the overall probability $$P_{interpolation}$$.
+The value of $n$ passed into `__init__(self, n, k)` is the highest order n-gram to be considered by the model (e.g. $n=2$ will consider 3 different length n-grams). Add-k smoothing should take place only when calculating the individual order n-gram probabilities, not when calculating the overall interpolation probability.
 
 You should also write a helper function to set the lambdas. This can either be done heuristically or by using a development set, but in the example code below, we've set all the lambdas to be equal weights.
 
