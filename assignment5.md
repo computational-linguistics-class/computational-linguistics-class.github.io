@@ -239,7 +239,7 @@ We've provided you with another class definition `NgramModelWithInterpolation` t
 
 The value of $n$ passed into `__init__(self, n, k)` is the highest order n-gram to be considered by the model (e.g. $n=2$ will consider 3 different length n-grams). Add-k smoothing should take place only when calculating the individual order n-gram probabilities, not when calculating the overall interpolation probability.
 
-You should also write a helper function to set the lambdas. This can either be done heuristically or by using a development set, but in the example code below, we've set all the lambdas to be equal weights.
+By default set the lambdas to be equal weights, but you should also write a helper function that can be called to overwrite this default. Setting the lambdas in the helper function can either be done heuristically or by using a development set, but in the example code below, we've used the default.
 
 ```python
 >>> m = NgramModelWithInterpolation(1, 0)
