@@ -3,11 +3,11 @@ layout: default
 img: ios_keyboard.png
 caption: Movie quotes according to autocomplete
 img_link: https://www.explainxkcd.com/wiki/index.php/1427:_iOS_Keyboard
-title: Homework 5 - Character-based Language Models
+title: Homework 5 - N-Gram Language Models
 active_tab: homework
-release_date: 2018-02-07
-due_date: 2018-02-14T11:00:00EST
-attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018.  
+release_date: 2019-02-20
+due_date: 2019-02-26T23:59:00EST
+attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg. Diana Marsala, Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018/2019.  
 readings:
 -
    title: Language Modeling with N-grams
@@ -46,13 +46,13 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 </div>
 
 
-Character-based Language Models <span class="text-muted">: Assignment 5</span>
+N-Gram Language Models <span class="text-muted">: Assignment 5</span>
 =============================================================
 
 In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the related problem of predicting the next *character* in a sequence given the previous characters. 
 
 The learning goals of this assignment are to: 
-* Understand how to compute language model probabilities using maximum likelihood estimation
+* Understand how to compute language model probabilities using maximum likelihood estimation.
 * Implement basic smoothing, back-off and interpolation.
 * Have fun using a language model to probabilistically generate texts.
 * Use a set of language models to perform text classification. 
@@ -60,252 +60,113 @@ The learning goals of this assignment are to:
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton python code](downloads/hw5/language_model.py).
+* [Skeleton python code](downloads/hw5/hw5_skeleton.py).
 * [training data for text classification task](downloads/hw5/cities_train.zip).
 * [dev data for text classification task](downloads/hw5/cities_val.zip).
 * [test file for leaderboard](downloads/hw5/cities_test.txt)
 </div>
 
+## Part 0: Generating N-Grams
 
-## Part 1: Unsmoothed Maximum Likelihood Character-Level Language Models 
+Write a function `ngrams(n, text)` that produces a list of all n-grams of the specified size from the input text. Each n-gram should consist of a 2-element tuple `(context, char)`, where the context is itself an n-element tuple comprised of the $n$ characters preceding the current character. The sentence should be padded with $n$ ~ characters at the beginning (we've provided you with `start_pad(n)` for this purpose). If $n=0$, all contexts should be empty strings. You may assume that $n\ge0$.
 
-We're going to be starting with some [nice, compact code for character-level language models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139). that was written by [Yoav Goldberg](http://u.cs.biu.ac.il/~yogo/).  Below is Yoav's code for training a language model.
+```python
+>>> ngrams(1, 'abc')
+[('~', 'a'), ('a', 'b'), ('b', 'c')]
 
-<div class="alert alert-warning" markdown="1">
-Note: all of this code is included in the provided code stub called `language_model.py`. No need to copy and paste.
-</div>
+>>> ngrams(2, 'abc')
+[('~~', 'a'), ('~a', 'b'), ('ab', 'c')]
+```
 
+We've also given you the function `create_ngram_model(model_class, path, n, k)` that will create and return an n-gram model trained on the entire file path provided and `create_ngram_model_lines(model_class, path, n, k)` that will create and return an n-gram model trained line-by-line on the file path provided. You should use the first for the Shakespeare file and the second for the city name files.
 
-### Train a language model
+## Part 1: Creating an N-Gram Model
 
-Note: we provide you this code in the Python [stub file](downloads/hw5/language_model.py).
+In this section, you will build a simple n-gram language model that can be used to generate random text resembling a source document. Your use of external code should be limited to built-in Python modules, which excludes, for example, NumPy and NLTK.
 
-{% highlight python %}
-def train_char_lm(fname, order=4, add_k=1):
-  ''' Trains a language model.
-  This code was borrowed from 
-  http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139
-  Inputs:
-    fname: Path to a text corpus.
-    order: The length of the n-grams.
-    add_k: k value for add-k smoothing. NOT YET IMPLMENTED
-  Returns:
-    A dictionary mapping from n-grams of length n to a list of tuples.
-    Each tuple consists of a possible net character and its probability.
-  '''
+1. In the `NgramModel` class, write an initialization method `__init__(self, n, k)` which stores the order $n$ of the model and initializes any necessary internal variables. Then write a method `get_vocab(self)` that returns the vocab  (this is the set of all characters utilized by this n-gram).
 
-  # TODO: Add your implementation of add-k smoothing.
+2. Write a method `update(self, text)` which computes the n-grams for the input sentence and updates the internal counts. Also write a method `prob(self, context, char)` which accepts an n-length string representing a context and a character, and returns the probability of that character occuring, given the preceding context. If you encounter a novel `context`, the probability of any given `char` should be $1/V$ where $V$ is the size of the vocab.
 
-  data = open(fname).read()
-  lm = defaultdict(Counter)
-  pad = "~" * order
-  data = pad + data
-  for i in range(len(data)-order):
-    history, char = data[i:i+order], data[i+order]
-    lm[history][char]+=1
-  def normalize(counter):
-    s = float(sum(counter.values()))
-    return [(c,cnt/s) for c,cnt in counter.items()]
-  outlm = {hist:normalize(chars) for hist, chars in lm.items()}
-  return outlm
-{% endhighlight %}
+    ```python
+    >>> m = NgramModel(1, 0)
+    >>> m.update('abab')
+    >>> m.get_vocab()
+    {'b', 'a'}
+    >>> m.update('abcd')
+    >>> m.get_vocab()
+    {'b', 'a', 'c', 'd'}
+    >>> m.prob('a', 'b')
+    1.0
+    >>> m.prob('~', 'c')
+    0.0
+    >>> m.prob('b', 'c')
+    0.5
+    ```
 
-`fname` is a file to read the characters from. `order` is the history size to consult. Note that we pad the data with leading `~` so that we also learn how to start.
+3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $T=\langle t_1,t_2, \cdots, t_n \rangle$ be the set of tokens which can occur in the given context, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the token $t_i$ such that
 
+    $$\sum_{j=1}^{i-1} P(t_j\ |\ \text{context}) \le r < \sum_{j=1}^i P(t_j\ | \ \text{context}).$$
 
-Now you can train a language model.  First grab some text like this corpus of Shakespeare:
+    You should use a single call to the `random.random()` function to generate $r$.
+
+    ```python
+    >>> m = NgramModel(0, 0)
+    >>> m.update('abab')
+    >>> m.update('abcd')
+    >>> random.seed(1)
+    >>> [m.random_char('') for i in range(25)]
+    ['a', 'c', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'a', 'c', 'b', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'a', 'b', 'd', 'b', 'a']
+    ```
+
+4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ ~ characters, and the context should be updated as tokens are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
+
+    ```python
+    >>> m = NgramModel(1, 0)
+    >>> m.update('abab')
+    >>> m.update('abcd')
+    >>> random.seed(1)
+    >>> m.random_text(25)
+    abcdbabcdabababcdddabcdba
+    ```
+
+### Writing Shakespeare 
+
+Now you can train a language model. First grab some text like this corpus of Shakespeare:
 
 ``` bash
 $ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
 ```
 
-Now train the model:
-{% highlight python %}
-lm = train_char_lm("shakespeare_input.txt", order=4)
-{% endhighlight %}
+Try generating some Shakespeare with different order n-gram models. You should try running the following commands:
 
-### P(hello world) 
+```python
+>>> m = create_ngram_model(NgramModel, 'shakespeare_input.txt', 2)
+>>> m.random_text(250)
 
-Ok. Now we can look-up the probability of the next letter given some history.  Here are some example queries:
+>>> m = create_ngram_model(NgramModel, 'shakespeare_input.txt', 3)
+>>> m.random_text(250)
 
-{% highlight python %}
->>> lm['hell']
-[('!', 0.06912442396313365), (' ', 0.22119815668202766), ("'", 0.018433179723502304), ('i', 0.03225806451612903), ('\n', 0.018433179723502304), ('-', 0.059907834101382486), (',', 0.20276497695852536), ('o', 0.15668202764976957), ('.', 0.1336405529953917), ('s', 0.009216589861751152), (';', 0.027649769585253458), (':', 0.018433179723502304), ('?', 0.03225806451612903)]
-{% endhighlight %}
+>>> m = create_ngram_model(NgramModel, 'shakespeare_input.txt', 4)
+>>> m.random_text(250)
 
-Actually, let's pretty print the output, and sort the letters based on their probabilities.
+>>> m = create_ngram_model(NgramModel, 'shakespeare_input.txt', 7)
+>>> m.random_text(250)
+```
 
-{% highlight python %}
-import pprint
-import operator
+What do you think? Is it as good as [1000 monkeys working at 1000 typewriters](https://www.youtube.com/watch?v=no_elVGGgW8)?
 
-def print_probs(lm, history):
-    probs = sorted(lm[history],key=lambda x:(-x[1],x[0]))
-    pp = pprint.PrettyPrinter()
-    pp.pprint(probs)
-{% endhighlight %}
+After generating a bunch of short passages, do you notice anything? *They all start with F!* In fact, after we hit a certain order, the first word is always *First*?  Why is that? Is the model trying to be clever? First, generate the word *First*. Explain what is going on in your writeup.
 
-OK, print again:
+## Part 2: Perplexity, Smoothing, and Interpolation
 
-{% highlight python %}
->>> print_probs(lm, "hell")
-[(' ', 0.22119815668202766),
- (',', 0.20276497695852536),
- ('o', 0.15668202764976957),
- ('.', 0.1336405529953917),
- ('!', 0.06912442396313365),
- ('-', 0.059907834101382486),
- ('?', 0.03225806451612903),
- ('i', 0.03225806451612903),
- (';', 0.027649769585253458),
- ('\n', 0.018433179723502304),
- ("'", 0.018433179723502304),
- (':', 0.018433179723502304),
- ('s', 0.009216589861751152)]
-{% endhighlight %}
+In this part of the assignment, you'll adapt your code in order to implement several of the  techniques described in [Section 4.2 of the Jurafsky and Martin textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf).
 
-This means that `hell` can be followed by any of these dozen characters: 
+### Perplexity
 
-` ,o.!-?i;\n':s` 
-
-and that the probability of `o` given `hell` is 15.7%, $$p(o \mid hell)=0.157$$.  The most probable character to see after `hell` is a space, $$p(o \mid hell)=0.221$$.
-
-The distribution of letters that occur after `worl` is different than the distribution of letters that occur after `hell`.  Here is that distribution: 
-
-{% highlight python %}
->>> print_probs(lm, "worl")
-[('d', 1.0)]
-{% endhighlight %}
-
-What does that mean?  It means that in our corpus, the only possible continuation that we observed for `worl` was the letter `d`, and we assign 100% of probability mass to it, $$p(d \mid worl)=1.0$$.
-
-### Let's write some Shakespeare!
-
-Generating text with the model is simple. To generate a letter, we will look up the last `n` characters, and then sample a random letter based on the probability distribution for those letters.   Here's Yoav's code for that:
-
-{% highlight python %}
-def generate_letter(lm, history, order):
-  ''' Randomly chooses the next letter using the language model.
-  
-  Inputs:
-    lm: The output from calling train_char_lm.
-    history: A sequence of text at least 'order' long.
-    order: The length of the n-grams in the language model.
-    
-  Returns: 
-    A letter
-  '''
-  
-  history = history[-order:]
-  dist = lm[history]
-  x = random()
-  for c,v in dist:
-    x = x - v
-    if x <= 0: return c
-{% endhighlight %}
-
-To generate a passage of text, we just seed it with the initial history and run letter generation in a loop, updating the history at each turn.  We'll stop generating after a specified number of letters.
-
-{% highlight python %}
-def generate_text(lm, order, nletters=500):
-  '''Generates a bunch of random text based on the language model.
-  
-  Inputs:
-  lm: The output from calling train_char_lm.
-  order: The length of the n-grams in the language model.
-  nletters: the number of characters worth of text to generate
-  
-  Returns: 
-    A letter  
-  '''
-  history = "~" * order
-  out = []
-  for i in range(nletters):
-    c = generate_letter(lm, history, order)
-    history = history[-order:] + c
-    out.append(c)
-  return "".join(out)
-{% endhighlight %}
-
-Now, try generating some Shakespeare with different order n-gram models.  You should try running the following commands.  
-
-{% highlight python %}
->>> lm = train_char_lm("shakespeare_input.txt", order=2)
->>> print(generate_text(lm, 2))
-
-
->>> lm = train_char_lm("shakespeare_input.txt", order=3)
->>> print(generate_text(lm, 3))
-
-
->>> lm = train_char_lm("shakespeare_input.txt", order=4)
->>> print(generate_text(lm, 4))
-
-
->>> lm = train_char_lm("shakespeare_input.txt", order=7)
->>> print(generate_text(lm, 7))
-{% endhighlight %}
-
-What do you think?  Is it as good as [1000 monkeys working at 1000 typewriters](https://www.youtube.com/watch?v=no_elVGGgW8)?
-
-### What the F?
-
-Try generating a bunch of short passages:
-
-
-{% highlight python %}
->>> print(generate_text(lm, 5, 40))
-First, and quence
-Shall we gave it. Now
->>> print(generate_text(lm, 5, 40))
-First die.
-
-KING OF FRANCE:
-I prithee, 
->>> print(generate_text(lm, 5, 40))
-First marriage,
-And scarce it: wretches 
->>> print(generate_text(lm, 5, 40))
-First, the midsummer;
-We make us allia s
->>> print(generate_text(lm, 5, 40))
-First choose
-Which now,
-Where like thee.
-
->>> lm = train_char_lm("shakespeare_input.txt", order=4)
->>> print(generate_text(lm, 4, 40))
-First blood
-assurance
-To grace and leade
->>> print(generate_text(lm, 4, 40))
-First, are almightly,
-Am I to bedew the 
->>> print(generate_text(lm, 4, 40))
-First Senato, come unexamination hast br
-
->>> lm = train_char_lm("shakespeare_input.txt", order=2)
->>> print(generate_text(lm, 2, 40))
-Firm
-Histed mor ituffe bonguis hon tract
->>> print(generate_text(lm, 2, 40))
-Fir my fat,
-Forromfor intre You to lor c
-
-{% endhighlight %}
-
-Do you notice anything?  *They all start with F!*  In fact, after we hit a certain order, the first word is always *First*?  Why is that?  Is the model trying to be clever?  First, generate the word *First*. Explain what is going on in your writeup.
-
-
-## Part 2: Perplexity, smoothing, back-off and interpolation  
-
-In this part of the assignment, you'll adapt Yoav's code in order to implement several of the  techniques described in [Section 4.2 of the Jurafsky and Martin textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf).  
-
-### Perplexity 
-
-How do we know whether a LM is good? There are two basic approaches:
-1. Task-based evaluation (also known as extrinsic evaluation), where we use the LM as part of some other task, like automatic speech recognition, or spelling correcktion, or an OCR system that tries to covert a professor's messy handwriting into text. 
-2. Intrinsic evaluation.  Intrinsic evaluation tries to directly evalute the goodness of the language model by seeing how well the probability distributions that it estimates are able to explain some previously unseen test set. 
+How do we know whether a language model is good? There are two basic approaches:
+1. Task-based evaluation (also known as extrinsic evaluation), where we use the language model as part of some other task, like automatic speech recognition, or spelling correcktion, or an OCR system that tries to covert a professor's messy handwriting into text.
+2. Intrinsic evaluation. Intrinsic evaluation tries to directly evalute the goodness of the language model by seeing how well the probability distributions that it estimates are able to explain some previously unseen test set.
 
 Here's what the textbook says:
 
@@ -317,114 +178,93 @@ Here's what the textbook says:
 
 We'll implement the most common method for intrinsic metric of language models: *perplexity*.  The perplexity of a language model on a test set is the inverse probability of the test set, normalized by the number of words. For a test set $$W = w_1 w_2 ... w_N$$:
 
-
 $$Perplexity(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}}$$
-
 
 $$ = \sqrt[N]{\frac{1}{P(w_1 w_2 ... w_N)}}$$
 
-
 $$ = \sqrt[N]{\prod_{i=1}^{N}{\frac{1}{P(w_i \mid w_1 ... w_{i-1})}}}$$
 
+Now implement the `perplexity(self, text)` function in `NgramModel`. A couple of things to keep in mind:
+1. Numeric underflow is going to be a problem, so consider using logs.
+2. Perplexity is undefined if the language model assigns any zero probabilities to the test set. In that case your code should return positive infinity - `float('inf')`.
+3. On your unsmoothed models, you'll definitely get some zero probabilities for the test set. To test you code, you should try computing perplexity on the training set, and you should compute perplexity for your language models that use smoothing and interpolation.
 
-OK - let's implement it. Here's a possible function signature for perplexity.  (We might update it during class on Wednesday).  Give it a go. 
+In your report, discuss the perplexity for text that is similar and different from Shakespeare's plays. We provide you [two dev text files](downloads/hw5/test_data.zip), a New York Times article and several of Shakespeare's sonnets, but feel free to experiment with your own text.
 
-{% highlight python %}
-def perplexity(test_filename, lm, order=4):
-  '''Computes the perplexity of a text file given the language model.
-  
-  Inputs:
-    test_filename: path to text file
-    lm: The output from calling train_char_lm.
-    order: The length of the n-grams in the language model.
-  '''
-  test = open(test_filename).read()
-  pad = "~" * order
-  test = pad + data
-  
-  # TODO: YOUR CODE HERE
-{% endhighlight %}
+```python
+>>> m = NgramModel(1, 0)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.perplexity('abcd')
+1.189207115002721
+>>> m.perplexity('abca')
+inf
+>>> m.perplexity('abcda')
+1.515716566510398
+```
 
+Note: you may want to create a smoothed language model before calculating perplexity on real data.
 
-A couple of things to keep in mind:
+### Smoothing 
 
-1. Remember to pad the front of the file
-2. Numeric underflow is going to be a problem, so consider using logs.
-3. Perplexity is undefined if LM assigns any zero probabilities to the test set. In that case your code should return positive infinity - `float("inf")`.
-4. On your unsmoothed models, you'll definitely get some zero probabilities for the test set.  To test you code, you should try computing perplexity on the trianing set, and you should compute perplexity for your LMs that use smoothing and interpolation.
-
-
-#### In your report:
-Discuss the perplexity for text that is similar and different from Shakespeare's plays. We provide you [two dev text files](downloads/hw5/test_data.zip), a New York Times article and several of Shakespeare's sonnets, but feel free to experiment with your own text.
-
-Note: you may want to create a smoothed language model before calculating perplexity, otherwise you will get a perplexity of 0.
-
-### Laplace Smoothing and Add-k Smoothing 
-
-Laplace Smoothing is described in section 4.4.1.  Laplace smoothing  adds one to each count (hence its alternate name *add-one smoothing*).   Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
+Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to each count (hence its alternate name *add-one smoothing*). Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
 
 $$P_{Laplace}(w_i) = \frac{count_i + 1}{N+V}$$
 
-A variant of Laplace smoothing is called *Add-k smoothing* or *Add-epsilon smoothing*.  This is described in section Add-k 4.4.2.  Let's change the function definition of `train_char_lm` so that it takes a new argument, `add_k`, which specifies how much to add.  By default, we'll set it to one, so that it acts like Laplace smoothing:
+A variant of Laplace smoothing is called *Add-k smoothing* or *Add-epsilon smoothing*. This is described in section Add-k 4.4.2. Update your `NgramModel` code from Part 1 to implement add-k smoothing.
 
-{% highlight python %}
-def train_char_lm(fname, order=4, add_k=1):
-    # Your code here...
-{% endhighlight %}
+```python
+>>> m = NgramModel(1, 1)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.prob('a', 'a')
+0.14285714285714285
+>>> m.prob('a', 'b')
+0.5714285714285714
+>>> m.prob('c', 'd')
+0.4
+>>> m.prob('d', 'a')
+0.25
+```
 
 ### Interpolation
 
-Next, let's implement interpolation.  The idea here is to calculate the higher order n-gram probabilities also combining the probabilities for lower-order n-gram models.  Like smoothing, this helps us avoid the problem of zeros if we haven't observed the longer sequence in our training data.  Here's the math:
+The idea of interpolation is to calculate the higher order n-gram probabilities also combining the probabilities for lower-order n-gram models. Like smoothing, this helps us avoid the problem of zeros if we haven't observed the longer sequence in our training data. Here's the math:
 
-$$P_{backoff}(w_i|w_{i−2} w_{i−1}) = \lambda_1 P(w_i|w_{i−2} w_{i−1}) + \lambda_2 P(w_i|w_{i−1}) + \lambda_3 P(w_i)$$
+$$P_{interpolation}(w_i|w_{i−2} w_{i−1}) = \lambda_1 P(w_i|w_{i−2} w_{i−1}) + \lambda_2 P(w_i|w_{i−1}) + \lambda_3 P(w_i)$$
 
 where $\lambda_1 + \lambda_2 + \lambda_3 = 1$.
 
+We've provided you with another class definition `NgramModelWithInterpolation` that extends `NgramModel` for you to implement interpolation. If you've written your code robustly, you should only need to override the `get_vocab(self)`, `update(self, text)`, and `prob(self, context, char)` methods, along with the initializer.
 
-Now, write a back-off function:
+The value of $n$ passed into `__init__(self, n, k)` is the highest order n-gram to be considered by the model (e.g. $n=2$ will consider 3 different length n-grams). Add-k smoothing should take place only when calculating the individual order n-gram probabilities, not when calculating the overall interpolation probability.
 
-{% highlight python %}
-def calculate_prob_with_backoff(char, history, lms, lambdas):
-  '''Uses interpolation to compute the probability of char given a series of 
-     language models trained with different length n-grams.
+By default set the lambdas to be equal weights, but you should also write a helper function that can be called to overwrite this default. Setting the lambdas in the helper function can either be done heuristically or by using a development set, but in the example code below, we've used the default.
 
-   Inputs:
-     char: Character to compute the probability of.
-     history: A sequence of previous text.
-     lms: A list of language models, outputted by calling train_char_lm.
-     lambdas: A list of weights for each lambda model. These should sum to 1.
-    
-  Returns:
-    Probability of char appearing next in the sequence.
-  ''' 
-  # TODO: YOUR CODE HERE
-  pass
-{% endhighlight %}
+```python
+>>> m = NgramModelWithInterpolation(1, 0)
+>>> m.update('abab')
+>>> m.prob('a', 'a')
+0.25
+>>> m.prob('a', 'b')
+0.75
 
-You should also write a helper function to set the lambdas.  Here's a function definition that gives you access to a development set.  You can also experiment with setting them manually. 
+>>> m = NgramModelWithInterpolation(2, 1)
+>>> m.update('abab')
+>>> m.update('abcd')
+>>> m.prob('~a', 'b')
+0.4682539682539682
+>>> m.prob('ba', 'b')
+0.4349206349206349
+>>> m.prob('~c', 'd')
+0.27222222222222225
+>>> m.prob('bc', 'd')
+0.3222222222222222
+```
 
-{% highlight python %}
-# returns a list of lambda values that weight the contribution of n-gram model
-def set_lambdas(lms, dev_filename):
-  '''Returns a list of lambda values that weight the contribution of each n-gram model
+In your report, experiment with a few different lambdas and values of k and discuss their effects.
 
-  This can either be done heuristically or by using a development set.
-
-  Inputs:
-    lms: A list of language models, outputted by calling train_char_lm.
-    dev_filename: Path to a development text file to optionally use for tuning the lmabdas. 
-
-  Returns:
-    Probability of char appearing next in the sequence.
-  '''
-  # TODO: YOUR CODE HERE
-  pass
-{% endhighlight %}
-
-#### In your report:
-Experiment with a couple different lambdas and values of k, and discuss their effects.
-
-## Part 3: Text Classification using LMs
+## Part 3: Text Classification using N-Grams
 
 Language models can be applied to text classification. If we want to classify a text $$D$$ into a category $$c \in C={c_1, ..., c_N}$$. We can pick the category $$c$$ that has the largest posterior probability given the text. That is,
 
@@ -438,9 +278,10 @@ If we assume that all classes are equally likely, then we can just drop the $$P(
 
 $$ = arg max_{c \in C} P(D|c)$$
 
-Here $$P(D \mid c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$.  This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
+Here $$P(D \mid c)$$ is the likelihood of $$D$$ under category $$c$$, which can be computed by training language models for all texts associated with category $$c$$. This technique of text classification is drawn from [literature on authorship identification](http://www.aclweb.org/anthology/E/E03/E03-1053.pdf), where the approach is to learn a separate language model for each author, by training on a data set from that author. Then, to categorize a new text D, they use each language model to calculate the likelihood of D under that model, and pick the  category that assigns the highest probability to D.
 
-Try it!  We have provided you training and validation datsets consisting of the names of cities. The task is to predict the country a city is in. The following countries are including in the dataset.
+Try it! We have provided you training and validation datsets consisting of the names of cities. The task is to predict the country a city is in. The following countries are including in the dataset.
+
 ```
 af	Afghanistan
 cn	China
@@ -453,27 +294,23 @@ pk	Pakistan
 za	South Africa
 ```
 
+We'll set up a leaderboard for the text classification task. Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
 
-**Leaderboard**
+Feel free to extend the `NgramModel` or `NgramModelWithInterpolation` when creating your language model. Possible ideas to consider and experiment with when creating your model are utilizing a special end-of-text character, trying a new method for determining the vocab, and improving how your model handles novel characters.
 
-We'll set up a leaderboard for the text classification task.  Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
+In your report, describe the parameters of your final leaderboard model and any experimentation you did before settling on it.
 
-In next week's assignment, you will use a recurrent neural network on the same dataset in order to compare performance. 
-
-#### In your report:
-Describe the parameters of your final leaderboard model and any experimentation you did before settling on it.
-
-
+In next week's assignment, you will use a recurrent neural network on the same dataset in order to compare performance.
 
 ## Deliverables
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * writeup.pdf
-* code (.zip). It should be written in Python 3 and include a README.txt briefly explaining how to run it.
+* `hw5_skeleton.py`
 * `labels.txt` predictions for leaderboard.
 </div>
 
-## Recommended readings
+## Recommended Readings
 
 <table>
    {% for publication in page.readings %}
