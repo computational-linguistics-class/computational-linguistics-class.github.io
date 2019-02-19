@@ -170,13 +170,27 @@
       url: https://www.pnas.org/content/115/16/E3635.short
       optional: true
 -
-  date: 2019-02-18
+  date: 2019-02-20
+  slides: slides/07-logistic-regression.pdf
+  title: Logistic Regression
+  slides_credit: 
+  readings: 
+    - 
+      title: Chapter 5 "Logistic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/5.pdf
+    - 
+      title: Neural Network Methods for Natural Language (Chapter 2).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
+-
+  date: 2019-02-20
   slides: 
   title: Neural Net Language Models
   slides_credit: 
   readings: 
     - 
-      title: Neural Network Methods for Natural Language (Chapters 2-4).  This book is free to download from Penn's campus.
+      title: Neural Network Methods for Natural Language (Chapter 4).  This book is free to download from Penn's campus.
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
     - 
