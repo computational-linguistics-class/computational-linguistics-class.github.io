@@ -14,7 +14,7 @@ readings:
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/3.pdf
 -
    title: The Unreasonable Effectiveness of Character-level Language Models
    authors: Yoav Goldberg
