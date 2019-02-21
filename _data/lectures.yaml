@@ -259,9 +259,14 @@
 -
   date: 2019-03-13
   slides: 
-  title: ELMo and BERT
-  slides_credit: 
+  title: Guest lecture on BERT
+  speaker: Jacob Devlin
+  slides_credit: Jacob Devlin
   readings: 
+    - 
+      title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+      authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
+      url: https://arxiv.org/abs/1810.04805
 -
   date: 2019-03-18
   slides: 
@@ -271,9 +276,14 @@
 -
   date: 2019-03-20
   slides: 
-  title: 
-  slides_credit: 
+  title: Guest lecture on multilingual embeddings
+  speaker: Shyam Upadhyay
+  slides_credit: Shyam Upadhyay
   readings: 
+    - 
+      title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
+      authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
+      url: http://www.aclweb.org/anthology/P16-1157
 -
   date: 2019-03-25
   slides: 
@@ -295,7 +305,7 @@
 -
   date: 2019-04-03
   slides: 
-  title: 
+  title: (tenative) Guest lecture by Eric Fosler-Lussier on Automatic Speech Recognition 
   slides_credit: 
   readings: 
 -
