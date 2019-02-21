@@ -7,8 +7,6 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
-
-
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 {% for page in site.pages %}
