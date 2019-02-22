@@ -135,7 +135,7 @@ In this section, you will build a simple n-gram language model that can be used 
 Now you can train a language model. First grab some text like this corpus of Shakespeare:
 
 ``` bash
-$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt`
+$ wget http://cs.stanford.edu/people/karpathy/char-rnn/shakespeare_input.txt
 ```
 
 Try generating some Shakespeare with different order n-gram models. You should try running the following commands:
@@ -294,7 +294,7 @@ pk	Pakistan
 za	South Africa
 ```
 
-We'll set up a leaderboard for the text classification task. Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `labels.txt` with one two-letter country code per line.
+We'll set up a leaderboard for the text classification task. Your job is to configure a set of language models that perform the best on the text classification task. We will use the city names dataset, which you should have already downloaded. The test set has one unlabeled city name per line. Your code should output a file `test_labels.txt` with one two-letter country code per line.
 
 Feel free to extend the `NgramModel` or `NgramModelWithInterpolation` when creating your language model. Possible ideas to consider and experiment with when creating your model are utilizing a special end-of-text character, trying a new method for determining the vocab, and improving how your model handles novel characters.
 
@@ -307,7 +307,7 @@ In next week's assignment, you will use a recurrent neural network on the same d
 Here are the deliverables that you will need to submit:
 * writeup.pdf
 * `hw5_skeleton.py`
-* `labels.txt` predictions for leaderboard.
+* `test_labels.txt` predictions for leaderboard.
 </div>
 
 ## Recommended Readings
