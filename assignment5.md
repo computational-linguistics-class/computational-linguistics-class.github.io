@@ -104,7 +104,7 @@ In this section, you will build a simple n-gram language model that can be used 
     0.5
     ```
 
-3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $T=\langle t_1,t_2, \cdots, t_n \rangle$ be the set of tokens which can occur in the given context, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the token $t_i$ such that
+3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $T=\langle t_1,t_2, \cdots, t_n \rangle$ be the set of characters which can occur in the given context, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the character $t_i$ such that
 
     $$\sum_{j=1}^{i-1} P(t_j\ |\ \text{context}) \le r < \sum_{j=1}^i P(t_j\ | \ \text{context}).$$
 
@@ -119,7 +119,7 @@ In this section, you will build a simple n-gram language model that can be used 
     ['a', 'c', 'c', 'a', 'b', 'b', 'b', 'c', 'a', 'a', 'c', 'b', 'c', 'a', 'b', 'b', 'a', 'd', 'd', 'a', 'a', 'b', 'd', 'b', 'a']
     ```
 
-4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ ~ characters, and the context should be updated as tokens are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
+4. In the `NgramModel` class, write a method `random_text(self, length)` which returns a string of characters chosen at random using the `random_char(self, context)` method. Your starting context should always be $n$ ~ characters, and the context should be updated as characters are generated. If $n=0$, your context should always be the empty string. You should continue generating characters until you've produced the specified number of random characters, then return the full string.
 
     ```python
     >>> m = NgramModel(1, 0)
