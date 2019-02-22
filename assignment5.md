@@ -207,7 +207,7 @@ Note: you may want to create a smoothed language model before calculating perple
 
 ### Smoothing 
 
-Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to each count (hence its alternate name *add-one smoothing*). Since there are *|V|* characters in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra $|V|$ observations.
+Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to each count (hence its alternate name *add-one smoothing*). Since there are $$|V|$$ characters in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra $$|V|$$ observations.
 
 $$P_{Laplace}(w_i) = \frac{count_i + 1}{N+|V|}$$
 
