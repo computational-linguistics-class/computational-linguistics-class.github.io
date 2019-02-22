@@ -86,7 +86,7 @@ In this section, you will build a simple n-gram language model that can be used 
 
 1. In the `NgramModel` class, write an initialization method `__init__(self, n, k)` which stores the order $n$ of the model and initializes any necessary internal variables. Then write a method `get_vocab(self)` that returns the vocab (this is the set of all characters used by this model).
 
-2. Write a method `update(self, text)` which computes the n-grams for the input sentence and updates the internal counts. Also write a method `prob(self, context, char)` which accepts an n-length string representing a context and a character, and returns the probability of that character occuring, given the preceding context. If you encounter a novel `context`, the probability of any given `char` should be $1/V$ where $V$ is the size of the vocab.
+2. Write a method `update(self, text)` which computes the n-grams for the input sentence and updates the internal counts. Also write a method `prob(self, context, char)` which accepts an n-length string representing a context and a character, and returns the probability of that character occuring, given the preceding context. If you encounter a novel `context`, the probability of any given `char` should be $1/|V|$ where $|V|$ is the size of the vocab.
 
     ```python
     >>> m = NgramModel(1, 0)
@@ -104,9 +104,9 @@ In this section, you will build a simple n-gram language model that can be used 
     0.5
     ```
 
-3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $T=\langle t_1,t_2, \cdots, t_n \rangle$ be the set of characters which can occur in the given context, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the character $t_i$ such that
+3. Write a method `random_char(self, context)` which returns a random character according to the probability distribution determined by the given context. Specifically, let $V=\langle v_1,v_2, \cdots, v_n \rangle$ be the vocab, sorted according to Python's natural lexicographic ordering, and let $0\le r<1$ be a random number between 0 and 1. Your method should return the character $v_i$ such that
 
-    $$\sum_{j=1}^{i-1} P(t_j\ |\ \text{context}) \le r < \sum_{j=1}^i P(t_j\ | \ \text{context}).$$
+    $$\sum_{j=1}^{i-1} P(v_j\ |\ \text{context}) \le r < \sum_{j=1}^i P(v_j\ | \ \text{context}).$$
 
     You should use a single call to the `random.random()` function to generate $r$.
 
@@ -176,7 +176,7 @@ Here's what the textbook says:
 
 > But what does it mean to "fit the test set"? The answer is simple: whichever model assigns a higher probability to the test set is a better model.
 
-We'll implement the most common method for intrinsic metric of language models: *perplexity*.  The perplexity of a language model on a test set is the inverse probability of the test set, normalized by the number of words. For a test set $$W = w_1 w_2 ... w_N$$:
+We'll implement the most common method for intrinsic metric of language models: *perplexity*.  The perplexity of a language model on a test set is the inverse probability of the test set, normalized by the number of characters. For a test set $$W = w_1 w_2 ... w_N$$:
 
 $$Perplexity(W) = P(w_1 w_2 ... w_N)^{-\frac{1}{N}}$$
 
@@ -207,9 +207,9 @@ Note: you may want to create a smoothed language model before calculating perple
 
 ### Smoothing 
 
-Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to each count (hence its alternate name *add-one smoothing*). Since there are *V* words in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra V observations.
+Laplace Smoothing is described in section 4.4.1. Laplace smoothing adds one to each count (hence its alternate name *add-one smoothing*). Since there are *|V|* characters in the vocabulary and each one was incremented, we also need to adjust the denominator to take into account the extra $|V|$ observations.
 
-$$P_{Laplace}(w_i) = \frac{count_i + 1}{N+V}$$
+$$P_{Laplace}(w_i) = \frac{count_i + 1}{N+|V|}$$
 
 A variant of Laplace smoothing is called *Add-k smoothing* or *Add-epsilon smoothing*. This is described in section Add-k 4.4.2. Update your `NgramModel` code from Part 1 to implement add-k smoothing.
 
