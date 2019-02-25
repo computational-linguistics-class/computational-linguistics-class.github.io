@@ -7,8 +7,6 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
-
-
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 {% for page in site.pages %}
@@ -33,10 +31,6 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endif %}
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
-
-<div class="alert alert-info">
-The class is now at capacity.  No more permits are available.
-</div>
 
 
 Course number

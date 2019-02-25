@@ -381,7 +381,7 @@ Write a function `cluster_random(word_to_paraphrases_dict, word_to_k_dict)` that
 2. word_to_k_dict = a mapping between a target word and a number of clusters for a given target
 The function  outputs a dictionary, where the key is a target word and a value is a list of list of paraphrases, where a list of paraphrases represents a distinct sense of a target word. 
 
-For this task put paraphrases into distinct senses at random. We recommend using `random` packages. Please use `123` as a random seed. Your output should look similar to this on the development dataset: 
+For this task put paraphrases into distinct senses at random. That is, assign to pick a random word for each cluster, as opposed to picking a random cluster for each word. This will ensure that all clusters have at lease one word in them. We recommend using `random` packages. Please use `123` as a random seed. Your output should look similar to this on the development dataset: 
 
 ```python
 word_to_paraphrases_dict, word_to_k_dict = load_input_file('data/dev_input.txt')
@@ -426,7 +426,7 @@ We will feature-based (not dense) vector space representation. In this type of V
 You will calculate cooccurrence vectors on the Reuters RCV1 corpus. It can take a long time to build cooccurrence vectors, so we have pre-built set called  `coocvec-500mostfreq-window-3.vec.filter.magnitude` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`. To save on space, these include only the words used in the given files.
 This representation of words uses a term-context matrix `M` of size `|V| x D`, where `|V|` is the size of the vocabulary and D=500. Each feature corresponds to one of the top 500 most-frequent words in the corpus. The value of matrix entry `M[i][j]` gives the number of times the context word represented by column `j` appeared within W=3 words to the left or right of the word represented by row `i` in the corpus. 
 
-If you are interested in building your own cooccurrence vectors, you can use tokenized and cleaned version here called `reuters.rcv1.tokenized.gz` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`. The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). We used the provided script, `makecooccurrences.py`, to build these vectors. If you want to use it, be sure to set D and W to what you want. Don't forget to convert your new vector representation to Magnitude by constructing a [Magnitude object](https://github.com/plasticityai/magnitude#constructing-a-magnitude-object).
+If you are interested in building your own cooccurrence vectors, you can use tokenized and cleaned version here called `reuters.rcv1.tokenized` located on eniac in `/home1/c/cis530/hw4_2019/vectors/`. The original is [here](https://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection). We used the provided script, `makecooccurrences.py`, to build these vectors. If you want to use it, be sure to set D and W to what you want. Don't forget to convert your new vector representation to Magnitude by constructing a [Magnitude object](https://github.com/plasticityai/magnitude#constructing-a-magnitude-object).
 
 Use one of the clustering algorithms, for instance K-means clustering in `cluster_with_sparse_representation(word_to_paraphrases_dict, word_to_k_dict)`.  Here is an example of the K-means clustering code:
 
@@ -467,7 +467,7 @@ For this task, we have also included a file called `GoogleNews-vectors-negative3
 
 As before, use the provided word vectors to represent words and perform one of the clusterings. Here are some suggestions to improve the performance of your model:
 
-* Try downloading a different dense vector space model from the web, like [Paragram](http://www.cs.cmu.edu/~jwieting/) or [fastText](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md).
+* Try downloading a different dense vector space model from the web, like [Paragram](http://www.cs.cmu.edu/~jwieting/) or [fastText](https://fasttext.cc/docs/en/english-vectors.html).
 * Train your own word vectors, either on the provided corpus or something you find online. You can try the skip-gram, CBOW models, or [GLOVE](https://nlp.stanford.edu/projects/glove/). Try experimenting with the dimensionality.
 * [Retrofitting](https://www.cs.cmu.edu/~hovy/papers/15HLT-retrofitting-word-vectors.pdf) is a simple way to add additional semantic knowledge to pre-trained vectors. The retrofitting code is available [here](https://github.com/mfaruqui/retrofitting). Experiment with different lexicons, or even try [counter-fitting](http://www.aclweb.org/anthology/N16-1018).
 

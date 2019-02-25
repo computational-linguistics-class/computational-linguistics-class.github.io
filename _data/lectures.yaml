@@ -170,13 +170,27 @@
       url: https://www.pnas.org/content/115/16/E3635.short
       optional: true
 -
-  date: 2019-02-18
-  slides: 
-  title: Neural Net Language Models
+  date: 2019-02-20
+  slides: slides/07-logistic-regression.pdf
+  title: Logistic Regression
   slides_credit: 
   readings: 
     - 
-      title: Neural Network Methods for Natural Language (Chapters 2-4).  This book is free to download from Penn's campus.
+      title: Chapter 5 "Logistic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/5.pdf
+    - 
+      title: Neural Network Methods for Natural Language (Chapter 2).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
+-
+  date: 2019-02-20
+  slides: 
+  title: No class today due to snow.  Pleaes read ahead on neural network LMs. 
+  type: no_lecture
+  readings: 
+    - 
+      title: Neural Network Methods for Natural Language (Chapter 4).  This book is free to download from Penn's campus.
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
     - 
@@ -188,3 +202,162 @@
       authors: Bengio, Ducharme, Vincent and Jauvin
       url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
       optional: true
+-
+  date: 2019-02-22
+  slides: 
+  title: Drop Deadline
+  type: no_lecture
+-
+  date: 2019-02-25
+  slides: 
+  title: Neural Net Language Models
+  slides_credit: 
+  readings: 
+    - 
+      title: Neural Network Methods for Natural Language (Chapter 4).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
+    - 
+      title: A Neural Probabilistic Language Model 
+      authors: Bengio, Ducharme, Vincent
+      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
+    - 
+      title: A Neural Probabilistic Language Model (longer JMLR version)
+      authors: Bengio, Ducharme, Vincent and Jauvin
+      url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
+      optional: true
+-
+  date: 2019-02-27
+  slides: 
+  title: Part-of-Speech Tagging
+  slides_credit: 
+  readings: 
+    - 
+      title: Chapter 8 "Part-of-Speech Tagging"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+-
+  date: 2019-03-04
+  slides: 
+  title: No Lecture - Spring Break
+  type: no_lecture
+-
+  date: 2019-03-06
+  slides: 
+  title: No Lecture - Spring Break
+  type: no_lecture
+-
+  date: 2019-03-11
+  slides: 
+  title: Sequence Processing with Recurrent Networks
+  slides_credit: 
+  readings: 
+    - 
+      title: Chapter 9 "Sequence Processing with Recurrent Networks"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
+-
+  date: 2019-03-13
+  slides: 
+  title: Guest lecture on BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+  speaker: Jacob Devlin
+  slides_credit: Jacob Devlin
+  readings: 
+    - 
+      title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+      authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
+      url: https://arxiv.org/abs/1810.04805
+-
+  date: 2019-03-18
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-03-20
+  slides: 
+  title: Guest lecture on multilingual embeddings
+  speaker: Shyam Upadhyay
+  slides_credit: Shyam Upadhyay
+  readings: 
+    - 
+      title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
+      authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
+      url: http://www.aclweb.org/anthology/P16-1157
+-
+  date: 2019-03-25
+  slides: 
+  title: (tenative) Guest lecture by Graham Neubig on NMT 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-03-27
+  slides: 
+  title: (tenative) Guest lecture by Graham Neubig on NMT 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-01
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-03
+  slides: 
+  title: (tenative) Guest lecture by Eric Fosler-Lussier on Automatic Speech Recognition 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-05
+  slides: 
+  title: Withdraw Deadline
+  type: no_lecture
+-
+  date: 2019-04-08
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-10
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-15
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-17
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-22
+  slides: 
+  title: 
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-24
+  slides: 
+  title: Final project presentations
+  slides_credit: 
+  readings: 
+-
+  date: 2019-04-29
+  slides: 
+  title: Final project presentations
+  slides_credit: 
+  readings: 
+-
+  date: 2019-05-01
+  slides: 
+  title: Final project presentations
+  slides_credit: 
+  readings: 
