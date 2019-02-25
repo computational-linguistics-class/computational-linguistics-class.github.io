@@ -209,12 +209,13 @@
   type: no_lecture
 -
   date: 2019-02-25
-  slides: 
+  slides: slides/08-neural-networks.pdf
   title: Neural Net Language Models
+  lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
   slides_credit: 
   readings: 
     - 
-      title: Neural Network Methods for Natural Language (Chapter 4).  This book is free to download from Penn's campus.
+      title: Neural Network Methods for Natural Language (Chapters 4 and 9).  This book is free to download from Penn's campus.
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
     - 
@@ -305,8 +306,9 @@
 -
   date: 2019-04-03
   slides: 
-  title: (tenative) Guest lecture by Eric Fosler-Lussier on Automatic Speech Recognition 
-  slides_credit: 
+  title: Guest lecture on Automatic Speech Recognition
+  speaker: Eric Fosler-Lussier
+  slides_credit: Eric Fosler-Lussier
   readings: 
 -
   date: 2019-04-05
