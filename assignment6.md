@@ -197,6 +197,9 @@ The TA's model, which passed all the testcases, had the following configuration:
 #### How do I speed up training?
 Send the model and the input, output tensors to the GPU using ```.to(device)```. Refer the [PyTorch docs](https://pytorch.org/docs/stable/notes/cuda.html) for further information.
 
+#### Why are some of the cities mislabeled in the training and development datasets?
+Noisy data is common when data is harvested automatically like the [cities dataset](https://www.maxmind.com/en/geoip-demo). The onus is on the data scientist to ensure that their data is clean. However, for this assignment, you are not required to clean the dataset.
+
 ## Recommended readings
 <table>
    {% for publication in page.readings %}
