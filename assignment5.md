@@ -18,6 +18,7 @@ readings:
 -
    title: A Bit of Progress in Language Modeling
    authors: Joshua Goodman
+   venue: Computer Speech and Language
    type: techreport
    url: https://arxiv.org/abs/cs/0108005
 -
