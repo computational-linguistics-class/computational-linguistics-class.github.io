@@ -173,9 +173,9 @@ torch.save(model.state_dict(), PATH)
 Use the command below.
 
 ```python
-model = torch.load(PATH)
-model.eval() #To predict or
-model.train() #To train
+model = CharRNNClassify()
+model.load_state_dict(torch.load(PATH))
+model.eval() #To predict
 ```
 
 #### I'm unfamiliar with PyTorch. How do I get started?
