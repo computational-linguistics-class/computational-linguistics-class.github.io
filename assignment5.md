@@ -16,6 +16,12 @@ readings:
    type: textbook
    url: https://web.stanford.edu/~jurafsky/slp3/3.pdf
 -
+   title: A Bit of Progress in Language Modeling
+   authors: Joshua Goodman
+   venue: Computer Speech and Language
+   type: techreport
+   url: https://arxiv.org/abs/cs/0108005
+-
    title: The Unreasonable Effectiveness of Character-level Language Models
    authors: Yoav Goldberg
    venue: Response to Andrej Karpathy's blog post.
