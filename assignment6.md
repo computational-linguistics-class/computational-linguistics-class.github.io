@@ -163,7 +163,7 @@ Here are the deliverables that you will need to submit:
 ## FAQs
 
 #### How do I save a PyTorch model?
-Use the command below. Please ensure that your model is **trainable** and you are saving all parameters.
+Use the command below. Please ensure that your model can be used for **inference**.
 
 ```python
 torch.save(model.state_dict(), PATH)
