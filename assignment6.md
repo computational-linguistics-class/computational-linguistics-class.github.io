@@ -166,7 +166,7 @@ Here are the deliverables that you will need to submit:
 Use the command below. Please ensure that your model is **trainable** and you are saving all parameters.
 
 ```python
-torch.save(model, PATH)
+torch.save(model.state_dict(), PATH)
 ```
 
 #### How do I load a PyTorch model?
