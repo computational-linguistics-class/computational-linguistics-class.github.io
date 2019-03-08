@@ -288,15 +288,19 @@
 -
   date: 2019-03-25
   slides: 
-  title: (tenative) Guest lecture by Graham Neubig on NMT 
+  title: 
   slides_credit: 
   readings: 
 -
   date: 2019-03-27
   slides: 
-  title: (tenative) Guest lecture by Graham Neubig on NMT 
-  slides_credit: 
+  title: Guest lecture by Graham Neubig on NMT 
+  slides_credit: Graham Neubig
   readings: 
+    - 
+      title: Neural Machine Translation and Sequence-to-sequence Models&colon; A Tutorial
+      authors: Graham Neubig
+      url: https://arxiv.org/abs/1703.01619
 -
   date: 2019-04-01
   slides: 
