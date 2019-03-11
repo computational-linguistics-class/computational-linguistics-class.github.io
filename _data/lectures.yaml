@@ -229,8 +229,8 @@
       optional: true
 -
   date: 2019-02-27
-  slides: 
-  title: Part-of-Speech Tagging
+  slides: slides/10-POS-tagging-and-sequence-modeling.pdf
+  title: Part-of-Speech Tagging and Sequence Models
   slides_credit: 
   readings: 
     - 
@@ -250,13 +250,13 @@
 -
   date: 2019-03-11
   slides: 
-  title: Sequence Processing with Recurrent Networks
+  title: POS tagging and Sequence Models 
   slides_credit: 
   readings: 
     - 
-      title: Chapter 9 "Sequence Processing with Recurrent Networks"
+      title: Chapter 8 "Part-of-Speech Tagging"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/9.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2019-03-13
   slides: 
@@ -271,9 +271,13 @@
 -
   date: 2019-03-18
   slides: 
-  title: 
+  title: POS Sequence Processing with Recurrent Networks
   slides_credit: 
   readings: 
+    - 
+      title: Chapter 8 "Part-of-Speech Tagging"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2019-03-20
   slides: 
