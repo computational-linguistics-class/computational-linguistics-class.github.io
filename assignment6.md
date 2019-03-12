@@ -6,7 +6,7 @@ img_link: https://xkcd.com/1838/
 title: Homework 6 - Neural Language Models
 active_tab: homework
 release_date: 2019-02-25
-due_date: 2019-03-12T23:59:00EST
+due_date: 2019-03-19T23:59:00EDT
 attribution: This assignment is based on [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018.  
 readings:
 -
