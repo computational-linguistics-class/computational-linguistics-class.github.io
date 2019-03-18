@@ -30,7 +30,7 @@ Named Entity Recognition <span class="text-muted">: Assignment 7</span>
 
 Since you have read Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
 
-Your task is to implement your own named entity recognizer. Relax, you'll find it's a lot easier than it sounds, and it should be very satisfying to accomplish this. There will be two versions of this task: the first, the constrained version, is the required entity tagger that you implement using scikit learn, filling out the stub that we give you. The second is an unconstrained optional version where you use whatever tool, technique, or feature you can get your hands to get the best possible score on the dataset. There will be a leaderboard for each version.
+Your task is to implement your own named entity recognizer. Relax, you'll find it's a lot easier than it sounds, and it should be very satisfying to accomplish this. You will implement an entity tagger using scikit learn, filling out the stub that we give you. There will be a leaderboard.
 
 As with nearly all NLP tasks, you will find that the two big points of variability in NER are (a) the features, and (b) the learning algorithm, with the features arguably being the more important of the two. The point of this assignment is for you to think about and experiment with both of these. Are there interesting features you can use? What latent signal might be important for NER? What have you learned in the class so far that can be brought to bear?
 
@@ -66,7 +66,6 @@ $ python -m nltk.downloader conll2002
 ```
 
 
-
 ## Evaluation
 
 There are two common ways of evaluating NER systems: phrase-based, and token-based. In phrase-based, the more common of the two, a system must predict the entire span correctly for each name. For example, say we have text containing "James Earle Jones", and our system predicts "[PER James Earle] Jones". Phrase-based gives no credit for this because it missed "Jones", whereas token-based would give partial credit for correctly identifying "James" and "Earle" as B-PER and I-PER respectively. We will use phrase-based to report scores.
@@ -94,34 +93,39 @@ $ python conlleval.py results.txt
 (The python version of conlleval doesn't calculate the token-based score, but if you really want it, you can use the [original perl version](https://www.clips.uantwerpen.be/conll2000/chunking/output.html). You would use the `-r` flag.)
 
 
-## Other resources
-
-Here are some other NER frameworks which you are welcome to run in the unconstrained version:
-* [CogComp NER](https://github.com/CogComp/cogcomp-nlp/tree/master/ner), one of the best taggers
-* [LSTM-CRF](https://github.com/glample/tagger), recent neural network tagger
-* [Stanford NER](https://nlp.stanford.edu/software/CRF-NER.shtml), Stanford's tried and true tagger
-* [spaCy](https://spacy.io/usage/training)
-* [Brown clustering software](https://github.com/percyliang/brown-cluster). You might find it useful.
-* [Spanish text and vectors](http://crscardellino.me/SBWCE/)
-* [Europarl corpora](http://www.statmt.org/europarl/), look for the English-Spanish parallel text
-
-Note: you are not allowed to use pre-trained NER models even in the unconstrained version. Please train your own. You are allowed to use pre-trained embeddings.
-
 ## Baselines
 
 The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 85%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
 
 As always, beating the baseline alone with earn you a B on the project. In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required. Extra credit for the top of the leaderboard etc.
 
+## Report
+
+1. Explain four features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
+2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. You can save your model or load your model in the following way:
+
+```
+import pickle
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X_train, Y_train)
+filename = 'model'
+pickle.dump(model, open(filename, 'wb'))
+
+loaded_model = pickle.load(open(filename, 'rb'))
+```
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* Code, as always in Python 3.
+* Code, as always, in Python 3.
+* Saved model[model] - Your final trained model. Please put it in the same path as your code.
 * Constrained results (in a file called `constrained_results.txt`)
-* Optional unconstrained results (in a file called `unconstrained_results.txt`)
 * PDF Report (called writeup.pdf)
 </div>
+
+
 
 ## Recommended readings
 * Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf)
