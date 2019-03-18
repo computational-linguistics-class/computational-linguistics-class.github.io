@@ -115,7 +115,8 @@ pickle.dump(model, open(filename, 'wb'))
 
 To load your model, you can use the following code:
 
-```loaded_model = pickle.load(open(filename, 'rb'))
+```
+loaded_model = pickle.load(open(filename, 'rb'))
 ```
 
 
