@@ -259,7 +259,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2019-03-13
-  slides: 
+  slides: slides/90-guest_lecture_jacob_devlin_bert_presentations.pdf
   title: Guest lecture on BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
   speaker: Jacob Devlin
   slides_credit: Jacob Devlin
@@ -275,9 +275,9 @@
   slides_credit: 
   readings: 
     - 
-      title: Chapter 8 "Part-of-Speech Tagging"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+      title: Recurrent Neural Networks&colon Modeling Sequences and Stacks (Chapter 14).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
   date: 2019-03-20
   slides: 
