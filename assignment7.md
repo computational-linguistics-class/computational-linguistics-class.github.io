@@ -102,7 +102,8 @@ As always, beating the baseline alone with earn you a B on the project. In order
 ## Report
 
 1. Explain four features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
-2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. You can save your model to a file in the following way:
+2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. You can save your model or load your model in the following way:
+
 ```
 import pickle
 from sklearn.linear_model import LogisticRegression
@@ -111,9 +112,7 @@ model = LogisticRegression()
 model.fit(X_train, Y_train)
 filename = 'model'
 pickle.dump(model, open(filename, 'wb'))
-```
-To load your model, you can use the following code:
-```
+
 loaded_model = pickle.load(open(filename, 'rb'))
 ```
 
