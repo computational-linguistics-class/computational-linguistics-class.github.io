@@ -28,7 +28,7 @@ Named Entity Recognition <span class="text-muted">: Assignment 7</span>
 =============================================================
 
 
-Since you have read Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
+Since you have read [Jurafsky and Martin chapter 9](https://web.stanford.edu/~jurafsky/slp3/9.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
 
 Your task is to implement your own named entity recognizer. Relax, you'll find it's a lot easier than it sounds, and it should be very satisfying to accomplish this. You will implement an entity tagger using scikit learn, filling out the stub that we give you. There will be a leaderboard.
 
