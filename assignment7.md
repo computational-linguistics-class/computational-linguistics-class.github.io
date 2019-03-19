@@ -128,7 +128,7 @@ Here are the deliverables that you will need to submit:
 
 
 ## Recommended readings
-* Jurafsky and Martin chapter [21](https://web.stanford.edu/~jurafsky/slp3/21.pdf)
+* [Jurafsky and Martin chapter 9](https://web.stanford.edu/~jurafsky/slp3/9.pdf)
 * [Design Challenges and Misconeptions in Named Entity Recognition](http://cogcomp.org/papers/RatinovRo09.pdf) a very highly cited NER paper from a Penn professor
 * [Entity Extraction is a Boring Solved Problem -- or is it?](https://aclanthology.info/pdf/N/N07/N07-2046.pdf)
 * [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360), a popular recent paper on... just read the title.
