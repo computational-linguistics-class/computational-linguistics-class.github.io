@@ -97,12 +97,12 @@ $ python conlleval.py results.txt
 
 The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 85%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
 
-As always, beating the baseline alone with earn you a B on the project. In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required. Extra credit for the top of the leaderboard etc.
+In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required.
 
 ## Report
 
 1. Explain four features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
-2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. You can save your model or load your model in the following way:
+2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. There will be some manual testing conducted with your submitted model. You can save your model or load your model in the following way:
 
 ```
 import pickle
@@ -121,7 +121,7 @@ loaded_model = pickle.load(open(filename, 'rb'))
 Here are the deliverables that you will need to submit:
 * Code, as always, in Python 3.
 * Saved model[model] - Your final trained model. Please put it in the same path as your code.
-* Constrained results (in a file called `constrained_results.txt`)
+* Results (in a file called `results.txt`)
 * PDF Report (called writeup.pdf)
 </div>
 
