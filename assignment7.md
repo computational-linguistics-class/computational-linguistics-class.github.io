@@ -90,6 +90,14 @@ Here's how to get scores (assuming the above format is in a file called `results
 $ python conlleval.py results.txt
 ```
 
+Please create this output for the training set (as `train_results.txt`), development set as (`dev_results.txt`), and test set (as `test_results.txt`). You can retrieve the sentences with the following code:
+
+```
+train_sents = list(conll2002.iob_sents('esp.train'))
+dev_sents = list(conll2002.iob_sents('esp.testa'))
+test_sents = list(conll2002.iob_sents('esp.testb'))
+```
+
 (The python version of conlleval doesn't calculate the token-based score, but if you really want it, you can use the [original perl version](https://www.clips.uantwerpen.be/conll2000/chunking/output.html). You would use the `-r` flag.)
 
 
@@ -102,7 +110,7 @@ In order to earn an A, demonstrate that you have thought about the problem caref
 ## Report
 
 1. Explain four features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
-2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters and include tables recording the F1-score attained for each set of parameters. You will also need to submit your final, trained model. There will be some manual testing conducted with your submitted model. You can save your model or load your model in the following way:
+2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters on the dev set (optimize your performance with regards to dev F1-score) and include tables recording the training F1-score and dev F1-score attained for each set of parameters. You will also need to submit your final, trained model. We will be using your trained model to confirm that the .txt files you submit are the same as the output of your final model. You can save your model or load your model in the following way:
 
 ```
 import pickle
@@ -110,8 +118,7 @@ from sklearn.linear_model import LogisticRegression
 
 model = LogisticRegression()
 model.fit(X_train, Y_train)
-filename = 'model'
-pickle.dump(model, open(filename, 'wb'))
+pickle.dump(model, open('model', 'wb'))
 
 loaded_model = pickle.load(open(filename, 'rb'))
 ```
@@ -121,7 +128,7 @@ loaded_model = pickle.load(open(filename, 'rb'))
 Here are the deliverables that you will need to submit:
 * Code, as always, in Python 3.
 * Saved model[model] - Your final trained model. Please put it in the same path as your code.
-* Results (in a file called `results.txt`)
+* Results (in files called `train_results.txt`, `dev_results.txt`, `test_results.txt`)
 * PDF Report (called writeup.pdf)
 </div>
 
