@@ -270,8 +270,8 @@
       url: https://arxiv.org/abs/1810.04805
 -
   date: 2019-03-18
-  slides: 
-  title: POS Sequence Processing with Recurrent Networks
+  slides: slides/11-recurrent-neural-networks.pdf
+  title: POS Sequence Processing and Recurrent Networks
   slides_credit: 
   readings: 
     - 
@@ -280,8 +280,8 @@
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
   date: 2019-03-20
-  slides: 
-  title: Guest lecture on multilingual embeddings
+  slides: slides/90-guest_lecture_ shyam_upadhyay_cross_lingual_word_representations.pdf
+  title: Cross-lingual Word Representations
   speaker: Shyam Upadhyay
   slides_credit: Shyam Upadhyay
   readings: 
@@ -326,8 +326,9 @@
 -
   date: 2019-04-08
   slides: 
-  title: 
-  slides_credit: 
+  title: Guest lecture on Dialog Systems / Chatbots
+  speaker: João Sedoc
+  slides_credit: João Sedoc
   readings: 
 -
   date: 2019-04-10
