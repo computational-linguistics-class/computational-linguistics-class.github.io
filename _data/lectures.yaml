@@ -249,7 +249,7 @@
   type: no_lecture
 -
   date: 2019-03-11
-  slides: 
+  slides: slides/10-POS-tagging-and-sequence-modeling.pdf
   title: POS tagging and Sequence Models 
   slides_credit: 
   readings: 
