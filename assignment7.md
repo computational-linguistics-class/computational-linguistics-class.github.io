@@ -28,7 +28,7 @@ Named Entity Recognition <span class="text-muted">: Assignment 7</span>
 =============================================================
 
 
-Since you have read [Jurafsky and Martin chapter 9](https://web.stanford.edu/~jurafsky/slp3/9.pdf), you know that Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
+Named Entity Recognition is the task of finding and classifying named entities in text. This task is often considered a sequence tagging task, like part of speech tagging, where words form a sequence through time, and each word is given a tag. Unlike part of speech tagging however, NER usually uses a relatively small number of tags, where the vast majority of words are tagged with the 'non-entity' tag, or O tag.
 
 Your task is to implement your own named entity recognizer. Relax, you'll find it's a lot easier than it sounds, and it should be very satisfying to accomplish this. You will implement an entity tagger using scikit learn, filling out the stub that we give you. There will be a leaderboard.
 
@@ -109,7 +109,7 @@ In order to earn an A, demonstrate that you have thought about the problem caref
 
 ## Report
 
-1. Explain four features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
+1. Explain the features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
 2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters on the dev set (optimize your performance with regards to dev F1-score) and include tables recording the training F1-score and dev F1-score attained for each set of parameters. You will also need to submit your final, trained model. We will be using your trained model to confirm that the .txt files you submit are the same as the output of your final model. You can save your model or load your model in the following way:
 
 ```
@@ -135,7 +135,6 @@ Here are the deliverables that you will need to submit:
 
 
 ## Recommended readings
-* [Jurafsky and Martin chapter 9](https://web.stanford.edu/~jurafsky/slp3/9.pdf)
 * [Design Challenges and Misconeptions in Named Entity Recognition](http://cogcomp.org/papers/RatinovRo09.pdf) a very highly cited NER paper from a Penn professor
 * [Entity Extraction is a Boring Solved Problem -- or is it?](https://aclanthology.info/pdf/N/N07/N07-2046.pdf)
 * [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360), a popular recent paper on... just read the title.
