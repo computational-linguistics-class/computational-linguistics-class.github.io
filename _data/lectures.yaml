@@ -291,8 +291,8 @@
       url: http://www.aclweb.org/anthology/P16-1157
 -
   date: 2019-03-25
-  slides: 
-  title: 
+  slides: slides/12-machine-translation.pdf
+  title: Machine Translation and IBM word alignment models
   slides_credit: 
   readings: 
 -
