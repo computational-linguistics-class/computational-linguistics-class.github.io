@@ -32,10 +32,6 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
 
-<div class="alert alert-success" markdown="1">
-Here's a link to a [natural language understanding system](http://steve.cs.northwestern.edu/?) that uses BERT.
-</div>
-
 Course number
 : CIS 530 - Computational Linguistics 
 
