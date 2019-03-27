@@ -39,7 +39,7 @@ Term Project <span class="text-muted">: Overview</span>
 
 Your term project will be a self-designed multi-week team-based effort. You are welcome to select one of the project ideas that we suggest, or to design your own. Your final project will consist of the following components:
 
-1. A formal definition of the problem and a motivation for while it is an interesting challenge for natural language processing. 
+1. A formal definition of the problem and a motivation for while it is an interesting challenge for natural language processing. A literature review of past approaches to the problem.
 1. A commented implementation of the simplest possible solution to the problem.  For instance, this could be a majority class baseline or a random baseline. 
 1. A commented implementation of a baseline published in the literature, along with
    skeleton code obtained by removing the parts that students should implement.
