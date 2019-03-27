@@ -189,23 +189,7 @@ You should re-implement the published baseline that you selected.  It's fine to 
 
 You should include a baseline.md markdown file that includes step-by-step instructions on how to run your baseline code.   Your baseline.md should also report the score for your system for your test and development data, and compare that to your random baseline.
 
-For Milestone 5, you'll need to implement several extensions beyond this published baseline.  These should be different experiments that you run to try to improve its performance.  The number of extension that you'll implement depends on number of members of your group.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
-
-
-
-## What do you need to turn in?
-
-* You should submit a literature review in a markdown file called lit-review.md.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
-* You should submit your code for the baseline system.  This should be in a python file called a baseline.py.  You should also submit a baseline.md file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
-
-
-
-
-<a name="milestone-4"></a>
-# Milestone 4
-
-For Milestone 4, you will do an in-class presentation for your project, write-up your project as if it were a homework assignment, and turn in a draft of your final report with one of your extensions completed. 
-
+For Milestone 3, you will also prepare an in-class presentation for your project.
 Your in-class presentation should be 12 minutes long.  You should create a slidedeck with [Google Slides](https://www.google.com/slides/about/).  Your presentation should convey  these main ideas:
 * What is the topic of your term project?  You should clearly explain to your classmates the problem that you selected to work on.  Give an illustrative example of the problem first, and then give a more formal definition of the problem.
 * What is exciting about your term project?  Why did you want to work on this topic?  
@@ -217,21 +201,24 @@ You may also want to cover topics like this:
 * What approaches have people taken in the past?  How successful have they been?
 * What did you implement for your published baseline?
 
-In addition to your in-class presentation, you'll need to create a write-up your project as if it were a homework assignment.  Based on the presentations, we'll have a vote to pick a few of your term projects that will be options for what the rest of the students in the class do as their final HW assignment.
 
-Finally, by the Milestone 4 deadline, you need to have completed one of the extensions to your published baseline.
+
+For Milestone 4, you'll need to implement several extensions beyond this published baseline.  These should be different experiments that you run to try to improve its performance.  The number of extension that you'll implement depends on number of members of your group.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
+
+
 
 ## What do you need to turn in?
 
+* You should submit a literature review in a markdown file called lit-review.md.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
+* You should submit your code for the baseline system.  This should be in a python file called a baseline.py.  You should also submit a baseline.md file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
 
-* The slides for your presentation.
 * A markdown file called homework.md that contains the write-up your project as if it were a homework assignment. 
 * A markdown file called extensions.md that desribes the extension(s) to the published baseline that you implemented for Milestone 4.  It should explain what you tried, and whether it improved performance over the baseline (it's OK if it didn't).  You should include tables of results using your scoring function and test data.
 
 
 
 <a name="milestone-5"></a>
-# Milestone 5
+# Milestone 4
 
 For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. You already produced one of those extensions for Milestone 4.
 
@@ -266,8 +253,7 @@ I really like examples and good illustrations.  If you created some nice visuals
 ## What do you need to turn in?
 
 You should turn  the following items:
-* final-report.md - a markdown formatted file
-* images/ - a subdirectory containing any image files that you use in the figures for your report
+* final-report.pdf 
 * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a file named download.md that explains how to download your data.
 * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
 * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
