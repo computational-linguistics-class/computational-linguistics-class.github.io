@@ -129,6 +129,8 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
    - [How to Develop a Deep Learning Photo Caption Generator from Scratch](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
    - [Caption this, with TensorFlow. How to build and train an image caption generator using a TensorFlow notebook.](https://www.oreilly.com/learning/caption-this-with-tensorflow)
 
+* **Learning to speak and act in a fantasy text adventure game** - Researchers from Facebooks are collected a ton of data for [text adventure games](https://arxiv.org/pdf/1903.03094.pdf).  Their goal is to build AI agents that can speak and behave intelligently in text-based video games.  There are lots of interesting NLP problems here.  A good term project would be to pick a response to a turn of dialog by ranking all of the lines of dialog that the FB team collected.  You could use [BERT](https://arxiv.org/abs/1810.04805), since it is trained to predict the next sentence as well as to predict masked words.
+
 In addition to these ideas, you can check out the numerous [shared tasks](shared-tasks.html) that are run by the NLP community.  Shared tasks are a good fit for the term project, because they provide shared data, establish evaluation metrics, and  there will be several publications describing how researchers approached the tasks.
 
 
