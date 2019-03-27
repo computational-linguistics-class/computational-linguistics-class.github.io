@@ -137,7 +137,7 @@
     - 
       title: Linguistic regularities in sparse and explicit word representations
       authors:  Omer Levy and Yoav Goldberg
-      url: http://www.aclweb.org/anthology/W14-1618.pdf
+      url: https://aclweb.org/anthology/W14-1618
       optional: false
     - 
       title: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
