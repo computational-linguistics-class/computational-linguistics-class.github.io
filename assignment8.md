@@ -108,7 +108,7 @@ Contains all the relevant code.
 Contains the train, validation and test data
 * [`wikipedia_sentences.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains tokenized relevant wikipedia sentences. A lemmatized version also exists.
-* [`wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
+* [`new_wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains word pairs and the shortest dependency path between them as extracted using spaCy
 
 Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
@@ -243,9 +243,9 @@ In the example above, in addition to the shortest-path, the paths we extract wil
 * **Distributive Edges**: The shortest path from *vegetables* from *peas* contains *spinach/NOUN* node connected via the *conj* edge. The presence of such specific words (*spinach*) in the path that do not inform of the hypernymy relation and negatively affect our extraction recall. The word *spinach* could be replaced with some other word, but the relation between peas and vegetables would still hold.
 Snow et al. proposed to add additional edges bypassing *conj* edges to mitigate this issue. Therefore, we can add edges of type *pobj* from *vegetables* to *peas* and *kale*.
 
-**Good News**: You don't need to extract such paths!  We've extracted them for you for our Wikipedia corpus.  You're welcome! To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.  
+**Good News**: You don't need to extract such paths!  We've extracted them for you for our Wikipedia corpus.  You're welcome! To keep the number of extracted paths tractable, the file `new_wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.  
 Similar to Snow et al., we **only keep dependency paths of length 4 or shorter**    .
-Each line of the file `wikipedia_deppaths.txt` contains three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
+Each line of the file `new_wikipedia_deppaths.txt` contains three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
 An example path extraction is:
 ```
 mammal  fox     such/ADJ/amod<_X/NOUN/dobj_<as/ADP/prep_<Y/NOUN/pobj
@@ -259,10 +259,10 @@ The path edges are delimited by the underscore ( *_* ). Each edge contains `word
 ### How to proceed
 Similar to how we used the Hearst Patterns to extract hypo-hypernym pairs, we will now use dependency-path patterns to do the same.
 Since it is difficult to come up with your own dependency path patterns, we suggest you use the the labeled training data to come up with a list of dependency-paths that are positive examples of paths between actual hyper-hyponym pairs.
-* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `wikipedia_deppaths.txt` using the training data and store them to a file
+* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `new_wikipedia_deppaths.txt` using the training data and store them to a file
 Note that, these paths can be of different categories. For eg. Forward paths: Classify X/Y as Hyponym/Hypernym, Reverse paths: Classify X/Y as Hypernym/Hyponym, Negative paths: Classify X/Y as a negative pair etc.
 
-* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`wikipedia_deppaths.txt`) (similar to Hearst Patterns)
+* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`new_wikipedia_deppaths.txt`) (similar to Hearst Patterns)
 
 * `extractDatasetPredictions.py`: Similar to Hearst patterns, use this to label the train/val/test word-pairs as True (False) if they exist (don't exist) in the extracted hypo-hypernym pairs.
 
