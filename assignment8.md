@@ -5,8 +5,8 @@ caption: Birds are Aves
 img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
-release_date: 2018-04-03
-due_date: 2018-04-08T11:59:00EST
+release_date: 2019-04-03
+due_date: 2019-04-08T11:59:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -111,10 +111,10 @@ Contains tokenized relevant wikipedia sentences. A lemmatized version also exist
 * [`new_wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains word pairs and the shortest dependency path between them as extracted using spaCy
 
-Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
+<!-- Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
 ```
 scp -r /home1/n/nitishg/hw8resources ./
-```
+``` -->
 </div>
 
 # Part 1: Hearst Patterns for Hypernym Learning
