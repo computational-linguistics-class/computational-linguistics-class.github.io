@@ -312,26 +312,26 @@ Here are the deliverables that you will need to submit.
 * The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards
 * Your code (.zip) with a `README` to run. It should be written in Python 3. You must include the outputs of your training and validation files for all the models as described below.
   *The code structure must be as follows:
-    *|--/lexical inference
-    *|--/--hearst
-    *|--/--/--hearstPatterns.py
-    *|--/--/--extractHearstHyponyms.py
-    *|--/--depPath
-    *|--/--/--extractDepPathHyponyms.py
-    *|--/--/--extractRelevantDepPaths.py
-    *|--/--diy
-    *|--/--/(All your diy files)
-    *|--/--extractDatasetPredictions.py
-    *|--/--computePRF.py
-    *|--/--hearst.txt
-    *|--/--hearst_train.txt
-    *|--/--hearst_val.txt
-    *|--/--deppath.txt
-    *|--/--deppath_train.txt
-    *|--/--deppath_val.txt
-    *|--/--diy.txt
-    *|--/--diy_train.txt
-    *|--/--diy_val.txt
+    *|/lexical inference
+    *|/--/hearst
+    *|/--/--hearstPatterns.py
+    *|/--/--extractHearstHyponyms.py
+    *|/--/depPath
+    *|/--/--extractDepPathHyponyms.py
+    *|/--/--extractRelevantDepPaths.py
+    *|/--/diy
+    *|/--/(All your diy files)
+    *|/--extractDatasetPredictions.py
+    *|/--computePRF.py
+    *|/--hearst.txt
+    *|/--hearst_train.txt
+    *|/--hearst_val.txt
+    *|/--deppath.txt
+    *|/--deppath_train.txt
+    *|/--deppath_val.txt
+    *|/--diy.txt
+    *|/--diy_train.txt
+    *|/--diy_val.txt
 
 
 
