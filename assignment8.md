@@ -312,7 +312,7 @@ Here are the deliverables that you will need to submit.
 * The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards
 * Your code (.zip) with a `README` to run. It should be written in Python 3. You must include the outputs of your training and validation files for all the models as described below.
   *The code structure must be as follows:
-    *|--lexical inference
+    *|--/lexical inference
     *|--/--hearst
     *|--/--/--hearstPatterns.py
     *|--/--/--extractHearstHyponyms.py
