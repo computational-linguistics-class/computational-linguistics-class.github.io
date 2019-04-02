@@ -5,8 +5,8 @@ caption: Birds are Aves
 img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
-release_date: 2018-03-14
-due_date: 2018-03-21T11:00:00EST
+release_date: 2018-04-03
+due_date: 2018-04-08T11:59:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -290,7 +290,7 @@ In the `writeup.pdf` explain in detail the two methodologies implemented with pe
 ### 3. The Leaderboard
 We will have three leaderboards for this assignment, namely
 1. Hearst Patterns - `hearst.txt`
-2. DepdencyPath Patterns - `deppath.txt`
+2. Depedency Path - `deppath.txt`
 3. DIY Model - `diy.txt`
 
 ### Extra Credit
@@ -300,15 +300,41 @@ We will have three leaderboards for this assignment, namely
 
 ## Deliverables
 <div class="alert alert-warning" markdown="1">
-Here are the deliverables that you will need to submit. The writeup needs to be submit as `writeup.pdf`:
-* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt`
-* A `writeup.pdf` containing
+Here are the deliverables that you will need to submit.
+* The writeup needs to be submit as `writeup.pdf` to the HW8: Report Submission on gradescope:
+  It must contains
   * Written analysis on additional Hearst Patterns implemented and which one worked the best/worst
   * Written analysis commenting on the Precision/Recall values when using Hearst Patterns
   * Written analysis on most frequent Dependency Paths that worked the best
   * Written analysis commenting on the Precision/Recall values when using Dependency Paths
-  * Implementation details of the DIY models and performance analysis
-* Your code (.zip) with a `README` to run. It should be written in Python 3.
+  * Implementation details of the DIY models 
+  * Performance analysis of the DIY models
+* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards
+* Your code (.zip) with a `README` to run. It should be written in Python 3. You must include the outputs of your training and validation files for all the models as described below.
+  The code structure must be as follows:
+  |--lexical inference
+  |  |--hearst
+  |  |  |--hearstPatterns.py
+  |  |  |--extractHearstHyponyms.py
+  |  |--depPath
+  |  |  |--extractDepPathHyponyms.py
+  |  |  |--extractRelevantDepPaths.py
+  |  |--diy
+  |  |  |(All your diy files)
+  |  |--extractDatasetPredictions.py
+  |  |--computePRF.py
+  |  |--hearst.txt
+  |  |--hearst_train.txt
+  |  |--hearst_val.txt
+  |  |--deppath.txt
+  |  |--deppath_train.txt
+  |  |--deppath_val.txt
+  |  |--diy.txt
+  |  |--diy_train.txt
+  |  |--diy_val.txt
+
+
+
 </div>
 
 
