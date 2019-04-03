@@ -5,8 +5,8 @@ caption: Birds are Aves
 img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
-release_date: 2018-03-14
-due_date: 2018-03-21T11:00:00EST
+release_date: 2019-04-03
+due_date: 2019-04-09T11:59:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -108,13 +108,13 @@ Contains all the relevant code.
 Contains the train, validation and test data
 * [`wikipedia_sentences.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains tokenized relevant wikipedia sentences. A lemmatized version also exists.
-* [`wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
+* [`new_wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains word pairs and the shortest dependency path between them as extracted using spaCy
 
-Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
+<!-- Alternatively, if you are on `biglab`, you can directly copy the last three resources into your working directory by using the following command:
 ```
 scp -r /home1/n/nitishg/hw8resources ./
-```
+``` -->
 </div>
 
 # Part 1: Hearst Patterns for Hypernym Learning
@@ -243,9 +243,9 @@ In the example above, in addition to the shortest-path, the paths we extract wil
 * **Distributive Edges**: The shortest path from *vegetables* from *peas* contains *spinach/NOUN* node connected via the *conj* edge. The presence of such specific words (*spinach*) in the path that do not inform of the hypernymy relation and negatively affect our extraction recall. The word *spinach* could be replaced with some other word, but the relation between peas and vegetables would still hold.
 Snow et al. proposed to add additional edges bypassing *conj* edges to mitigate this issue. Therefore, we can add edges of type *pobj* from *vegetables* to *peas* and *kale*.
 
-**Good News**: You don't need to extract such paths!  We've extracted them for you for our Wikipedia corpus.  You're welcome! To keep the number of extracted paths tractable, the file `wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.  
+**Good News**: You don't need to extract such paths!  We've extracted them for you for our Wikipedia corpus.  You're welcome! To keep the number of extracted paths tractable, the file `new_wikipedia_deppaths.txt` contains dependency paths extracted from Wikipedia between all train/val/test word pairs.  
 Similar to Snow et al., we **only keep dependency paths of length 4 or shorter**    .
-Each line of the file `wikipedia_deppaths.txt` contains three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
+Each line of the file `new_wikipedia_deppaths.txt` contains three tab-separated columns, the first containing **X**, second **Y** and the third the dependency path.
 An example path extraction is:
 ```
 mammal  fox     such/ADJ/amod<_X/NOUN/dobj_<as/ADP/prep_<Y/NOUN/pobj
@@ -259,10 +259,10 @@ The path edges are delimited by the underscore ( *_* ). Each edge contains `word
 ### How to proceed
 Similar to how we used the Hearst Patterns to extract hypo-hypernym pairs, we will now use dependency-path patterns to do the same.
 Since it is difficult to come up with your own dependency path patterns, we suggest you use the the labeled training data to come up with a list of dependency-paths that are positive examples of paths between actual hyper-hyponym pairs.
-* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `wikipedia_deppaths.txt` using the training data and store them to a file
+* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `new_wikipedia_deppaths.txt` using the training data and store them to a file
 Note that, these paths can be of different categories. For eg. Forward paths: Classify X/Y as Hyponym/Hypernym, Reverse paths: Classify X/Y as Hypernym/Hyponym, Negative paths: Classify X/Y as a negative pair etc.
 
-* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`wikipedia_deppaths.txt`) (similar to Hearst Patterns)
+* `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`new_wikipedia_deppaths.txt`) (similar to Hearst Patterns)
 
 * `extractDatasetPredictions.py`: Similar to Hearst patterns, use this to label the train/val/test word-pairs as True (False) if they exist (don't exist) in the extracted hypo-hypernym pairs.
 
@@ -290,7 +290,7 @@ In the `writeup.pdf` explain in detail the two methodologies implemented with pe
 ### 3. The Leaderboard
 We will have three leaderboards for this assignment, namely
 1. Hearst Patterns - `hearst.txt`
-2. DepdencyPath Patterns - `deppath.txt`
+2. Depedency Path - `deppath.txt`
 3. DIY Model - `diy.txt`
 
 ### Extra Credit
@@ -300,15 +300,41 @@ We will have three leaderboards for this assignment, namely
 
 ## Deliverables
 <div class="alert alert-warning" markdown="1">
-Here are the deliverables that you will need to submit. The writeup needs to be submit as `writeup.pdf`:
-* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt`
-* A `writeup.pdf` containing
+Here are the deliverables that you will need to submit.
+* The writeup needs to be submit as `writeup.pdf` to the HW8: Report Submission on gradescope:
+  It must contains
   * Written analysis on additional Hearst Patterns implemented and which one worked the best/worst
   * Written analysis commenting on the Precision/Recall values when using Hearst Patterns
   * Written analysis on most frequent Dependency Paths that worked the best
   * Written analysis commenting on the Precision/Recall values when using Dependency Paths
-  * Implementation details of the DIY models and performance analysis
-* Your code (.zip) with a `README` to run. It should be written in Python 3.
+  * Implementation details of the DIY models 
+  * Performance analysis of the DIY models
+* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards
+* Your code (.zip) with a `README` to run. It should be written in Python 3. You must include the outputs of your training and validation files for all the models as described below.
+  *The code structure must be as follows:
+    *|/lexical inference
+    *|/--/hearst
+    *|/--/--hearstPatterns.py
+    *|/--/--extractHearstHyponyms.py
+    *|/--/depPath
+    *|/--/--extractDepPathHyponyms.py
+    *|/--/--extractRelevantDepPaths.py
+    *|/--/diy
+    *|/--/(All your diy files)
+    *|/--extractDatasetPredictions.py
+    *|/--computePRF.py
+    *|/--hearst.txt
+    *|/--hearst_train.txt
+    *|/--hearst_val.txt
+    *|/--deppath.txt
+    *|/--deppath_train.txt
+    *|/--deppath_val.txt
+    *|/--diy.txt
+    *|/--diy_train.txt
+    *|/--diy_val.txt
+
+
+
 </div>
 
 
