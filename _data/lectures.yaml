@@ -320,6 +320,14 @@
   speaker: Eric Fosler-Lussier
   slides_credit: Eric Fosler-Lussier
   readings: 
+    - 
+      title: Deep Neural Networks for Acoustic Modeling in Speech Recognition
+      authors: Geoffrey Hinton, Li Deng, Dong Yu, George Dahl, Abdel-rahman Mohamed, Navdeep Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Brian Kingsbury, Tara Sainath
+      url: https://www.microsoft.com/en-us/research/publication/deep-neural-networks-for-acoustic-modeling-in-speech-recognition/
+    - 
+      title: End-to-end speech recognition using deep RNN models and WFST-based decoding
+      authors: Yajie Miao, Mohammad Gowayyed, Florian Metze
+      url: https://ieeexplore.ieee.org/abstract/document/7404790/authors#authors
 -
   date: 2019-04-05
   slides: 
