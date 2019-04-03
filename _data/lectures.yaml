@@ -306,13 +306,16 @@
       url: https://arxiv.org/abs/1703.01619
 -
   date: 2019-04-01
-  slides: 
-  title: 
-  slides_credit: 
+  slides: slides/13-question-answering.pdf
+  title: Question Answering
   readings: 
+    - 
+      title: Chapter 23 "Question Answering"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/23.pdf
 -
   date: 2019-04-03
-  slides: 
+  slides: slides/90-guest_lecture_eric_fosler-lussier_ASR.pdf
   title: Guest lecture on Automatic Speech Recognition
   speaker: Eric Fosler-Lussier
   slides_credit: Eric Fosler-Lussier
