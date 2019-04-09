@@ -142,7 +142,7 @@ The course staff will review the 3 ideas that you submitted for Milestone 1, and
 2. Write an evaluation script
 3. Write a simple baseline (for instance, a majority class baseline)
 
-We have also assigned a course staff member to be your mentor.  Feel free to reach out to your mentor with any questions.
+We have also assigned a course staff member to be your mentor.  You should [sign up for a one-on-one meeting with your mentor](https://docs.google.com/spreadsheets/d/1W2i39lNjzKXRsANsjhVBKeXNqOXongThU9vuboYlBBg/edit?usp=sharing) to talk through your project.
 
 ## Collect your data
 
