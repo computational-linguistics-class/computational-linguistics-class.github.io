@@ -341,27 +341,34 @@
   slides_credit: João Sedoc
   readings:  
     - 
-      title: (video) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
-      authors: Wei Wu and Rui Yan
-      url: https://vimeo.com/305179403
-    - 
-      title: (slides) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
-      authors: Wei Wu and Rui Yan
-      url: ohttp://www.ruiyan.me/pubs/tutorial-emnlp18.pdf
-    - 
       title: The Conversational Interface
       authors: Michael McTear,  Zoraida Callejas, and David Griol
       url: https://upenn.alma.exlibrisgroup.com/discovery/openurl?institution=01UPENN_INST&vid=01UPENN_INST:Services&%3Fctx_ver=Z39.88-2004&ctx_enc=info:ofi%2Fenc:UTF-8&rfr_id=info:sid%2Fsummon.serialssolutions.com&rft_val_fmt=info:ofi%2Ffmt:kev:mtx:book&rft.genre=book&rft.title=The%20conversational%20interface:%20Talking%20to%20smart%20devices&rft.au=McTear,%20Michael&rft.au=Callejas,%20Zoraida&rft.au=Griol,%20David&rft.date=2016-01-01&rft.isbn=9783319329659&rft_id=info:doi%2F10.1007%2F978-3-319-32967-3&rft.externalDBID=n%2Fa&rft.externalDocID=612234345
+      optional: true
     - 
       title: Dialog Systems Class
       authors: João Sedoc
       url: https://dialog-systems-class.github.io
+      optional: true
+  videos:
+    - 
+      title: (video) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
+      authors: Wei Wu and Rui Yan
+      url: https://vimeo.com/305179403
+      length: 2 hours and 45 minutes
+    - 
+      title: (slides) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
+      authors: Wei Wu and Rui Yan
+      url: ohttp://www.ruiyan.me/pubs/tutorial-emnlp18.pdf
 -
   date: 2019-04-10
-  slides: 
-  title: 
-  slides_credit: 
+  slides: slides/14-information-extraction.pdf
+  title: Information Extraction
   readings: 
+    - 
+      title: Chapter 17 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
 -
   date: 2019-04-15
   slides: 
