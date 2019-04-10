@@ -77,7 +77,7 @@ In this assignment, we will examine unsupervised techniques to automatically ext
 3. A DIY approach where you can use any supervised/unsupervised technique extract hypernym-hyponym word pairs.
 
 
-In this assignment, we will be using *nltk*.  If you are use Stephen's miniconda you should be fine. Otherwise, install nltk and the relavant tagger using.
+In this assignment, we will be using *nltk*.  You can install nltk and the relavant tagger using this command:
 ```
 pip install nltk
 $ python
