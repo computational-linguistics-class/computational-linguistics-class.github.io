@@ -369,6 +369,25 @@
       title: Chapter 17 "Information Extraction"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
+    - 
+      title: The Gun Violence Database&colon; A new task and data set for NLP
+      authors: Ellie Pavlick, Heng Ji, Xiaoman Pan, and Chris Callison-Burch 
+      url: https://www.cis.upenn.edu/~ccb/publications/gun-violence-database.pdf
+    - 
+      title: Freebase&colon; A Collaboratively Created Graph Database For Structuring Human Knowledge
+      authors: Kurt Bollacker, Colin Evans, Praveen Paritosh, Tim Sturge, Jamie Taylor
+      url: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.538.7139&rep=rep1&type=pdf
+      optional: true
+    - 
+      title: DBpedia&colon; A Nucleus for a Web of Open Data
+      authors: Soren Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard Cyganiak, and Zachary Ives
+      url: https://www.seas.upenn.edu/~zives/research/dbpedia.pdf
+      optional: true
+    - 
+      title: Open Language Learning for Information Extraction
+      authors: Mausam, Michael Schmitz, Robert Bart, Stephen Soderland, and Oren Etzioni
+      url: https://homes.cs.washington.edu/~mausam/papers/emnlp12a.pdf
+      optional: true
 -
   date: 2019-04-15
   slides: 
