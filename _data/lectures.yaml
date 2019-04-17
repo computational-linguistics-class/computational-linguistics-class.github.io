@@ -390,16 +390,28 @@
       optional: true
 -
   date: 2019-04-15
-  slides: 
-  title: 
-  slides_credit: 
+  slides: slides/15-formal-grammars-of-english.pdf
+  title: Formal Grammars of English
+  slides_credit: Sameer Singh and others
   readings: 
+    - 
+      title: Chapter 10 "Formal Grammars of English"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
   date: 2019-04-17
-  slides: 
-  title: 
-  slides_credit: 
+  slides: slides/16-syntactic-and-statistical-parsing.pdf
+  title: Syntactic and Statistical Parsing
+  slides_credit: Sameer Singh and others
   readings: 
+    - 
+      title: Chapter 11 "Syntactic Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
+    - 
+      title: Chapter 12 "Statistical Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
 -
   date: 2019-04-22
   slides: 
