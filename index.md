@@ -7,6 +7,11 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
+
+<div class="alert alert-danger" markdown="1">
+You can sign up for a presentation slot for your term project with CCB using [this form](https://docs.google.com/spreadsheets/d/1A34cPhehvbeoqhd_lwAMEvxHZp3g-MtfrrMJ8R9AYYI/edit?usp=sharing).
+</div>
+
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 {% for page in site.pages %}
