@@ -16,7 +16,7 @@ deliverables:
       description: Milestone 2 - Collect your data, and write an evalation script and a simple baseline
       due_date: 2019-04-16T11:59:00EST
     -
-      description: Milestone 3 - Implement a published baseline.  Prepare a project presentation
+      description: Milestone 3 - Implement a published baseline.  Write a literature review.  Prepare a draft of your final project presentation.
       due_date: 2019-04-23T11:59:00EST
     -
       description: Milestone 4 - Finish all your extensions to the public baseline, and submit your final project writeup
@@ -214,7 +214,7 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 ## What do you need to turn in?
 
-* You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
+* You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Cited section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
 * You should submit your code for the baseline system.   You should also submit a READE file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
 * A link to your draft slides for your final presentation.
 
