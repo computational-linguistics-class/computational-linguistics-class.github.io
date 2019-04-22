@@ -388,8 +388,13 @@
       authors: Mausam, Michael Schmitz, Robert Bart, Stephen Soderland, and Oren Etzioni
       url: https://homes.cs.washington.edu/~mausam/papers/emnlp12a.pdf
       optional: true
+
 -
   date: 2019-04-15
+  title: In class feedback on term project deliverables
+  type: no_lecture
+-
+  date: 2019-04-17
   slides: slides/15-formal-grammars-of-english.pdf
   title: Formal Grammars of English
   slides_credit: Sameer Singh and others
@@ -399,7 +404,7 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
-  date: 2019-04-17
+  date: 2019-04-22
   slides: slides/16-syntactic-and-statistical-parsing.pdf
   title: Syntactic and Statistical Parsing
   slides_credit: Sameer Singh and others
@@ -412,27 +417,37 @@
       title: Chapter 12 "Statistical Parsing"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
--
-  date: 2019-04-22
-  slides: 
-  title: 
-  slides_credit: 
-  readings: 
+  videos:
+    - 
+      title: Classic Parsing Methods for Natural Language Processing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=34HEz8miVQA
+      length: 25 minutes
+    - 
+      title: The Penn Treebank
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=NUV6vXK8FCc
+      length: 17 minutes
+    - 
+      title: Statistical Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 13  minutes
 -
   date: 2019-04-24
   slides: 
-  title: Final project presentations
+  title: Large-scale paraphrasing for natural language generation
   slides_credit: 
   readings: 
 -
   date: 2019-04-29
   slides: 
-  title: Final project presentations
+  title: tenative - guest lecture by Ellie Pavlick
   slides_credit: 
   readings: 
 -
   date: 2019-05-01
   slides: 
-  title: Final project presentations
+  title: tenative - guest lecture by Anne Cocos
   slides_credit: 
   readings: 
