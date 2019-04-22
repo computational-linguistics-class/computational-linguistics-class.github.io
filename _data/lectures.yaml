@@ -432,7 +432,12 @@
       title: Statistical Parsing
       authors: Dragomir Radev
       url: https://www.youtube.com/watch?v=hgaeB2JloJY
-      length: 13  minutes
+      length: 13 minutes
+    - 
+      title: Dependency Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 19 minutes
 -
   date: 2019-04-24
   slides: 
