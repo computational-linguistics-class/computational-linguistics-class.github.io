@@ -216,16 +216,16 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 * You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
 * You should submit your code for the baseline system.   You should also submit a READE file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
-* A document that desribes the extension(s) to the published baseline that you implemented for Milestone 3. 
+* A link to your draft slides for your final presentation.
 
 
 
 <a name="milestone-5"></a>
 # Milestone 4
 
-For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. You already produced one of those extensions for Milestone 4.
+For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
 
-Your final report should be written in the style of a scientific paper.  It should contain the following sections:
+Your final report should be written in the style of a scientific paper, and formatted with this LaTeX style file.  It should contain the following sections:
 
 * Title.  A descrpitive title for your term project
 * Authors.  A list of team members
@@ -236,14 +236,14 @@ Your final report should be written in the style of a scientific paper.  It shou
    * A formal definition of the problem.
    * A paragraph describing why you picked this task for your term project. 
 * Literature Review. You can adapt your literature review from Milestone 3 for this part of your writeup.  (~300-500 words, with 3 or more ciations).
-   * If you adapted a shared task for your term project, then you should describe the share task in your literature review, and cite the overview paper and give a URL to shared task homepage (if applicable).
-   * For your literature review, you should also cute and summarize 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  Be sure to include a full citation of these papers in your Bibliography. 
+   * If you adapted a shared task for your term project, then you should describe the shared task in your literature review, and cite the overview paper and give a URL to shared task homepage (if applicable).
+   * For your literature review, you should also cite and summarize 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  Be sure to include a full citation of these papers in your Bibliography. 
 * Experimental Design.  Your Experimental Design section should include a description of your training data, your evaluation metric, and your simple baseline model along with its performance on the test set.  You can adapt your Milestone 2 submission for this part. (~300-500 words, plus 2 figures/tables, plus 1 or more equations).
    * Data.  This subsection should describe your training/development/test data.  You should give an figure or table with examples from your data (including inputs and output labels).  You should include a table that describes the size of your data sets.  For example, it should give number of sentences or words, etc for each of the splits.  You should also characterize the data.  For instance, if there's a skewed distribtuion over the labels, you should reoprt it here.  If your training data comes from a published paper, then cite that paper and explain how they collected the data.  If you constructed your data set, then explain in detail how you collected it, and include example code in an appendix.
-   * Evaluation Metric.  This subsection should describe your evaluation metric.  You should include an English description of the metric, an equation for how your metric is computed, and a citation for this metric, and some citation(s) that shows what past publication(s) used this metric for the task that you're working on. For your equation, you can use [MathJax](https://www.mathjax.org) markup.
+   * Evaluation Metric.  This subsection should describe your evaluation metric.  You should include an English description of the metric, an equation for how your metric is computed, and a citation for this metric, and some citation(s) that shows what past publication(s) used this metric for the task that you're working on. 
    * Simple baseline.  You should compute the majority class baseline (or other simple baseline) for your data, and report it in this section.  This is a way of characterizing the data and showing the diffiulty of the task.  
 * Experimental Results.  In this section, you should describe your implementation of a published baseline, and all of the extensions that you experimented with for your term project, and an error analysis of your system's output. (~300-500 words).
-   * Published baseline.  In this subsection you should write a detailed description of the published baseline that you implemented and cite the paper that it was published in. (You can update your Milestone 4 submission for this).  You should report how well the model performs on your test set using the evaluation metric that you defined in your experimental design section.  Does your implementation of the published baseline reach the same level of accuracy as the original paper?  If not, why not?  Are your results directly comparable -- are they on the same test set?  If not, why not?
+   * Published baseline.  In this subsection you should write a detailed description of the published baseline that you implemented and cite the paper that it was published in. (You can update your Milestone 3 submission for this).  You should report how well the model performs on your test set using the evaluation metric that you defined in your experimental design section.  Does your implementation of the published baseline reach the same level of accuracy as the original paper?  If not, why not?  Are your results directly comparable -- are they on the same test set?  If not, why not?
    * Extensions.  In this subsection, you should describe each of the extensions that you tried.  You should include a ~1-2 paragraph of each extension that explains what you tried, why you tried it, and how it performed compared to your baseline.  You should include a table of results, where the rows are the performance of the baseline or one of your extensions, and the columns are  the performance on the test set (and on the dev set if you measured it).  If you did any experiments where you searched over a set of different parameters, then you should include a result on how varying the parameter changed the performance on the dev or test set.  Your tables and figures should include a detailed caption that explain how to read them.
    * Error analysis.  In this subsection, you should perform an error anlaysis for your best performing system.  Show examples of the errors that it makes.  Can you cateorize the types of errors that it makes, and give an esimate of how prevelant each error type is?  If you extensions performed better than the published baseline, then show examples of the errors that the published baseline makes that your extensions get correct (and vice versa if your extension introduces some new errors).  
 * Conclusions. You should write a brief summary of what you accomplished in your term project.  Did any of your implementations reach state-of-the-art performance on the task?  If not, how close did you come?  If not very close, then why not?  (~100-300 words). 
@@ -256,10 +256,12 @@ I really like examples and good illustrations.  If you created some nice visuals
 ## What do you need to turn in?
 
 You should turn  the following items:
-* final-report.pdf 
-* data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a file named download.md that explains how to download your data.
-* code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
-* output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
+* A PDF of your final report
+* A link to your final project presentation. 
+* A tarball or zip file with all of your code and data.  It should contain:
+   * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a file named download.md that explains how to download your data.
+   * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
+   * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
 
 
 You've reached the end.  Great job!
