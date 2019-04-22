@@ -194,7 +194,7 @@ You should re-implement the published baseline that you selected.  It's fine to 
 
 You should include a baseline.md markdown file that includes step-by-step instructions on how to run your baseline code.   Your baseline.md should also report the score for your system for your test and development data, and compare that to your random baseline.
 
-For Milestone 3, you will also prepare an in-class presentation for your project.
+For Milestone 3, you will also prepare a presentation for your project.
 Your in-class presentation should be 12 minutes long.  You should create a slidedeck with [Google Slides](https://www.google.com/slides/about/).  Your presentation should convey  these main ideas:
 * What is the topic of your term project?  You should clearly explain to your classmates the problem that you selected to work on.  Give an illustrative example of the problem first, and then give a more formal definition of the problem.
 * What is exciting about your term project?  Why did you want to work on this topic?  
@@ -214,11 +214,9 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 ## What do you need to turn in?
 
-* You should submit a literature review in a markdown file called lit-review.md.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
-* You should submit your code for the baseline system.  This should be in a python file called a baseline.py.  You should also submit a baseline.md file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
-
-* A markdown file called homework.md that contains the write-up your project as if it were a homework assignment. 
-* A markdown file called extensions.md that desribes the extension(s) to the published baseline that you implemented for Milestone 4.  It should explain what you tried, and whether it improved performance over the baseline (it's OK if it didn't).  You should include tables of results using your scoring function and test data.
+* You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Citated section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
+* You should submit your code for the baseline system.   You should also submit a READE file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
+* A document that desribes the extension(s) to the published baseline that you implemented for Milestone 3. 
 
 
 
