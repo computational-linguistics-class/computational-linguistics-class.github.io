@@ -215,7 +215,7 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 ## What do you need to turn in?
 
 * You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Cited section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
-* You should submit your code for the baseline system.   You should also submit a READE file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
+* You should submit your code for the baseline system.   You should also submit a README file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
 * A link to your draft slides for your final presentation.
 
 
@@ -259,9 +259,9 @@ You should turn  the following items:
 * A PDF of your final report
 * A link to your final project presentation. 
 * A tarball or zip file with all of your code and data.  It should contain:
-   * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a file named download.md that explains how to download your data.
-   * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README.md that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
-   * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README.md that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
+   * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a README file in this subdirectory that explains how to download your data.
+   * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
+   * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
 
 
 You've reached the end.  Great job!
