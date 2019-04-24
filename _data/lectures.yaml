@@ -413,6 +413,11 @@
       title: Chapter 11 "Syntactic Parsing"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
+    - 
+      title: Chapter 10, Section 10.4 "Treebanks"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+-
   videos:
     - 
       title: CKY Demo
