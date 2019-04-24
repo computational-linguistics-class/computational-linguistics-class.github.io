@@ -5,8 +5,8 @@ caption: Positive Attitdue
 img_link: https://xkcd.com/828/
 title: Homework 9 (Optional) - Classification of Depression
 active_tab: homework
-release_date: 2018-05-02
-due_date: 2018-05-14T11:00:00EST
+release_date: 2019-04-24
+due_date: 2019-05-01T11:59:00EST
 attribution: This assignment was designed by students in Penn's CIS 530 in the Spring of 2018 with help from with help from Anne Cocos and Reno Kriz.  It is based on the [CLPsych shared task from 2015](https://www.cs.jhu.edu/~mdredze/publications/clpsych15_shared_task.pdf) by Glen Coppersmith, Mark Dredze, Craig Harman, Kristy Hollingshead and Meg Mitchell.
 readings:
 -

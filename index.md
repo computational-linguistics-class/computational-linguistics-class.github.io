@@ -12,6 +12,16 @@ active_tab: main_page
 You can sign up for a presentation slot for your term project with CCB using [this form](https://docs.google.com/spreadsheets/d/1A34cPhehvbeoqhd_lwAMEvxHZp3g-MtfrrMJ8R9AYYI/edit?usp=sharing).
 </div>
 
+
+<div class="alert alert-success" markdown="1">
+If you want to do the [optional homework 9](assignment9_clpsych.html), which will replace your lowest scoring homework, then you'll need to complete an online training called [CITI Training for Human Research](https://irb.upenn.edu/mission-institutional-review-board-irb/guidance/citi-training) with the Learner Group set as "Students -- Class Projects." This should take roughly 30 minutes. Send your completion report to [ccb@cis.upenn.edu](mailto:ccb@cis.upenn.edu?subject="cis530%20Final%20Homework%20-%20CITI%20Certificate").  Chris will send you a data agreement to sign and date. 
+</div>
+
+<div class="alert alert-success" markdown="1">
+Optional Homework 9 is due on the last day of classes, but you can use up to 4 free bonus late days, and turn it in anytime before Sunday at 11:59pm.
+</div>
+
+
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 {% for page in site.pages %}
@@ -36,6 +46,7 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endif %}
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
+
 
 Course number
 : CIS 530 - Computational Linguistics 
