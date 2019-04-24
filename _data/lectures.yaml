@@ -405,19 +405,19 @@
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
   date: 2019-04-22
-  slides: slides/16-syntactic-and-statistical-parsing.pdf
-  title: Syntactic and Statistical Parsing
+  slides: slides/16-syntactic-parsing.pdf
+  title: Syntactic Parsing and the Penn Treebank
   slides_credit: Sameer Singh and others
   readings: 
     - 
       title: Chapter 11 "Syntactic Parsing"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
-    - 
-      title: Chapter 12 "Statistical Parsing"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
   videos:
+    - 
+      title: CKY Demo
+      authors: Lisbon Machine Learning School
+      url: http://lxmls.it.pt/2015/cky.html
     - 
       title: Classic Parsing Methods for Natural Language Processing
       authors: Dragomir Radev
@@ -428,6 +428,17 @@
       authors: Dragomir Radev
       url: https://www.youtube.com/watch?v=NUV6vXK8FCc
       length: 17 minutes
+-
+  date: 2019-04-24
+  slides: slides/17-statistical-parsing.pdf
+  title: Statistical Parsing
+  slides_credit: Sameer Singh and others
+  readings: 
+    - 
+      title: Chapter 12 "Statistical Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
+  videos:
     - 
       title: Statistical Parsing
       authors: Dragomir Radev
@@ -439,15 +450,9 @@
       url: https://www.youtube.com/watch?v=hgaeB2JloJY
       length: 19 minutes
 -
-  date: 2019-04-24
-  slides: 
-  title: Large-scale paraphrasing for natural language generation
-  slides_credit: 
-  readings: 
--
   date: 2019-04-29
   slides: 
-  title: tenative - guest lecture by Ellie Pavlick
+  title: Large-scale paraphrasing for natural language generation
   slides_credit: 
   readings: 
 -
