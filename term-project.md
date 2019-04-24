@@ -214,7 +214,7 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 ## What do you need to turn in?
 
-* You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Cited section. You should have a 1-2 paragraph description of each paper, plus a 1-2 paragraph explanation of which one you chose to implement as your baseline and why.
+* You should submit a literature review.  This will include the citation information for each paper  (authors, title of paper, publication venue, year of publication, number of pages) in a Works Cited section. You should have a 1-2 paragraph description of each paper.  You should also include a 1-2 paragraph explanation of which paper you chose to implement as your published baseline, and why you selected that one.
 * You should submit your code for the baseline system.   You should also submit a README file explaining how to run it, and reporting its performance on your dev and test set, according to your evaluation metric. 
 * A link to your draft slides for your final presentation.
 
