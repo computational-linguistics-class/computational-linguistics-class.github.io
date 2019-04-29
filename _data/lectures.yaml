@@ -456,13 +456,34 @@
       length: 19 minutes
 -
   date: 2019-04-29
-  slides: 
+  slides: slides/18-paraphrasing.pdf
   title: Large-scale paraphrasing for natural language generation
   slides_credit: 
   readings: 
+    - 
+      title: Paraphrasing with Bilingual Parallel Corpora
+      authors: Colin Bannard and Chris Callison-Burch
+      url: http://www.cis.upenn.edu/~ccb/publications/paraphrasing-with-bilingual-parallel-corpora.pdf
+      optional: true
+    - 
+      title: Learning Sentential Paraphrases from Bilingual Parallel Corpora for Text-to-Text Generation
+      authors: Juri Ganitkevitch, Chris Callison-Burch, Courtney Napoles, and Benjamin Van Durme
+      url: http://www.cis.upenn.edu/~ccb/publications/learning-sentential-paraphrases-from-bilingual-parallel-corpora.pdf
+      optional: true
+    - 
+      title: PPDB&colon; The Paraphrase Database
+      authors: Juri Ganitkevitch, Benjamin Van Durme, and Chris Callison-Burch
+      url: http://www.cis.upenn.edu/~ccb/publications/ppdb.pdf
+      optional: true
+    - 
+      title: PPDB 2.0&colon; Better paraphrase ranking, fine-grained entailment relations, word embeddings, and style classification
+      authors: Ellie Pavlick, Pushpendre Rastogi, Juri Ganitkevich, Ben Van Durme, Chris Callison-Burch
+      url: http://www.cis.upenn.edu/~ccb/publications/ppdb-reranking.pdf
+      optional: true
+
 -
   date: 2019-05-01
   slides: 
-  title: tenative - guest lecture by Anne Cocos
-  slides_credit: 
+  title: guest lecture by Anne Cocos
+  slides_credit: Anne Cocos
   readings: 
