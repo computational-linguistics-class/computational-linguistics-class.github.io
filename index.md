@@ -48,6 +48,12 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 <!-- End alert for upcoming homework assignments -->
 
 
+<div class="alert alert-success" markdown="1">
+The deadline for your final report has been extended.  It is now due on the last day of classes, but you can use up to 4 free bonus late days, and turn it in anytime before Monday.
+</div>
+
+
+
 Course number
 : CIS 530 - Computational Linguistics 
 

@@ -19,7 +19,7 @@ deliverables:
       description: Milestone 3 - Implement a published baseline.  Write a literature review.  Prepare a draft of your final project presentation
       due_date: 2019-04-23T11:59:00EST
     -
-      description: Milestone 4 - Finish all your extensions to the public baseline, and submit your final project writeup.  You can use extra free late days and turn this in anytime until Sunday May 5
+      description: Milestone 4 - Finish all your extensions to the public baseline, and submit your final report
       due_date: 2019-05-01T11:59:00EST
 ---
 
