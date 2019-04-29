@@ -225,7 +225,7 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
 
-Your final report should be written in the style of a scientific paper, and formatted with this LaTeX style file.  It should contain the following sections:
+Your final report should be written in the style of a scientific paper, and formatted with [this LaTeX style file](https://www.overleaf.com/latex/templates/instructions-for-naacl-hlt-2019-proceedings/xyyfwfkswhth) (which will make it look totally scientific!).  Your report should contain the following sections:
 
 * Title.  A descrpitive title for your term project
 * Authors.  A list of team members
