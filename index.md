@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-danger" markdown="1">
-You can sign up for a presentation slot for your term project with CCB using [this form](https://docs.google.com/spreadsheets/d/1A34cPhehvbeoqhd_lwAMEvxHZp3g-MtfrrMJ8R9AYYI/edit?usp=sharing).
+[Please fill out this end of semester survey.](https://docs.google.com/forms/d/e/1FAIpQLSef3TMsw420VLoUv-9Xmtw7H_-DbR78vnRAnbQS7CjOa4nefg/viewform?usp=sf_link)
 </div>
 
 
