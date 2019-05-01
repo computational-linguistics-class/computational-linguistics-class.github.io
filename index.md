@@ -8,7 +8,7 @@ active_tab: main_page
 ---
 
 
-<div class="alert alert-danger" markdown="1">
+<div class="alert alert-info" markdown="1">
 [Please fill out this end of semester survey.](https://docs.google.com/forms/d/e/1FAIpQLSef3TMsw420VLoUv-9Xmtw7H_-DbR78vnRAnbQS7CjOa4nefg/viewform?usp=sf_link)
 </div>
 
