@@ -9,22 +9,12 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-[Please fill out this end of semester survey.](https://docs.google.com/forms/d/e/1FAIpQLSef3TMsw420VLoUv-9Xmtw7H_-DbR78vnRAnbQS7CjOa4nefg/viewform?usp=sf_link)
+This class will be offered again in Spring 2020.
 </div>
-
-
-<div class="alert alert-warning" markdown="1">
-[Interested in being a TA for the class next year?  Fill out this form.](https://docs.google.com/forms/d/e/1FAIpQLSepw5mcFtIGBlziBEaspUAMCzw2MkAjsej_rpOCRj0-ObS5wA/viewform?usp=sf_link)
-</div>
-
 
 
 <div class="alert alert-success" markdown="1">
-If you want to do the [optional homework 9](assignment9_clpsych.html), which will replace your lowest scoring homework, then you'll need to complete an online training called [CITI Training for Human Research](https://irb.upenn.edu/mission-institutional-review-board-irb/guidance/citi-training) with the Learner Group set as "Students -- Class Projects." This should take roughly 30 minutes. Send your completion report to [ccb@cis.upenn.edu](mailto:ccb@cis.upenn.edu?subject="cis530%20Final%20Homework%20-%20CITI%20Certificate").  Chris will send you a data agreement to sign and date. 
-</div>
-
-<div class="alert alert-success" markdown="1">
-Optional Homework 9 is due on the last day of classes, but you can use up to 4 free bonus late days, and turn it in anytime before Sunday at 11:59pm.
+[Interested in being a TA for the class in Spring 2020?  Fill out this form.](https://docs.google.com/forms/d/e/1FAIpQLSepw5mcFtIGBlziBEaspUAMCzw2MkAjsej_rpOCRj0-ObS5wA/viewform?usp=sf_link)
 </div>
 
 
@@ -52,12 +42,6 @@ It is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | dat
 {% endif %}
 {% endfor %}
 <!-- End alert for upcoming homework assignments -->
-
-
-<div class="alert alert-success" markdown="1">
-The deadline for submitting your final report / code has been extended.  It is now due on the last day of classes, but you can use up to 4 free bonus late days, and turn it in anytime before Monday.
-</div>
-
 
 
 Course number
