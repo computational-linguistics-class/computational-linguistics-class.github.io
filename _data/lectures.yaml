@@ -128,6 +128,10 @@
       title: word2vec Explained&colon; Deriving Mikolov et al.’s Negative-Sampling Word-Embedding Method
       authors: Yoav Goldberg and Omer Levy
       url: https://arxiv.org/pdf/1402.3722.pdf
+    - 
+      title: Explore word analogies (online interactive demo)
+      authors: Julia Bazińska
+      url: https://lamyiowce.github.io/word2viz/
 -
   date: 2019-02-13
   slides: slides/06-vector-semantics-part-3.pdf
