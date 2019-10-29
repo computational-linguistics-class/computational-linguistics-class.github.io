@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-This class will be offered again in Spring 2020.
+To get a permit for CIS 530, you will need to sign up through the [CIS waitlist system](https://advising.cis.upenn.edu/index.php?id=waitlist), which will become available around November 19. Registration is not available for CIS 530 during early registration.   
 </div>
 
 
@@ -54,21 +54,16 @@ Website
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
 
 Homework Submission
-: [Gradescope](https://www.gradescope.com/courses/35473)
+: [Gradescope](XXX)
 
 Discussion Forum
-: [Piazza](https://piazza.com/upenn/spring2019/cis530)
+: [Piazza](XXX)
 
 Time and place
-: Spring 2019, Mondays and Wednesdays 1:30-3pm (3401 Walnut room 401B)
+: Spring 2020, Mondays and Wednesdays 1:30-3pm (location TBD)
 
 Office hours
-: Mondays 10am-noon in the Levine 5th Floor Bump Space
-: Mondays 4:30pm-6:30pm in the Levine 5th Floor Bump Space
-: Tuesdays 2:30pm-4:30pm in the Levine 5th Floor Bump Space
-: Tuesdays 5:30pm-7:30pm in 3401 Walnut room 401B
-: Thursdays 10am-11am in the GRW 5th Floor Bump Space
-: Fridays 10am-noon in the Harrison Mezz
+: TBD
 
 
 Textbook
