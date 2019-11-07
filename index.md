@@ -9,7 +9,8 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-To get a permit for CIS 530, you will need to sign up through the [CIS waitlist system](https://advising.cis.upenn.edu/index.php?id=waitlist), which will become available around November 19. Registration is not available for CIS 530 during early registration.   
+To get a permit for CIS 530, you will need to sign up through the [CIS waitlist system](https://advising.cis.upenn.edu/index.php?id=waitlist), which will become available around November 19. Registration is not available for CIS 530 during early registration.    I will put a link on the course home page once the waitlist becomes available.  The course homepage is [http://computational-linguistics-class.org](http://computational-linguistics-class.org).
+
 </div>
 
 
