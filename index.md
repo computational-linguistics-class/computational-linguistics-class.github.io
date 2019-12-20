@@ -13,10 +13,6 @@ You can now request a permit for CIS 530 using the [CIS waitlist system](https:/
 </div>
 
 
-<div class="alert alert-success" markdown="1">
-[Interested in being a TA for the class in Spring 2020?  Fill out this form.](https://docs.google.com/forms/d/e/1FAIpQLSepw5mcFtIGBlziBEaspUAMCzw2MkAjsej_rpOCRj0-ObS5wA/viewform?usp=sf_link)
-</div>
-
 
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
@@ -57,7 +53,7 @@ Homework Submission
 : [Gradescope](XXX)
 
 Discussion Forum
-: [Piazza](XXX)
+: [Piazza](piazza.com/upenn/spring2020/cis530)
 
 Time and place
 : Spring 2020, Mondays and Wednesdays 1:30-3pm (location TBD)
