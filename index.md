@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-The class if now full, but you can still [add yourself to the waitlist system](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.
+The class if now full, but you can still [add yourself to the waitlist](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.
 </div>
 
 
