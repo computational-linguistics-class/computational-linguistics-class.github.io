@@ -53,7 +53,7 @@ Homework Submission
 : [Gradescope](https://www.gradescope.com/courses/80035)
 
 Discussion Forum
-: [Piazza](piazza.com/upenn/spring2020/cis530)
+: [Piazza](https://piazza.com/upenn/spring2020/cis530)
 
 Time and place
 : Spring 2020, Mondays and Wednesdays 1:30-3pm in 3401 Walnut room 401B
