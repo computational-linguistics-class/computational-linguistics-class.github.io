@@ -9,7 +9,7 @@ active_tab: lectures
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
 <!-- End create a HTML anchor for the most recent lecture -->
 
-The lecture schedule will be updated as the term progresses. 
+The lecture schedule will be updated as the term progresses.   You can view the [lectures online](https://upenn.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=39306b65-c02f-499b-90cb-ab3b015e2d53).
 
 <table class="table table-striped">
   <thead>
