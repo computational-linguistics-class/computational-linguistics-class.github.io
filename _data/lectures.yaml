@@ -1,5 +1,5 @@
 -
-  date: 2019-01-16
+  date: 2020-01-15
   slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
   slides_credit: Jurafsky and Martin
   title: Course Intro / Text Classification and Sentiment Analysis
@@ -19,11 +19,11 @@
       authors: Bo Pang and Lillian Lee
       url: http://www.cs.cornell.edu/people/pabo/movie-review-data/
 -
-  date: 2019-01-21
+  date: 2020-01-20
   title: Martin Luther King, Jr. Day Observed (no classes)
   type: no_lecture
 -
-  date: 2019-01-23
+  date: 2020-01-22
   slides: slides/02-text-processing.pdf
   title: Text Classification Wrapup / Text Processing
   slides_credit: Jurafsky and Martin
@@ -41,7 +41,7 @@
       title: Publicly available Reddit comments
       url: https://files.pushshift.io/reddit/comments/
 -
-  date: 2019-01-28
+  date: 2020-01-27
   slides: slides/03-text-processing-wrapup.pdf
   title: Text Processing Wrapup 
   slides_credit: Jurafsky and Martin
@@ -55,7 +55,7 @@
       authors: Stephen Roller, Douwe Kiela, and Maximilian Nickel
       url: http://aclweb.org/anthology/P18-2057.pdf
 -
-  date: 2019-01-30
+  date: 2020-01-29
   slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models
   slides_credit: Jurafsky and Martin
@@ -70,7 +70,7 @@
       authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
       url: http://www.aclweb.org/anthology/D07-1090.pdf
 -
-  date: 2019-02-04
+  date: 2020-02-03
   slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models Wrapup
   slides_credit: Jurafsky and Martin
@@ -84,7 +84,7 @@
       authors: Thorsten Brants, Ashok C. Popat, Peng Xu, Franz J. Och, Jeffrey Dean
       url: http://www.aclweb.org/anthology/D07-1090.pdf
 -
-  date: 2019-02-04
+  date: 2020-02-05
   slides: slides/05-vector-semantics.pdf
   title: Vector Semantics
   slides_credit: Dan Jurafsky 
@@ -115,7 +115,7 @@
       url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 16 minutes
 -
-  date: 2019-02-11
+  date: 2020-02-10
   slides: slides/06-vector-semantics-part-2.pdf
   title: Vector Semantics - part 2
   slides_credit: Dan Jurafsky 
@@ -133,7 +133,11 @@
       authors: Julia Bazińska
       url: https://lamyiowce.github.io/word2viz/
 -
-  date: 2019-02-13
+  date: 2020-02-12
+  title: No class.  Chris is traveling for a DARPA PI meeting.
+  type: no_lecture
+-
+  date: 2020-02-17
   slides: slides/06-vector-semantics-part-3.pdf
   title: Vector Semantics - part 3
   slides_credit: Dan Jurafsky
@@ -174,7 +178,7 @@
       url: https://www.pnas.org/content/115/16/E3635.short
       optional: true
 -
-  date: 2019-02-20
+  date: 2020-02-19
   slides: slides/07-logistic-regression.pdf
   title: Logistic Regression
   slides_credit: 
@@ -188,31 +192,12 @@
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
-  date: 2019-02-20
-  slides: 
-  title: No class today due to snow.  Pleaes read ahead on neural network LMs. 
-  type: no_lecture
-  readings: 
-    - 
-      title: Neural Network Methods for Natural Language (Chapter 4).  This book is free to download from Penn's campus.
-      authors: Yoav Goldberg
-      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
-    - 
-      title: A Neural Probabilistic Language Model 
-      authors: Bengio, Ducharme, Vincent
-      url: https://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf
-    - 
-      title: A Neural Probabilistic Language Model (longer JMLR version)
-      authors: Bengio, Ducharme, Vincent and Jauvin
-      url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
-      optional: true
--
-  date: 2019-02-22
+  date: 2020-02-21
   slides: 
   title: Drop Deadline
   type: no_lecture
 -
-  date: 2019-02-25
+  date: 2020-02-24
   slides: slides/08-neural-networks.pdf
   title: Neural Net Language Models
   lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
@@ -232,7 +217,7 @@
       url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
       optional: true
 -
-  date: 2019-02-27
+  date: 2020-02-26
   slides: slides/10-POS-tagging-and-sequence-modeling.pdf
   title: Part-of-Speech Tagging and Sequence Models
   slides_credit: 
@@ -242,17 +227,7 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
-  date: 2019-03-04
-  slides: 
-  title: No Lecture - Spring Break
-  type: no_lecture
--
-  date: 2019-03-06
-  slides: 
-  title: No Lecture - Spring Break
-  type: no_lecture
--
-  date: 2019-03-11
+  date: 2020-03-02
   slides: slides/10-POS-tagging-and-sequence-modeling.pdf
   title: POS tagging and Sequence Models 
   slides_credit: 
@@ -262,18 +237,26 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
-  date: 2019-03-13
+  date: 2020-03-04
   slides: slides/90-guest_lecture_jacob_devlin_bert_presentations.pdf
-  title: Guest lecture on BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
-  speaker: Jacob Devlin
-  slides_credit: Jacob Devlin
+  title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
   readings: 
     - 
       title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
       authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
       url: https://arxiv.org/abs/1810.04805
 -
-  date: 2019-03-18
+  date: 2020-03-09
+  slides: 
+  title: No Lecture - Spring Break
+  type: no_lecture
+-
+  date: 2020-03-11
+  slides: 
+  title: No Lecture - Spring Break
+  type: no_lecture
+-
+  date: 2020-03-16
   slides: slides/11-recurrent-neural-networks.pdf
   title: POS Sequence Processing and Recurrent Networks
   slides_credit: 
@@ -283,10 +266,9 @@
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
-  date: 2019-03-20
+  date: 2020-03-18
   slides: slides/90-guest_lecture_ shyam_upadhyay_cross_lingual_word_representations.pdf
-  title: Guest lecture on Cross-lingual Word Representations
-  speaker: Shyam Upadhyay
+  title: Cross-lingual Word Representations
   slides_credit: Shyam Upadhyay
   readings: 
     - 
@@ -294,14 +276,14 @@
       authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
       url: http://www.aclweb.org/anthology/P16-1157
 -
-  date: 2019-03-25
+  date: 2020-03-23
   slides: slides/12-machine-translation.pdf
   title: Machine Translation and IBM word alignment models
   readings: 
 -
-  date: 2019-03-27
+  date: 2020-03-25
   slides: slides/90-guest_lecture_graham_neubig_NMT.pdf
-  title: Guest lecture by Graham Neubig on NMT 
+  title: Neural Machine Translation
   slides_credit: Graham Neubig
   readings: 
     - 
@@ -309,7 +291,7 @@
       authors: Graham Neubig
       url: https://arxiv.org/abs/1703.01619
 -
-  date: 2019-04-01
+  date: 2020-03-30
   slides: slides/13-question-answering.pdf
   title: Question Answering
   readings: 
@@ -318,30 +300,9 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/23.pdf
 -
-  date: 2019-04-03
-  slides: slides/90-guest_lecture_eric_fosler-lussier_ASR.pdf
-  title: Guest lecture on Automatic Speech Recognition
-  speaker: Eric Fosler-Lussier
-  slides_credit: Eric Fosler-Lussier
-  readings: 
-    - 
-      title: Deep Neural Networks for Acoustic Modeling in Speech Recognition
-      authors: Geoffrey Hinton, Li Deng, Dong Yu, George Dahl, Abdel-rahman Mohamed, Navdeep Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Brian Kingsbury, Tara Sainath
-      url: https://www.microsoft.com/en-us/research/publication/deep-neural-networks-for-acoustic-modeling-in-speech-recognition/
-    - 
-      title: End-to-end speech recognition using deep RNN models and WFST-based decoding
-      authors: Yajie Miao, Mohammad Gowayyed, Florian Metze
-      url: https://ieeexplore.ieee.org/abstract/document/7404790/authors#authors
--
-  date: 2019-04-05
-  slides: 
-  title: Withdraw Deadline
-  type: no_lecture
--
-  date: 2019-04-08
+  date: 2020-03-30
   slides: https://drive.google.com/file/d/1e_JfNx2qabsuSpv2nKsl3OKaYHw-lgy4/view
-  title: Guest lecture on Dialog Systems / Chatbots
-  speaker: João Sedoc
+  title: Dialog Systems / Chatbots
   slides_credit: João Sedoc
   readings:  
     - 
@@ -365,7 +326,7 @@
       authors: Wei Wu and Rui Yan
       url: ohttp://www.ruiyan.me/pubs/tutorial-emnlp18.pdf
 -
-  date: 2019-04-10
+  date: 2020-04-01
   slides: slides/14-information-extraction.pdf
   title: Information Extraction
   readings: 
@@ -392,13 +353,17 @@
       authors: Mausam, Michael Schmitz, Robert Bart, Stephen Soderland, and Oren Etzioni
       url: https://homes.cs.washington.edu/~mausam/papers/emnlp12a.pdf
       optional: true
-
 -
-  date: 2019-04-15
+  date: 2020-04-03
+  slides: 
+  title: Withdraw Deadline
+  type: no_lecture
+-
+  date: 2020-04-06
   title: In class feedback on term project deliverables
   type: no_lecture
 -
-  date: 2019-04-17
+  date: 2020-04-08
   slides: slides/15-formal-grammars-of-english.pdf
   title: Formal Grammars of English
   slides_credit: Sameer Singh and others
@@ -408,7 +373,7 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
-  date: 2019-04-22
+  date: 2020-04-13
   slides: slides/16-syntactic-parsing.pdf
   title: Syntactic Parsing and the Penn Treebank
   slides_credit: Sameer Singh and others
@@ -438,7 +403,7 @@
       url: https://www.youtube.com/watch?v=NUV6vXK8FCc
       length: 17 minutes
 -
-  date: 2019-04-24
+  date: 2020-04-15
   slides: slides/17-statistical-parsing.pdf
   title: Statistical Parsing
   slides_credit: Sameer Singh and others
@@ -459,35 +424,23 @@
       url: https://www.youtube.com/watch?v=hgaeB2JloJY
       length: 19 minutes
 -
-  date: 2019-04-29
-  slides: slides/18-paraphrasing.pdf
-  title: Large-scale paraphrasing for natural language generation
-  slides_credit: 
-  readings: 
-    - 
-      title: Paraphrasing with Bilingual Parallel Corpora
-      authors: Colin Bannard and Chris Callison-Burch
-      url: http://www.cis.upenn.edu/~ccb/publications/paraphrasing-with-bilingual-parallel-corpora.pdf
-      optional: true
-    - 
-      title: Learning Sentential Paraphrases from Bilingual Parallel Corpora for Text-to-Text Generation
-      authors: Juri Ganitkevitch, Chris Callison-Burch, Courtney Napoles, and Benjamin Van Durme
-      url: http://www.cis.upenn.edu/~ccb/publications/learning-sentential-paraphrases-from-bilingual-parallel-corpora.pdf
-      optional: true
-    - 
-      title: PPDB&colon; The Paraphrase Database
-      authors: Juri Ganitkevitch, Benjamin Van Durme, and Chris Callison-Burch
-      url: http://www.cis.upenn.edu/~ccb/publications/ppdb.pdf
-      optional: true
-    - 
-      title: PPDB 2.0&colon; Better paraphrase ranking, fine-grained entailment relations, word embeddings, and style classification
-      authors: Ellie Pavlick, Pushpendre Rastogi, Juri Ganitkevich, Ben Van Durme, Chris Callison-Burch
-      url: http://www.cis.upenn.edu/~ccb/publications/ppdb-reranking.pdf
-      optional: true
-
--
-  date: 2019-05-01
+  date: 2020-04-20
   slides: 
-  title: guest lecture by Anne Cocos
-  slides_credit: Anne Cocos
+  title: TBD
+  slides_credit: 
+  readings:
+-
+  date: 2020-04-22
+  slides: 
+  title: TBD
+  readings: 
+-
+  date: 2020-04-27
+  slides: 
+  title: TBD
+  readings: 
+-
+  date: 2020-04-29
+  slides: 
+  title: TBD
   readings: 
