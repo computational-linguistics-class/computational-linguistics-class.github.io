@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-You can now request a permit for CIS 530 using the [CIS waitlist system](https://forms.cis.upenn.edu/waitlist/). You do not need to contact the instructor to requet a permit. 
+The class if now full, but you can still [add yourself to the waitlist system](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.
 </div>
 
 
@@ -50,7 +50,7 @@ Website
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
 
 Homework Submission
-: [Gradescope](XXX)
+: [Gradescope](https://www.gradescope.com/courses/80035)
 
 Discussion Forum
 : [Piazza](piazza.com/upenn/spring2020/cis530)
