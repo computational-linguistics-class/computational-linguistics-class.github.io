@@ -44,7 +44,7 @@ Course number
 : CIS 530 - Computational Linguistics 
 
 Instructor
-: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) - [office hours by appointment](ccb-office-hours.youcanbook.me)
+: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) 
 
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
@@ -56,7 +56,9 @@ Discussion Forum
 : [Piazza](piazza.com/upenn/spring2020/cis530)
 
 Time and place
-: Spring 2020, Mondays and Wednesdays 1:30-3pm (location TBD)
+: Spring 2020, Mondays and Wednesdays 1:30-3pm in 3401 Walnut room 401B
+: First day of class is January 15, 2020
+: Last day of class is April 29, 2020
 
 Office hours
 : TBD
