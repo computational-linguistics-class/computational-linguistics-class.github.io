@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-You can now request a permit for CIS 530 using the [CIS waitlist system](https://forms.cis.upenn.edu/waitlist/). You do not need to contact the instructor to requet a permit. 
+The class if now full, but you can still [add yourself to the waitlist](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.
 </div>
 
 
@@ -44,19 +44,21 @@ Course number
 : CIS 530 - Computational Linguistics 
 
 Instructor
-: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) - [office hours by appointment](ccb-office-hours.youcanbook.me)
+: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) 
 
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
 
 Homework Submission
-: [Gradescope](XXX)
+: [Gradescope](https://www.gradescope.com/courses/80035)
 
 Discussion Forum
-: [Piazza](piazza.com/upenn/spring2020/cis530)
+: [Piazza](https://piazza.com/upenn/spring2020/cis530)
 
 Time and place
-: Spring 2020, Mondays and Wednesdays 1:30-3pm (location TBD)
+: Spring 2020, Mondays and Wednesdays 1:30-3pm in 3401 Walnut room 401B
+: First day of class is January 15, 2020
+: Last day of class is April 29, 2020
 
 Office hours
 : TBD
