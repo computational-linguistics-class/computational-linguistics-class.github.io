@@ -9,7 +9,7 @@ active_tab: main_page
 
 
 <div class="alert alert-info" markdown="1">
-The class if now full, but you can still [add yourself to the waitlist](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.
+The class if now full, but you can still [add yourself to the waitlist](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.  There are still slots available in Prof. Callison-Burch's other course on [Interactive Fiction and Text Generation (CIS 700-008)](http://interactive-fiction-class.org), which meets on Thursdays from 1:30-4:30.
 </div>
 
 
