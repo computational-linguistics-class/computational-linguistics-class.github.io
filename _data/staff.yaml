@@ -3,16 +3,23 @@
   email: ccb@upenn.edu 
   url: https://www.cis.upenn.edu/~ccb/
   extra_title: Instructor
-  office_hours: <a href="https://ccb-office-hours.youcanbook.me">By appointment on ccb-office-hours.youcanbook.me</a>
+  office_hours: TBD
   location: 3401 Walnut St, room 463C
-
-- name: Tyler Larkworthy  
-  pic: tyler_larkworthy.jpg
-  email: tlarkwor@seas
-  url: 
-  office_hours: Fridays 1:00-3:00pm
-  location: Levine 5th Floor Bump Space
   
+- name: Bhavna Saluja
+  pic: Bhavna.jpg
+  email: bsaluja@seas
+  url:
+  office_hours: TBD
+  location: TBD
+
+- name: Gaurav Kumar
+  pic: gaurav.jpg
+  email: gauku@seas
+  url:
+  office_hours: TBD
+  location: TBD
+
 - name: Harry Zhang
   pic: harry_zhang.jpg
   email: zharry@seas
@@ -27,10 +34,10 @@
   office_hours: TBD
   location: TBD
 
-- name: Gaurav Kumar
-  pic: gaurav.jpg
-  email: gauku@seas
-  url:
+- name: Sihao Chen
+  pic: sihao.jpg
+  email: sihaoc@seas
+  url: https://www.seas.upenn.edu/~sihaoc
   office_hours: TBD
   location: TBD
 
@@ -40,17 +47,11 @@
   url:
   office_hours: TBD
   location: TBD
-  
-- name: Bhavna Saluja
-  pic: Bhavna.jpg
-  email: bsaluja@seas
-  url:
-  office_hours: TBD
-  location: TBD
 
-- name: Sihao Chen
-  pic: sihao.jpg
-  email: sihaoc@seas
-  url: https://www.seas.upenn.edu/~sihaoc
-  office_hours: TBD
-  location: TBD
+- name: Tyler Larkworthy  
+  pic: tyler_larkworthy.jpg
+  email: tlarkwor@seas
+  url: 
+  office_hours: Fridays 1:00-3:00pm
+  location: Levine 5th Floor Bump Space
+  
