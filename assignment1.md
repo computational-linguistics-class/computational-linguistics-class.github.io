@@ -5,8 +5,8 @@ img_link: http://xkcd.com/353/
 caption: Hello world!
 title: Homework 1 "Python and Bash Skills"
 active_tab: homework
-release_date: 2019-01-22
-due_date: 2019-01-29 23:59:00EST
+release_date: 2020-01-15
+due_date: 2020-01-22 23:59:00EST
 attribution: This assignment was developed by the CIS 521 staff at the University of Pennsylvania 
 ---
 
