@@ -8,8 +8,13 @@ active_tab: main_page
 ---
 
 
-<div class="alert alert-info" markdown="1">
-The class if now full, but you can still [add yourself to the waitlist](https://forms.cis.upenn.edu/waitlist/) if you'd like to try to get into the class.  There are still slots available in Prof. Callison-Burch's other course on [Interactive Fiction and Text Generation (CIS 700-008)](http://interactive-fiction-class.org), which meets on Thursdays from 1:30-4:30.
+<div class="alert alert-danger" markdown="1">
+If you didn't get a permit for the course, but you're still hoping to get in, then you should follow these steps:
+1. Join the class [Piazza](https://piazza.com/upenn/spring2020/cis530)
+2. Make a private post on Piazza with your name, email and Penn ID number asking to join Gradescope.
+3. Complete [Homework 1](http://computational-linguistics-class.org/assignment1.html) by Wednesday (Jan 22nd) before midnight.
+
+If you don't turn in HW1 on time, then you won't be considered for enrollment if any additional permits become available. 
 </div>
 
 
