@@ -6,6 +6,13 @@
   office_hours: TBD
   location: 3401 Walnut St, room 463C
   
+- name: Arun Kirubarajan
+  pic: arun_kirubarajan.png
+  email: kiruba@cis
+  url: https://kirubarajan.github.io
+  office_hours: Thursdays 12:30-1:30pm
+  location: TBD
+
 - name: Bhavna Saluja
   pic: Bhavna.jpg
   email: bsaluja@seas
@@ -55,9 +62,3 @@
   office_hours: Fridays 1:00-3:00pm
   location: Levine 5th Floor Bump Space
   
-- name: Arun Kirubarajanpic:
-  pic: arun_kirubarajan.png
-  email: kiruba@cis
-  url: https://kirubarajan.github.io
-  office_hours: Thursdays 12:30-1:30pm
-  location: 3401 Walnut Street C-Wing 4th Floor
