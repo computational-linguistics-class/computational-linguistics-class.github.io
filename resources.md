@@ -41,7 +41,7 @@ Python resources
 - [Scikit-learn](http://scikit-learn.org/stable/) is an amazingly easy library for doing machine learning in Python. It is also wonderfully verbosely documented with tons of examples.
 - [Kaggle has some tutorials on sklearn](https://www.kaggle.com/c/data-science-london-scikit-learn/visualization)
 - [spaCy](https://spacy.io) is excellent Python NLP library.  It also has a cleverly named visualization tool, [displaCy](https://spacy.io/usage/visualizers).
-- AllenNLP[https://github.com/allenai/allennlp] is an open-source NLP research library from [AI2](http://www.allenai.org), built on PyTorch
+- [AllenNLP](https://allennlp.org) is an open-source NLP research library from [AI2](http://www.allenai.org)
 
 Using python 3.5+ on biglab
 ====================================
