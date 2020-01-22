@@ -3,7 +3,7 @@
   slides: slides/01-course-intro+text-classification-and-sentiment-analysis.pdf
   slides_credit: Jurafsky and Martin
   title: Course Intro / Text Classification and Sentiment Analysis
-  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1077ba40-ce16-4311-b175-a9d6000a48ea
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=53c9e3b4-280b-4aac-a65a-ab3c0122ae09
   readings:   
     - 
       title: Chapter 4 "Naive Bayes Classification and Sentiment"
@@ -27,7 +27,7 @@
   slides: slides/02-text-processing.pdf
   title: Text Classification Wrapup / Text Processing
   slides_credit: Jurafsky and Martin
-  recording: 
+  old_recording: 
   readings:   
     - 
       title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
@@ -42,7 +42,7 @@
       url: https://files.pushshift.io/reddit/comments/
 -
   date: 2020-01-27
-  slides: slides/03-text-processing-wrapup.pdf
+  old_slides: slides/03-text-processing-wrapup.pdf
   title: Text Processing Wrapup 
   slides_credit: Jurafsky and Martin
   readings:   
@@ -56,7 +56,7 @@
       url: http://aclweb.org/anthology/P18-2057.pdf
 -
   date: 2020-01-29
-  slides: slides/04-n-gram-language-models.pdf
+  old_slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models
   slides_credit: Jurafsky and Martin
   lecture_notes: slides/04-n-gram-language-models-lecture-notes.pdf
@@ -71,7 +71,7 @@
       url: http://www.aclweb.org/anthology/D07-1090.pdf
 -
   date: 2020-02-03
-  slides: slides/04-n-gram-language-models.pdf
+  old_slides: slides/04-n-gram-language-models.pdf
   title: N-gram Language Models Wrapup
   slides_credit: Jurafsky and Martin
   readings:
@@ -85,7 +85,7 @@
       url: http://www.aclweb.org/anthology/D07-1090.pdf
 -
   date: 2020-02-05
-  slides: slides/05-vector-semantics.pdf
+  old_slides: slides/05-vector-semantics.pdf
   title: Vector Semantics
   slides_credit: Dan Jurafsky 
   lecture_notes: slides/05-vector-semantics-lecture-notes.pdf
@@ -116,7 +116,7 @@
       length: 16 minutes
 -
   date: 2020-02-10
-  slides: slides/06-vector-semantics-part-2.pdf
+  old_slides: slides/06-vector-semantics-part-2.pdf
   title: Vector Semantics - part 2
   slides_credit: Dan Jurafsky 
   readings: 
@@ -138,7 +138,7 @@
   type: no_lecture
 -
   date: 2020-02-17
-  slides: slides/06-vector-semantics-part-3.pdf
+  old_slides: slides/06-vector-semantics-part-3.pdf
   title: Vector Semantics - part 3
   slides_credit: Dan Jurafsky
   readings: 
@@ -179,7 +179,7 @@
       optional: true
 -
   date: 2020-02-19
-  slides: slides/07-logistic-regression.pdf
+  old_slides: slides/07-logistic-regression.pdf
   title: Logistic Regression
   slides_credit: 
   readings: 
@@ -193,12 +193,12 @@
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
   date: 2020-02-21
-  slides: 
+  old_slides: 
   title: Drop Deadline
   type: no_lecture
 -
   date: 2020-02-24
-  slides: slides/08-neural-networks.pdf
+  old_slides: slides/08-neural-networks.pdf
   title: Neural Net Language Models
   lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
   slides_credit: 
@@ -218,7 +218,7 @@
       optional: true
 -
   date: 2020-02-26
-  slides: slides/10-POS-tagging-and-sequence-modeling.pdf
+  old_slides: slides/10-POS-tagging-and-sequence-modeling.pdf
   title: Part-of-Speech Tagging and Sequence Models
   slides_credit: 
   readings: 
@@ -228,7 +228,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2020-03-02
-  slides: slides/10-POS-tagging-and-sequence-modeling.pdf
+  old_slides: slides/10-POS-tagging-and-sequence-modeling.pdf
   title: POS tagging and Sequence Models 
   slides_credit: 
   readings: 
@@ -238,7 +238,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2020-03-04
-  slides: slides/90-guest_lecture_jacob_devlin_bert_presentations.pdf
+  old_slides: slides/90-guest_lecture_jacob_devlin_bert_presentations.pdf
   title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
   readings: 
     - 
@@ -247,17 +247,17 @@
       url: https://arxiv.org/abs/1810.04805
 -
   date: 2020-03-09
-  slides: 
+  old_slides: 
   title: No Lecture - Spring Break
   type: no_lecture
 -
   date: 2020-03-11
-  slides: 
+  old_slides: 
   title: No Lecture - Spring Break
   type: no_lecture
 -
   date: 2020-03-16
-  slides: slides/11-recurrent-neural-networks.pdf
+  old_slides: slides/11-recurrent-neural-networks.pdf
   title: POS Sequence Processing and Recurrent Networks
   slides_credit: 
   readings: 
@@ -267,7 +267,7 @@
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
 -
   date: 2020-03-18
-  slides: slides/90-guest_lecture_ shyam_upadhyay_cross_lingual_word_representations.pdf
+  old_slides: slides/90-guest_lecture_ shyam_upadhyay_cross_lingual_word_representations.pdf
   title: Cross-lingual Word Representations
   slides_credit: Shyam Upadhyay
   readings: 
@@ -277,12 +277,12 @@
       url: http://www.aclweb.org/anthology/P16-1157
 -
   date: 2020-03-23
-  slides: slides/12-machine-translation.pdf
+  old_slides: slides/12-machine-translation.pdf
   title: Machine Translation and IBM word alignment models
   readings: 
 -
   date: 2020-03-25
-  slides: slides/90-guest_lecture_graham_neubig_NMT.pdf
+  old_slides: slides/90-guest_lecture_graham_neubig_NMT.pdf
   title: Neural Machine Translation
   slides_credit: Graham Neubig
   readings: 
@@ -292,7 +292,7 @@
       url: https://arxiv.org/abs/1703.01619
 -
   date: 2020-03-30
-  slides: slides/13-question-answering.pdf
+  old_slides: slides/13-question-answering.pdf
   title: Question Answering
   readings: 
     - 
@@ -301,7 +301,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/23.pdf
 -
   date: 2020-03-30
-  slides: https://drive.google.com/file/d/1e_JfNx2qabsuSpv2nKsl3OKaYHw-lgy4/view
+  old_slides: https://drive.google.com/file/d/1e_JfNx2qabsuSpv2nKsl3OKaYHw-lgy4/view
   title: Dialog Systems / Chatbots
   slides_credit: João Sedoc
   readings:  
@@ -327,7 +327,7 @@
       url: ohttp://www.ruiyan.me/pubs/tutorial-emnlp18.pdf
 -
   date: 2020-04-01
-  slides: slides/14-information-extraction.pdf
+  old_slides: slides/14-information-extraction.pdf
   title: Information Extraction
   readings: 
     - 
@@ -355,7 +355,7 @@
       optional: true
 -
   date: 2020-04-03
-  slides: 
+  old_slides: 
   title: Withdraw Deadline
   type: no_lecture
 -
@@ -364,7 +364,7 @@
   type: no_lecture
 -
   date: 2020-04-08
-  slides: slides/15-formal-grammars-of-english.pdf
+  old_slides: slides/15-formal-grammars-of-english.pdf
   title: Formal Grammars of English
   slides_credit: Sameer Singh and others
   readings: 
@@ -374,7 +374,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
   date: 2020-04-13
-  slides: slides/16-syntactic-parsing.pdf
+  old_slides: slides/16-syntactic-parsing.pdf
   title: Syntactic Parsing and the Penn Treebank
   slides_credit: Sameer Singh and others
   readings: 
@@ -403,7 +403,7 @@
       length: 17 minutes
 -
   date: 2020-04-15
-  slides: slides/17-statistical-parsing.pdf
+  old_slides: slides/17-statistical-parsing.pdf
   title: Statistical Parsing
   slides_credit: Sameer Singh and others
   readings: 
@@ -424,22 +424,22 @@
       length: 19 minutes
 -
   date: 2020-04-20
-  slides: 
+  old_slides: 
   title: TBD
   slides_credit: 
   readings:
 -
   date: 2020-04-22
-  slides: 
+  old_slides: 
   title: TBD
   readings: 
 -
   date: 2020-04-27
-  slides: 
+  old_slides: 
   title: TBD
   readings: 
 -
   date: 2020-04-29
-  slides: 
+  old_slides: 
   title: TBD
   readings: 
