@@ -27,7 +27,7 @@
   slides: slides/02-text-processing.pdf
   title: Text Classification Wrapup / Text Processing
   slides_credit: Jurafsky and Martin
-  old_recording: 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0f404b60-9df6-425f-9fa7-ab3c0122ae5b
   readings:   
     - 
       title: Chapter 2 "Regular Expressions, Text Normalization, and Edit Distance"
