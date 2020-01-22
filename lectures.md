@@ -13,8 +13,7 @@ active_tab: lectures
 <div class="alert alert-info">
 You can <a href="https://upenn.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=39306b65-c02f-499b-90cb-ab3b015e2d53">watch recordings of the lecture videos online</a>.
 </div>
-
-The lecture schedule will be updated as the term progresses.   
+The lecture schedule will be updated as the term progresses. 
 
 <table class="table table-striped">
   <thead>
@@ -44,6 +43,8 @@ The lecture schedule will be updated as the term progresses.
         class="info" 
       {% else if lecture.type and lecture.type == 'deadline' %}
         class="warning"
+      {% else if lecture.type and lecture.type == 'homework' %}
+        class="primary"
       {% else if lecture.type and lecture.type == 'no_lecture' %}
         class="success"
       {% endif %}
@@ -51,27 +52,27 @@ The lecture schedule will be updated as the term progresses.
     >
 
     <!-- End create a HTML anchor for the most recent lecture -->
-      <td>{{ lecture.date | date: '%a, %b %-d, %Y' }}</td>
-      <td>
-        {% if lecture.slides %}
-          <a href="{{ lecture.slides }}">{{ lecture.title }}</a>
-        {% else %}
+      <td width="14%">{{ lecture.date | date: '%a, %b %-d, %Y' }}</td>
+      <td width="30%">
          {{ lecture.title }} 
+
+
+        {% if lecture.slides %}
+          <a href="slides/{{ lecture.slides }}">[slides]</a>
         {% endif %}
 
 
-        {% if lecture.lecture_notes %}
-          <a href="{{ lecture.lecture_notes }}">[lecture notes]</a>
+        {% if lecture.recording %}
+          <a href="{{ lecture.recording }}">[video] </a>
         {% endif %}
 
-
-	    {% if lecture.speaker %}
+      {% if lecture.speaker %}
           {% if lecture.speaker_url %}
             by <a href="{{ lecture.speaker_url }}">{{ lecture.speaker }}</a> 
           {% else %} 
           by {{ lecture.speaker }}
           {% endif %}
-	    {% endif %}
+      {% endif %}
 
       </td>
       <td>
@@ -92,7 +93,8 @@ The lecture schedule will be updated as the term progresses.
        <td>
         {% if lecture.videos %} 
           {% for video in lecture.videos %}
-          {{ video.authors }}, <a href="{{ video.url }}">{{ video.title }}</a> 
+          {% if video.authors %} {{ video.authors }}, {% endif %}
+          <a href="{{ video.url }}">{{ video.title }}</a> 
           {% if video.length %} ({{ video.length }}) {% endif %}
             <br />
           {% endfor %}
