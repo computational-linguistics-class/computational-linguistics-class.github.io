@@ -15,13 +15,13 @@ readings:
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/6.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/4.pdf
 -
    title: Logistic Regression
    authors: Dan Jurafsky and James H. Martin
    venue: Speech and Language Processing (3rd edition draft)
    type: textbook
-   url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+   url: https://web.stanford.edu/~jurafsky/slp3/5.pdf
 -
    title: Problems in Current Text Simplification Research&colon; New Data Can Help
    authors: Wei Xu, Chris Callison-Burch, and Courtney Napoles
