@@ -82,7 +82,7 @@ This assignment is due on {{ page.due_date | date: "%A, %B %-d, %Y" }} before {{
 Text Classification <span class="text-muted">: Assignment 2</span>
 =============================================================
 
-For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops, town*, and example complex words are *abdicate, detained, liaison, vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities.
+For this assignment, we'll be building a text classifier.  The goal of our text classifer will be to distinguish between words that are simple and words that are complex.  Example simple words are *heard, sat, feet, shops,* and *town*, and example complex words are *abdicate, detained, liaison,* and *vintners*. Distinguishing between simple and complex words is the first step in a larger NLP task called text simplification, which aims to replace complex words with simpler synonyms.  Text simplification is potentially useful for re-writing texts so that they can be more easily understood by younger readers, people learning English as a second language, or people with learning disabilities.
 
 The learning goals of this assignment are:
 * Understand an important class of NLP evaluation methods (precision, recall and F1), and implement them yourself.
@@ -104,7 +104,7 @@ Here are the materials that you should download for this assignment:
 This assignment has several deliverables:
 * Your implementations for the functions in the skeleton code.
 * Your model's output for the test set (your model will be ranked on a leaderboard against the other students' outputs)
-* Your writeup about the homework.  [Here is an example writeup](downloads/hw2/hw2_example_writeup.pdf) that illustartes what we are looking for.
+* Your writeup about the homework.  [Here is an example writeup](downloads/hw2/hw2_example_writeup.pdf) that illustrates what we are looking for.
 </div>
 
 
