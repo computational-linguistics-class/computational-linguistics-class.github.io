@@ -68,10 +68,11 @@ Time and place
 : Last day of class is April 29, 2020
 
 Office hours
-: Mondays ...
-: Tuesdays ...
-: Wednesdays 4-6pm in the Levine 5th floor bump space
-: Thursdays ...
+: Mondays 10:30am-12:30pm in the Levine 5th floor next to elevators
+: Tuesdays 1:30-5 in the Levine 5th floor next to elevators
+: Wednesdays 10am-12:30pm in the GRW 5th floor bump space
+: Wednesdays 4-6pm in the Levine 5th floor next to elevators
+: Thursdays 3-5pm GRW 5th floor bump space
 
 
 Textbook
