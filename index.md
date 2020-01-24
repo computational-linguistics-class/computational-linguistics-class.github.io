@@ -7,8 +7,10 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
-
 <div class="alert alert-danger" markdown="1">
+The course is now full. Prof. Callison-Burch emailed students on the waitlist who completed HW1 on time informing them that they would get a permit.  No other permits will be available.  
+</div>
+<!--
 If you didn't get a permit for the course, but you're still hoping to get in, then you should follow these steps:
 1. [Join the class Piazza](https://piazza.com/upenn/spring2020/cis530).
 2. [Add yourself to Gradescope](https://www.gradescope.com/courses/80035) with the entry code __MGZXK3__.
@@ -16,7 +18,7 @@ If you didn't get a permit for the course, but you're still hoping to get in, th
 
 If you don't turn in HW1 on time, then you won't be considered for enrollment if any additional permits become available. 
 </div>
-
+-->
 
 
 <!-- Display an alert about upcoming homework assignments -->
@@ -66,7 +68,10 @@ Time and place
 : Last day of class is April 29, 2020
 
 Office hours
-: TBD
+: Mondays ...
+: Tuesdays ...
+: Wednesdays 4-6pm in the Levine 5th floor bump space
+: Thursdays ...
 
 
 Textbook
