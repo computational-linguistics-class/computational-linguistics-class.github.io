@@ -71,8 +71,9 @@ Office hours
 : Mondays 10:30am-12:30pm in the Levine 5th floor next to elevators
 : Tuesdays 1:30-5 in the Levine 5th floor next to elevators
 : Wednesdays 10am-12:30pm in the GRW 5th floor bump space
-: Wednesdays 4-6pm in the Levine 5th floor next to elevators
+: Wednesdays 3-6pm in the Levine 5th floor next to elevators (multiple TAs)
 : Thursdays 3-5pm GRW 5th floor bump space
+: Friday 4-5pm in 3401 Walnut room 463C
 
 
 Textbook
