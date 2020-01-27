@@ -40,20 +40,31 @@
     - 
       title: Publicly available Reddit comments
       url: https://files.pushshift.io/reddit/comments/
--
-  date: 2020-01-27
-  old_slides: 03-text-processing-wrapup.pdf
-  title: Text Processing Wrapup 
-  slides_credit: Jurafsky and Martin
-  readings:   
     - 
       title: Automatic Acquisition of Hyponyms from Large Text Corpora
       authors: Marti A. Hearst
       url: http://www.aclweb.org/anthology/C92-2082.pdf
+      optional: true
     - 
       title: Hearst Patterns Revisited&colon; Automatic Hypernym Detection from Large Text Corpora
       authors: Stephen Roller, Douwe Kiela, and Maximilian Nickel
       url: http://aclweb.org/anthology/P18-2057.pdf
+      optional: true
+-
+  date: 2020-01-27
+  old_slides:  03-logistic-regression.pdf
+  title: Text Processing Wrapup / Logistic Regression
+  slides_credit: 
+  readings: 
+    - 
+      title: Chapter 5 "Logistic Regression"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/5.pdf
+    - 
+      title: Neural Network Methods for Natural Language (Chapter 2).  This book is free to download from Penn's campus.
+      authors: Yoav Goldberg
+      url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
+      optional: true
 -
   date: 2020-01-29
   old_slides: 04-n-gram-language-models.pdf
