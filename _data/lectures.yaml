@@ -52,7 +52,7 @@
       optional: true
 -
   date: 2020-01-27
-  old_slides:  03-logistic-regression.pdf
+  slides:  03-logistic-regression.pdf
   title: Text Processing Wrapup / Logistic Regression
   slides_credit: 
   readings: 
