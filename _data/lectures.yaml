@@ -68,7 +68,7 @@
       optional: true
 -
   date: 2020-01-29
-  old_slides: 04-n-gram-language-models.pdf
+  slides: 04-n-gram-language-models.pdf
   title: N-gram Language Models
   slides_credit: Jurafsky and Martin
   lecture_notes: slides/04-n-gram-language-models-lecture-notes.pdf
