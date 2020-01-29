@@ -70,9 +70,9 @@
   date: 2020-01-29
   slides: 04-n-gram-language-models.pdf
   title: Logistic Regression Wrapup / N-gram Language Models
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2aa0998f-e21c-4c4e-966b-ab510155d6ab
   slides_credit: Jurafsky and Martin
   lecture_notes: slides/04-n-gram-language-models-lecture-notes.pdf
-  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2aa0998f-e21c-4c4e-966b-ab510155d6ab
   readings:
     - 
       title: Chapter 3 "N-gram Language Models"
