@@ -72,6 +72,14 @@ Here are the materials that you should download for this assignment:
 * [test file for leaderboard](cities_test.txt)
 </div>
 
+
+<div class="alert alert-success" markdown="1">
+This assignment has several deliverables:
+* Your implementations for the functions in the skeleton code.
+* Your model’s output for the test set (your model will be ranked on a leaderboard against the other students’ outputs)
+* Your writeup about the homework. Here is an [example writeup](example-writeup.pdf) that illustrates what we are looking for.
+</div>
+
 ## Part 0: Generating N-Grams
 
 Write a function `ngrams(n, text)` that produces a list of all n-grams of the specified size from the input text. Each n-gram should consist of a 2-element tuple `(context, char)`, where the context is itself an n-length string comprised of the $n$ characters preceding the current character. The sentence should be padded with $n$ ~ characters at the beginning (we've provided you with `start_pad(n)` for this purpose). If $n=0$, all contexts should be empty strings. You may assume that $n\ge0$.
