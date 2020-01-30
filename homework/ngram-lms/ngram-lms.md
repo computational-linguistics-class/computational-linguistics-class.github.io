@@ -162,7 +162,7 @@ Try generating some Shakespeare with different order n-gram models. You should t
 
 What do you think? Is it as good as [1000 monkeys working at 1000 typewriters](https://www.youtube.com/watch?v=no_elVGGgW8)?
 
-After generating a bunch of short passages, do you notice anything? *They all start with F!* In fact, after we hit a certain order, the first word is always *First*?  Why is that? Is the model trying to be clever? First, generate the word *First*. Explain what is going on in your writeup.
+After generating a bunch of short passages, do you notice anything? *They all start with F!* In fact, after we hit a certain order, the first word is always *First*?  Why is that? Is the model trying to be clever? Is it saying *First, I will generate the word "First"*?  No, probably not.  Explain what is going on in your writeup.
 
 ## Part 2: Perplexity, Smoothing, and Interpolation
 
