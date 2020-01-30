@@ -6,7 +6,7 @@ img_link: https://www.explainxkcd.com/wiki/index.php/1427:_iOS_Keyboard
 title: Homework 3 - N-Gram Language Models
 active_tab: homework
 release_date: 2020-01-30
-due_date: 2020-02-03T23:59:00EST
+due_date: 2020-02-05T23:59:00EST
 attribution: This assignment is based on [The Unreasonable Effectiveness of Character-level Language Models](http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139) by Yoav Goldberg. Diana Marsala, Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018/2019.  
 readings:
 -
