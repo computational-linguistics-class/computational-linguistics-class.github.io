@@ -52,7 +52,7 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 </div>
 
 
-N-Gram Language Models <span class="text-muted">: Assignment 5</span>
+N-Gram Language Models <span class="text-muted">: Assignment 3</span>
 =============================================================
 
 In the textbook, language modeling was defined as the task of predicting the next word in a sequence given the previous words. In this assignment, we will focus on the related problem of predicting the next *character* in a sequence given the previous characters. 
