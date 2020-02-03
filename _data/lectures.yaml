@@ -108,7 +108,7 @@
       url: http://www.aclweb.org/anthology/D07-1090.pdf
 -
   date: 2020-02-05
-  old_slides: 05-vector-semantics.pdf
+  slides: 05-vector-semantics.pdf
   title: Vector Semantics
   slides_credit: Dan Jurafsky 
   lecture_notes: slides/05-vector-semantics-lecture-notes.pdf
