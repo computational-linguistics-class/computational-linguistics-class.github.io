@@ -207,7 +207,7 @@ These are defined in Section 6.2 of the textbook.
 
 # Weighting terms  
 
-There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`.  Check out section 6.3.1. of the textbook for the defintions of the Jaccard and Dice measures. 
+There are several ways of computing the similarity between two vectors.  In addition to writing a function to compute cosine similarity, you should also write functions to `compute_jaccard_similarity` and `compute_dice_similarity`. You can check out the defintion of the [Jaccard measure here](https://en.wikipedia.org/wiki/Jaccard_index#Weighted_Jaccard_similarity_and_distance). And, dice similarity measure is given by (2 * J)/(J + 1) where J is Jaccard index. Please refer to this wikipedia link on [Dice coefficient](https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient) for more details.
 
 
  
@@ -328,6 +328,26 @@ Here are the deliverables that you will need to submit:
   {% endfor %}
 </table>
 
+
+## FAQs
+
+* When finding the top 10 similar items for a given target element, should I count the target element?  
+  *No, do not count the target element.*
+
+* How can I represent a character as a vector for calculating similarity?  
+*One reasonable way would be to do it much in the same way as for plays. You would just need to write code to segment out each character as the given code did for each play.*
+
+* What kind of analysis can I perform on the female and male Shakespearean characters for the report?  
+*There can be various ways to go about this. You can look at PCA projections of the vectors representing the characters in the plays to see if the men and women cluster in distinct areas that are demarcated. Or you can look at the similarity scores among women, among men and compare it to the similarity scores between men and men to see if it is significantly different. To account for outliers, you can use averages in this case. Feel free to play around with different vector representations and different similarity measures.*
+
+* How can I improve the performance and efficiency of my code?  
+*Try to use vectorized code wherever possible instead of using loops. You can refer to this resource on [vectorized code](http://www.cs.cornell.edu/courses/cs1112/2015sp/Exams/exam2/vectorizedCode.pdf).*
+
+* How many documents should I consider for reporting similarity scores in the writeup?  
+*You need not report similarity scores for every pair of documents. A subset of similarity scores should be sufficient. For instance, you can include the top 10 of one or two documents.*
+
+* How can I compute the similarity scores on SimLex999 data set, and compute their correlation with human judgments using Kendall's Tau?  
+*You can use simlex data to get a ranking list with your model and calculate the number of concordant and discordant pairs. You can refer to this resource on [Kendall’s Tau](https://www.statisticshowto.datasciencecentral.com/kendalls-tau/).*
 
 
 
