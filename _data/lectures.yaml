@@ -132,6 +132,7 @@
   slides: 06-vector-semantics-part-2.pdf
   title: Vector Semantics - part 2
   slides_credit: Dan Jurafsky 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c9b9c986-2321-4f6f-a0b0-ab5801314557
   readings: 
     - 
       title: Distributed Representations of Words and Phrases and their Compositionality
@@ -151,6 +152,13 @@
       authors: Julia Bazińska
       url: https://lamyiowce.github.io/word2viz/
       optional: true
+-
+  date: 2020-02-10
+  slides: 07-vector-semantics-part-3.pdf
+  title: Vector Semantics - part 3
+  slides_credit: Dan Jurafsky 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c9b9c986-2321-4f6f-a0b0-ab5801314557
+  readings: 
     - 
       title: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
       authors: Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama1, Adam Kalai
@@ -182,7 +190,11 @@
       url: https://www.pnas.org/content/115/16/E3635.short
       optional: true
 -
-  date: 2020-02-10
+  date: 2020-02-12
+  title: No class.  Chris is traveling for a DARPA PI meeting.
+  type: no_lecture
+-
+  date: 2020-02-19
   old_slides: 08-neural-networks.pdf
   title: Neural Net Language Models
   lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
@@ -201,10 +213,6 @@
       authors: Bengio, Ducharme, Vincent and Jauvin
       url: http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf
       optional: true
--
-  date: 2020-02-12
-  title: No class.  Chris is traveling for a DARPA PI meeting.
-  type: no_lecture
 -
   date: 2020-02-19
   old_slides: 07-logistic-regression.pdf
