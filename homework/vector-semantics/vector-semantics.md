@@ -3,10 +3,10 @@ layout: default
 img: period_speech.png
 img_link: https://xkcd.com/771/
 caption: Understanding Shakespeare with Math    
-title: Homework 3 "Vector Space Models"
+title: Homework 4 "Vector Space Models"
 active_tab: homework
-release_date: 2019-02-05
-due_date: 2019-02-12T23:59:00EST
+release_date: 2020-02-05
+due_date: 2020-02-12T23:59:00EST
 attribution: Daphne Ippolito, Anne Cocos, Stephen Mayhew, and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -109,7 +109,7 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Vector Space Models <span class="text-muted">: Assignment 3</span>
+Vector Space Models <span class="text-muted">: Assignment 4</span>
 =============================================================
 
 In this assignment you will implement many of the things you learned in [Chapter 6 of the textbook](https://web.stanford.edu/~jurafsky/slp3/6.pdf). If you haven't read it yet, now would be a good time to do that.  We'll wait.  Done?  Great, let's move on. 
@@ -120,10 +120,10 @@ We will provide a corpus of Shakespeare plays, which you will use to create a te
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton python code](downloads/hw3/main.py)
-* [Data - csv of the complete works of Shakespeare](downloads/hw3/will_play_text.csv)
-* [Data - vocab the complete works of Shakespeare](downloads/hw3/vocab.txt)
-* [Data - list of all plays in dataset](downloads/hw3/play_names.txt)
+* [Skeleton python code](main.py)
+* [Data - csv of the complete works of Shakespeare](will_play_text.csv)
+* [Data - vocab the complete works of Shakespeare](vocab.txt)
+* [Data - list of all plays in dataset](play_names.txt)
 </div>
 
 # Term-Document Matrix
@@ -240,7 +240,7 @@ Some patterns you could touch upon:
 * Do the vector representations of [female characters](https://en.wikipedia.org/wiki/Category:Female_Shakespearean_characters) differ distinguishably from [male ones](https://en.wikipedia.org/wiki/Category:Male_Shakespearean_characters)?
 
 
-Here is [one of the sample reports](downloads/hw3/writeup_2.pdf) that illustrates what we are looking for. Here is [another one](downloads/hw3/writeup_1.pdf).
+Here is [one of the sample reports](writeup_2.pdf) that illustrates what we are looking for. Here is [another one](writeup_1.pdf).
 
 
 # Extra credit
