@@ -320,7 +320,7 @@ In next week's assignment, you will use a recurrent neural network on the same d
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 * writeup.pdf
-* `ngrams_skeleton.py`
+* `ngram_skeleton.py`
 * `test_labels.txt` predictions for leaderboard.
 </div>
 
