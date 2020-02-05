@@ -21,7 +21,6 @@ The lecture schedule will be updated as the term progresses.
       <th>Date</th> 
       <th>Topic</th>
       <th>Required Readings</th>
-      <th>Supplemental Videos</th>
     </tr>
   </thead>
   <tbody>
@@ -87,16 +86,6 @@ The lecture schedule will be updated as the term progresses.
              {{ reading.authors }}, {{ reading.title }} 
             <br />
           {% endif %}
-          {% endfor %}
-        {% endif %}
-      </td>
-       <td>
-        {% if lecture.videos %} 
-          {% for video in lecture.videos %}
-          {% if video.authors %} {{ video.authors }}, {% endif %}
-          <a href="{{ video.url }}">{{ video.title }}</a> 
-          {% if video.length %} ({{ video.length }}) {% endif %}
-            <br />
           {% endfor %}
         {% endif %}
       </td>

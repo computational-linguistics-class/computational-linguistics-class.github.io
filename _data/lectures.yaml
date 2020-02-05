@@ -108,23 +108,25 @@
     - 
       title: From Frequency to Meaning&colon; Vector space models of semantics
       authors: Peter Turney and Patrick Pantel
-      url: http://www.aaai.org/Papers/JAIR/Vol37/JAIR-3705.pdf
-  videos:
+      url: http://www.aaai.org/Papers/JAIR/Vol37/JAIR-3705.pdf=
     - 
-      title: Overview of distributed word representations
+      title: Video - Overview of distributed word representations
       authors: Chris Potts
       url: https://www.youtube.com/watch?v=gtuhPq0Xyno&index=1&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 10 minutes
+      optional: true
     - 
-      title: Vector comparison for distributed word representations
+      title: Video - Vector comparison for distributed word representations
       authors: Chris Potts
       url: https://www.youtube.com/watch?v=LYH93YnhuyQ&t=304s&index=2&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 10 minutes
+      optional: true
     - 
-      title: Matrix reweighting for distributed word representations
+      title: Video - Matrix reweighting for distributed word representations
       authors: Chris Potts
       url: https://www.youtube.com/watch?v=WFySbJ3FGcM&index=3&list=PLfmUaIBTH8exY7fZnJss508Bp8k1R8ASG
       length: 16 minutes
+      optional: true
 -
   date: 2020-02-05
   slides: 06-vector-semantics-part-2.pdf
@@ -140,14 +142,15 @@
       authors: Yoav Goldberg and Omer Levy
       url: https://arxiv.org/pdf/1402.3722.pdf
     - 
-      title: Explore word analogies (online interactive demo)
-      authors: Julia Bazińska
-      url: https://lamyiowce.github.io/word2viz/
-    - 
       title: Linguistic regularities in sparse and explicit word representations
       authors:  Omer Levy and Yoav Goldberg
       url: https://aclweb.org/anthology/W14-1618
       optional: false
+    - 
+      title: Explore word analogies (online interactive demo)
+      authors: Julia Bazińska
+      url: https://lamyiowce.github.io/word2viz/
+      optional: true
     - 
       title: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
       authors: Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama1, Adam Kalai
