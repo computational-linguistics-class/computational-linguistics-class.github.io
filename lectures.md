@@ -20,7 +20,7 @@ The lecture schedule will be updated as the term progresses.
     <tr>
       <th>Date</th> 
       <th>Topic</th>
-      <th>Required Readings</th>
+      <th>Readings</th>
     </tr>
   </thead>
   <tbody>
