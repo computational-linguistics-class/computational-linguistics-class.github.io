@@ -108,11 +108,11 @@ In this assignment, we will examine some advanced uses of vector representations
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [`part1.txt`](downloads/hw4/part1.txt) = a template for answering Part 1
-* [`part2.py`](downloads/hw4/part2.py) = main code stub for Part 2
-* [`part3.py`](downloads/hw4/part3.py) = main code stub for Part 3 All Tasks
-* [`makecooccurrences.py`](downloads/hw4/makecooccurrences.py) = script to make cooccurrences (optional use in Part 3 Task 3.2)
-* [`report.tex`](downloads/hw4/report.tex) = template for the Report (optional use)
+* [`part1.txt`](part1.txt) = a template for answering Part 1
+* [`part2.py`](part2.py) = main code stub for Part 2
+* [`part3.py`](part3.py) = main code stub for Part 3 All Tasks
+* [`makecooccurrences.py`](makecooccurrences.py) = script to make cooccurrences (optional use in Part 3 Task 3.2)
+* [`report.tex`](report.tex) = template for the Report (optional use)
 
 <br>
 Go to the `/home1/c/cis530/hw4_2019` on `biglab` or `eniac` to download:
@@ -540,7 +540,7 @@ We are looking for the following sections in your report:
     * Clustering algorithm
     * Results of any preliminary experiments you might have run on the dev set
 
-If you wish to write your report in latex, here is a [template](downloads/hw4/report.tex) for you to get started. 
+If you wish to write your report in latex, here is a [template](report.tex) for you to get started. 
 
 
 ## Deliverables 

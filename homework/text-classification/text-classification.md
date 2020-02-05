@@ -94,8 +94,8 @@ We will provide you with training and development data that has been manually la
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Skeleton code](downloads/hw2/hw2_skeleton.py) - this provides some of the functions that you should implement.
-* [Data sets](downloads/hw2/data.tar.gz) - this is a tarball with the training/dev/test sets. 
+* [Skeleton code](text-classification_skeleton.py) - this provides some of the functions that you should implement.
+* [Data sets](data.tar.gz) - this is a tarball with the training/dev/test sets. 
 * [Unigram counts](http://www.cis.upenn.edu/~cis530/18sp/data/ngram_counts.txt.gz) from the [Google N-gram corpus](https://research.googleblog.com/2006/08/all-our-n-gram-are-belong-to-you.html).
 </div>
 
@@ -104,7 +104,7 @@ Here are the materials that you should download for this assignment:
 This assignment has several deliverables:
 * Your implementations for the functions in the skeleton code.
 * Your model's output for the test set (your model will be ranked on a leaderboard against the other students' outputs)
-* Your writeup about the homework.  [Here is an example writeup](downloads/hw2/hw2_example_writeup.pdf) that illustrates what we are looking for.
+* Your writeup about the homework.  [Here is an example writeup](example_writeup.pdf) that illustrates what we are looking for.
 </div>
 
 
@@ -247,7 +247,7 @@ After implementing Naive Bayes and Logistic Regression classifiers, you will not
 
 Finally, the fun part! In this section, you will build your own classifier for the complex word identification task, and compare your results to that of your classmates. You will also perform an error analysis for your best performing model.
 
-You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional word features that you might consider include number of syllables, number of WordNet synonyms, and number of WordNet senses . For counting the number of syllables, we have provided a python script [syllables.py](downloads/hw2/syllables.py) that contains the function `count_syllables(word)`, which you may use. To use WordNet in Python, refer to this [documentation](http://www.nltk.org/howto/wordnet.html). You could also include  sentence-based complexity features, such as length of the sentence, average word length, and average word frequency. 
+You can choose any other types of classifier, and any additional features you can think of! For classifiers, beyond Naive Bayes and Logistic Regression, you might consider trying `SVM`, `Decision Trees`, and `Random Forests`, among others. Additional word features that you might consider include number of syllables, number of WordNet synonyms, and number of WordNet senses . For counting the number of syllables, we have provided a python script [syllables.py](syllables.py) that contains the function `count_syllables(word)`, which you may use. To use WordNet in Python, refer to this [documentation](http://www.nltk.org/howto/wordnet.html). You could also include  sentence-based complexity features, such as length of the sentence, average word length, and average word frequency. 
 
 When trying different classifiers, we recommend that you train on training data, and test on the development data, like the previous sections.
 

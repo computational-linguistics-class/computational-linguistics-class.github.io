@@ -58,7 +58,7 @@ These questions might be tricky; you should take advantage of Piazza and TA offi
 Our [basic](tutorials/2017-03-06-bash-for-nlp-tutorial-basic.md), and [advanced](tutorials/2017-03-07-bash-for-nlp-tutorial-topics.md) bash tutorials may be of particular use.
 
 When you've finished getting your solutions
-working on the command line, use the template files `bash_q1.sh`, `bash_q2.sh`, and `bash_q3.sh` which can be downloaded [here](downloads/hw1/bash.zip), 
+working on the command line, use the template files `bash_q1.sh`, `bash_q2.sh`, and `bash_q3.sh` which can be downloaded [here](bash.zip), 
 and write your solution in the file.
 
 In each bash template, you'll notice the variable `$1`.
@@ -157,7 +157,7 @@ _Note: The bash template you downloaded may ask you to average the lines. Don't 
 
 ## 2. Python Skills
 
-All your answers should be added to `python_questions.py`, which can be downloaded [here](downloads/hw1/python_questions.py).
+All your answers should be added to `python_questions.py`, which can be downloaded [here](python_questions.py).
 If you'd like to include any import statements other than the ones already provided, post on Piazza for permission first.
 
 ### 2.1. File I/O
@@ -229,10 +229,10 @@ Write your solution in the `edit_distance` function in `python_questions.py`.
 
 For this part, you will need to submit your code to answer the following questions. 
  
-We will be playing with a small but oh so wonderful data set of wine reviews! You can download the data [here](downloads/hw1/data.tgz). You can down it and unpack it as follows, and should see two files:
+We will be playing with a small but oh so wonderful data set of wine reviews! You can download the data [here](data.tgz). You can down it and unpack it as follows, and should see two files:
 
 {% highlight tcsh %}
-$ wget http://computational-linguistics-class.org/downloads/hw1/data.tgz
+$ wget http://computational-linguistics-class.org/homework/python-and-bash/data.tgz
 $ tar -xzvf data.tgz 
 x data/
 x data/stopwords.txt
@@ -246,7 +246,7 @@ decided to go rogue and give 6 stars. Pft.) The text of the review and the star 
 
 In the `wine_text_processing` function in `python_questions.py`, write code that answers each of the following questions and prints the
 answer to standard output, followed by a newline. Since this question is meant as a tutorial, there are no secrets: your script should produce
-[this output](downloads/hw1/key.txt) when you are done. If you get this output it's very likely your code works correctly, but we will ultimately be running your code on a different input file,
+[this output](key.txt) when you are done. If you get this output it's very likely your code works correctly, but we will ultimately be running your code on a different input file,
 so start early and come ask for help if you get stuck!
 For questions where there are ties, please break the tie alphabetically (e.g. apple would come before banana).
 I highly recommend looking into the functions available in the
@@ -266,7 +266,7 @@ these stopwords from your reviews. Also, try converting all the words to lower c
 9. Gather two sets of reviews: 1) Those that use the word "red" and 2) those that use the word "white". What are the 10 most frequent words in the "red" reviews which do NOT appear in the "white" reviews?
 10. What are the 10 most frequent words in the "white" reviews which do NOT appear in the "red" reviews?
 
-Thats it! Again, you can compare your answers against [our key](downloads/hw1/key.txt) to see if you have done things correctly. 
+Thats it! Again, you can compare your answers against [our key](key.txt) to see if you have done things correctly. 
 
 Your code is due <b>{{ page.due_date | date: "%A, %B %-d, %Y" }}</b>. Please submit the 3 bash files and the 1 Python file using Gradescope.
 
