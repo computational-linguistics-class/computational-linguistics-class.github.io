@@ -547,7 +547,7 @@ If you wish to write your report in latex, here is a [template](report.tex) for 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
 
-In HW4: Code:
+In HW5: Code:
 * `part1.txt` = file with answers to questions from Part 1 
 * `part2.py` = code written / modified for Part 2 
 * `part3.py` = code written for Part 3 
@@ -557,13 +557,13 @@ In HW4: Code:
 * `test_nok_output.txt`  = Task 3.4 output file
 * `makecooccurrences.py` = code written / modified for Part 3
 
-In HW4: Write Up:
+In HW5: Write Up:
 * `Report.pdf`
 
-In HW4: Leaderboard Without K
+In HW5: Leaderboard Without K
 * `test_nok_output_leaderboard.txt` = Task 3.4 output file
 
-In HW4: Leaderboard With K
+In HW5: Leaderboard With K
 * `test_output_leaderboard.txt` = Task 3.2 or 3.3 output file
 
 </div>
