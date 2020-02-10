@@ -3,10 +3,10 @@ layout: default
 img: clusters.png
 caption: Did you know that matplotlib has an xkcd() function?
 img_link: https://matplotlib.org/xkcd/examples/showcase/xkcd.html    
-title: Homework 4 - Advanced Vector Space Models
+title: Homework 5 - Advanced Vector Space Models
 active_tab: homework
-release_date: 2019-02-12T23:59:00EST
-due_date: 2019-02-19T23:59:00EST
+release_date: 2020-02-12
+due_date: 2020-02-19T23:59:00EST
 attribution: Stephen Mayhew, Anne Cocos and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -97,7 +97,7 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 </div>
 
 
-Advanced Vector Space Models <span class="text-muted">: Assignment 4</span>
+Advanced Vector Space Models <span class="text-muted">: Assignment 5</span>
 =============================================================
 
 In this assignment, we will examine some advanced uses of vector representations of words. We are going to look at two different problems: 
