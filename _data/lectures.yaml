@@ -240,6 +240,10 @@
   slides_credit: 
   readings: 
     - 
+      title: Chapter 7 "Neural Networks and Neural Language Models"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
+    - 
       title: Neural Network Methods for Natural Language (Chapters 4 and 9).  This book is free to download from Penn's campus.
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
