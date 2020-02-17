@@ -78,8 +78,9 @@ Office hours
 : Friday 4-5pm in 3401 Walnut room 463C
 
 
-Textbook
+Textbooks
 : [Speech and Language Processing (3rd edition draft) by Dan Jurafsky and James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
+: __Optional:__ [Neural Network Methods for Natural Language Processing by Yoav Goldberg](https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037). Free to download if you're on campus at UPenn.
 : The course will have [weekly required readings](lectures.html).  
 
 Grading
