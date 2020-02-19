@@ -63,12 +63,12 @@ Karpathy shows how char-rnns can be used to generate texts for several fun domai
 In this assignment you will follow a PyTorch tutorial to implement your own char-rnn, and then test it on a dataset of your choice. You will also train on our provided training set, and submit to the leaderboard.
 
 <div class="alert alert-info" markdown="1">
-Here are the materials that you should download for this assignment:
-* [training data for text classification task](downloads/hw6/cities_train.zip).
-* [dev data for text classification task](downloads/hw6/cities_val.zip).
-* [test file for leaderboard](downloads/hw6/cities_test.txt)
-* [skeleton files](downloads/hw6/skeleton.zip)
-* [notebook](downloads/hw6/hw6_skeleton.ipynb)
+Here are the materials that you should download for this assignment: 
+* [training data for text classification task](homework/nn-lms/cities_val.zip).
+* [dev data for text classification task](homework/nn-lms/cities_val.zip).
+* [test file for leaderboard](homework/nn-lms/cities_test.txt)
+* [skeleton files](dhomework/nn-lms/skeleton.zip)
+* [notebook](homework/nn-lms/hw6_skeleton.ipynb)
 </div>
 
 ### Note
