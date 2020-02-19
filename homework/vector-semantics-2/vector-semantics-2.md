@@ -379,7 +379,8 @@ Full points will be awarded for each of the tasks if your implementation gets ab
 Write a function `cluster_random(word_to_paraphrases_dict, word_to_k_dict)` that accepts 2 dictionaries:
 1. word_to_paraphrases_dict = a mapping between a target word and a list of paraphrases
 2. word_to_k_dict = a mapping between a target word and a number of clusters for a given target
-The function  outputs a dictionary, where the key is a target word and a value is a list of list of paraphrases, where a list of paraphrases represents a distinct sense of a target word. 
+
+The function outputs a dictionary, where the key is a target word and a value is a list of list of paraphrases, where a list of paraphrases represents a distinct sense of a target word. 
 
 For this task put paraphrases into distinct senses at random. That is, assign to pick a random word for each cluster, as opposed to picking a random cluster for each word. This will ensure that all clusters have at lease one word in them. We recommend using `random` packages. Please use `123` as a random seed. Your output should look similar to this on the development dataset: 
 
