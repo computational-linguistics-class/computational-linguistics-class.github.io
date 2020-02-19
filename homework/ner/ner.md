@@ -36,7 +36,7 @@ As with nearly all NLP tasks, you will find that the two big points of variabili
 
 Get a headstart on common NER features by looking at Figure 17.5 in the textbook, and reading [Chapter 17.1](https://web.stanford.edu/~jurafsky/slp3/17.pdf). 
 
-<img src="assets/img/features_for_NER.png" alt="Typical features for a feature-based NER system." class="img-responsive" />
+<img src="features_for_NER.png" alt="Typical features for a feature-based NER system." class="img-responsive" />
 
 
 <div class="alert alert-info" markdown="1">
