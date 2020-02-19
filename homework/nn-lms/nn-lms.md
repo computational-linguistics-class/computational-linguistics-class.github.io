@@ -7,7 +7,7 @@ title: Homework 6 - Neural Language Models
 active_tab: homework
 release_date: 2020-02-19
 due_date: 2020-02-26T23:59:00EDT
-attribution: This assignment is based on [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018. Updated in Spring 2020 by Arun Kirubarajan.
+attribution: This assignment is based on [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. The city names dataset is derived from [Maxmind](https://dev.maxmind.com/geoip/geoip2/geolite2/)'s dataset. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018. Updated in Spring 2020 by Arun Kirubarajan.
 readings:
 -
    title: Neural Nets and Neural Language Models
@@ -101,7 +101,7 @@ Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_
 #### Switch to city names dataset
 
 <div class="alert alert-info" markdown="1">
-Attribution: the city names dataset is derived from [Maxmind](http://download.maxmind.com/download/geoip/database/LICENSE_WC.txt)'s dataset. <br /> <br />Download the city names dataset:
+Download the city names dataset:
 * [training sets](downloads/hw6/cities_train.zip)
 * [validation set](downloads/hw6/cities_val.zip)
 * [test file for leaderboard](downloads/hw6/cities_test.txt)
