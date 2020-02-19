@@ -64,11 +64,11 @@ In this assignment you will follow a PyTorch tutorial to implement your own char
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment: 
-* [training data for text classification task](homework/nn-lms/cities_val.zip).
-* [dev data for text classification task](homework/nn-lms/cities_val.zip).
-* [test file for leaderboard](homework/nn-lms/cities_test.txt)
-* [skeleton files](dhomework/nn-lms/skeleton.zip)
-* [notebook](homework/nn-lms/hw6_skeleton.ipynb)
+* [training data for text classification task](cities_train.zip).
+* [dev data for text classification task](cities_val.zip).
+* [test file for leaderboard](cities_test.txt)
+* [skeleton files](skeleton.zip)
+* [notebook](hw6_skeleton.ipynb)
 </div>
 
 ### Note
@@ -102,9 +102,9 @@ Read through the tutorial [here](http://pytorch.org/tutorials/intermediate/char_
 
 <div class="alert alert-info" markdown="1">
 Download the city names dataset:
-* [training sets](downloads/hw6/cities_train.zip)
-* [validation set](downloads/hw6/cities_val.zip)
-* [test file for leaderboard](downloads/hw6/cities_test.txt)
+* [training sets](cities_train.zip)
+* [validation set](cities_val.zip)
+* [test file for leaderboard](cities_test.txt)
 </div>
 
 Modify the tutorial code to instead read from the city names dataset that we used in the previous assignment. The tutorial code problematically used the same text file for both training and evaluation. We learned in class about how this is not a great idea. For the city names dataset we provide you separate train and validation sets, as well as a test file for the leaderboard.
