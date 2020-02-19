@@ -5,8 +5,8 @@ caption: Big Pile of Linear Algebra
 img_link: https://xkcd.com/1838/
 title: Homework 6 - Neural Language Models
 active_tab: homework
-release_date: 2020-02-25
-due_date: 2020-03-01T23:59:00EST
+release_date: 2020-02-19
+due_date: 2020-02-26T23:59:00EDT
 attribution: This assignment is based on [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) by Andrej Karpathy. Daphne Ippolito, John Hewitt, and Chris Callison-Burch adapted their work into a homework assignment for UPenn's CIS 530 class in Spring 2018. Updated in Spring 2020 by Arun Kirubarajan.
 readings:
 -
@@ -170,6 +170,19 @@ Here are the deliverables that you will need to submit:
 
 ## FAQs
 Before submitting, please make sure to review the checklist on Piazza!
+
+#### Submission Guidelines
+Autograders can be finicky, and Gradescope doesn’t let us change visibility of the error log. If you follow all instructions, you shouldn’t have an issue. Most of the issues come down to one of the following:
+ 
+1. Not turning in the saved model (model_classify).
+2. Not splitting the notebook into `models.py`, `main_classify.py`
+3. Not having default values for the arguments of `__init__` in `CharRNNClassify` (IMPORTANT!)
+4. Importing libraries not included in the skeleton
+5. Saving model with CUDA. We don’t have CUDA on the autograder. Save the final model with CPU.
+6. Your default parameters model and the saved model have different dimensions. Please verify that you can load the model into `CharRNNClassify()` without any arguments. 
+7. Do not change the names of the default skeleton code. Feel free to add helper functions but do not alter the original code’s structure.
+
+To debug, print out the shapes of your tensors! This usually is a good sanity check that your architecture is correct and that you are performing the right computations.
 
 #### How do I save a PyTorch model?
 Use the command below. Please ensure that your model can be used for **inference**.
