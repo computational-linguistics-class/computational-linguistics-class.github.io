@@ -225,17 +225,17 @@
       optional: true
 -
   date: 2020-02-19
-  slides: 08-neural-networks.pdf
-  title: Neural Net Language Models
+  slides: 09-neural-networks.pdf
+  title: Neural Net Language Models - part 2
   lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
   slides_credit: 
   readings: 
     - 
-      title: Chapter 7 "Neural Networks and Neural Language Models"
+      title: Chapter 9 "Neural Networks and Neural Language Models"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/7.pdf
     - 
-      title: Neural Network Methods for Natural Language (Chapter 9).  
+      title: Neural Network Methods for Natural Language (Chapter 14).  
       authors: Yoav Goldberg
       url: https://www.morganclaypool.com/doi/abs/10.2200/S00762ED1V01Y201703HLT037
       optional: true
@@ -255,8 +255,8 @@
   type: no_lecture
 -
   date: 2020-02-24
-  old_slides: 08-neural-networks.pdf
-  title: Neural Net Language Models
+  slides: 09-neural-networks.pdf
+  title: Neural Net Language Models - part 3
   lecture_notes: slides/08-neural-network-language-models-lecture-notes.pdf
   slides_credit: 
   readings: 
