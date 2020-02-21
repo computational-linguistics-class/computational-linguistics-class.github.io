@@ -87,7 +87,7 @@ PyTorch abstracts the back-propogation process from us, allowing us to define ne
 PyTorch does all of this for us by maintaining a computational graph, which allows differentiation to happen automatically! Don't worry if you don't remember your chain rules from MATH 114. Another nice thing about PyTorch is that it makes strong use of both object-oriented and functional programming paradigms, which makes reading and writing PyTorch code very accessible to previous programmers.
 
 ### Google Colab Set-Up
-1. Download the skeleton [notebook](downloads/hw6/hw6_skeleton.ipynb).
+1. Download the skeleton [notebook](hw6_skeleton.ipynb).
 2. Upload the notebook on [Colab](https://colab.research.google.com/).
 3. Set hardware accelerator to ```GPU``` under ```Change Runtime Type``` in the ```Runtime``` menu.
 4. Run the first cell to  set up  the environment.
