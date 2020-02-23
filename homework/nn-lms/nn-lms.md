@@ -175,7 +175,7 @@ Before submitting, please make sure to review the checklist on Piazza!
 Autograders can be finicky, and Gradescope doesn’t let us change visibility of the error log. If you follow all instructions, you shouldn’t have an issue. Most of the issues come down to one of the following:
  
 1. Not turning in the saved model (model_classify).
-2. Not splitting the notebook into `models.py`, `main_classify.py`
+2. Not splitting the notebook into `models.py`, `main_classify.py`, `main_generate.py`
 3. Not having default values for the arguments of `__init__` in `CharRNNClassify` (IMPORTANT!)
 4. Importing libraries not included in the skeleton
 5. Saving model with CUDA. We don’t have CUDA on the autograder. Save the final model with CPU.
