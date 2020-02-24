@@ -87,7 +87,7 @@ PyTorch abstracts the back-propogation process from us, allowing us to define ne
 PyTorch does all of this for us by maintaining a computational graph, which allows differentiation to happen automatically! Don't worry if you don't remember your chain rules from MATH 114. Another nice thing about PyTorch is that it makes strong use of both object-oriented and functional programming paradigms, which makes reading and writing PyTorch code very accessible to previous programmers.
 
 ### Google Colab Set-Up
-1. Download the skeleton [notebook](downloads/hw6/hw6_skeleton.ipynb).
+1. Download the skeleton [notebook](hw6_skeleton.ipynb).
 2. Upload the notebook on [Colab](https://colab.research.google.com/).
 3. Set hardware accelerator to ```GPU``` under ```Change Runtime Type``` in the ```Runtime``` menu.
 4. Run the first cell to  set up  the environment.
@@ -175,7 +175,7 @@ Before submitting, please make sure to review the checklist on Piazza!
 Autograders can be finicky, and Gradescope doesn’t let us change visibility of the error log. If you follow all instructions, you shouldn’t have an issue. Most of the issues come down to one of the following:
  
 1. Not turning in the saved model (model_classify).
-2. Not splitting the notebook into `models.py`, `main_classify.py`
+2. Not splitting the notebook into `models.py`, `main_classify.py`, `main_generate.py`
 3. Not having default values for the arguments of `__init__` in `CharRNNClassify` (IMPORTANT!)
 4. Importing libraries not included in the skeleton
 5. Saving model with CUDA. We don’t have CUDA on the autograder. Save the final model with CPU.
