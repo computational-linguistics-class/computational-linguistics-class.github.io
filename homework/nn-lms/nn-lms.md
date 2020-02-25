@@ -213,7 +213,7 @@ jupyter nbconvert --to script notebook.ipynb
 The TA's model, which passed all the testcases, had the following configuration:
 * Optimizer: `torch.optim.SGD(model.parameters(), lr=0.005)`
 * Criterion: `nn.NLLLoss()`
-* Epochs: 250k
+* Iterations: 250k
 * RNN layers: 1 LSTM cell followed by softmax
 
 #### How do I speed up training?
