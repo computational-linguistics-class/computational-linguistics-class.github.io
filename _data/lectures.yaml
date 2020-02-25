@@ -259,6 +259,7 @@
   slides: 10-part-of-speech-tagging.pdf
   title: Part-of-Speech Tagging
   slides_credit: 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b82fedd2-5b6d-4b55-b20b-ab6b013606ac
   readings: 
     - 
       title: Chapter 8 "Part-of-Speech Tagging"
@@ -266,33 +267,12 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2020-02-26
-  old_slides: 10-POS-tagging-and-sequence-modeling.pdf
-  title: Part-of-Speech Tagging and Sequence Models
-  slides_credit: 
-  readings: 
-    - 
-      title: Chapter 8 "Part-of-Speech Tagging"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
+
 -
   date: 2020-03-02
-  old_slides: 10-POS-tagging-and-sequence-modeling.pdf
-  title: POS tagging and Sequence Models 
-  slides_credit: 
-  readings: 
-    - 
-      title: Chapter 8 "Part-of-Speech Tagging"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
--
+
   date: 2020-03-04
-  old_slides: 90-guest_lecture_jacob_devlin_bert_presentations.pdf
-  title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
-  readings: 
-    - 
-      title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
-      authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
-      url: https://arxiv.org/abs/1810.04805
+
 -
   date: 2020-03-09
   old_slides: 
