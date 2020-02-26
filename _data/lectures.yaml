@@ -267,11 +267,64 @@
       url: https://web.stanford.edu/~jurafsky/slp3/8.pdf
 -
   date: 2020-02-26
-
+  slides: 11-constituency-grammars.pdf
+  title: Constituency Grammars
+  slides_credit: Sameer Singh and others
+  readings: 
+    - 
+      title: Chapter 12 "Constituency Grammars"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
 -
   date: 2020-03-02
-
+  old_slides: 16-syntactic-parsing.pdf
+  title: Syntactic Parsing and the Penn Treebank
+  slides_credit: Sameer Singh and others
+  readings: 
+    - 
+      title: Chapter 11 "Syntactic Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
+    - 
+      title: Chapter 10, Section 10.4 "Treebanks"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+  videos:
+    - 
+      title: CKY Demo
+      authors: Lisbon Machine Learning School
+      url: http://lxmls.it.pt/2015/cky.html
+    - 
+      title: Classic Parsing Methods for Natural Language Processing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=34HEz8miVQA
+      length: 25 minutes
+    - 
+      title: The Penn Treebank
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=NUV6vXK8FCc
+      length: 17 minutes
+--
   date: 2020-03-04
+  old_slides: 17-statistical-parsing.pdf
+  title: Statistical Parsing
+  slides_credit: Sameer Singh and others
+  readings: 
+    - 
+      title: Chapter 12 "Statistical Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
+  videos:
+    - 
+      title: Statistical Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 13 minutes
+    - 
+      title: Dependency Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 19 minutes
 
 -
   date: 2020-03-09
