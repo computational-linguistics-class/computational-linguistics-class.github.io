@@ -106,9 +106,9 @@ test_sents = list(conll2002.iob_sents('esp.testb'))
 
 ## Baselines
 
-The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 88%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
+The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. The threshold we ask you to beat is 68%, with partial credit available. The state of the art on the Spanish dataset is about 88%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
 
-In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required.
+In order to earn full marks on this assignment, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required. This is a very open-ended homework and we hope you take advantage of that to get out of your comfort zone and experiment. 
 
 ## Report
 
