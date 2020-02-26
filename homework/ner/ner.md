@@ -41,8 +41,8 @@ Get a headstart on common NER features by looking at Figure 17.5 in the textbook
 
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
-* [Code stub](downloads/hw7/ner.py).
-* [conlleval.py](downloads/hw7/conlleval.py): eval script
+* [Code stub](ner.py)
+* [conlleval.py](conlleval.py): evaluation script
 </div>
 
 
@@ -106,13 +106,14 @@ test_sents = list(conll2002.iob_sents('esp.testb'))
 
 ## Baselines
 
-The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 85%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
+The version we have given you gets about 49% F1 right out of the box. We made some very simple modifications, and got it to 60%. This is a generous baseline that any thoughtful model should be able to beat. The state of the art on the Spanish dataset is about 88%. If you manage to beat that, then look for conference deadlines and start writing, because you can publish it.  
 
 In order to earn an A, demonstrate that you have thought about the problem carefully, and come up with solutions beyond what was strictly required.
 
 ## Report
 
 1. Explain the features you added for NER, why you expected them to help, and how they affected your performance. Include a table detailing the change in F1-score as a result of adding each feature or set of features.
+
 2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters on the dev set (optimize your performance with regards to dev F1-score) and include tables recording the training F1-score and dev F1-score attained for each set of parameters. You will also need to submit your final, trained model. We will be using your trained model to confirm that the .txt files you submit are the same as the output of your final model. You can save your model or load your model in the following way:
 
 ```
@@ -125,6 +126,8 @@ pickle.dump(model, open('model', 'wb'))
 
 loaded_model = pickle.load(open(filename, 'rb'))
 ```
+
+3. Using your best performing model, perform some basic error analysis (a necessary skill for any researcher to have!) and determine what types of mistakes your model seems to be making. Some things you can think about are in what cases the mistakes are typing issues (i.e. prediction ORG instead of LOC) vs. span issues, and whether those correlate with certain POS tags or contexts. A thoughtful analysis with cited examples should easily get full points for this part of the report. 
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
