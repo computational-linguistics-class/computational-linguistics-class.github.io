@@ -126,13 +126,12 @@ pickle.dump(model, open('model', 'wb'))
 
 loaded_model = pickle.load(open(filename, 'rb'))
 ```
-
-3. Using your best performing model, perform some basic error analysis (a necessary skill for any researcher to have!) and determine what types of mistakes your model seems to be making. Some things you can think about are in what cases the mistakes are typing issues (i.e. prediction ORG instead of LOC) vs. span issues, and whether those correlate with certain POS tags or contexts. A thoughtful analysis with cited examples should easily get full points for this part of the report. 
+3. Using your best performing model, do some error analysis (a necessary skill for any researcher to have!) and determine what types of mistakes your model seems to be making. Some things you can think about are in what cases the mistakes are typing issues (i.e. predicting ORG instead of LOC) vs. span issues (i.e. predicting B-LOC when it should be I-LOC), and whether those correlate with certain POS tags or contexts. A thoughtful analysis with cited examples should easily get full points for this part of the report. 
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* Code, as always, in Python 3.
+* Code (ner.py), as always, in Python 3.
 * Saved model[model] - Your final trained model. Please put it in the same path as your code.
 * Results (in files called `train_results.txt`, `dev_results.txt`, `test_results.txt`)
 * PDF Report (called writeup.pdf)
@@ -141,7 +140,8 @@ Here are the deliverables that you will need to submit:
 
 
 ## Recommended readings
-* [Design Challenges and Misconeptions in Named Entity Recognition](http://cogcomp.org/papers/RatinovRo09.pdf) a very highly cited NER paper from a Penn professor
-* [Entity Extraction is a Boring Solved Problem -- or is it?](https://aclanthology.info/pdf/N/N07/N07-2046.pdf)
-* [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360), a popular recent paper on... just read the title.
+* [Design Challenges and Misconeptions in Named Entity Recognition](http://cogcomp.org/papers/RatinovRo09.pdf) a very highly cited NER paper from a Penn professor.
+* [Entity Extraction is a Boring Solved Problem -- or is it?](https://www.aclweb.org/anthology/N07-2046.pdf)
+* [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360), a popular paper on... just read the title.
 * [Introductory paper to CoNLL 2002 shared task](http://www.aclweb.org/anthology/W02-2024)
+* [ner and pos when nothing is capitalized](https://www.aclweb.org/anthology/D19-1650.pdf), a recent short and sweet paper about the shortcomings of relying on capitalization.
