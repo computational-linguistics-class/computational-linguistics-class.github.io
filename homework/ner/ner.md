@@ -116,16 +116,17 @@ In order to earn full marks on this assignment, demonstrate that you have though
 
 2. Explain the different types of models you experimented with, how they performed, and which you chose for your final model. Include a table comparing the scores of different models. For each model, be sure to tune your parameters on the dev set (optimize your performance with regards to dev F1-score) and include tables recording the training F1-score and dev F1-score attained for each set of parameters. You will also need to submit your final, trained model. We will be using your trained model to confirm that the .txt files you submit are the same as the output of your final model. You can save your model or load your model in the following way:
 
-```
-import pickle
-from sklearn.linear_model import LogisticRegression
+    ```
+    import pickle
+    from sklearn.linear_model import LogisticRegression
+    
+    model = LogisticRegression()
+    model.fit(X_train, Y_train)
+    pickle.dump(model, open('model', 'wb'))
+    
+    loaded_model = pickle.load(open(filename, 'rb'))
+    ```
 
-model = LogisticRegression()
-model.fit(X_train, Y_train)
-pickle.dump(model, open('model', 'wb'))
-
-loaded_model = pickle.load(open(filename, 'rb'))
-```
 3. Using your best performing model, do some error analysis (a necessary skill for any researcher to have!) and determine what types of mistakes your model seems to be making. Some things you can think about are in what cases the mistakes are typing issues (i.e. predicting ORG instead of LOC) vs. span issues (i.e. predicting B-LOC when it should be I-LOC), and whether those correlate with certain POS tags or contexts. A thoughtful analysis with cited examples should easily get full points for this part of the report. 
 
 ## Deliverables 
@@ -144,4 +145,4 @@ Here are the deliverables that you will need to submit:
 * [Entity Extraction is a Boring Solved Problem -- or is it?](https://www.aclweb.org/anthology/N07-2046.pdf)
 * [Neural Architectures for Named Entity Recognition](https://arxiv.org/abs/1603.01360), a popular paper on... just read the title.
 * [Introductory paper to CoNLL 2002 shared task](http://www.aclweb.org/anthology/W02-2024)
-* [ner and pos when nothing is capitalized](https://www.aclweb.org/anthology/D19-1650.pdf), a recent short and sweet paper about the shortcomings of relying on capitalization.
+* [ner and pos when nothing is capitalized](https://www.aclweb.org/anthology/D19-1650.pdf), a recent short-and-sweet Penn paper about the shortcomings of relying on capitalization.
