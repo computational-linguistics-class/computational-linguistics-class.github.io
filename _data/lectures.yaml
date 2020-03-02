@@ -278,30 +278,29 @@
       url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
 -
   date: 2020-03-02
-  old_slides: 16-syntactic-parsing.pdf
-  title: Syntactic Parsing and the Penn Treebank
+  slides: 12-syntactic-parsing.pdf
+  title: Grammars and Constituency Parsing
   slides_credit: Sameer Singh and others
   readings: 
     - 
-      title: Chapter 11 "Syntactic Parsing"
+      title: Chapter 12 "Constituency Grammars"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
     - 
-      title: Chapter 10, Section 10.4 "Treebanks"
+      title: Chapter 13 "Constituency Parsing"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
-  videos:
+      url: https://web.stanford.edu/~jurafsky/slp3/13.pdf
     - 
       title: CKY Demo
       authors: Lisbon Machine Learning School
       url: http://lxmls.it.pt/2015/cky.html
     - 
-      title: Classic Parsing Methods for Natural Language Processing
+      title: (Video) Classic Parsing Methods for Natural Language Processing
       authors: Dragomir Radev
       url: https://www.youtube.com/watch?v=34HEz8miVQA
       length: 25 minutes
     - 
-      title: The Penn Treebank
+      title: (Video) The Penn Treebank
       authors: Dragomir Radev
       url: https://www.youtube.com/watch?v=NUV6vXK8FCc
       length: 17 minutes
