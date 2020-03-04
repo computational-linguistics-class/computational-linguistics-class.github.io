@@ -309,11 +309,12 @@
 -
   date: 2020-03-04
   slides: 13-statistical-parsing.pdf
-  title: Statistical Parsing
+  title: Statistical Constituency Parsing
   slides_credit: Sameer Singh and others
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c65e579f-88db-4858-bc3e-ab740131e50b
   readings: 
     - 
-      title: Chapter 14 "Statistical Parsing"
+      title: Chapter 14 "Statistical Constituency Parsing"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
   videos:
