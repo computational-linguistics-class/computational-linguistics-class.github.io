@@ -313,9 +313,9 @@
   slides_credit: Sameer Singh and others
   readings: 
     - 
-      title: Chapter 12 "Statistical Parsing"
+      title: Chapter 14 "Statistical Parsing"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
   videos:
     - 
       title: Statistical Parsing
