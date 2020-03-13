@@ -22,6 +22,9 @@ If you don't turn in HW1 on time, then you won't be considered for enrollment if
 </div>
 -->
 
+<div class="alert alert-warning" markdown="1">
+Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.
+</div>
 
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
