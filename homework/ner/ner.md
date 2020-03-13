@@ -6,7 +6,7 @@ img_link: https://xkcd.com/327/
 title: Homework 7 - Named Entity Recognition
 active_tab: homework
 release_date: 2020-02-26
-due_date: 2020-03-18T11:59:59EDT
+due_date: 2020-03-25T11:59:59EDT
 attribution: This assignment is inspired by a similar assignment from Michael Elhadad's [NLP class](https://www.cs.bgu.ac.il/~elhadad/nlp17.html) at Ben-Gurion University of the Negev. Stephen Mayhew developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 ---
 
