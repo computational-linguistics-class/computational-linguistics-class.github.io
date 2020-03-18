@@ -351,17 +351,76 @@
   type: no_lecture
 -
   date: 2020-03-23
-  old_slides: 90-guest_lecture_ shyam_upadhyay_cross_lingual_word_representations.pdf
-  title: Cross-lingual Word Representations
-  slides_credit: Shyam Upadhyay
+  slides: 
+  title: Wrap-up of Constituency Parsing / Dependency Parsing
+  slides_credit:   
   readings: 
     - 
-      title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
-      authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
-      url: http://www.aclweb.org/anthology/P16-1157
+      title: Chapter 14 "Statistical Constituency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
+    - 
+      title: Chapter 15 "Dependency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+    - 
+      title: Dependency Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 19 minutes
+    - 
+      title: Statistical Parsing
+      authors: Dragomir Radev
+      url: https://www.youtube.com/watch?v=hgaeB2JloJY
+      length: 13 minutes
 -
   date: 2020-03-25
-  old_slides: 90-guest_lecture_graham_neubig_NMT.pdf
+  slides: 
+  title: Logical Representations of Sentence Meaning
+  slides_credit:   
+  readings: 
+    - 
+      title: Chapter 16 "Logical Representations of Sentence Meaning"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+-
+  date: 2020-03-30
+  slides: 
+  title: Information Extraction
+  slides_credit:   
+  readings: 
+    - 
+      title: Chapter 18 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/18.pdf
+-
+  date: 2020-04-01
+  slides: 
+  title: Semantic Role Labeling 
+  slides_credit:   
+  readings: 
+    - 
+      title: Chapter 20 "Semantic Role Labeling"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/20.pdf
+-
+  date: 2020-04-03
+  slides: 
+  title: Withdraw Deadline
+  type: no_lecture
+-
+  date: 2020-04-06
+  slides:
+  title: Encoder-Decoder Models
+  slides_credit:   
+  readings: 
+    - 
+      title: Chapter 10 "Encoder-Decoder Models, Attention, and Contextual Embeddings"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+-
+  date: 2020-04-08
+  slides:
   title: Neural Machine Translation
   slides_credit: Graham Neubig
   readings: 
@@ -370,155 +429,52 @@
       authors: Graham Neubig
       url: https://arxiv.org/abs/1703.01619
 -
-  date: 2020-03-30
-  old_slides: 13-question-answering.pdf
-  title: Question Answering
-  readings: 
-    - 
-      title: Chapter 23 "Question Answering"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/23.pdf
--
-  date: 2020-03-30
-  old_slides: https://drive.google.com/file/d/1e_JfNx2qabsuSpv2nKsl3OKaYHw-lgy4/view
-  title: Dialog Systems / Chatbots
-  slides_credit: João Sedoc
-  readings:  
-    - 
-      title: The Conversational Interface
-      authors: Michael McTear,  Zoraida Callejas, and David Griol
-      url: https://upenn.alma.exlibrisgroup.com/discovery/openurl?institution=01UPENN_INST&vid=01UPENN_INST:Services&%3Fctx_ver=Z39.88-2004&ctx_enc=info:ofi%2Fenc:UTF-8&rfr_id=info:sid%2Fsummon.serialssolutions.com&rft_val_fmt=info:ofi%2Ffmt:kev:mtx:book&rft.genre=book&rft.title=The%20conversational%20interface:%20Talking%20to%20smart%20devices&rft.au=McTear,%20Michael&rft.au=Callejas,%20Zoraida&rft.au=Griol,%20David&rft.date=2016-01-01&rft.isbn=9783319329659&rft_id=info:doi%2F10.1007%2F978-3-319-32967-3&rft.externalDBID=n%2Fa&rft.externalDocID=612234345
-      optional: true
-    - 
-      title: Dialog Systems Class
-      authors: João Sedoc
-      url: https://dialog-systems-class.github.io
-      optional: true
-  videos:
-    - 
-      title: (video) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
-      authors: Wei Wu and Rui Yan
-      url: https://vimeo.com/305179403
-      length: 2 hours and 45 minutes
-    - 
-      title: (slides) Deep Chit-Chat tutorial&colon; Deep Learning for ChatBots
-      authors: Wei Wu and Rui Yan
-      url: ohttp://www.ruiyan.me/pubs/tutorial-emnlp18.pdf
--
-  date: 2020-04-01
-  old_slides: 14-information-extraction.pdf
-  title: Information Extraction
-  readings: 
-    - 
-      title: Chapter 17 "Information Extraction"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/17.pdf
-    - 
-      title: The Gun Violence Database&colon; A new task and data set for NLP
-      authors: Ellie Pavlick, Heng Ji, Xiaoman Pan, and Chris Callison-Burch 
-      url: https://www.cis.upenn.edu/~ccb/publications/gun-violence-database.pdf
-    - 
-      title: Freebase&colon; A Collaboratively Created Graph Database For Structuring Human Knowledge
-      authors: Kurt Bollacker, Colin Evans, Praveen Paritosh, Tim Sturge, Jamie Taylor
-      url: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.538.7139&rep=rep1&type=pdf
-      optional: true
-    - 
-      title: DBpedia&colon; A Nucleus for a Web of Open Data
-      authors: Soren Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard Cyganiak, and Zachary Ives
-      url: https://www.seas.upenn.edu/~zives/research/dbpedia.pdf
-      optional: true
-    - 
-      title: Open Language Learning for Information Extraction
-      authors: Mausam, Michael Schmitz, Robert Bart, Stephen Soderland, and Oren Etzioni
-      url: https://homes.cs.washington.edu/~mausam/papers/emnlp12a.pdf
-      optional: true
--
-  date: 2020-04-03
-  old_slides: 
-  title: Withdraw Deadline
-  type: no_lecture
--
-  date: 2020-04-06
-  title: In class feedback on term project deliverables
-  type: no_lecture
--
-  date: 2020-04-08
-  old_slides: 15-formal-grammars-of-english.pdf
-  title: Formal Grammars of English
-  slides_credit: Sameer Singh and others
-  readings: 
-    - 
-      title: Chapter 10 "Formal Grammars of English"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
--
   date: 2020-04-13
-  old_slides: 16-syntactic-parsing.pdf
-  title: Syntactic Parsing and the Penn Treebank
-  slides_credit: Sameer Singh and others
+  slides: 
+  title: Cross-lingual Models of Word Embeddings
+  slides_credit: Shyam Upadhyay
   readings: 
     - 
-      title: Chapter 11 "Syntactic Parsing"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/11.pdf
-    - 
-      title: Chapter 10, Section 10.4 "Treebanks"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
-  videos:
-    - 
-      title: CKY Demo
-      authors: Lisbon Machine Learning School
-      url: http://lxmls.it.pt/2015/cky.html
-    - 
-      title: Classic Parsing Methods for Natural Language Processing
-      authors: Dragomir Radev
-      url: https://www.youtube.com/watch?v=34HEz8miVQA
-      length: 25 minutes
-    - 
-      title: The Penn Treebank
-      authors: Dragomir Radev
-      url: https://www.youtube.com/watch?v=NUV6vXK8FCc
+      title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
+      authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
+      url: http://www.aclweb.org/anthology/P16-1157/watch?v=NUV6vXK8FCc
       length: 17 minutes
 -
   date: 2020-04-15
-  old_slides: 17-statistical-parsing.pdf
-  title: Statistical Parsing
-  slides_credit: Sameer Singh and others
+  slides: 
+  title: Dialog Systems and Chatbots
+  slides_credit: 
   readings: 
     - 
-      title: Chapter 12 "Statistical Parsing"
+      title: Chapter 26 " Dialog Systems and Chatbots"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
-  videos:
-    - 
-      title: Statistical Parsing
-      authors: Dragomir Radev
-      url: https://www.youtube.com/watch?v=hgaeB2JloJY
-      length: 13 minutes
-    - 
-      title: Dependency Parsing
-      authors: Dragomir Radev
-      url: https://www.youtube.com/watch?v=hgaeB2JloJY
-      length: 19 minutes
+      url: https://web.stanford.edu/~jurafsky/slp3/27.pdf
 -
   date: 2020-04-20
-  old_slides: 
-  title: TBD
+  slides: 
+  title: BERT and Large Neural Language Models
   slides_credit: 
   readings:
 -
   date: 2020-04-22
-  old_slides: 
-  title: TBD
+  title: Coreference Resolution
+  slides_credit:   
   readings: 
+    - 
+      title: Chapter 22 "Coreference Resolution"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/22.pdf
 -
   date: 2020-04-27
-  old_slides: 
-  title: TBD
+  slides: 
+  title: Question Answering
+  slides_credit:   
   readings: 
+    - 
+      title: Chapter 25 "Question Answering"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/25.pdf
 -
   date: 2020-04-29
-  old_slides: 
-  title: TBD
-  readings: 
+  slides: 
+  title: Course Wrapup
