@@ -507,6 +507,7 @@
     - 
       title: Chapter 20 "Semantic Role Labeling"
       authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/20.pdf
 -
   date: 2020-04-15
   live_lecture: https://zoom.us/j/272777162 
@@ -517,7 +518,7 @@
     - 
       title: Chapter 26 "Dialog Systems and Chatbots"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/27.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
 -
   date: 2020-04-15
   type: homework
@@ -541,9 +542,13 @@
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
   readings: 
     - 
+      title: Chapter 10 "Encoder-Decoder Models, Attention, and Contextual Embeddings"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+    - 
       title: Chapter 26 "Dialog Systems and Chatbots"
       authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/27.pdf
+      url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
 -
   date: 2020-04-22
   title: Coreference Resolution
