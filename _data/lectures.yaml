@@ -351,6 +351,7 @@
   type: no_lecture
 -
   date: 2020-03-23
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Wrap-up of Constituency Parsing / Dependency Parsing
   slides_credit:   
@@ -375,6 +376,7 @@
       length: 13 minutes
 -
   date: 2020-03-25
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Logical Representations of Sentence Meaning
   slides_credit:   
@@ -389,6 +391,7 @@
   title: <a href="http://computational-linguistics-class.org/homework/ner/ner.html">HW7 "Named Entity Recognition" due</a>
 -
   date: 2020-03-30
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Information Extraction
   slides_credit:   
@@ -424,6 +427,7 @@
   title: Deadline to complete the IRB training for HW9, if you're doing the HW option
 -
   date: 2020-04-01
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Semantic Role Labeling 
   slides_credit:   
@@ -438,6 +442,7 @@
   title: <a href="http://computational-linguistics-class.org/homework/hypernyms/hypernyms.html">HW8 "Learning Hypernyms" due</a>
 -
   date: 2020-04-03
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Withdraw Deadline
   type: no_lecture
@@ -480,6 +485,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html">Project Milestone 1</a> or <a href="http://computational-linguistics-class.org/homework/mentalhealth/mentalhealth.html">HW9 "Classify Depression"</a> due
 -
   date: 2020-04-13
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Cross-lingual Models of Word Embeddings
   slides_credit: Shyam Upadhyay
@@ -503,6 +509,7 @@
       authors: Jurafsky and Martin
 -
   date: 2020-04-15
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Dialog Systems and Chatbots
   slides_credit: 
@@ -517,6 +524,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-2">Project Milestone 2</a> or <a href="http://computational-linguistics-class.org/homework/nmt/nmt.html">HW10 "Neural Machine Translation"</a> due
 -
   date: 2020-04-20
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: BERT and Large Neural Language Models
   slides_credit: 
@@ -551,6 +559,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-3">Project Milestone 3</a> or <a href="http://computational-linguistics-class.org/homework/bert/bert.html">HW11 "BERT"</a> due
 -
   date: 2020-04-27
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Question Answering
   slides_credit:   
@@ -574,6 +583,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/25.pdf
 -
   date: 2020-04-29
+  live_lecture: https://zoom.us/j/4165783988 
   slides: 
   title: Course Wrapup
 -
