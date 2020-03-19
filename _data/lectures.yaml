@@ -384,6 +384,10 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
 -
+  date: 2020-03-25
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/homework/ner/ner.html">HW7 "Named Entity Recognition" due</a>
+-
   date: 2020-03-30
   slides: 
   title: Information Extraction
@@ -394,6 +398,31 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/18.pdf
 -
+  date: 2020-03-30
+  type: exam 
+  title: Quiz due (covers Chapters 12-14)
+  readings: 
+    - 
+      title: Chapter 12 "Constituency Grammars"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/12.pdf
+    - 
+      title: Chapter 13 "Constituency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/13.pdf
+    - 
+      title: Chapter 14 "Statistical Constituency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/14.pdf
+-
+  date: 2020-03-25
+  type: deadline
+  title: Deadeline to decide on term project versus weekly homework option
+-
+  date: 2020-03-27
+  type: deadline
+  title: Deadline to complete the IRB training for HW9, if you're doing the HW option
+-
   date: 2020-04-01
   slides: 
   title: Semantic Role Labeling 
@@ -403,6 +432,10 @@
       title: Chapter 20 "Semantic Role Labeling"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/20.pdf
+-
+  date: 2020-03-25
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/homework/hypernyms/hypernyms.html">HW8 "Learning Hypernyms" due</a>
 -
   date: 2020-04-03
   slides: 
@@ -419,6 +452,19 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
+  date: 2020-04-06
+  type: exam 
+  title: Quiz due (covers Chapters 15 and 16)
+  readings:
+    - 
+      title: Chapter 15 "Dependency Parsing"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/15.pdf
+    - 
+      title: Chapter 16 "Logical Representations of Sentence Meaning"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
+-
   date: 2020-04-08
   slides:
   title: Neural Machine Translation
@@ -429,6 +475,10 @@
       authors: Graham Neubig
       url: https://arxiv.org/abs/1703.01619
 -
+  date: 2020-04-08
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/term-project.html">Project Milestone 1</a> or <a href="http://computational-linguistics-class.org/homework/mentalhealth/mentalhealth.html">HW9 "Classify Depression"</a> due
+-
   date: 2020-04-13
   slides: 
   title: Cross-lingual Models of Word Embeddings
@@ -438,7 +488,19 @@
       title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
       authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
       url: http://www.aclweb.org/anthology/P16-1157/watch?v=NUV6vXK8FCc
-      length: 17 minutes
+
+-
+  date: 2020-04-13
+  type: exam 
+  title: Quiz due (covers Chapters 18 and 20)
+  readings:
+    - 
+      title: Chapter 18 "Information Extraction"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/18.pdf
+    - 
+      title: Chapter 20 "Semantic Role Labeling"
+      authors: Jurafsky and Martin
 -
   date: 2020-04-15
   slides: 
@@ -446,15 +508,34 @@
   slides_credit: 
   readings: 
     - 
-      title: Chapter 26 " Dialog Systems and Chatbots"
+      title: Chapter 26 "Dialog Systems and Chatbots"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/27.pdf
+-
+  date: 2020-04-15
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-2">Project Milestone 2</a> or <a href="http://computational-linguistics-class.org/homework/nmt/nmt.html">HW10 "Neural Machine Translation"</a> due
 -
   date: 2020-04-20
   slides: 
   title: BERT and Large Neural Language Models
   slides_credit: 
   readings:
+
+-
+  date: 2020-04-20
+  type: exam 
+  title: Quiz due (covers Chapters 10 and 26)
+  readings: 
+    - 
+      title: Chapter 10 "Encoder-Decoder Models, Attention, and Contextual Embeddings"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+  readings: 
+    - 
+      title: Chapter 26 "Dialog Systems and Chatbots"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/27.pdf
 -
   date: 2020-04-22
   title: Coreference Resolution
@@ -464,6 +545,10 @@
       title: Chapter 22 "Coreference Resolution"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/22.pdf
+-
+  date: 2020-04-15
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-3">Project Milestone 3</a> or <a href="http://computational-linguistics-class.org/homework/bert/bert.html">HW11 "BERT"</a> due
 -
   date: 2020-04-27
   slides: 
@@ -475,6 +560,23 @@
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/25.pdf
 -
+  date: 2020-04-27
+  type: exam 
+  title: Quiz due (covers Chapters 22 and 25)
+  readings: 
+    - 
+      title: Chapter 22 "Coreference Resolution"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/22.pdf
+    - 
+      title: Chapter 25 "Question Answering"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/25.pdf
+-
   date: 2020-04-29
   slides: 
   title: Course Wrapup
+-
+  date: 2020-04-15
+  type: homework
+  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-4">Project Milestone 4</a> or <a href="http://computational-linguistics-class.org/homework/perspectives/perspectives.html">HW12 "Perspective Detection"</a> due

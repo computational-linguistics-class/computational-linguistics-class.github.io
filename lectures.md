@@ -37,12 +37,12 @@ The lecture schedule will be updated as the term progresses.
     {% if lecture.type %}
       {% if lecture.type and lecture.type == 'exam' %}
         class="info" 
-      {% else if lecture.type and lecture.type == 'deadline' %}
+      {% elsif lecture.type and lecture.type == 'deadline' %}
         class="warning"
-      {% else if lecture.type and lecture.type == 'homework' %}
-        class="primary"
-      {% else if lecture.type and lecture.type == 'no_lecture' %}
+      {% elsif lecture.type and lecture.type == 'homework' %}
         class="success"
+      {% elsif lecture.type and lecture.type == 'no_lecture' %}
+        class="warning"
       {% endif %}
     {% endif %}
     >
