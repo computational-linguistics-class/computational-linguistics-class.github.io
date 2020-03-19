@@ -54,7 +54,7 @@ The lecture schedule will be updated as the term progresses.
 
 
         {% if lecture.live_lecture %}
-          <a href="{{ lecture.live_lecture }}">[Zoom link for live lecture]</a>
+          <a href="{{ lecture.live_lecture }}">[Zoom link]</a>
         {% endif %}
 
 
