@@ -5,22 +5,26 @@ caption: Don't Panic
 img_link: https://xkcd.com/1658/   
 title: The Term Project
 active_tab: homework
-release_date: 2019-03-26
-due_date: 2019-04-30T11:59:00EST
+release_date: 2020-03-23
+due_date: 2020-04-29T11:59:00EST
 attribution: This assignment was developed by the CIS 530 course staff.
 deliverables:
     -
+      description: Deadline to decide on term project versus weekly homework option   
+      due_date: 2020-03-25T11:59:00EST
+    -
       description: Milestone 1 - Form a team and submit three project ideas
-      due_date: 2019-04-02T11:59:00EST
+      due_date: 2020-04-08T11:59:00EST
     -
       description: Milestone 2 - Collect your data, and write an evalation script and a simple baseline
-      due_date: 2019-04-16T11:59:00EST
+      due_date: 2020-04-15T11:59:00EST
     -
       description: Milestone 3 - Implement a published baseline.  Write a literature review.  Prepare a draft of your final project presentation
-      due_date: 2019-04-23T11:59:00EST
+      due_date: 2020-04-22T11:59:00EST
     -
       description: Milestone 4 - Finish all your extensions to the public baseline, and submit your final report
-      due_date: 2019-05-01T11:59:00EST
+      due_date: 2019-04-29T11:59:00EST
+
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -33,11 +37,32 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 {% endif %}
 <!-- End of check whether the assignment is up to date -->
 
-Term Project <span class="text-muted">: Overview</span>
+
+<div class="alert alert-warning" markdown="1">
+For the term project part of your grade, which is 25% of your overall grade, you may opt to do either the term project, or you may do a series of 4 weekly homework assignments.  
+</div>
+
+Homework Option
 ============
 
+We are creating a set of 4 additional weekly homework assignments.   They will have the same deadlines as the project milestones.  You may do the homework assignments individually or in pairs.  Because the homework assignments are new, some of them might not have autograders.  They will instead be graded based on the leaderboard and on your report.  
 
-Your term project will be a self-designed multi-week team-based effort. You are welcome to select one of the project ideas that we suggest, or to design your own. Your final project will consist of the following components:
+
+We plan the following assignments for the homework option:
+* [HW9: Classifying Depression](homework/mentalhealth/mentalhealth.html) (for this assignment you'll need to complete a short IRB training in order to get access to the data)
+* [HW10: Neural Machine Translation](homework/nmt/nmt.html)
+* [HW11: BERT](homework/bert/bert.html)
+* [HW12: Perspectives Detection](homework/perspectives/perspectives.html)
+
+
+
+
+Project Option
+============
+
+The project is a team exercise.  The minimum team size is 4, and the max team size is 6.  You may reach out to the instructor on gradescope for special circumstances about team size.  
+
+Your project will be a self-designed multi-week team-based effort. Your final project will consist of the following components:
 
 1. A formal definition of the problem and a motivation for while it is an interesting challenge for natural language processing. A literature review of past approaches to the problem.
 1. A commented implementation of the simplest possible solution to the problem.  For instance, this could be a majority class baseline or a random baseline. 
@@ -50,7 +75,14 @@ Your term project will be a self-designed multi-week team-based effort. You are 
    submissions like on the class leaderboard. The output of any model
    implementations should be gradeable with this program.
 
-We're going to split up the work on the term project into several deliverables, each with their own due dates.  You don't have to wait to start working on each part of the project.  We encourage you to begin work early, so that you have a polished final product.
+Term project is split into weekly deliverables.  You don't have to wait to start working on each part of the project.  We encourage you to begin work early, so that you have a polished final product.
+
+
+
+<div class="alert alert-warning" markdown="1">
+If you don't have an idea about what you'd like to do for the project, or if you're having trouble coordinating a team, we recommend the homework option.
+</div>
+
 
 
 ## Milestones and Due Dates
@@ -66,13 +98,14 @@ Here are the milestones for the term project:
 {% endif %}
 </div>
 
+<!--
 
 ## What will you need to turn in?
 
 
 Here's a provisional list of the deliverables that you'll need to submit at the end of the project.  Each milestone will also have its own deliverables
 
-1. `report.pdf`: The final version of your write-up, incorporating any additional changes to your revised draft (if any).  The report should written in LaTeX and formatted using [the NAACL conference template](https://www.overleaf.com/latex/templates/instructions-for-naacl-hlt-2019-proceedings/xyyfwfkswhth).
+1. `report.pdf`: The final version of your write-up, incorporating any additional changes to your revised draft (if any).  The report should written in LaTeX and formatted using [the NAACL conference template](https://www.overleaf.com/latex/templates/acl-2020-proceedings-template/zsrkcwjptpcd).
 1. `readme.md`: A brief description of your task and a description of your code.
 1. `data-train/`: A directory containing the training data.
 1. `data-dev/`: A directory containing the development data for local evaluation.
@@ -83,23 +116,27 @@ Here's a provisional list of the deliverables that you'll need to submit at the 
 1. `grade-dev`: A grading script for local evaluation. This may be a wrapper around a generic grading script `grade`.
 1. `grade-test`: A grading script for leaderboard evaluation. This may be a wrapper around a generic grading script `grade`.
 
+-->
 
+# Before you begin
+
+If you want to do the project option, you must first declare your intent to do the project by March 25.  By March 25 you must form a team.  After March 25 and before Milestone 1, you should <a href="https://ccb.youcanbook.me">schedule a meeting with the course instructor</a> to discuss your project idea and make sure it is appopriate in scope.
 
 
 # Milestone 1
 
+<!--
 For Milestone 1, you'll need to form a team and come up with 3 project ideas.  For each idea you should describe:
-1. A problem definition (1 to 2 paragraphs, plus an illustrative example)
-1. A pointer to three or more papers or sections textbook that describes the problem
+!-->
+For Milestone 1, you'll need to create a writeup which includes: 
+1. The problem definition (1 to 2 paragraphs, plus an illustrative example)
+1. A literature review of three or more papers or sections textbook that describes the problem
 1. What evaluation metrics could use to score system outputs 
 1. What type of data you will need to evaluate, and how much data is available 
 
+For your literature review, you should read 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that used and how well the approaches worked.  
 
-The term project is a team exercise.  The minimum team size is 4, and the max team size is 6.  If you need help finding a team, you can post on [this Piazza thread](https://piazza.com/class/jqh5n0qv849p0?cid=5).
-
-You should turn in a PDF with your 3 ideas and your team.  If you have a prefrence on which project you'd like to pursue, you're welcome to indicate that in your report too.
-
-
+<!--
 ## Project Ideas
 
 You should identify what topic you would like to work on.  Pretty much any topic in natural language processing is fair game.  The first milestone for the term project is to pick 3 topic ideas that your team might be interested in exploring.  The course staff will help assess the feasibility of your ideas and will make a recommendation of which of your 3 initial ideas is the best fit for the scope of the term project.  
@@ -132,17 +169,23 @@ You could collect all of the pre-nominal modifiers from a large parsed corpus li
 * **Text adventure games** - Long before video games had the amazing graphics they have now, there existed text adventure games like [Zork](http://zorkonline.net) or [The Hitchhiker's Guide to the Galaxy](http://textadventures.co.uk/games/view/3cbedqimquselmanehhzxg/the-hitchhikers-guide-to-the-galaxy). Text adventure games were also known as [Interactive Fiction](https://en.wikipedia.org/wiki/Interactive_fiction). There was a recent paper from Facebook Research that used MTurk to create data to help [Learning to Speak and Act in a Fantasy Text Adventure Game](https://arxiv.org/pdf/1903.03094.pdf). Their goal is to build AI agents that can speak and behave intelligently in text-based video games.  There are lots of interesting NLP problems here.  A good term project would be to pick a response to a turn of dialog by ranking all of the lines of dialog that the FB team collected.  You could use [BERT](https://arxiv.org/abs/1810.04805), since it is trained to predict the next sentence as well as to predict masked words.  There are other interesting NLP papers on text adventure games like [TextWorld](https://www.microsoft.com/en-us/research/project/textworld/) by researchers and Microsoft and [Put My Galakmid Coin into the Dispenser and Kick It: Computational Linguistics and Theorem Proving in a Computer Game](https://link.springer.com/content/pdf/10.1023/B:JLLI.0000024734.80591.30.pdf) by researchers at Saarland University. 
 
 In addition to these ideas, you can check out the numerous [shared tasks](shared-tasks.html) that are run by the NLP community.  Shared tasks are a good fit for the term project, because they provide shared data, establish evaluation metrics, and  there will be several publications describing how researchers approached the tasks.
-
+-->
 
 <a name="milestone-2"></a>
 # Milestone 2
 
-The course staff will review the 3 ideas that you submitted for Milestone 1, and make a recommendation on which of your ideas you ought to pursue.  For Milestone 2, your job is to get started on that idea with three steps:
+<!--
+The course staff will review the 3 ideas that you submitted for Milestone 1, and make a recommendation on which of your ideas you ought to pursue.  or Milestone 2, your job is to get started on that idea with three steps:
+-->
+
+For Milestone 2, you will need to:
 1. Collect your data
 2. Write an evaluation script
 3. Write a simple baseline (for instance, a majority class baseline)
 
-We have also assigned a course staff member to be your mentor.  You should [sign up for a one-on-one meeting with your mentor](https://docs.google.com/spreadsheets/d/1W2i39lNjzKXRsANsjhVBKeXNqOXongThU9vuboYlBBg/edit?usp=sharing) to talk through your project.
+
+We will also assign a course staff member to be your mentor.  
+You should sign up for a short, weekly one-on-one meeting with your mentor to give them a progress report on your project.
 
 ## Collect your data
 
@@ -186,16 +229,14 @@ You should write a python program that will generate the output for the baseline
 <a name="milestone-3"></a>
 # Milestone 3
 
-The goals of Milestone 3 are to do a literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
+The goals of Milestone 3 are to do a thorough literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
 
-For your literature review, you should read 3-5 research papers that address the problem that you are working on.  You should write a 1-2 paragraph summary of each paper, desribing the approaches that they proposed and what results they got.  You should also include an addition 1-2 paragraphs saying which of the approaches that you selected as the published baseline that you are re-implementing.  You should submit your literature review in a markdown formatted file called lit-review.md.
 
-You should re-implement the published baseline that you selected.  It's fine to use machine learning packages like sklearn, or NLP software like Spacy or NLTK, but you should implement the main algorithms yourself.  You should not turn in existing code that implements the baseline.
+You should re-implement the published baseline that you selected.  It's fine to use machine learning packages like pytorch or sklearn, or NLP software like AllenNLP or Spacy, but you should implement the main algorithms yourself.  You should not turn in existing code that implements the baseline.
 
 You should include a baseline.md markdown file that includes step-by-step instructions on how to run your baseline code.   Your baseline.md should also report the score for your system for your test and development data, and compare that to your random baseline.
 
-For Milestone 3, you will also prepare a presentation for your project.
-Your in-class presentation should be 12 minutes long.  You should create a slidedeck with [Google Slides](https://www.google.com/slides/about/).  Your presentation should convey  these main ideas:
+For Milestone 3, you will also prepare a draft presentation about your project. This can be a recording (10-12 minutes long), or Google slides with presenter's notes.   Your presentation should convey  these main ideas:
 * What is the topic of your term project?  You should clearly explain to your classmates the problem that you selected to work on.  Give an illustrative example of the problem first, and then give a more formal definition of the problem.
 * What is exciting about your term project?  Why did you want to work on this topic?  
 * How does the topic relate to the class? What new things did you learn? 
@@ -225,10 +266,10 @@ For Milestone 4, you'll need to implement several extensions beyond this publish
 
 For your final milestone, you'll complete your extensions to the baseline, and you'll produce a final writeup for your term project.  As a reminder, the number of extensions that you must submit depends on your group size.  If you have 4 team members, you should implement 2 extensions.  If you have 5, then 3 extensions.  If you have 6, then 4 extensions. 
 
-Your final report should be written in the style of a scientific paper, and formatted with [this LaTeX style file](https://www.overleaf.com/latex/templates/instructions-for-naacl-hlt-2019-proceedings/xyyfwfkswhth) (which will make it look totally scientific!).  Your report should contain the following sections:
+Your final report should be written in the style of a scientific paper, and formatted with [this LaTeX style file](https://www.overleaf.com/latex/templates/acl-2020-proceedings-template/zsrkcwjptpcd) (which will make it look totally scientific!).  Your report should contain the following sections:
 
-* Title.  A descrpitive title for your term project
-* Authors.  A list of team members
+* Title.  A descrpitive title for your term project.
+* Authors.  A list of team members.
 * Abstract.  Your abstract should give an overview of your project and your results (~100 words).
 * Introduction.  Your introduction should contain the following information. (~300-500 words, plus one illustrative example).
    * An informal description of the task, and how it relates to NLP/Computational Linguistics (1-2  paragraphs)
@@ -257,7 +298,7 @@ I really like examples and good illustrations.  If you created some nice visuals
 
 You should turn  the following items:
 * A PDF of your final report
-* A link to your final project presentation. 
+* A link to your final project presentation slides and recording. 
 * A tarball or zip file with all of your code and data.  It should contain:
    * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a README file in this subdirectory that explains how to download your data.
    * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
