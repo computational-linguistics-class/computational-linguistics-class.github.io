@@ -73,7 +73,14 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Perspective Detection <span class="text-muted">: Assignment 12</span>
 =============================================================
 
+
+<div class="alert alert-danger">
+Warning: this assignment is not ready yet.  It may still have updates before it is released.  Check with your instructor before you start working on this assignment.
+</div>
+
 Description goes here. 
+
+
 
 
 <!-- List the materials from the header -->
