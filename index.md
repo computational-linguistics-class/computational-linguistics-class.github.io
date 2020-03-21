@@ -23,8 +23,24 @@ If you don't turn in HW1 on time, then you won't be considered for enrollment if
 -->
 
 <div class="alert alert-warning" markdown="1">
-Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.
+Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.  I have also made several updates to how the course will be graded, which are detailed in [this Piazza post.](https://piazza.com/class/k4ee6mvcugp699?cid=620)
 </div>
+
+<div class="alert alert-warning" markdown="1">
+You can find links to the live lecture broadcast and to the recordings on the [lectures page](lectures.html)
+</div>
+
+<!--
+<div class="alert alert-info" markdown="1">
+Grading updates:
+* You can opt to take the course pass/fail.
+* I'm giving everyone 10 extra late days. You can use up to 3 late days per HW or quiz.
+* Since the team-based project is now harder to coordinate, I'm offering a HW option.  You can opt to do 4 weekly HW assignments instead of the term project.
+* I'm allowing everyone to drop their lowest scoring quiz 
+* I'm allowing everyone to drop their lowest scoring homework assignment (you cannot drop project milestones if you opt to do the project)
+</div>
+
+-->
 
 <!-- Display an alert about upcoming homework assignments -->
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
@@ -91,6 +107,25 @@ Grading
     * 60% for weekly homework assignments 
     * 15% for quizzes about the readings
     * 25% for the final project
+    
+<!--
+The course is not curved.  Here's how letter grades are assigned based on your overall score:
+
+| Score | Grade |
+| 97 and above&nbsp;&nbsp;  | A+ | 
+| 93-97  | A |
+| 90-93 | A- | 
+| 87-90 | B+ | 
+| 83-87  | B | 
+| 80-83 | B- | 
+| 75-80 | C+ | 
+| 70-75 |  C | 
+| 65-70 |  C- | 
+| 50-65 | D |
+| below 50 | F | 
+
+Passing is 50 and above.
+-->
 
 Collaboration Policy
 : Unless otherwise noted, you are allowed to work in pairs on the homework assignment.  Both partners will receive the same grade.  The final projects will have larger groups. 
