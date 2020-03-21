@@ -42,6 +42,10 @@ Neural Machine Translation <span class="text-muted">: Assignment 10</span>
 Description goes here. 
 
 
+<div class="alert alert-danger">
+Warning: this assignment is not ready yet.  It may still have updates before it is released.  Check with your instructor before you start working on this assignment.
+</div>
+
 <!-- List the materials from the header -->
 {% if page.materials %}
 <div class="alert alert-info">
