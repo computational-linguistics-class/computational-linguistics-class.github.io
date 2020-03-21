@@ -37,8 +37,15 @@ Warning: this assignment is out of date.  It may still need to be updated for th
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Neural Machine Translation <span class="text-muted">: Assignment 10</span>
+
+
+
+BERT <span class="text-muted">: Assignment 11</span>
 =============================================================
+
+<div class="alert alert-danger">
+Warning: this assignment is not ready yet.  It may still have updates before it is released.  Check with your instructor before you start working on this assignment.
+</div>
 
 Description goes here. 
 
