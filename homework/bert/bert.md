@@ -1,8 +1,8 @@
 ---
 layout: default
-img: bobbytables.png
-caption: If word contains '); label as PER
-img_link: https://xkcd.com/327/   
+img: bert.png
+caption: BERT is super useful
+img_link: https://muppet.fandom.com/wiki/Bert  
 title: HW11 - BERT
 active_tab: homework
 release_date: 2020-04-15
