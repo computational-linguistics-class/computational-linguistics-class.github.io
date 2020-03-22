@@ -5,8 +5,8 @@ caption: Birds are Aves
 img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
-release_date: 2019-04-03
-due_date: 2019-04-09T11:59:00EST
+release_date: 2020-03-25
+due_date: 2019-04-01T11:59:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -105,7 +105,7 @@ Here are the materials that you should download for this assignment:
 * [`lexicalinference.zip`](downloads/hw8/lexicalinference.zip)
 Contains all the relevant code.
 * [`bless2011/`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
-Contains the train, validation and test data
+Contains the train, validation and test data. In .tsv train and validation files, word1 is the hyponym of word2 if its label is True, if it is False, they aren't related.
 * [`wikipedia_sentences.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains tokenized relevant wikipedia sentences. A lemmatized version also exists.
 * [`new_wikipedia_deppaths.txt`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
@@ -166,7 +166,7 @@ Each line in the file contains 2 tab-separated columns. The first column contain
 As you must have noticed, implementing Hearst Patterns requires noun-phrase chunking and then regex pattern matching where these patterns are relevant Hearst patterns.
 
 In the code file ```hearst/hearstPatterns.py``` we use NLTK to implement a [nltk-regex based noun-phrase chunker](http://www.nltk.org/book/ch07.html) and Hearst pattern matching.
-1. This code first finds the all the noun-chunks and converts the sentence into the following format,
+1. This code first finds all the noun-chunks and converts the sentence into the following format,
 ```
 I like to listen to NP_music from NP_musical_genres such as NP_blues , NP_rock and NP_jazz .
 ```
@@ -196,7 +196,7 @@ To use the method above to perform large-scale extraction on Wikipedia, and eval
 * `computePRF.py` - Takes the gold-truth and prediction file to compute the Precision, Recall and F1 score.
 
 
-You should implement different Hearst Patterns, and/or come up with your own patterns by eyeballing Wikipedia data. Use the train and validation data to estimate the performance of different pattern combinations and submit the predictions from the best model on the test data to the leaderboard as the file `hearst.txt`. The format of this file will the same as the train and validation data.
+You should implement different Hearst Patterns, and/or come up with your own patterns by eyeballing Wikipedia data. Use the train and validation data to estimate the performance of different pattern combinations and submit the predictions from the best model on the test data as the file `hearst.txt`. The format of this file will the same as the train and validation data.
 ```
 hyponym \t hypernym \t True(False)
 ```
@@ -259,7 +259,7 @@ The path edges are delimited by the underscore ( *_* ). Each edge contains `word
 ### How to proceed
 Similar to how we used the Hearst Patterns to extract hypo-hypernym pairs, we will now use dependency-path patterns to do the same.
 Since it is difficult to come up with your own dependency path patterns, we suggest you use the the labeled training data to come up with a list of dependency-paths that are positive examples of paths between actual hyper-hyponym pairs.
-* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `new_wikipedia_deppaths.txt` using the training data and store them to a file
+* `depPath/extractRelevantDepPaths.py`: Fill this python script, to extract relevant dependency paths from `new_wikipedia_deppaths.txt` using the training data and store them to a file.
 Note that, these paths can be of different categories. For eg. Forward paths: Classify X/Y as Hyponym/Hypernym, Reverse paths: Classify X/Y as Hypernym/Hyponym, Negative paths: Classify X/Y as a negative pair etc.
 
 * `depPath/extractDepPathHyponyms.py`: Complete this python script to generate a list of hypo-hypernym extractions for the wikipedia corpus (`new_wikipedia_deppaths.txt`) (similar to Hearst Patterns)
@@ -268,7 +268,7 @@ Note that, these paths can be of different categories. For eg. Forward paths: Cl
 
 * `computePRF.py`: Similar to Hearst Patterns, use this script to evaluate the performance on the given dataset
 
-For the best performing dependency paths, submit the test predictions on the relevant leaderboard with the filename `deppath.txt`.
+For the best performing dependency paths, submit the test predictions with the filename `deppath.txt`.
 In the `writeup.pdf` explain few most occurring dependency paths and explain if they bear any correspondence to the Hearst patterns.
 
 # Part 3: DIY
@@ -282,20 +282,21 @@ In this section, you have to implement **at least two additional methods** to ex
 A few of example ideas for additional techniques are:
 * Combine the extractions from Hearst patterns and Dependency-path patterns for better extractions
 * Learn a supervised classifier (similar to Snow et al) using the provided training data and features extracted from the dependency paths
-* Use pre-trained word embeddings to learn a hypernymy prediction classifier, or combine word-embeddings are features to your dependency--path based classifier.
+* Use pre-trained word embeddings to learn a hypernymy prediction classifier, or combine word-embeddings as features to your dependency--path based classifier.
 
 For this part, the test data predictions from the best performing technique should be uploaded to the relevant leaderboard as `diy.txt`.
 In the `writeup.pdf` explain in detail the two methodologies implemented with performance analysis.
 
 ### 3. The Leaderboard
-We will have three leaderboards for this assignment, namely
+We will have one leaderboard for this assignment, namely
+<!--
 1. Hearst Patterns - `hearst.txt`
-2. Depedency Path - `deppath.txt`
-3. DIY Model - `diy.txt`
+2. Depedency Path - `deppath.txt` -->
+1. DIY Model - `diy.txt`
 
 ### Extra Credit
-* Extra credit to the top-5 teams on each leaderboard.
-* Extra credit to teams that improve their best performing model from Part 1/2 by 5% in their DIY model.
+* Extra credit to the top-5 teams on the leaderboard.
+<!-- * Extra credit to teams that improve their best performing model from Part 1/2 by 5% in their DIY model. -->
 
 
 ## Deliverables
@@ -309,7 +310,8 @@ Here are the deliverables that you will need to submit.
   * Written analysis commenting on the Precision/Recall values when using Dependency Paths
   * Implementation details of the DIY models 
   * Performance analysis of the DIY models
-* The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards
+<!-- * The three prediction files, `hearst.txt`, `deppath.txt` and `diy.txt` to the respective leaderboards -->
+* The prediction file `diy.txt` to the leaderboard
 * Your code (.zip) with a `README` to run. It should be written in Python 3. You must include the outputs of your training and validation files for all the models as described below.
   *The code structure must be as follows:
     *|/lexical inference
@@ -336,6 +338,36 @@ Here are the deliverables that you will need to submit.
 
 
 </div>
+
+
+## FAQs
+* How to run extractDatasetPredictions.py?
+    *   extractDatasetPredictions.py labels the train/val/test word-pairs as True (False) if they exist (don’t exist) in the extracted hypo-hypernym pairs.
+        ```
+        python extractDatasetPredictions.py --extractionsfile <path-to-hyp-hypernym-extractions-file>  --trdata <path-to-bless2011/data_lex_train.tsv> --valdata <path-to-bless2011/data_lex_val.tsv> --testdata <path-to-bless2011/data_lex_test.tsv> --trpredfile <output-train-preductions-file> --valpredfile <output-val-preductions-file> --testpredfile <output-test-preductions-file>
+        ```
+    
+* How to run computePRF.py?
+    *   computePRF.py takes the gold-truth and prediction file to compute the Precision, Recall and F1 score.
+        ```
+        python computePRF.py --goldfile <path-to-gold-truth-file> --predfile <path-to-prediction-file>
+        ```
+    
+* Not getting 30% after running evaluation.
+    *   You need to run on lemmatized sentences. Go into extractHearstHyponyms.py and make sure you are using lemmatized sentences, then re-run the extractions.
+    
+* Determining forward, reverse and negative dependency paths.
+    *   Given a deppath, the direction of arrows is not the indicator of forward, reverse and negative dependency paths. So given "A B deppath", If A is a hyponym of B, then this deppath is a forward dependency path. If B is a hyponym of A, then this deppath is a reverse dependency path. If A and B are false pairs, the deppath is negative. You need to extract relevant ones.
+    
+* We are expected to write analysis on most frequency paths that work the best. How to evaluate which dependency paths work the best?
+    *   The dependency paths that resulted in high frequencies can be analysed.
+
+* Tips for improving model in Part 2.
+    *   Use different weights for forward and negative paths, weigh forward paths higher than negative paths.
+    *   You never need to add a path that is only negative to relevant paths cause it is not relevant.
+    *   If a path has been relevant mostly but sometimes negative it can still be included.
+    *   Try to include forward paths which are not negative paths more number of times.
+    
 
 
 ## Recommended readings
