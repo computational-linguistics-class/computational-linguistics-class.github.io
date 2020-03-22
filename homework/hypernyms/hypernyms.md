@@ -6,7 +6,7 @@ img_link: https://xkcd.com/867/
 title: Homework 8 - Learning Hypernyms
 active_tab: homework
 release_date: 2020-03-25
-due_date: 2019-04-01T11:59:00EST
+due_date: 2020-04-01T11:59:00EST
 attribution: Nitish Gupta and Chris Callison-Burch developed this homework assignment for UPenn's CIS 530 class in Spring 2018.
 readings:
 -
@@ -288,16 +288,8 @@ A few of example ideas for additional techniques are:
 For this part, the test data predictions from the best performing technique should be uploaded to the relevant leaderboard as `diy.txt`.
 In the `writeup.pdf` explain in detail the two methodologies implemented with performance analysis.
 
-### 3. The Leaderboard
-We will have one leaderboard for this assignment, namely
-<!--
-1. Hearst Patterns - `hearst.txt`
-2. Depedency Path - `deppath.txt` -->
-1. DIY Model - `diy.txt`
-
-### Extra Credit
-* Extra credit to the top-5 teams on the leaderboard.
-<!-- * Extra credit to teams that improve their best performing model from Part 1/2 by 5% in their DIY model. -->
+### The Leaderboard
+We will have one leaderboard for this assignment.  You can use your DIY Model and submit a file called `diy.txt` to the leaderboard.  We will give extra credit to the top teams on the leaderboard.
 
 
 ## Deliverables
