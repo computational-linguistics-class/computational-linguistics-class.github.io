@@ -1,8 +1,8 @@
 ---
 layout: default
-img: bobbytables.png
-caption: If word contains '); label as PER
-img_link: https://xkcd.com/327/   
+img: for_the_sake_of_argument.png
+caption: Identifying supporting and opposing arguments is a great way to annoy your friends.
+img_link: https://xkcd.com/1432/
 title: HW12 - Perspective Detection
 active_tab: homework
 release_date: 2020-04-22
