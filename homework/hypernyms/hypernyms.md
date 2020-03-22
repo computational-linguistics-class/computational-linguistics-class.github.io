@@ -103,7 +103,7 @@ Here is the required code you should download for this assignment [form here](ht
 Here are the materials that you should download for this assignment:
 <!-- [form here](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing): -->
 <!-- * [`lexicalinference.zip`](downloads/hw8/lexicalinference.zip) -->
-* [`lexicalinference.zip`](https://github.com/computational-linguistics-class/computational-linguistics-class.github.io/blob/master/homework/hypernyms/lexicalinference.zip)
+* [`lexicalinference.zip`](lexicalinference.zip)
 Contains all the relevant code.
 * [`bless2011/`](https://drive.google.com/drive/folders/1EBZs5L2rbF0immOetBTC3AZbgf4XYtMG?usp=sharing)
 Contains the train, validation and test data. In .tsv train and validation files, word1 is the hyponym of word2 if its label is True, if it is False, they aren't related.
