@@ -67,7 +67,16 @@ Here are the materials that you should download for this assignment:
 <div class="alert alert-danger" markdown="1">
 **Important Note about Data** 
 
-This homework assignment involves sensitive mental health data. Therefore in order to obtain the dataset, you will need to complete CITI Human Subjects Training (~30 mins) and sign a release form. See `data/README.md` for details.
+This homework assignment involves sensitive mental health data. Therefore in order to obtain the dataset, you will need to complete CITI Human Subjects Training (~30 mins) and sign a release form. To do so, please following the following steps:
+
+1. Complete [CITI Training for Human Research](https://irb.upenn.edu/mission-institutional-review-board-irb/guidance/citi-training) with the Learner Group set as "Students -- Class Projects." This should take roughly 30 minutes.
+2. Read and sign this [Data Use and Confidentiality Agreement](CLPsych_data_privacy_agreement.pdf)
+3. Put your CITI Completion Report and a PDF of your signed data agreement [into this Google folder](https://drive.google.com/drive/folders/1AGasGuY_401pwgY2DrIlD39wbNFH33T6?usp=sharing).
+4. [Fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSdRhkoY-gkspJNweeu7c-w-jJqoEgEADqOEZsr0n2s3rgyMfA/viewform?usp=sf_link) when you are done.
+
+If you're working in pairs, both partners need to follow the above steps.
+
+The instructor will then send you the data.
 </div>
 
 ## The Task
