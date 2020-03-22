@@ -61,7 +61,7 @@ Language plays an important role in diagnosing many mental and neurological heal
 <div class="alert alert-info" markdown="1">
 Here are the materials that you should download for this assignment:
 
- - [Skeleton code and directory structure](http://computational-linguistics-class.org/downloads/clpsych/clpsych.zip)
+ - [Skeleton code and directory structure](clpsych.zip)
 </div>
 
 <div class="alert alert-danger" markdown="1">
