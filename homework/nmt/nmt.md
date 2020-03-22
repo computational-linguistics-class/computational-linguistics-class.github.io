@@ -1,8 +1,8 @@
 ---
 layout: default
-img: bobbytables.png
-caption: If word contains '); label as PER
-img_link: https://xkcd.com/327/   
+img: original_greek.png
+caption: That's not how it works, but it is a good idea for <a href="https://arxiv.org/pdf/1907.05791">collecting bitexts</a>
+img_link: https://xkcd.com/2168/   
 title: HW10 - Neural Machine Translation
 active_tab: homework
 release_date: 2020-04-08
