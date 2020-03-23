@@ -16,7 +16,7 @@ deliverables:
       description: Milestone 1 - Submit a formal project definition and a literature review
       due_date: 2020-04-08T11:59:00EST
     -
-      description: Milestone 2 - Collect your data, and write an evalation script and a simple baseline
+      description: Milestone 2 - Collect your data, and write an evaluation script and a simple baseline
       due_date: 2020-04-15T11:59:00EST
     -
       description: Milestone 3 - Implement a published baseline. Prepare a draft of your final project presentation
