@@ -352,8 +352,8 @@
 -
   date: 2020-03-23
   live_lecture: https://zoom.us/j/272777162
-  slides: 
-  title: Wrap-up of Constituency Parsing / Dependency Parsing
+  slides: 14-dependency-parsing.pdf
+  title: Updates to course policies / Wrap-up of Constituency Parsing / Dependency Parsing
   slides_credit:   
   readings: 
     - 
