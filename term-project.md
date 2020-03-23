@@ -13,13 +13,13 @@ deliverables:
       description: Deadline to decide on term project versus weekly homework option   
       due_date: 2020-03-25T11:59:00EST
     -
-      description: Milestone 1 - Form a team and submit three project ideas
+      description: Milestone 1 - Submit a formal project definition and a literature review
       due_date: 2020-04-08T11:59:00EST
     -
       description: Milestone 2 - Collect your data, and write an evalation script and a simple baseline
       due_date: 2020-04-15T11:59:00EST
     -
-      description: Milestone 3 - Implement a published baseline.  Write a literature review.  Prepare a draft of your final project presentation
+      description: Milestone 3 - Implement a published baseline. Prepare a draft of your final project presentation
       due_date: 2020-04-22T11:59:00EST
     -
       description: Milestone 4 - Finish all your extensions to the public baseline, and submit your final report
