@@ -351,7 +351,7 @@
   type: no_lecture
 -
   date: 2020-03-23
-  live_lecture: https://zoom.us/j/272777162
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5160ccd6-6fe1-4a3e-b10d-ab870120a21e
   slides: 14-dependency-parsing.pdf
   title: Updates to course policies / Wrap-up of Constituency Parsing / Dependency Parsing
   slides_credit:   
