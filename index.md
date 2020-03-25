@@ -7,12 +7,15 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
-<!--
+<div class="alert alert-success" markdown="1">
+CIS 530 will be offered in the Fall by Dr. Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php) when it opens (around April 12).  
 
-<div class="alert alert-danger" markdown="1">
-The course is now full. Prof. Callison-Burch emailed students on the waitlist who completed HW1 on time informing them that they would get a permit.  No other permits will be available.  
+After you've added yourself to the waitlist, the instructor can issue you a permit.  You will receive an email saying permit available. You will receive another email when the permit is issued. At that point, you may register on CoursesInTouch. 
 </div>
 	
+
+<!--
+
 If you didn't get a permit for the course, but you're still hoping to get in, then you should follow these steps:
 1. [Join the class Piazza](https://piazza.com/upenn/spring2020/cis530).
 2. [Add yourself to Gradescope](https://www.gradescope.com/courses/80035) with the entry code __MGZXK3__.
