@@ -391,9 +391,9 @@
   title: <a href="http://computational-linguistics-class.org/homework/ner/ner.html">HW7 "Named Entity Recognition" due</a>
 -
   date: 2020-03-30
-  live_lecture: https://zoom.us/j/272777162 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=476ae080-e688-4f58-9b38-ab8e0120660e
   slides: 16-information-extraction.pdf
-  title: Logical Representations of Sentence Meaning and Information Extraction
+  title: Wrapup of Logical Representations of Sentence Meaning and Information Extraction
   slides_credit:   
   readings: 
     - 
