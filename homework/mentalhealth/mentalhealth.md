@@ -3,10 +3,10 @@ layout: default
 img: depression.png
 caption: Positive Attitdue 
 img_link: https://xkcd.com/828/
-title: Homework 9 (Optional) - Classification of Depression
+title: Homework 9 - Classification of Depression
 active_tab: homework
-release_date: 2019-04-24
-due_date: 2019-05-01T11:59:00EST
+release_date: 2020-04-01
+due_date: 2020-04-08T11:59:00EST
 attribution: This assignment was designed by students in Penn's CIS 530 in the Spring of 2018 with help from with help from Anne Cocos and Reno Kriz.  It is based on the [CLPsych shared task from 2015](https://www.cs.jhu.edu/~mdredze/publications/clpsych15_shared_task.pdf) by Glen Coppersmith, Mark Dredze, Craig Harman, Kristy Hollingshead and Meg Mitchell.
 readings:
 -
@@ -145,7 +145,7 @@ RT @nk3emnE_v: http://t.co/MAPN5ZWNUO #AustinMahoneTour #TheSecret http://t.co/V
 
 ## Part 0: Evaluation Script
 
-For this homework, we'd like you to write your own evaluation script. We've provided starter code in `eval.py`. Your task is to implement the Average Precision metric described above.
+For this homework, we'd like you to write the evaluation metric in the evaluation script. We've provided starter code in `eval.py`. Your task is to implement the Average Precision metric described above.
 
 In order to validate that your implementation is correct, we provide a sample output file (`output/random/dev_ptsd_control.txt`) with `PTSD` and `control` users from the dev set in random order. Running the following command: 
 
@@ -156,15 +156,15 @@ should get you a score of 0.3758.
 
 ## Part 1: The Baseline
 
-Our baseline follows the approach proposed by Coppersmith et al. [2]. We will utilize an character-level language model like those we implemented in [Homework 5](http://computational-linguistics-class.org/assignment5.html). We will build one language model for each condition: `PTSD`, `depression`, and `control`. Depending on the distinction we are trying to model (e.g. `conditionPOS` vs `conditionNEG`), we use two of the three language models to obtain a confidence score for each user. 
+Our baseline follows the approach proposed by Coppersmith et al. [2]. We will utilize an character-level language model like those we implemented in [Homework 3](http://computational-linguistics-class.org/homework/ngram-lms/ngram-lms.html). We will build one language model for each condition: `PTSD`, `depression`, and `control`. Depending on the distinction we are trying to model (e.g. `conditionPOS` vs `conditionNEG`), we use two of the three language models to obtain a confidence score for each user. 
 
-For task `conditionPOS` vs `conditionNEG`: the output of the code will rank a given list of users in terms of most confident to have `conditionPOS` to least confident to have `conditionPOS` (i.e. most confident to have `conditionNEG`). 
+For task `conditionPOS` vs `conditionNEG`: the output of the code will rank a given list of users in terms of most confident to have `conditionPOS` to least confident to have `conditionPOS` (i.e. most confident to have `conditionNEG`). All the details for performing these tasks are described below step-by-step:
 
 ### Part 1A: Extract Data Into Training Files
 
 Once you have downloaded the data, the first step is to create a training corpus corresponding to each condition. Each corpus should contain all tweets from persons in the training set having the indicated condition. 
 
-We have provided a script to do enable you to do this:
+We have provided a script to enable you to do this:
 
 ```
 python3 generate_lm_training_text.py
@@ -174,11 +174,17 @@ By the end of this section, you should have three text files: ```control_text.tx
 
 ### Part 1B: Train Smoothed Character-Level Language Models
 
-As you probably remember from Homework 5, the language model helps us "characterize" a body of training text by recording the probability of a letter following a history. For the purposes of achieving a fast runtime, the baseline LM uses an order of 1. This performs sufficiently well, but you are also welcome to train a higher-order model. 
+As you probably remember from Homework 3, the language model helps us "characterize" a body of training text by recording the probability of a letter following a history. For the purposes of achieving a fast runtime, the baseline LM uses an order of 1. This performs sufficiently well, but you are also welcome to train a higher-order model. 
 
 Since you've already built a smoothed character-level language model in the past, we're providing you with the code in `train_lm.py`.
 
-Your task is to use the language model script `train_lm.py` to generate language models for each of the three target conditions. Write the three models to a location where you can access them later.
+Your task is to use the language model script `train_lm.py` to generate language models for each of the three target conditions. You can output the three models in `models` folder in the provided code skeleton or to a location where you can access them later.
+
+For instance, to build the model for depression (depression_model), you can use the following command:
+
+```
+python3 train_lm.py ../data/lm-training-text/depression_text.txt ../models/depression_model
+```
 
 ### Part 1C: Predict Subjects' Condition using Language Models
 
@@ -188,15 +194,13 @@ $$\frac{\sum_C \text{log}p(c_{POS}) - \text{log}p(c_{NEG})}{|C|}$$
 
 where $$C$$ is the list of characters in a tweet, and $$\text{log}p(c_{X})$$ gives the log probability of the tweet under language model $$X$$.
 
-NOTE: to speed up the runtime, our baseline implementation calculates each user's score based on every 10th tweet and takes the median. 
-
 Your task is to complete the code skeleton for the function `score_subjects` provided in `predict_lm.py`. Once you're finished, you will have a script that you can call in the following manner to produce a ranked list of users in the selected dataset, given language model files produced by `train_lm.py`:
 
 ```
 python3 predict_lm.py <SPLIT> <CONDITION_POS_MODEL> <CONDITION_NEG_MODEL> <OUTFILE>
 ```
 
-Use this script to create outputs for the dev and test sets for the following expriments:
+Use this script to create outputs for the dev and test data for the following experiments:
 
 (`conditionPOS` vs `conditionNEG`)
 
@@ -204,11 +208,10 @@ Use this script to create outputs for the dev and test sets for the following ex
 2. `depression` vs. `control`
 3. `ptsd` vs. `depression`
 
-Without extensions, the baseline average precision you should be able to achieve with the dev data is: 
+Name the output files generated after running the above three experiments on dev data as : `dev_ptsd_control.txt`, `dev_depression_control.txt`, `dev_ptsd_depression.txt`.  
+Similarly, for test data, expected output files: `test_ptsd_control.txt`, `test_depression_control.txt`, `test_ptsd_depression.txt`.  
 
-* Depression v Control: 0.581
-* PTSD v Control: 0.569
-* Depression v PTSD: 0.767
+Hint: To speed up the runtime, for each user, you can calculate the user's score based on every 10th tweet and take the median in the end to get the final score for that user.
 
 ## Implement Extensions 
 
@@ -220,21 +223,48 @@ Some ideas for how you might improve on the existing language model implementati
 2. Clean the raw data further - users could be removed if their tweets were not 75% English, or the tweets could be cleaned of usernames, etc. 
 3. Implement another smoothing method for the language model 
 
+Use your extended model script to create outputs for the dev and test data for the following same experiments:
+
+(`conditionPOS` vs `conditionNEG`)
+
+1. `ptsd` vs. `control`
+2. `depression` vs. `control`
+3. `ptsd` vs. `depression`
+
+Name the output files generated after running the above three experiments on dev data as : `dev_ptsd_control_ext.txt`, `dev_depression_control_ext.txt`, `dev_ptsd_depression_ext.txt`.  
+Similarly, for test data, expected output files are `test_ptsd_control_ext.txt`, `test_depression_control_ext.txt`, `test_ptsd_depression_ext.txt`.  
+
 Please explain in the writeup why you chose to implement the extension you did, and what quantitative result you obtained with the extension. 
 
-## Deliverables 
-
+## Deliverables
 Here are the deliverables that you will need to submit:
-
-* Code, written in Python3
-* Test data rankings, in three files, one for each task : `ptsd` vs. `control`, `depression` vs. `control`, and `ptsd` vs. `depression`. These should be produced using your best extended model.
-* A `README.md` file that explains how to run your extended model
-* A writeup called `writeup.pdf` that details:
+* The writeup needs to be submitted as `writeup.pdf` to the HW9: Report Submission on gradescope:
+  It must contain
+  * Baseline model's scores on the dev and test sets
+  * Analysis of the baseline model
   * A description of your extended model
   * Your extended model's scores on the dev and test sets
   * Any other experiments you tried
-
-
+* Your code and output files in a zip folder named as `submission.zip` with a `README` to run. The code should be written in Python3. You must include the outputs of your dev and test data for all the models as described below.  
+  The `submission` directory should contain atleast the following files. You can add more files if required.
+    * eval.py
+    * predict_lm.py
+    * predict_ext.py
+    * README.md
+    * dev_ptsd_control.txt
+    * dev_depression_control.txt
+    * dev_ptsd_depression.txt
+    * test_ptsd_control.txt  
+    * test_depression_control.txt
+    * test_ptsd_depression.txt
+    * dev_ptsd_control_ext.txt
+    * dev_depression_control_ext.txt
+    * dev_ptsd_depression_ext.txt
+    * test_ptsd_control_ext.txt 
+    * test_depression_control_ext.txt
+    * test_ptsd_depression_ext.txt 
+    
+You need to turn in the zipped folder `submission.zip` on gradescope.
 
 ## Recommended readings
 
