@@ -428,8 +428,8 @@
 -
   date: 2020-04-01
   live_lecture: https://zoom.us/j/272777162 
-  slides: 
-  title: Semantic Role Labeling 
+  slides: 17-semantic-role-labeling.pdf
+  title: Information Extraction and Semantic Role Labeling 
   slides_credit:   
   readings: 
     - 
