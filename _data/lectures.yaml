@@ -447,10 +447,15 @@
   type: no_lecture
 -
   date: 2020-04-06
-  slides:
-  title: Encoder-Decoder Models
+  slides: 17-semantic-role-labeling.pdf
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
+  title: Semantic Role Labeling and Encoder-Decoder Models
   slides_credit:   
   readings: 
+    - 
+      title: Chapter 20 "Semantic Role Labeling"
+      authors: Jurafsky and Martin
+      url: https://web.stanford.edu/~jurafsky/slp3/20.pdf
     - 
       title: Chapter 10 "Encoder-Decoder Models, Attention, and Contextual Embeddings"
       authors: Jurafsky and Martin
@@ -471,6 +476,7 @@
 -
   date: 2020-04-08
   slides:
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   title: Neural Machine Translation
   slides_credit: Graham Neubig
   readings: 
@@ -484,7 +490,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html">Project Milestone 1</a> or <a href="http://computational-linguistics-class.org/homework/mentalhealth/mentalhealth.html">HW9 "Classify Depression"</a> due
 -
   date: 2020-04-13
-  live_lecture: https://zoom.us/j/272777162 
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 
   title: Cross-lingual Models of Word Embeddings
   slides_credit: Shyam Upadhyay
@@ -512,7 +518,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/20.pdf
 -
   date: 2020-04-15
-  live_lecture: https://zoom.us/j/272777162 
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 
   title: Dialog Systems and Chatbots
   slides_credit: 
@@ -527,7 +533,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-2">Project Milestone 2</a> or <a href="http://computational-linguistics-class.org/homework/nmt/nmt.html">HW10 "Neural Machine Translation"</a> due
 -
   date: 2020-04-20
-  live_lecture: https://zoom.us/j/272777162 
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 
   title: BERT and Large Neural Language Models
   slides_credit: 
@@ -566,7 +572,7 @@
   title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-3">Project Milestone 3</a> or <a href="http://computational-linguistics-class.org/homework/bert/bert.html">HW11 "BERT"</a> due
 -
   date: 2020-04-27
-  live_lecture: https://zoom.us/j/272777162 
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 
   title: Question Answering
   slides_credit:   
@@ -590,7 +596,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/25.pdf
 -
   date: 2020-04-29
-  live_lecture: https://zoom.us/j/272777162 
+  live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 
   title: Course Wrapup
 -
