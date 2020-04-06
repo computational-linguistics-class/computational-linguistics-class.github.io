@@ -87,7 +87,7 @@ Discussion Forum
 : [Piazza](https://piazza.com/upenn/spring2020/cis530)
 
 Time and place
-: Spring 2020, Mondays and Wednesdays 1:30-3pm in __Annenberg 110__.
+: Spring 2020, Mondays and Wednesdays 1:30-3pm ~~in Annenberg 110~~ via Zoom.
 : First day of class is January 15, 2020
 : Last day of class is April 29, 2020
 
