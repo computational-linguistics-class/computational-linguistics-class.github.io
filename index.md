@@ -8,7 +8,7 @@ active_tab: main_page
 ---
 
 <div class="alert alert-success" markdown="1">
-CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php) when it opens (around April 12).  
+CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php) when it opens on April 30.  
 
 After you've added yourself to the waitlist, the instructor can issue you a permit.  You will receive an email saying permit available. You will receive another email when the permit is issued. At that point, you may register on CoursesInTouch. 
 </div>
