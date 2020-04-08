@@ -475,7 +475,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/16.pdf
 -
   date: 2020-04-08
-  slides:
+  slides: 19-neural-machine-translation.pdf
   live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   title: Neural Machine Translation
   slides_credit: Graham Neubig
