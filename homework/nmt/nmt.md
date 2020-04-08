@@ -109,7 +109,7 @@ Note: The codes_file is where the BPE information is stored. You can name it any
 
 Running these preprocessing steps should take around 10-15 minutes. If you take a look at the data after BPE is finished running, you will notice the sentences look quite different once the algorithm has broken them up into smaller tokens.
 
-### Part 3: Training and Translating
+## Part 3: Training and Translating
 While you can always write your own NMT system from scratch using pyTorch (as in Assignment 6), most practitioners simply use existing libraries. In this assignment, we will be using OpenNMT. OpenNMT [(Klein et al. 2017)](https://www.aclweb.org/anthology/P17-4012/) is an open source neural machine translation library released by the Harvard NLP group in December of 2016 and has generally been the de-facto baseline NMT implementation for the last few years. The base system consists of a simple attention-based sequence to sequence model with support for gating, stacking, input feeding, regularization, beam search, and plenty of other bells and whistles (If that sounds like greek to you, go back over sections 7 & 8 of Graham Neubig’s [tutorial](https://arxiv.org/pdf/1703.01619.pdf)). You can find the repository [here](https://github.com/OpenNMT/OpenNMT-py). 
 
 Once you’ve finished installing the library, follow the instructions in “Quickstart” to preprocess/binarize your data, train a model using the train and dev set, and generate translations for your test set by **modifying and running the corresponding code block in the skeleton Notebook**. In our case, the “source” is Japanese, and the “target” is English. That’s it. You have a complete translation system! 
@@ -117,7 +117,7 @@ Once you’ve finished installing the library, follow the instructions in “Qui
 Don’t forget to reverse BPE tokenization for your generated translations so that the BPE tokens look like normal words.  You can do this using this Unix command:
 `!sed -r 's/(@@ )|(@@ ?$)//g' [bpe_file] > [word_file]`
 
-### Part 4: Evaluation
+## Part 4: Evaluation
 Now that you have your candidate translations, how do you test their correctness without asking a native speaker? Well, as a first naive implementation, we can start by devising a system that gives any translation that perfectly matches the gold standard reference translation a 1 and anything else a 0. Now, there are two key issues with our naive approach.
 
 1) Sentences can have multiple correct translations (basing our score off only one is a bad idea)
@@ -138,6 +138,8 @@ That being said, the shortcomings of BLEU are readily apparent (e.g. the inabili
 
 ## Part 5: Research
 In this section you will explore several topics of your choosing, and **include your findings in a research section in the final report**. There is no starter code in the skeleton Notebook. For full credit, you should implement **three** additions/comparisons to the baseline (for example, you can try two different metrics and a different tokenizer).  If you have time, you’re welcome to do more than three! 
+
+When you have your final model after some research, **submit to leaderboard your final translation** for the Japanese test set as in Part 3 (your file should be translations in English without BPE, one sentence per line). We will evaluate your translations using BLEU, and since we all know it is not perfect, this would not constitute a lot of your grade, so you are not discouraged to research metrics. 
 
 You should compare the results from this section with the results you get from the baseline BPE, evaluated using an automatic metric such as BLEU and a manual evaluation. **Please include comparisons for any and all extensions you make in your report.** Below, we list several ideas that you could do for your three additions/comparisons to the baseline system.
 
@@ -174,9 +176,9 @@ This extension would also require you to incorporate a classifier that assigns a
 
 ## Deliverables
 Here are the deliverables that you will need to submit:
-- writeup.pdf
-- code.ipynb
-
+- `writeup.pdf`
+- `code.ipynb`
+- `translations.txt` (to leaderboard)
 
 ## Recommended readings
 
