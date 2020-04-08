@@ -11,7 +11,7 @@ submission_link:
 materials:
     - 
       name: data for translation
-      url: https://nlp.stanford.edu/projects/jesc/index.html
+      url: https://nlp.stanford.edu/projects/jesc/data/split.tar.gz
     - 
       name: skeleton iPython notebook
       url: http://computational-linguistics-class.org/homework/nmt/cis530_nmt_skeleton.ipynb
