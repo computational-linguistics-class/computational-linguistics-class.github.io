@@ -90,7 +90,7 @@ You can download JESC for free from [here](https://nlp.stanford.edu/projects/jes
 
 (Note: In Google Colab, your virtual machine is a Unix machine. To download a file from a URL, you can use `!wget`. To unzip a tar.gz file, you can use `!tar -xzf`.  The exclamation point at the beginning of the commands tells the colab notebook that you want to run a Unix command instead of Python.) 
 
-You should now have three files (train, dev, test), each of which contains both the English and Japanese sentences on the same line, separated by a tab. However, for each split, the libraries that we will use expect two files, one in each language, with one sentence per line. **Follow the code in the skeleton Notebook to convert the train file to en-train.txt, ja-train.txt; convert the devfile to en-dev.txt, ja-dev.txt; convert the test file to en-test.txt, ja-test.txt.**
+You should now have three files (train, dev, test), each of which contains both the English and Japanese sentences on the same line, separated by a tab. However, for each split, the libraries that we will use expect two files, one in each language, with one sentence per line. **Follow the code in the skeleton Notebook to convert the train file to `en-train.txt`, `ja-train.txt`; convert the dev file to `en-dev.txt`, `ja-dev.txt`; convert the test file to `en-test.txt`, `ja-test.txt`.**
 
 ### Byte-Pair Encoding
 
@@ -98,12 +98,9 @@ For our baseline preprocessing implementation, we will use a technique called By
 
 The way Byte-Pair encoding works is by starting with character-level tokens, then iteratively combining the two tokens which most frequently occur together. Continuing to do this up to a specified threshold gives us surprisingly robust tokens for words, subword units, as well as multi-word units. This technique can also help with the “unseen word problem”, as it naturally parses out the prefixes and suffixes from unseen words. (Look at 2.4.3 in textbook for more information)
 
-You can find the original BPE implementation [here](https://github.com/rsennrich/subword-nmt) along with installation instructions. Install it by modifying and running the corresponding code block in the skeleton Notebook. 
+You can find the original BPE implementation [here](https://github.com/rsennrich/subword-nmt) along with installation instructions. Install it by modifying and running the corresponding code block in the skeleton Notebook. (Hint: For many Python packages and all packages in this assignment, you can install them with one line: `!pip install [package name]`.) Then, you can go ahead and use the library. 
 
-(Hint: For many Python packages and all packages in this assignment, you can install them with one line: `!pip install [package name]`.) Then, you can go ahead and use the library. 
-
-Next, read the “USAGE INSTRUCTIONS” on the Github repo, and do the following once for the English data (en-train.txt, en-dev.txt, en-test.txt), and once for the Japanese Data (ja-train.txt, ja-dev.txt, ja-test.txt). **Modify and run the corresponding code block in the skeleton Notebook.**  
-Learn BPE on the training data using command `subword-nmt learn-bpe`
+Next, read the “USAGE INSTRUCTIONS” on the Github repo, and do the following once for the English data (en-train.txt, en-dev.txt, en-test.txt), and once for the Japanese Data (ja-train.txt, ja-dev.txt, ja-test.txt). **Modify and run the corresponding code block in the skeleton Notebook.** Learn BPE on the training data using command `subword-nmt learn-bpe`
 Apply BPE to the training, validation, and testing data using command `subword-nmt apply-bpe`
 Note: The codes_file is where the BPE information is stored. You can name it anything you like. Also, set num_operations to 10000. 
 
@@ -139,7 +136,7 @@ That being said, the shortcomings of BLEU are readily apparent (e.g. the inabili
 ## Part 5: Research
 In this section you will explore several topics of your choosing, and **include your findings in a research section in the final report**. There is no starter code in the skeleton Notebook. For full credit, you should implement **three** additions/comparisons to the baseline (for example, you can try two different metrics and a different tokenizer).  If you have time, you’re welcome to do more than three! 
 
-When you have your final model after some research, **submit to leaderboard your final translation** for the Japanese test set as in Part 3 (your file should be translations in English without BPE, one sentence per line). We will evaluate your translations using BLEU, and since we all know it is not perfect, this would not constitute a lot of your grade, so you are not discouraged to research metrics. 
+When you have your final model after some research, **submit to leaderboard your final translation** for the Japanese test set as in Part 3 (your file should be translations in English after reversing BPE, one sentence per line). We will evaluate your translations using BLEU, and since we all know it is not perfect, this would not constitute a lot of your grade, so you are not discouraged to research metrics. 
 
 You should compare the results from this section with the results you get from the baseline BPE, evaluated using an automatic metric such as BLEU and a manual evaluation. **Please include comparisons for any and all extensions you make in your report.** Below, we list several ideas that you could do for your three additions/comparisons to the baseline system.
 
