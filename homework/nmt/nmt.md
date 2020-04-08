@@ -42,11 +42,6 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Neural Machine Translation <span class="text-muted">: Assignment 10</span>
 =============================================================
 
-
-<div class="alert alert-danger">
-Warning: this assignment is not ready yet.  It may still have updates before it is released.  Check with your instructor before you start working on this assignment.
-</div>
-
 In this assignment, you are to train a Japanese to English neural machine translation (NMT) system. Unlike many of your previous assignments in this class, this assignment will be almost entirely open-ended. You will write very little code and there will be very minimal instructions so you can learn to explore like a real NLP practitioner. 
 You will learn to use existing packages to build a complete end-to-end NMT pipeline. This will include:
 - Some preprocessing libraries to prepare the data, e.g. tokenization
