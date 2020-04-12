@@ -27,53 +27,53 @@ readings:
    type: tutorial
    url: https://arxiv.org/abs/1703.01619   
 -
-  title: Encoder-Decoder Models, Attention, and Contextual Embeddings
-  authors: Dan Jurafsky and James H. Martin
-  venue: Speech and Language Processing (3rd edition draft)
-  type: textbook
-  url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
+   title: Encoder-Decoder Models, Attention, and Contextual Embeddings
+   authors: Dan Jurafsky and James H. Martin
+   venue: Speech and Language Processing (3rd edition draft)
+   type: textbook
+   url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
-  title: JESC: Japanese-English Subtitle Corpus
-  authors: Reid Pryzant, Youngjoo Chung, Dan Jurafsky and Denny Britz
-  type: conference
-  year: 2018
-  venue: LREC
-  url: https://arxiv.org/pdf/1710.10639.pdf
+   title: JESC: Japanese-English Subtitle Corpus
+   authors: Reid Pryzant, Youngjoo Chung, Dan Jurafsky and Denny Britz
+   type: conference
+   year: 2018
+   venue: LREC
+   url: https://arxiv.org/pdf/1710.10639.pdf
 -
-  title: Neural Machine Translation of Rare Words with Subword Units
-  authors: Rico Sennrich, Barry Haddow, and Alexandra Birch
-  type: conference
-  year: 2016
-  venue: ACL
-  url: https://arxiv.org/pdf/1508.07909.pdf
+   title: Neural Machine Translation of Rare Words with Subword Units
+   authors: Rico Sennrich, Barry Haddow, and Alexandra Birch
+   type: conference
+   year: 2016
+   venue: ACL
+   url: https://arxiv.org/pdf/1508.07909.pdf
 -
-  title: OpenNMT: Open-Source Toolkit for Neural Machine Translation
-  authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander M. Rush
-  type: conference
-  year: 2017
-  venue: ACL
-  url: https://www.aclweb.org/anthology/P17-4012/
+   title: OpenNMT: Open-Source Toolkit for Neural Machine Translation
+   authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander M. Rush
+   type: conference
+   year: 2017
+   venue: ACL
+   url: https://www.aclweb.org/anthology/P17-4012/
 -
-  title: BLEU: a Method for Automatic Evaluation of Machine Translation
-  authors: Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu
-  type: conference
-  year: 2002
-  venue: ACL
-  url: https://www.aclweb.org/anthology/P02-1040.pdf
+   title: BLEU: a Method for Automatic Evaluation of Machine Translation
+   authors: Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu
+   type: conference
+   year: 2002
+   venue: ACL
+   url: https://www.aclweb.org/anthology/P02-1040.pdf
 -
-  title: SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing
-  authors: Taku Kudo and John Richardson
-  type: conference
-  year: 2018
-  venue: EMNLP
-  url: https://arxiv.org/pdf/1808.06226.pdf
+   title: SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing
+   authors: Taku Kudo and John Richardson
+   type: conference
+   year: 2018
+   venue: EMNLP
+   url: https://arxiv.org/pdf/1808.06226.pdf
 -
-  title: Controlling Japanese Honorifics in English-to-Japanese Neural Machine Translation
-  authors: Weston Feely, Eva Hasler and Adria de Gispert
-  type: workshop
-  year: 2019
-  venue: WAT
-  url: https://www.aclweb.org/anthology/D19-5203.pdf
+   title: Controlling Japanese Honorifics in English-to-Japanese Neural Machine Translation
+   authors: Weston Feely, Eva Hasler and Adria de Gispert
+   type: workshop
+   year: 2019
+   venue: WAT
+   url: https://www.aclweb.org/anthology/D19-5203.pdf
 -
    title: Neural Machine Translation
    authors: Graham Neubig
