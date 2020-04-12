@@ -70,7 +70,7 @@ readings:
 -
    title: Controlling Japanese Honorifics in English-to-Japanese Neural Machine Translation
    authors: Weston Feely, Eva Hasler and Adria de Gispert
-   type: workshop
+   type: conference
    year: 2019
    venue: WAT
    url: https://www.aclweb.org/anthology/D19-5203.pdf
@@ -243,9 +243,9 @@ This extension would also require you to incorporate a classifier that assigns a
 ## Leaderboard
 Once you have your final model, run your system on the [leaderboard test sentences](http://computational-linguistics-class.org/homework/nmt/jp_test_sentences.txt) **and submit your final english translations to the leaderboard**.
 
-Your submission file should be named `translations.txt` and should consist only of the English translations after reversing BPE, one sentence per line. We will evaluate your translations using BLEU, and since we all know BLEU is not perfect, this will not constitute a lot of your grade. Feel free to submit a system that you believe gives better translations on manual inspection as opposed to only those which give higher BLEU score.
+Your submission file should be named `translations.txt` and should consist only of the raw, not Byte-Pair Encoded English translations, one sentence per line. We will evaluate your translations using BLEU, and since we all know BLEU is not perfect, this will not constitute a lot of your grade.
 
-We will be putting the baseline system up on the leaderboard purely for your reference. **You are not required to beat it**.
+We will be putting the baseline system up on the leaderboard purely for your reference. **You are not required to beat it**. It is perfectly fine to submit a system that does worse than the baseline on BLEU as long as you include thoughtful analysis in your writeup. We encourage students to not only play around with things that improve their score but also to investigate the evaluation metrics themselves and analyze how they correlate with your human evaluation.
 
 ## Deliverables
 Here are the deliverables that you will need to submit:
