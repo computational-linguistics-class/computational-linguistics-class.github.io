@@ -34,7 +34,7 @@ readings:
    venue: ACL
    url: https://arxiv.org/pdf/1508.07909.pdf
 -
-   title: BLEU: a Method for Automatic Evaluation of Machine Translation
+   title: BLEU&#58; a Method for Automatic Evaluation of Machine Translation
    authors: Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu
    type: conference
    year: 2002
