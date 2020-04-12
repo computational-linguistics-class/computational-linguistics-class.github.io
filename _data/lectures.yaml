@@ -476,7 +476,7 @@
 -
   date: 2020-04-08
   slides: 19-neural-machine-translation.pdf
-  live_lecture: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=532c3407-4b45-4940-9b86-ab97012142f0
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=532c3407-4b45-4940-9b86-ab97012142f0
   title: Encoder-Decoder Models and Neural Machine Translation
   slides_credit: Graham Neubig
   readings: 
@@ -488,7 +488,7 @@
   date: 2020-04-08
   type: no_lecture
   slides: old/90-guest_lecture_graham_neubig_NMT.pdf
-  live_lecture: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd53c6a8-0d0a-42b1-9b15-a9d6000a4d2a
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd53c6a8-0d0a-42b1-9b15-a9d6000a4d2a
   title: Neural Machine Translation (recording of guest lecture from 2019)
   speaker: Graham Neubig
   slides_credit: Graham Neubig

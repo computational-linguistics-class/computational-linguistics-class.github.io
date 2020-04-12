@@ -74,6 +74,12 @@ readings:
   year: 2019
   venue: WAT
   url: https://www.aclweb.org/anthology/D19-5203.pdf
+-
+   title: Neural Machine Translation
+   authors: Graham Neubig
+   venue: Guest Lecture for CIS 530, Spring 2019
+   type: Guest Lecture
+   url: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd53c6a8-0d0a-42b1-9b15-a9d6000a4d2a
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -111,7 +117,7 @@ You can download the materials for this assignment here:
 You will be working with a Notebook in Google Colab, which offers enough computing power to be sufficient for this assignment as well as for most small-scale academic NLP research. However, [Google Colab Pro](https://colab.research.google.com/signup) is a premium service that you may want to consider if you find yourself really struggling with training time.
 
 ## Part 0: Readings
-To ensure that you’re able to effectively explore on your own, it is vital to at least be familiar with the terminology of NMT systems and the general landscape of the field. Since the MT chapter of Jurafsky and Martin has yet to be written, you are instead heavily encouraged to study [this tutorial](https://arxiv.org/pdf/1703.01619.pdf) on neural machine translation written by Graham Neubig from CMU which will serve as a great conceptual overview of the field.
+To ensure that you’re able to effectively explore on your own, it is vital to at least be familiar with the terminology of NMT systems and the general landscape of the field. Since the MT chapter of Jurafsky and Martin has yet to be written, you are instead heavily encouraged to study [this tutorial](https://arxiv.org/pdf/1703.01619.pdf) on neural machine translation written by Graham Neubig from CMU which will serve as a great conceptual overview of the field.  Prof. Neubig also gave a guest lecture on NMT for CIS 530 in 2019.  You can [watch his guest lecture online](https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd53c6a8-0d0a-42b1-9b15-a9d6000a4d2a).
 
 The earlier sections in the tutorial go over material that we have already covered in this class (namely NGram, log-linear, and RNN language models) so those who want to take the opportunity to quickly review are encouraged to do so. However, if you’re confident in your mastery of those topics you should be able to start with section 7 of the tutorial which goes over encoder-decoder models and section 8 of the tutorial which goes over attention. These two sections contain the most relevant information for this assignment.
 
