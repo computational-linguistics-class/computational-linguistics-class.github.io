@@ -21,7 +21,7 @@ materials:
 attribution: This assignment was developed by Li "Harry" Zhang, Liam Dugan and Chris Callison-Burch for UPenn's CIS 530 class in Spring 2020 during the Coronavirus pandemic.
 readings:
 -
-   title: Neural Machine Translation and Sequence-to-sequence Models: A Tutorial
+   title: Neural Machine Translation and Sequence-to-sequence Models&#58; A Tutorial
    authors: Graham Neubig
    venue: arXiv
    type: tutorial
