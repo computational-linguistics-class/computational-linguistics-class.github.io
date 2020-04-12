@@ -53,7 +53,7 @@ readings:
    type: textbook
    url: https://web.stanford.edu/~jurafsky/slp3/10.pdf
 -
-   title: JESC: Japanese-English Subtitle Corpus
+   title: JESC&#58; Japanese-English Subtitle Corpus
    authors: Reid Pryzant, Youngjoo Chung, Dan Jurafsky and Denny Britz
    type: conference
    year: 2018
@@ -67,14 +67,14 @@ readings:
    venue: WAT
    url: https://www.aclweb.org/anthology/D19-5203.pdf
 -
-   title: OpenNMT: Open-Source Toolkit for Neural Machine Translation
+   title: OpenNMT&#58; Open-Source Toolkit for Neural Machine Translation
    authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander M. Rush
    type: conference
    year: 2017
    venue: ACL
    url: https://www.aclweb.org/anthology/P17-4012/
 -
-   title: SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing
+   title: SentencePiece&#58; A simple and language independent subword tokenizer and detokenizer for Neural Text Processing
    authors: Taku Kudo and John Richardson
    type: conference
    year: 2018
