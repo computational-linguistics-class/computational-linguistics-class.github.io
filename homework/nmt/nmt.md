@@ -187,8 +187,8 @@ Now that you have your candidate translations, how do you test their correctness
 
 Well, as a first naive implementation, we can start by devising a system that gives any translation that perfectly matches the gold standard reference translation a 1 and anything else a 0. Now, there are two key issues with our naive approach.
 
-1) Sentences can have multiple correct translations (basing our score off only one is a bad idea)
-2) A binary loss function is not good for gradient descent. We need a more granular metric.
+1. Sentences can have multiple correct translations (basing our score off only one is a bad idea)
+2. A binary loss function is not good for gradient descent. We need a more granular metric.
 
 To combat both of these issues, a method called BLEU “Bilingual Evaluation Understudy” was developed by [Papineni et al. (2002)](https://www.aclweb.org/anthology/P02-1040.pdf). Instead of checking for an exact match between full sentences, BLEU score evaluates translations by checking for the number of **shared n-grams** between the candidate and reference translation. More specifically, BLEU calculates the precision of each order of n-gram (unigram, bigram, trigram, etc.) then averages those precisions together with a brevity penalty to get the final score. Thus a perfect match still gets 1.0, but only a complete mismatch (not a single word in common between the reference and candidate translation) will get a 0.0.
 
