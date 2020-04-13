@@ -195,7 +195,7 @@ The goal for this part is to get yourself familiar with PyTorch/BERT through exa
 
 Follow instructions and submit your model's prediction on the test data; store the predictions in a file named `relevance_test_predictions.txt`, and submit the file. 
 
-## Part 2: DIY - Stance Classification
+## Part 2: DIY - Stance Classification (Optional, for 25% Extra Credit)
 Now that you have seen an example, and hopefully are becoming an expert of BERT, let's try to follow similar steps and tackle the stance classification. Given a claim and a relevant perspective, classify whether the perspective supports or refutes the claim. 
 
 For the most part we expect you to be re-using code from Part 1. Since this is a different task, you will be doing step 1 (generating positive and negative sentence pairs) in a slightly different way; Speicifcally  --
