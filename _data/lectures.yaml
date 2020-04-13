@@ -504,18 +504,13 @@
 -
   date: 2020-04-13
   live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
-  slides: 
-  title: Cross-lingual Models of Word Embeddings
-  slides_credit: Shyam Upadhyay
+  slides: 20-cross-lingual-embeddings.pdf
+  title: MT Evaluation and Cross-lingual Models of Word Embeddings
   readings: 
     - 
       title: Cross-lingual Models of Word Embeddings&colon; An Empirical Comparison
       authors: Shyam Upadhyay, Manaal Faruqui, Chris Dyer, Dan Roth
-      url: http://www.aclweb.org/anthology/P16-1157/watch?v=NUV6vXK8FCc
--
-  date: 2020-04-13
-  title: Deadline to switch to Pass/Fail
-  type: no_lecture
+      url: http://www.aclweb.org/anthology/P16-1157/
 -
   date: 2020-04-13
   type: exam 
@@ -616,3 +611,7 @@
   date: 2020-04-29
   type: homework
   title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-4">Project Milestone 4</a> or <a href="http://computational-linguistics-class.org/homework/perspectives/perspectives.html">HW12 "Perspective Detection"</a> due
+-
+  date: 2020-04-29
+  title: Deadline to switch to Pass/Fail
+  type: no_lecture
