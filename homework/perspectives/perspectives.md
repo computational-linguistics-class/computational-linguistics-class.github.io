@@ -14,13 +14,19 @@ materials:
       name: Skeleton colab notebook (Please import this to colab)  
       url: perspective_hw.ipynb
 readings:
+-
+   title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+   authors: Jacob Devlin
+   venue: Guest Lecture for CIS 530, Spring 2019
+   type: Guest Lecture
+   url: https://upenn.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ebf01726-bd73-45f9-81d6-a9d6000a4c4e
 - 
    title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
    authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
    venue: NAACL
    type: conference
    year: 2019
-   url: https://arxiv.org/abs/1810.04805
+   url: https://www.aclweb.org/anthology/N19-1423/
    page_count: 8
    id: bert
    abstract: We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).
@@ -89,22 +95,54 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Perspective Detection <span class="text-muted">: Assignment 11</span>
 =============================================================
 
+When you ask a question of Google in natural language it attempts to get you a single, correct answer.  This is great for questions like _what temperature is recommended for salmon?_:
 
-<div class="alert alert-danger">
-Warning: this assignment is new to this semester and was developed recently.  It may still need to be updated.  Check with your instructor and updates on piazza before you start working on this assignment. Feel free to post on piazza if you notice any problems with this homework.
+<div class="text-center">
+<img src="salmon.png" alt="Q: What temperature is recommended for salmon? A: 145 degrees Fahernheit." class="img-fluid" width="500px"  />
 </div>
 
+But it fails on questions for which there isn't a single correct answer like _Should uniforms be required in schools?_:
+
+<div class="text-center">
+<img src="school-uniforms.png" alt="Q: Should uniforms be required in schools? A: 145 degrees Fahernheit." class="img-fluid" width="500px"  />
+</div>
+
+In questions like _Should uniforms be required in schools?_, users are seeking multiple perspectives on a topic.  Ideally, we should organize potential answers to such perspective-seeking queries into two sets: perspctives that support an idea, and perspectives that refute it.  
+
+As part of his PhD research, your TA Sihao built a demonstration search engine called [PerspectroScope](https://perspectroscope.seas.upenn.edu/). Given a __claim__ as input, PerspectroScope will look for potential __perspectives__ on the web, and use classifiers trained on a dataset called [Perspectrum](https://cogcomp.seas.upenn.edu/perspectrum/) to decide whether each potential perspctive is __relevant__ and whether it is __supports__ or __opposes__ the claim.   Here's an example of Sihao's search engine organizes perspectives related to animal rights:
+
+<div class="text-center">
+<img src="perspectrum_eval_setting.png" alt="An overview of how a search engine could classify perspectives." class="img-fluid" width="500px"  />
+</div>
+
+Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to [try the search engine yourself](https://perspectroscope.seas.upenn.edu/).
+
+
 The learning goals for this assignment are: 
-- A gentle yet practical introduction to BERT, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
+- An introduction to BERT, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
 - Learn how to solve sentence pair classification tasks by "fine-tuning" BERT to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
-- The task that we're going to fine-tune BERT to is 
+- We're going to fine-tune BERT to do two important classification tasks that play a part of the perspective search engine:
+1. **Relevance Classification**: Given a claim and a perspective sentence, classify whether the sentence presents a **relevant perspective** to the claim.
+2. **Stance Classification** (extra credit): Given a claim and a sentence of relevant perspective, classify whether the perspective **supports or refutes** the claim.
 
+<!--
  (Extra credit) learn how to build your own _argument search engine_, if you are interested!  This is a current research topic in the field of NLP.  The goal is to allow people to search for multiple perspectives on a debatable topic like "uniforms should be worn in schools".
+!-->
 
 
-## Background
+<!-- List the materials from the header -->
+{% if page.materials %}
+<div class="alert alert-info">
+You can download the materials for this assignment here; The datasets will be downloaded via the Colab notebook.
+<ul>
+{% for item in page.materials %}
+<li><a href="{{item.url}}">{{ item.name }}</a></li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
 
-### BERT
+## Background on BERT
 
 BERT is a state-of-the-art neural language model that was released in 2019 by Google Research. BERT is an acronym for Bidirectional Encoder Representations from Transformers.  It can be used as an encoder to produce sentence embeddings, and to produce context-based word embeddings.   Models trained using BERT embeddings (or variants of BERT) have been producing state-of-the-art results across most NLP task recently. 
 
@@ -121,40 +159,21 @@ A [paper](https://nlp.stanford.edu/pubs/hewitt2019structural.pdf) in 2019, publi
 
 3. **Fine-tuning**: Fine-tuning is a process to take a machine learning model that has already been trained for a given task/objective, and further train the model with a second similar task/objective. When you train models with BERT embeddings for downstream tasks, the entire BERT model's weights are updated during training, and so the BERT embeddings are "adapted" according to the task at hand. On contrary, when you use word embedding, you don't actually update the part of the network that was used to train the word embeddings. This process is called "BERT fine-tuning". The ability of fine-tuning makes BERT more expressive, and easier to adapt to the task-specific supervision. In this homework we will show you a step-by-step process of BERT fine-tuning.
 
+<div class="alert alert-info" markdown="1">
+For more information on BERT, we recommend watching [this guest lecture for CIS 530 by Jacob Devlin from Spring 2019](https://upenn.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ebf01726-bd73-45f9-81d6-a9d6000a4c4e).  Jacob was the lead author on the [original BERT paper](https://www.aclweb.org/anthology/N19-1423/).
+</div>
 
 
 <!-- for a variety of natural language processing tasks belong to the *Transformer Family*, which are models based off of the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to serial networks after such successes with RNNs and LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, unlocking new orders of magnitude of data to use as training data. Some examples of notable state-of-the-art Transformer based models are Open AI’s GPT-2 and in this homework, Google’s BERT. -->
 <!-- BERT is an extremely influential model and stands for Bidirectional Encoder Representations from Transformers.  and with hundreds of millions of parameters, it is a large and powerful neural network for predicting the probabilities of natural language - otherwise known as a *language model* (recall Homeworks 3 and 6). Similar to Word2Vec’s negative sampling technique, we train the model using different objectives, learning efficient *embeddings* along the way.  In addition, the model serves as a vessel for *transfer learning*, where we can use a pre-trained instance of BERT and *fine-tune* the model on additional training data to better serve a certain domain of text. -->
 
-### Sentence Pair classification
-The Sentence Pair Classification the task is to classify what relation holds between a pair of sentences. Many popular tasks in NLP can be viewed as examples of sentence pair classification. E.g. Almost every task in the [GLUE Benchmark](https://gluebenchmark.com/leaderboard) -- a collection of datasets for evaluating a model's capability of "language understanding".
+### Sentence Pair Classification
+
+Sentence pair classification is the task of classifying what relation holds between a pair of sentences. Many popular tasks in NLP can be viewed as examples of sentence pair classification. E.g. Almost every task in the [GLUE Benchmark](https://gluebenchmark.com/leaderboard) -- a collection of datasets for evaluating a model's capability of "language understanding".
 
 BERT has been shown to be very effective for sentence pair classification. For the rest of this homework, we are going to introduce and work on one of such tasks as example.
 
-### Perspective Detection
-Arguments play an important role in understanding controversial topics. For instance, watching debates over an controversial topic is arguably the most efficient way of learning about different perspectives on the matter. However, in real life, information around a topic (e.g. from news publishers) is usually organized in a limited and repetitive way, such that one will not be able to see a variety of perspectives from a diverse background. 
 
-With the goal of "showing diverse persepctives with respect to a controversial topic", one of your TAs built a argument search engine called [PerspectroScope](https://perspectroscope.seas.upenn.edu/). Given a controversial claim as input, the search engine will look for potential arguments on the open web, and use classifiers trained on a dataset called [Perspectrum](https://cogcomp.seas.upenn.edu/perspectrum/), to decide whether each potential argument is indeed relevant and is supporting/refuting the claim. 
-
-<img src='/assets/img/perspectrum_eval_setting.png' width="400px" style="margin: 0 auto; display:block">
-
-Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to try the search engine yourself.
-
-In this homework, we will focus on two sentence pair classification tasks that constitutes the argument search engine.
-1. **Relevance Classification**: Given a claim and an argument sentence, classify whether the sentence presents a **relevant perspective** to the claim.
-2. **Stance Classification**: Given a claim and a sentence of relevant perspective, classify whether the perspective **supports or refutes** the claim.
-
-<!-- List the materials from the header -->
-{% if page.materials %}
-<div class="alert alert-info">
-You can download the materials for this assignment here; The datasets will be downloaded via the Colab notebook.
-<ul>
-{% for item in page.materials %}
-<li><a href="{{item.url}}">{{ item.name }}</a></li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
 
 ## Part 1: Relevance Classification via BERT fine-tuning 
 For this part, we will show you how to build a BERT-based sentence pair classifer for Perspective Relevance Classification.
