@@ -43,7 +43,7 @@ readings:
    url: https://www.cis.upenn.edu/~ccb/publications/perspectroscope-demo.pdf
    page_count: 6
    id: perspectroscope-demo
-   abstract: This work presents PERSPECTROSCOPE, a web-based system which lets users query a discussion-worthy natural language claim, and extract and visualize various perspectives in support or against the claim, along with evidence supporting each perspective. The system thus lets users explore various perspectives that could touch upon aspects of the issue at hand. The system is built as a combination of retrieval engines and learned textualentailment-like classifiers built using a few recent developments in natural language understanding. To make the system more adaptive, expand its coverage, and improve its decisions over time, our platform employs various mechanisms to get corrections from the users. PERSPECTROSCOPE is available at github.com/CogComp/perspectroscope.  A brief video of the system is available at youtube.com/watch?v=MXBTR1Sp3Bs.
+   abstract: This work presents PERSPECTROSCOPE, a web-based system which lets users query a discussion-worthy natural language claim, and extract and visualize various perspectives in support or against the claim, along with evidence supporting each perspective. The system thus lets users explore various perspectives that could touch upon aspects of the issue at hand. The system is built as a combination of retrieval engines and learned textual entailment-like classifiers built using a few recent developments in natural language understanding. To make the system more adaptive, expand its coverage, and improve its decisions over time, our platform employs various mechanisms to get corrections from the users. PERSPECTROSCOPE is available at github.com/CogComp/perspectroscope.  A brief video of the system is available at youtube.com/watch?v=MXBTR1Sp3Bs.
    bibtex: |
       @inproceedings{Chen-Khashabi-et-al:2019,
        author = {Sihao Chen and Daniel Khashabi and Chris Callison-Burch and Dan Roth},
@@ -94,15 +94,16 @@ Perspective Detection <span class="text-muted">: Assignment 11</span>
 Warning: this assignment is new to this semester and was developed recently.  It may still need to be updated.  Check with your instructor and updates on piazza before you start working on this assignment. Feel free to post on piazza if you notice any problems with this homework.
 </div>
 
-### Before everything... Here's what you will learn in this HW
-- A gental yet practical introduction to BERT (a.k.a. Bidirectional Transformer) -- A powerful architecture that could be used to solve many NLP tasks.
-- See how you would solve sentence pair classification tasks via BERT fine-tuning (further training on top of a pre-trained model)
-- (Hopefully) learn how to build your own argument search engine, if you are interested!
+The learning goals for this assignment are: 
+- A gentle yet practical introduction to BERT, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
+- Learn how to solve sentence pair classification tasks by "fine-tuning" BERT to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
+- (Extra credit) learn how to build your own _argument search engine_, if you are interested!  This is a current research topic in the field of NLP.  The goal is to allow people to search for multiple perspectives on a debatable topic like "uniforms should be worn in schools".
 
 
-## Part 0: Background
+## Background
 
-### 0.1 BERT
+### BERT
+
 BERT (acronym for Bidirectional Transformer) is the current state-of-the-art **(contextual) language model**. It was published in 2019 by a group of Google Researchers, and is based off of the Transformer architecture. Models trained with BERT embeddings (or variants of BERT) has been producing **state-of-the-art results across most NLP task recently**. 
 
 Like the word embeddings (e.g. Word2Vec, GloVe) that you have played with in a few of the past homeworks, BERT is trained with similar, but slightly more sophisticated learning objectives -- The first objective is known as **Masked Language Modeling (MLM)**, where we randomly "mask" a certain fraction of words from a text during training and have the model predict the masked words. The second task objective **Next Sentence Prediction (NSP)** -- given two sentences, predict whether the second sentence comes after the first sentence in natural text. 
@@ -120,19 +121,19 @@ You might ask -- What makes BERT so good then?
 <!-- for a variety of natural language processing tasks belong to the *Transformer Family*, which are models based off of the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to serial networks after such successes with RNNs and LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, unlocking new orders of magnitude of data to use as training data. Some examples of notable state-of-the-art Transformer based models are Open AI’s GPT-2 and in this homework, Google’s BERT. -->
 <!-- BERT is an extremely influential model and stands for Bidirectional Encoder Representations from Transformers.  and with hundreds of millions of parameters, it is a large and powerful neural network for predicting the probabilities of natural language - otherwise known as a *language model* (recall Homeworks 3 and 6). Similar to Word2Vec’s negative sampling technique, we train the model using different objectives, learning efficient *embeddings* along the way.  In addition, the model serves as a vessel for *transfer learning*, where we can use a pre-trained instance of BERT and *fine-tune* the model on additional training data to better serve a certain domain of text. -->
 
-### 0.2 Sentence Pair classification
+### Sentence Pair classification
 As indicated by its name, Sentence Pair Classifcation involves two sentences, and the task is to classify them into a list of possible relations. Many popular tasks in NLP can be viewed as examples of sentence pair classification. E.g. Almost every task in the [GLUE Benchmark](https://gluebenchmark.com/leaderboard) -- a collection of datasets for evaluating a model's capability of "language understanding".
 
 BERT has been shown to be very effective for sentence pair classification. For the rest of this homework, we are going to introduce and work on one of such tasks as example.
 
-### 0.3 Perspective Detection
+### Perspective Detection
 Arguments play an important role in understanding controversial topics. For instance, watching debates over an controversial topic is arguably the most efficient way of learning about different perspectives on the matter. However, in real life, information around a topic (e.g. from news publishers) is usually organized in a limited and repetitive way, such that one will not be able to see a variety of perspectives from a diverse background. 
 
 With the goal of "showing diverse persepctives with respect to a controversial topic", one of your TAs built a argument search engine called [PerspectroScope](https://perspectroscope.seas.upenn.edu/). Given a controversial claim as input, the search engine will look for potential arguments on the open web, and use classifiers trained on a dataset called [Perspectrum](https://cogcomp.seas.upenn.edu/perspectrum/), to decide whether each potential argument is indeed relevant and is supporting/refuting the claim. 
 
 <img src='/assets/img/perspectrum_eval_setting.png' width="400px" style="margin: 0 auto; display:block">
 
-Here's a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to try the search engine yourself.
+Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to try the search engine yourself.
 
 In this homework, we will focus on two sentence pair classification tasks that constituates the argument search engine.
 1. **Relevance Classification**: Given a claim and an argument sentence, classify whether the sentence presents a **relevant perspective** to the claim.
