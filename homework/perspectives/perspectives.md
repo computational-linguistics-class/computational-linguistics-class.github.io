@@ -14,6 +14,23 @@ materials:
       name: Skeleton colab notebook (Please import this to colab)  
       url: perspective_hw.ipynb
 readings:
+- 
+   title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+   authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
+   venue: NAACL
+   type: conference
+   year: 2019
+   url: https://arxiv.org/abs/1810.04805
+   page_count: 8
+   id: bert
+   abstract: We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).
+   bibtex: |
+      @article{devlin2018bert,
+        title={Bert&colon; Pre-training of deep bidirectional transformers for language understanding},
+        author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+        journal={arXiv preprint arXiv:1810.04805},
+        year={2018}
+      }
 -
    title: Seeing Things from a Different Angle&colon; Discovering Diverse Perspectives about Claims
    authors: Sihao Chen, Daniel Khashabi, Wenpeng Yin, Chris Callison-Burch and Dan Roth
@@ -53,23 +70,6 @@ readings:
        address = {Florence, Italy},
        url = {http://www.cis.upenn.edu/~ccb/publications/comparison-of-diverse-decoding-methods-from-conditional-language-models.pdf}
       } 
-- 
-   title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
-   authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
-   venue: NAACL
-   type: conference
-   year: 2019
-   url: https://arxiv.org/abs/1810.04805
-   page_count: 8
-   id: bert
-   abstract: We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).
-   bibtex: |
-      @article{devlin2018bert,
-        title={Bert&colon; Pre-training of deep bidirectional transformers for language understanding},
-        author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
-        journal={arXiv preprint arXiv:1810.04805},
-        year={2018}
-      }
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -97,22 +97,27 @@ Warning: this assignment is new to this semester and was developed recently.  It
 The learning goals for this assignment are: 
 - A gentle yet practical introduction to BERT, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
 - Learn how to solve sentence pair classification tasks by "fine-tuning" BERT to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
-- (Extra credit) learn how to build your own _argument search engine_, if you are interested!  This is a current research topic in the field of NLP.  The goal is to allow people to search for multiple perspectives on a debatable topic like "uniforms should be worn in schools".
+- The task that we're going to fine-tune BERT to is 
+
+ (Extra credit) learn how to build your own _argument search engine_, if you are interested!  This is a current research topic in the field of NLP.  The goal is to allow people to search for multiple perspectives on a debatable topic like "uniforms should be worn in schools".
 
 
 ## Background
 
 ### BERT
 
-BERT (acronym for Bidirectional Transformer) is the current state-of-the-art **(contextual) language model**. It was published in 2019 by a group of Google Researchers, and is based off of the Transformer architecture. Models trained with BERT embeddings (or variants of BERT) has been producing **state-of-the-art results across most NLP task recently**. 
+BERT is a state-of-the-art neural language model that was released in 2019 by Google Research. BERT is an acronym for Bidirectional Encoder Representations from Transformers.  It can be used as an encoder to produce sentence embeddings, and to produce context-based word embeddings.   Models trained using BERT embeddings (or variants of BERT) have been producing state-of-the-art results across most NLP task recently. 
 
-Like the word embeddings (e.g. Word2Vec, GloVe) that you have played with in a few of the past homeworks, BERT is trained with similar, but slightly more sophisticated learning objectives -- The first objective is known as **Masked Language Modeling (MLM)**, where we randomly "mask" a certain fraction of words from a text during training and have the model predict the masked words. The second task objective **Next Sentence Prediction (NSP)** -- given two sentences, predict whether the second sentence comes after the first sentence in natural text. 
+Like the word embeddings (e.g. Word2Vec, GloVe) that you have played with in a few of the past homework assignments, BERT is trained with similar, but slightly more sophisticated learning objectives -- The first objective is known as **Masked Language Modeling (MLM)**, where we randomly "mask" a certain fraction of words from a text during training and have the model predict the masked words. The second task objective **Next Sentence Prediction (NSP)** -- given two sentences, predict whether the second sentence comes after the first sentence in natural text. 
 
-You might ask -- What makes BERT so good then? 
+There are several things that make BERT so good: 
 
-1. **Bidirectional & Contextual**: A key difference between word embeddings and BERT is that BERT is contextual, which means it is producing embedding based on not only the word itself, but also the context it appears in. That way, the BERT embedding for each word is "dynamic", and will change based on the context it appears in. Such features allow BERT to capture various linguistics phenomena like word sense disambiguation. An [paper](https://nlp.stanford.edu/pubs/hewitt2019structural.pdf) in 2019, published by John Hewitt (an undergrad alumni of Professor Callison-Burch) et. al., found that BERT embedding itself encodes dependency parse structure of sentences.
+1. **Contextual**: A key difference between word embeddings and BERT is that BERT is contextual, which means it is producing embedding based on not only the word itself, but also the context it appears in. That way, the BERT embedding for each word is "dynamic", and will change based on the context it appears in. Such features allow BERT to capture various linguistics phenomena like word sense disambiguation. 
+<!--
+A [paper](https://nlp.stanford.edu/pubs/hewitt2019structural.pdf) in 2019, published by John Hewitt (an undergrad alumni of Professor Callison-Burch) et. al., found that BERT embedding itself encodes dependency parse structure of sentences.
+-->
 
-2. **Number of Parameters and Scale of training**: BERT is huge. The base version of BERT (12 layers of transformers) consisits of 110M parameters, and is trained with 800M words. 
+2. **Number of Parameters and Scale of Training**: BERT is huge. The base version of BERT (12 layers of transformers) consists of 110M parameters, and is trained on 800,000,000 words. 
 
 3. **Fine-tuning**: Fine-tuning is a process to take a machine learning model that has already been trained for a given task/objective, and further train the model with a second similar task/objective. When you train models with BERT embeddings for downstream tasks, the entire BERT model's weights are updated during training, and so the BERT embeddings are "adapted" according to the task at hand. On contrary, when you use word embedding, you don't actually update the part of the network that was used to train the word embeddings. This process is called "BERT fine-tuning". The ability of fine-tuning makes BERT more expressive, and easier to adapt to the task-specific supervision. In this homework we will show you a step-by-step process of BERT fine-tuning.
 
@@ -122,7 +127,7 @@ You might ask -- What makes BERT so good then?
 <!-- BERT is an extremely influential model and stands for Bidirectional Encoder Representations from Transformers.  and with hundreds of millions of parameters, it is a large and powerful neural network for predicting the probabilities of natural language - otherwise known as a *language model* (recall Homeworks 3 and 6). Similar to Word2Vec’s negative sampling technique, we train the model using different objectives, learning efficient *embeddings* along the way.  In addition, the model serves as a vessel for *transfer learning*, where we can use a pre-trained instance of BERT and *fine-tune* the model on additional training data to better serve a certain domain of text. -->
 
 ### Sentence Pair classification
-As indicated by its name, Sentence Pair Classifcation involves two sentences, and the task is to classify them into a list of possible relations. Many popular tasks in NLP can be viewed as examples of sentence pair classification. E.g. Almost every task in the [GLUE Benchmark](https://gluebenchmark.com/leaderboard) -- a collection of datasets for evaluating a model's capability of "language understanding".
+The Sentence Pair Classification the task is to classify what relation holds between a pair of sentences. Many popular tasks in NLP can be viewed as examples of sentence pair classification. E.g. Almost every task in the [GLUE Benchmark](https://gluebenchmark.com/leaderboard) -- a collection of datasets for evaluating a model's capability of "language understanding".
 
 BERT has been shown to be very effective for sentence pair classification. For the rest of this homework, we are going to introduce and work on one of such tasks as example.
 
@@ -135,14 +140,14 @@ With the goal of "showing diverse persepctives with respect to a controversial t
 
 Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to try the search engine yourself.
 
-In this homework, we will focus on two sentence pair classification tasks that constituates the argument search engine.
+In this homework, we will focus on two sentence pair classification tasks that constitutes the argument search engine.
 1. **Relevance Classification**: Given a claim and an argument sentence, classify whether the sentence presents a **relevant perspective** to the claim.
 2. **Stance Classification**: Given a claim and a sentence of relevant perspective, classify whether the perspective **supports or refutes** the claim.
 
 <!-- List the materials from the header -->
 {% if page.materials %}
 <div class="alert alert-info">
-You can download the materials for this assignment here; The datasets will be downloaded via the colab notebook.
+You can download the materials for this assignment here; The datasets will be downloaded via the Colab notebook.
 <ul>
 {% for item in page.materials %}
 <li><a href="{{item.url}}">{{ item.name }}</a></li>
@@ -196,10 +201,10 @@ The goal for this part is to get yourself familiar with PyTorch/BERT through exa
 
 Follow instructions and submit your model's prediction on the test data; store the predictions in a file named `relevance_test_predictions.txt`, and submit the file. 
 
-## Part 2: DIY - Stance Classification (Optional, for 25% Extra Credit)
+## Part 2: DIY - Stance Classification (Optional, Extra Credit)
 Now that you have seen an example, and hopefully are becoming an expert of BERT, let's try to follow similar steps and tackle the stance classification. Given a claim and a relevant perspective, classify whether the perspective supports or refutes the claim. 
 
-For the most part we expect you to be re-using code from Part 1. Since this is a different task, you will be doing step 1 (generating positive and negative sentence pairs) in a slightly different way; Speicifcally  --
+For the most part we expect you to be re-using code from Part 1. Since this is a different task, you will be doing step 1 (generating positive and negative sentence pairs) in a slightly different way; Specifically  --
 
 1.   In `perspectrum_train.json`, for each given claim, both supporting and refuting perspectives have been given to you. So you don't need to do negative sampling. Instead you should take the claim + "supporting" perspective as positive sentence pair and claim with "refuting" perspective as negative pair.   
 
@@ -218,7 +223,7 @@ Here are some ideas for improvements:
 
 ## Report
 
-1. Speicify the sizes and type of the BERT model you have tried, plus the hyperparamters you chose for training. Include the performance on the dev set for each configuration, if possible. Explain your observation on which model performs better
+1. Specify the sizes and type of the BERT model you have tried, plus the hyper-parameters you chose for training. Include the performance on the dev set for each configuration, if possible. Explain your observation on which model performs better
 
 2. Using the best performing model on dev set, identify a few mistakes that the model makes on dev set. Include a few of such claim/perspective pairs in the report and briefly describe the mistake and why you think the model produces the wrong prediction.
 
