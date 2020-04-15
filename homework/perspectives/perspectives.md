@@ -231,27 +231,32 @@ For the most part we expect you to be re-using code from Part 1. Since this is a
 
 Submit your model's prediction on the test data; store the predictions in a file named `stance_test_predictions.txt`, and submit the file.
 
-## Part 3: Leaderboards
-There are leaderboards for both relevance and stance classification tasks. Please submit `relevance_test_predictions.txt` and `stance_test_predictions.txt` for entry to the leaderboard.
+## Part 3: Improving your classifier(s)
+The model setup provided in the default skeleton will not give you nice results on the test set. For this part, we would like you to implement at least **three types of modifications/additions** to the provided baseline, and **include your findings (e.g. results on dev set) in the final report**.
 
-Here are some ideas for improvements:
+There are leaderboards for both relevance and stance classification tasks. Please submit `relevance_test_predictions.txt` and (optional) `stance_test_predictions.txt`  for entry to the leaderboard, and see your score on the test set.
 
-1. Increase the number of transformer layers for BERT. In the colab notebook, we are using a mini version of BERT, which consists of 4 layers of transformer. The base version of BERT has 12 layers, which will give way better performance, at the cost of more training/evaluation time.
-2. Use other variants of BERT (E.g. ALBERT, RoBERTa). You can find a more-than-enough list of available models from the [README](https://github.com/huggingface/transformers) of huggingface transformer package.
+Here are **some ideas for improvements**:
+
+1. **Increase the number of transformer layers for BERT**. In the colab notebook, we are using a mini version of BERT, which consists of 4 layers of transformer. The base version of BERT has 12 layers, which will give way better performance, at the cost of longer training/evaluation time.
+2. **Use other variants of BERT** (E.g. ALBERT, RoBERTa). You can find a more-than-enough list of available models from the [README](https://github.com/huggingface/transformers) of huggingface transformer package.
 3. For the relevance classification task, you can adopt **better negative sampling strategies** for training -- We've previously ask you to sample negative examples randomly. For example, a better negative example would be, perspectives not related to the claim, but have significant word overlap (e.g. it's discussing similar topics, but it's not an valid argument towards the claim). 
+4. **Parameter Tuning**: In the skeleton code, we have listed a suggested range of hyperparameter (e.g. different learning rates and batch sizes). You are welcomed to try different values for each hyperparameter, and report your findings!
 
 ## Report
 
-1. Specify the sizes and type of the BERT model you have tried, plus the hyper-parameters you chose for training. Include the performance on the dev set for each configuration, if possible. Explain your observation on which model performs better
-
-2. Using the best performing model on dev set, identify a few mistakes that the model makes on dev set. Include a few of such claim/perspective pairs in the report and briefly describe the mistake and why you think the model produces the wrong prediction.
+As usual we want you to keep track of all experiments and findings in your report. But here are the list of things that we are looking for (and will grade the report on).
+1. You should make **at least three modifications/extension** to the baseline model and explain what you did. 
+2. For each modification, specify the size and the type of the BERT model you use, plus the hyper-parameters you chose for training. Include the performance on the dev set for each configuration.
+3. Using the best performing model on dev set, identify a few mistakes that the model makes on dev set. Include a few of such claim/perspective pairs in the report and briefly describe the mistake and why you think the model produces the wrong prediction.
+4. **Write a few sentences on what you think makes the Perspective Detection task challenging**. (Note that there isn't a single correct answer to the question; we are interested in knowing your perspective!)
 
 
 ## Deliverables 
 <div class="alert alert-warning" markdown="1">
 Here are the deliverables that you will need to submit:
-* You notebook code as a `.py` file. You can download your notebook as a `.py` file by going to the menu bar: "File" -> "Download .py".
-* Results on the test sets of Relevance and Stance classification task, named `relevance_test_predictions.txt` and `stance_test_predictions.txt`
+* Your notebook, downloaded and named as `perspectrum.py`. You can download your notebook as a `.py` file by going to the menu bar: "File" -> "Download .py".
+* Results on the test sets of Relevance or Stance classification task, named `relevance_test_predictions.txt` and `stance_test_predictions.txt` respectively.
 * PDF Report (called writeup.pdf)
 </div>
 
