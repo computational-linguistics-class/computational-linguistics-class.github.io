@@ -126,6 +126,8 @@ As part of his PhD research, your TA Sihao built a demonstration search engine c
 Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demonstrates the functionality of the search engine. You are also welcomed to [try the search engine yourself](https://perspectroscope.seas.upenn.edu/).
 
 
+### Learning Goals
+
 The learning goals for this assignment are: 
 - An introduction to **BERT**, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
 - Learn how to solve sentence pair **classification tasks by "fine-tuning" BERT** to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
@@ -243,7 +245,7 @@ Submit your model's prediction on the test data; store the predictions in a file
 ## Part 3: Improving your classifier(s)
 The model setup provided in the default skeleton will not give you nice results on the test set. For this part, we would like you to implement at least **three types of modifications/additions** to the provided baseline, and **include your findings (e.g. results on dev set) in the final report**.
 
-There are leaderboards for both relevance and stance classification tasks. Please submit `relevance_test_predictions.txt` and (optional) `stance_test_predictions.txt`  for entry to the leaderboard, and see your score on the test set.
+There are leaderboards for both relevance and stance classification tasks. Please submit `relevance_test_predictions.txt` (**required**) and (optional) `stance_test_predictions.txt`  for entry to the leaderboard, and see your score on the test set.
 
 Here are **some ideas for improvements**:
 
