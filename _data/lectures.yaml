@@ -528,11 +528,11 @@
   date: 2020-04-15
   live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
   slides: 21-dialog-systems-and-chatbots.pdf
-  title: Dialog Systems and Chatbots
+  title: Dialogue Systems and Chatbots
   slides_credit: 
   readings: 
     - 
-      title: Chapter 26 "Dialog Systems and Chatbots"
+      title: Chapter 26 "Dialogue Systems and Chatbots"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
 -
@@ -590,7 +590,7 @@
 -
   date: 2020-04-22
   type: homework
-  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-3">Project Milestone 3</a> or <a href="http://computational-linguistics-class.org/homework/bert/bert.html">HW11 "BERT"</a> due
+  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-3">Project Milestone 3</a> or <a href="http://computational-linguistics-class.org/homework/perspectives/perspectives.html">HW11 "Perspective Detection"</a> due
 -
   date: 2020-04-27
   live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
@@ -623,7 +623,7 @@
 -
   date: 2020-04-29
   type: homework
-  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-4">Project Milestone 4</a> or <a href="http://computational-linguistics-class.org/homework/perspectives/perspectives.html">HW12 "Perspective Detection"</a> due
+  title: <a href="http://computational-linguistics-class.org/term-project.html#milestone-4">Project Milestone 4</a> or <a href="http://computational-linguistics-class.org/homework/bert/bert.html">HW12 "BERT"</a> due
 -
   date: 2020-04-29
   title: Deadline to switch to Pass/Fail
