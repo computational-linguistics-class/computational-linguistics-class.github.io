@@ -150,8 +150,9 @@ You can download the materials for this assignment here; The datasets will be do
 </div>
 {% endif %}
 
-## Background on BERT
+## Background: BERT
 
+For this assignment, we are going to use BERT. 
 BERT is a state-of-the-art neural language model that was released in 2019 by Google Research. BERT is an acronym for Bidirectional Encoder Representations from Transformers.  It can be used as an encoder to produce sentence embeddings, and to produce context-based word embeddings.   Models trained using BERT embeddings (or variants of BERT) have been producing state-of-the-art results across most NLP task recently. 
 
 Like the word embeddings (e.g. Word2Vec, GloVe) that you have played with in a few of the past homework assignments, BERT is trained with similar, but slightly more sophisticated learning objectives -- The first objective is known as **Masked Language Modeling (MLM)**, where we randomly "mask" a certain fraction of words from a text during training and have the model predict the masked words. The second task objective **Next Sentence Prediction (NSP)** -- given two sentences, predict whether the second sentence comes after the first sentence in natural text. 
