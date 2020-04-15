@@ -95,17 +95,25 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Perspective Detection <span class="text-muted">: Assignment 11</span>
 =============================================================
 
-When you ask a question of Google in natural language it attempts to get you a single, correct answer.  This is great for questions like _what temperature is recommended for salmon?_:
+When you ask a question of Google in natural language it attempts to get you a single, correct answer.  This is great for questions like _what temperature is recommended for salmon?_, but it fails on questions for which there isn't a single correct answer like _Should uniforms be required in schools?_:
 
-<div class="text-center">
-<img src="salmon.png" alt="Q: What temperature is recommended for salmon? A: 145 degrees Fahernheit." class="img-fluid" width="500px"  />
-</div>
 
-But it fails on questions for which there isn't a single correct answer like _Should uniforms be required in schools?_:
+<table>
+  <tr>
+    <td>
+      <div class="text-center">
+      <img src="salmon.png" alt="Q: What temperature is recommended for salmon? A: 145 degrees Fahernheit." class="img-fluid" width="400px"  />
+      </div>
+  </td>
+  <td>
+    <div class="text-center">
+      <img src="school-uniforms.png" alt="Q: Should uniforms be required in schools? A: 145 degrees Fahernheit." class="img-fluid" width="400px"  />
+    </div>
+  </td>
+</tr>
+</table>
 
-<div class="text-center">
-<img src="school-uniforms.png" alt="Q: Should uniforms be required in schools? A: 145 degrees Fahernheit." class="img-fluid" width="500px"  />
-</div>
+  
 
 In questions like _Should uniforms be required in schools?_, users are seeking multiple perspectives on a topic.  Ideally, we should organize potential answers to such perspective-seeking queries into two sets: perspctives that support an idea, and perspectives that refute it.  
 
