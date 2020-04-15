@@ -106,7 +106,7 @@ When you ask a question of Google in natural language it attempts to get you a s
       </div>
   </td>
   <td>
-    <div class="text-center">
+    <div class="text-center" >
       <img src="school-uniforms.png" alt="Q: Should uniforms be required in schools? A: 145 degrees Fahernheit." class="img-fluid" width="400px"  />
     </div>
   </td>
@@ -127,8 +127,8 @@ Here is a [youtube video](https://www.youtube.com/watch?v=MXBTR1Sp3Bs) that demo
 
 
 The learning goals for this assignment are: 
-- An introduction to BERT, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
-- Learn how to solve sentence pair classification tasks by "fine-tuning" BERT to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
+- An introduction to **BERT**, which is a powerful architecture that can be used to solve many NLP tasks.  BERT is a large, pre-trained neural language model based on the Transformer architecture that can adapted to many classification tasks.
+- Learn how to solve sentence pair **classification tasks by "fine-tuning" BERT** to the task.  The process of fine-tuning adapts a general pre-trained model like BERT to a specific task that you're interested in.
 - We're going to fine-tune BERT to do two important classification tasks that play a part of the perspective search engine:
 1. **Relevance Classification**: Given a claim and a perspective sentence, classify whether the sentence presents a **relevant perspective** to the claim.
 2. **Stance Classification** (extra credit): Given a claim and a sentence of relevant perspective, classify whether the perspective **supports or refutes** the claim.
