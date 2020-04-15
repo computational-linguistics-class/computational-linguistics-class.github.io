@@ -527,7 +527,7 @@
 -
   date: 2020-04-15
   live_lecture: https://zoom.us/j/840926841?pwd=WStENWR6T1lGZGxqOHNnTlVSWGlsZz09 
-  slides: 
+  slides: 21-dialog-systems-and-chatbots.pdf
   title: Dialog Systems and Chatbots
   slides_credit: 
   readings: 
@@ -535,6 +535,19 @@
       title: Chapter 26 "Dialog Systems and Chatbots"
       authors: Jurafsky and Martin
       url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
+-
+  date: 2020-04-08
+  type: no_lecture
+  slides: old/90-guest_lecture_jacob_devlin_bert_presentations.pdf
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd53c6a8-0d0a-42b1-9b15-a9d6000a4d2a
+  title: BERT&colon; Pre-training of Deep Bidirectional Transformers for Language Understanding
+  speaker: Jacob Devlin
+  slides_credit: Jacob Devlin
+  readings: 
+    - 
+      title: BERT&colon Pre-training of Deep Bidirectional Transformers for Language Understanding
+      authors: Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
+      url: https://www.aclweb.org/anthology/N19-1423/
 -
   date: 2020-04-15
   type: homework
