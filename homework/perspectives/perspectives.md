@@ -95,7 +95,7 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Perspective Detection <span class="text-muted">: Assignment 11</span>
 =============================================================
 
-When you ask a question of Google in natural language it attempts to get you a single, correct answer.  This is great for questions like _what temperature is recommended for salmon?_, but it fails on questions for which there isn't a single correct answer like _Should uniforms be required in schools?_:
+When you ask Google question in natural language it attempts to get you a single correct answer.  This is great for questions like _What temperature is recommended for salmon?_ but it fails on questions for which there isn't a single correct answer like _Should uniforms be required in schools?_:
 
 
 <table>
