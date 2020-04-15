@@ -249,7 +249,7 @@ As usual we want you to keep track of all experiments and findings in your repor
 1. You should make **at least three modifications/extension** to the baseline model and explain what you did. 
 2. For each modification, specify the size and the type of the BERT model you use, plus the hyper-parameters you chose for training. Include the performance on the dev set for each configuration.
 3. Using the best performing model on dev set, identify a few mistakes that the model makes on dev set. Include a few of such claim/perspective pairs in the report and briefly describe the mistake and why you think the model produces the wrong prediction.
-4. **Write a few sentences on why you think the Perspective Detection task is difficult**. What makes the dataset so challenging? (Note that there isn't a single correct answer to the question; we are interested in knowing your perspective!)
+4. **Write a few sentences on what you think makes the Perspective Detection task challenging**. (Note that there isn't a single correct answer to the question; we are interested in knowing your perspective!)
 
 
 ## Deliverables 
