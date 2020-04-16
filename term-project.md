@@ -229,10 +229,7 @@ You should write a python program that will generate the output for the baseline
 <a name="milestone-3"></a>
 # Milestone 3
 
-The goals of Milestone 3 are to do a thorough literature review to determine the approaches that other researchers took to solve your problem, and to implement a published system to establish as a strong baseline for your project.
-
-
-You should re-implement the published baseline that you selected.  It's fine to use machine learning packages like pytorch or sklearn, or NLP software like AllenNLP or Spacy, but you should implement the main algorithms yourself.  You should not turn in existing code that implements the baseline.
+The goals of Milestone 3 to implement a published system to establish as a strong baseline for your project. You should re-implement the published baseline that you selected.  It's fine to use machine learning packages like pytorch or sklearn, or NLP software like AllenNLP or Spacy, but you should implement the main algorithms yourself.  You should not turn in existing code that implements the baseline.
 
 You should include a baseline.md markdown file that includes step-by-step instructions on how to run your baseline code.   Your baseline.md should also report the score for your system for your test and development data, and compare that to your random baseline.
 
