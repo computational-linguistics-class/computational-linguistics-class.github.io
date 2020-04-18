@@ -231,6 +231,8 @@ The goal for this part is to get yourself familiar with PyTorch/BERT through exa
 
 Follow instructions and submit your model's prediction on the test data; store the predictions in a file named `relevance_test_predictions.txt`, and submit the file. 
 
+**Important Note**: the labels of the test data are NOT given to you in this homework. However the helper functions will still generate a dummy label for each input sentence pair. The only way to measure the correct accuracy on test set is submitting your test results `relevance_test_predictions.txt` to Gradescope. 
+
 ## Part 2: DIY - Stance Classification (Optional, Extra Credit)
 Now that you have seen an example, and hopefully are becoming an expert of BERT, let's try to follow similar steps and tackle the stance classification. Given a claim and a relevant perspective, classify whether the perspective supports or refutes the claim. 
 
