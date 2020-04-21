@@ -11,8 +11,18 @@ submission_link:
 materials:
     - 
       name: Google Colab Notebook
-      url: https://colab.research.google.com/drive/1IFmk_xLbQ7Bb5IHIafH2R5g3Ts2YJYuK
-attribution: This assignment is based on a homework developed by Daphne Ippolito for UPenn's "Interactive Fiction and Text Generation" in Spring 2020.  It was adapted for UPenn's CIS 530 class by Sihao Chen, Arun Kirubarajan, Tatiana Tsygankova and Chris Callison-Burch in Spring 2020.
+      url: https://colab.research.google.com/drive/1HlY1rdEKqMFLtMSMcxgM3gKiQkgFxPY1
+    - 
+      name: Text Adventures Train Set
+      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_train.txt
+    - 
+      name: Text Adventures Development Set
+      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_dev.txt
+    - 
+      name: Text Adventures Test Set
+      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_test.txt
+
+attribution: This assignment was developed by Arun Kirubarajan, Tatiana Tsygankova, Sihao Chen, and Chris Callison-Burch for UPenn's CIS 530 class in Spring 2020 during the Coronavirus pandemic.
 readings:
 - 
   title: Language Models are Unsupervised Multitask Learners
@@ -53,9 +63,11 @@ Warning: this top secret assignment is not ready yet.  It may still have updates
 
 ## Introduction
 
-For this homework, we will combine ideas from the entire course: language models, deep word representations, and neural networks. In the last assignment, we got familiar with Transformer models and BERT. As a recap, Transformer models are feed-forward neural networks usually consisting of an encoder and a decoder that makes use of the attention mechanism.  
+For this homework, we will combine ideas from the entire course: language models, deep word representations, and neural networks.
 
-OpenAI’s GPT Model
+The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based off of the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to serial networks after such successes with RNNs and LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, unlocking new orders of magnitude of data to use as training data. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and in this homework, Open AI's GPT-2. 
+
+## OpenAI’s GPT Model
 However, OpenAI experimented with removing the encoder part of the network, leaving a decoder-only model. In 2018, they released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **Transfer Learning**. Recall that Transfer Learning is using knowledge gained from one problem (or training setting), and apply it to another area or domain. Finally in 2019, OpenAI released the model’s scaled-up **1.5 billion parameter** successor: **GPT-2**.  To create such a large model, OpenAI crawled and released a new dataset named **WebText**, which consists of 40 GB of high-quality, human verified text. The researchers also utilized efficient representation schemes such as Byte-Pair Encoding, which serves as a middle-layer between word-level and character-level representations. The result is an extremely impressive language model - so good that OpenAI didn’t release the trained model along with the paper in fear of individuals using it for malicious purposes.
 
 ### Generation Ability
@@ -95,12 +107,16 @@ It is easy to identify why the Civil War happened, because so many people and so
 ## Fine-Tuning GPT-2
 For this assignment, your task is to **fine-tune** a released version of GPT-2 on training data *of your choosing*. This will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Be sure to create the usual test/train split! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
 
+The provided notebook generates text by randomly sampling from the distribution over the next word given to us by the model. One extension that we commonly use to get better generations is to truncate the distribution to only consider the top $k$ words. This is called **top-k** sampling and the value of $k$ is a hyperparameter that we can choose through the process of our experiments. This strategy intuitively makes sense, since words at the bottom of the distribution (i.e. with low and near-zero probabilities) probably won't cause for better generation quality and we're better off re-distributing the probability mass to more likely candidates. 
+
 ### Tasks
-1. Fine-tune a GPT-2 model (any size is fine, but larger sizes are more fun!) on the provided text-adventure dataset using the example code. Report the perplexities before and afterwards Describe the trends of perplexity in your report.
+1. Fine-tune a GPT-2 model (any size is fine, but larger sizes are more fun!) on the provided text-adventure dataset using the example code. Report the perplexities before and afterwards Describe the trends of perplexity in your report. Generate a few samples before moving on.
 
 2. Repeat 1) using a dataset you put together. Report examples, before/after perplexities and trends.
 
-3. The skeleton code uses **top-k** sampling, with the **k** parameter set to be 50. Experiment with different sampling strategies and include examples, as well as your own qualitative assessment of the outputs in your report.
+3. The skeleton code uses **top-$k$** sampling, with the $k$ parameter set to be 50. Experiment with different sampling strategies to generate text and include examples, as well as your own qualitative assessment of the outputs in your report.
+
+4. Submit your favourite generation to Gradescope!
 
 <!-- List the materials from the header -->
 {% if page.materials %}
@@ -125,7 +141,7 @@ You can use the materials for this assignment here:
 4. Experiment with different sampling strategies, including examples of the data your model produces. Include a brief analysis of the obtained results. 
 
 ## Language Model Bias
-One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using a masked language model demo developed by TA Sihao (found here), explore the  following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence..” box, and keep the default selection as “per-token independent selections”.
+One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using a masked language model demo developed by our TA Sihao [(found here)](http://dickens.seas.upenn.edu:4001/), explore the following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence..” box, and keep the default selection as “per-token independent selections”.
 
 ### Tasks
 1. Consider the prompt: `The @ was on his way to lunch.` What are the top 5 most likely professions that the language model predicts?
