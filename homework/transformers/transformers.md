@@ -12,7 +12,7 @@ materials:
     - 
       name: Google Colab Notebook
       url: https://colab.research.google.com/drive/1IFmk_xLbQ7Bb5IHIafH2R5g3Ts2YJYuK
-attribution: This assignment was developed by Sihao Chen, Arun Kirubarajan, Tatiana Tsygankova and Chris Callison-Burch for UPenn's CIS 530 class in Spring 2020 during the Coronavirus pandemic.
+attribution: This assignment is based on a homework developed by Daphne Ippolito for UPenn's "Interactive Fiction and Text Generation" in Spring 2020.  It was adapted for UPenn's CIS 530 class by Sihao Chen, Arun Kirubarajan, Tatiana Tsygankova and Chris Callison-Burch in Spring 2020.
 readings:
 - 
   title: Language Models are Unsupervised Multitask Learners
