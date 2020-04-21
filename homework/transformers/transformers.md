@@ -68,7 +68,7 @@ For this homework, we will combine ideas from the entire course: language models
 The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based off of the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to serial networks after such successes with RNNs and LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, unlocking new orders of magnitude of data to use as training data. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and in this homework, Open AI's GPT-2. 
 
 ## OpenAI’s GPT Model
-However, OpenAI experimented with removing the encoder part of the network, leaving a decoder-only model. In 2018, they released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **Transfer Learning**. Recall that Transfer Learning is using knowledge gained from one problem (or training setting), and apply it to another area or domain. Finally in 2019, OpenAI released the model’s scaled-up **1.5 billion parameter** successor: **GPT-2**.  To create such a large model, OpenAI crawled and released a new dataset named **WebText**, which consists of 40 GB of high-quality, human verified text. The researchers also utilized efficient representation schemes such as Byte-Pair Encoding, which serves as a middle-layer between word-level and character-level representations. The result is an extremely impressive language model - so good that OpenAI didn’t release the trained model along with the paper in fear of individuals using it for malicious purposes.
+OpenAI experimented with removing the encoder part of the network, leaving a decoder-only model. In 2018, they released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **transfer learning**. Recall that transfer learning is using knowledge gained from one problem (or training setting), and applying it to another area or domain. In 2019, OpenAI released the model’s scaled-up **1.5 billion parameter** successor: **GPT-2**.  To create such a large model, OpenAI crawled and released a new dataset named **WebText**, which consists of 40 GB of high-quality, human verified text. The researchers also utilized efficient representation schemes such as Byte-Pair Encoding, which serves as a middle-layer between word-level and character-level representations. The result is an extremely impressive language model - so good that OpenAI didn’t release the trained model along with the paper in fear of individuals using it for malicious purposes.
 
 ### Generation Ability
 
@@ -105,18 +105,18 @@ It is easy to identify why the Civil War happened, because so many people and so
 ```
 
 ## Fine-Tuning GPT-2
-For this assignment, your task is to **fine-tune** a released version of GPT-2 on training data *of your choosing*. This will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Be sure to create the usual test/train split! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
+For this assignment, your task is to **fine-tune** a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. Preparing your own dataset will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Remember to create the usual train/dev/test split! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
 
 The provided notebook generates text by randomly sampling from the distribution over the next word given to us by the model. One extension that we commonly use to get better generations is to truncate the distribution to only consider the top $k$ words. This is called **top-k** sampling and the value of $k$ is a hyperparameter that we can choose through the process of our experiments. This strategy intuitively makes sense, since words at the bottom of the distribution (i.e. with low and near-zero probabilities) probably won't cause for better generation quality and we're better off re-distributing the probability mass to more likely candidates. 
 
 ### Tasks
-1. Fine-tune a GPT-2 model (any size is fine, but larger sizes are more fun!) on the provided text-adventure dataset using the example code. Report the perplexities before and afterwards Describe the trends of perplexity in your report. Generate a few samples before moving on.
+1. Fine-tune a GPT-2 model (any size is fine, but larger sizes are more fun!) on the provided text-adventure dataset using the example code. Note that training will take a while - training for one epoch using the default parameters takes approximately 25 min. Report the perplexities before and after fine-tuning and describe the trends of perplexity in your report. Generate a few samples before moving on to get a feel for the model. 
 
-2. Repeat 1) using a dataset you put together. Report examples, before/after perplexities and trends.
+2. Repeat 1) using a dataset you put together. Similarly, report perplexities before and after and a few generated samples.
 
 3. The skeleton code uses **top-$k$** sampling, with the $k$ parameter set to be 50. Experiment with different sampling strategies to generate text and include examples, as well as your own qualitative assessment of the outputs in your report.
-
-4. Submit your favourite generation to Gradescope!
+   
+4. Instead of having a leaderboard for this assignment, we will be awarding extra credit to the most subjectively interesting/funny/impressive generations. Submit your favorite 150-token generation as a PDF document on Gradescope to participate!
 
 <!-- List the materials from the header -->
 {% if page.materials %}
@@ -132,30 +132,38 @@ You can use the materials for this assignment here:
 
 ## Report
 
-1. Summarize fine-tuning results on the provided text-adventure dataset, including perplexities before fine-tuning and afterwards. Comment on the trend you observe. 
+1. Summarize fine-tuning results on the provided text-adventure dataset, including perplexities before fine-tuning and afterwards. Comment on the trend you observe. Include a few sample generations. 
 
 2. Describe the process of how you obtained your personal dataset, including any additional pre/post-processing steps that occurred. Comment on any difficulties that arose, and compare your data to the provided dataset, thinking about how you expect model results to change. 
 
-3. Summarize fine-tuning results on your personal dataset, including perplexities before fine-tuning and afterwards. Comment on how this trend differs from the results of Task 1. 
+3. Summarize fine-tuning results on your personal dataset, including perplexities before fine-tuning and afterwards. Comment on how this trend differs from the results of Task 1. Include a few sample generations.
 
 4. Experiment with different sampling strategies, including examples of the data your model produces. Include a brief analysis of the obtained results. 
 
 ## Language Model Bias
-One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using a masked language model demo developed by our TA Sihao [(found here)](http://dickens.seas.upenn.edu:4001/), explore the following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence..” box, and keep the default selection as “per-token independent selections”.
+One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using a masked language model demo developed by our TA Sihao [(found here)](http://dickens.seas.upenn.edu:4001/), explore the following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence..” box, and keep the default selection as “per-token independent selections”. In your report, include observations in response to the following mini exploration tasks. 
 
-### Tasks
+### Exploration Tasks
 1. Consider the prompt: `The @ was on his way to lunch.` What are the top 5 most likely professions that the language model predicts?
 
 2. Now consider: `The @ was on her way to lunch.` What are the top 5 most likely professions that the language model predicts? How do these compare to the previous list?
 
 3. Try doing the opposite - choose some profession, and mask the pronoun. For professions that have a clear male/female counterpart (i.e. nurse/doctor, actor/actress, etc.), note whether the predicted pronoun aligns with your notion of “male/female” roles (notice how easily we exhibit these same biases as well…). Could you find professions for which the pronoun predictions are less evidently biased?
 
-4. Now, try to change the main structure of the sentence (i.e. move it away from the lunch theme) to encourage the model to give different pronoun predictions for the same profession. What do these results tell you? Is this easy or difficult to do? Does your setup work for different professions? 
+    Now, try to change the main structure of the sentence (i.e. move it away from the lunch theme) to encourage the model to give different pronoun predictions for the same profession. What do these results tell you? Is this easy or difficult to do? Does your setup work for different professions? 
 
-5. As a final step, explore biased pronoun prediction outside the scope of professions, for example in the scope of activities (or whatever else interests you). Are there activities you expect to be more gender-neutral than they actually are based on the language model predictions? Are there any particularly surprising examples that stood out to you? Experiment to the degree you find interesting, and briefly summarize your findings in the report.
+4. As a final step, explore biased pronoun prediction outside the scope of professions, for example in the scope of activities (or whatever else interests you). Are there activities you expect to be more gender-neutral than they actually are based on the language model predictions? Are there any particularly surprising examples that stood out to you? Experiment to the degree you find interesting, and briefly summarize your findings in the report.
 
-See if you can probe the model’s tendency to generate biased or harmful text by changing the prompt used to condition the generation. This is an open problem in natural language processing research: mitigating the uncontrollability of language models.
+This is an open problem in natural language processing research: mitigating the uncontrollability of language models.
 
+## Deliverables 
+<div class="alert alert-warning" markdown="1">
+Here are the deliverables that you will need to submit:
+* Code (as a downloaded Colab notebook)
+* Your compiled dataset, including train/dev/test splits
+* PDF report
+* One favourite 150-token generation sample
+</div>
 
 ## Recommended readings
 
