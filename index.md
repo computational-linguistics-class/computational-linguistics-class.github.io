@@ -12,7 +12,11 @@ CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using 
 
 After you've added yourself to the waitlist, the instructor can issue you a permit.  You will receive an email saying permit available. You will receive another email when the permit is issued. At that point, you may register on CoursesInTouch. 
 </div>
-	
+
+<div class="alert alert-success" markdown="1">
+Clayton Greenberg is looking for students to be TAs for CIS 530 in Fall 2020.  If you'd like [to apply to be a TA, please fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSeSoyVCapBpYO10Awwu92ughYRVvm5hQOddys6Yxv_iRQdMVQ/viewform).  The deadline for applications is April 30, 2020 11:59pm Eastern.
+</div>
+
 
 <!--
 
