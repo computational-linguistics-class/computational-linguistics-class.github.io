@@ -560,6 +560,11 @@
   speaker: Daphne Ippolito
   slides_credit: Daphne Ippolito
   readings:
+    - 
+      title: Text Generation with Neural Networks
+      authors: Daphne Ippolito
+      url: http://http://computational-linguistics-class.org/readings/Text-Generation-with-Neural Networks.pdf
+      optional: true
 -
   date: 2020-04-20
   type: exam 
@@ -580,13 +585,18 @@
       url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
 -
   date: 2020-04-22
-  title: Coreference Resolution
-  slides_credit:   
+  recording: 
+  title: The Transformer Model
+  slides: 22-text_generation_with_neural_networks.pdf
+  speaker: Daphne Ippolito
+  slides_credit: Daphne Ippolito
   readings: 
     - 
-      title: Chapter 22 "Coreference Resolution"
-      authors: Jurafsky and Martin
-      url: https://web.stanford.edu/~jurafsky/slp3/22.pdf
+      title: Attention is All You Need
+      authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser and Illia Polosukhin
+      url: https://papers.nips.cc/paper/7181-attention-is-all-you-need
+      optional: true
+
 -
   date: 2020-04-22
   type: homework
