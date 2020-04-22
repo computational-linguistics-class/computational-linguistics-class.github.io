@@ -22,7 +22,7 @@ materials:
       name: Text Adventures Test Set
       url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_test.txt
 
-attribution: This assignment was developed by Arun Kirubarajan, Tatiana Tsygankova, Sihao Chen, and Chris Callison-Burch for UPenn's CIS 530 class in Spring 2020 during the Coronavirus pandemic.
+attribution: This assignment was created by Daphne Ippolito for UPenn's "Interactive Fiction and Text Generation" course in Spring 2020.  It was adapted for UPenn's CIS 530 course by Arun Kirubarajan, Tatiana Tsygankova, Sihao Chen, and Chris Callison-Burch in Spring 2020 during the Coronavirus pandemic.
 readings:
 - 
   title: Language Models are Unsupervised Multitask Learners
