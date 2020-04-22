@@ -1,7 +1,7 @@
 ---
 layout: default
 img: depression.png
-caption: Positive Attitdue 
+caption: Positive Attitude 
 img_link: https://xkcd.com/828/
 title: Homework 9 - Classification of Depression
 active_tab: homework
@@ -10,7 +10,7 @@ due_date: 2020-04-08T11:59:00EST
 attribution: This assignment was designed by students in Penn's CIS 530 in the Spring of 2018 with help from with help from Anne Cocos and Reno Kriz.  It is based on the [CLPsych shared task from 2015](https://www.cs.jhu.edu/~mdredze/publications/clpsych15_shared_task.pdf) by Glen Coppersmith, Mark Dredze, Craig Harman, Kristy Hollingshead and Meg Mitchell.
 readings:
 -
-   title: Proceedings of the Fourth Workshop on Computaitonal Linguistics and Clinical Psychology (CLPsych) -- From Linguistic Signal to Clinical Reality
+   title: Proceedings of the Fourth Workshop on Computational Linguistics and Clinical Psychology (CLPsych) -- From Linguistic Signal to Clinical Reality
    venue: CLPsych
    type: workshop
    year: 2015
