@@ -5,7 +5,7 @@ caption: Chatbots are getting better
 img_link: https://xkcd.com/948/
 title: HW12 - Generating Text with Large Pre-Trained Language Models
 active_tab: homework
-release_date: 2020-04-23
+release_date: 2020-04-22
 due_date: 2020-04-29T11:59:59EDT
 submission_link: 
 materials:
@@ -141,14 +141,14 @@ They were concerned enough that they labeled GPT-2 "too dangerous to release", a
 
 ## Part 1: Text Generation with GPT-2 and HuggingFace
 
-We have provided a Google Colab notebook that walks you through the process of f**fine-tuning** GPT-2 to generate text to be like training examples that you provide.  We will use the [Transformers library from HuggingFace](https://transformer.huggingface.co), which provide support for many Transformer-based language models like GPT-2, BERT, and variants of BERT. 
+We have provided a Google Colab notebook that walks you through the process of **fine-tuning** GPT-2 to generate text to be like training examples that you provide.  We will use the [Transformers library from HuggingFace](https://transformer.huggingface.co), which provide support for many Transformer-based language models like GPT-2, BERT, and variants of BERT. 
 
 
-<div class="alert alert-info">
-Fine tuning GPT-2 can take a long time on Colab.  You might consider upgrading to [Colab Pro](https://colab.research.google.com/signup), which costs $10/month. 
+<div class="alert alert-warning" markdown="1">
+Fine tuning the full GPT-2 model can take a long time on Colab.  You might consider upgrading to [Colab Pro](https://colab.research.google.com/signup), which costs $10/month. 
 </div>
 
-For this assignment, your task is going to **fine-tune** a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. The data set we have provided for you is based on stories in the style of Choose Your Own Adventure books that we downloaded from [chooseyourstory.com](http://chooseyourstory.com).  This data was used to train a super-cool AI based text-adventure game called [AI Dungeon](https://play.aidungeon.io).  CCB is kind of obsessed with this thing.  
+For this assignment, your task is going to fine-tune a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. The data set we have provided for you is based on stories in the style of Choose Your Own Adventure books that we downloaded from [chooseyourstory.com](http://chooseyourstory.com).  This data was used to train a super-cool AI based text-adventure game called [AI Dungeon](https://play.aidungeon.io).  CCB is kind of obsessed with this thing.  
 
 In addition to fine-tuning to our text adventure data, we're asking to to create your own data set.  It can be anything you like –*Harry Potter fan fiction, Shakespeare, music lyrics*– be creative and have fun. Preparing your own dataset will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Remember to create the usual train/dev/test split for the data that you create! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
 
@@ -159,7 +159,7 @@ The provided notebook generates text by randomly sampling the next word in propo
 
 2. Repeat 1) using a dataset you put together. Similarly, report perplexities before and after and a few generated samples.
 
-3. The skeleton code uses **top-$k$** sampling, with the $k$ parameter set to be 50. Experiment with different sampling strategies to generate text and include examples, as well as your own qualitative assessment of the outputs in your report.
+3. The skeleton code uses *top-$k$* sampling, with the $k$ parameter set to be 50. Experiment with different sampling strategies to generate text and include examples, as well as your own qualitative assessment of the outputs in your report.
    
 4. Instead of having a leaderboard for this assignment, we will be awarding extra credit to the most subjectively interesting/funny/impressive generations. Submit your favorite 150-token generation as a PDF document on Gradescope to participate!
 
@@ -188,7 +188,7 @@ You can use the materials for this assignment here:
 ## Part 2: Language Model Bias
 One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using [this masked language model demo developed by our TA Sihao](http://dickens.seas.upenn.edu:4001/), explore the following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence.” box, and keep the default selection as “per-token independent selections”. In your report, include observations in response to the following mini exploration tasks. 
 
-The demo visualizes the Masked LM objective of BERT. Given a input sentence, with some of the tokens masked/hidden from BERT, BERT will try to predict the likely words/sub-words for these positions.  Here's what the demo looks like: 
+The demo visualizes the Masked LM objective of BERT. Given a input sentence, with some of the tokens masked or hidden, BERT will try to predict the likely words/sub-words for these positions.  Here's what the demo looks like: 
 
 <div class="text-center" >
 <img src="demo-interface.jpg" alt="An example of a masked language model's predictions" class="img-fluid" width="500px"  />
