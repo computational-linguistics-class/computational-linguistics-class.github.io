@@ -6,7 +6,7 @@ img_link: https://xkcd.com/1432/
 title: HW11 - Perspective Detection
 active_tab: homework
 release_date: 2020-04-15
-due_date: 2020-04-22T11:59:59EDT
+due_date: 2020-04-22T23:59:59EDT
 submission_link: 
 attribution: This assignment was developed by Sihao Chen and Chris Callison-Burch for UPenn's CIS 530 class in Spring 2020 during the Coronavirus pandemic.
 materials:
