@@ -1,6 +1,6 @@
 ---
 layout: default
-img: chatbot-3.png
+img: chatbot-panel-3.png
 caption: Chatbots are getting better 
 img_link: https://xkcd.com/948/
 title: Language Model Fine-Tuning
