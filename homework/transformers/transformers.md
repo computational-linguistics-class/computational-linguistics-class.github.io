@@ -1,8 +1,8 @@
 ---
 layout: default
-img: bert.png
-caption: Models like BERT and GPT-2 are fun!
-img_link: https://muppet.fandom.com/wiki/Bert  
+img: chatbots.png
+caption: Chatbots are getting better 
+img_link: https://xkcd.com/948/
 title: Language Model Fine-Tuning
 active_tab: homework
 release_date: 2020-04-22
@@ -66,25 +66,27 @@ In 2018, OpenAI released a very impressive language model named **GPT**, which s
 
 In 2019, OpenAI released a scaled-up version of their language model with an insane **1.5 billion parameters**, called **GPT-2**.  To train such a large model, OpenAI crawled 40GB worth of text from the web (roughly 20,000,000,000 words). To deal with out of vocabulary and rare words, the researchers used a multiple layers of from word-level  representations and character-level representations, with word fragments like those produced by Byte-Pair Encoding as a middle-layer. 
 
-The result is an extremely impressive language model that can generate text that often sounds so plausible that it seems like it might have been written by a human.  Here is an examples of what GPT-2 can generate, taken from [OpenAI’s release post](https://openai.com/blog/better-language-models/):
+
+### Generation Ability
+
+GPT-2 is an extremely impressive language model that can generate text that often sounds so plausible that it seems like it might have been written by a human.  Here is an examples of what GPT-2 can generate, taken from [OpenAI’s release post](https://openai.com/blog/better-language-models/):
 
 **Human-Written Prompt:**
 > “Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today.”
 
 **Model Continuation:**
-```
-The 19-year-old singer was caught on camera being escorted out of the store by security guards.
+> The 19-year-old singer was caught on camera being escorted out of the store by security guards.
+> 
+> The singer was wearing a black hoodie with the label ‘Blurred Lines’ on the front and ‘Fashion Police’ on the back.
+> 
+> Scroll down for video
+> 
+> Shoplifting: Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today (pictured)
+> 
+> The singer was also wearing a pair of black-rimmed glasses, a black jacket, black jeans and black sandals.
+> 
+> She was carrying a pair of black and white striped gloves and a small black bag.
 
-The singer was wearing a black hoodie with the label ‘Blurred Lines’ on the front and ‘Fashion Police’ on the back.
-
-Scroll down for video
-
-Shoplifting: Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today (pictured)
-
-The singer was also wearing a pair of black-rimmed glasses, a black jacket, black jeans and black sandals.
-
-She was carrying a pair of black and white striped gloves and a small black bag.
-```
 
 
 <!--
@@ -100,10 +102,15 @@ It is easy to identify why the Civil War happened, because so many people and so
 
 -->
 
+(To be clear: Miley Cyrus was never actually arrested for shoplifting).  The quality of the model's output was so good, that the researchers at OpenAI were worried that in addition to positive applications, it might be used for malicious purposes like generating fake news, impersonating people online, creating abusive or fake content to post on social media, or automating spam and phishing scams. In a [demo to Wired Magazine](https://www.wired.com/story/ai-text-generator-too-dangerous-to-make-public/), the reporter typed in “Hillary Clinton and George Soros” and GPT-2 generated: 
+> ... are a perfect match, and their agenda appears to be to create a political movement where Soros and his political machine and Clinton are two of the only major players. This is the first time Soros and Clinton have been caught on tape directly colluding in promoting the same false narrative. One of the key revelations in the leaked audio was Clinton's admission to a Russian banker that she knew about the Uranium One deal before it was approved by Congress. Clinton was shown sharing the same talking points that were originally drafted by a Fusion GPS contractor hired by an anti-Trump Republican donor. The leaked audio is the clearest evidence yet that the Clinton campaign and the Hillary Foundation colluded with Fusion GPS to manufacture propaganda against President Trump.
+```
 
-### Generation Ability
+They were concerned enough that they labeled GPT-2 "too dangerous to release", and OpenAI initially refused to release their dataset, training code, or GPT-2 model weights.  Eventually, GPT-2 was released. 
 
 
+
+and it now has some really interesting applications including being used in [text adventure games](https://play.aidungeon.io). 
 
 
 ## Fine-Tuning GPT-2
