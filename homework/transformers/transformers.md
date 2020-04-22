@@ -87,7 +87,7 @@ The current state-of-the-art models for a variety of natural language processing
 ### Learning Goals
 
 The learning goals for this assignment are: 
-- An introduction to **GPT-2**, which is a large-scale language model that can be used to generate text that often sounds like it was written by a human.
+- An introduction to GPT-2, which is a large-scale language model that can be used to generate text that often sounds like it was written by a human.
 - Learn to use the HuggingFace package to fine-tune GPT-2 to generate text that sounds like it was comes from a domain of interest.
 - Examine the biases that are present in large-scale language models by looking at what BERT predicts for masked words when gendered pronouns or certain jobs are mentioned in a sentence. 
 
