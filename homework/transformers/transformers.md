@@ -3,9 +3,9 @@ layout: default
 img: chatbot-panel-3.png
 caption: Chatbots are getting better 
 img_link: https://xkcd.com/948/
-title: Language Model Fine-Tuning
+title: HW12 - Generating Text with Large Pre-Trained Language Models
 active_tab: homework
-release_date: 2020-04-22
+release_date: 2020-04-23
 due_date: 2020-04-29T11:59:59EDT
 submission_link: 
 materials:
@@ -38,6 +38,13 @@ readings:
    type: paper
    url: https://www.aclweb.org/anthology/N19-1423/
    abstract: We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).
+-
+   title: Automatic Detection of Generated Text is Easiest when Humans are Fooled
+   authors: Daphne Ippolito, Daniel Duckworth, Chris Callison-Burch, Douglas Eck
+   venue: ACL
+   type: paper
+   url: https://www.cis.upenn.edu/~ccb/publications/automatic-detection-of-generated-text-is-easiest-when-humans-are-fooled.pdf
+   abstract: With the advent of transformer-based generative models with a billion parameters or more, it is now possible to automatically generate vast amounts of human-sounding text. One would like both humans and automatic discriminators to be capable of detecting generated text, but humans and machines rely on different cues to make their decisions. Existing decoding methods have primarily optimized for fooling humans. Here, we perform careful benchmarking and analysis of three popular sampling-based decoding strategies%colon; top-k, nucleus sampling, and untruncated random sampling. Though both human and automatic detector performance improve with longer excerpt length, even multi-sentence excerpts can fool expert human raters over 30% of the time. Top-k sampling is rated as most human-like by humans, but it is by far the easiest automatic detection task because of differences in its unigram distribution. Our findings reveal the importance of using both human and automatic detectors to assess the humanness of text generation systems.
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -54,10 +61,10 @@ Warning: this top secret assignment is out of date.  It may still need to be upd
 This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.due_date | date: "%A, %B %-d, %Y" }}.
 </div>
 
-Generating with Large Pre-Trained Language Models<span class="text-muted"> : Assignment 12</span>
+Generating Text with Large Pre-Trained Language Models<span class="text-muted"> : Assignment 12</span>
 =============================================================
 
-For this homework, we will combine ideas from the entire course: language models, vector-based word representations, and neural networks.  We'll be using large, pre-trained language models to generate text. 
+For this homework, we will combine ideas from the entire class: language models, vector-based word representations, and neural networks.  We'll be using large, pre-trained language models to generate text. 
 
 The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based on the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to feed-forward networks after such success with recurrent neural networks and variants like LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, allowing orders of magnitude more training data to be used. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and Open AI's GPT-2. 
 
@@ -103,11 +110,7 @@ It is easy to identify why the Civil War happened, because so many people and so
 > ... are a perfect match, and their agenda appears to be to create a political movement where Soros and his political machine and Clinton are two of the only major players. This is the first time Soros and Clinton have been caught on tape directly colluding in promoting the same false narrative. One of the key revelations in the leaked audio was Clinton's admission to a Russian banker that she knew about the Uranium One deal before it was approved by Congress. Clinton was shown sharing the same talking points that were originally drafted by a Fusion GPS contractor hired by an anti-Trump Republican donor. The leaked audio is the clearest evidence yet that the Clinton campaign and the Hillary Foundation colluded with Fusion GPS to manufacture propaganda against President Trump.
 ```
 
-They were concerned enough that they labeled GPT-2 "too dangerous to release", and OpenAI initially refused to release their dataset, training code, or GPT-2 model weights.  Eventually, GPT-2 was released. 
-
-
-
-and it now has some really interesting applications including being used in [text adventure games](https://play.aidungeon.io). 
+They were concerned enough that they labeled GPT-2 "too dangerous to release", and OpenAI initially refused to release their dataset, training code, or GPT-2 model weights.  OpenAI decided to release in a delayed, phased fashion so that researchers could spend time working on automatic detection of generated text.
 
 
 ## How to Generate with GPT-2
@@ -150,6 +153,16 @@ You can use the materials for this assignment here:
 
 ## Part 2: Language Model Bias
 One problem with machine learning models that are trained on large internet-based text corpora is that they exhibit biases that exist in the training data, for example gender bias. In this task, you will get the chance to uncover some of these biases on your own. Using a masked language model demo developed by our TA Sihao [(found here)](http://dickens.seas.upenn.edu:4001/), explore the following questions. In order to use the demo, you need to copy the prompt into the “Mandatory sentence.” box, and keep the default selection as “per-token independent selections”. In your report, include observations in response to the following mini exploration tasks. 
+
+The demo visualizes the Masked LM objective of BERT. Given a input sentence, with some of the tokens masked/hidden from BERT, BERT will try to predict the likely words/sub-words for these positions.
+
+Each column shows a list predicted tokens for the word position, along with the predicted score/probability. To see the predcitions, you would need to input a sentence in the "Mandatory sentence" field.  The Optional Sentence is the second sentence that you could input to BERT, separated by the "[SEP]" token. The format is designed for sentence pair classification tasks (e.g. HW11).
+
+You may notice that the BERT tokenizer adds a few special tokens to the input --
+* "@" is a speical mask token, for which you want the models to predict on. Notice that even without the mask token, you can get predictions at each word position as well. However, since the model can see the actual token if you don't mask it, the prediction will be biased towards it.
+* In the beginning of every input example, you will see a "[CLS]" token, which is a placeholder for class labels. In case you are using BERT for classification tasks (e.g. sentence pair classification tasks in HW11), this will be replaced by the corresponding label for each input example.
+* "[SEP]" is a special token that indicates the start/end of sentence. A special token is needed because period (".") does not always mark the end of a sentence (e.g. there are periods in Acronyms).
+* You may have seen incomplete tokens which start with "##". This is a special tokenization technique called word-piece or byte-pair encoding (A good explanation of it can be found [here](https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10)). It is designed to use the morphology of out-of-vocabulary words to induce their semantics. 
 
 ### Your Tasks
 
