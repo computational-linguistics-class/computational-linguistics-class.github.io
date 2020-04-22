@@ -27,7 +27,7 @@ readings:
 - 
   id: language_models_are_unsupervised_multitask_learners
   title: Language Models are Unsupervised Multitask Learners
-  authors: Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 
+  authors: Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever 
   venue: OpenAI Blog
   type: paper
   url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
@@ -48,6 +48,18 @@ readings:
    type: paper
    url: https://www.cis.upenn.edu/~ccb/publications/automatic-detection-of-generated-text-is-easiest-when-humans-are-fooled.pdf
    abstract: With the advent of transformer-based generative models with a billion parameters or more, it is now possible to automatically generate vast amounts of human-sounding text. One would like both humans and automatic discriminators to be capable of detecting generated text, but humans and machines rely on different cues to make their decisions. Existing decoding methods have primarily optimized for fooling humans. Here, we perform careful benchmarking and analysis of three popular sampling-based decoding strategies%colon; top-k, nucleus sampling, and untruncated random sampling. Though both human and automatic detector performance improve with longer excerpt length, even multi-sentence excerpts can fool expert human raters over 30% of the time. Top-k sampling is rated as most human-like by humans, but it is by far the easiest automatic detection task because of differences in its unigram distribution. Our findings reveal the importance of using both human and automatic detectors to assess the humanness of text generation systems.
+- 
+  id: illustrated-gpt2
+  title: The Illustrated GPT-2 (Visualizing Transformer Language Models)
+  authors: Jay Alammar
+  url: http://jalammar.github.io/illustrated-gpt2/
+  venue: Blog post
+- 
+  id: illustrated-bert
+  title: The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)
+  authors: Jay Alammar
+  url: http://jalammar.github.io/illustrated-bert/
+  venue: Blog post
 ---
 
 <!-- Check whether the assignment is up to date -->
@@ -67,16 +79,27 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Generating Text with Large Pre-Trained Language Models<span class="text-muted"> : Assignment 12</span>
 =============================================================
 
-For this homework, we will combine ideas from the entire class: language models, vector-based word representations, and neural networks.  We'll be using large, pre-trained language models to generate text. 
+For this homework, we will combine ideas from the entire class: language models, vector-based word representations, and neural networks.  We'll be using large, pre-trained language models to generate text, and studying some of the biases that get encoded in to these kinds of models. 
 
 The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based on the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to feed-forward networks after such success with recurrent neural networks and variants like LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, allowing orders of magnitude more training data to be used. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and Open AI's GPT-2. 
 
-## Part 1: Generation with GPT-2
-In 2018, OpenAI released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **transfer learning**. Transfer learning is using knowledge gained from one problem (or training setting), and applying it to another area or domain. The idea of transfer learning for NLP, is that we can train a language model on general texts, and then adapt it to use it for a specific task or domain that we're interested in.
 
-In 2019, OpenAI released a scaled-up version of their language model with an insane **1.5 billion parameters**, called **GPT-2**.  To train such a large model, OpenAI crawled 40GB worth of text from the web (roughly 20,000,000,000 words). To deal with out of vocabulary and rare words, the researchers used a multiple layers of from word-level  representations and character-level representations, with word fragments like those produced by Byte-Pair Encoding as a middle-layer. 
+### Learning Goals
 
-GPT-2 is an extremely impressive language model that can generate text that often sounds so plausible that it seems like it might have been written by a human.  Here is an examples of what GPT-2 can generate, taken from [OpenAI’s release post](https://openai.com/blog/better-language-models/):
+The learning goals for this assignment are: 
+- An introduction to **GPT-2**, which is a large-scale language model that can be used to generate text that often sounds like it was written by a human.
+- Learn to use the HuggingFace package to fine-tune GPT-2 to generate text that sounds like it was comes from a domain of interest.
+- Examine the biases that are present in large-scale language models by looking at what BERT predicts for masked words when gendered pronouns or certain jobs are mentioned in a sentence. 
+
+
+## Background: GPT-2
+In 2018, OpenAI released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **transfer learning**. Transfer learning is using knowledge gained from one problem (or training setting), and applying it to another area or domain. The idea of transfer learning for NLP, is that we can train a language model on general texts, and then adapt it to use it for a specific task or domain that we're interested in.  This process is also called **fine-tuning**.
+
+In 2019, OpenAI released a scaled-up version of their language model with an insane **1.5 billion parameters**, called **GPT-2**.  To train such a large model, OpenAI crawled 40GB worth of text from the web (roughly 20,000,000,000 words). 
+<!--
+To deal with out of vocabulary and rare words, the model incorporates multiple layers of representation from word-level to character-level representations, with word fragments like those produced by Byte-Pair Encoding as a middle-layer. 
+-->
+GPT-2 is an extremely impressive language model that can generate text that often sounds so plausible that it seems like it might have been written by a human.  Here is an example of what GPT-2 can generate, taken from [OpenAI’s blog post](https://openai.com/blog/better-language-models/):
 
 **Human-Written Prompt:**
 > “Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today.”
@@ -110,16 +133,24 @@ It is easy to identify why the Civil War happened, because so many people and so
 -->
 
 (To be clear: Miley Cyrus was never actually arrested for shoplifting).  The quality of the model's output was so good, that the researchers at OpenAI were worried that in addition to positive applications, it might be used for malicious purposes like generating fake news, impersonating people online, creating abusive or fake content to post on social media, or automating spam and phishing scams. In a [demo to Wired Magazine](https://www.wired.com/story/ai-text-generator-too-dangerous-to-make-public/), the reporter typed in “Hillary Clinton and George Soros” and GPT-2 generated a crazy rant with lots of conspiracy theories: 
-> ... are a perfect match, and their agenda appears to be to create a political movement where Soros and his political machine and Clinton are two of the only major players. This is the first time Soros and Clinton have been caught on tape directly colluding in promoting the same false narrative. One of the key revelations in the leaked audio was Clinton's admission to a Russian banker that she knew about the Uranium One deal before it was approved by Congress. Clinton was shown sharing the same talking points that were originally drafted by a Fusion GPS contractor hired by an anti-Trump Republican donor. The leaked audio is the clearest evidence yet that the Clinton campaign and the Hillary Foundation colluded with Fusion GPS to manufacture propaganda against President Trump.
+> Hillary Clinton and George Soros are a perfect match, and their agenda appears to be to create a political movement where Soros and his political machine and Clinton are two of the only major players. This is the first time Soros and Clinton have been caught on tape directly colluding in promoting the same false narrative. One of the key revelations in the leaked audio was Clinton's admission to a Russian banker that she knew about the Uranium One deal before it was approved by Congress. Clinton was shown sharing the same talking points that were originally drafted by a Fusion GPS contractor hired by an anti-Trump Republican donor. The leaked audio is the clearest evidence yet that the Clinton campaign and the Hillary Foundation colluded with Fusion GPS to manufacture propaganda against President Trump.
 
 
 They were concerned enough that they labeled GPT-2 "too dangerous to release", and OpenAI initially refused to release their dataset, training code, or GPT-2 model weights.  OpenAI decided to release in a delayed, phased fashion so that researchers could spend time working on automatic detection of generated text.
 
 
-## How to Generate with GPT-2
+## Part 1: Text Generation with GPT-2 and HuggingFace
+
+We have provided a Google Colab notebook that walks you through the process of f**fine-tuning** GPT-2 to generate text to be like training examples that you provide.  We will use the [Transformers library from HuggingFace](https://transformer.huggingface.co), which provide support for many Transformer-based language models like GPT-2, BERT, and variants of BERT. 
 
 
-For this assignment, your task is going to **fine-tune** a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. Preparing your own dataset will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Remember to create the usual train/dev/test split for the data that you create! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
+<div class="alert alert-info">
+Fine tuning GPT-2 can take a long time on Colab.  You might consider upgrading to [Colab Pro](https://colab.research.google.com/signup), which costs $10/month. 
+</div>
+
+For this assignment, your task is going to **fine-tune** a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. The data set we have provided for you is based on stories in the style of Choose Your Own Adventure books that we downloaded from [chooseyourstory.com](http://chooseyourstory.com).  This data was used to train a super-cool AI based text-adventure game called [AI Dungeon](https://play.aidungeon.io).  CCB is kind of obsessed with this thing.  
+
+In addition to fine-tuning to our text adventure data, we're asking to to create your own data set.  It can be anything you like –*Harry Potter fan fiction, Shakespeare, music lyrics*– be creative and have fun. Preparing your own dataset will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Remember to create the usual train/dev/test split for the data that you create! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
 
 The provided notebook generates text by randomly sampling the next word in proportion to its probability according to the model. One extension that we commonly use to get better generations is to truncate the distribution to only consider the top $k$ words. This is called **top-k** sampling and the value of $k$ is a hyperparameter that we can choose through the process of our experiments. This strategy intuitively makes sense, since words at the bottom of the distribution (i.e. with low and near-zero probabilities) probably won't cause for better generation quality and we're better off re-distributing the probability mass to more likely candidates. 
 
