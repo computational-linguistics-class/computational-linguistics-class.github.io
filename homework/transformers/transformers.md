@@ -57,21 +57,21 @@ This assignment is due before {{ page.due_date | date: "%I:%M%p" }} on {{ page.d
 Large Pre-Trained Language Models<span class="text-muted">: Assignment 12</span>
 =============================================================
 
-For this homework, we will combine ideas from the entire course: language models, vector-based word representations, and neural networks.
+For this homework, we will combine ideas from the entire course: language models, vector-based word representations, and neural networks.  We'll be using large, pre-trained language models to generate text. 
 
-The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based on the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to feed-forward networks after such successes with recurrent neural networks and variants like LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, allowing orders of magnitude more training data to be used. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and Open AI's GPT-2. 
+The current state-of-the-art models for a variety of natural language processing tasks belong to the **Transformer Family**, which are models based on the Transformer architecture. The Transformer can be thought of as a big feed-forward network, with some fancy bells and whistles such as the attention mechanism. You might be wondering: why are we moving back to feed-forward networks after such success with recurrent neural networks and variants like LSTMs? It turns out that although recurrent models are naturally poised to handle sequences as inputs, their non-serial nature makes them difficult to train in a distributed/parallel fashion. This means that serial networks can be trained faster, allowing orders of magnitude more training data to be used. Some examples of notable state-of-the-art Transformer based models are Google's BERT, and Open AI's GPT-2. 
 
 ## OpenAI’s GPT Model
-OpenAI experimented with removing the encoder part of the network, leaving a decoder-only model. In 2018, they released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **transfer learning**. Recall that transfer learning is using knowledge gained from one problem (or training setting), and applying it to another area or domain. In 2019, OpenAI released the model’s scaled-up **1.5 billion parameter** successor: **GPT-2**.  To create such a large model, OpenAI crawled and released a new dataset named **WebText**, which consists of 40 GB of high-quality, human verified text. The researchers also used efficient representation schemes such as Byte-Pair Encoding, which serves as a middle-layer between word-level and character-level representations. The result is an extremely impressive language model - so good that OpenAI initially didn’t release the trained model along with the paper in fear of individuals using it for malicious purposes, like spreading misinformation.  Wired Magazine wrote an article showing how [GPT2 could generate propaganda about Hillary Clinton and George Soros](https://www.wired.com/story/ai-text-generator-too-dangerous-to-make-public/). 
+In 2018, OpenAI released a very impressive language model named **GPT**, which stands for *Generative Pre-Training* as the model makes heavy use of **transfer learning**. Transfer learning is using knowledge gained from one problem (or training setting), and applying it to another area or domain. The idea of transfer learning for NLP, is that we can train a language model on general texts, and then adapt it to use it for a specific task or domain that we're interested in.
 
-### Generation Ability
+In 2019, OpenAI released a scaled-up version of their language model with an insane **1.5 billion parameters**, called **GPT-2**.  To train such a large model, OpenAI crawled 40GB worth of text from the web (roughly 20,000,000,000 words). To deal with out of vocabulary and rare words, the researchers used a multiple layers of from word-level  representations and character-level representations, with word fragments like those produced by Byte-Pair Encoding as a middle-layer. 
 
-Here are some examples of it’s generation, taken from [OpenAI’s release post](https://openai.com/blog/better-language-models/):
+The result is an extremely impressive language model that can generate text that often sounds so plausible that it seems like it might have been written by a human.  Here is an examples of what GPT-2 can generate, taken from [OpenAI’s release post](https://openai.com/blog/better-language-models/):
 
 **Human-Written Prompt:**
 > “Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today.”
 
-**Model Output:**
+**Model Continuation:**
 ```
 The 19-year-old singer was caught on camera being escorted out of the store by security guards.
 
@@ -81,13 +81,13 @@ Scroll down for video
 
 Shoplifting: Miley Cyrus was caught shoplifting from Abercrombie and Fitch on Hollywood Boulevard today (pictured)
 
-The singer was wearing a black hoodie with the label ‘Blurred Lines’ on the front and ‘Fashion Police’ on the back
-
 The singer was also wearing a pair of black-rimmed glasses, a black jacket, black jeans and black sandals.
 
 She was carrying a pair of black and white striped gloves and a small black bag.
 ```
 
+
+<!--
 **Human-Written Prompt:**
 > “For today’s homework assignment, please describe the reasons for the US Civil War.”
 
@@ -97,6 +97,14 @@ By Donny Ferguson
 
 It is easy to identify why the Civil War happened, because so many people and so many books and so much television and films tell us that it was the cause, that it has something to do with race or economics or religion. There is much agreement that it was essentially a war of slavery on behalf of capitalism, about a century of slavery. But that’s not what most people think of when they think of the Civil War. Many people think of the war as about states rights. You’re not wrong about that, but it’s kind of misleading to say that the Civil War was a conflict between states’ rights and federalism. So let’s try again. What’s the idea that has inspired so many people to go onto the battlefields of Gettysburg and Antietam and Gettysberg and Petersburg and Fredericksburg? The American idea of the republic--a notion of limited government--is a great part of the history.
 ```
+
+-->
+
+
+### Generation Ability
+
+
+
 
 ## Fine-Tuning GPT-2
 For this assignment, your task is to **fine-tune** a released version of GPT-2 on two datasets: a text adventure set that we give you, and on a dataset *of your own choosing*. Preparing your own dataset will involve you downloading/cleaning text from the internet, or creating the dataset yourself. Remember to create the usual train/dev/test split for the data that you create! Include your dataset along with your submission on Gradescope, and describe the process of designing your dataset in your report.
