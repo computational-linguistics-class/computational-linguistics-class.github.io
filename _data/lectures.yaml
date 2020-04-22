@@ -561,9 +561,24 @@
   slides_credit: Daphne Ippolito
   readings:
     - 
-      title: Text Generation with Neural Networks
-      authors: Daphne Ippolito
-      url: http://http://computational-linguistics-class.org/readings/Text-Generation-with-Neural Networks.pdf
+      title: Attention is All You Need
+      authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser and Illia Polosukhin
+      url: https://papers.nips.cc/paper/7181-attention-is-all-you-need
+      optional: true
+    - 
+      title: The Illustrated Transformer 
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-transformer/
+      optional: true
+    - 
+      title: The Illustrated GPT-2 (Visualizing Transformer Language Models)
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-gpt2/
+      optional: true
+    - 
+      title: The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-bert/
       optional: true
 -
   date: 2020-04-20
@@ -585,7 +600,7 @@
       url: https://web.stanford.edu/~jurafsky/slp3/26.pdf
 -
   date: 2020-04-22
-  recording: 
+  recording: https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=616ae7c5-492b-4f32-a90b-aba5014c793f
   title: The Transformer Model
   slides: 22-text_generation_with_neural_networks.pdf
   speaker: Daphne Ippolito
@@ -596,7 +611,21 @@
       authors: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser and Illia Polosukhin
       url: https://papers.nips.cc/paper/7181-attention-is-all-you-need
       optional: true
-
+    - 
+      title: The Illustrated Transformer 
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-transformer/
+      optional: true
+    - 
+      title: The Illustrated GPT-2 (Visualizing Transformer Language Models)
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-gpt2/
+      optional: true
+    - 
+      title: The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)
+      authors: Jay Alammar
+      url: http://jalammar.github.io/illustrated-bert/
+      optional: true
 -
   date: 2020-04-22
   type: homework
