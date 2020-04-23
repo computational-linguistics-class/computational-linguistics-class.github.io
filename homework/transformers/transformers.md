@@ -11,7 +11,7 @@ submission_link:
 materials:
     - 
       name: Google Colab Notebook
-      url: https://colab.research.google.com/drive/1HlY1rdEKqMFLtMSMcxgM3gKiQkgFxPY1
+      url: language_model_finetuning_hw.ipynb
     - 
       name: Text Adventures Train Set
       url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_train.txt
