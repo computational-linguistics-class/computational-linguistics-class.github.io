@@ -7,6 +7,12 @@ caption: Image credit&colon; Edwige and Xavier
 active_tab: main_page 
 ---
 
+
+<div class="alert alert-info" markdown="1">
+Thanks for taking part in the course!  Please [fill out this send of semester feedback form](https://docs.google.com/forms/d/e/1FAIpQLScLJ3O3LMWQL2Fg3fBj7CkHs0D2uLAojwZ9GiaWv45mRQAGww/viewform?usp=sf_link
+) to help us improve the course for the future.
+</div>
+
 <div class="alert alert-success" markdown="1">
 CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php) when it opens on April 30.  
 
@@ -30,10 +36,8 @@ If you don't turn in HW1 on time, then you won't be considered for enrollment if
 -->
 
 <div class="alert alert-warning" markdown="1">
-Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.  I have also made several updates to how the course will be graded, which are detailed in [this Piazza post.](https://piazza.com/class/k4ee6mvcugp699?cid=620)
-</div>
+Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.  I have also made several updates to how the course will be graded, which are detailed in [this Piazza post.](https://piazza.com/class/k4ee6mvcugp699?cid=620).
 
-<div class="alert alert-warning" markdown="1">
 You can find links to the live lecture broadcast and to the recordings on the [lectures page](lectures.html)
 </div>
 
@@ -96,12 +100,12 @@ Time and place
 : Last day of class is April 29, 2020
 
 Office hours
-: Mondays 10:30am-12:30pm in the Levine 5th floor next to elevators
-: Tuesdays 1:30-5 in the Levine 5th floor next to elevators
-: Wednesdays 10am-12:30pm in the GRW 5th floor bump space
-: Wednesdays 3-6pm in the Levine 5th floor next to elevators (multiple TAs)
-: Thursdays 3-5pm GRW 5th floor bump space
-: Friday 4-5pm in 3401 Walnut room 463C
+: Mondays 10:30am-12:30pm 
+: Tuesdays 1:30-5
+: Wednesdays 10am-12:30pm 
+: Wednesdays 3-6pm
+: Thursdays 3-5pm 
+: Friday 4-5pm 
 
 
 Textbooks
