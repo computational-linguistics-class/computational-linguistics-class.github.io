@@ -14,13 +14,13 @@ materials:
       url: language_model_finetuning_hw.ipynb
     - 
       name: Text Adventures Train Set
-      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_train.txt
+      url: https://computational-linguistics-class.org/homework/transformers/text_adventures_train.txt
     - 
       name: Text Adventures Development Set
-      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_dev.txt
+      url: https://computational-linguistics-class.org/homework/transformers/text_adventures_dev.txt
     - 
       name: Text Adventures Test Set
-      url: http://http://computational-linguistics-class.org/homework/transformers/text_adventures_test.txt
+      url: https://computational-linguistics-class.org/homework/transformers/text_adventures_test.txt
 
 attribution: This assignment was created by Daphne Ippolito for UPenn's "Interactive Fiction and Text Generation" course in Spring 2020.  It was adapted for UPenn's CIS 530 course by Arun Kirubarajan, Tatiana Tsygankova, Sihao Chen, and Chris Callison-Burch in Spring 2020 during the Coronavirus pandemic.
 readings:
