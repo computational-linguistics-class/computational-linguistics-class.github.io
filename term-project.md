@@ -300,6 +300,7 @@ You should turn  the following items:
    * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a README file in this subdirectory that explains how to download your data.
    * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
    * output/ - a subdirectory containing your model's predictions on the test set, along with the gold labels.  This should also include a README that shows the command line on how to run your evaluation script on the output, and example of what scores the script returns.
+* Schedule a time before May 7 to present your results to CCB: [https://ccb.youcanbook.me](https://ccb.youcanbook.me)
 
 
 You've reached the end.  Great job!
