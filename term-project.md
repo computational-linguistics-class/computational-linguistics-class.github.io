@@ -291,11 +291,11 @@ Your final report should be written in the style of a scientific paper, and form
 I really like examples and good illustrations.  If you created some nice visuals for your final presentation slides, then I encourage you to include them in your writeup too.  You can submit your images in a images/ subfolder.
 
 
-## What do you need to turn in?
+## What do you need to turn in for Milestone 4?
 
 You should turn  the following items:
 * A PDF of your final report
-* A link to your final project presentation slides and recording. 
+* A PDF final project presentation slides. 
 * A tarball or zip file with all of your code and data.  It should contain:
    * data/ - a subdirectory containing the training/dev/test splits that you use.  If your data is too large to submit, then you can include a README file in this subdirectory that explains how to download your data.
    * code/ - a subdirectory containing all code that you developed for your project, including the baseline and extensions, and your evaluation scripts.  This should include a README that gives a step by step walk thorugh of how to run your code, including an example of the command lines to run to reproduce the results that you report. 
