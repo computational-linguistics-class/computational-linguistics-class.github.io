@@ -8,19 +8,10 @@ active_tab: main_page
 ---
 
 
-<div class="alert alert-info" markdown="1">
-Thanks for taking part in the course!  Please [fill out this send of semester feedback form](https://docs.google.com/forms/d/e/1FAIpQLScLJ3O3LMWQL2Fg3fBj7CkHs0D2uLAojwZ9GiaWv45mRQAGww/viewform?usp=sf_link
-) to help us improve the course for the future.
-</div>
-
 <div class="alert alert-success" markdown="1">
-CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php) when it opens on April 30.  
+CIS 530 will be offered in the Fall by Dr. Clayton Greenberg.  He will be using the CIS waitlist system to issue permits and manage enrollment.  You do not need to email the instructor to receive a permit, instead you should [sign yourself up for the waitlist](https://forms.cis.upenn.edu/waitlist/index.php).
 
 After you've added yourself to the waitlist, the instructor can issue you a permit.  You will receive an email saying permit available. You will receive another email when the permit is issued. At that point, you may register on CoursesInTouch. 
-</div>
-
-<div class="alert alert-success" markdown="1">
-Clayton Greenberg is looking for students to be TAs for CIS 530 in Fall 2020.  If you'd like [to apply to be a TA, please fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSeSoyVCapBpYO10Awwu92ughYRVvm5hQOddys6Yxv_iRQdMVQ/viewform).  The deadline for applications is April 30, 2020 11:59pm Eastern.
 </div>
 
 
@@ -35,11 +26,6 @@ If you don't turn in HW1 on time, then you won't be considered for enrollment if
 </div>
 -->
 
-<div class="alert alert-warning" markdown="1">
-Here's a [Piazza post about the logistics of the class](https://piazza.com/class/k4ee6mvcugp699?cid=603) as we move to all classes being taught online for this semester.  I have also made several updates to how the course will be graded, which are detailed in [this Piazza post.](https://piazza.com/class/k4ee6mvcugp699?cid=620).
-
-You can find links to the live lecture broadcast and to the recordings on the [lectures page](lectures.html)
-</div>
 
 <!--
 <div class="alert alert-info" markdown="1">
