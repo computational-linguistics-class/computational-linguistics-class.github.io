@@ -580,6 +580,11 @@
       authors: Jay Alammar
       url: http://jalammar.github.io/illustrated-bert/
       optional: true
+    - 
+      title: The Woman Worked as a Babysitter&colon; On Biases in Language Generation
+      authors: Emily Sheng, Kai-Wei Chang, Premkumar Natarajan, Nanyun Peng
+      url: https://www.aclweb.org/anthology/D19-1339/
+      optional: true
 -
   date: 2020-04-20
   type: exam 
