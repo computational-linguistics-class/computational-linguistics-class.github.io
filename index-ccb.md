@@ -69,7 +69,7 @@ Course number
 : CIS 530 - Computational Linguistics 
 
 Instructor
-: [Chris Callison-Burch](http://www.cis.upenn.edu/~ccb/) 
+: [Clayton Greenberg](http://www.seas.upenn.edu/~cgreenbe/) 
 
 Website 
 : [computational-linguistics-class.org](http://computational-linguistics-class.org/)
